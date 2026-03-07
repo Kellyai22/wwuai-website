@@ -1082,25 +1082,11 @@
         </div>
         <h4 class="lm-card-form-title">Send me the kit</h4>
         <p class="lm-card-form-sub">Enter your details and I'll send it straight to your inbox.</p>
-        <div class="lm-card-form">
-          <!-- 
-            ──────────────────────────────────────────────────────────────────
-            EMAIL PLATFORM INTEGRATION
-            Replace this form with your email platform's embed code.
-            Works with: Kit (ConvertKit), Mailchimp, Flodesk, ActiveCampaign,
-            MailerLite, and others.
-
-            For Kit: Use a Form embed with inline style.
-            For Mailchimp: Use their embedded form HTML.
-            For Flodesk: Use their popup or inline embed code.
-
-            Until you have a platform, this form is styled and ready to go.
-            ──────────────────────────────────────────────────────────────────
-          -->
-          <input type="text" placeholder="First name">
-          <input type="email" placeholder="Email address">
+        <form action="https://app.kit.com/forms/c0dd7062fc/subscriptions" method="post" class="lm-card-form">
+          <input type="text" name="fields[first_name]" placeholder="First name">
+          <input type="email" name="email_address" placeholder="Email address" required>
           <button type="submit">Yes — send me the kit</button>
-        </div>
+        </form>
         <p class="lm-card-note">Free. No spam. Unsubscribe any time.</p>
       </div>
     </div>
