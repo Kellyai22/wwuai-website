@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in! — Wise Women Use AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Variables ──────────────────────────────── */
+    :root {
+      --brown:        #5E534B;
+      --brown-light:  #8C7E74;
+      --terra:        #C4714F;
+      --cream:        #F6F3EE;
+      --cream-dark:   #EAE5DF;
+      --white:        #FFFFFF;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --sans:         'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--brown);
+    }
+
+    .nav-logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--brown-light);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--terra) !important;
+      border: 1.5px solid var(--terra);
+      padding: 8px 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--terra);
+      color: var(--white) !important;
+    }
+
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      background: rgba(196, 113, 79, 0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 6vw, 64px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-script {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--terra);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    /* Inbox tip box */
+    .inbox-tip {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-left: 4px solid var(--terra);
+      border-radius: 6px;
+      padding: 20px 24px;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto 64px;
+    }
+
+    .inbox-tip p {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--brown);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .inbox-tip p strong {
+      font-weight: 600;
+      color: var(--brown);
+    }
+
+    /* ── What's in the kit ────────────────────── */
+    .kit-section {
+      background: var(--white);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 72px 24px;
+    }
+
+    .kit-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 300;
+      text-align: center;
+      color: var(--brown);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .kit-item {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 28px 24px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .kit-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(94, 83, 75, 0.1);
+    }
+
+    .kit-number {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .kit-item h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .kit-item p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.6;
+    }
+
+    /* ── Next step CTA ────────────────────────── */
+    .cta-section {
+      padding: 80px 24px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-section .section-label { margin-bottom: 16px; }
+
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--terra); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--brown);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      margin-top: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--brown-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    /* ── Animations ───────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .fade-up-1 { animation-delay: 0.1s; }
+    .fade-up-2 { animation-delay: 0.25s; }
+    .fade-up-3 { animation-delay: 0.4s; }
+    .fade-up-4 { animation-delay: 0.55s; }
+    .fade-up-5 { animation-delay: 0.7s; }
+
+    /* ── Responsive ───────────────────────────── */
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+      .kit-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="WWUAI Logo OG.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span class="nav-wordmark">WWUAI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#community">The Kit &amp; Community</a></li>
+      <li><a href="/#quiz" class="nav-cta">Free AI Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge fade-up fade-up-1">✓ &nbsp;You're confirmed</div>
+
+    <h1 class="fade-up fade-up-2">
+      Your free kit<br>is on its way, <em>lovely.</em>
+    </h1>
+
+    <p class="hero-script fade-up fade-up-3">check your inbox</p>
+
+    <p class="fade-up fade-up-4">
+      Your AI Starter Kit is headed to your inbox right now. While you wait, here's a reminder of what you're about to get.
+    </p>
+  </section>
+
+  <!-- What's in the kit -->
+  <section class="kit-section">
+    <div class="kit-inner">
+      <p class="section-label">What's inside</p>
+      <h2 class="section-title">Your AI Starter Kit</h2>
+      <p class="section-sub">Five tools to get you using AI properly — starting today.</p>
+
+      <div class="kit-grid">
+
+        <div class="kit-item">
+          <div class="kit-number">01</div>
+          <h3>Claude Model Comparison Tool</h3>
+          <p>An interactive guide to the different Claude models so you know exactly which one to use and when.</p>
+        </div>
+
+        <div class="kit-item">
+          <div class="kit-number">02</div>
+          <h3>5 AI Prompts for Real Business Tasks</h3>
+          <p>Five plug-and-play prompts built for women in business — not tech demos. Copy, paste, go.</p>
+        </div>
+
+        <div class="kit-item">
+          <div class="kit-number">03</div>
+          <h3>Your First AI Workflow</h3>
+          <p>A step-by-step guide to setting up your very first automated workflow — even if you've never tried before.</p>
+        </div>
+
+        <div class="kit-item">
+          <div class="kit-number">04</div>
+          <h3>AI Quick Wins Starter Kit</h3>
+          <p>Small, high-impact wins you can implement this week to start saving real time in your business.</p>
+        </div>
+
+        <div class="kit-item">
+          <div class="kit-number">05</div>
+          <h3>AI as Your Business Team</h3>
+          <p>A mental model that changes how you think about AI — from a tool you use to a team you lead.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Inbox tip -->
+  <div style="max-width: 600px; margin: 48px auto; padding: 0 24px;">
+    <div class="inbox-tip">
+      <p>
+        <strong>Can't see the email?</strong> Check your Promotions or Spam folder and move it to your inbox — that way you won't miss future tips either.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="section-label">Ready for more?</p>
+    <h2>Come join us inside the community</h2>
+    <p>
+      The free kit is just the beginning. Inside Wise Women Use AI, you'll get practical training, weekly live sessions, and a community of women who are actually doing this — not just talking about it.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://skool.com/wise-women-use-ai" class="btn-primary">Join the Community →</a>
+      <a href="/" class="btn-outline">Back to the website</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">Wise Women Use AI</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
