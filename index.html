@@ -1384,5 +1384,5 @@
 
   document.addEventListener('DOMContentLoaded', initReveal);
 </script>
-</body>
+<script> document.querySelectorAll('form').forEach(function(form) {   form.addEventListener('submit', function() {     var email = form.querySelector('input[type="email"]').value;     fetch('https://kellyai.app.n8n.cloud/webhook/nurture-sequence', {       method: 'POST',       headers: {'Content-Type': 'application/json'},       body: JSON.stringify({email: email})     }).catch(function(){});   }); }); </script> </body>
 </html>
