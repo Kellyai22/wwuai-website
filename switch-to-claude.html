@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch to Claude — Wise Women Use AI</title>
+  <meta name="description" content="Move your ChatGPT memory and preferences to Claude in about five minutes. Free, private, and built for women in business.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Variables ──────────────────────────────── */
+    :root {
+      --brown:        #5E534B;
+      --brown-mid:    #968880;
+      --brown-light:  #8C7E74;
+      --terra:        #C4714F;
+      --terra-deep:   #a85c3c;
+      --cream:        #FFFCFA;
+      --cream-dark:   #EAE5DF;
+      --white:        #FFFFFF;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --sans:         'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--brown);
+    }
+
+    .nav-logo img { height: 28px; width: auto; }
+
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--brown-light);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--terra) !important;
+      border: 1.5px solid var(--terra);
+      padding: 8px 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--terra);
+      color: var(--white) !important;
+    }
+
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 6vw, 58px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      max-width: 500px;
+      margin: 0 auto 24px;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    .trust-badge svg {
+      width: 14px;
+      height: 14px;
+      color: var(--terra);
+    }
+
+    /* ── Progress Bar ────────────────────────── */
+    .progress-bar {
+      max-width: 600px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+    }
+
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .progress-steps::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 40px;
+      right: 40px;
+      height: 2px;
+      background: var(--cream-dark);
+    }
+
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      color: var(--brown-mid);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .progress-step.active .step-circle {
+      background: var(--terra);
+      color: var(--white);
+    }
+
+    .progress-step.completed .step-circle {
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    .step-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      transition: color 0.3s;
+    }
+
+    .progress-step.active .step-label,
+    .progress-step.completed .step-label {
+      color: var(--brown);
+    }
+
+    /* Mobile progress */
+    .progress-mobile {
+      display: none;
+      text-align: center;
+      margin: 0 auto 32px;
+      padding: 0 24px;
+    }
+
+    .progress-mobile-text {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      margin-bottom: 8px;
+    }
+
+    .progress-mobile-bar {
+      height: 3px;
+      background: var(--cream-dark);
+      border-radius: 2px;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .progress-mobile-fill {
+      height: 100%;
+      background: var(--terra);
+      border-radius: 2px;
+      transition: width 0.3s;
+    }
+
+    /* ── Wizard Container ────────────────────── */
+    .wizard {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .wizard-step {
+      display: none;
+      animation: fadeUp 0.4s ease forwards;
+    }
+
+    .wizard-step.active {
+      display: block;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-intro {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .step-heading {
+      font-family: var(--serif);
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    /* ── Prompt Cards ────────────────────────── */
+    .prompt-card {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .prompt-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .prompt-card-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .prompt-card-body {
+      padding: 20px;
+    }
+
+    .prompt-text {
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--brown);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ── Buttons ──────────────────────────────── */
+    .btn-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brown);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover { background: var(--terra); }
+
+    .btn-copy.copied {
+      background: var(--terra);
+    }
+
+    .btn-copy svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .btn-nav {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-next {
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    .btn-next:hover { background: var(--terra); }
+
+    .btn-back {
+      background: transparent;
+      color: var(--brown-mid);
+      border: 1.5px solid var(--cream-dark);
+    }
+
+    .btn-back:hover {
+      border-color: var(--brown-mid);
+      color: var(--brown);
+    }
+
+    .wizard-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .wizard-nav-right { margin-left: auto; }
+
+    /* ── Instructions List ────────────────────── */
+    .instructions {
+      list-style: none;
+      margin: 32px 0;
+    }
+
+    .instructions li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    .instructions li:last-child { border-bottom: none; }
+
+    .instruction-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      color: var(--brown);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Textarea (Step 2) ────────────────────── */
+    .review-textarea {
+      width: 100%;
+      min-height: 300px;
+      padding: 20px;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--brown);
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .review-textarea:focus {
+      border-color: var(--terra);
+    }
+
+    .review-textarea::placeholder {
+      color: var(--brown-mid);
+      font-weight: 300;
+    }
+
+    .textarea-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--brown-mid);
+      font-weight: 400;
+    }
+
+    .saved-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .saved-notice.visible { opacity: 1; }
+
+    /* ── Guidance Boxes ───────────────────────── */
+    .guidance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .guidance-box {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .guidance-box h4 {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .guidance-box.keep { border-left: 4px solid var(--terra); }
+    .guidance-box.skip { border-left: 4px solid var(--cream-dark); }
+
+    .guidance-box ul {
+      list-style: none;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    .guidance-box ul li {
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .guidance-box.keep ul li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--terra);
+      font-weight: 600;
+    }
+
+    .guidance-box.skip ul li::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+      color: var(--brown-mid);
+      font-weight: 600;
+    }
+
+    /* ── Preview (Step 3) ─────────────────────── */
+    .preview-box {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .preview-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--brown);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .preview-empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--brown-mid);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .copy-main {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .btn-copy-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--terra);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      padding: 16px 36px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy-main:hover { background: var(--terra-deep); }
+    .btn-copy-main.copied { background: var(--brown); }
+
+    .btn-copy-main svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Import options */
+    .import-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .import-option {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .import-option h4 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .import-option .option-rec {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 12px;
+    }
+
+    .import-option ol {
+      padding-left: 18px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+    }
+
+    .import-option ol li {
+      padding: 2px 0;
+    }
+
+    .import-note {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-left: 4px solid var(--terra);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-top: 28px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.7;
+    }
+
+    /* ── Tips Section (Step 4) ────────────────── */
+    .tips-section {
+      margin-bottom: 40px;
+    }
+
+    .tips-section h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .tips-section p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .tip-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .tip-list li {
+      padding: 10px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.7;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .tip-list li:last-child { border-bottom: none; }
+
+    .tip-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    .done-box {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .done-box h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .done-box p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--brown-light);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    /* ── Responsive ───────────────────────────── */
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+
+      .hero { padding: 48px 20px 32px; }
+
+      .progress-bar { display: none; }
+      .progress-mobile { display: block; }
+
+      .wizard { padding: 0 20px 48px; }
+
+      .guidance-grid { grid-template-columns: 1fr; }
+
+      .import-options { grid-template-columns: 1fr; }
+
+      .review-textarea { min-height: 200px; }
+
+      .wizard-nav { flex-direction: column; gap: 12px; }
+      .btn-nav { width: 100%; text-align: center; }
+      .wizard-nav-right { margin-left: 0; width: 100%; }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="WWUAI Logo OG.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span class="nav-wordmark">WWUAI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#community">The Kit &amp; Community</a></li>
+      <li><a href="/#quiz" class="nav-cta">Free AI Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Switch to <em>Claude</em></h1>
+    <p class="hero-sub">
+      Bring everything ChatGPT knows about you across to Claude in about five minutes. No tech skills needed.
+    </p>
+    <div class="trust-badges">
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Free
+      </span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        No sign-up
+      </span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Nothing leaves your browser
+      </span>
+    </div>
+  </section>
+
+  <!-- Progress Bar (Desktop) -->
+  <div class="progress-bar">
+    <div class="progress-steps">
+      <div class="progress-step active" data-step="0">
+        <div class="step-circle">1</div>
+        <span class="step-label">Extract</span>
+      </div>
+      <div class="progress-step" data-step="1">
+        <div class="step-circle">2</div>
+        <span class="step-label">Review</span>
+      </div>
+      <div class="progress-step" data-step="2">
+        <div class="step-circle">3</div>
+        <span class="step-label">Import</span>
+      </div>
+      <div class="progress-step" data-step="3">
+        <div class="step-circle">4</div>
+        <span class="step-label">Next Steps</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Bar (Mobile) -->
+  <div class="progress-mobile">
+    <div class="progress-mobile-text">Step <span id="mobileStepNum">1</span> of 4</div>
+    <div class="progress-mobile-bar">
+      <div class="progress-mobile-fill" id="mobileFill" style="width: 25%"></div>
+    </div>
+  </div>
+
+  <!-- Wizard -->
+  <div class="wizard">
+
+    <!-- ════ STEP 1: Extract ════ -->
+    <div class="wizard-step active" id="step-0">
+      <h2 class="step-heading">Extract from ChatGPT</h2>
+      <p class="step-intro">
+        First, we need to ask ChatGPT to tell us everything it knows about you. We use two prompts to get the full picture. The first one grabs your stored memories and custom instructions. The second digs into what ChatGPT has picked up from your conversations over time.
+      </p>
+
+      <!-- Prompt A -->
+      <div class="prompt-card">
+        <div class="prompt-card-header">
+          <span class="prompt-card-label">Prompt 1: Memories and Instructions</span>
+          <button class="btn-copy" onclick="copyPrompt('promptA', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <div class="prompt-card-body">
+          <div class="prompt-text" id="promptA">I'm moving to a new AI assistant and I need to take everything you know about me with me.
+
+Please give me a complete summary of:
+1. All my stored memories (everything in your Memory feature about me)
+2. My custom instructions (both "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?")
+3. Any personalisation settings you're aware of
+
+Format this as a clean, readable profile I could give to another AI. Use headings and bullet points. Don't leave anything out, even if it seems minor.</div>
+        </div>
+      </div>
+
+      <!-- Prompt B -->
+      <div class="prompt-card">
+        <div class="prompt-card-header">
+          <span class="prompt-card-label">Prompt 2: Conversation Patterns</span>
+          <button class="btn-copy" onclick="copyPrompt('promptB', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <div class="prompt-card-body">
+          <div class="prompt-text" id="promptB">Now I need you to think beyond your stored memories. Based on our conversation history together, what else have you learned about me?
+
+Please cover:
+1. My communication style and tone preferences
+2. Topics I ask about most often
+3. How I like information presented (length, format, level of detail)
+4. My business or work context
+5. Any recurring tasks or workflows we do together
+6. Pet peeves or things I've corrected you on
+7. Anything else that would help a new AI assistant work well with me from day one
+
+Again, format this as a clean profile with headings and bullet points.</div>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <ol class="instructions">
+        <li>
+          <span class="instruction-num">1</span>
+          Open ChatGPT in your browser and start a new chat.
+        </li>
+        <li>
+          <span class="instruction-num">2</span>
+          Copy and paste <strong>Prompt 1</strong> above. Let ChatGPT finish its response, then copy everything it gives you.
+        </li>
+        <li>
+          <span class="instruction-num">3</span>
+          In the same chat, copy and paste <strong>Prompt 2</strong>. Copy that response too.
+        </li>
+        <li>
+          <span class="instruction-num">4</span>
+          You now have everything ChatGPT knows about you. Move on to the next step to tidy it up.
+        </li>
+      </ol>
+
+      <div class="wizard-nav">
+        <div></div>
+        <button class="btn-nav btn-next wizard-nav-right" onclick="goToStep(1)">Next: Review</button>
+      </div>
+    </div>
+
+    <!-- ════ STEP 2: Review ════ -->
+    <div class="wizard-step" id="step-1">
+      <h2 class="step-heading">Review and tidy up</h2>
+      <p class="step-intro">
+        Paste both responses from ChatGPT into the box below and have a read through. This is your chance to clean things up before you hand it to Claude. Remove anything outdated, irrelevant, or just plain wrong. ChatGPT doesn't always get it right.
+      </p>
+
+      <!-- Guidance -->
+      <div class="guidance-grid">
+        <div class="guidance-box keep">
+          <h4>Worth keeping</h4>
+          <ul>
+            <li>Your business name and what you do</li>
+            <li>How you like to communicate</li>
+            <li>Recurring tasks and workflows</li>
+            <li>Industry or niche context</li>
+            <li>Formatting preferences</li>
+          </ul>
+        </div>
+        <div class="guidance-box skip">
+          <h4>Safe to remove</h4>
+          <ul>
+            <li>Old business names or past roles</li>
+            <li>ChatGPT-specific things (like "use DALL-E")</li>
+            <li>Anything that feels inaccurate now</li>
+            <li>One-off tasks you won't repeat</li>
+            <li>Overly generic statements</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <textarea
+        class="review-textarea"
+        id="reviewText"
+        placeholder="Paste both ChatGPT responses here. Take a moment to read through and remove anything that's no longer relevant."
+        oninput="handleTextareaInput()"
+      ></textarea>
+      <div class="textarea-meta">
+        <span id="wordCount">0 words</span>
+        <span class="saved-notice" id="savedNotice">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          Saved in your browser
+        </span>
+      </div>
+
+      <div class="wizard-nav">
+        <button class="btn-nav btn-back" onclick="goToStep(0)">Back</button>
+        <button class="btn-nav btn-next" onclick="goToStep(2)">Next: Import</button>
+      </div>
+    </div>
+
+    <!-- ════ STEP 3: Import ════ -->
+    <div class="wizard-step" id="step-2">
+      <h2 class="step-heading">Import to Claude</h2>
+      <p class="step-intro">
+        Your cleaned-up profile is ready. Copy it below and bring it into Claude. You have two ways to do this.
+      </p>
+
+      <!-- Preview -->
+      <div class="preview-box">
+        <div id="previewContent"></div>
+      </div>
+
+      <!-- Copy button -->
+      <div class="copy-main">
+        <button class="btn-copy-main" id="btnCopyMain" onclick="copyFinal(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy to clipboard
+        </button>
+      </div>
+
+      <!-- Import options -->
+      <div class="import-options">
+        <div class="import-option">
+          <h4>Option A</h4>
+          <p class="option-rec">Recommended</p>
+          <ol>
+            <li>Go to <strong>claude.ai</strong> and log in</li>
+            <li>Click your profile picture, then <strong>Settings</strong></li>
+            <li>Go to <strong>Capabilities</strong>, find <strong>Memory</strong></li>
+            <li>Click <strong>"Import memory from other AI providers"</strong></li>
+            <li>Paste your profile into the text box</li>
+            <li>Click <strong>"Add to memory"</strong></li>
+          </ol>
+        </div>
+        <div class="import-option">
+          <h4>Option B</h4>
+          <p class="option-rec">Quick alternative</p>
+          <ol>
+            <li>Go to <strong>claude.ai</strong> and start a new chat</li>
+            <li>Paste your profile into the chat</li>
+            <li>Add this message above it: <em>"This is my profile from another AI assistant. Please store all of this in your memory so you can reference it in future conversations."</em></li>
+            <li>Send and let Claude process it</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="import-note">
+        <strong>Good to know:</strong> Claude's memory builds up naturally over your conversations. This import gives it a head start, but don't worry if it doesn't feel perfect straight away. The more you use Claude, the better it gets at understanding how you work.
+      </div>
+
+      <div class="wizard-nav">
+        <button class="btn-nav btn-back" onclick="goToStep(1)">Back</button>
+        <button class="btn-nav btn-next" onclick="goToStep(3)">Next: Tips</button>
+      </div>
+    </div>
+
+    <!-- ════ STEP 4: Next Steps ════ -->
+    <div class="wizard-step" id="step-3">
+      <h2 class="step-heading">You're all set. Here's what comes next.</h2>
+
+      <!-- Claude Projects -->
+      <div class="tips-section">
+        <h3>Set up Claude Projects</h3>
+        <p>
+          If you used Custom GPTs in ChatGPT, Claude has something similar called Projects. A Project is a workspace where you give Claude specific instructions and reference files for a particular area of your business.
+        </p>
+        <p>
+          For example, you might create a Project called "Social Media Content" with instructions about your brand voice, your audience, and the platforms you post on. Every conversation inside that Project starts with that context already loaded.
+        </p>
+        <p>
+          To create one: open the sidebar in Claude, click <strong>Projects</strong>, then <strong>New Project</strong>. Give it a name, add your instructions, and upload any relevant files.
+        </p>
+      </div>
+
+      <!-- What to expect -->
+      <div class="tips-section">
+        <h3>What to expect in the first week</h3>
+        <ul class="tip-list">
+          <li>Claude has a different style to ChatGPT. It tends to be more careful, more nuanced, and sometimes more honest about what it doesn't know. That's a feature, not a bug.</li>
+          <li>Your memory will build up naturally over conversations. The import gives Claude a head start, but the real value comes as you work together.</li>
+          <li>If something feels off, just tell Claude. It learns from corrections, same as ChatGPT does.</li>
+          <li>Claude is especially strong at writing, analysis, and following detailed instructions. Give it a proper brief and it will surprise you.</li>
+          <li>You don't have to pick one or the other. Plenty of people use both ChatGPT and Claude for different tasks. Try Claude for a week and see how it feels.</li>
+        </ul>
+      </div>
+
+      <!-- Done box -->
+      <div class="done-box">
+        <h3>That's it. You're ready to go.</h3>
+        <p>
+          Head over to <a href="https://claude.ai" target="_blank" rel="noopener" style="color: var(--terra); text-decoration: underline;">claude.ai</a> and start your first conversation. Claude already knows who you are.
+        </p>
+      </div>
+
+      <div class="wizard-nav">
+        <button class="btn-nav btn-back" onclick="goToStep(2)">Back</button>
+        <a href="https://claude.ai" target="_blank" rel="noopener" class="btn-nav btn-next wizard-nav-right" style="text-align:center;">Open Claude</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">Wise Women Use AI</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // ── State ──────────────────────────────────
+    let currentStep = 0;
+    const totalSteps = 4;
+
+    // ── Step Navigation ───────────────────────
+    function goToStep(n) {
+      if (n < 0 || n >= totalSteps) return;
+
+      // Hide current step
+      document.getElementById('step-' + currentStep).classList.remove('active');
+
+      // Show new step
+      currentStep = n;
+      document.getElementById('step-' + currentStep).classList.add('active');
+
+      // Update progress bar (desktop)
+      document.querySelectorAll('.progress-step').forEach(function(el, i) {
+        el.classList.remove('active', 'completed');
+        if (i === currentStep) el.classList.add('active');
+        if (i < currentStep) el.classList.add('completed');
+      });
+
+      // Update progress bar (mobile)
+      document.getElementById('mobileStepNum').textContent = currentStep + 1;
+      document.getElementById('mobileFill').style.width = ((currentStep + 1) / totalSteps * 100) + '%';
+
+      // If entering step 3 (import), populate preview
+      if (currentStep === 2) {
+        populatePreview();
+      }
+
+      // Scroll to top of wizard
+      window.scrollTo({ top: document.querySelector('.wizard').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    // ── Copy to Clipboard ─────────────────────
+    function copyToClipboard(text, btn) {
+      var originalText = btn.innerHTML;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopied(btn, originalText);
+        }).catch(function() {
+          fallbackCopy(text, btn, originalText);
+        });
+      } else {
+        fallbackCopy(text, btn, originalText);
+      }
+    }
+
+    function fallbackCopy(text, btn, originalText) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showCopied(btn, originalText);
+      } catch (e) {
+        // Silent fail
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showCopied(btn, originalHTML) {
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    }
+
+    function copyPrompt(id, btn) {
+      var text = document.getElementById(id).textContent;
+      copyToClipboard(text, btn);
+    }
+
+    function copyFinal(btn) {
+      var text = document.getElementById('reviewText').value;
+      if (!text.trim()) {
+        btn.innerHTML = 'Nothing to copy yet';
+        setTimeout(function() {
+          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy to clipboard';
+        }, 2000);
+        return;
+      }
+      copyToClipboard(text, btn);
+    }
+
+    // ── Textarea Persistence ──────────────────
+    var saveTimeout;
+
+    function handleTextareaInput() {
+      var textarea = document.getElementById('reviewText');
+      var text = textarea.value;
+
+      // Word count
+      var words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      document.getElementById('wordCount').textContent = words + ' word' + (words !== 1 ? 's' : '');
+
+      // Save to localStorage (debounced)
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(function() {
+        try {
+          localStorage.setItem('wwuai-switch-text', text);
+          var notice = document.getElementById('savedNotice');
+          notice.classList.add('visible');
+          setTimeout(function() { notice.classList.remove('visible'); }, 2000);
+        } catch (e) {
+          // Private browsing or storage full
+        }
+      }, 500);
+    }
+
+    // Restore on load
+    function restoreTextarea() {
+      try {
+        var saved = localStorage.getItem('wwuai-switch-text');
+        if (saved) {
+          var textarea = document.getElementById('reviewText');
+          textarea.value = saved;
+          // Update word count
+          var words = saved.trim() ? saved.trim().split(/\s+/).length : 0;
+          document.getElementById('wordCount').textContent = words + ' word' + (words !== 1 ? 's' : '');
+        }
+      } catch (e) {
+        // Private browsing
+      }
+    }
+
+    // ── Preview ───────────────────────────────
+    function populatePreview() {
+      var text = document.getElementById('reviewText').value;
+      var container = document.getElementById('previewContent');
+
+      if (!text.trim()) {
+        container.innerHTML = '<div class="preview-empty">Looks like you haven\'t pasted anything yet.<br>You can go back to Step 2, or just head to Claude and start fresh.</div>';
+        return;
+      }
+
+      var div = document.createElement('div');
+      div.className = 'preview-text';
+      div.textContent = text;
+      container.innerHTML = '';
+      container.appendChild(div);
+    }
+
+    // ── Init ──────────────────────────────────
+    restoreTextarea();
+  </script>
+
+</body>
+</html>
