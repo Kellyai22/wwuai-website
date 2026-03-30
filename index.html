@@ -728,6 +728,110 @@
   .footer-links a:hover { color: var(--cream); }
   .footer-copy { font-size: 0.68rem; color: var(--brown-light); }
 
+  /* ── Work With Me Page ─────────────────────────────────────────────────── */
+  .contact-hero {
+    min-height: 50vh;
+    display: flex; align-items: flex-end;
+    padding: 10rem 6rem 4rem;
+    background: var(--brown);
+    position: relative; overflow: hidden;
+  }
+  .contact-hero::before {
+    content: '';
+    position: absolute; left: -60px; bottom: -60px;
+    width: 350px; height: 350px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .contact-hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1100px; width: 100%; margin: 0 auto;
+  }
+  .contact-hero .about-tag { color: rgba(255,255,255,0.4); }
+  .contact-hero .about-hero-title { color: var(--cream); }
+  .contact-hero .about-hero-title em { color: var(--terra); font-style: italic; }
+
+  .contact-body {
+    padding: 5rem 6rem;
+    background: var(--cream);
+  }
+  .contact-body-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .contact-intro { margin-bottom: 3rem; }
+  .contact-intro-title {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  .contact-intro-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--brown-mid);
+    margin-bottom: 1rem;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .contact-field label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+  }
+  .contact-field input,
+  .contact-field textarea {
+    padding: 0.9rem 1rem;
+    border: 1.5px solid var(--brown);
+    border-radius: 0;
+    background: var(--cream);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    color: var(--brown-deep);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: var(--brown-light);
+  }
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    border-color: var(--brown-deep);
+  }
+  .contact-field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .contact-submit { align-self: flex-start; }
+  .contact-form-note {
+    font-size: 0.7rem;
+    color: var(--brown-light);
+    letter-spacing: 0.02em;
+  }
+
+  .contact-success { text-align: center; padding: 2rem 0; }
+  .contact-success-icon { margin-bottom: 1.5rem; }
+  .contact-success-title {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 0.75rem;
+  }
+  .contact-success-text {
+    font-size: 0.92rem;
+    color: var(--brown-mid);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
   /* ── Responsive ─────────────────────────────────────────────────────────── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
@@ -746,6 +850,8 @@
     .about-cta-form input[type="email"] { border-right: 1px solid rgba(255,255,255,0.2); border-bottom: none; }
     .compass-section, .community-intro, .community-calm, .community-kit, .community-cta { padding: 4rem 1.5rem !important; }
     .compass-grid, .community-intro-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    .contact-hero { padding: 8rem 1.5rem 3rem; min-height: 40vh; }
+    .contact-body { padding: 3rem 1.5rem; }
   }
 </style>
 </head>
@@ -754,7 +860,7 @@
 <!-- ── Navigation ─────────────────────────────────────────────────────────── -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
-    <img src="https://raw.githubusercontent.com/Kellyai22/wwuai-website/main/WWUAI%20Logo%20OGTP.png" alt="WWUAI Logo" id="nav-logo-img">
+    <img src="assets/logos/WWUAI Logo OGTP.png" alt="WWUAI Logo" id="nav-logo-img">
     <div class="nav-wordmark">
       Wise Women Use AI
       <span>wisewomenuseai.com</span>
@@ -764,6 +870,7 @@
     <a onclick="showPage('home')">Home</a>
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('community')">The Kit &amp; Community</a>
+    <a onclick="showPage('contact')">Work With Me</a>
     <a href="https://wwuaiconfidencecompass.lovable.app" target="_blank" class="nav-cta">Free AI Quiz</a>
   </div>
 </nav>
@@ -1033,7 +1140,7 @@
           <div class="about-portrait" style="background:var(--cream-dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;">
             <!-- PHOTO PLACEHOLDER: Upload your photo to GitHub and replace the src below -->
             <!-- <img src="YOUR-PHOTO-URL" alt="Kelly" style="width:100%;height:100%;object-fit:cover;"> -->
-            <img src="KellyH.png" alt="Kelly, Founder of Wise Women Use AI" style="width:100%; border-radius:8px; object-fit:cover;">
+            <img src="assets/photos/KellyH.png" alt="Kelly, Founder of Wise Women Use AI" style="width:100%; border-radius:8px; object-fit:cover;">
           </div>
         </div>
       </div>
@@ -1337,11 +1444,74 @@
 
 </div><!-- /community page -->
 
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     WORK WITH ME PAGE
+════════════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="contact-hero-inner">
+      <p class="about-tag">Wise Women Use AI · Work With Me</p>
+      <h1 class="about-hero-title">
+        Let's figure out<br>how AI fits <em>your business.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Intro + Form -->
+  <section class="contact-body">
+    <div class="contact-body-inner">
+      <div class="contact-intro reveal">
+        <h2 class="contact-intro-title">Not sure where to start? That's exactly what I help with.</h2>
+        <p class="contact-intro-text">
+          I work one-on-one with women business owners who want to use AI practically, not just dabble with it. Whether you need help setting up your first AI workflow, building a content system, or figuring out which tools are actually worth your time, I can help.
+        </p>
+        <p class="contact-intro-text">
+          This is not a course pitch. It is a real conversation about your business, what you are trying to do, and where AI can genuinely save you time. If we are a good fit, we will map out next steps together.
+        </p>
+        <p class="contact-intro-text">
+          Fill in the form below and I will get back to you within a couple of business days.
+        </p>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <form id="contact-form" class="contact-form">
+          <div class="contact-field">
+            <label for="contact-name">Your name</label>
+            <input type="text" id="contact-name" name="name" placeholder="First name is fine" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-email">Email address</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@yourbusiness.com" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-message">How can I help?</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell me a bit about your business and what you are looking for help with." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary contact-submit">Send message</button>
+        </form>
+
+        <!-- Success state (hidden by default) -->
+        <div id="contact-success" class="contact-success" style="display:none;">
+          <div class="contact-success-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48"><circle cx="12" cy="12" r="11" fill="none" stroke="var(--terra)" stroke-width="1.5"/><polyline points="7,12 10.5,15.5 17,9" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="contact-success-title">Message sent. Thank you.</h3>
+          <p class="contact-success-text">I will be in touch within a couple of business days. In the meantime, feel free to have a look around.</p>
+          <button class="btn-outline" onclick="showPage('home')">Back to home</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /contact page -->
+
 <!-- Footer -->
 <footer>
   <div class="footer-left">
     <div class="footer-logo">
-      <img src="https://raw.githubusercontent.com/Kellyai22/wwuai-website/main/WWUAI%20Logo%20Dark.png" alt="Logo" id="footer-logo-img">
+      <img src="assets/logos/WWUAI Logo Dark.png" alt="Logo" id="footer-logo-img">
     </div>
     <span class="footer-name">Wise Women Use AI</span>
   </div>
@@ -1349,9 +1519,10 @@
     <a onclick="showPage('home')">Home</a>
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('community')">Kit &amp; Community</a>
+    <a onclick="showPage('contact')">Work With Me</a>
     <a href="https://wwuaiconfidencecompass.lovable.app" target="_blank">Free AI Quiz</a>
   </div>
-  <p class="footer-copy">© 2025 Wise Women Use AI</p>
+  <p class="footer-copy">© 2026 Wise Women Use AI</p>
 </footer>
 
 <script>
@@ -1386,6 +1557,39 @@
   }
 
   document.addEventListener('DOMContentLoaded', initReveal);
+
+  // ── Contact form ────────────────────────────────────────────────────────
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var form = this;
+    var submitBtn = form.querySelector('.contact-submit');
+    var originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    var data = {
+      name: document.getElementById('contact-name').value.trim(),
+      email: document.getElementById('contact-email').value.trim(),
+      message: document.getElementById('contact-message').value.trim()
+    };
+
+    fetch('https://kellyai.app.n8n.cloud/webhook/contact-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(response) {
+      if (!response.ok) throw new Error('Network response was not ok');
+      form.style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+    })
+    .catch(function() {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      alert('Something went wrong. Please try again, or email me directly at kelly@wisewomenuseai.com');
+    });
+  });
 </script>
-<script> document.querySelectorAll('form').forEach(function(form) {   form.addEventListener('submit', function() {     var email = form.querySelector('input[type="email"]').value;     fetch('https://kellyai.app.n8n.cloud/webhook/nurture-sequence', {       method: 'POST',       headers: {'Content-Type': 'application/json'},       body: JSON.stringify({email: email})     }).catch(function(){});   }); }); </script> </body>
+<script> document.querySelectorAll('form:not(#contact-form)').forEach(function(form) {   form.addEventListener('submit', function() {     var email = form.querySelector('input[type="email"]').value;     fetch('https://kellyai.app.n8n.cloud/webhook/nurture-sequence', {       method: 'POST',       headers: {'Content-Type': 'application/json'},       body: JSON.stringify({email: email})     }).catch(function(){});   }); }); </script> </body>
 </html>
