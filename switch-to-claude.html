@@ -1367,12 +1367,12 @@ Again, format this as a clean profile with headings and bullet points.</div>
 
     // ── Email Gate ─────────────────────────────
     function unlockGuide(e) {
-      // Let the Kit form submit normally (it posts to Kit)
-      // But also reveal the guide content immediately
+      // Save unlock flag so returning visitors see the guide directly
       try {
         localStorage.setItem('wwuai-switch-unlocked', 'true');
       } catch (ex) {}
-      showGuideContent();
+      // Redirect to thank-you page (Kit form submits via its own mechanism)
+      window.location.href = '/thank-you?source=switch-to-claude';
     }
 
     function showGuideContent() {
