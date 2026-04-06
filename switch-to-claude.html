@@ -165,6 +165,84 @@
       color: var(--terra);
     }
 
+    /* ── Email Gate ───────────────────────────── */
+    .email-gate {
+      max-width: 480px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .email-gate-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      padding: 32px 28px;
+    }
+
+    .email-gate-card h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .email-gate-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .email-gate-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .email-gate-card input[type="text"],
+    .email-gate-card input[type="email"] {
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream);
+      color: var(--brown);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-gate-card input:focus {
+      border-color: var(--terra);
+    }
+
+    .email-gate-card button {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 14px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .email-gate-card button:hover {
+      background: var(--terra-deep);
+      border-color: var(--terra-deep);
+    }
+
+    .email-gate-note {
+      font-size: 11px;
+      color: var(--brown-mid);
+      margin-top: 10px;
+    }
+
     /* ── Progress Bar ────────────────────────── */
     .progress-bar {
       max-width: 600px;
@@ -836,7 +914,7 @@
       </span>
       <span class="trust-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        No sign-up
+        Just your email
       </span>
       <span class="trust-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -845,8 +923,23 @@
     </div>
   </section>
 
+  <!-- Email Gate -->
+  <section class="email-gate" id="emailGate">
+    <div class="email-gate-card">
+      <h3>Get the guide</h3>
+      <p>Drop your email and the full step-by-step guide appears below. Takes about five minutes to complete.</p>
+      <form action="https://app.kit.com/forms/9173305/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9173305" data-uid="c0dd7062fc" data-format="inline" data-version="5" onsubmit="unlockGuide(event)">
+        <input type="hidden" name="fields[source]" value="switch-to-claude">
+        <input type="text" name="fields[first_name]" placeholder="First name">
+        <input type="email" name="email_address" placeholder="Email address" required>
+        <button type="submit">Show me the guide</button>
+      </form>
+      <p class="email-gate-note">Free. No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
   <!-- Progress Bar (Desktop) -->
-  <div class="progress-bar">
+  <div class="progress-bar gated-content">
     <div class="progress-steps">
       <div class="progress-step active" data-step="0">
         <div class="step-circle">1</div>
@@ -868,7 +961,7 @@
   </div>
 
   <!-- Progress Bar (Mobile) -->
-  <div class="progress-mobile">
+  <div class="progress-mobile gated-content">
     <div class="progress-mobile-text">Step <span id="mobileStepNum">1</span> of 4</div>
     <div class="progress-mobile-bar">
       <div class="progress-mobile-fill" id="mobileFill" style="width: 25%"></div>
@@ -876,7 +969,7 @@
   </div>
 
   <!-- Wizard -->
-  <div class="wizard">
+  <div class="wizard gated-content">
 
     <!-- ════ STEP 1: Extract ════ -->
     <div class="wizard-step active" id="step-0">
@@ -1272,7 +1365,37 @@ Again, format this as a clean profile with headings and bullet points.</div>
       container.appendChild(div);
     }
 
+    // ── Email Gate ─────────────────────────────
+    function unlockGuide(e) {
+      // Let the Kit form submit normally (it posts to Kit)
+      // But also reveal the guide content immediately
+      try {
+        localStorage.setItem('wwuai-switch-unlocked', 'true');
+      } catch (ex) {}
+      showGuideContent();
+    }
+
+    function showGuideContent() {
+      var gate = document.getElementById('emailGate');
+      var gated = document.querySelectorAll('.gated-content');
+      if (gate) gate.style.display = 'none';
+      gated.forEach(function(el) { el.style.display = ''; });
+    }
+
+    function checkUnlocked() {
+      try {
+        if (localStorage.getItem('wwuai-switch-unlocked') === 'true') {
+          showGuideContent();
+          return;
+        }
+      } catch (ex) {}
+      // Hide gated content by default
+      var gated = document.querySelectorAll('.gated-content');
+      gated.forEach(function(el) { el.style.display = 'none'; });
+    }
+
     // ── Init ──────────────────────────────────
+    checkUnlocked();
     restoreTextarea();
   </script>
 

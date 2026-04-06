@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free AI Starter Kit — Wise Women Use AI</title>
+  <meta name="description" content="Your calm, practical entry point into using AI in your business. Get the Claude comparison tool, 5 real business prompts, and your first AI workflow.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown:        #5E534B;
+      --brown-mid:    #968880;
+      --brown-light:  #8C7E74;
+      --terra:        #C4714F;
+      --terra-deep:   #a85c3c;
+      --cream:        #FFFCFA;
+      --cream-dark:   #EAE5DF;
+      --cream-mid:    #F0EBE5;
+      --white:        #FFFFFF;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --sans:         'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--brown);
+    }
+
+    .nav-logo img { height: 28px; width: auto; }
+
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--terra) !important;
+      border: 1.5px solid var(--terra);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--terra);
+      color: var(--white) !important;
+    }
+
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 48px 48px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 460px;
+    }
+
+    /* ── Form Card ────────────────────────────── */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      padding: 36px 32px;
+      max-width: 420px;
+    }
+
+    .form-card-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .form-card-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .form-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-card input[type="text"],
+    .form-card input[type="email"] {
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream);
+      color: var(--brown);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-card input:focus { border-color: var(--terra); }
+
+    .form-card button {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 14px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .form-card button:hover {
+      background: var(--terra-deep);
+      border-color: var(--terra-deep);
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--brown-mid);
+      margin-top: 10px;
+    }
+
+    /* ── What's Inside ────────────────────────── */
+    .inside {
+      background: var(--cream-mid);
+      padding: 72px 48px;
+    }
+
+    .inside-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .inside h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .inside h2 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .inside-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .module {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .module-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1;
+      min-width: 36px;
+    }
+
+    .module-text h3 {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .module-text p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    /* ── For Who ──────────────────────────────── */
+    .for-who {
+      padding: 72px 48px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .for-who h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 32px;
+    }
+
+    .for-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+      margin-bottom: 40px;
+    }
+
+    .for-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    .for-dash {
+      color: var(--terra);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    /* ── Bottom CTA ───────────────────────────── */
+    .bottom-cta {
+      padding: 72px 48px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta h2 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .bottom-cta p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .bottom-cta .form-card {
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--brown-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 32px;
+      }
+
+      .form-card { max-width: 100%; }
+
+      .inside { padding: 48px 24px; }
+
+      .for-who { padding: 48px 24px; }
+      .for-grid { grid-template-columns: 1fr; }
+
+      .bottom-cta { padding: 48px 24px; }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="WWUAI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <a href="/" class="nav-cta">Back to site</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Free download</p>
+      <h1>The Wise Woman's<br>AI <em>Starter Kit</em></h1>
+      <p class="hero-sub">
+        Your calm, practical entry point into using AI in your business. No jargon, no hype, no starting over. Just three tools you can use today.
+      </p>
+    </div>
+
+    <div class="form-card">
+      <h3 class="form-card-title">Send me the free kit</h3>
+      <p class="form-card-sub">The Claude comparison tool, 5 real business prompts, and your first AI workflow. Delivered straight to your inbox.</p>
+      <form action="https://app.kit.com/forms/9173305/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9173305" data-uid="c0dd7062fc" data-format="inline" data-version="5">
+        <input type="hidden" name="fields[source]" value="starter-kit">
+        <input type="text" name="fields[first_name]" placeholder="First name">
+        <input type="email" name="email_address" placeholder="Email address" required>
+        <button type="submit">Yes, send me the kit</button>
+      </form>
+      <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section class="inside">
+    <div class="inside-inner">
+      <p class="section-eyebrow">What's inside</p>
+      <h2>Three tools. <em>That's all this is.</em></h2>
+      <p class="inside-sub">Each one is practical, copy-paste ready, and designed to give you a real result, not just information.</p>
+
+      <div class="modules">
+        <div class="module">
+          <div class="module-num">01</div>
+          <div class="module-text">
+            <h3>Your AI assistant setup</h3>
+            <p>A step-by-step guide to setting up a Claude Project that already knows your business, your tone, and what you sell. Do it once. Use it forever. No more starting from scratch.</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-num">02</div>
+          <div class="module-text">
+            <h3>Your weekly workflow</h3>
+            <p>One 30 to 60 minute session per week. Four things in order. A copy-paste prompt to guide you through the whole session. Consistent results without reactive, random AI use.</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-num">03</div>
+          <div class="module-text">
+            <h3>Your content template</h3>
+            <p>A four-part structure you reuse every week. Social posts, captions, emails, all from one prompt. No blank page. No second-guessing. Just clear, consistent content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="for-who">
+    <h2>This kit is for you if...</h2>
+    <div class="for-grid">
+      <div class="for-item"><span class="for-dash">&#8212;</span> You're a solo or small business owner who does everything yourself</div>
+      <div class="for-item"><span class="for-dash">&#8212;</span> You've tried AI before and it didn't stick</div>
+      <div class="for-item"><span class="for-dash">&#8212;</span> You want practical tools, not another course to finish</div>
+      <div class="for-item"><span class="for-dash">&#8212;</span> Content planning feels like a weekly reset you dread</div>
+      <div class="for-item"><span class="for-dash">&#8212;</span> You're done with AI hype and ready for AI that's actually useful</div>
+      <div class="for-item"><span class="for-dash">&#8212;</span> You want to save time without learning something new every week</div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <h2>Ready to <em>start?</em></h2>
+    <p>Three tools. One inbox delivery. Your first real win with AI in under an hour.</p>
+    <div class="form-card">
+      <h3 class="form-card-title">Get the free kit</h3>
+      <p class="form-card-sub">Your AI Starter Kit. Straight to your inbox.</p>
+      <form action="https://app.kit.com/forms/9173305/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9173305" data-uid="c0dd7062fc" data-format="inline" data-version="5">
+        <input type="hidden" name="fields[source]" value="starter-kit">
+        <input type="text" name="fields[first_name]" placeholder="First name">
+        <input type="email" name="email_address" placeholder="Email address" required>
+        <button type="submit">Yes, send me the kit</button>
+      </form>
+      <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">Wise Women Use AI</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
