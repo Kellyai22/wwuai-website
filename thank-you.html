@@ -425,25 +425,25 @@
   <section class="hero">
     <div class="hero-badge fade-up fade-up-1">✓ &nbsp;You're confirmed</div>
 
-    <h1 class="fade-up fade-up-2">
+    <h1 class="fade-up fade-up-2" id="heroTitle">
       Your free kit<br>is on its way, <em>lovely.</em>
     </h1>
 
     <p class="hero-script fade-up fade-up-3">check your inbox</p>
 
-    <p class="fade-up fade-up-4">
+    <p class="fade-up fade-up-4" id="heroDesc">
       Your AI Starter Kit is headed to your inbox right now. While you wait, here's a reminder of what you're about to get.
     </p>
   </section>
 
   <!-- What's in the kit -->
-  <section class="kit-section">
+  <section class="kit-section" id="kitSection">
     <div class="kit-inner">
       <p class="section-label">What's inside</p>
-      <h2 class="section-title">Your AI Starter Kit</h2>
-      <p class="section-sub">Five tools to get you using AI properly — starting today.</p>
+      <h2 class="section-title" id="kitTitle">Your AI Starter Kit</h2>
+      <p class="section-sub" id="kitSub">Five tools to get you using AI properly — starting today.</p>
 
-      <div class="kit-grid">
+      <div class="kit-grid" id="kitGrid">
 
         <div class="kit-item">
           <div class="kit-number">01</div>
@@ -493,7 +493,7 @@
     <p class="section-label">Ready for more?</p>
     <h2>Come join us inside the community</h2>
     <p>
-      The free kit is just the beginning. Inside Wise Women Use AI, you'll get practical training, weekly live sessions, and a community of women who are actually doing this — not just talking about it.
+      This is just the beginning. Inside Wise Women Use AI, you'll get practical training, weekly live sessions, and a community of women who are actually doing this, not just talking about it.
     </p>
     <div class="cta-buttons">
       <a href="https://skool.com/wise-women-use-ai" class="btn-primary">Join the Community →</a>
@@ -510,6 +510,45 @@
       <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
     </ul>
   </footer>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var source = params.get('source');
+      if (!source) return; // Default Starter Kit content stays
+
+      var heroTitle = document.getElementById('heroTitle');
+      var heroDesc = document.getElementById('heroDesc');
+      var kitTitle = document.getElementById('kitTitle');
+      var kitSub = document.getElementById('kitSub');
+      var kitGrid = document.getElementById('kitGrid');
+
+      if (source === 'claude-clearly') {
+        heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
+        heroDesc.textContent = 'Claude, Clearly is headed to your inbox right now. Six clear sections to get you from zero to your first automation.';
+        kitTitle.textContent = 'Claude, Clearly';
+        kitSub.textContent = 'Your practical guide to getting started with Claude.';
+        kitGrid.innerHTML = ''
+          + '<div class="kit-item"><div class="kit-number">01</div><h3>What Claude actually is</h3><p>Not a chatbot, not a search engine. What it does, how it reasons, and why it matters for your business.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">02</div><h3>Getting set up</h3><p>Download, install, and find your way around. Including Cowork, where the real automation happens.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">03</div><h3>Your brand voice</h3><p>Write your brand guidelines once. Every output after that sounds like you, automatically.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">04</div><h3>Your first workflow</h3><p>Document your most repetitive task step by step. This becomes the blueprint Claude follows.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">05</div><h3>Reusable Skills</h3><p>Turn your workflow into a Skill you can run on command. Build it once, run it always.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">06</div><h3>Connect your tools</h3><p>Notion, Google Drive, Gmail, Slack. Claude connects to the tools you already use.</p></div>';
+
+      } else if (source === 'switch-to-claude') {
+        heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
+        heroDesc.textContent = 'The Switch to Claude guide is headed to your inbox. Everything you need to bring your ChatGPT setup across in about five minutes.';
+        kitTitle.textContent = 'Switch to Claude';
+        kitSub.textContent = 'Your step-by-step migration guide.';
+        kitGrid.innerHTML = ''
+          + '<div class="kit-item"><div class="kit-number">01</div><h3>Extract from ChatGPT</h3><p>Two prompts that pull out everything ChatGPT knows about you, your preferences, and your custom instructions.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">02</div><h3>Review and refine</h3><p>Clean up what ChatGPT gives you so Claude gets the best version of your profile.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">03</div><h3>Import to Claude</h3><p>Paste your profile into Claude and let it store everything. One conversation, done.</p></div>'
+          + '<div class="kit-item"><div class="kit-number">04</div><h3>What comes next</h3><p>Set up Projects, understand what to expect in your first week, and tips for getting the most out of Claude.</p></div>';
+      }
+    })();
+  </script>
 
 </body>
 </html>
