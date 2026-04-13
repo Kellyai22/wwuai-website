@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Community â Wise Women Use AI</title>
+  <meta name="description" content="A paid Skool community for women entrepreneurs who want to use AI practically â without the jargon, hype, or starting over every five minutes.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown:        #5E534B;
+      --brown-mid:    #968880;
+      --brown-light:  #8C7E74;
+      --terra:        #C4714F;
+      --terra-deep:   #a85c3c;
+      --cream:        #FFFCFA;
+      --cream-dark:   #EAE5DF;
+      --cream-mid:    #F0EBE5;
+      --white:        #FFFFFF;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --sans:         'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ââ Nav ââââââââââââââââââââââââââââââââââââ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--brown);
+    }
+
+    .nav-logo img { height: 28px; width: auto; }
+
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--terra) !important;
+      border: 1.5px solid var(--terra);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--terra);
+      color: var(--white) !important;
+    }
+
+    /* ââ Hero âââââââââââââââââââââââââââââââââââ */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 48px 48px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 460px;
+    }
+
+    /* ââ Form Card ââââââââââââââââââââââââââââââ */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      padding: 36px 32px;
+      max-width: 420px;
+    }
+
+    .form-card-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .form-card-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .form-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-card input[type="text"],
+    .form-card input[type="email"] {
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream);
+      color: var(--brown);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-card input:focus { border-color: var(--terra); }
+
+    .form-card button {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 14px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .form-card button:hover {
+      background: var(--terra-deep);
+      border-color: var(--terra-deep);
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--brown-mid);
+      margin-top: 10px;
+    }
+
+    /* ââ What You Get âââââââââââââââââââââââââââ */
+    .inside {
+      background: var(--cream-mid);
+      padding: 72px 48px;
+    }
+
+    .inside-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .inside h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .inside h2 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .inside-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .module {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .module-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1;
+      min-width: 36px;
+    }
+
+    .module-text h3 {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .module-text p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    /* ââ Who It's For âââââââââââââââââââââââââââ */
+    .for-who {
+      padding: 72px 48px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .for-who h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 32px;
+    }
+
+    .for-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+      margin-bottom: 40px;
+    }
+
+    .for-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    .for-dot {
+      color: var(--terra);
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ââ Pricing ââââââââââââââââââââââââââââââââ */
+    .pricing {
+      background: var(--brown);
+      padding: 72px 48px;
+      text-align: center;
+    }
+
+    .pricing-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .pricing .section-eyebrow {
+      color: var(--cream-dark);
+      opacity: 0.7;
+    }
+
+    .pricing h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .pricing h2 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .pricing-amount {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+      margin: 24px 0 8px;
+    }
+
+    .pricing-amount sup {
+      font-size: 28px;
+      vertical-align: super;
+    }
+
+    .pricing-note {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      margin-bottom: 28px;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-join {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 16px 36px;
+      border-radius: 6px;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-join:hover {
+      background: var(--terra-deep);
+      border-color: var(--terra-deep);
+    }
+
+    /* ââ Bottom CTA âââââââââââââââââââââââââââââ */
+    .bottom-cta {
+      padding: 72px 48px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta h2 em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .bottom-cta p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .bottom-cta .form-card {
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* ââ Footer âââââââââââââââââââââââââââââââââ */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--brown-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    /* ââ Responsive âââââââââââââââââââââââââââââ */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 32px;
+      }
+
+      .form-card { max-width: 100%; }
+
+      .inside { padding: 48px 24px; }
+
+      .for-who { padding: 48px 24px; }
+      .for-grid { grid-template-columns: 1fr; }
+
+      .pricing { padding: 48px 24px; }
+
+      .bottom-cta { padding: 48px 24px; }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="WWUAI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <a href="/resources" class="nav-cta">Free resources</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Wise Women Use AI â the community</p>
+      <h1>You found your<br>way here. <em>Good.</em></h1>
+      <p class="hero-sub">
+        This is where women entrepreneurs learn to use AI properly â not the hype version, the one that actually saves you time. The community is practical, no-jargon, and built around the way you actually run a business.
+      </p>
+    </div>
+
+    <div class="form-card">
+      <h3 class="form-card-title">Get the details first</h3>
+      <p class="form-card-sub">I'll send you everything you need to know â what's inside, what it costs, and exactly what to do first when you join.</p>
+
+      <form action="https://app.kit.com/forms/9321097/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9321097" data-uid="bd10030ef9" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://www.skool.com/wise-women-use-ai-1109"}}}'>
+        <input type="hidden" name="fields[source]" value="wise-community">
+        <input type="text" name="fields[first_name]" placeholder="First name">
+        <input type="email" name="email_address" placeholder="Email address" required>
+        <button type="submit">Tell me more</button>
+      </form>
+      <p class="form-note">No spam. Just the details you need to decide if it's right for you.</p>
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section class="inside">
+    <div class="inside-inner">
+      <p class="section-eyebrow">What's inside the community</p>
+      <h2>Real tools. Real women.<br><em>Real results.</em></h2>
+      <p class="inside-sub">Everything inside is built around one question: what does a woman running a real business actually need from AI?</p>
+
+      <div class="modules">
+        <div class="module">
+          <div class="module-num">01</div>
+          <div class="module-text">
+            <h3>The Claude Classroom</h3>
+            <p>Step-by-step tutorials for using Claude in your business â from setting up your first Project to building workflows that run on autopilot. No coding required. No prior knowledge assumed.</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-num">02</div>
+          <div class="module-text">
+            <h3>Ready-to-run workflows</h3>
+            <p>Copy-paste prompts and systems for the tasks you repeat every week â emails, content, client communication, planning. Pick one up, run it in your business today.</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-num">03</div>
+          <div class="module-text">
+            <h3>A community that gets it</h3>
+            <p>Women who are building real businesses and using AI in them, sharing what's actually working. Not cheerleading â real conversations, real questions, real answers.</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-num">04</div>
+          <div class="module-text">
+            <h3>New content every week</h3>
+            <p>Tools, resources, and walkthroughs added weekly. AI moves fast â the community keeps up so you don't have to spend your Sundays doing research.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="for-who">
+    <h2>This is for you if...</h2>
+    <div class="for-grid">
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You're a solo or small business owner doing everything yourself
+      </div>
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You've tried AI and it didn't stick, or didn't do what you expected
+      </div>
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You want to save time without learning something new every week
+      </div>
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You're done wading through generic AI content that isn't built for you
+      </div>
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You want tools, not theory â things you can actually use today
+      </div>
+      <div class="for-item">
+        <span class="for-dot">&#8212;</span> You'd rather learn alongside other women than figure it out alone
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <div class="pricing-inner">
+      <p class="section-eyebrow">Membership</p>
+      <h2>One price.<br><em>No subscription.</em></h2>
+      <div class="pricing-amount"><sup>$</sup>99</div>
+      <p class="pricing-note">One-off payment. Lifetime access. No recurring fees.</p>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-join">Join the community</a>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <h2>Not quite ready?<br><em>That's fine.</em></h2>
+    <p>Get the full details first â what's inside, what to do when you join, and why this is different from every other AI course you've looked at.</p>
+    <div class="form-card">
+      <h3 class="form-card-title">Send me the details</h3>
+      <p class="form-card-sub">Everything you need to decide if this is right for you, straight to your inbox.</p>
+
+      <form action="https://app.kit.com/forms/9321097/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9321097" data-uid="bd10030ef9" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://www.skool.com/wise-women-use-ai-1109"}}}'>
+        <input type="hidden" name="fields[source]" value="wise-community">
+        <input type="text" name="fields[first_name]" placeholder="First name">
+        <input type="email" name="email_address" placeholder="Email address" required>
+        <button type="submit">Yes, send me the details</button>
+      </form>
+      <p class="form-note">No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">Wise Women Use AI</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/resources">Free resources</a></li>
+      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
