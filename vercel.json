@@ -3,6 +3,7 @@
     { "src": "/emails",    "dest": "/emails.html" },
     { "src": "/guide",     "dest": "/guide.html" },
     { "src": "/switch",    "dest": "/switch.html" },
+    { "src": "/starter",   "dest": "/starter.html" },
     { "src": "/community", "dest": "/community.html" },
     { "src": "/work",      "dest": "/work.html" },
     { "src": "/blog",      "dest": "/blog.html" },
