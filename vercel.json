@@ -1,9 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/thank-you", "destination": "/thank-you.html" },
-    { "source": "/switch-to-claude", "destination": "/switch-to-claude.html" },
-    { "source": "/switch", "destination": "/switch-to-claude.html" },
-    { "source": "/guide", "destination": "/guide.html" },
-    { "source": "/starter", "destination": "/starter.html" }
+  "routes": [
+    { "src": "/emails",    "dest": "/emails.html" },
+    { "src": "/guide",     "dest": "/guide.html" },
+    { "src": "/switch",    "dest": "/switch.html" },
+    { "src": "/community", "dest": "/community.html" },
+    { "src": "/resources", "dest": "/resources.html" },
+    { "src": "/voice",     "dest": "/voice.html" },
+    { "src": "/thankyou",  "dest": "/thankyou.html" },
+    { "src": "/dashboard", "dest": "/dashboard.html" }
   ]
 }

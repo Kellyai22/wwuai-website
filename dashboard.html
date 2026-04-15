@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WWUAI · Operations Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: #F0ECE8; font-family: -apple-system, 'Helvetica Neue', sans-serif; font-size: 14px; }
+    @keyframes fadeUp  { from { opacity:0; transform:translateY(11px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    @keyframes spin    { to { transform:rotate(360deg); } }
+    ::-webkit-scrollbar { height:4px; width:4px; }
+    ::-webkit-scrollbar-track { background:#EAE5DF; }
+    ::-webkit-scrollbar-thumb { background:#C4B5AD; border-radius:2px; }
+    .fade { opacity:0; animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // ── Snapshot data (update by asking Claude: "Update my operations dashboard") ──
+    const SNAPSHOT = {
+      fetched_at: "14 Apr 2026, 11:42am AEST",
+      week_label: "14 Apr 2026",
+      total_posts: 30,
+      scheduled: 30,
+      draft: 0,
+      blotato_count: 30,
+      platforms: { TikTok: 30, Instagram: 30, Facebook: 30 },
+      series: "Brain fog series · TH 01–30 · publishing from 15 Apr",
+    };
+
+    const S = {
+      complete: { label:"Complete",     bg:"#F0F5F1", border:"#C5DACC", dot:"#7A9E7E", text:"#4A7A54" },
+      pending:  { label:"Pending",      bg:"#F5F3F0", border:"#DDD8D2", dot:"#B0A89E", text:"#7A706A" },
+      issue:    { label:"Needs review", bg:"#FDF1EC", border:"#EDCABA", dot:"#C4714F", text:"#A84E2C" },
+    };
+
+    const DEPTS = [
+      {
+        name:"Content Machine", emoji:"✦", color:"#7A9E7E",
+        tasks:[
+          { agent:"Topic Scraper",   action:"Harvesting trending AI topics from TikTok & news feeds",      status:"complete", detail:"Topics queued in Content Engine" },
+          { agent:"Content Planner", action:"Selecting best topics and assigning content pillars",          status:"complete", detail:"7 topics chosen" },
+          { agent:"Brief Writer",    action:"Writing newsletter briefs in Kelly's voice",                   status:"complete", detail:"Briefs published to Substack" },
+          { agent:"Content Factory", action:"Generating posts across TikTok, Instagram & Facebook",         status:"complete", detail:`${SNAPSHOT.total_posts} posts created · Brain fog series TH 01–30` },
+          { agent:"Quality Gate",    action:"Checking tone, hooks, facts & brand voice on every post",      status:"complete", detail:"All 30 posts passed · no flags this week" },
+          { agent:"Video Producer",  action:"Rendering branded Remotion reels for the week",                status:"pending",  detail:"Awaiting approval to render" },
+          { agent:"Publisher",       action:"Scheduling approved posts via Blotato",                        status:"complete", detail:`${SNAPSHOT.blotato_count} posts have Blotato IDs · publishing from 15 Apr` },
+        ],
+      },
+      {
+        name:"Lead Magnets", emoji:"◈", color:"#B8956A",
+        tasks:[
+          { agent:"ManyChat",          action:"Routing WISE & NEWSLETTER keyword triggers",                status:"complete", detail:"Flows active on Instagram" },
+          { agent:"Kit Sequence",      action:"Running 5-email nurture sequence for new leads",            status:"complete", detail:"Sequence live" },
+          { agent:"Claude Clearly",    action:"Delivering guide via landing page downloads",               status:"complete", detail:"guide.html live" },
+          { agent:"Switch to Claude",  action:"Directing traffic from social to lead magnet",              status:"complete", detail:"switch.html live" },
+          { agent:"Sound Like You",    action:"Delivering voice guide via TikTok VOICE keyword trigger",  status:"pending",  detail:"TikTok → ManyChat connection in progress" },
+        ],
+      },
+      {
+        name:"Skool Community", emoji:"◉", color:"#8A9BB8",
+        tasks:[
+          { agent:"Daily Post Agent",  action:"Scheduling community post for 8am AEST",                   status:"pending",  detail:"Skool posts not in this week's pack" },
+          { agent:"Claude Classroom",  action:"Hosting Claude Code mini course for members",              status:"complete", detail:"6-lesson course live" },
+          { agent:"Onboarding",        action:"Welcoming and orienting new Skool members",                 status:"complete", detail:"Active" },
+          { agent:"Carousel Renamer",  action:"Resetting Canva template names after each publish run",     status:"complete", detail:"Templates renamed" },
+        ],
+      },
+      {
+        name:"Consulting", emoji:"◇", color:"#B87A8A",
+        tasks:[
+          { agent:"Farmhouse Ads",    action:"Managing Google Ads for Farmhouse Trading",                  status:"complete", detail:"RSA asset pack delivered" },
+          { agent:"Pinterest Agent",  action:"Building n8n automation for Pinterest publishing",           status:"pending",  detail:"Planning phase" },
+          { agent:"DWY Scoping",      action:"Following up done-with-you discovery call",                  status:"issue",    detail:"Awaiting client response" },
+        ],
+      },
+    ];
+
+    function useCount(target, delay) {
+      const [n, setN] = useState(0);
+      useEffect(() => {
+        if (!target) return;
+        let v = 0;
+        const step = Math.max(1, Math.ceil(target / 22));
+        const t = setTimeout(() => {
+          const iv = setInterval(() => {
+            v = Math.min(v + step, target);
+            setN(v);
+            if (v >= target) clearInterval(iv);
+          }, 40);
+          return () => clearInterval(iv);
+        }, delay);
+        return () => clearTimeout(t);
+      }, [target, delay]);
+      return n;
+    }
+
+    function StatCard({ value, label, delay, accent }) {
+      const n = useCount(value, delay);
+      return (
+        <div className="fade" style={{
+          background: accent ? "#5E534B" : "#FFFCFA",
+          border: `1px solid ${accent ? "#7A6D65" : "#EAE5DF"}`,
+          borderRadius: 4, padding: "22px 26px", flex: 1, minWidth: 110,
+          animationDelay: `${delay}ms`,
+        }}>
+          <div style={{ fontFamily:"Georgia,serif", fontSize:44, fontWeight:300, color: accent ? "#FFFCFA" : "#5E534B", lineHeight:1 }}>{n}</div>
+          <div style={{ fontSize:10, letterSpacing:"0.14em", textTransform:"uppercase", color: accent ? "#C4714F" : "#968880", marginTop:6, fontWeight:500 }}>{label}</div>
+        </div>
+      );
+    }
+
+    function AgentCard({ task, i }) {
+      const cfg = S[task.status];
+      return (
+        <div className="fade" style={{
+          background: cfg.bg, border:`1px solid ${cfg.border}`, borderRadius:4, padding:"13px 15px",
+          animationDelay: `${i * 50 + 140}ms`,
+        }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:8, marginBottom:5 }}>
+            <span style={{ fontSize:12, fontWeight:600, color:"#5E534B" }}>{task.agent}</span>
+            <span style={{
+              fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 8px",
+              borderRadius:20, background:"rgba(255,255,255,0.75)", color:cfg.text, fontWeight:700,
+              border:`1px solid ${cfg.border}`, flexShrink:0, display:"flex", alignItems:"center", gap:4,
+            }}>
+              <span style={{ width:5, height:5, borderRadius:"50%", background:cfg.dot, display:"inline-block" }} />
+              {cfg.label}
+            </span>
+          </div>
+          <div style={{ fontSize:12, color:"#5E534B", lineHeight:1.5, marginBottom:5, opacity:0.7 }}>{task.action}</div>
+          <div style={{ fontSize:11, color:cfg.text, fontWeight:600 }}>{task.detail}</div>
+        </div>
+      );
+    }
+
+    function DeptCol({ dept, delay }) {
+      const done  = dept.tasks.filter(t => t.status === "complete").length;
+      const flags = dept.tasks.filter(t => t.status === "issue").length;
+      const pct   = Math.round((done / dept.tasks.length) * 100);
+      return (
+        <div className="fade" style={{
+          background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4,
+          overflow:"hidden", display:"flex", flexDirection:"column", minWidth:240, flex:1,
+          animationDelay: `${delay}ms`,
+        }}>
+          <div style={{ padding:"15px 17px 13px", borderBottom:"1px solid #EAE5DF" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:10 }}>
+              <span style={{ color:dept.color, fontSize:13 }}>{dept.emoji}</span>
+              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#5E534B" }}>{dept.name}</span>
+              {flags > 0 && (
+                <span style={{ marginLeft:"auto", fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 7px", borderRadius:20, background:"#FDF1EC", color:"#A84E2C", fontWeight:700, border:"1px solid #EDCABA" }}>
+                  {flags} flag
+                </span>
+              )}
+            </div>
+            <div style={{ height:3, background:"#EAE5DF", borderRadius:2, overflow:"hidden" }}>
+              <div style={{ height:"100%", width:`${pct}%`, background:dept.color, borderRadius:2, transition:"width 1.2s ease" }} />
+            </div>
+            <div style={{ fontSize:10, color:"#968880", marginTop:4 }}>{done} of {dept.tasks.length} complete</div>
+          </div>
+          <div style={{ padding:10, display:"flex", flexDirection:"column", gap:7, flex:1 }}>
+            {dept.tasks.map((t, i) => <AgentCard key={i} task={t} i={i} />)}
+          </div>
+        </div>
+      );
+    }
+
+    function Dashboard() {
+      const dateStr = new Date().toLocaleDateString("en-AU", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+      const totalRunning = DEPTS.flatMap(d => d.tasks).filter(t => t.status !== "pending").length;
+      const platforms = Object.entries(SNAPSHOT.platforms).filter(([,v]) => v > 0);
+
+      const stats = [
+        { value:4,                    label:"Departments",    accent:false },
+        { value:SNAPSHOT.total_posts, label:"Posts this week", accent:true  },
+        { value:SNAPSHOT.scheduled,   label:"Scheduled",      accent:false },
+        { value:totalRunning,         label:"Agents running", accent:false },
+      ];
+
+      return (
+        <div style={{ minHeight:"100vh", background:"#F0ECE8" }}>
+
+          {/* Header */}
+          <div style={{ background:"#5E534B", padding:"13px 30px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:16 }}>
+              <img
+                src="https://wisewomenuseai.com/assets/logos/WWUAI_Logo_Dark.png"
+                alt="Wise Women Use AI"
+                style={{ height:44, width:"auto", objectFit:"contain" }}
+                onError={e => { e.target.style.display = "none"; }}
+              />
+              <div style={{ width:1, height:32, background:"rgba(255,255,255,0.12)" }} />
+              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#FFFCFA", letterSpacing:"0.03em", opacity:0.9 }}>
+                Operations Dashboard
+              </span>
+            </div>
+            <div style={{ textAlign:"right" }}>
+              <div style={{ fontSize:11, color:"#968880" }}>{dateStr}</div>
+              <div style={{ fontSize:11, color:"#7A9E7E", marginTop:3, display:"flex", alignItems:"center", justifyContent:"flex-end", gap:5 }}>
+                <span style={{ width:6, height:6, borderRadius:"50%", background:"#7A9E7E", display:"inline-block", animation:"pulse 2.5s infinite" }} />
+                Notion snapshot · {SNAPSHOT.fetched_at}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ padding:"26px 26px 48px" }}>
+
+            {/* Stats */}
+            <div style={{ display:"flex", gap:12, marginBottom:18, flexWrap:"wrap" }}>
+              {stats.map((s,i) => <StatCard key={i} {...s} delay={80 + i*70} />)}
+            </div>
+
+            {/* Platform pills + series note */}
+            <div style={{ display:"flex", gap:8, marginBottom:26, flexWrap:"wrap" }}>
+              {platforms.map(([name,count],i) => (
+                <div key={name} className="fade" style={{ background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", gap:8, animationDelay:`${320+i*50}ms` }}>
+                  <span style={{ fontSize:10, letterSpacing:"0.12em", textTransform:"uppercase", color:"#968880", fontWeight:500 }}>{name}</span>
+                  <span style={{ fontFamily:"Georgia,serif", fontSize:20, color:"#5E534B", fontWeight:300 }}>{count}</span>
+                </div>
+              ))}
+              <div className="fade" style={{ background:"#FAF8F6", border:"1px dashed #DDD8D2", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", animationDelay:"500ms" }}>
+                <span style={{ fontSize:10, color:"#B0A89E", letterSpacing:"0.06em" }}>{SNAPSHOT.series}</span>
+              </div>
+            </div>
+
+            {/* Board label */}
+            <div className="fade" style={{ display:"flex", alignItems:"center", gap:12, marginBottom:14, animationDelay:"360ms" }}>
+              <span style={{ fontSize:10, letterSpacing:"0.2em", textTransform:"uppercase", color:"#968880", fontWeight:500 }}>Department Work Board</span>
+              <div style={{ flex:1, height:1, background:"#DDD8D2" }} />
+              <span style={{ fontSize:10, color:"#968880" }}>Week of {SNAPSHOT.week_label}</span>
+            </div>
+
+            {/* Columns */}
+            <div style={{ display:"flex", gap:12, overflowX:"auto", alignItems:"flex-start", paddingBottom:6 }}>
+              {DEPTS.map((d,i) => <DeptCol key={i} dept={d} delay={420+i*80} />)}
+            </div>
+
+            {/* Footer */}
+            <div className="fade" style={{ marginTop:28, display:"flex", alignItems:"center", justifyContent:"center", gap:10, animationDelay:"900ms" }}>
+              <div style={{ height:1, width:60, background:"#DDD8D2" }} />
+              <span style={{ fontSize:12, color:"#B0A89E", fontFamily:"Georgia,serif", fontStyle:"italic" }}>
+                To refresh live data, ask Claude: "Update my operations dashboard"
+              </span>
+              <div style={{ height:1, width:60, background:"#DDD8D2" }} />
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<Dashboard />);
+  </script>
+</body>
+</html>
