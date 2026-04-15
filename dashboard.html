@@ -10,28 +10,37 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; background: #F0ECE8; font-family: -apple-system, 'Helvetica Neue', sans-serif; font-size: 14px; }
-    @keyframes fadeUp  { from { opacity:0; transform:translateY(11px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    @keyframes spin    { to { transform:rotate(360deg); } }
+    @keyframes fadeUp    { from { opacity:0; transform:translateY(11px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse     { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
     ::-webkit-scrollbar { height:4px; width:4px; }
     ::-webkit-scrollbar-track { background:#EAE5DF; }
     ::-webkit-scrollbar-thumb { background:#C4B5AD; border-radius:2px; }
     .fade { opacity:0; animation: fadeUp 0.5s ease both; }
+    .todo-input { width:100%; border:1px solid #EAE5DF; background:#FFFCFA; border-radius:4px; padding:8px 12px; font-size:13px; color:#5E534B; outline:none; font-family:inherit; transition:border 0.15s; }
+    .todo-input:focus { border-color:#C4B5AD; }
+    .todo-input::placeholder { color:#C4B5AD; }
+    .todo-row { display:flex; align-items:flex-start; gap:10px; padding:9px 14px; border-bottom:1px solid #F8F5F2; }
+    .todo-row:hover .del-btn { opacity:1; }
+    .del-btn { opacity:0; background:none; border:none; cursor:pointer; color:#C4714F; font-size:16px; padding:0 4px; flex-shrink:0; line-height:1; transition:opacity 0.15s; }
+    .add-btn { background:#5E534B; color:#FFFCFA; border:none; border-radius:4px; padding:7px 14px; font-size:11px; cursor:pointer; letter-spacing:0.08em; font-family:inherit; flex-shrink:0; }
+    .add-btn:hover { background:#4A4039; }
+    .dismiss-btn { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.65); border-radius:4px; padding:4px 11px; font-size:11px; cursor:pointer; font-family:inherit; }
+    .dismiss-btn:hover { background:rgba(255,255,255,0.18); }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
   <script type="text/babel">
-    const { useState, useEffect } = React;
+    const { useState, useEffect, useRef } = React;
 
-    // ── Snapshot data (update by asking Claude: "Update my operations dashboard") ──
+    // ── Notion snapshot ──────────────────────────────────────────────────
     const SNAPSHOT = {
       fetched_at: "14 Apr 2026, 11:42am AEST",
       week_label: "14 Apr 2026",
       total_posts: 30,
       scheduled: 30,
-      draft: 0,
       blotato_count: 30,
       platforms: { TikTok: 30, Instagram: 30, Facebook: 30 },
       series: "Brain fog series · TH 01–30 · publishing from 15 Apr",
@@ -44,45 +53,41 @@
     };
 
     const DEPTS = [
-      {
-        name:"Content Machine", emoji:"✦", color:"#7A9E7E",
-        tasks:[
-          { agent:"Topic Scraper",   action:"Harvesting trending AI topics from TikTok & news feeds",      status:"complete", detail:"Topics queued in Content Engine" },
-          { agent:"Content Planner", action:"Selecting best topics and assigning content pillars",          status:"complete", detail:"7 topics chosen" },
-          { agent:"Brief Writer",    action:"Writing newsletter briefs in Kelly's voice",                   status:"complete", detail:"Briefs published to Substack" },
-          { agent:"Content Factory", action:"Generating posts across TikTok, Instagram & Facebook",         status:"complete", detail:`${SNAPSHOT.total_posts} posts created · Brain fog series TH 01–30` },
-          { agent:"Quality Gate",    action:"Checking tone, hooks, facts & brand voice on every post",      status:"complete", detail:"All 30 posts passed · no flags this week" },
-          { agent:"Video Producer",  action:"Rendering branded Remotion reels for the week",                status:"pending",  detail:"Awaiting approval to render" },
-          { agent:"Publisher",       action:"Scheduling approved posts via Blotato",                        status:"complete", detail:`${SNAPSHOT.blotato_count} posts have Blotato IDs · publishing from 15 Apr` },
-        ],
-      },
-      {
-        name:"Lead Magnets", emoji:"◈", color:"#B8956A",
-        tasks:[
-          { agent:"ManyChat",          action:"Routing WISE & NEWSLETTER keyword triggers",                status:"complete", detail:"Flows active on Instagram" },
-          { agent:"Kit Sequence",      action:"Running 5-email nurture sequence for new leads",            status:"complete", detail:"Sequence live" },
-          { agent:"Claude Clearly",    action:"Delivering guide via landing page downloads",               status:"complete", detail:"guide.html live" },
-          { agent:"Switch to Claude",  action:"Directing traffic from social to lead magnet",              status:"complete", detail:"switch.html live" },
-          { agent:"Sound Like You",    action:"Delivering voice guide via TikTok VOICE keyword trigger",  status:"pending",  detail:"TikTok → ManyChat connection in progress" },
-        ],
-      },
-      {
-        name:"Skool Community", emoji:"◉", color:"#8A9BB8",
-        tasks:[
-          { agent:"Daily Post Agent",  action:"Scheduling community post for 8am AEST",                   status:"pending",  detail:"Skool posts not in this week's pack" },
-          { agent:"Claude Classroom",  action:"Hosting Claude Code mini course for members",              status:"complete", detail:"6-lesson course live" },
-          { agent:"Onboarding",        action:"Welcoming and orienting new Skool members",                 status:"complete", detail:"Active" },
-          { agent:"Carousel Renamer",  action:"Resetting Canva template names after each publish run",     status:"complete", detail:"Templates renamed" },
-        ],
-      },
-      {
-        name:"Consulting", emoji:"◇", color:"#B87A8A",
-        tasks:[
-          { agent:"Farmhouse Ads",    action:"Managing Google Ads for Farmhouse Trading",                  status:"complete", detail:"RSA asset pack delivered" },
-          { agent:"Pinterest Agent",  action:"Building n8n automation for Pinterest publishing",           status:"pending",  detail:"Planning phase" },
-          { agent:"DWY Scoping",      action:"Following up done-with-you discovery call",                  status:"issue",    detail:"Awaiting client response" },
-        ],
-      },
+      { name:"Content Machine", emoji:"✦", color:"#7A9E7E", tasks:[
+        { agent:"Topic Scraper",   action:"Harvesting trending AI topics from TikTok & news feeds",     status:"complete", detail:"Topics queued in Content Engine" },
+        { agent:"Content Planner", action:"Selecting best topics and assigning content pillars",         status:"complete", detail:"7 topics chosen" },
+        { agent:"Brief Writer",    action:"Writing newsletter briefs in Kelly's voice",                  status:"complete", detail:"Briefs published to Substack" },
+        { agent:"Content Factory", action:"Generating posts across TikTok, Instagram & Facebook",        status:"complete", detail:"30 posts created · Brain fog series TH 01–30" },
+        { agent:"Quality Gate",    action:"Checking tone, hooks, facts & brand voice on every post",    status:"complete", detail:"All 30 posts passed · no flags this week" },
+        { agent:"Video Producer",  action:"Rendering branded Remotion reels for the week",              status:"pending",  detail:"Awaiting approval to render" },
+        { agent:"Publisher",       action:"Scheduling approved posts via Blotato",                      status:"complete", detail:"30 posts have Blotato IDs · from 15 Apr" },
+      ]},
+      { name:"Lead Magnets", emoji:"◈", color:"#B8956A", tasks:[
+        { agent:"ManyChat",         action:"Routing WISE & NEWSLETTER keyword triggers",                status:"complete", detail:"Flows active on Instagram" },
+        { agent:"Kit Sequence",     action:"Running 5-email nurture sequence for new leads",            status:"complete", detail:"Sequence live" },
+        { agent:"Claude Clearly",   action:"Delivering guide via landing page downloads",               status:"complete", detail:"guide.html live" },
+        { agent:"Switch to Claude", action:"Directing traffic from social to lead magnet",              status:"complete", detail:"switch.html live" },
+        { agent:"Sound Like You",   action:"Delivering voice guide via TikTok VOICE keyword trigger",  status:"pending",  detail:"TikTok → ManyChat connection in progress" },
+      ]},
+      { name:"Skool Community", emoji:"◉", color:"#8A9BB8", tasks:[
+        { agent:"Daily Post Agent",  action:"Scheduling community post for 8am AEST",                  status:"pending",  detail:"Skool posts not in this week's pack" },
+        { agent:"Claude Classroom",  action:"Hosting Claude Code mini course for members",             status:"complete", detail:"6-lesson course live" },
+        { agent:"Onboarding",        action:"Welcoming and orienting new Skool members",                status:"complete", detail:"Active" },
+        { agent:"Carousel Renamer",  action:"Resetting Canva template names after each publish run",    status:"complete", detail:"Templates renamed" },
+      ]},
+      { name:"Consulting", emoji:"◇", color:"#B87A8A", tasks:[
+        { agent:"Farmhouse Ads",   action:"Managing Google Ads for Farmhouse Trading",                  status:"complete", detail:"RSA asset pack delivered" },
+        { agent:"Pinterest Agent", action:"Building n8n automation for Pinterest publishing",           status:"pending",  detail:"Planning phase" },
+        { agent:"DWY Scoping",     action:"Following up done-with-you discovery call",                  status:"issue",    detail:"Awaiting client response" },
+      ]},
+    ];
+
+    const MONDAY_ITEMS = [
+      "Copy this week's Substack newsletter",
+      "Format as a blog post on wisewomenuseai.com",
+      "Add SEO title, meta description and tags",
+      "Publish and share the link in Skool community",
+      "Ask Claude: \"Update my operations dashboard\"",
     ];
 
     function useCount(target, delay) {
@@ -92,11 +97,7 @@
         let v = 0;
         const step = Math.max(1, Math.ceil(target / 22));
         const t = setTimeout(() => {
-          const iv = setInterval(() => {
-            v = Math.min(v + step, target);
-            setN(v);
-            if (v >= target) clearInterval(iv);
-          }, 40);
+          const iv = setInterval(() => { v = Math.min(v + step, target); setN(v); if (v >= target) clearInterval(iv); }, 40);
           return () => clearInterval(iv);
         }, delay);
         return () => clearTimeout(t);
@@ -104,17 +105,126 @@
       return n;
     }
 
+    // ── Monday Banner ────────────────────────────────────────────────────
+    function MondayBanner({ onDismiss }) {
+      const [checks, setChecks] = useState(() => {
+        try { return JSON.parse(localStorage.getItem('wwuai_monday_checks') || '[]'); } catch { return []; }
+      });
+
+      const toggle = (i) => {
+        const next = checks.includes(i) ? checks.filter(x => x !== i) : [...checks, i];
+        setChecks(next);
+        try { localStorage.setItem('wwuai_monday_checks', JSON.stringify(next)); } catch {}
+      };
+
+      const allDone = checks.length === MONDAY_ITEMS.length;
+
+      return (
+        <div style={{ background:"#5E534B", borderRadius:4, padding:"18px 22px", marginBottom:22, animation:"slideDown 0.45s ease both" }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:14 }}>
+            <div>
+              <div style={{ fontSize:9, letterSpacing:"0.25em", textTransform:"uppercase", color:"#C4714F", marginBottom:3, fontWeight:600 }}>Monday morning</div>
+              <div style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#FFFCFA" }}>Publish Substack to Website Blog</div>
+            </div>
+            <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+              {allDone && <span style={{ fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"3px 10px", borderRadius:20, background:"#F0F5F1", color:"#4A7A54", fontWeight:700 }}>All done ✓</span>}
+              <button className="dismiss-btn" onClick={onDismiss}>Dismiss</button>
+            </div>
+          </div>
+          <div style={{ display:"flex", flexDirection:"column", gap:9 }}>
+            {MONDAY_ITEMS.map((item, i) => (
+              <label key={i} onClick={() => toggle(i)} style={{ display:"flex", alignItems:"center", gap:10, cursor:"pointer" }}>
+                <div style={{ width:16, height:16, borderRadius:3, flexShrink:0, border: checks.includes(i) ? "none" : "1.5px solid rgba(255,255,255,0.28)", background: checks.includes(i) ? "#7A9E7E" : "transparent", display:"flex", alignItems:"center", justifyContent:"center", transition:"all 0.15s" }}>
+                  {checks.includes(i) && <span style={{ color:"#fff", fontSize:10, fontWeight:700, lineHeight:1 }}>✓</span>}
+                </div>
+                <span style={{ fontSize:12, color: checks.includes(i) ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.88)", textDecoration: checks.includes(i) ? "line-through" : "none", transition:"all 0.15s" }}>{item}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // ── To-do List ───────────────────────────────────────────────────────
+    function TodoList() {
+      const [todos, setTodos] = useState(() => {
+        try { return JSON.parse(localStorage.getItem('wwuai_todos') || '[]'); } catch { return []; }
+      });
+      const [input, setInput] = useState("");
+      const inputRef = useRef();
+
+      const persist = (next) => { setTodos(next); try { localStorage.setItem('wwuai_todos', JSON.stringify(next)); } catch {} };
+      const add = () => {
+        const text = input.trim();
+        if (!text) return;
+        persist([...todos, { id: Date.now(), text, done: false }]);
+        setInput("");
+        inputRef.current?.focus();
+      };
+      const toggle = (id) => persist(todos.map(t => t.id === id ? { ...t, done: !t.done } : t));
+      const remove = (id) => persist(todos.filter(t => t.id !== id));
+      const clearDone = () => persist(todos.filter(t => !t.done));
+
+      const active = todos.filter(t => !t.done);
+      const done   = todos.filter(t => t.done);
+
+      return (
+        <div className="fade" style={{ background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4, overflow:"hidden", animationDelay:"320ms" }}>
+          <div style={{ padding:"14px 17px 12px", borderBottom:"1px solid #EAE5DF", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+              <span style={{ color:"#C4714F" }}>◎</span>
+              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#5E534B" }}>To-do</span>
+              {active.length > 0 && <span style={{ fontSize:9, background:"#EAE5DF", color:"#5E534B", padding:"2px 7px", borderRadius:20, fontWeight:700, letterSpacing:"0.06em" }}>{active.length}</span>}
+            </div>
+            {done.length > 0 && <button onClick={clearDone} style={{ background:"none", border:"none", fontSize:10, color:"#968880", cursor:"pointer", letterSpacing:"0.08em", textTransform:"uppercase", fontFamily:"inherit" }}>Clear done</button>}
+          </div>
+
+          <div style={{ padding:"10px 12px", borderBottom:"1px solid #F5F1EE", display:"flex", gap:8 }}>
+            <input
+              ref={inputRef}
+              className="todo-input"
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => e.key === "Enter" && add()}
+              placeholder="Add a task, press Enter…"
+            />
+            <button className="add-btn" onClick={add}>Add</button>
+          </div>
+
+          <div style={{ maxHeight:300, overflowY:"auto" }}>
+            {todos.length === 0 && (
+              <div style={{ padding:"22px 16px", fontSize:12, color:"#C4B5AD", fontFamily:"Georgia,serif", fontStyle:"italic", textAlign:"center" }}>
+                Nothing here yet
+              </div>
+            )}
+            {active.map(t => (
+              <div key={t.id} className="todo-row">
+                <div onClick={() => toggle(t.id)} style={{ width:15, height:15, borderRadius:3, border:"1.5px solid #C4B5AD", flexShrink:0, cursor:"pointer", marginTop:1, transition:"all 0.15s" }} />
+                <span style={{ flex:1, fontSize:13, color:"#5E534B", lineHeight:1.45 }}>{t.text}</span>
+                <button className="del-btn" onClick={() => remove(t.id)}>×</button>
+              </div>
+            ))}
+            {done.map(t => (
+              <div key={t.id} className="todo-row" style={{ opacity:0.48 }}>
+                <div onClick={() => toggle(t.id)} style={{ width:15, height:15, borderRadius:3, flexShrink:0, background:"#7A9E7E", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", marginTop:1 }}>
+                  <span style={{ color:"#fff", fontSize:9, fontWeight:700 }}>✓</span>
+                </div>
+                <span style={{ flex:1, fontSize:13, color:"#968880", textDecoration:"line-through", lineHeight:1.45 }}>{t.text}</span>
+                <button className="del-btn" onClick={() => remove(t.id)}>×</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // ── Stat + Agent + Dept ──────────────────────────────────────────────
     function StatCard({ value, label, delay, accent }) {
       const n = useCount(value, delay);
       return (
-        <div className="fade" style={{
-          background: accent ? "#5E534B" : "#FFFCFA",
-          border: `1px solid ${accent ? "#7A6D65" : "#EAE5DF"}`,
-          borderRadius: 4, padding: "22px 26px", flex: 1, minWidth: 110,
-          animationDelay: `${delay}ms`,
-        }}>
-          <div style={{ fontFamily:"Georgia,serif", fontSize:44, fontWeight:300, color: accent ? "#FFFCFA" : "#5E534B", lineHeight:1 }}>{n}</div>
-          <div style={{ fontSize:10, letterSpacing:"0.14em", textTransform:"uppercase", color: accent ? "#C4714F" : "#968880", marginTop:6, fontWeight:500 }}>{label}</div>
+        <div className="fade" style={{ background: accent?"#5E534B":"#FFFCFA", border:`1px solid ${accent?"#7A6D65":"#EAE5DF"}`, borderRadius:4, padding:"22px 26px", flex:1, minWidth:110, animationDelay:`${delay}ms` }}>
+          <div style={{ fontFamily:"Georgia,serif", fontSize:44, fontWeight:300, color: accent?"#FFFCFA":"#5E534B", lineHeight:1 }}>{n}</div>
+          <div style={{ fontSize:10, letterSpacing:"0.14em", textTransform:"uppercase", color: accent?"#C4714F":"#968880", marginTop:6, fontWeight:500 }}>{label}</div>
         </div>
       );
     }
@@ -122,17 +232,10 @@
     function AgentCard({ task, i }) {
       const cfg = S[task.status];
       return (
-        <div className="fade" style={{
-          background: cfg.bg, border:`1px solid ${cfg.border}`, borderRadius:4, padding:"13px 15px",
-          animationDelay: `${i * 50 + 140}ms`,
-        }}>
+        <div className="fade" style={{ background:cfg.bg, border:`1px solid ${cfg.border}`, borderRadius:4, padding:"13px 15px", animationDelay:`${i*50+140}ms` }}>
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:8, marginBottom:5 }}>
             <span style={{ fontSize:12, fontWeight:600, color:"#5E534B" }}>{task.agent}</span>
-            <span style={{
-              fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 8px",
-              borderRadius:20, background:"rgba(255,255,255,0.75)", color:cfg.text, fontWeight:700,
-              border:`1px solid ${cfg.border}`, flexShrink:0, display:"flex", alignItems:"center", gap:4,
-            }}>
+            <span style={{ fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 8px", borderRadius:20, background:"rgba(255,255,255,0.75)", color:cfg.text, fontWeight:700, border:`1px solid ${cfg.border}`, flexShrink:0, display:"flex", alignItems:"center", gap:4 }}>
               <span style={{ width:5, height:5, borderRadius:"50%", background:cfg.dot, display:"inline-block" }} />
               {cfg.label}
             </span>
@@ -148,61 +251,59 @@
       const flags = dept.tasks.filter(t => t.status === "issue").length;
       const pct   = Math.round((done / dept.tasks.length) * 100);
       return (
-        <div className="fade" style={{
-          background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4,
-          overflow:"hidden", display:"flex", flexDirection:"column", minWidth:240, flex:1,
-          animationDelay: `${delay}ms`,
-        }}>
-          <div style={{ padding:"15px 17px 13px", borderBottom:"1px solid #EAE5DF" }}>
+        <div className="fade" style={{ background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4, overflow:"hidden", display:"flex", flexDirection:"column", minWidth:230, flex:1, animationDelay:`${delay}ms` }}>
+          <div style={{ padding:"14px 16px 12px", borderBottom:"1px solid #EAE5DF" }}>
             <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:10 }}>
               <span style={{ color:dept.color, fontSize:13 }}>{dept.emoji}</span>
-              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#5E534B" }}>{dept.name}</span>
-              {flags > 0 && (
-                <span style={{ marginLeft:"auto", fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 7px", borderRadius:20, background:"#FDF1EC", color:"#A84E2C", fontWeight:700, border:"1px solid #EDCABA" }}>
-                  {flags} flag
-                </span>
-              )}
+              <span style={{ fontFamily:"Georgia,serif", fontSize:16, color:"#5E534B" }}>{dept.name}</span>
+              {flags > 0 && <span style={{ marginLeft:"auto", fontSize:9, letterSpacing:"0.1em", textTransform:"uppercase", padding:"2px 7px", borderRadius:20, background:"#FDF1EC", color:"#A84E2C", fontWeight:700, border:"1px solid #EDCABA" }}>{flags} flag</span>}
             </div>
             <div style={{ height:3, background:"#EAE5DF", borderRadius:2, overflow:"hidden" }}>
               <div style={{ height:"100%", width:`${pct}%`, background:dept.color, borderRadius:2, transition:"width 1.2s ease" }} />
             </div>
             <div style={{ fontSize:10, color:"#968880", marginTop:4 }}>{done} of {dept.tasks.length} complete</div>
           </div>
-          <div style={{ padding:10, display:"flex", flexDirection:"column", gap:7, flex:1 }}>
+          <div style={{ padding:9, display:"flex", flexDirection:"column", gap:7, flex:1 }}>
             {dept.tasks.map((t, i) => <AgentCard key={i} task={t} i={i} />)}
           </div>
         </div>
       );
     }
 
-    function Dashboard() {
+    // ── App ──────────────────────────────────────────────────────────────
+    function App() {
+      const [showMonday, setShowMonday] = useState(() => {
+        const isMonday = new Date().getDay() === 1;
+        if (!isMonday) return false;
+        try {
+          const dismissed = localStorage.getItem('wwuai_monday_dismissed');
+          return dismissed !== new Date().toDateString();
+        } catch { return true; }
+      });
+
+      const dismissMonday = () => {
+        try { localStorage.setItem('wwuai_monday_dismissed', new Date().toDateString()); } catch {}
+        setShowMonday(false);
+      };
+
       const dateStr = new Date().toLocaleDateString("en-AU", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
       const totalRunning = DEPTS.flatMap(d => d.tasks).filter(t => t.status !== "pending").length;
       const platforms = Object.entries(SNAPSHOT.platforms).filter(([,v]) => v > 0);
-
       const stats = [
-        { value:4,                    label:"Departments",    accent:false },
+        { value:4,                    label:"Departments",     accent:false },
         { value:SNAPSHOT.total_posts, label:"Posts this week", accent:true  },
-        { value:SNAPSHOT.scheduled,   label:"Scheduled",      accent:false },
-        { value:totalRunning,         label:"Agents running", accent:false },
+        { value:SNAPSHOT.scheduled,   label:"Scheduled",       accent:false },
+        { value:totalRunning,         label:"Agents running",  accent:false },
       ];
 
       return (
         <div style={{ minHeight:"100vh", background:"#F0ECE8" }}>
 
-          {/* Header */}
-          <div style={{ background:"#5E534B", padding:"13px 30px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+          <div style={{ background:"#5E534B", padding:"13px 28px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
             <div style={{ display:"flex", alignItems:"center", gap:16 }}>
-              <img
-                src="https://wisewomenuseai.com/assets/logos/WWUAI_Logo_Dark.png"
-                alt="Wise Women Use AI"
-                style={{ height:44, width:"auto", objectFit:"contain" }}
-                onError={e => { e.target.style.display = "none"; }}
-              />
+              <img src="https://wisewomenuseai.com/assets/logos/WWUAI_Logo_Dark.png" alt="WWUAI" style={{ height:44, width:"auto", objectFit:"contain" }} onError={e => { e.target.style.display="none"; }} />
               <div style={{ width:1, height:32, background:"rgba(255,255,255,0.12)" }} />
-              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#FFFCFA", letterSpacing:"0.03em", opacity:0.9 }}>
-                Operations Dashboard
-              </span>
+              <span style={{ fontFamily:"Georgia,serif", fontSize:17, color:"#FFFCFA", letterSpacing:"0.03em", opacity:0.9 }}>Operations Dashboard</span>
             </div>
             <div style={{ textAlign:"right" }}>
               <div style={{ fontSize:11, color:"#968880" }}>{dateStr}</div>
@@ -213,45 +314,53 @@
             </div>
           </div>
 
-          <div style={{ padding:"26px 26px 48px" }}>
+          <div style={{ padding:"24px 26px 48px" }}>
 
-            {/* Stats */}
+            {showMonday && <MondayBanner onDismiss={dismissMonday} />}
+
             <div style={{ display:"flex", gap:12, marginBottom:18, flexWrap:"wrap" }}>
-              {stats.map((s,i) => <StatCard key={i} {...s} delay={80 + i*70} />)}
+              {stats.map((s,i) => <StatCard key={i} {...s} delay={80+i*70} />)}
             </div>
 
-            {/* Platform pills + series note */}
-            <div style={{ display:"flex", gap:8, marginBottom:26, flexWrap:"wrap" }}>
+            <div style={{ display:"flex", gap:8, marginBottom:24, flexWrap:"wrap" }}>
               {platforms.map(([name,count],i) => (
-                <div key={name} className="fade" style={{ background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", gap:8, animationDelay:`${320+i*50}ms` }}>
+                <div key={name} className="fade" style={{ background:"#FFFCFA", border:"1px solid #EAE5DF", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", gap:8, animationDelay:`${310+i*50}ms` }}>
                   <span style={{ fontSize:10, letterSpacing:"0.12em", textTransform:"uppercase", color:"#968880", fontWeight:500 }}>{name}</span>
                   <span style={{ fontFamily:"Georgia,serif", fontSize:20, color:"#5E534B", fontWeight:300 }}>{count}</span>
                 </div>
               ))}
-              <div className="fade" style={{ background:"#FAF8F6", border:"1px dashed #DDD8D2", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", animationDelay:"500ms" }}>
-                <span style={{ fontSize:10, color:"#B0A89E", letterSpacing:"0.06em" }}>{SNAPSHOT.series}</span>
+              <div className="fade" style={{ background:"#FAF8F6", border:"1px dashed #DDD8D2", borderRadius:4, padding:"7px 14px", display:"flex", alignItems:"center", animationDelay:"490ms" }}>
+                <span style={{ fontSize:10, color:"#B0A89E" }}>{SNAPSHOT.series}</span>
               </div>
             </div>
 
-            {/* Board label */}
-            <div className="fade" style={{ display:"flex", alignItems:"center", gap:12, marginBottom:14, animationDelay:"360ms" }}>
-              <span style={{ fontSize:10, letterSpacing:"0.2em", textTransform:"uppercase", color:"#968880", fontWeight:500 }}>Department Work Board</span>
-              <div style={{ flex:1, height:1, background:"#DDD8D2" }} />
-              <span style={{ fontSize:10, color:"#968880" }}>Week of {SNAPSHOT.week_label}</span>
+            <div style={{ display:"flex", gap:16, alignItems:"flex-start" }}>
+
+              <div style={{ width:272, flexShrink:0 }}>
+                <div className="fade" style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12, animationDelay:"290ms" }}>
+                  <span style={{ fontSize:10, letterSpacing:"0.2em", textTransform:"uppercase", color:"#968880", fontWeight:500, whiteSpace:"nowrap" }}>Quick tasks</span>
+                  <div style={{ flex:1, height:1, background:"#DDD8D2" }} />
+                </div>
+                <TodoList />
+              </div>
+
+              <div style={{ flex:1, minWidth:0 }}>
+                <div className="fade" style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12, animationDelay:"350ms" }}>
+                  <span style={{ fontSize:10, letterSpacing:"0.2em", textTransform:"uppercase", color:"#968880", fontWeight:500, whiteSpace:"nowrap" }}>Department Work Board</span>
+                  <div style={{ flex:1, height:1, background:"#DDD8D2" }} />
+                  <span style={{ fontSize:10, color:"#968880", whiteSpace:"nowrap" }}>Week of {SNAPSHOT.week_label}</span>
+                </div>
+                <div style={{ display:"flex", gap:11, overflowX:"auto", alignItems:"flex-start", paddingBottom:6 }}>
+                  {DEPTS.map((d,i) => <DeptCol key={i} dept={d} delay={410+i*80} />)}
+                </div>
+              </div>
+
             </div>
 
-            {/* Columns */}
-            <div style={{ display:"flex", gap:12, overflowX:"auto", alignItems:"flex-start", paddingBottom:6 }}>
-              {DEPTS.map((d,i) => <DeptCol key={i} dept={d} delay={420+i*80} />)}
-            </div>
-
-            {/* Footer */}
-            <div className="fade" style={{ marginTop:28, display:"flex", alignItems:"center", justifyContent:"center", gap:10, animationDelay:"900ms" }}>
-              <div style={{ height:1, width:60, background:"#DDD8D2" }} />
-              <span style={{ fontSize:12, color:"#B0A89E", fontFamily:"Georgia,serif", fontStyle:"italic" }}>
-                To refresh live data, ask Claude: "Update my operations dashboard"
-              </span>
-              <div style={{ height:1, width:60, background:"#DDD8D2" }} />
+            <div className="fade" style={{ marginTop:26, display:"flex", alignItems:"center", justifyContent:"center", gap:10, animationDelay:"900ms" }}>
+              <div style={{ height:1, width:56, background:"#DDD8D2" }} />
+              <span style={{ fontSize:12, color:"#B0A89E", fontFamily:"Georgia,serif", fontStyle:"italic" }}>To refresh live data, ask Claude: "Update my operations dashboard"</span>
+              <div style={{ height:1, width:56, background:"#DDD8D2" }} />
             </div>
 
           </div>
@@ -259,7 +368,7 @@
       );
     }
 
-    ReactDOM.createRoot(document.getElementById("root")).render(<Dashboard />);
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
   </script>
 </body>
 </html>
