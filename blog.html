@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Archive | Wise Women Use AI</title>
+  <meta name="description" content="Real talk about AI for women in business. Practical, honest, and always something you can use. The WWUAI newsletter archive.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Authentic Signature';
+      src: url('/assets/brand/Authentic_Signature.woff2') format('woff2'),
+           url('/assets/brand/Authentic_Signature.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg:          #FFFCFA;
+      --brown:       #5E534B;
+      --terracotta:  #C4714F;
+      --subtext:     #968880;
+      --cream-dark:  #EAE5DF;
+      --cream-mid:   #F2EDE7;
+      --cream-light: #F8F4F0;
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-ai {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .nav-ai .dot { color: var(--terracotta); }
+
+    .nav-wordmark {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      line-height: 1.3;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--terracotta); }
+
+    .btn-solid {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--brown);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-solid:hover { background: var(--terracotta); transform: translateY(-1px); }
+
+    /* ── Page header ── */
+    .page-header {
+      padding: 80px 48px 64px;
+      max-width: 840px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .page-header .eyebrow { display: block; margin-bottom: 24px; }
+
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--terracotta);
+    }
+
+    .page-header p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--subtext);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      padding: 24px 48px;
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      background: none;
+      border: 1px solid var(--cream-dark);
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--brown);
+      color: var(--white);
+      border-color: var(--brown);
+    }
+
+    /* ── Posts grid ── */
+    .posts-section {
+      padding: 0 48px 96px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* Featured post */
+    .post-featured {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .post-featured-meta { order: 1; }
+    .post-featured-content { order: 2; }
+
+    .post-date {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--subtext);
+      opacity: 0.7;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .post-pillar {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      border: 1px solid var(--terracotta);
+      padding: 3px 8px;
+      margin-bottom: 16px;
+    }
+
+    .post-featured h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .post-featured p {
+      font-size: 14px;
+      color: var(--subtext);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .post-featured-image {
+      background: var(--cream-light);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post-featured-image-placeholder {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      color: var(--cream-dark);
+    }
+
+    /* Post list */
+    .post-list {
+      list-style: none;
+    }
+
+    .post-item {
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .post-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+      padding: 32px 0;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+
+    .post-link:hover { opacity: 0.75; }
+
+    .post-link-meta { }
+
+    .post-link h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .post-link p {
+      font-size: 14px;
+      color: var(--subtext);
+      line-height: 1.65;
+    }
+
+    .post-link-right {
+      text-align: right;
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+
+    /* ── Subscribe strip ── */
+    .subscribe-strip {
+      background: var(--cream-light);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 64px 48px;
+      text-align: center;
+    }
+
+    .subscribe-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .subscribe-strip .eyebrow { display: block; margin-bottom: 16px; }
+
+    .subscribe-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .subscribe-strip h2 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .subscribe-strip p {
+      font-size: 14px;
+      color: var(--subtext);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .subscribe-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--brown);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .subscribe-link:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+    /* ── Empty state ── */
+    .empty-state {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .empty-state p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--subtext);
+      margin-bottom: 8px;
+    }
+
+    .empty-state span {
+      font-size: 13px;
+      color: var(--subtext);
+      opacity: 0.6;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+    .footer-link {
+      font-size: 12px;
+      color: var(--subtext);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-link:hover { color: var(--terracotta); }
+
+    .footer-legal { font-size: 11px; color: var(--subtext); opacity: 0.5; }
+
+    /* ── Reveal ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Read link ── */
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
+      text-decoration: none;
+      border-bottom: 1px solid var(--cream-dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .read-link:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-wordmark, .nav-link { display: none; }
+
+      .page-header { padding: 56px 24px 48px; }
+      .filter-bar { padding: 20px 24px; }
+      .posts-section { padding: 0 24px 64px; }
+      .post-featured { grid-template-columns: 1fr; gap: 24px; }
+      .post-featured-image { display: none; }
+      .post-link { grid-template-columns: 1fr; gap: 12px; }
+      .post-link-right { text-align: left; }
+      .subscribe-strip { padding: 48px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <span class="nav-ai">ai<span class="dot">.</span></span>
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link" style="color:var(--brown);">Newsletter</a>
+      <a href="/work" class="nav-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+    </div>
+  </nav>
+
+
+  <div class="page-header reveal">
+    <span class="eyebrow">The newsletter</span>
+    <h1>Practical AI.<br>No filler.<br><em>Every week.</em></h1>
+    <p>Real things I'm testing, building, and learning in my business. If it didn't work or wasn't worth your time, it doesn't get written about.</p>
+  </div>
+
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterPosts('all')">All</button>
+    <button class="filter-btn" onclick="filterPosts('claude-can-do-that')">Claude can do that</button>
+    <button class="filter-btn" onclick="filterPosts('try-this-now')">Try this now</button>
+    <button class="filter-btn" onclick="filterPosts('real-talk')">Real talk</button>
+    <button class="filter-btn" onclick="filterPosts('real-life')">Real life</button>
+  </div>
+
+
+  <div class="posts-section">
+
+    <!-- ================================================================
+         TO ADD A NEW POST:
+         Copy a <li class="post-item"> block below and update:
+         - data-pillar attribute (claude-can-do-that / try-this-now / real-talk / real-life)
+         - date
+         - pillar label text
+         - h3 title
+         - p excerpt
+         - href on the read-link (link to your Substack post URL)
+         ================================================================ -->
+
+    <!-- Empty state shown when no posts exist yet -->
+    <div class="empty-state" id="empty-state">
+      <p>The first issue is coming soon.</p>
+      <span>Subscribe below so you don't miss it.</span>
+    </div>
+
+    <ul class="post-list" id="post-list">
+
+      <!-- EXAMPLE POST — delete this and replace with real posts -->
+      <!--
+      <li class="post-item reveal" data-pillar="try-this-now">
+        <a href="https://wisewomenuseai.substack.com/your-post-slug" target="_blank" class="post-link">
+          <div class="post-link-meta">
+            <span class="post-date">15 April 2026</span>
+            <span class="post-pillar">Try this now</span>
+            <h3>The five-minute Claude setup that saves me two hours every week</h3>
+            <p>One thing, properly configured, that you can steal straight from my business. No prompt engineering required.</p>
+          </div>
+          <div class="post-link-right">
+            <span class="read-link">Read <span>&#8599;</span></span>
+          </div>
+        </a>
+      </li>
+      -->
+
+    </ul>
+  </div>
+
+
+  <!-- Subscribe strip -->
+  <div class="subscribe-strip">
+    <div class="subscribe-inner">
+      <span class="eyebrow">Don't miss an issue</span>
+      <h2>Get it straight to<br>your <em>inbox.</em></h2>
+      <p>New issues go out every week. Practical, honest, and always something you can actually use in your business.</p>
+      <a href="https://wisewomenuseai.substack.com" target="_blank" class="subscribe-link">Subscribe on Substack</a>
+    </div>
+  </div>
+
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <span class="nav-ai" style="font-size:20px;">ai<span class="dot">.</span></span>
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="footer-links">
+      <a href="/blog" class="footer-link">Newsletter</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+    </div>
+    <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+  </footer>
+
+
+  <script>
+    // Reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Pillar filter
+    function filterPosts(pillar) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const items = document.querySelectorAll('.post-item');
+      let visible = 0;
+      items.forEach(item => {
+        if (pillar === 'all' || item.dataset.pillar === pillar) {
+          item.style.display = '';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      document.getElementById('empty-state').style.display = (visible === 0) ? 'block' : 'none';
+    }
+
+    // Hide empty state if there are real posts
+    window.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.post-item');
+      if (items.length > 0) {
+        document.getElementById('empty-state').style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

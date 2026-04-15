@@ -4,7 +4,8 @@
     { "src": "/guide",     "dest": "/guide.html" },
     { "src": "/switch",    "dest": "/switch.html" },
     { "src": "/community", "dest": "/community.html" },
-    { "src": "/resources", "dest": "/resources.html" },
+    { "src": "/work",      "dest": "/work.html" },
+    { "src": "/blog",      "dest": "/blog.html" },
     { "src": "/voice",     "dest": "/voice.html" },
     { "src": "/thankyou",  "dest": "/thankyou.html" },
     { "src": "/dashboard", "dest": "/dashboard.html" }

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work With Me | Wise Women Use AI</title>
+  <meta name="description" content="Work directly with Kelly. One-to-one AI setup, systems building, and done-with-you support for women in business who are serious about making AI actually work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Authentic Signature';
+      src: url('/assets/brand/Authentic_Signature.woff2') format('woff2'),
+           url('/assets/brand/Authentic_Signature.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg:          #FFFCFA;
+      --brown:       #5E534B;
+      --terracotta:  #C4714F;
+      --subtext:     #968880;
+      --cream-dark:  #EAE5DF;
+      --cream-mid:   #F2EDE7;
+      --cream-light: #F8F4F0;
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-ai {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .nav-ai .dot { color: var(--terracotta); }
+
+    .nav-wordmark {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      line-height: 1.3;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--terracotta); }
+
+    .btn-solid {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--brown);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-solid:hover { background: var(--terracotta); transform: translateY(-1px); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 96px 48px 80px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .hero .eyebrow { display: block; margin-bottom: 28px; }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 80px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--brown);
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--terracotta);
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--subtext);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+
+    /* ── Honest section ── */
+    .honest-section {
+      background: var(--cream-light);
+      padding: 72px 48px;
+    }
+
+    .honest-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .honest-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .honest-left h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--terracotta);
+    }
+
+    .honest-right p {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .honest-right p:last-child { margin-bottom: 0; }
+
+    /* ── Offers ── */
+    .offers-section {
+      padding: 96px 48px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .offers-header {
+      margin-bottom: 56px;
+    }
+
+    .offers-header .eyebrow { display: block; margin-bottom: 20px; }
+
+    .offers-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .offers-header h2 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .offer-card {
+      border-top: 1px solid var(--cream-dark);
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .offer-card:last-child { border-bottom: 1px solid var(--cream-dark); }
+
+    .offer-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .offer-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .offer-tag {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--terracotta);
+      letter-spacing: 0.06em;
+    }
+
+    .offer-body p {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .offer-includes {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .offer-includes li {
+      font-size: 14px;
+      color: var(--subtext);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .offer-includes li:last-child { border-bottom: none; }
+
+    .offer-includes li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .offer-note {
+      font-size: 12px;
+      color: var(--subtext);
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    /* ── Belief strip ── */
+    .belief-section {
+      background: var(--brown);
+      padding: 72px 48px;
+      text-align: center;
+    }
+
+    .belief-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .belief-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-light);
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
+
+    .belief-attr {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,252,250,0.35);
+    }
+
+    /* ── How it works ── */
+    .process-section {
+      padding: 96px 48px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .process-header {
+      margin-bottom: 56px;
+    }
+
+    .process-header .eyebrow { display: block; margin-bottom: 20px; }
+
+    .process-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1.1;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .step {
+      border-top: 2px solid var(--cream-dark);
+      padding-top: 28px;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--subtext);
+      line-height: 1.7;
+    }
+
+    /* ── Right for you ── */
+    .right-for-section {
+      background: var(--cream-light);
+      padding: 80px 48px;
+    }
+
+    .right-for-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .right-for-col .eyebrow { display: block; margin-bottom: 20px; }
+
+    .right-for-col h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .right-for-list {
+      list-style: none;
+    }
+
+    .right-for-list li {
+      font-size: 15px;
+      color: var(--subtext);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      line-height: 1.6;
+    }
+
+    .right-for-list li:last-child { border-bottom: none; }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 96px 48px;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-section .eyebrow { display: block; margin-bottom: 20px; }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .cta-section h2 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--subtext);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .btn-cta-primary {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--brown);
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 16px;
+    }
+
+    .btn-cta-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+    .cta-note {
+      font-size: 12px;
+      color: var(--subtext);
+      opacity: 0.6;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+    .footer-link {
+      font-size: 12px;
+      color: var(--subtext);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-link:hover { color: var(--terracotta); }
+
+    .footer-legal { font-size: 11px; color: var(--subtext); opacity: 0.5; }
+
+    /* ── Reveal animation ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-wordmark, .nav-link { display: none; }
+
+      .hero { padding: 64px 24px 56px; }
+      .honest-section { padding: 56px 24px; }
+      .honest-inner { grid-template-columns: 1fr; gap: 32px; }
+      .offers-section { padding: 64px 24px; }
+      .offer-card { grid-template-columns: 1fr; gap: 24px; }
+      .belief-section { padding: 56px 24px; }
+      .process-section { padding: 64px 24px; }
+      .steps { grid-template-columns: 1fr; gap: 32px; }
+      .right-for-section { padding: 56px 24px; }
+      .right-for-inner { grid-template-columns: 1fr; gap: 40px; }
+      .cta-section { padding: 64px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <span class="nav-ai">ai<span class="dot">.</span></span>
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link">Newsletter</a>
+      <a href="/work" class="nav-link" style="color:var(--brown);">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">Work with Kelly</span>
+    <h1>This is for<br>women who are<br><em>serious.</em></h1>
+    <p class="hero-lead">I work with a very small number of clients directly. If you want someone to actually sit alongside you, build the systems, and make AI work properly in your business, this is where to start.</p>
+    <div class="hero-divider"></div>
+  </section>
+
+
+  <!-- Honest framing -->
+  <section class="honest-section">
+    <div class="honest-inner">
+      <div class="honest-left reveal">
+        <h2>Not everyone needs<br>to work with me<br><em>directly.</em></h2>
+      </div>
+      <div class="honest-right reveal">
+        <p>Most of what I teach is available inside the Wise Women Use AI community, and for most people, that is genuinely enough. The community gives you access to everything I've built, all the tools, workflows, and systems, plus a room full of women doing the same work.</p>
+        <p>But some people want more than that. They want someone in the room with them. They want to stop trying to figure it out from content and actually have someone who knows their business look at what they're doing and help them get it right.</p>
+        <p>If that's you, keep reading.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Offer cards -->
+  <section class="offers-section">
+    <div class="offers-header reveal">
+      <span class="eyebrow">How we can work together</span>
+      <h2>Two ways to get<br><em>direct support.</em></h2>
+    </div>
+
+    <div class="offer-card reveal">
+      <div class="offer-left">
+        <span class="offer-label">Option one</span>
+        <h3>AI Setup &amp; Strategy Session</h3>
+        <p class="offer-tag">One session · 90 minutes</p>
+      </div>
+      <div class="offer-body">
+        <p>A focused working session where we look at your business, what you're currently doing with AI (or not doing), and I tell you exactly what to use, how to set it up, and what to focus on first. No fluff, no generic advice. Just a clear plan built specifically for your business.</p>
+        <ul class="offer-includes">
+          <li>90-minute video call where we work through your specific setup</li>
+          <li>Pre-session questionnaire so we hit the ground running</li>
+          <li>Written action plan and recommended tools sent within 24 hours</li>
+          <li>30-day email follow-up for questions as you implement</li>
+        </ul>
+        <p class="offer-note">This is for you if you want to get the foundation right and then run with it yourself.</p>
+      </div>
+    </div>
+
+    <div class="offer-card reveal">
+      <div class="offer-left">
+        <span class="offer-label">Option two</span>
+        <h3>Done-With-You Systems Build</h3>
+        <p class="offer-tag">Four weeks · Hands-on</p>
+      </div>
+      <div class="offer-body">
+        <p>We build your AI systems together. This is for business owners who know they need proper AI infrastructure, not just a few prompts. I work alongside you over four weeks to design, build, and install the workflows that will actually change how your business runs.</p>
+        <ul class="offer-includes">
+          <li>Discovery session to map your business, your pain points, and your goals</li>
+          <li>Custom AI workflow design built around how you actually work</li>
+          <li>Weekly working sessions to build and refine together</li>
+          <li>Full handover documentation so you can run it independently</li>
+          <li>Two weeks of post-build support</li>
+        </ul>
+        <p class="offer-note">This is for you if you want the whole thing built and working, not just a roadmap.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Belief -->
+  <section class="belief-section">
+    <div class="belief-inner">
+      <p class="belief-quote">"The best AI system is the one that fits your business and your brain. Not someone else's template. Yours."</p>
+      <p class="belief-attr">Kelly, Wise Women Use AI</p>
+    </div>
+  </section>
+
+
+  <!-- Process -->
+  <section class="process-section">
+    <div class="process-header reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Simple, no pressure.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Send me an email</h3>
+        <p>Tell me a bit about your business, what you're struggling with, and what you're hoping for. No lengthy application form, just a conversation starting.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>We have a quick chat</h3>
+        <p>A short informal call where I can understand your situation and we can figure out together whether working directly with me is the right fit.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>We get to work</h3>
+        <p>If it makes sense for both of us, we start. Everything is scoped properly upfront so you know exactly what to expect and what you're investing.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Right for you -->
+  <section class="right-for-section">
+    <div class="right-for-inner">
+      <div class="right-for-col reveal">
+        <span class="eyebrow">This is for you if</span>
+        <h3>You're ready to actually do this.</h3>
+        <ul class="right-for-list">
+          <li>You have a real business and real things you need to get done</li>
+          <li>You've tried AI on your own and it hasn't stuck or clicked</li>
+          <li>You want someone who knows Claude deeply, not just AI generally</li>
+          <li>You're willing to invest properly in getting this right</li>
+          <li>You want the system built, not just explained</li>
+        </ul>
+      </div>
+      <div class="right-for-col reveal">
+        <span class="eyebrow">This is not for you if</span>
+        <h3>It's okay if it's not the right time.</h3>
+        <ul class="right-for-list">
+          <li>You're just curious and want a taste of what AI can do</li>
+          <li>You want someone to do everything for you with no involvement from your end</li>
+          <li>You're not ready to commit the time to implement what we build</li>
+          <li>You're looking for the cheapest option</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Tell me what<br>you're working<br><em>on.</em></h2>
+    <p>I only take on a small number of clients at a time, so spaces are genuinely limited. If you're interested, the best thing to do is email me and tell me what's going on in your business. I'll come back to you personally.</p>
+    <a href="mailto:hello@wisewomenuseai.com" class="btn-cta-primary">Email Kelly directly</a>
+    <p class="cta-note">hello@wisewomenuseai.com · I reply to every email personally</p>
+  </section>
+
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <span class="nav-ai" style="font-size:20px;">ai<span class="dot">.</span></span>
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="footer-links">
+      <a href="/blog" class="footer-link">Newsletter</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+    </div>
+    <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+  </footer>
+
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
