@@ -486,30 +486,47 @@
          - href on the read-link (link to your Substack post URL)
          ================================================================ -->
 
-    <!-- Empty state shown when no posts exist yet -->
-    <div class="empty-state" id="empty-state">
-      <p>The first issue is coming soon.</p>
-      <span>Subscribe below so you don't miss it.</span>
+    <!-- Empty state — shown only when no posts match the current filter -->
+    <div class="empty-state" id="empty-state" style="display:none;">
+      <p>Nothing here yet for this pillar.</p>
+      <span>More issues coming soon.</span>
     </div>
 
     <ul class="post-list" id="post-list">
 
-      <!-- EXAMPLE POST — delete this and replace with real posts -->
-      <!--
-      <li class="post-item reveal" data-pillar="try-this-now">
-        <a href="https://wisewomenuseai.substack.com/your-post-slug" target="_blank" class="post-link">
+      <!-- ================================================================
+           TO ADD A NEW POST: copy one <li> block, update the fields below,
+           then upload the updated blog.html to GitHub.
+           data-pillar options: claude-can-do-that / try-this-now / real-talk / real-life
+           ================================================================ -->
+
+      <li class="post-item reveal" data-pillar="real-talk">
+        <a href="https://wisewomenuseai.substack.com/p/we-dont-want-volume-we-want-clarity" target="_blank" class="post-link">
           <div class="post-link-meta">
-            <span class="post-date">15 April 2026</span>
-            <span class="post-pillar">Try this now</span>
-            <h3>The five-minute Claude setup that saves me two hours every week</h3>
-            <p>One thing, properly configured, that you can steal straight from my business. No prompt engineering required.</p>
+            <span class="post-date">6 April 2026</span>
+            <span class="post-pillar">Real talk</span>
+            <h3>We don't want volume. We want clarity.</h3>
+            <p>The way women use AI is different. Small, intelligent decisions made consistently. Not automation for its own sake — something quieter, and honestly much smarter.</p>
           </div>
           <div class="post-link-right">
             <span class="read-link">Read <span>&#8599;</span></span>
           </div>
         </a>
       </li>
-      -->
+
+      <li class="post-item reveal" data-pillar="real-talk">
+        <a href="https://wisewomenuseai.substack.com/p/the-lie-ai-influencers-keep-telling" target="_blank" class="post-link">
+          <div class="post-link-meta">
+            <span class="post-date">30 March 2026</span>
+            <span class="post-pillar">Real talk</span>
+            <h3>The lie AI influencers keep telling you</h3>
+            <p>You don't need to be technical. But the way most AI content uses that phrase is doing you a quiet disservice — and it's time someone said so.</p>
+          </div>
+          <div class="post-link-right">
+            <span class="read-link">Read <span>&#8599;</span></span>
+          </div>
+        </a>
+      </li>
 
     </ul>
   </div>
