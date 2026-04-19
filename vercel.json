@@ -9,6 +9,7 @@
     { "src": "/blog",      "dest": "/blog.html" },
     { "src": "/voice",     "dest": "/voice.html" },
     { "src": "/thankyou",  "dest": "/thankyou.html" },
+    { "src": "/thank-you", "dest": "/thank-you.html" },
     { "src": "/dashboard", "dest": "/dashboard.html" }
   ]
 }
