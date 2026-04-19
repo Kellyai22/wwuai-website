@@ -554,7 +554,7 @@
       Your free kit<br>is on its way, <em>lovely.</em>
     </h1>
 
-    <p class="hero-script fade-up fade-up-3">check your inbox</p>
+    <p class="hero-script fade-up fade-up-3" id="heroScript">check your inbox</p>
 
     <p class="fade-up fade-up-4" id="heroDesc">
       Your AI Starter Kit is headed to your inbox right now. While you wait, here's a reminder of what you're about to get.
@@ -618,8 +618,8 @@
     <div class="upsell-inner">
       <div class="upsell-intro">
         <p class="section-label">Ready for more?</p>
-        <h2>Come join us inside <em>the community</em></h2>
-        <p>A warm, practical space for women in business who want to use AI properly. Not a course. Not coaching. Just a group of women figuring it out together, with Kelly sharing what she learns along the way.</p>
+        <h2 id="upsellHeading">Come join us inside <em>the community</em></h2>
+        <p id="upsellBody">A warm, practical space for women in business who want to use AI properly. Not a course. Not coaching. Just a group of women figuring it out together, with Kelly sharing what she learns along the way.</p>
       </div>
 
       <div class="upsell-grid">
@@ -659,7 +659,7 @@
           <p class="price-note">One-time payment. Not a subscription.</p>
         </div>
 
-        <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" class="btn-primary">Claim founding member price</a>
+        <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" class="btn-primary" id="upsellCta">Claim founding member price</a>
       </div>
 
       <p class="upsell-fallback">Not ready yet? No worries. Your free guide is on its way. <a href="/">Back to the website</a></p>
@@ -678,15 +678,43 @@
 
   <script>
     (function() {
-      var params = new URLSearchParams(window.location.search);
-      var source = params.get('source');
-      if (!source) return; // Default Starter Kit content stays
+      var params     = new URLSearchParams(window.location.search);
+      var source     = params.get('source') || 'homepage';
 
-      var heroTitle = document.getElementById('heroTitle');
-      var heroDesc = document.getElementById('heroDesc');
-      var kitTitle = document.getElementById('kitTitle');
-      var kitSub = document.getElementById('kitSub');
-      var kitGrid = document.getElementById('kitGrid');
+      var heroTitle     = document.getElementById('heroTitle');
+      var heroScript    = document.getElementById('heroScript');
+      var heroDesc      = document.getElementById('heroDesc');
+      var kitSection    = document.getElementById('kitSection');
+      var kitTitle      = document.getElementById('kitTitle');
+      var kitSub        = document.getElementById('kitSub');
+      var kitGrid       = document.getElementById('kitGrid');
+      var upsellHeading = document.getElementById('upsellHeading');
+      var upsellBody    = document.getElementById('upsellBody');
+      var upsellCta     = document.getElementById('upsellCta');
+
+      if (source === 'homepage') {
+        return; // base HTML is the homepage variant — no changes
+      }
+
+      if (source === 'starter') {
+        heroTitle.innerHTML = 'You\'re in. Here\'s Part 1 of<br>your <em>Claude Starter Kit.</em>';
+        heroScript.textContent = 'Part 1 is ready now';
+        heroDesc.innerHTML = '<a href="https://claude.ai/public/artifacts/00038cde-ae2c-43b5-8fbe-303466640698" target="_blank" style="display:inline-block;background:var(--terra);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the Claude Comparison Tool</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:4px">The next four parts land in your inbox over the coming days. Watch for the subject line starting \u2018Part 2 of 5\u2019 tomorrow.</span>';
+        kitSection.style.display = 'none';
+        upsellHeading.innerHTML = 'Don\u2019t want to wait?';
+        upsellBody.textContent = 'The full kit plus the entire system is inside the community. Four classrooms, lifetime access, one payment.';
+        document.querySelector('.upsell-grid').innerHTML =
+            '<div class="upsell-card"><p class="upsell-card-label">Classroom 1</p><h3>Wise Women Starter Kit</h3><p>AI basics, starter templates, and simple workflows for women new to AI.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 2</p><h3>Claude Classroom</h3><p>Your complete Claude starter kit, the Micro Sophistications Prompt Pack, and Claude-specific resources.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 3</p><h3>Organise Your Business in Notion</h3><p>The system behind how Kelly actually runs the whole thing.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 4</p><h3>Systems Library</h3><p>Home of the Content Skill Pack and other ready-to-install systems.</p></div>';
+        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. Lifetime access.<br><em>Lock in the founding price now.</em>';
+        document.querySelector('.upsell-pricing-body').textContent = 'Founding member price is $99. Once the founding places have been taken, it goes to $197 and keeps climbing.';
+        upsellCta.textContent = 'Join the community';
+        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109');
+        document.querySelector('.upsell-fallback').innerHTML = 'Or just enjoy the free parts coming your way. No wrong answer. <a href="/">Back to the website</a>';
+        return;
+      }
 
       if (source === 'claude-clearly') {
         heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
@@ -700,8 +728,10 @@
           + '<div class="kit-item"><div class="kit-number">04</div><h3>Your first workflow</h3><p>Document your most repetitive task step by step. This becomes the blueprint Claude follows.</p></div>'
           + '<div class="kit-item"><div class="kit-number">05</div><h3>Reusable Skills</h3><p>Turn your workflow into a Skill you can run on command. Build it once, run it always.</p></div>'
           + '<div class="kit-item"><div class="kit-number">06</div><h3>Connect your tools</h3><p>Notion, Google Drive, Gmail, Slack. Claude connects to the tools you already use.</p></div>';
+        return;
+      }
 
-      } else if (source === 'switch-to-claude') {
+      if (source === 'switch-to-claude') {
         heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
         heroDesc.textContent = 'The Switch to Claude guide is headed to your inbox. Everything you need to bring your ChatGPT setup across in about five minutes.';
         kitTitle.textContent = 'Switch to Claude';
@@ -711,6 +741,7 @@
           + '<div class="kit-item"><div class="kit-number">02</div><h3>Review and refine</h3><p>Clean up what ChatGPT gives you so Claude gets the best version of your profile.</p></div>'
           + '<div class="kit-item"><div class="kit-number">03</div><h3>Import to Claude</h3><p>Paste your profile into Claude and let it store everything. One conversation, done.</p></div>'
           + '<div class="kit-item"><div class="kit-number">04</div><h3>What comes next</h3><p>Set up Projects, understand what to expect in your first week, and tips for getting the most out of Claude.</p></div>';
+        return;
       }
     })();
   </script>
