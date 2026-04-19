@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Maker — Free Skill File — Wise Women Use AI</title>
+  <meta name="description" content="A free Claude Code skill file that turns your brand photos into polished Instagram carousels. Set up in 20 minutes. Under 2 minutes per carousel after that.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brown:       #5E534B;
+      --brown-mid:   #968880;
+      --brown-light: #8C7E74;
+      --terra:       #C4714F;
+      --terra-deep:  #a85c3c;
+      --cream:       #FFFCFA;
+      --cream-dark:  #EAE5DF;
+      --cream-mid:   #F0EBE5;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --sans:        'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─────────────────────────────────────────────
+       NAV — sticky, logo left, anchor links centre,
+       CTA button right
+    ───────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 0 40px;
+      height: 60px;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img { height: 26px; width: auto; }
+
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown);
+      white-space: nowrap;
+    }
+
+    .nav-anchors {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-anchors::-webkit-scrollbar { display: none; }
+
+    .nav-anchors a {
+      display: block;
+      padding: 0 14px;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      white-space: nowrap;
+      transition: color 0.2s;
+      border-right: 1px solid var(--cream-dark);
+    }
+
+    .nav-anchors li:last-child a { border-right: none; }
+    .nav-anchors a:hover { color: var(--brown); }
+
+    .nav-cta {
+      flex-shrink: 0;
+      font-family: var(--sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 7px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--terra); color: var(--cream); }
+
+    /* ─────────────────────────────────────────────
+       SHARED SECTION LAYOUT
+    ───────────────────────────────────────────── */
+    .section-wrap {
+      padding: 80px 48px;
+    }
+
+    .section-wrap.bg-cream     { background: var(--cream); }
+    .section-wrap.bg-mid       { background: var(--cream-mid); }
+    .section-wrap.bg-dark-cream{ background: var(--cream-dark); }
+    .section-wrap.bg-brown     { background: var(--brown); }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Section label — "01 — Why it's different" */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .section-num {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--terra);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .section-num-line {
+      flex: 1;
+      height: 1px;
+      background: var(--cream-dark);
+      max-width: 40px;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    .bg-brown .section-num-line { background: rgba(255,252,250,0.15); }
+    .bg-brown .section-tag { color: rgba(255,252,250,0.45); }
+    .bg-brown .section-num { color: var(--terra); }
+
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 400;
+      color: var(--brown);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-h2 em { font-style: italic; color: var(--terra); }
+
+    .bg-brown .section-h2 { color: var(--cream); }
+    .bg-brown .section-h2 em { color: var(--terra); }
+
+    .section-intro {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.85;
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    .bg-brown .section-intro { color: rgba(255,252,250,0.65); }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    #hero {
+      background: var(--cream);
+      padding: 72px 48px 64px;
+    }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 5.5vw, 68px);
+      font-weight: 300;
+      line-height: 1.03;
+      color: var(--brown);
+      margin-bottom: 24px;
+    }
+
+    #hero h1 em { font-style: italic; color: var(--terra); }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.85;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--brown-mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--terra);
+      flex-shrink: 0;
+    }
+
+    /* Form card */
+    .form-card {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      padding: 36px 32px;
+    }
+
+    .form-card-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .form-card-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .form-card form { display: flex; flex-direction: column; gap: 10px; }
+
+    .form-card input[type="text"],
+    .form-card input[type="email"] {
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--cream-dark);
+      background: var(--cream-mid);
+      color: var(--brown);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-card input:focus { border-color: var(--terra); }
+
+    .form-card button {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 14px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .form-card button:hover { background: var(--terra-deep); border-color: var(--terra-deep); }
+
+    .form-note { font-size: 11px; color: var(--brown-mid); margin-top: 10px; }
+
+    /* ─────────────────────────────────────────────
+       01 — WHY DIFFERENT  (dark bg)
+    ───────────────────────────────────────────── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,252,250,0.1);
+      border: 1px solid rgba(255,252,250,0.1);
+    }
+
+    .compare-col {
+      padding: 32px 28px;
+      background: var(--brown);
+    }
+
+    .compare-col-head {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,252,250,0.12);
+    }
+
+    .col-before .compare-col-head { color: rgba(255,252,250,0.35); }
+    .col-after  .compare-col-head { color: var(--terra); }
+
+    .compare-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 13px;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .col-before .compare-item { color: rgba(255,252,250,0.38); }
+    .col-after  .compare-item { color: rgba(255,252,250,0.88); }
+
+    .compare-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .col-before .compare-dot { background: rgba(255,252,250,0.2); }
+    .col-after  .compare-dot { background: var(--terra); }
+
+    /* ─────────────────────────────────────────────
+       02 — WHAT YOU'LL NEED
+    ───────────────────────────────────────────── */
+    .needs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-dark);
+    }
+
+    .needs-item {
+      background: var(--cream-mid);
+      padding: 24px 28px;
+    }
+
+    .needs-item.needs-not {
+      background: var(--cream);
+    }
+
+    .needs-item-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .needs-required .needs-item-label { color: var(--terra); }
+    .needs-item.needs-not .needs-item-label { color: var(--brown-mid); }
+
+    .needs-item p {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.65;
+    }
+
+    .needs-timing {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-dark);
+    }
+
+    .timing-item {
+      background: var(--cream);
+      padding: 20px 28px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .timing-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--terra);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .timing-label {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.5;
+    }
+
+    .timing-label strong {
+      display: block;
+      font-weight: 500;
+      color: var(--brown);
+      font-size: 13px;
+    }
+
+    /* ─────────────────────────────────────────────
+       03 — SETUP WIZARD
+    ───────────────────────────────────────────── */
+    .setup-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .wizard-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .wizard-step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .wizard-step:last-child { border-bottom: none; }
+
+    .wizard-step-num {
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--brown-mid);
+      border-right: 1px solid var(--cream-dark);
+    }
+
+    .wizard-step-body {
+      padding: 18px 20px;
+      background: var(--cream);
+    }
+
+    .wizard-step-body strong {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 3px;
+    }
+
+    .wizard-step-body p {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.6;
+    }
+
+    .config-block {
+      background: var(--brown);
+      padding: 28px 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 2;
+      color: rgba(255,252,250,0.55);
+    }
+
+    .config-block .label {
+      font-family: var(--sans);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .ck { color: var(--terra); }
+    .cv { color: var(--cream); }
+    .cc { color: rgba(255,252,250,0.28); }
+
+    /* ─────────────────────────────────────────────
+       04 — THE ITALIC MOVE
+    ───────────────────────────────────────────── */
+    .emphasis-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .emphasis-intro {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.85;
+    }
+
+    .emphasis-examples {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .em-example {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      padding: 22px 24px;
+      border-top: none;
+    }
+
+    .em-example:first-child { border-top: 1px solid var(--cream-dark); }
+
+    .em-example p {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--brown);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .em-example p em { font-style: italic; color: var(--terra); }
+
+    .em-note {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────────────────────────
+       05 — HOW IT WORKS
+    ───────────────────────────────────────────── */
+    .pipeline-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pipeline-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 28px 0;
+    }
+
+    .pipeline-step:first-child { border-top: 1px solid var(--cream-dark); }
+
+    .ps-num {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .ps-body h3 {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 5px;
+    }
+
+    .ps-body p {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    .ps-body .ps-callout {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--terra);
+      padding: 10px 14px;
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    /* ─────────────────────────────────────────────
+       06 — WRITING YOUR COPY
+    ───────────────────────────────────────────── */
+    .copy-rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-dark);
+      margin-bottom: 32px;
+    }
+
+    .copy-rule {
+      background: var(--cream);
+      padding: 24px 28px;
+    }
+
+    .copy-rule-slide {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 8px;
+    }
+
+    .copy-rule h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 6px;
+    }
+
+    .copy-rule p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.65;
+    }
+
+    .word-count-note {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .wc-item {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+    }
+
+    .wc-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--brown);
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    /* ─────────────────────────────────────────────
+       07 — INSTALLING
+    ───────────────────────────────────────────── */
+    .install-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .install-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .install-step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .install-step:last-child { border-bottom: none; }
+
+    .install-step-num {
+      background: var(--terra);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .install-step-body {
+      padding: 20px 20px;
+      background: var(--cream);
+    }
+
+    .install-step-body strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+
+    .install-step-body p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.65;
+    }
+
+    .code-inline {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      background: var(--cream-dark);
+      padding: 1px 6px;
+      color: var(--brown);
+    }
+
+    .install-side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .install-timing {
+      background: var(--brown);
+      padding: 28px 24px;
+    }
+
+    .install-timing h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .timing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,252,250,0.1);
+      font-size: 13px;
+    }
+
+    .timing-row:last-child { border-bottom: none; }
+    .timing-row .tr-label { font-weight: 300; color: rgba(255,252,250,0.6); }
+    .timing-row .tr-val { font-weight: 500; color: var(--cream); }
+
+    .playwright-note {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      border-left: 3px solid var(--terra);
+      padding: 16px 18px;
+    }
+
+    .playwright-note p {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.65;
+    }
+
+    .playwright-note strong { font-weight: 500; color: var(--brown); }
+
+    /* ─────────────────────────────────────────────
+       08 — BLOTATO
+    ───────────────────────────────────────────── */
+    .blotato-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .btn-outline-light {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terra);
+      border: 1.5px solid var(--terra);
+      padding: 12px 24px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-outline-light:hover { background: var(--terra); color: var(--cream); }
+
+    /* ─────────────────────────────────────────────
+       09 — THE BIGGER PICTURE
+    ───────────────────────────────────────────── */
+    .bigger-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .bigger-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .bigger-body p:last-child { margin-bottom: 0; }
+
+    .skill-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .chain-item {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .chain-item:last-child { border-bottom: none; }
+
+    .chain-num {
+      width: 44px;
+      height: 44px;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--brown-mid);
+      flex-shrink: 0;
+      border-right: 1px solid var(--cream-dark);
+    }
+
+    .chain-label {
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--brown);
+      line-height: 1.4;
+    }
+
+    .chain-item.chain-active .chain-num {
+      background: var(--terra);
+      color: var(--cream);
+      border-right-color: var(--terra);
+    }
+
+    .chain-item.chain-active .chain-label {
+      color: var(--terra);
+      font-weight: 500;
+    }
+
+    /* ─────────────────────────────────────────────
+       10 — TWO CTAs
+    ───────────────────────────────────────────── */
+    .ctas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .cta-card {
+      padding: 36px 32px;
+      border: 1px solid var(--cream-dark);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cta-card.cta-dark { background: var(--brown); border-color: var(--brown); }
+    .cta-card.cta-light { background: var(--cream); }
+
+    .cta-eyebrow {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 12px;
+    }
+
+    .cta-card h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .cta-dark h3 { color: var(--cream); }
+    .cta-light h3 { color: var(--brown); }
+
+    .cta-card > p {
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .cta-dark > p { color: rgba(255,252,250,0.65); }
+    .cta-light > p { color: var(--brown-light); }
+
+    .cta-includes {
+      list-style: none;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+    }
+
+    .cta-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .cta-dark .cta-includes li { color: rgba(255,252,250,0.8); }
+    .cta-light .cta-includes li { color: var(--brown); }
+
+    .li-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--terra);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .btn-solid {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--terra);
+      color: var(--cream);
+      border: 1.5px solid var(--terra);
+      padding: 13px 22px;
+      border-radius: 6px;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn-solid:hover { background: var(--terra-deep); border-color: var(--terra-deep); }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--brown);
+      border: 1.5px solid var(--brown);
+      padding: 13px 22px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn-outline:hover { background: var(--brown); color: var(--cream); }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--brown-mid);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--brown); }
+
+    /* ─────────────────────────────────────────────
+       MOBILE
+    ───────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      nav { padding: 0 24px; grid-template-columns: auto auto; }
+      .nav-anchors { display: none; }
+
+      #hero { padding: 48px 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+
+      .section-wrap { padding: 56px 24px; }
+
+      .compare-grid,
+      .needs-grid,
+      .setup-layout,
+      .emphasis-layout,
+      .install-layout,
+      .blotato-layout,
+      .bigger-layout,
+      .ctas-grid,
+      .copy-rules-grid,
+      .needs-timing { grid-template-columns: 1fr; }
+
+      .word-count-note { grid-template-columns: 1fr; }
+
+      footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ═══════════════════════════════════ -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="WWUAI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+
+    <ul class="nav-anchors">
+      <li><a href="#different">Why it's different</a></li>
+      <li><a href="#needs">What you'll need</a></li>
+      <li><a href="#setup">Setup wizard</a></li>
+      <li><a href="#italic">The italic move</a></li>
+      <li><a href="#pipeline">How it works</a></li>
+      <li><a href="#copy">Writing copy</a></li>
+      <li><a href="#install">Installing</a></li>
+      <li><a href="#blotato">Auto-schedule</a></li>
+      <li><a href="#bigger">The bigger picture</a></li>
+    </ul>
+
+    <a href="#hero" class="nav-cta">Get the skill file</a>
+  </nav>
+
+
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Free skill file — Claude Code</p>
+        <h1>Your brand photos.<br>Your <em>words.</em><br>One prompt.</h1>
+        <p class="hero-sub">
+          A free Claude Code skill that turns your brand photos into polished Instagram carousels in your own voice. No Canva. No templates that look like everyone else's.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">20 min setup</span>
+          <span class="hero-badge">Under 2 min per carousel</span>
+          <span class="hero-badge">No design skills needed</span>
+          <span class="hero-badge">1080×1350 PNG output</span>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3 class="form-card-title">Get the free skill file</h3>
+        <p class="form-card-sub">Drop your email and I'll send you the skill file and setup instructions. You'll need Claude Code to run it.</p>
+        <form action="https://app.kit.com/forms/9346256/subscriptions" method="post" data-sv-form="9346256" data-uid="125c49195e" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/thank-you?source=carousel-maker"}}}'>
+          <input type="hidden" name="fields[source]" value="carousel-maker">
+          <input type="text" name="fields[first_name]" placeholder="First name">
+          <input type="email" name="email_address" placeholder="Email address" required>
+          <button type="submit">Send me the skill file</button>
+        </form>
+        <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 01 — WHY DIFFERENT ════════════════════ -->
+  <section id="different" class="section-wrap bg-brown">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">01</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">Why it's different</span>
+      </div>
+      <h2 class="section-h2">Not another template.<br>Your actual <em>photos.</em> Your actual voice.</h2>
+      <p class="section-intro">Most carousel tools give you the same colour-block templates everyone else is using. This one uses your real brand photos and writes copy that's been checked against your own voice rules.</p>
+
+      <div class="compare-grid">
+        <div class="compare-col col-before">
+          <p class="compare-col-head">Generic carousel tools</p>
+          <div class="compare-item"><span class="compare-dot"></span>Same colour-block templates everyone uses</div>
+          <div class="compare-item"><span class="compare-dot"></span>Copy that sounds like it came from a content machine</div>
+          <div class="compare-item"><span class="compare-dot"></span>No way to bake in your voice rules or banned phrases</div>
+          <div class="compare-item"><span class="compare-dot"></span>Manual layout work every single time</div>
+          <div class="compare-item"><span class="compare-dot"></span>Looks polished until you scroll and see three other accounts using the same template</div>
+        </div>
+        <div class="compare-col col-after">
+          <p class="compare-col-head">Your carousel maker</p>
+          <div class="compare-item"><span class="compare-dot"></span>Your actual brand photos on every slide</div>
+          <div class="compare-item"><span class="compare-dot"></span>Copy written in your voice, checked against your banned phrases</div>
+          <div class="compare-item"><span class="compare-dot"></span>Brand colours, fonts, and handle baked in from setup</div>
+          <div class="compare-item"><span class="compare-dot"></span>One prompt, seven slides, exported PNGs ready to post</div>
+          <div class="compare-item"><span class="compare-dot"></span>Looks like you made it. Because you did.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 — WHAT YOU'LL NEED ═════════════════ -->
+  <section id="needs" class="section-wrap bg-mid">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">02</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">What you'll need</span>
+      </div>
+      <h2 class="section-h2">A few things you probably<br>already <em>have.</em></h2>
+      <p class="section-intro">No coding skills. No design software. No paid subscriptions beyond your existing Claude plan.</p>
+
+      <div class="needs-grid">
+        <div class="needs-item needs-required">
+          <p class="needs-item-label">Required</p>
+          <p>Claude Code desktop app — free to download from claude.ai</p>
+        </div>
+        <div class="needs-item needs-required">
+          <p class="needs-item-label">Required</p>
+          <p>3 to 5 brand photos — you, your workspace, or lifestyle shots that feel like your brand</p>
+        </div>
+        <div class="needs-item needs-required">
+          <p class="needs-item-label">Required</p>
+          <p>Your brand hex colour codes (e.g. #5E534B)</p>
+        </div>
+        <div class="needs-item needs-required">
+          <p class="needs-item-label">Required</p>
+          <p>Google Font names for your headline and body fonts</p>
+        </div>
+        <div class="needs-item needs-not">
+          <p class="needs-item-label">Not needed</p>
+          <p>Coding skills, design software, or HTML knowledge</p>
+        </div>
+        <div class="needs-item needs-not">
+          <p class="needs-item-label">Not needed</p>
+          <p>A Canva account — this replaces it entirely for carousels</p>
+        </div>
+      </div>
+
+      <div class="needs-timing">
+        <div class="timing-item">
+          <div class="timing-num">20</div>
+          <div class="timing-label"><strong>Minutes — first setup</strong>The wizard runs once and saves your brand. You won't need to do it again.</div>
+        </div>
+        <div class="timing-item">
+          <div class="timing-num">&lt;2</div>
+          <div class="timing-label"><strong>Minutes — every carousel after that</strong>Give it a topic, approve the copy, done.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 03 — SETUP WIZARD ═════════════════════ -->
+  <section id="setup" class="section-wrap bg-cream">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">03</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">Setup wizard</span>
+      </div>
+      <h2 class="section-h2">Your brand.<br><em>Remembered.</em></h2>
+      <p class="section-intro">The first time you run the skill, it walks you through a short setup. You answer eight questions. It saves everything to a brand config file and never asks again.</p>
+
+      <div class="setup-layout">
+        <div class="wizard-steps">
+          <div class="wizard-step">
+            <div class="wizard-step-num">1</div>
+            <div class="wizard-step-body">
+              <strong>Brand name and signature</strong>
+              <p>Your brand name and the name that appears on the final slide sign-off.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">2</div>
+            <div class="wizard-step-body">
+              <strong>Instagram handle</strong>
+              <p>Appears on every slide automatically, top left.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">3</div>
+            <div class="wizard-step-body">
+              <strong>Five brand hex colours</strong>
+              <p>Primary, secondary, accent, background, and text. Saved once, applied to every carousel.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">4</div>
+            <div class="wizard-step-body">
+              <strong>Google Fonts for headline and body</strong>
+              <p>Paste the font name and Google Fonts URL. Free fonts only — no licensing headaches.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">5</div>
+            <div class="wizard-step-body">
+              <strong>Your photos folder</strong>
+              <p>Drop 3–5 brand photos into <span class="code-inline">photos/my-brand/</span> before setup. The skill picks from them at random for each carousel.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">6</div>
+            <div class="wizard-step-body">
+              <strong>ManyChat keyword and CTA</strong>
+              <p>The word people comment to get your link (e.g. CAROUSEL), and what the CTA slide says after it.</p>
+            </div>
+          </div>
+          <div class="wizard-step">
+            <div class="wizard-step-num">7</div>
+            <div class="wizard-step-body">
+              <strong>Banned phrases</strong>
+              <p>Words or phrases you never want in your copy. The skill checks against this list before showing you anything.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="config-block">
+            <span class="label">brand-config.json — generated by wizard</span>
+            {<br>
+            &nbsp;&nbsp;<span class="ck">"handle"</span>: <span class="cv">"@yourbrand"</span>,<br>
+            &nbsp;&nbsp;<span class="ck">"signature_name"</span>: <span class="cv">"Sarah"</span>,<br>
+            &nbsp;&nbsp;<span class="ck">"colors"</span>: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"primary"</span>: <span class="cv">"#2C3E50"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"secondary"</span>: <span class="cv">"#E67E22"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"background"</span>: <span class="cv">"#FAFAFA"</span><br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;<span class="ck">"fonts"</span>: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"headline_name"</span>: <span class="cv">"Playfair Display"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"body_name"</span>: <span class="cv">"Inter"</span><br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;<span class="ck">"cta"</span>: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"keyword"</span>: <span class="cv">"CAROUSEL"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"tail"</span>: <span class="cv">"and I'll send you the link."</span><br>
+            &nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;<span class="ck">"voice"</span>: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"banned_phrases"</span>: <span class="cv">["game-changing", "hustle"]</span><br>
+            &nbsp;&nbsp;}<br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 04 — THE ITALIC MOVE ══════════════════ -->
+  <section id="italic" class="section-wrap bg-dark-cream">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">04</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">The signature move</span>
+      </div>
+      <h2 class="section-h2">One word, <em>italicised.</em><br>Every headline. Every slide.</h2>
+
+      <div class="emphasis-layout">
+        <div class="emphasis-intro">
+          <p style="margin-bottom:16px;">Every headline in your carousel has exactly one italicised word. The punchline. The word that carries the most weight or surprise in the sentence.</p>
+          <p style="margin-bottom:16px;">This is what makes carousels look considered rather than generated. It's baked into every slide the skill produces, and you choose which word gets the emphasis when you write your copy.</p>
+          <p>When a reader scrolls through your carousel, the italic word slows them down at exactly the right moment. It's a small thing that changes how the whole post lands.</p>
+        </div>
+        <div class="emphasis-examples">
+          <div class="em-example">
+            <p>You don't need to think <em>bigger.</em></p>
+            <p class="em-note">The italic word challenges the assumption. The whole sentence lands differently because of it.</p>
+          </div>
+          <div class="em-example">
+            <p>Sharper <em>beats</em> bigger.</p>
+            <p class="em-note">The verb is the reveal. Italic emphasis makes the reader pause at exactly the right moment.</p>
+          </div>
+          <div class="em-example">
+            <p>The advice was written for someone <em>else.</em></p>
+            <p class="em-note">The sting is in the last word. Without the italic, it almost disappears. With it, it lands.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 05 — HOW IT WORKS ═════════════════════ -->
+  <section id="pipeline" class="section-wrap bg-cream">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">05</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">How it works</span>
+      </div>
+      <h2 class="section-h2">From topic to PNG<br>in <em>five steps.</em></h2>
+      <p class="section-intro">There's an approval gate after the copy is written so your voice stays intact before anything gets rendered. Nothing moves forward until you say so.</p>
+
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="ps-num">1</div>
+          <div class="ps-body">
+            <h3>Give it a topic</h3>
+            <p>Say "create a carousel about [your topic]" in Claude Code. The skill reads your brand config and writes seven slides in your voice, with one italicised emphasis word per headline.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num">2</div>
+          <div class="ps-body">
+            <h3>Approve the copy</h3>
+            <p>The skill shows you all seven slides before anything is rendered. Edit lines, swap words, or start fresh. The render doesn't begin until you explicitly approve.</p>
+            <p class="ps-callout">The approval gate is why your carousels sound like you. Claude writes the first draft — you have the final word.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num">3</div>
+          <div class="ps-body">
+            <h3>Photos are selected automatically</h3>
+            <p>The skill picks seven photos at random from your brand folder. Different combination each carousel, so your feed doesn't look repetitive even when you're posting frequently.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num">4</div>
+          <div class="ps-body">
+            <h3>The template is populated and rendered</h3>
+            <p>Your copy, photos, colours, and fonts are injected into the HTML template. A headless browser renders each slide as a full-resolution screenshot using Playwright — the same approach that powers the most reliable browser automation tools in the world.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="ps-num">5</div>
+          <div class="ps-body">
+            <h3>Seven PNGs land in a folder, ready to post</h3>
+            <p>1080×1350px Instagram-ready PNGs. The export folder opens in Finder automatically so you can grab them straight away. No re-exporting, no resizing, no Canva.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 06 — WRITING YOUR COPY ════════════════ -->
+  <section id="copy" class="section-wrap bg-mid">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">06</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">Writing carousel copy</span>
+      </div>
+      <h2 class="section-h2">Seven slides.<br>One clear <em>structure.</em></h2>
+      <p class="section-intro">Every carousel follows the same shape: one hook, five statements, one CTA. The skill knows this structure and writes to it automatically.</p>
+
+      <div class="copy-rules-grid">
+        <div class="copy-rule">
+          <p class="copy-rule-slide">Slide 1</p>
+          <h3>Hook</h3>
+          <p>One sentence, 5–10 words. One italicised emphasis word. No subhead. The job of slide 1 is to stop the scroll — nothing else.</p>
+        </div>
+        <div class="copy-rule">
+          <p class="copy-rule-slide">Slides 2–6</p>
+          <h3>Statements</h3>
+          <p>Headline: 5–9 words with one italic word. Subhead: 8–14 words that extend the thought. One idea per slide.</p>
+        </div>
+        <div class="copy-rule">
+          <p class="copy-rule-slide">Slide 7</p>
+          <h3>CTA</h3>
+          <p>Auto-generated from your brand config. "Comment '[keyword]' [your tail text]" followed by your signature name.</p>
+        </div>
+        <div class="copy-rule">
+          <p class="copy-rule-slide">Before every render</p>
+          <h3>Banned phrase check</h3>
+          <p>Every headline and subhead is scanned against your banned phrases list. If anything matches, the skill rewrites it before showing you the copy.</p>
+        </div>
+      </div>
+
+      <div class="word-count-note">
+        <div class="wc-item"><strong>Hook headline</strong>5–10 words, max 12</div>
+        <div class="wc-item"><strong>Statement headline</strong>5–9 words, max 11</div>
+        <div class="wc-item"><strong>Statement subhead</strong>8–14 words, max 18</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 07 — INSTALLING ═══════════════════════ -->
+  <section id="install" class="section-wrap bg-cream">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">07</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">Installing</span>
+      </div>
+      <h2 class="section-h2">Three steps.<br>Done in <em>minutes.</em></h2>
+
+      <div class="install-layout">
+        <ol class="install-steps">
+          <li class="install-step">
+            <div class="install-step-num">1</div>
+            <div class="install-step-body">
+              <strong>Download the skill file</strong>
+              <p>You'll get it in your inbox after signing up above. It's a zip file — everything the skill needs is inside.</p>
+            </div>
+          </li>
+          <li class="install-step">
+            <div class="install-step-num">2</div>
+            <div class="install-step-body">
+              <strong>Extract it into your skills folder</strong>
+              <p>Unzip into <span class="code-inline">~/.claude/skills/</span>. This folder is created automatically when you first install Claude Code.</p>
+            </div>
+          </li>
+          <li class="install-step">
+            <div class="install-step-num">3</div>
+            <div class="install-step-body">
+              <strong>Say "setup carousel maker"</strong>
+              <p>The wizard runs once, captures your brand, and the skill is ready. After that, say "create a carousel about [topic]" to make your first one.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="install-side">
+          <div class="install-timing">
+            <h3>What's in the zip</h3>
+            <div class="timing-row">
+              <span class="tr-label">SKILL.md</span>
+              <span class="tr-val">The skill instructions</span>
+            </div>
+            <div class="timing-row">
+              <span class="tr-label">template-photo-overlay.html</span>
+              <span class="tr-val">The carousel template</span>
+            </div>
+            <div class="timing-row">
+              <span class="tr-label">brand-config.example.json</span>
+              <span class="tr-val">Schema reference</span>
+            </div>
+            <div class="timing-row">
+              <span class="tr-label">photos/my-brand/</span>
+              <span class="tr-val">Drop your photos here</span>
+            </div>
+          </div>
+
+          <div class="playwright-note">
+            <p><strong>One dependency:</strong> the skill uses Playwright to render slides. If it's not already installed, the setup wizard will give you a one-line install command. Takes about 2 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 08 — BLOTATO ══════════════════════════ -->
+  <section id="blotato" class="section-wrap bg-brown">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">08</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">Optional — auto-schedule</span>
+      </div>
+
+      <div class="blotato-layout">
+        <div>
+          <h2 class="section-h2">Carousels made.<br><em>Scheduled</em> automatically.</h2>
+          <p class="section-intro">Once your PNGs are ready, Blotato can publish them straight to Instagram, TikTok, Facebook, LinkedIn, and Threads on a schedule. It's what I use to post everything I make with this skill. Connect it once in Claude Code and the two tools work together automatically.</p>
+        </div>
+        <a href="https://blotato.com/?ref=kellyuv" target="_blank" rel="noopener" class="btn-outline-light">Try Blotato</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 09 — THE BIGGER PICTURE ═══════════════ -->
+  <section id="bigger" class="section-wrap bg-mid">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">09</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">The bigger picture</span>
+      </div>
+      <h2 class="section-h2">The carousel maker is<br>one part of a <em>seven-skill</em> system.</h2>
+
+      <div class="bigger-layout">
+        <div class="bigger-body">
+          <p>Inside the Wise Women Use AI Skool community, I've documented the full content workflow I run every week. It goes from a single topic brief all the way through to carousels, talking head scripts, editorial posts, email content, and scheduled publishing.</p>
+          <p>One chain, one topic, one sitting.</p>
+          <p>The carousel maker is the piece that's easiest to release as a standalone tool. Which is why it's the one I made available here. If you want to see what the whole system looks like, it lives inside the community in a document I call the full content workflow.</p>
+        </div>
+
+        <div class="skill-chain">
+          <div class="chain-item">
+            <div class="chain-num">1</div>
+            <div class="chain-label">Weekly topic brief</div>
+          </div>
+          <div class="chain-item">
+            <div class="chain-num">2</div>
+            <div class="chain-label">Talking head script</div>
+          </div>
+          <div class="chain-item chain-active">
+            <div class="chain-num">3</div>
+            <div class="chain-label">Carousel maker — you are here</div>
+          </div>
+          <div class="chain-item">
+            <div class="chain-num">4</div>
+            <div class="chain-label">Editorial carousel</div>
+          </div>
+          <div class="chain-item">
+            <div class="chain-num">5</div>
+            <div class="chain-label">Email content</div>
+          </div>
+          <div class="chain-item">
+            <div class="chain-num">6</div>
+            <div class="chain-label">Caption writing</div>
+          </div>
+          <div class="chain-item">
+            <div class="chain-num">7</div>
+            <div class="chain-label">Scheduled publishing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 10 — CTAs ══════════════════════════════ -->
+  <section id="ctas" class="section-wrap bg-cream">
+    <div class="section-inner">
+      <div class="section-label">
+        <span class="section-num">10</span>
+        <span class="section-num-line"></span>
+        <span class="section-tag">What's next</span>
+      </div>
+      <h2 class="section-h2">Ready to go <em>further?</em></h2>
+
+      <div class="ctas-grid">
+        <div class="cta-card cta-dark">
+          <p class="cta-eyebrow">Skool community</p>
+          <h3>The full content workflow. And everything else.</h3>
+          <p>The carousel maker is skill three. The community is where the other six live.</p>
+          <ul class="cta-includes">
+            <li><span class="li-dot"></span>The full content workflow document — all seven skills documented</li>
+            <li><span class="li-dot"></span>Claude Classroom — video training on using Claude Code for your business</li>
+            <li><span class="li-dot"></span>Live calls and a no-hype community of women doing the same thing</li>
+          </ul>
+          <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn-solid">Join the community</a>
+        </div>
+
+        <div class="cta-card cta-light">
+          <p class="cta-eyebrow">Work with me</p>
+          <h3>Want something built for your specific business?</h3>
+          <p>I work with a small number of clients to build custom Claude Code systems, content workflows, and automation pipelines tailored to their business.</p>
+          <ul class="cta-includes">
+            <li><span class="li-dot"></span>Custom skill files built around your exact workflow</li>
+            <li><span class="li-dot"></span>Automation pipelines that fit how you already work</li>
+            <li><span class="li-dot"></span>Hands-on, not handed off to a team</li>
+          </ul>
+          <a href="/work" class="btn-outline">See how it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FOOTER ═════════════════════════════════ -->
+  <footer>
+    <span class="footer-brand">Wise Women Use AI</span>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
