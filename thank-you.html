@@ -733,6 +733,31 @@
         return;
       }
 
+      if (source === 'carousel-maker') {
+        heroTitle.innerHTML = 'Your skill file<br>is on its way, <em>lovely.</em>';
+        heroDesc.innerHTML = 'Check your inbox for the download link. While you wait, the full setup guide is at <a href="/carousel-maker" style="color:var(--terra)">wisewomenuseai.com/carousel-maker</a>.';
+        kitTitle.textContent = 'Getting started with the carousel maker';
+        kitSub.textContent = 'Four steps from download to your first carousel.';
+        kitGrid.innerHTML =
+          '<div class="kit-item"><div class="kit-number">01</div><h3>Unzip the file</h3><p>Move the folder into your Claude Code skills folder: <code style="font-size:12px;background:var(--cream-dark);padding:2px 6px;border-radius:3px">~/.claude/skills/</code></p></div>'
+        + '<div class="kit-item"><div class="kit-number">02</div><h3>Run the setup wizard</h3><p>Open Claude Code and type: <strong>setup carousel maker</strong>. The wizard takes about 20 minutes the first time.</p></div>'
+        + '<div class="kit-item"><div class="kit-number">03</div><h3>Add your brand photos</h3><p>Drop 3 to 5 photos into the <code style="font-size:12px;background:var(--cream-dark);padding:2px 6px;border-radius:3px">photos/my-brand/</code> folder. The skill picks from these at random.</p></div>'
+        + '<div class="kit-item"><div class="kit-number">04</div><h3>Create your first carousel</h3><p>Type “create a carousel about [your topic]” and you’re off. Every carousel after setup takes under two minutes.</p></div>';
+        upsellHeading.innerHTML = 'The carousel maker is<br>one piece of a <em>bigger system.</em>';
+        upsellBody.textContent = 'Inside the community, you get the full seven-skill content workflow — from one weekly topic to carousels, video scripts, email content, and captions. All from the same idea. All in under an hour.';
+        document.querySelector('.upsell-grid').innerHTML =
+          '<div class="upsell-card"><p class="upsell-card-label">The full workflow</p><h3>Seven-Skill Content System</h3><p>The complete document Kelly runs every Monday: topic brief, talking head script, carousel, editorial, email, captions, and publishing.</p></div>'
+        + '<div class="upsell-card"><p class="upsell-card-label">Training</p><h3>Claude Classroom</h3><p>Video training on using Claude Code for your business. Built for women who want to go further, not just dabble.</p></div>'
+        + '<div class="upsell-card"><p class="upsell-card-label">Community</p><h3>Real Q&amp;A with Kelly</h3><p>Ask questions, share what you’re building, and get Kelly’s take. Women at all stages of the same journey.</p></div>'
+        + '<div class="upsell-card"><p class="upsell-card-label">Always growing</p><h3>Systems Library</h3><p>New skills and workflows added as Kelly builds them. Pay once, access everything that comes after.</p></div>';
+        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. The full content system.<br><em>Join at the founding price.</em>';
+        document.querySelector('.upsell-pricing-body').textContent = 'You’ve got the carousel maker. Inside the community, you get the other six skills, the full workflow document, and a group of women building the same kind of content system. Join at the founding price while it’s still $99.';
+        upsellCta.textContent = 'Join as a founding member';
+        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109/about');
+        document.querySelector('.upsell-fallback').innerHTML = 'Or check the setup guide first. The skill will be there when you’re ready. <a href="/carousel-maker">Setup guide</a>';
+        return;
+      }
+
       if (source === 'switch-to-claude') {
         heroTitle.innerHTML = 'Your guide is open.<br>Let\'s get you <em>switched.</em>';
         heroScript.textContent = 'four steps, about five minutes';
