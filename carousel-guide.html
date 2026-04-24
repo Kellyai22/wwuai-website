@@ -20,8 +20,9 @@
       --cream-mid:  #F2EDE8;
       --serif:      'Cormorant Garamond', Georgia, serif;
       --sans:       'Montserrat', sans-serif;
-      --sidebar-w:  256px;
       --banner-h:   44px;
+      --nav-h:      48px;
+      --sticky-h:   92px; /* banner + nav */
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,72 +66,62 @@
       .download-banner span { display: none; }
     }
 
-    /* ── Layout ──────────────────────────────── */
-    .page-wrap {
-      display: grid;
-      grid-template-columns: var(--sidebar-w) 1fr;
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 32px;
-      min-height: calc(100vh - var(--banner-h));
-    }
-
-    /* ── Sidebar ─────────────────────────────── */
-    .sidebar {
-      padding: 52px 32px 52px 0;
-    }
-    .sidebar-sticky {
+    /* ── Top nav ─────────────────────────────── */
+    .top-nav {
       position: sticky;
-      top: calc(var(--banner-h) + 24px);
-    }
-    .sidebar-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sub);
-      margin-bottom: 20px;
-      padding-bottom: 16px;
+      top: var(--banner-h);
+      z-index: 190;
+      background: var(--bg);
       border-bottom: 1px solid var(--cream-dark);
+      height: var(--nav-h);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
-    .nav-list {
-      list-style: none;
+    .top-nav::-webkit-scrollbar { display: none; }
+    .nav-inner {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: stretch;
+      height: 100%;
+      padding: 0 32px;
+      gap: 0;
+      min-width: max-content;
     }
-    .nav-list a {
+    .nav-inner a {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      padding: 7px 10px;
-      border-radius: 5px;
+      align-items: center;
+      gap: 7px;
+      padding: 0 14px;
       text-decoration: none;
       color: var(--sub);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 500;
-      line-height: 1.4;
-      transition: color 0.12s, background 0.12s;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.12s, border-color 0.12s;
     }
-    .nav-list a .n {
+    .nav-inner a .n {
       font-family: var(--serif);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       color: var(--cream-dark);
-      min-width: 14px;
-      flex-shrink: 0;
       transition: color 0.12s;
     }
-    .nav-list a:hover            { color: var(--brown); background: var(--cream-mid); }
-    .nav-list a:hover .n         { color: var(--terra); }
-    .nav-list a.active           { color: var(--brown); background: var(--cream-mid); }
-    .nav-list a.active .n        { color: var(--terra); }
+    .nav-inner a:hover        { color: var(--brown); }
+    .nav-inner a:hover .n     { color: var(--terra); }
+    .nav-inner a.active       { color: var(--brown); border-bottom-color: var(--terra); }
+    .nav-inner a.active .n    { color: var(--terra); }
+
+    /* ── Layout ──────────────────────────────── */
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
     /* ── Main ────────────────────────────────── */
     .main {
-      padding: 52px 0 96px 52px;
-      border-left: 1px solid var(--cream-dark);
-      max-width: 780px;
+      padding: 52px 0 96px;
     }
 
     /* ── Hero ────────────────────────────────── */
@@ -185,7 +176,7 @@
     /* ── Section ─────────────────────────────── */
     .section {
       margin-bottom: 80px;
-      scroll-margin-top: calc(var(--banner-h) + 28px);
+      scroll-margin-top: calc(var(--sticky-h) + 24px);
     }
     .section-head {
       display: flex;
@@ -506,6 +497,7 @@
     }
     .btn-join:hover { opacity: 0.88; }
     .upsell-note { font-size: 12px; color: var(--sub); margin-top: 12px; margin-bottom: 0; }
+    .cta-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
     /* ── Footer ──────────────────────────────── */
     footer {
@@ -524,14 +516,15 @@
     footer a:hover { color: var(--brown); }
 
     /* ── Mobile ──────────────────────────────── */
-    @media (max-width: 800px) {
-      .page-wrap { grid-template-columns: 1fr; padding: 0 20px; }
-      .sidebar   { display: none; }
-      .main      { padding: 32px 0 64px; border-left: none; }
+    @media (max-width: 700px) {
+      .page-wrap            { padding: 0 20px; }
+      .nav-inner            { padding: 0 20px; }
+      .main                 { padding: 32px 0 64px; }
       .file-grid, .req-cols { grid-template-columns: 1fr; }
-      .em-pair   { grid-template-columns: 1fr; }
-      .upsell    { padding: 32px 24px; }
-      footer     { flex-direction: column; gap: 12px; text-align: center; }
+      .em-pair              { grid-template-columns: 1fr; }
+      .cta-pair             { grid-template-columns: 1fr; }
+      .upsell               { padding: 32px 24px; }
+      footer                { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
@@ -544,27 +537,21 @@
   <a href="https://wisewomenuseai.com/assets/carousel-maker.zip" download>Download carousel-maker.zip</a>
 </div>
 
+<!-- ══ TOP NAV ════════════════════════════════════ -->
+<nav class="top-nav" aria-label="Guide sections">
+  <div class="nav-inner">
+    <a href="#in-the-file"     class="nav-link"><span class="n">1</span>What's in the file</a>
+    <a href="#what-you-need"   class="nav-link"><span class="n">2</span>What you'll need</a>
+    <a href="#brand-setup"     class="nav-link"><span class="n">3</span>Brand setup</a>
+    <a href="#pipeline"        class="nav-link"><span class="n">4</span>How it works</a>
+    <a href="#first-carousel"  class="nav-link"><span class="n">5</span>First carousel</a>
+    <a href="#italic-emphasis" class="nav-link"><span class="n">6</span>Italic emphasis</a>
+    <a href="#install"         class="nav-link"><span class="n">7</span>Getting started</a>
+    <a href="#bigger-system"   class="nav-link"><span class="n">8</span>The bigger system</a>
+  </div>
+</nav>
+
 <div class="page-wrap">
-
-  <!-- ══ SIDEBAR ════════════════════════════════════ -->
-  <aside class="sidebar">
-    <div class="sidebar-sticky">
-      <p class="sidebar-label">Carousel Maker Guide</p>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="#in-the-file"     class="nav-link"><span class="n">1</span>What's in the file</a></li>
-          <li><a href="#what-you-need"   class="nav-link"><span class="n">2</span>What you'll need</a></li>
-          <li><a href="#brand-setup"     class="nav-link"><span class="n">3</span>Setting up your brand</a></li>
-          <li><a href="#pipeline"        class="nav-link"><span class="n">4</span>How the pipeline works</a></li>
-          <li><a href="#first-carousel"  class="nav-link"><span class="n">5</span>Your first carousel</a></li>
-          <li><a href="#italic-emphasis" class="nav-link"><span class="n">6</span>The italic emphasis</a></li>
-          <li><a href="#install"         class="nav-link"><span class="n">7</span>Getting it running</a></li>
-          <li><a href="#bigger-system"   class="nav-link"><span class="n">8</span>The bigger system</a></li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
-
   <!-- ══ MAIN ═══════════════════════════════════════ -->
   <main class="main">
 
@@ -954,19 +941,36 @@
       </div>
       <h2>The bigger <em>system</em></h2>
 
-      <div class="upsell">
-        <p class="upsell-tag">Wise Women Use AI — Skool community</p>
-        <h2>The carousel maker is skill three.<br><em>There are seven in total.</em></h2>
-        <p class="upsell-body">Inside the community, you get the full content workflow document — the system I run every Monday. One topic brief goes in. A week's worth of content comes out: carousels, talking head scripts, editorial posts, email content, and captions. All from the same idea, in one sitting.</p>
-        <ul class="upsell-items">
-          <li>The full seven-skill weekly content workflow document</li>
-          <li>Claude Classroom — video training on using Claude Code for your business</li>
-          <li>Live calls and a community of women building the same kind of systems</li>
-          <li>New skills and workflows added as I build them. Pay once, keep everything.</li>
-        </ul>
-        <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" rel="noopener" class="btn-join">Join the community</a>
-        <p class="upsell-note">One-time payment. Not a subscription.</p>
+      <div class="cta-pair">
+
+        <div class="upsell">
+          <p class="upsell-tag">Skool community</p>
+          <h2>The carousel maker is skill three.<br><em>There are seven.</em></h2>
+          <p class="upsell-body">The full content workflow document lives inside the community. One topic brief goes in. A week of content comes out — carousels, scripts, email, captions. All in one sitting.</p>
+          <ul class="upsell-items">
+            <li>The full seven-skill content workflow document</li>
+            <li>Claude Classroom — video training on Claude Code</li>
+            <li>Live calls and a community of women building the same systems</li>
+            <li>Pay once, keep everything added after.</li>
+          </ul>
+          <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" rel="noopener" class="btn-join">Join the community</a>
+          <p class="upsell-note">One-time payment. Not a subscription.</p>
+        </div>
+
+        <div class="upsell" style="background:var(--cream-mid);border:1px solid var(--cream-dark);">
+          <p class="upsell-tag" style="color:var(--sub);">Work with me</p>
+          <h2 style="color:var(--brown);">Want something built for your <em>specific business?</em></h2>
+          <p class="upsell-body" style="color:var(--sub);">I work with a small number of clients to build custom Claude Code systems tailored to how they actually work — not a generic setup.</p>
+          <ul class="upsell-items">
+            <li style="color:var(--brown);">Custom skill files built around your exact workflow</li>
+            <li style="color:var(--brown);">Automation pipelines that fit how you already work</li>
+            <li style="color:var(--brown);">Hands-on, not handed off to a team</li>
+          </ul>
+          <a href="https://wisewomenuseai.com/work" class="btn-join" style="background:transparent;border:1.5px solid var(--terra);color:var(--terra);">See how it works</a>
+        </div>
+
       </div>
+
     </section>
 
   </main>
