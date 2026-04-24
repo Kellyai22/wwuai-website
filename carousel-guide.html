@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Maker — Setup Guide — Wise Women Use AI</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Variables ───────────────────────────── */
+    :root {
+      --bg:         #FFFCFA;
+      --brown:      #5E534B;
+      --terra:      #C4714F;
+      --sub:        #968880;
+      --cream-dark: #EAE5DF;
+      --cream-mid:  #F2EDE8;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Montserrat', sans-serif;
+      --sidebar-w:  256px;
+      --banner-h:   44px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--brown);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Download banner ─────────────────────── */
+    .download-banner {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--terra);
+      color: white;
+      height: var(--banner-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0 24px;
+    }
+    .download-banner a {
+      color: white;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+    }
+    .download-banner a:hover { opacity: 0.8; }
+    @media (max-width: 600px) {
+      .download-banner span { display: none; }
+    }
+
+    /* ── Layout ──────────────────────────────── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 32px;
+      min-height: calc(100vh - var(--banner-h));
+    }
+
+    /* ── Sidebar ─────────────────────────────── */
+    .sidebar {
+      padding: 52px 32px 52px 0;
+    }
+    .sidebar-sticky {
+      position: sticky;
+      top: calc(var(--banner-h) + 24px);
+    }
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .nav-list a {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: var(--sub);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.4;
+      transition: color 0.12s, background 0.12s;
+    }
+    .nav-list a .n {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      min-width: 14px;
+      flex-shrink: 0;
+      transition: color 0.12s;
+    }
+    .nav-list a:hover            { color: var(--brown); background: var(--cream-mid); }
+    .nav-list a:hover .n         { color: var(--terra); }
+    .nav-list a.active           { color: var(--brown); background: var(--cream-mid); }
+    .nav-list a.active .n        { color: var(--terra); }
+
+    /* ── Main ────────────────────────────────── */
+    .main {
+      padding: 52px 0 96px 52px;
+      border-left: 1px solid var(--cream-dark);
+      max-width: 780px;
+    }
+
+    /* ── Hero ────────────────────────────────── */
+    .hero {
+      margin-bottom: 80px;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 em { font-style: italic; color: var(--terra); }
+    .hero-sub {
+      font-size: 14.5px;
+      color: var(--sub);
+      line-height: 1.65;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 12px 22px;
+      border-radius: 6px;
+      transition: opacity 0.12s, transform 0.12s;
+    }
+    .dl-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .dl-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .hero-note {
+      margin-top: 10px;
+      font-size: 11.5px;
+      color: var(--sub);
+    }
+
+    /* ── Section ─────────────────────────────── */
+    .section {
+      margin-bottom: 80px;
+      scroll-margin-top: calc(var(--banner-h) + 28px);
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .section-num {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      white-space: nowrap;
+    }
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+    .section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .section h2 em { font-style: italic; color: var(--terra); }
+    .intro {
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    p { color: var(--brown); line-height: 1.7; margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 600; }
+
+    hr.rule {
+      border: none;
+      height: 1px;
+      background: var(--cream-dark);
+      margin: 72px 0;
+    }
+
+    /* ── File cards ──────────────────────────── */
+    .file-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .file-card {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .file-icon { font-size: 20px; margin-bottom: 10px; display: block; }
+    .file-card code {
+      display: block;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: var(--terra);
+      margin-bottom: 6px;
+      word-break: break-all;
+    }
+    .file-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .file-card p  { font-size: 12.5px; color: var(--sub); margin: 0; line-height: 1.55; }
+
+    /* ── Requirements ────────────────────────── */
+    .req-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .req-col h4 {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sub);
+      border-bottom: 1px solid var(--cream-dark);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+    .req-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .req-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .req-icon { flex-shrink: 0; margin-top: 1px; }
+    .yes .req-icon { color: var(--terra); }
+    .no  { color: var(--sub); }
+    .no  .req-icon { color: var(--cream-dark); }
+
+    /* ── Wizard steps ────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 18px; }
+    .step { display: grid; grid-template-columns: 34px 1fr; gap: 16px; align-items: start; }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--brown);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .step-body p  { font-size: 13px; color: var(--sub); margin: 0; line-height: 1.55; }
+
+    /* ── Code / command blocks ───────────────── */
+    .code-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 6px;
+      margin-top: 20px;
+    }
+    .code-block {
+      background: var(--brown);
+      border-radius: 8px;
+      padding: 18px 22px;
+      overflow-x: auto;
+      margin-bottom: 4px;
+    }
+    .code-block pre {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--cream-dark);
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .tok-key { color: #EAE5DF; }
+    .tok-val { color: var(--terra); }
+    .tok-str { color: #b8a99f; }
+
+    .cmd {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      border-left: 3px solid var(--terra);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 18px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--brown);
+      margin: 10px 0;
+    }
+    code.inline {
+      font-family: 'Courier New', monospace;
+      font-size: 11.5px;
+      color: var(--terra);
+      background: var(--cream-mid);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* ── Pipeline ────────────────────────────── */
+    .pipeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .pipeline::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 32px;
+      bottom: 32px;
+      width: 1px;
+      background: var(--cream-dark);
+    }
+    .pipeline-stage {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .p-dot {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--sub);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .pipeline-stage.gate .p-dot {
+      background: var(--terra);
+      border-color: var(--terra);
+      color: white;
+      font-weight: 500;
+    }
+    .p-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; margin-top: 6px; }
+    .p-body p  { font-size: 13px; color: var(--sub); margin: 0; line-height: 1.55; }
+
+    /* ── Callout ─────────────────────────────── */
+    .callout {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .callout h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .callout p { font-size: 13px; color: var(--sub); margin: 0; }
+
+    /* ── Italic emphasis demo ────────────────── */
+    .em-pairs { display: flex; flex-direction: column; gap: 14px; margin: 28px 0; }
+    .em-pair  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .em-col-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .em-col-label.off  { color: var(--sub); }
+    .em-col-label.on   { color: var(--terra); }
+    .em-card {
+      background: var(--brown);
+      border-radius: 7px;
+      padding: 22px 18px;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--cream-dark);
+      line-height: 1.4;
+    }
+    .em-card.light {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-dark);
+      color: var(--brown);
+    }
+    .em-card em       { font-style: italic; color: var(--terra); }
+    .em-card.no-em em { font-style: normal; color: inherit; }
+
+    /* ── Upsell ──────────────────────────────── */
+    .upsell {
+      background: var(--brown);
+      border-radius: 12px;
+      padding: 48px;
+    }
+    .upsell-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 14px;
+    }
+    .upsell h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--cream-dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .upsell h2 em { font-style: italic; color: var(--terra); }
+    .upsell-body { font-size: 14px; color: var(--sub); line-height: 1.7; margin-bottom: 28px; }
+    .upsell-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .upsell-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--cream-dark);
+      line-height: 1.5;
+    }
+    .upsell-items li::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--terra);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .btn-join {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 13px 28px;
+      border-radius: 6px;
+      transition: opacity 0.12s;
+    }
+    .btn-join:hover { opacity: 0.88; }
+    .upsell-note { font-size: 12px; color: var(--sub); margin-top: 12px; margin-bottom: 0; }
+
+    /* ── Footer ──────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 28px 32px;
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--sub);
+    }
+    footer nav { display: flex; gap: 20px; }
+    footer a   { color: var(--sub); text-decoration: none; }
+    footer a:hover { color: var(--brown); }
+
+    /* ── Mobile ──────────────────────────────── */
+    @media (max-width: 800px) {
+      .page-wrap { grid-template-columns: 1fr; padding: 0 20px; }
+      .sidebar   { display: none; }
+      .main      { padding: 32px 0 64px; border-left: none; }
+      .file-grid, .req-cols { grid-template-columns: 1fr; }
+      .em-pair   { grid-template-columns: 1fr; }
+      .upsell    { padding: 32px 24px; }
+      footer     { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══ BANNER ═════════════════════════════════════ -->
+<div class="download-banner">
+  <span>Your skill file is on its way — or grab it now:</span>
+  <a href="https://wisewomenuseai.com/assets/carousel-maker.zip" download>Download carousel-maker.zip</a>
+</div>
+
+<div class="page-wrap">
+
+  <!-- ══ SIDEBAR ════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-sticky">
+      <p class="sidebar-label">Carousel Maker Guide</p>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#in-the-file"     class="nav-link"><span class="n">1</span>What's in the file</a></li>
+          <li><a href="#what-you-need"   class="nav-link"><span class="n">2</span>What you'll need</a></li>
+          <li><a href="#brand-setup"     class="nav-link"><span class="n">3</span>Setting up your brand</a></li>
+          <li><a href="#pipeline"        class="nav-link"><span class="n">4</span>How the pipeline works</a></li>
+          <li><a href="#first-carousel"  class="nav-link"><span class="n">5</span>Your first carousel</a></li>
+          <li><a href="#italic-emphasis" class="nav-link"><span class="n">6</span>The italic emphasis</a></li>
+          <li><a href="#install"         class="nav-link"><span class="n">7</span>Getting it running</a></li>
+          <li><a href="#bigger-system"   class="nav-link"><span class="n">8</span>The bigger system</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN ═══════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <p class="hero-eyebrow">Free resource — Wise Women Use AI</p>
+      <h1>Your carousel maker<br>is on its way, <em>lovely.</em></h1>
+      <p class="hero-sub">The download link is in your inbox. This guide covers everything from installation to your first finished carousel — setup takes about 20 minutes, and every carousel after that takes under two minutes.</p>
+      <a href="https://wisewomenuseai.com/assets/carousel-maker.zip" class="dl-btn" download>
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1.5v8M8 9.5l-3-2.5M8 9.5l3-2.5M2.5 13.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download carousel-maker.zip
+      </a>
+      <p class="hero-note">25 KB · Works with Claude Code desktop app · Free forever</p>
+    </div>
+
+
+    <!-- ══ 01 — WHAT'S IN THE FILE ══════════════════ -->
+    <section class="section" id="in-the-file">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>What's in <em>the file</em></h2>
+      <p class="intro">When you unzip carousel-maker.zip, here's what you get — and what each piece does.</p>
+
+      <div class="file-grid">
+        <div class="file-card">
+          <span class="file-icon">📄</span>
+          <code>SKILL.md</code>
+          <h4>The skill prompt</h4>
+          <p>The main instruction file. Drop this into your Claude Code skills folder and it tells Claude how to run the setup wizard, write carousel copy, and render the PNGs.</p>
+        </div>
+        <div class="file-card">
+          <span class="file-icon">⚙️</span>
+          <code>brand-config.example.json</code>
+          <h4>Config reference</h4>
+          <p>An example showing the full config schema. Your actual brand config is generated automatically the first time you run the setup wizard — you won't need to edit this one directly.</p>
+        </div>
+        <div class="file-card">
+          <span class="file-icon">🎨</span>
+          <code>templates/template-photo-overlay.html</code>
+          <h4>The carousel template</h4>
+          <p>The HTML template your carousels are built from. It uses CSS variable placeholders that get replaced with your brand colours and fonts during setup. You don't need to touch it.</p>
+        </div>
+        <div class="file-card">
+          <span class="file-icon">📸</span>
+          <code>photos/my-brand/</code>
+          <h4>Your photos folder</h4>
+          <p>An empty folder where you put your brand photos before running setup. The skill picks from these automatically for every carousel — 7 photos per carousel, cycling through your set.</p>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--sub);">After setup, you'll also see a <code class="inline">brand-config.json</code> file appear — that's the one the skill actually reads. It's generated from your answers in the wizard.</p>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 02 — WHAT YOU NEED ═══════════════════════ -->
+    <section class="section" id="what-you-need">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>What you'll <em>need</em></h2>
+      <p class="intro">You don't need to be technical. Here's the actual list — and the things you can safely ignore.</p>
+
+      <div class="req-cols">
+        <div class="req-col">
+          <h4>You need</h4>
+          <ul class="req-list">
+            <li class="yes"><span class="req-icon">✓</span> Claude Code (desktop app — free to install)</li>
+            <li class="yes"><span class="req-icon">✓</span> Your brand hex codes (e.g. #5E534B)</li>
+            <li class="yes"><span class="req-icon">✓</span> Two Google Font names</li>
+            <li class="yes"><span class="req-icon">✓</span> Your Instagram handle</li>
+            <li class="yes"><span class="req-icon">✓</span> 3–5 brand photos (JPG or PNG)</li>
+            <li class="yes"><span class="req-icon">✓</span> About 20 minutes for first-time setup</li>
+          </ul>
+        </div>
+        <div class="req-col">
+          <h4>You don't need</h4>
+          <ul class="req-list">
+            <li class="no"><span class="req-icon">✗</span> Coding or developer skills</li>
+            <li class="no"><span class="req-icon">✗</span> Design software or Canva</li>
+            <li class="no"><span class="req-icon">✗</span> HTML or CSS knowledge</li>
+            <li class="no"><span class="req-icon">✗</span> A paid Claude subscription</li>
+            <li class="no"><span class="req-icon">✗</span> A monthly subscription of any kind</li>
+            <li class="no"><span class="req-icon">✗</span> A brand style guide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:24px;">
+        <h4>Don't know your hex codes?</h4>
+        <p>If you don't have a brand colour document, describe your colours to Claude and ask it to suggest hex codes. Or try coolors.co to generate a palette. You can always update them later — the setup wizard takes about 5 minutes to re-run.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 03 — BRAND SETUP ══════════════════════════ -->
+    <section class="section" id="brand-setup">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>Setting up <em>your brand</em></h2>
+      <p class="intro">The first time you run the carousel maker, a setup wizard walks you through a series of questions. Your answers get saved to a <code class="inline">brand-config.json</code> file, and every carousel after that automatically uses your brand settings.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Brand name and signature name</h4>
+            <p>Your business name for cover slides, and the name that appears on the final slide sign-off. These can be different — "Wise Women Use AI" as the brand, "Kelly" as the signature.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Instagram handle</h4>
+            <p>Your @handle — it appears on every content slide as subtle attribution. Include the @ symbol.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Brand colours — 5 hex values</h4>
+            <p>Primary (main colour, used for overlays), secondary (accent — CTAs and highlights), accent (softer tone), background (lightest colour — near-white works best), and text (muted body copy colour). These map directly to the CSS variables in your template.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Headline and body fonts</h4>
+            <p>Pick two Google Fonts — one for headlines, one for body text. Go to fonts.google.com, select your font, and copy the @import URL when the wizard asks for it. If you're unsure, Cormorant Garamond (headlines) and Montserrat (body) is a solid warm pairing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Drop your photos first</h4>
+            <p>Before this step, put 3–5 brand photos into the <code class="inline">photos/my-brand/</code> folder inside the skill directory. The wizard checks the folder and confirms how many it found. More photos means more variety across carousels.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h4>ManyChat keyword and CTA text</h4>
+            <p>The keyword people comment to get your link (e.g. CAROUSEL) and the tail text that follows it on the final slide (e.g. "and I'll send you the link."). This becomes your CTA slide automatically on every carousel.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">7</div>
+          <div class="step-body">
+            <h4>Banned phrases</h4>
+            <p>Words or phrases you never want in your copy — "game-changer", "unlock", "hustle", whatever you hate. Claude checks every slide against this list before showing you the draft. Say "none" if you don't have any yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="code-label">What the config file looks like after setup</p>
+      <div class="code-block">
+        <pre><span class="tok-key">{
+  "brand_name":      </span><span class="tok-val">"Your Business Name"</span><span class="tok-key">,
+  "signature_name":  </span><span class="tok-val">"Your First Name"</span><span class="tok-key">,
+  "handle":          </span><span class="tok-val">"@yourbrand"</span><span class="tok-key">,
+  "colors": {
+    "primary":       </span><span class="tok-val">"#5E534B"</span><span class="tok-key">,
+    "secondary":     </span><span class="tok-val">"#C4714F"</span><span class="tok-key">,
+    "accent":        </span><span class="tok-val">"#968880"</span><span class="tok-key">,
+    "background":    </span><span class="tok-val">"#FFFCFA"</span><span class="tok-key">,
+    "text":          </span><span class="tok-val">"#5E534B"</span>
+  <span class="tok-key">},
+  "voice": {
+    "banned_phrases": </span><span class="tok-val">["game-changer", "unlock", "hustle"]</span>
+  <span class="tok-key">},
+  "cta": {
+    "keyword":       </span><span class="tok-val">"CAROUSEL"</span><span class="tok-key">,
+    "tail":          </span><span class="tok-val">"and I'll send you the link."</span>
+  <span class="tok-key">}
+}</span></pre>
+      </div>
+      <p style="font-size:13px;color:var(--sub);">You can edit this file directly at any time, or tell Claude "change my primary colour to #2a4a5a" and it'll update automatically.</p>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 04 — PIPELINE ════════════════════════════ -->
+    <section class="section" id="pipeline">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>How the pipeline <em>works</em></h2>
+      <p class="intro">The carousel maker runs a five-stage process. You interact with the first two stages. Everything after your approval is automatic.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-stage">
+          <div class="p-dot">1</div>
+          <div class="p-body">
+            <h4>You give it a topic</h4>
+            <p>A topic, an angle, a transcript, or even pre-written copy. "Create a carousel about why you don't need a content calendar" is all it needs to get started.</p>
+          </div>
+        </div>
+        <div class="pipeline-stage gate">
+          <div class="p-dot">2</div>
+          <div class="p-body">
+            <h4>Copy generation — then your approval</h4>
+            <p>Claude writes 7 slides in your brand voice, checking against your banned phrases. You review, make any edits, then say "looks good." Nothing renders until you approve.</p>
+          </div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="p-dot">3</div>
+          <div class="p-body">
+            <h4>HTML build</h4>
+            <p>Your approved copy gets injected into your brand template. Colours, fonts, photos, handle, and CTA all come from your brand config automatically — no manual work.</p>
+          </div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="p-dot">4</div>
+          <div class="p-body">
+            <h4>PNG export</h4>
+            <p>Claude opens the HTML in a headless browser and screenshots each of the 7 slides at 1080×1350px — Instagram-ready, 4:5 aspect ratio, sharp on every device.</p>
+          </div>
+        </div>
+        <div class="pipeline-stage">
+          <div class="p-dot">5</div>
+          <div class="p-body">
+            <h4>Files land in a folder</h4>
+            <p>Seven PNGs are saved and the folder opens in Finder automatically. Ready to drag straight into your scheduling tool or upload directly to Instagram.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h4>The approval gate is by design</h4>
+        <p>The skill always pauses after writing copy and waits for your sign-off. This isn't a limitation — it's the most important design decision. Your voice matters more than speed. Tweak a headline, swap a word, reorder a slide. Then say "looks good" and the rest is automatic.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 05 — FIRST CAROUSEL ═══════════════════════ -->
+    <section class="section" id="first-carousel">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>Your first <em>carousel</em></h2>
+      <p class="intro">Once you're set up, this is the only command you need.</p>
+
+      <p class="code-label">First-time setup (run once)</p>
+      <div class="cmd">setup carousel maker</div>
+
+      <p class="code-label" style="margin-top:20px;">Every carousel after that</p>
+      <div class="cmd">create a carousel about [your topic]</div>
+
+      <p style="margin-top:20px;">The first run takes about 20 minutes because you're configuring your brand. Every carousel after that takes under two minutes from prompt to seven finished PNGs.</p>
+
+      <p>Some topics that work well to start with:</p>
+      <div class="cmd">create a carousel about why you don't need a content calendar</div>
+      <div class="cmd">create a carousel about the three tools I use every single morning</div>
+      <div class="cmd">create a carousel about what changed when I stopped batch-creating content</div>
+
+      <div class="callout" style="margin-top:20px;">
+        <h4>If your first result doesn't look right</h4>
+        <p>It's almost always one of two things: photos that are too dark or low-contrast, or brand colours without enough difference between them. Try lighter, more open photos. Or adjust your background colour to be closer to white. You can re-run setup at any time without losing your other settings.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 06 — ITALIC EMPHASIS ══════════════════════ -->
+    <section class="section" id="italic-emphasis">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>The italic <em>emphasis</em></h2>
+      <p class="intro">Every carousel headline has exactly one italicised word. This isn't a setting you configure — it's baked into the skill. And it's the thing that makes carousels look considered rather than generated.</p>
+
+      <p>The italic word is the punchline — the one that carries the most weight or surprise in the sentence. The skill chooses it carefully when writing your copy, but you can always change it at the approval stage by saying which word you'd like italicised instead.</p>
+
+      <div class="em-pairs">
+
+        <div class="em-pair">
+          <div>
+            <p class="em-col-label off">Without</p>
+            <div class="em-card no-em">"You don't need to think bigger."</div>
+          </div>
+          <div>
+            <p class="em-col-label on">With italic emphasis</p>
+            <div class="em-card">"You don't need to think <em>bigger.</em>"</div>
+          </div>
+        </div>
+
+        <div class="em-pair">
+          <div>
+            <p class="em-col-label off">Without</p>
+            <div class="em-card light no-em">"Sharper beats bigger."</div>
+          </div>
+          <div>
+            <p class="em-col-label on">With italic emphasis</p>
+            <div class="em-card light">"Sharper <em>beats</em> bigger."</div>
+          </div>
+        </div>
+
+        <div class="em-pair">
+          <div>
+            <p class="em-col-label off">Without</p>
+            <div class="em-card no-em">"The advice was written for someone else."</div>
+          </div>
+          <div>
+            <p class="em-col-label on">With italic emphasis</p>
+            <div class="em-card">"The advice was written for someone <em>else.</em>"</div>
+          </div>
+        </div>
+
+      </div>
+
+      <p>At the approval stage, look at the italic word on each slide and ask: is this the right one? If another word carries more punch, just tell Claude which word to italicise. It'll update the slide before rendering.</p>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 07 — INSTALL ══════════════════════════════ -->
+    <section class="section" id="install">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>Getting it <em>running</em></h2>
+      <p class="intro">Three steps from download to your first setup prompt.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Download and unzip the file</h4>
+            <p>Use the button below (or the link in your inbox). Unzip it — you'll get a folder called <code class="inline">carousel-maker</code>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Move it to your Claude Code skills folder</h4>
+            <p>Drop the entire <code class="inline">carousel-maker</code> folder into <code class="inline">~/.claude/skills/</code> — that's the hidden <code class="inline">.claude</code> folder in your home directory. If the <code class="inline">skills/</code> folder doesn't exist yet, create it first.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Open Claude Code and run setup</h4>
+            <p>Open the Claude Code desktop app, start a new session, and type <code class="inline">setup carousel maker</code>. The wizard starts automatically. About 20 minutes the first time, then you're ready to go.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;background:var(--cream-mid);border:1px solid var(--cream-dark);border-radius:8px;padding:28px;">
+        <p style="font-size:12.5px;color:var(--sub);margin-bottom:14px;">Download the skill file</p>
+        <a href="https://wisewomenuseai.com/assets/carousel-maker.zip" class="dl-btn" download>
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1.5v8M8 9.5l-3-2.5M8 9.5l3-2.5M2.5 13.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download carousel-maker.zip
+        </a>
+        <p style="font-size:12px;color:var(--sub);margin-top:10px;margin-bottom:0;">25 KB · Free forever · Works with Claude Code desktop app</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+
+    <!-- ══ 08 — BIGGER SYSTEM ════════════════════════ -->
+    <section class="section" id="bigger-system">
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2>The bigger <em>system</em></h2>
+
+      <div class="upsell">
+        <p class="upsell-tag">Wise Women Use AI — Skool community</p>
+        <h2>The carousel maker is skill three.<br><em>There are seven in total.</em></h2>
+        <p class="upsell-body">Inside the community, you get the full content workflow document — the system I run every Monday. One topic brief goes in. A week's worth of content comes out: carousels, talking head scripts, editorial posts, email content, and captions. All from the same idea, in one sitting.</p>
+        <ul class="upsell-items">
+          <li>The full seven-skill weekly content workflow document</li>
+          <li>Claude Classroom — video training on using Claude Code for your business</li>
+          <li>Live calls and a community of women building the same kind of systems</li>
+          <li>New skills and workflows added as I build them. Pay once, keep everything.</li>
+        </ul>
+        <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" rel="noopener" class="btn-join">Join the community</a>
+        <p class="upsell-note">One-time payment. Not a subscription.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <span>Wise Women Use AI</span>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/carousel-maker">Back to the skill page</a>
+    <a href="mailto:kelly@wisewomenuseai.com">Contact</a>
+  </nav>
+</footer>
+
+
+<script>
+  // Scroll spy — highlight active section in sidebar
+  const sections = document.querySelectorAll('.section');
+  const links    = document.querySelectorAll('.nav-link');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
