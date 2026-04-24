@@ -734,15 +734,29 @@
       }
 
       if (source === 'switch-to-claude') {
-        heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
-        heroDesc.textContent = 'The Switch to Claude guide is headed to your inbox. Everything you need to bring your ChatGPT setup across in about five minutes.';
-        kitTitle.textContent = 'Switch to Claude';
-        kitSub.textContent = 'Your step-by-step migration guide.';
+        heroTitle.innerHTML = 'Your guide is open.<br>Let\'s get you <em>switched.</em>';
+        heroScript.textContent = 'four steps, about five minutes';
+        heroDesc.innerHTML = '<a href="/switch" style="display:inline-block;background:var(--terra);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the wizard</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:12px">Work through all four steps and Claude will know exactly how you work. A confirmation email is on its way too.</span>';
+        kitTitle.textContent = 'What you\'ll do in the wizard';
+        kitSub.textContent = 'Four steps to bring your ChatGPT setup across to Claude.';
         kitGrid.innerHTML = ''
           + '<div class="kit-item"><div class="kit-number">01</div><h3>Extract from ChatGPT</h3><p>Two prompts that pull out everything ChatGPT knows about you, your preferences, and your custom instructions.</p></div>'
           + '<div class="kit-item"><div class="kit-number">02</div><h3>Review and refine</h3><p>Clean up what ChatGPT gives you so Claude gets the best version of your profile.</p></div>'
           + '<div class="kit-item"><div class="kit-number">03</div><h3>Import to Claude</h3><p>Paste your profile into Claude and let it store everything. One conversation, done.</p></div>'
           + '<div class="kit-item"><div class="kit-number">04</div><h3>What comes next</h3><p>Set up Projects, understand what to expect in your first week, and tips for getting the most out of Claude.</p></div>';
+        document.querySelector('.upsell .section-label').textContent = 'What comes next';
+        upsellHeading.innerHTML = 'You\'re making the move to Claude.<br>Here\'s where we go <em>deeper.</em>';
+        upsellBody.textContent = 'The community is where women who\'ve made this switch share what\'s actually working — prompts, projects, time-saving workflows. If you\'re going all-in on Claude, this is your people.';
+        document.querySelector('.upsell-grid').innerHTML =
+            '<div class="upsell-card"><p class="upsell-card-label">Classroom</p><h3>Claude Classroom</h3><p>Prompts, projects, and the full Claude Starter Kit. Everything you need to get fluent fast.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Community</p><h3>Real Q&A with Kelly</h3><p>Ask questions, share wins, get Kelly\'s take. Real answers for the real things you\'re working on.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Always growing</p><h3>Resource Library</h3><p>New templates and workflows added regularly. Pay once, access everything that comes after.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Framework</p><h3>AI as Your Business Team</h3><p>The mental model that changes how you use AI — from a tool you open to a team you lead.</p></div>';
+        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. Claude, properly.<br><em>Join at the founding price.</em>';
+        document.querySelector('.upsell-pricing-body').textContent = 'You\'ve already taken the first step by trying Claude. Inside the community, women who\'ve made the same switch share prompts, projects, and what\'s actually working. Join at the founding price before it goes up.';
+        upsellCta.textContent = 'Join as a founding member';
+        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109/about');
+        document.querySelector('.upsell-fallback').innerHTML = 'Or go do the wizard first. No rush. <a href="/switch">Open the wizard</a>';
         return;
       }
     })();
