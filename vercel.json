@@ -4,6 +4,7 @@
     { "src": "/guide",     "dest": "/guide.html" },
     { "src": "/switch",          "dest": "/switch.html" },
     { "src": "/switch-to-claude", "dest": "/switch-to-claude.html" },
+    { "src": "/switch-wwuai",     "dest": "/switch-wwuai.html" },
     { "src": "/starter",   "dest": "/starter.html" },
     { "src": "/community", "dest": "/community.html" },
     { "src": "/work",      "dest": "/work.html" },
@@ -11,6 +12,7 @@
     { "src": "/voice",     "dest": "/voice.html" },
     { "src": "/thankyou",  "dest": "/thankyou.html" },
     { "src": "/thank-you", "dest": "/thank-you.html" },
-    { "src": "/dashboard", "dest": "/dashboard.html" }
+    { "src": "/dashboard",        "dest": "/dashboard.html" },
+    { "src": "/carousel-maker",   "dest": "/carousel-maker.html" }
   ]
 }
