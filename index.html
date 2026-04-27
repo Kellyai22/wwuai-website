@@ -1202,6 +1202,12 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // TEMP DEBUG - remove after diagnosis
+    document.addEventListener('mousemove', function(e) {
+      var el = document.elementFromPoint(e.clientX, e.clientY);
+      if (el) document.title = el.tagName + ' | ' + (el.className || '-') + ' | ' + (el.href || '-');
+    });
   </script>
 
 </body>
