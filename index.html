@@ -105,6 +105,7 @@
       gap: 24px;
       position: relative;
       z-index: 2;
+      align-self: stretch;
     }
 
     .nav-link {
@@ -114,6 +115,9 @@
       color: var(--subtext);
       text-decoration: none;
       transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
     }
     .nav-link:hover { color: var(--terracotta); }
 
@@ -1203,16 +1207,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // TEMP DEBUG - remove after diagnosis
-    var dbg = document.createElement('div');
-    dbg.style.cssText = 'position:fixed;bottom:10px;right:10px;background:rgba(0,0,0,0.85);color:#fff;font:11px monospace;padding:8px 12px;border-radius:4px;z-index:99999;max-width:400px;pointer-events:none;';
-    document.body.appendChild(dbg);
-    document.addEventListener('mousemove', function(e) {
-      var els = document.elementsFromPoint(e.clientX, e.clientY);
-      dbg.innerHTML = els.slice(0,5).map(function(el,i){
-        return i + ': ' + el.tagName + (el.className?' .'+el.className.toString().trim().split(/\s+/)[0]:'') + (el.href?' href='+el.href:'');
-      }).join('<br>');
-    });
   </script>
 
 </body>
