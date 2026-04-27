@@ -1204,6 +1204,23 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // TEMP DEBUG
+    window.addEventListener('load', function() {
+      var link = document.querySelector('nav .nav-link[href="/blog"]');
+      var nav  = document.querySelector('nav');
+      if (link && nav) {
+        var lr = link.getBoundingClientRect();
+        var nr = nav.getBoundingClientRect();
+        var dbg = document.createElement('div');
+        dbg.style.cssText = 'position:fixed;top:70px;right:10px;background:#000;color:#fff;font:11px monospace;padding:8px;z-index:99999;pointer-events:none;line-height:1.8;';
+        dbg.innerHTML = 'NAV: top=' + Math.round(nr.top) + ' h=' + Math.round(nr.height) + '<br>'
+          + 'BLOG: top=' + Math.round(lr.top) + ' bot=' + Math.round(lr.bottom) + '<br>'
+          + '      left=' + Math.round(lr.left) + ' w=' + Math.round(lr.width) + '<br>'
+          + '      h=' + Math.round(lr.height);
+        document.body.appendChild(dbg);
+      }
+    });
+
   </script>
 
 </body>
