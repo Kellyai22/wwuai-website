@@ -8,20 +8,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --brown:        #5E534B;
+      --ink:        #29232A;
       --brown-mid:    #968880;
       --brown-light:  #8C7E74;
-      --terra:        #C4714F;
+      --bordeaux:        #8A1F2E;
       --terra-deep:   #a85c3c;
-      --cream:        #FFFCFA;
+      --cream:        #F8F8F8;
       --cream-dark:   #EAE5DF;
       --cream-mid:    #F0EBE5;
       --white:        #FFFFFF;
-      --serif:        'Cormorant Garamond', Georgia, serif;
+      --serif: 'Playfair Display', Georgia, serif;
       --sans:         'Montserrat', sans-serif;
     }
 
@@ -30,7 +30,7 @@
 
     body {
       background: var(--cream);
-      color: var(--brown);
+      color: var(--ink);
       font-family: var(--sans);
       font-size: 15px;
       line-height: 1.7;
@@ -59,7 +59,7 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-logo img { height: 28px; width: auto; }
@@ -70,7 +70,7 @@
       letter-spacing: 0.18em;
       font-weight: 500;
       text-transform: uppercase;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-cta {
@@ -80,15 +80,15 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--terra) !important;
-      border: 1.5px solid var(--terra);
+      color: var(--bordeaux) !important;
+      border: 1.5px solid var(--bordeaux);
       padding: 8px 18px;
       border-radius: 6px;
       transition: background 0.2s, color 0.2s;
     }
 
     .nav-cta:hover {
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white) !important;
     }
 
@@ -107,7 +107,7 @@
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.25em;
-      color: var(--terra);
+      color: var(--bordeaux);
       text-transform: uppercase;
       margin-bottom: 16px;
     }
@@ -117,13 +117,13 @@
       font-size: clamp(36px, 5vw, 54px);
       font-weight: 300;
       line-height: 1.1;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 20px;
     }
 
     .hero h1 em {
       font-style: italic;
-      color: var(--terra);
+      color: var(--bordeaux);
     }
 
     .hero-sub {
@@ -147,7 +147,7 @@
       font-family: var(--serif);
       font-size: 22px;
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 8px;
     }
 
@@ -172,12 +172,12 @@
       padding: 12px 14px;
       border: 1px solid var(--cream-dark);
       background: var(--cream);
-      color: var(--brown);
+      color: var(--ink);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .form-card input:focus { border-color: var(--terra); }
+    .form-card input:focus { border-color: var(--bordeaux); }
 
     .form-card button {
       font-family: var(--sans);
@@ -186,8 +186,8 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--white);
-      background: var(--terra);
-      border: 1.5px solid var(--terra);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
       padding: 14px 20px;
       cursor: pointer;
       border-radius: 6px;
@@ -220,7 +220,7 @@
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.25em;
-      color: var(--terra);
+      color: var(--bordeaux);
       text-transform: uppercase;
       margin-bottom: 12px;
     }
@@ -229,13 +229,13 @@
       font-family: var(--serif);
       font-size: clamp(28px, 4vw, 40px);
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
     .inside h2 em {
       font-style: italic;
-      color: var(--terra);
+      color: var(--bordeaux);
     }
 
     .inside-sub {
@@ -272,7 +272,7 @@
       font-family: var(--sans);
       font-size: 14px;
       font-weight: 600;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 4px;
     }
 
@@ -294,7 +294,7 @@
       font-family: var(--serif);
       font-size: clamp(28px, 4vw, 38px);
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 32px;
     }
 
@@ -311,12 +311,12 @@
       gap: 12px;
       font-size: 14px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.6;
     }
 
     .for-dot {
-      color: var(--terra);
+      color: var(--bordeaux);
       font-weight: 500;
       flex-shrink: 0;
       margin-top: 2px;
@@ -324,7 +324,7 @@
 
     /* ââ Pricing ââââââââââââââââââââââââââââââââ */
     .pricing {
-      background: var(--brown);
+      background: var(--ink);
       padding: 72px 48px;
       text-align: center;
     }
@@ -349,7 +349,7 @@
 
     .pricing h2 em {
       font-style: italic;
-      color: var(--terra);
+      color: var(--bordeaux);
     }
 
     .pricing-amount {
@@ -382,8 +382,8 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--white);
-      background: var(--terra);
-      border: 1.5px solid var(--terra);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
       padding: 16px 36px;
       border-radius: 6px;
       transition: background 0.2s;
@@ -407,13 +407,13 @@
       font-family: var(--serif);
       font-size: clamp(28px, 4vw, 38px);
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
     .bottom-cta h2 em {
       font-style: italic;
-      color: var(--terra);
+      color: var(--bordeaux);
     }
 
     .bottom-cta p {
@@ -462,7 +462,7 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--brown); }
+    .footer-links a:hover { color: var(--ink); }
 
     /* ââ Responsive âââââââââââââââââââââââââââââ */
     @media (max-width: 768px) {

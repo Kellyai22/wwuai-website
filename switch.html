@@ -8,20 +8,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
     /* ── Variables ──────────────────────────────── */
     :root {
-      --brown:        #5E534B;
+      --ink:        #29232A;
       --brown-mid:    #968880;
       --brown-light:  #8C7E74;
-      --terra:        #C4714F;
+      --bordeaux:        #8A1F2E;
       --terra-deep:   #a85c3c;
-      --cream:        #FFFCFA;
+      --cream:        #F8F8F8;
       --cream-dark:   #EAE5DF;
       --white:        #FFFFFF;
-      --serif:        'Cormorant Garamond', Georgia, serif;
+      --serif: 'Playfair Display', Georgia, serif;
       --sans:         'Montserrat', sans-serif;
     }
 
@@ -30,7 +30,7 @@
 
     body {
       background: var(--cream);
-      color: var(--brown);
+      color: var(--ink);
       font-family: var(--sans);
       font-size: 15px;
       line-height: 1.7;
@@ -59,7 +59,7 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-logo img { height: 28px; width: auto; }
@@ -70,7 +70,7 @@
       letter-spacing: 0.18em;
       font-weight: 500;
       text-transform: uppercase;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-links {
@@ -91,7 +91,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--brown); }
+    .nav-links a:hover { color: var(--ink); }
 
     .nav-cta {
       font-family: var(--sans);
@@ -100,14 +100,14 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--terra) !important;
-      border: 1.5px solid var(--terra);
+      color: var(--bordeaux) !important;
+      border: 1.5px solid var(--bordeaux);
       padding: 8px 18px;
       transition: background 0.2s, color 0.2s;
     }
 
     .nav-cta:hover {
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white) !important;
     }
 
@@ -124,7 +124,7 @@
       font-size: clamp(38px, 6vw, 58px);
       font-weight: 300;
       line-height: 1.15;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
     }
 
@@ -162,7 +162,7 @@
     .trust-badge svg {
       width: 14px;
       height: 14px;
-      color: var(--terra);
+      color: var(--bordeaux);
     }
 
     /* ── Email Gate ───────────────────────────── */
@@ -183,7 +183,7 @@
       font-family: var(--serif);
       font-size: 22px;
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 8px;
     }
 
@@ -208,13 +208,13 @@
       padding: 12px 14px;
       border: 1px solid var(--cream-dark);
       background: var(--cream);
-      color: var(--brown);
+      color: var(--ink);
       outline: none;
       transition: border-color 0.2s;
     }
 
     .email-gate-card input:focus {
-      border-color: var(--terra);
+      border-color: var(--bordeaux);
     }
 
     .email-gate-card button {
@@ -224,8 +224,8 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--white);
-      background: var(--terra);
-      border: 1.5px solid var(--terra);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
       padding: 14px 20px;
       cursor: pointer;
       border-radius: 6px;
@@ -290,12 +290,12 @@
     }
 
     .progress-step.active .step-circle {
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white);
     }
 
     .progress-step.completed .step-circle {
-      background: var(--brown);
+      background: var(--ink);
       color: var(--white);
     }
 
@@ -310,7 +310,7 @@
 
     .progress-step.active .step-label,
     .progress-step.completed .step-label {
-      color: var(--brown);
+      color: var(--ink);
     }
 
     /* Mobile progress */
@@ -340,7 +340,7 @@
 
     .progress-mobile-fill {
       height: 100%;
-      background: var(--terra);
+      background: var(--bordeaux);
       border-radius: 2px;
       transition: width 0.3s;
     }
@@ -369,7 +369,7 @@
     .step-intro {
       font-size: 15px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 32px;
       line-height: 1.8;
     }
@@ -378,7 +378,7 @@
       font-family: var(--serif);
       font-size: clamp(24px, 4vw, 32px);
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
     }
 
@@ -405,7 +405,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .prompt-card-body {
@@ -416,7 +416,7 @@
       font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
       font-size: 13px;
       line-height: 1.7;
-      color: var(--brown);
+      color: var(--ink);
       white-space: pre-wrap;
       word-wrap: break-word;
     }
@@ -426,7 +426,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--brown);
+      background: var(--ink);
       color: var(--white);
       font-family: var(--sans);
       font-size: 11px;
@@ -439,10 +439,10 @@
       transition: background 0.2s;
     }
 
-    .btn-copy:hover { background: var(--terra); }
+    .btn-copy:hover { background: var(--bordeaux); }
 
     .btn-copy.copied {
-      background: var(--terra);
+      background: var(--bordeaux);
     }
 
     .btn-copy svg {
@@ -465,11 +465,11 @@
     }
 
     .btn-next {
-      background: var(--brown);
+      background: var(--ink);
       color: var(--white);
     }
 
-    .btn-next:hover { background: var(--terra); }
+    .btn-next:hover { background: var(--bordeaux); }
 
     .btn-back {
       background: transparent;
@@ -479,7 +479,7 @@
 
     .btn-back:hover {
       border-color: var(--brown-mid);
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .wizard-nav {
@@ -507,7 +507,7 @@
       border-bottom: 1px solid var(--cream-dark);
       font-size: 14px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.6;
     }
 
@@ -519,7 +519,7 @@
       height: 28px;
       border-radius: 50%;
       background: var(--cream-dark);
-      color: var(--brown);
+      color: var(--ink);
       font-size: 12px;
       font-weight: 600;
       display: flex;
@@ -538,14 +538,14 @@
       font-family: var(--sans);
       font-size: 14px;
       line-height: 1.7;
-      color: var(--brown);
+      color: var(--ink);
       resize: vertical;
       outline: none;
       transition: border-color 0.2s;
     }
 
     .review-textarea:focus {
-      border-color: var(--terra);
+      border-color: var(--bordeaux);
     }
 
     .review-textarea::placeholder {
@@ -592,11 +592,11 @@
       font-family: var(--serif);
       font-size: 16px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
-    .guidance-box.keep { border-left: 4px solid var(--terra); }
+    .guidance-box.keep { border-left: 4px solid var(--bordeaux); }
     .guidance-box.skip { border-left: 4px solid var(--cream-dark); }
 
     .guidance-box ul {
@@ -617,7 +617,7 @@
       content: '+';
       position: absolute;
       left: 0;
-      color: var(--terra);
+      color: var(--bordeaux);
       font-weight: 600;
     }
 
@@ -643,7 +643,7 @@
     .preview-text {
       font-size: 13px;
       line-height: 1.7;
-      color: var(--brown);
+      color: var(--ink);
       white-space: pre-wrap;
       word-wrap: break-word;
     }
@@ -666,7 +666,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white);
       font-family: var(--sans);
       font-size: 12px;
@@ -680,7 +680,7 @@
     }
 
     .btn-copy-main:hover { background: var(--terra-deep); }
-    .btn-copy-main.copied { background: var(--brown); }
+    .btn-copy-main.copied { background: var(--ink); }
 
     .btn-copy-main svg {
       width: 16px;
@@ -706,7 +706,7 @@
       font-family: var(--serif);
       font-size: 18px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 4px;
     }
 
@@ -715,7 +715,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--terra);
+      color: var(--bordeaux);
       margin-bottom: 12px;
     }
 
@@ -734,13 +734,13 @@
     .import-note {
       background: var(--white);
       border: 1.5px solid var(--cream-dark);
-      border-left: 4px solid var(--terra);
+      border-left: 4px solid var(--bordeaux);
       border-radius: 6px;
       padding: 16px 20px;
       margin-top: 28px;
       font-size: 13px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.7;
     }
 
@@ -753,7 +753,7 @@
       font-family: var(--serif);
       font-size: 22px;
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
     }
 
@@ -776,7 +776,7 @@
       position: relative;
       font-size: 14px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.7;
       border-bottom: 1px solid var(--cream-dark);
     }
@@ -791,7 +791,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--terra);
+      background: var(--bordeaux);
     }
 
     .done-box {
@@ -807,7 +807,7 @@
       font-family: var(--serif);
       font-size: 28px;
       font-weight: 300;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
@@ -853,7 +853,7 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--brown); }
+    .footer-links a:hover { color: var(--ink); }
 
     /* ── Responsive ───────────────────────────── */
     @media (max-width: 640px) {
@@ -1186,7 +1186,7 @@ Again, format this as a clean profile with headings and bullet points.</div>
       <div class="done-box">
         <h3>That's it. You're ready to go.</h3>
         <p>
-          Head over to <a href="https://claude.ai" target="_blank" rel="noopener" style="color: var(--terra); text-decoration: underline;">claude.ai</a> and start your first conversation. Claude already knows who you are.
+          Head over to <a href="https://claude.ai" target="_blank" rel="noopener" style="color: var(--bordeaux); text-decoration: underline;">claude.ai</a> and start your first conversation. Claude already knows who you are.
         </p>
       </div>
 

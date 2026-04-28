@@ -7,18 +7,18 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
     /* ── Variables ──────────────────────────────── */
     :root {
-      --brown:        #5E534B;
+      --ink:        #29232A;
       --brown-light:  #8C7E74;
-      --terra:        #C4714F;
+      --bordeaux:        #8A1F2E;
       --cream:        #F6F3EE;
       --cream-dark:   #EAE5DF;
       --white:        #FFFFFF;
-      --serif:        'Cormorant Garamond', Georgia, serif;
+      --serif: 'Playfair Display', Georgia, serif;
       --sans:         'Montserrat', sans-serif;
     }
 
@@ -28,7 +28,7 @@
 
     body {
       background: var(--cream);
-      color: var(--brown);
+      color: var(--ink);
       font-family: var(--sans);
       font-size: 15px;
       line-height: 1.7;
@@ -54,7 +54,7 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-logo img {
@@ -68,7 +68,7 @@
       letter-spacing: 0.18em;
       font-weight: 500;
       text-transform: uppercase;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     .nav-links {
@@ -89,7 +89,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--brown); }
+    .nav-links a:hover { color: var(--ink); }
 
     .nav-cta {
       font-family: var(--sans);
@@ -98,14 +98,14 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--terra) !important;
-      border: 1.5px solid var(--terra);
+      color: var(--bordeaux) !important;
+      border: 1.5px solid var(--bordeaux);
       padding: 8px 18px;
       transition: background 0.2s, color 0.2s;
     }
 
     .nav-cta:hover {
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white) !important;
     }
 
@@ -124,7 +124,7 @@
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--terra);
+      color: var(--bordeaux);
       background: rgba(196, 113, 79, 0.1);
       padding: 6px 16px;
       border-radius: 20px;
@@ -136,7 +136,7 @@
       font-size: clamp(42px, 6vw, 64px);
       font-weight: 300;
       line-height: 1.15;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
     }
 
@@ -146,11 +146,11 @@
     }
 
     .hero-script {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-style: italic;
       font-size: 22px;
       font-weight: 300;
-      color: var(--terra);
+      color: var(--bordeaux);
       margin-bottom: 28px;
       letter-spacing: 0.02em;
     }
@@ -167,7 +167,7 @@
     .inbox-tip {
       background: var(--white);
       border: 1.5px solid var(--cream-dark);
-      border-left: 4px solid var(--terra);
+      border-left: 4px solid var(--bordeaux);
       border-radius: 6px;
       padding: 20px 24px;
       text-align: left;
@@ -178,14 +178,14 @@
     .inbox-tip p {
       font-size: 13px;
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin: 0;
       line-height: 1.6;
     }
 
     .inbox-tip p strong {
       font-weight: 600;
-      color: var(--brown);
+      color: var(--ink);
     }
 
     /* ── What's in the kit ────────────────────── */
@@ -207,7 +207,7 @@
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--terra);
+      color: var(--bordeaux);
       text-align: center;
       margin-bottom: 12px;
     }
@@ -217,7 +217,7 @@
       font-size: clamp(28px, 4vw, 40px);
       font-weight: 300;
       text-align: center;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.2;
     }
@@ -254,7 +254,7 @@
       font-family: var(--serif);
       font-size: 36px;
       font-weight: 300;
-      color: var(--terra);
+      color: var(--bordeaux);
       line-height: 1;
       margin-bottom: 12px;
     }
@@ -263,7 +263,7 @@
       font-family: var(--serif);
       font-size: 18px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 8px;
       line-height: 1.3;
     }
@@ -296,7 +296,7 @@
       font-size: clamp(28px, 4vw, 42px);
       font-weight: 300;
       line-height: 1.2;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
@@ -324,7 +324,7 @@
       background: var(--white);
       border: 1px solid var(--cream-dark);
       padding: 24px;
-      border-top: 3px solid var(--terra);
+      border-top: 3px solid var(--bordeaux);
     }
 
     .upsell-card-label {
@@ -332,7 +332,7 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--terra);
+      color: var(--bordeaux);
       margin-bottom: 8px;
     }
 
@@ -340,7 +340,7 @@
       font-family: var(--serif);
       font-size: 18px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 6px;
       line-height: 1.3;
     }
@@ -354,7 +354,7 @@
 
     /* Pricing block */
     .upsell-pricing {
-      background: var(--brown);
+      background: var(--ink);
       padding: 48px 40px;
       text-align: center;
       margin-bottom: 0;
@@ -439,7 +439,7 @@
 
     .btn-primary {
       display: inline-block;
-      background: var(--terra);
+      background: var(--bordeaux);
       color: var(--white);
       font-family: var(--sans);
       font-size: 12px;
@@ -462,7 +462,7 @@
     }
 
     .upsell-fallback a {
-      color: var(--terra);
+      color: var(--bordeaux);
       text-decoration: underline;
     }
 
@@ -499,7 +499,7 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--brown); }
+    .footer-links a:hover { color: var(--ink); }
 
     /* ── Animations ───────────────────────────── */
     @keyframes fadeUp {
@@ -701,7 +701,7 @@
       if (source === 'starter') {
         heroTitle.innerHTML = 'You\'re in. Here\'s Part 1 of<br>your <em>Claude Starter Kit.</em>';
         heroScript.textContent = 'Part 1 is ready now';
-        heroDesc.innerHTML = '<a href="https://claude.ai/public/artifacts/00038cde-ae2c-43b5-8fbe-303466640698" target="_blank" style="display:inline-block;background:var(--terra);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the Claude Comparison Tool</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:4px">The next four parts land in your inbox over the coming days. Watch for the subject line starting \u2018Part 2 of 5\u2019 tomorrow.</span>';
+        heroDesc.innerHTML = '<a href="https://claude.ai/public/artifacts/00038cde-ae2c-43b5-8fbe-303466640698" target="_blank" style="display:inline-block;background:var(--bordeaux);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the Claude Comparison Tool</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:4px">The next four parts land in your inbox over the coming days. Watch for the subject line starting \u2018Part 2 of 5\u2019 tomorrow.</span>';
         kitSection.style.display = 'none';
         upsellHeading.innerHTML = 'Don\u2019t want to wait?';
         upsellBody.textContent = 'The full kit plus the entire system is inside the community. Four classrooms, lifetime access, one payment.';
@@ -735,7 +735,7 @@
 
       if (source === 'carousel-maker') {
         heroTitle.innerHTML = 'Your skill file<br>is on its way, <em>lovely.</em>';
-        heroDesc.innerHTML = 'Check your inbox for the download link. While you wait, the full setup guide is at <a href="/carousel-maker" style="color:var(--terra)">wisewomenuseai.com/carousel-maker</a>.';
+        heroDesc.innerHTML = 'Check your inbox for the download link. While you wait, the full setup guide is at <a href="/carousel-maker" style="color:var(--bordeaux)">wisewomenuseai.com/carousel-maker</a>.';
         kitTitle.textContent = 'Getting started with the carousel maker';
         kitSub.textContent = 'Four steps from download to your first carousel.';
         kitGrid.innerHTML =
@@ -761,7 +761,7 @@
       if (source === 'switch-to-claude') {
         heroTitle.innerHTML = 'Your guide is open.<br>Let\'s get you <em>switched.</em>';
         heroScript.textContent = 'four steps, about five minutes';
-        heroDesc.innerHTML = '<a href="/switch" style="display:inline-block;background:var(--terra);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the wizard</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:12px">Work through all four steps and Claude will know exactly how you work. A confirmation email is on its way too.</span>';
+        heroDesc.innerHTML = '<a href="/switch" style="display:inline-block;background:var(--bordeaux);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the wizard</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:12px">Work through all four steps and Claude will know exactly how you work. A confirmation email is on its way too.</span>';
         kitTitle.textContent = 'What you\'ll do in the wizard';
         kitSub.textContent = 'Four steps to bring your ChatGPT setup across to Claude.';
         kitGrid.innerHTML = ''

@@ -11,26 +11,17 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
-    @font-face {
-      font-family: 'Authentic Signature';
-      src: url('/assets/brand/Authentic_Signature.woff2') format('woff2'),
-           url('/assets/brand/Authentic_Signature.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
     :root {
-      --bg:          #FFFCFA;
-      --brown:       #5E534B;
-      --terracotta:  #C4714F;
-      --subtext:     #968880;
-      --cream-dark:  #EAE5DF;
-      --cream-mid:   #F2EDE7;
-      --cream-light: #F8F4F0;
+      --bg:          #F8F8F8;
+      --ink:         #29232A;
+      --bordeaux:    #8A1F2E;
+      --driftwood:   #908486;
+      --cream-dark:  #E1DAD7;
+      --cream-mid:   #EDEBE9;
+      --cream-light: #F2F0EE;
       --white:       #FFFFFF;
     }
 
@@ -39,8 +30,8 @@
 
     body {
       background: var(--bg);
-      color: var(--brown);
-      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 300;
       font-size: 16px;
       line-height: 1.7;
@@ -53,14 +44,14 @@
       font-weight: 500;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--bordeaux);
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #FFFCFA;
+      background: #F8F8F8;
       border-bottom: 1px solid var(--cream-dark);
       padding: 0 48px;
       height: 64px;
@@ -80,22 +71,22 @@
     .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
 
     .nav-ai {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 26px;
-      font-weight: 300;
-      color: var(--brown);
+      font-weight: 400;
+      color: var(--ink);
       letter-spacing: 0.04em;
       line-height: 1;
     }
 
-    .nav-ai .dot { color: var(--terracotta); }
+    .nav-ai .dot { color: var(--bordeaux); }
 
     .nav-wordmark {
       font-size: 9px;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--subtext);
+      color: var(--driftwood);
     }
 
     .nav-actions {
@@ -111,30 +102,30 @@
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.08em;
-      color: var(--subtext);
+      color: var(--driftwood);
       text-decoration: none;
       transition: color 0.2s;
       display: flex;
       align-items: center;
       align-self: stretch;
     }
-    .nav-link:hover { color: var(--terracotta); }
+    .nav-link:hover { color: var(--bordeaux); }
 
     .btn-solid {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--bg);
-      background: var(--brown);
+      background: var(--ink);
       text-decoration: none;
       padding: 10px 20px;
       border-radius: 2px;
       transition: background 0.2s, transform 0.1s;
       display: inline-block;
     }
-    .btn-solid:hover { background: var(--terracotta); transform: translateY(-1px); }
+    .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
 
     .hero {
       min-height: 92vh;
@@ -151,12 +142,12 @@
     .hero-eyebrow { margin-bottom: 28px; }
 
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(44px, 5.5vw, 68px);
       font-weight: 400;
       line-height: 1.12;
       letter-spacing: -0.01em;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
     }
 
@@ -165,21 +156,21 @@
     .hero h1 .line-3 { display: block; padding-left: 0; }
 
     .script-accent {
-      font-family: 'Authentic Signature', cursive;
+      font-family: 'Allison', cursive;
       font-weight: normal;
       font-style: normal;
-      color: var(--terracotta);
+      color: var(--bordeaux);
       font-size: 1.05em;
       letter-spacing: 0.02em;
       line-height: 0.9;
     }
 
     .hero-tagline {
-      font-family: 'Authentic Signature', cursive;
+      font-family: 'Allison', cursive;
       font-size: 34px;
       font-weight: normal;
       font-style: normal;
-      color: var(--terracotta);
+      color: var(--bordeaux);
       margin-bottom: 28px;
       margin-top: -8px;
       letter-spacing: 0.02em;
@@ -189,12 +180,12 @@
     .hero-body {
       font-size: 16px;
       line-height: 1.85;
-      color: var(--subtext);
+      color: var(--driftwood);
       margin-bottom: 40px;
       max-width: 480px;
     }
 
-    .hero-body strong { color: var(--brown); font-weight: 400; }
+    .hero-body strong { color: var(--ink); font-weight: 400; }
 
     .hero-ctas {
       display: flex;
@@ -208,9 +199,9 @@
       flex-direction: column;
       align-items: center;
       padding: 14px 32px;
-      background: var(--brown);
+      background: var(--ink);
       color: var(--bg);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.14em;
@@ -220,7 +211,7 @@
       transition: background 0.2s, transform 0.15s;
       line-height: 1.4;
     }
-    .btn-primary-lg:hover { background: var(--terracotta); transform: translateY(-2px); }
+    .btn-primary-lg:hover { background: var(--bordeaux); transform: translateY(-2px); }
 
     .btn-price-line {
       display: flex;
@@ -233,7 +224,7 @@
     }
 
     .price-was { text-decoration: line-through; opacity: 0.45; }
-    .price-now { color: #f0c09a; font-weight: 600; }
+    .price-now { color: #e5aaaa; font-weight: 600; }
 
     .btn-founding {
       display: block;
@@ -241,7 +232,7 @@
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,252,250,0.45);
+      color: rgba(248,248,248,0.45);
       margin-top: 4px;
     }
 
@@ -251,13 +242,13 @@
       gap: 8px;
       font-size: 13px;
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid var(--cream-dark);
       padding-bottom: 2px;
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-secondary-lg:hover { border-color: var(--terracotta); color: var(--terracotta); }
+    .btn-secondary-lg:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
 
     .arrow { font-size: 16px; transition: transform 0.2s; }
     .btn-secondary-lg:hover .arrow { transform: translateX(4px); }
@@ -289,7 +280,7 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      color: var(--subtext);
+      color: var(--driftwood);
       font-size: 13px;
       text-align: center;
       padding: 32px;
@@ -304,14 +295,14 @@
       border-radius: 3px;
       padding: 20px 24px;
       max-width: 260px;
-      box-shadow: 0 8px 32px rgba(94,83,75,0.08);
+      box-shadow: 0 8px 32px rgba(41,35,42,0.08);
     }
 
     .hero-quote p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 15px;
       font-style: italic;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.5;
     }
 
@@ -321,13 +312,13 @@
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--bordeaux);
       margin-top: 10px;
       font-style: normal;
     }
 
     .cred-strip {
-      background: var(--brown);
+      background: var(--ink);
       padding: 28px 48px;
       display: flex;
       align-items: center;
@@ -340,13 +331,13 @@
       flex-direction: column;
       align-items: center;
       padding: 0 48px;
-      border-right: 1px solid rgba(255,252,250,0.12);
+      border-right: 1px solid rgba(248,248,248,0.12);
     }
 
     .cred-item:last-child { border-right: none; }
 
     .cred-number {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 32px;
       font-weight: 400;
       color: var(--bg);
@@ -358,7 +349,7 @@
       font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,252,250,0.45);
+      color: rgba(248,248,248,0.45);
     }
 
     .pain-section {
@@ -369,25 +360,25 @@
     }
 
     .pain-section h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 5vw, 54px);
       font-weight: 400;
       line-height: 1.15;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 32px;
     }
 
-    .pain-section h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+    .pain-section h2 em { font-style: italic; font-weight: 400; color: var(--bordeaux); }
 
     .pain-body {
       font-size: 17px;
       line-height: 1.9;
-      color: var(--subtext);
+      color: var(--driftwood);
       max-width: 640px;
       margin: 0 auto 48px;
     }
 
-    .pain-body strong { color: var(--brown); font-weight: 400; }
+    .pain-body strong { color: var(--ink); font-weight: 400; }
 
     .pain-list {
       display: grid;
@@ -399,7 +390,7 @@
     .pain-card { background: var(--cream-mid); padding: 40px 32px; text-align: left; }
 
     .pain-card-num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 300;
       color: var(--cream-dark);
@@ -408,23 +399,23 @@
     }
 
     .pain-card h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
-    .pain-card p { font-size: 14px; color: var(--subtext); line-height: 1.75; }
+    .pain-card p { font-size: 14px; color: var(--driftwood); line-height: 1.75; }
 
-    .loops-section { background: var(--brown); padding: 96px 48px; }
+    .loops-section { background: var(--ink); padding: 96px 48px; }
     .loops-inner { max-width: 1100px; margin: 0 auto; }
     .loops-header { text-align: center; margin-bottom: 56px; }
-    .loops-header .eyebrow { color: rgba(255,252,250,0.4); }
+    .loops-header .eyebrow { color: rgba(248,248,248,0.4); }
 
     .loops-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(34px, 4vw, 50px);
       font-weight: 400;
       color: var(--bg);
@@ -432,34 +423,34 @@
       margin-top: 16px;
     }
 
-    .loops-header h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+    .loops-header h2 em { font-style: italic; font-weight: 400; color: var(--bg); }
 
     .loops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 
     .loop-card {
-      background: rgba(255,252,250,0.04);
-      border: 1px solid rgba(255,252,250,0.07);
+      background: rgba(248,248,248,0.04);
+      border: 1px solid rgba(248,248,248,0.07);
       padding: 44px 40px;
       transition: background 0.3s;
     }
 
-    .loop-card:hover { background: rgba(255,252,250,0.07); }
+    .loop-card:hover { background: rgba(248,248,248,0.07); }
 
     .loop-num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.2em;
-      color: var(--terracotta);
+      color: var(--bordeaux);
       margin-bottom: 20px;
     }
 
-    .loop-card p { font-size: 15px; line-height: 1.85; color: rgba(255,252,250,0.7); }
+    .loop-card p { font-size: 15px; line-height: 1.85; color: rgba(248,248,248,0.7); }
     .loop-card p strong { color: var(--bg); font-weight: 400; }
 
     .redacted {
       display: inline-block;
-      background: rgba(255,252,250,0.15);
+      background: rgba(248,248,248,0.15);
       color: transparent;
       border-radius: 2px;
       padding: 0 8px;
@@ -475,7 +466,7 @@
       bottom: calc(100% + 6px);
       left: 50%;
       transform: translateX(-50%);
-      background: var(--terracotta);
+      background: var(--bordeaux);
       color: var(--bg);
       font-size: 9px;
       font-weight: 500;
@@ -496,7 +487,7 @@
     .btn-outline-light {
       display: inline-block;
       padding: 15px 36px;
-      border: 1px solid rgba(255,252,250,0.25);
+      border: 1px solid rgba(248,248,248,0.25);
       border-radius: 2px;
       color: var(--bg);
       font-size: 12px;
@@ -506,21 +497,21 @@
       text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
     }
-    .btn-outline-light:hover { border-color: var(--terracotta); background: rgba(196,113,79,0.1); }
+    .btn-outline-light:hover { border-color: var(--bordeaux); background: rgba(138,31,46,0.15); }
 
     .for-section { max-width: 860px; margin: 0 auto; padding: 96px 48px; }
     .for-section .eyebrow { margin-bottom: 24px; display: block; }
 
     .for-section h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(34px, 4.5vw, 52px);
       font-weight: 400;
       line-height: 1.15;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 48px;
     }
 
-    .for-section h2 em { font-style: italic; font-weight: 300; }
+    .for-section h2 em { font-style: italic; font-weight: 400; }
     .for-list { list-style: none; }
 
     .for-item {
@@ -530,27 +521,27 @@
       gap: 20px;
       align-items: flex-start;
       font-size: 15px;
-      color: var(--subtext);
+      color: var(--driftwood);
       line-height: 1.75;
     }
 
     .for-item:first-child { border-top: 1px solid var(--cream-dark); }
-    .for-check { color: var(--terracotta); flex-shrink: 0; font-size: 14px; margin-top: 3px; }
-    .for-item strong { color: var(--brown); font-weight: 400; }
+    .for-check { color: var(--bordeaux); flex-shrink: 0; font-size: 14px; margin-top: 3px; }
+    .for-item strong { color: var(--ink); font-weight: 400; }
 
     .paths-section { background: var(--cream-light); padding: 96px 48px; }
     .paths-inner { max-width: 1000px; margin: 0 auto; }
     .paths-header { text-align: center; margin-bottom: 56px; }
 
     .paths-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(34px, 4.5vw, 52px);
       font-weight: 400;
-      color: var(--brown);
+      color: var(--ink);
       margin-top: 16px;
     }
 
-    .paths-header h2 em { font-style: italic; font-weight: 300; }
+    .paths-header h2 em { font-style: italic; font-weight: 400; }
 
     .paths-grid {
       display: grid;
@@ -568,13 +559,13 @@
       flex-direction: column;
     }
 
-    .path-card.featured { border-color: var(--brown); position: relative; }
+    .path-card.featured { border-color: var(--ink); position: relative; }
 
     .path-badge {
       position: absolute;
       top: -12px;
       left: 40px;
-      background: var(--terracotta);
+      background: var(--bordeaux);
       color: var(--bg);
       font-size: 9px;
       font-weight: 500;
@@ -589,22 +580,22 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--subtext);
+      color: var(--driftwood);
       margin-bottom: 16px;
     }
 
     .path-card h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 28px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 16px;
       line-height: 1.2;
     }
 
     .path-card > p {
       font-size: 14px;
-      color: var(--subtext);
+      color: var(--driftwood);
       line-height: 1.8;
       margin-bottom: 28px;
     }
@@ -613,7 +604,7 @@
 
     .path-list li {
       font-size: 13px;
-      color: var(--subtext);
+      color: var(--driftwood);
       padding: 9px 0;
       border-bottom: 1px solid var(--cream-dark);
       display: flex;
@@ -621,16 +612,16 @@
     }
 
     .path-list li:last-child { border-bottom: none; }
-    .path-list li::before { content: '\2192'; color: var(--terracotta); flex-shrink: 0; font-size: 14px; }
+    .path-list li::before { content: '\2192'; color: var(--bordeaux); flex-shrink: 0; font-size: 14px; }
 
     .path-price {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 15px;
-      color: var(--subtext);
+      color: var(--driftwood);
       margin-bottom: 20px;
     }
 
-    .path-price strong { font-size: 24px; font-weight: 500; color: var(--terracotta); }
+    .path-price strong { font-size: 24px; font-weight: 500; color: var(--bordeaux); }
     .path-price s { opacity: 0.4; text-decoration: line-through; }
 
     .btn-path {
@@ -638,7 +629,7 @@
       width: 100%;
       text-align: center;
       padding: 16px 24px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -649,11 +640,11 @@
       margin-top: auto;
     }
 
-    .btn-path-dark { background: var(--brown); color: var(--bg); border: 1px solid var(--brown); }
-    .btn-path-dark:hover { background: var(--terracotta); border-color: var(--terracotta); transform: translateY(-1px); }
+    .btn-path-dark { background: var(--ink); color: var(--bg); border: 1px solid var(--ink); }
+    .btn-path-dark:hover { background: var(--bordeaux); border-color: var(--bordeaux); transform: translateY(-1px); }
 
-    .btn-path-outline { background: transparent; color: var(--brown); border: 1px solid var(--brown); }
-    .btn-path-outline:hover { background: var(--brown); color: var(--bg); }
+    .btn-path-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    .btn-path-outline:hover { background: var(--ink); color: var(--bg); }
 
     .kelly-section {
       max-width: 1100px;
@@ -682,7 +673,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--subtext);
+      color: var(--driftwood);
       font-size: 13px;
       text-align: center;
       padding: 32px;
@@ -693,37 +684,37 @@
     .kelly-content .eyebrow { margin-bottom: 20px; display: block; }
 
     .kelly-content h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 4vw, 52px);
       font-weight: 400;
       line-height: 1.1;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 28px;
     }
 
-    .kelly-content h2 em { font-style: italic; font-weight: 300; }
+    .kelly-content h2 em { font-style: italic; font-weight: 400; }
 
     .kelly-content p {
       font-size: 15px;
       line-height: 1.9;
-      color: var(--subtext);
+      color: var(--driftwood);
       margin-bottom: 20px;
     }
 
-    .kelly-content p strong { color: var(--brown); font-weight: 400; }
+    .kelly-content p strong { color: var(--ink); font-weight: 400; }
 
     .kelly-belief {
       margin: 32px 0;
       padding: 28px 32px;
-      border-left: 2px solid var(--terracotta);
+      border-left: 2px solid var(--bordeaux);
       background: var(--cream-light);
     }
 
     .kelly-belief p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-style: italic;
-      color: var(--brown);
+      color: var(--ink);
       line-height: 1.55;
       margin: 0;
     }
@@ -736,21 +727,21 @@
     }
 
     .work-with-me h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 26px;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 12px;
     }
 
-    .work-with-me p { font-size: 14px; color: var(--subtext); margin-bottom: 24px; }
+    .work-with-me p { font-size: 14px; color: var(--driftwood); margin-bottom: 24px; }
 
     .btn-work {
       display: inline-block;
       padding: 14px 28px;
-      border: 1px solid var(--brown);
+      border: 1px solid var(--ink);
       border-radius: 2px;
-      color: var(--brown);
+      color: var(--ink);
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.14em;
@@ -758,14 +749,14 @@
       text-decoration: none;
       transition: background 0.2s, color 0.2s;
     }
-    .btn-work:hover { background: var(--brown); color: var(--bg); }
+    .btn-work:hover { background: var(--ink); color: var(--bg); }
 
-    .capture-section { background: var(--brown); padding: 80px 48px; text-align: center; }
+    .capture-section { background: var(--ink); padding: 80px 48px; text-align: center; }
     .capture-inner { max-width: 540px; margin: 0 auto; }
-    .capture-section .eyebrow { color: rgba(255,252,250,0.4); margin-bottom: 20px; display: block; }
+    .capture-section .eyebrow { color: rgba(248,248,248,0.4); margin-bottom: 20px; display: block; }
 
     .capture-section h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(32px, 4vw, 46px);
       font-weight: 400;
       color: var(--bg);
@@ -773,13 +764,13 @@
       margin-bottom: 16px;
     }
 
-    .capture-section h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+    .capture-section h2 em { font-style: italic; font-weight: 400; color: var(--bg); }
 
-    .capture-sub { font-size: 15px; color: rgba(255,252,250,0.55); line-height: 1.75; margin-bottom: 40px; }
+    .capture-sub { font-size: 15px; color: rgba(248,248,248,0.55); line-height: 1.75; margin-bottom: 40px; }
 
     .kit-form {
-      background: rgba(255,252,250,0.06);
-      border: 1px solid rgba(255,252,250,0.1);
+      background: rgba(248,248,248,0.06);
+      border: 1px solid rgba(248,248,248,0.1);
       border-radius: 3px;
       padding: 36px 32px;
     }
@@ -789,10 +780,10 @@
     .form-input {
       width: 100%;
       padding: 14px 18px;
-      background: rgba(255,252,250,0.08);
-      border: 1px solid rgba(255,252,250,0.15);
+      background: rgba(248,248,248,0.08);
+      border: 1px solid rgba(248,248,248,0.15);
       border-radius: 2px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 14px;
       font-weight: 300;
       color: var(--bg);
@@ -800,17 +791,17 @@
       transition: border-color 0.2s;
     }
 
-    .form-input::placeholder { color: rgba(255,252,250,0.3); }
-    .form-input:focus { border-color: var(--terracotta); }
+    .form-input::placeholder { color: rgba(248,248,248,0.3); }
+    .form-input:focus { border-color: var(--bordeaux); }
 
     .btn-form {
       width: 100%;
       padding: 16px 24px;
-      background: var(--terracotta);
+      background: var(--bordeaux);
       color: var(--bg);
       border: none;
       border-radius: 2px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.14em;
@@ -821,7 +812,7 @@
     }
     .btn-form:hover { opacity: 0.9; transform: translateY(-1px); }
 
-    .form-note { font-size: 11px; color: rgba(255,252,250,0.3); margin-top: 14px; }
+    .form-note { font-size: 11px; color: rgba(248,248,248,0.3); margin-top: 14px; }
 
     footer {
       padding: 40px 48px;
@@ -835,14 +826,14 @@
 
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
 
-    .footer-link { font-size: 12px; color: var(--subtext); text-decoration: none; letter-spacing: 0.05em; }
-    .footer-link:hover { color: var(--terracotta); }
+    .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+    .footer-link:hover { color: var(--bordeaux); }
 
     .social-links { display: flex; gap: 20px; align-items: center; }
-    .social-link { color: var(--subtext); transition: color 0.2s; display: flex; }
-    .social-link:hover { color: var(--terracotta); }
+    .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+    .social-link:hover { color: var(--bordeaux); }
 
-    .footer-legal { font-size: 11px; color: var(--subtext); opacity: 0.5; }
+    .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
@@ -930,7 +921,7 @@
           onerror="this.style.display='none'; this.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';"
         />
         <div class="hero-photo-placeholder" style="display:none;">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--subtext);">K</div>
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--driftwood);">K</div>
           <span>kelly-hero.jpg</span>
         </div>
       </div>
@@ -1109,8 +1100,8 @@
         onerror="this.style.display='none'; this.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
       />
       <div class="kelly-photo-placeholder" style="display:none;">
-        <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--subtext);">K</div>
-        <span style="color:var(--subtext);font-size:13px;">kelly-about.jpg</span>
+        <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;color:var(--driftwood);">K</div>
+        <span style="color:var(--driftwood);font-size:13px;">kelly-about.jpg</span>
       </div>
     </div>
 
