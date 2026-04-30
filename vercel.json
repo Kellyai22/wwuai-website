@@ -15,6 +15,8 @@
     { "src": "/dashboard",        "dest": "/dashboard.html" },
     { "src": "/carousel",         "dest": "/carousel-maker.html" },
     { "src": "/carousel-maker",   "dest": "/carousel-maker.html" },
-    { "src": "/carousel-guide",   "dest": "/carousel-guide.html" }
+    { "src": "/carousel-guide",   "dest": "/carousel-guide.html" },
+    { "src": "/hub",              "dest": "/hub.html" },
+    { "src": "/links",            "dest": "/hub.html" }
   ]
 }
