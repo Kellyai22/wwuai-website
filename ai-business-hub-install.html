@@ -130,11 +130,6 @@
 
   /* Hero */
   .hero { padding: clamp(5rem, 12vw, 8rem) 0 clamp(4rem, 8vw, 6rem); position: relative; }
-  .hero::before {
-    content: ''; position: absolute; top: 2rem; right: 2rem;
-    width: 120px; height: 120px; border: 1px solid var(--cream-dark); border-radius: 50%;
-    opacity: 0.7; z-index: 0;
-  }
   .hero .wrap { position: relative; z-index: 1; }
   .hero-eyebrow { font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; font-weight: 500; }
   .hero h1 { max-width: 14ch; margin-bottom: 1.5rem; }
@@ -296,10 +291,6 @@
 
   /* Final CTA */
   .final-cta { text-align: center; padding: clamp(6rem, 10vw, 8rem) 0; position: relative; }
-  .final-cta::before {
-    content: ''; position: absolute; bottom: 3rem; left: 3rem;
-    width: 80px; height: 80px; border: 1px solid var(--cream-dark); border-radius: 50%; opacity: 0.7;
-  }
   .final-cta .wrap { position: relative; z-index: 1; }
   .final-cta h2 { margin-bottom: 1rem; max-width: 18ch; margin-left: auto; margin-right: auto; }
   .final-cta p { color: var(--driftwood); margin-bottom: 2.5rem; max-width: 50ch; margin-left: auto; margin-right: auto; }
