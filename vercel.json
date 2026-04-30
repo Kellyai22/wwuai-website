@@ -17,6 +17,7 @@
     { "src": "/carousel-maker",   "dest": "/carousel-maker.html" },
     { "src": "/carousel-guide",   "dest": "/carousel-guide.html" },
     { "src": "/hub",              "dest": "/hub.html" },
-    { "src": "/links",            "dest": "/hub.html" }
+    { "src": "/links",            "dest": "/hub.html" },
+    { "src": "/ai-business-hub-install", "dest": "/ai-business-hub-install.html" }
   ]
 }

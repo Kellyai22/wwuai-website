@@ -21,6 +21,10 @@
 | Filename | Description | Tags |
 |----------|-------------|------|
 | KellyH.png | Kelly Hartley portrait photo, used on About section | kelly, founder, portrait, about |
+| kelly-about.jpg | Kelly portrait (4:5), used in About section of AI Business Hub install page | kelly, founder, portrait, about |
+| kelly-hero.jpg | Kelly hero photo | kelly, founder, hero |
+
+> Note: `kelly-portrait.jpg` was referenced in the original AI Business Hub source file but does not exist in this repo. Replaced with `kelly-about.jpg`.
 
 ## Brand (`assets/brand/`)
 

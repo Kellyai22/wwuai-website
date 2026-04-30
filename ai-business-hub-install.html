@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Business Hub Install — Wise Women Use AI</title>
+<meta name="description" content="A done-with-you Notion business hub for women in business. Installed in 14 days by Kelly at Wise Women Use AI.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* May 2026 brand palette */
+    --pearl: #F8F8F8;
+    --bg: var(--pearl);
+    --ink: #29232A;
+    --bordeaux: #8A1F2E;
+    --driftwood: #908486;
+    --cream-dark: #E1DAD7;
+    --white: #FFFFFF;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: 'Allison', cursive;
+
+    --max: 1100px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--bordeaux); color: var(--pearl); }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink); line-height: 1.15; letter-spacing: -0.015em; }
+  h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); font-weight: 400; }
+  h2 { font-size: clamp(1.85rem, 4vw, 2.85rem); font-weight: 400; }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+  p { margin-bottom: 1em; }
+  p + p { margin-top: 0; }
+
+  .script { font-family: var(--font-script); color: var(--bordeaux); font-size: 2.2em; font-weight: 400; line-height: 1; }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #F8F8F8;
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex: 0 0 auto;
+    max-width: fit-content;
+  }
+  .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+
+  .nav-wordmark {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+    align-self: stretch;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--driftwood);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+  }
+  .nav-link:hover { color: var(--bordeaux); }
+
+  .btn-solid {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--ink);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+  /* Hero */
+  .hero { padding: clamp(5rem, 12vw, 8rem) 0 clamp(4rem, 8vw, 6rem); position: relative; }
+  .hero::before {
+    content: ''; position: absolute; top: 2rem; right: 2rem;
+    width: 120px; height: 120px; border: 1px solid var(--cream-dark); border-radius: 50%;
+    opacity: 0.7; z-index: 0;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 1.5rem; font-weight: 500; }
+  .hero h1 { max-width: 14ch; margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--bordeaux); font-weight: 400; }
+  .hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--driftwood); max-width: 52ch; margin-bottom: 2.5rem; line-height: 1.55; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    background: var(--bordeaux);
+    color: var(--pearl);
+    padding: 1.05rem 2.25rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .btn:hover { background: var(--ink); transform: translateY(-1px); }
+
+  /* Section base */
+  section { padding: clamp(4rem, 8vw, 6rem) 0; }
+
+  /* Story / Pattern interrupt — dark Ink section */
+  .story { background: var(--ink); color: var(--pearl); }
+  .story h2 { color: var(--pearl); margin-bottom: 2rem; }
+  .story-block { max-width: 720px; margin: 0 auto; text-align: left; }
+  .story-block p { font-size: 1.1rem; color: var(--pearl); margin-bottom: 1.25rem; opacity: 0.92; }
+  .pull-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    color: var(--pearl);
+    line-height: 1.4;
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid rgba(248, 248, 248, 0.18);
+    border-bottom: 1px solid rgba(248, 248, 248, 0.18);
+    text-align: center;
+  }
+
+  /* Two-column layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .col h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.18em; font-family: var(--font-body); font-weight: 500; color: var(--bordeaux); margin-bottom: 1.5rem; }
+
+  ul.calm { list-style: none; }
+  ul.calm li {
+    padding: 0.8rem 0 0.8rem 1.5rem;
+    position: relative;
+    color: var(--ink);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  ul.calm li:last-child { border-bottom: none; }
+  ul.calm li::before {
+    content: ''; position: absolute; left: 0; top: 1.25rem;
+    width: 6px; height: 6px; background: var(--bordeaux); border-radius: 50%;
+  }
+
+  /* What you get — numbered */
+  .deliverables { max-width: 760px; margin: 0 auto; }
+  .section-heading { text-align: center; margin-bottom: clamp(3rem, 5vw, 4rem); }
+  .section-heading .script { display: block; margin-bottom: 0.25rem; }
+
+  .deliverable {
+    display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem;
+    padding: 1.85rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    align-items: start;
+  }
+  .deliverable:last-child { border-bottom: none; }
+  .deliverable-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--bordeaux);
+    line-height: 1;
+    font-weight: 400;
+  }
+  .deliverable h3 { margin-bottom: 0.4rem; font-size: 1.2rem; font-family: var(--font-body); font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--ink); }
+  .deliverable p { color: var(--driftwood); margin: 0; font-size: 0.97rem; }
+
+  /* Process timeline */
+  .process { background: var(--cream-dark); }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  @media (max-width: 760px) { .timeline { grid-template-columns: 1fr; gap: 1rem; } }
+  .step {
+    background: var(--pearl);
+    padding: 2rem 1.5rem;
+    border-radius: 2px;
+    position: relative;
+  }
+  .step-day {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .step h3 { font-size: 1.05rem; font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .step p { font-size: 0.9rem; color: var(--driftwood); margin: 0; }
+
+  /* Pricing */
+  .pricing { text-align: center; padding: clamp(5rem, 8vw, 7rem) 0; }
+  .pricing-block {
+    max-width: 580px; margin: 0 auto;
+    padding: clamp(2.5rem, 5vw, 4rem);
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+  }
+  .pricing-row { padding: 1.75rem 0; border-bottom: 1px solid var(--cream-dark); }
+  .pricing-row:last-child { border-bottom: none; }
+  .price-tier { font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 0.6rem; font-weight: 500; }
+  .price-amount { font-family: var(--font-display); font-size: 2.5rem; color: var(--ink); font-weight: 400; line-height: 1; }
+  .price-detail { font-size: 0.92rem; color: var(--driftwood); margin-top: 0.6rem; }
+  .pricing-note { margin-top: 2rem; font-size: 1.05rem; color: var(--driftwood); font-style: italic; font-family: var(--font-display); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-img {
+    width: 100%; aspect-ratio: 4/5; background: var(--cream-dark);
+    background-image: url('/assets/photos/kelly-about.jpg');
+    background-size: cover; background-position: center;
+    border-radius: 2px;
+  }
+  .about-text h2 { margin-bottom: 1.5rem; }
+  .about-text p { color: var(--ink); margin-bottom: 1.25rem; }
+  .about-sig { margin-top: 1.5rem; font-size: 3rem; }
+
+  /* FAQ */
+  .faq { background: var(--cream-dark); }
+  .faq-list { max-width: 760px; margin: 3rem auto 0; }
+  details {
+    border-bottom: 1px solid rgba(41, 35, 42, 0.15);
+    padding: 1.5rem 0;
+  }
+  details:first-child { border-top: 1px solid rgba(41, 35, 42, 0.15); }
+  summary {
+    font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; color: var(--ink);
+    cursor: pointer; list-style: none; padding-right: 2rem; position: relative;
+    transition: color 0.2s ease;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    font-size: 1.5rem; color: var(--bordeaux); transition: transform 0.3s ease; font-family: var(--font-body); font-weight: 300;
+  }
+  details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  details summary:hover { color: var(--bordeaux); }
+  details > *:not(summary) { margin-top: 1rem; color: var(--driftwood); font-size: 0.97rem; }
+
+  /* Final CTA */
+  .final-cta { text-align: center; padding: clamp(6rem, 10vw, 8rem) 0; position: relative; }
+  .final-cta::before {
+    content: ''; position: absolute; bottom: 3rem; left: 3rem;
+    width: 80px; height: 80px; border: 1px solid var(--cream-dark); border-radius: 50%; opacity: 0.7;
+  }
+  .final-cta .wrap { position: relative; z-index: 1; }
+  .final-cta h2 { margin-bottom: 1rem; max-width: 18ch; margin-left: auto; margin-right: auto; }
+  .final-cta p { color: var(--driftwood); margin-bottom: 2.5rem; max-width: 50ch; margin-left: auto; margin-right: auto; }
+  .final-cta .script { display: block; margin-bottom: 0.5rem; }
+
+  /* Footer */
+  footer {
+    padding: 40px 48px;
+    border-top: 1px solid var(--cream-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+
+  .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+  .footer-link:hover { color: var(--bordeaux); }
+
+  .social-links { display: flex; gap: 20px; align-items: center; }
+  .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+  .social-link:hover { color: var(--bordeaux); }
+
+  .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+  /* Subtle reveal animation */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow, .hero h1, .hero-sub, .hero .btn {
+    opacity: 0; animation: fadeUp 0.9s ease forwards;
+  }
+  .hero h1 { animation-delay: 0.1s; }
+  .hero-sub { animation-delay: 0.25s; }
+  .hero .btn { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/ai-business-hub-install" class="nav-link">AI Business Hub</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">A done-with-you install · 14 days</div>
+    <h1>Get your business <em>out of 47 tabs</em> and into one calm place.</h1>
+    <p class="hero-sub">A Notion business hub designed for women who want Claude to actually know their business. Installed with you, in one 90-minute call. Then yours forever.</p>
+    <a href="#book" class="btn">Book a discovery call</a>
+  </div>
+</header>
+
+<!-- STORY (dark) -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-block">
+      <h2>Here's what I noticed.</h2>
+      <p>I built the AI Business Hub for myself first. Seven sections that hold every piece of context Claude needs to run my business. Positioning, brand voice, content, clients, weekly rhythm, funnel, skills files.</p>
+      <p>I gave it away free in my community for months.</p>
+      <div class="pull-quote">"Almost nobody used it."</div>
+      <p>Not because the template was wrong. Because the template alone isn't enough. You need someone to set it up with you. To pull what's in your head, your inbox, and your scattered notes, and put it where it belongs.</p>
+      <p>So that when you open Claude tomorrow morning, it actually knows who you are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section>
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="script">made for you if</span>
+      <h2>Who this is for</h2>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <h3>This is for you if</h3>
+        <ul class="calm">
+          <li>You run a small business, solo or with a tiny team</li>
+          <li>You've been at it for a few years</li>
+          <li>You've tried Claude or ChatGPT and felt the answers were generic</li>
+          <li>You want one calm place where everything lives</li>
+          <li>You're tired of re-explaining yourself to AI</li>
+          <li>You want a system you could hand to a VA</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>This isn't for you if</h3>
+        <ul class="calm">
+          <li>You're brand new to business with no offers or clients yet</li>
+          <li>You want me to do everything while you stay hands-off</li>
+          <li>You're looking for a quick AI hack rather than a real system</li>
+          <li>You're not willing to spend 90 minutes on the install call</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section style="background: var(--white);">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="script">everything included</span>
+      <h2>What you get</h2>
+    </div>
+    <div class="deliverables">
+      <div class="deliverable">
+        <span class="deliverable-num">i.</span>
+        <div>
+          <h3>The 90-minute install call</h3>
+          <p>We screen-share. I drive Notion. You answer the questions. By the end, your hub is set up, customised to your business, and ready to use.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <span class="deliverable-num">ii.</span>
+        <div>
+          <h3>Your AI Business Hub, fully installed</h3>
+          <p>Seven sections in your own Notion workspace: Business at a Glance, Brand Voice Guide, Content Hub, Client Workspace, Weekly Rhythm, Funnel and Lead Magnets, Skills Files. Each with Claude prompts ready to use.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <span class="deliverable-num">iii.</span>
+        <div>
+          <h3>Your business written into the hub. During the call.</h3>
+          <p>Your business context, brand voice, and ideal client. Captured live and placed where they belong. Not a homework assignment for later.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <span class="deliverable-num">iv.</span>
+        <div>
+          <h3>The walkthrough recording</h3>
+          <p>Yours to keep. Revisit anything any time.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <span class="deliverable-num">v.</span>
+        <div>
+          <h3>14 days of async support</h3>
+          <p>Send me a Loom or message any weekday. I respond within 24 hours.</p>
+        </div>
+      </div>
+      <div class="deliverable">
+        <span class="deliverable-num">vi.</span>
+        <div>
+          <h3>Hub Helper, your private AI assistant</h3>
+          <p>Trained on your hub. Ask it anything about how to use the system. There 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="script">simple from the start</span>
+      <h2>How it works</h2>
+    </div>
+    <div class="timeline">
+      <div class="step">
+        <span class="step-day">Day one</span>
+        <h3>Discovery call</h3>
+        <p>A free 20-minute call to make sure we're a good fit.</p>
+      </div>
+      <div class="step">
+        <span class="step-day">Days two to seven</span>
+        <h3>Prep</h3>
+        <p>You complete a short prep form. I review it. We schedule the install.</p>
+      </div>
+      <div class="step">
+        <span class="step-day">Install day</span>
+        <h3>The 90-minute call</h3>
+        <p>Hub goes live in your Notion. You start using it the same day.</p>
+      </div>
+      <div class="step">
+        <span class="step-day">Days eight to twenty-one</span>
+        <h3>Async support</h3>
+        <p>Use the system, ask questions, refine. By day 21 it runs without me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="script">honest pricing</span>
+      <h2>The investment</h2>
+    </div>
+    <div class="pricing-block">
+      <div class="pricing-row">
+        <div class="price-tier">Founders pricing</div>
+        <div class="price-amount">$1,500</div>
+        <div class="price-detail">First two clients only. In exchange for a written testimonial and a 7-day usage check-in.</div>
+      </div>
+      <div class="pricing-row">
+        <div class="price-tier">Standard</div>
+        <div class="price-amount">$2,500</div>
+        <div class="price-detail">Everyone after the first two.</div>
+      </div>
+    </div>
+    <p class="pricing-note">Either price is one decent client invoice. The hub saves you that much time in the first month.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section style="background: var(--white);">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img" role="img" aria-label="Kelly, founder of Wise Women Use AI"></div>
+      <div class="about-text">
+        <span class="script">about me</span>
+        <h2>Hi, I'm Kelly.</h2>
+        <p>I run Wise Women Use AI, an education business and community for women learning to use Claude properly in their businesses.</p>
+        <p>Over the last 18 months I've built the system that runs my own business. Seven specialised AI workflows for content planning, brief writing, content creation, quality checks, video production, publishing, and trend research. The AI Business Hub is the foundation underneath all of it.</p>
+        <p>I'm Australian, British by birth, based in Melbourne. Not a tech bro. Just someone who got tired of running her business from 47 tabs and built the system that fixed it.</p>
+        <div class="about-sig script">Kelly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="script">honest answers</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need to be good at Notion?</summary>
+        <p>No. I drive during the install. You watch and answer questions. The Notion Quick Reference inside your hub covers anything you'll need to do later.</p>
+      </details>
+      <details>
+        <summary>What if I don't have my brand or content fully figured out yet?</summary>
+        <p>The hub helps you figure it out. The Claude prompts inside each section are designed to interview you and pull the answers out. You don't need to come with everything sorted.</p>
+      </details>
+      <details>
+        <summary>Can I do this myself?</summary>
+        <p>Yes. The template is available free inside my Skool community. What you're paying for here is the install. Me sitting with you for 90 minutes and making sure it actually gets done. The same template I gave away free that almost nobody set up.</p>
+      </details>
+      <details>
+        <summary>What happens after the 14 days of support?</summary>
+        <p>You can join the Skool community for ongoing support and a place to ask questions, or upgrade to the AI Content Team install which adds the seven-skill content automation system on top of your hub.</p>
+      </details>
+      <details>
+        <summary>What if it doesn't work for me?</summary>
+        <p>If you complete the install call and decide within 7 days that the hub isn't for you, I'll refund 50% of what you paid. Full refund isn't possible because the work is done in the install call itself.</p>
+      </details>
+      <details>
+        <summary>How long until I can book?</summary>
+        <p>I run a maximum of four installs per month so each client gets proper attention. If founders spots are gone, you'll see a waitlist link on the booking page.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="book">
+  <div class="wrap">
+    <span class="script">your next step</span>
+    <h2>Ready to get your business out of 47 tabs?</h2>
+    <p>Book a 20-minute discovery call. We'll talk about your business, what's currently scattered, and whether the AI Business Hub install is the right next step.</p>
+    <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" id="calendly-link">Book a discovery call</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+
+  <div class="footer-links">
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/ai-business-hub-install" class="footer-link">AI Business Hub</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+</footer>
+
+</body>
+</html>
