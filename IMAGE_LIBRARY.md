@@ -11,10 +11,10 @@
 
 | Filename | Description | Tags |
 |----------|-------------|------|
-| WWUAI Logo OG.png | Primary logo, 1000x1000, cream background | logo, primary, square |
-| WWUAI Logo OGTP.png | Primary logo, 1024x1024, transparent background | logo, primary, transparent |
-| WWUAI Logo Dark.png | Dark variant, 1024x1024, brown background | logo, dark, square |
-| WWUAI Logo DarkTP.png | Dark variant, transparent background | logo, dark, transparent |
+| WWUAI Logo OG.png | Primary logo, Pearl background — May 2026 rebrand (Bordeaux/Pearl/Ink palette) | logo, primary, square |
+| WWUAI Logo OGTP.png | Primary logo, 2000x2000, transparent background — use on light backgrounds | logo, primary, transparent |
+| WWUAI Logo Dark.png | Dark variant, Ink (#29232A) background — May 2026 rebrand | logo, dark, square |
+| WWUAI Logo DarkTP.png | Dark variant, transparent background — use on dark (Ink) backgrounds only | logo, dark, transparent |
 
 ## Photos (`assets/photos/`)
 
