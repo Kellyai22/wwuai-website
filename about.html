@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Kelly | Wise Women Use AI</title>
+  <meta name="description" content="Kelly Hartley, founder of Wise Women Use AI. British, based in Melbourne. I built the community I wished had existed for women in business using AI.">
+  <meta property="og:title" content="About Kelly | Wise Women Use AI">
+  <meta property="og:description" content="The real story behind Wise Women Use AI, and why I built a community for women who want to use AI without the hype.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:          #F8F8F8;
+      --ink:         #29232A;
+      --bordeaux:    #8A1F2E;
+      --driftwood:   #908486;
+      --cream-dark:  #E1DAD7;
+      --cream-mid:   #EDEBE9;
+      --cream-light: #F2F0EE;
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #F8F8F8;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex: 0 0 auto;
+      max-width: fit-content;
+    }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+
+    .nav-wordmark {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+      align-self: stretch;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--driftwood);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+    }
+    .nav-link:hover { color: var(--bordeaux); }
+
+    .btn-solid {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--ink);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+    /* ── Kelly section ── */
+    .kelly-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 96px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .kelly-photo {
+      aspect-ratio: 3/4;
+      background: var(--cream-mid);
+      border-radius: 3px;
+      overflow: hidden;
+      position: sticky;
+      top: 88px;
+    }
+
+    .kelly-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    .kelly-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--driftwood);
+      font-size: 13px;
+      text-align: center;
+      padding: 32px;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .kelly-content .eyebrow { margin-bottom: 20px; display: block; }
+
+    .kelly-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .kelly-content h1 em { font-style: italic; font-weight: 400; }
+
+    .kelly-content p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--driftwood);
+      margin-bottom: 20px;
+    }
+
+    .kelly-content p strong { color: var(--ink); font-weight: 400; }
+
+    .kelly-belief {
+      margin: 32px 0;
+      padding: 28px 32px;
+      border-left: 2px solid var(--bordeaux);
+      background: var(--cream-light);
+    }
+
+    .kelly-belief p {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .work-with-me {
+      margin-top: 40px;
+      padding: 36px;
+      background: var(--cream-mid);
+      border-radius: 3px;
+    }
+
+    .work-with-me h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .work-with-me p { font-size: 14px; color: var(--driftwood); margin-bottom: 24px; }
+
+    .btn-work {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid var(--ink);
+      border-radius: 2px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-work:hover { background: var(--ink); color: var(--bg); }
+
+    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--cream-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+    .footer-link:hover { color: var(--bordeaux); }
+
+    .social-links { display: flex; gap: 20px; align-items: center; }
+    .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+    .social-link:hover { color: var(--bordeaux); }
+
+    .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-wordmark, .nav-link + .nav-link { display: none; }
+      .kelly-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
+      .kelly-photo { aspect-ratio: 4/3; max-height: 280px; position: static; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/work" class="nav-link">Work with me</a>
+      <a href="/hub" class="nav-link">AI Business Hub</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+    </div>
+  </nav>
+
+
+  <section class="kelly-section">
+
+    <div class="kelly-photo reveal">
+      <img
+        src="/assets/photos/kelly-about.jpg"
+        alt="Kelly Hartley, founder of Wise Women Use AI"
+        onerror="this.style.display='none'; this.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
+      />
+      <div class="kelly-photo-placeholder" style="display:none;">
+        <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;color:var(--driftwood);">K</div>
+        <span style="color:var(--driftwood);font-size:13px;">kelly-about.jpg</span>
+      </div>
+    </div>
+
+    <div class="kelly-content reveal">
+      <span class="eyebrow">About Kelly</span>
+      <h1>Hey. I'm Kelly.<br><em>I built this for us.</em></h1>
+
+      <p>I'm British, based in Melbourne, and I run three businesses. I use AI, primarily Claude, as the actual operating system my businesses run on. Not as a demo. Not as an experiment. As the thing that makes it possible to keep going on the days when everything feels like too much.</p>
+
+      <p>I started Wise Women Use AI because I couldn't find a space that was <strong>honestly useful</strong> for women like me. The AI education world is full of people who discovered these tools 18 months ago and started teaching them. Most of it isn't built for women running real businesses, with real energy constraints, in real life.</p>
+
+      <p>My focus is Claude, because I know it deeply and I think it's the best tool for most of the work women in business need to do. But I'm not closed off from anything else. I'll always point you toward what's actually going to help, whether that's Claude, another AI tool, or something different entirely. What I won't do is teach you things I haven't tested in my own business first.</p>
+
+      <p>I believe women in business deserve to be taken seriously. By the world, by the tools they use, and by themselves. <strong>I want every woman who spends time with me to walk away feeling empowered, inspired, and genuinely excited about what's possible for her.</strong></p>
+
+      <div class="kelly-belief">
+        <p>"If you've ever felt like everyone else has figured this out and you're still trying to catch up, you're not behind. You just haven't found the right room yet. This is it."</p>
+      </div>
+
+      <div class="work-with-me">
+        <h3>Work with me directly</h3>
+        <p>If you're looking for something more personalised, I occasionally take on a small number of clients for one-to-one work. Whether you need help building a specific system, getting your AI setup right for your business, or just figuring out where to start, get in touch and we can talk through what that looks like.</p>
+        <div class="btn-group">
+          <a href="mailto:hello@wisewomenuseai.com" class="btn-work">Email me</a>
+          <a href="https://cal.com/kelly-yuaiol/discoverycall" target="_blank" rel="noopener" class="btn-work">Book a call</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="/blog" class="footer-link">Blog</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="/hub" class="footer-link">AI Business Hub</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+
+    <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+  </footer>
+
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
