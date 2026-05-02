@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Business Hub Install · Wise Women Use AI</title>
+<meta name="description" content="A done-with-you Notion install that gets your business out of your head and into a system Claude can actually use. Built in two weeks. Yours forever.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wisewomenuseai.com/hub-install">
+<meta property="og:title" content="The Hub That Holds Your Business So You Don't Have To">
+<meta property="og:description" content="A done-with-you Notion install that gets your business out of your head and into a system Claude can actually use. Built in two weeks. Yours forever.">
+<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OG.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Hub That Holds Your Business So You Don't Have To">
+<meta name="twitter:description" content="A done-with-you Notion install that gets your business out of your head and into a system Claude can actually use. Built in two weeks. Yours forever.">
+<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OG.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Allison&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pearl: #F8F8F8;
+    --bg: var(--pearl);
+    --ink: #29232A;
+    --bordeaux: #8A1F2E;
+    --driftwood: #908486;
+    --cream-dark: #E1DAD7;
+    --white: #FFFFFF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --script: 'Allison', cursive;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection { background: var(--bordeaux); color: var(--pearl); }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .container-narrow {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ─────── HERO ─────── */
+  .hero {
+    padding: 120px 0 100px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-family: var(--script);
+    color: var(--bordeaux);
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 32px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--bordeaux);
+    font-weight: 400;
+  }
+  .hero .lede {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+  .hero .lede strong {
+    color: var(--bordeaux);
+    font-weight: 500;
+  }
+  .hero .audience {
+    font-style: italic;
+    color: var(--driftwood);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto 48px;
+  }
+
+  /* ─────── BUTTONS ─────── */
+  .btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--bordeaux);
+    color: var(--pearl);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--bordeaux);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--bordeaux);
+  }
+  .btn-ghost:hover {
+    background: var(--bordeaux);
+    color: var(--pearl);
+  }
+  .scarcity {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--driftwood);
+    font-style: italic;
+  }
+
+  /* ─────── SECTION ─────── */
+  section {
+    padding: 100px 0;
+  }
+  section.tight {
+    padding: 70px 0;
+  }
+  .section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: block;
+    letter-spacing: 0.05em;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  h2 em {
+    font-style: italic;
+    color: var(--bordeaux);
+    font-weight: 400;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--bordeaux);
+    margin: 0 auto 40px;
+  }
+  .divider-left {
+    width: 60px;
+    height: 1px;
+    background: var(--bordeaux);
+    margin: 0 0 32px;
+  }
+
+  /* ─────── THREE-ACT ─────── */
+  .three-act {
+    background: var(--white);
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .act {
+    margin-bottom: 80px;
+  }
+  .act:last-child { margin-bottom: 0; }
+  .act .marker {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .act h3 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .act p {
+    color: var(--ink);
+    font-size: 17px;
+  }
+
+  /* ─────── THE THREE LAYERS ─────── */
+  .layers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .layer {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 48px;
+    position: relative;
+  }
+  .layer .num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .layer h3 {
+    margin-bottom: 16px;
+  }
+  .layer p {
+    color: var(--ink);
+  }
+
+  /* ─────── SPEED SECTION ─────── */
+  .speed {
+    background: var(--ink);
+    color: var(--pearl);
+    padding: 120px 0;
+  }
+  .speed h2 {
+    color: var(--pearl);
+  }
+  .speed h2 em {
+    color: var(--cream-dark);
+    font-style: italic;
+  }
+  .speed p {
+    color: var(--cream-dark);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  .speed .divider {
+    background: var(--cream-dark);
+  }
+  .speed .closer {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--pearl);
+    margin-top: 32px;
+    border-left: 2px solid var(--bordeaux);
+    padding-left: 24px;
+  }
+
+  /* ─────── DAY IN THE LIFE ─────── */
+  .days {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+  }
+  .day {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 48px;
+  }
+  .day-after {
+    background: var(--ink);
+    color: var(--pearl);
+    border-color: var(--ink);
+  }
+  .day h3 {
+    margin-bottom: 32px;
+    font-size: 24px;
+  }
+  .day-after h3 { color: var(--pearl); }
+  .timeline {
+    list-style: none;
+  }
+  .timeline li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .day-after .timeline li {
+    border-bottom-color: rgba(225, 218, 215, 0.15);
+  }
+  .timeline li:last-child { border-bottom: none; padding-bottom: 0; }
+  .timeline .time {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    flex-shrink: 0;
+    width: 60px;
+    font-size: 15px;
+  }
+  .day-after .timeline .time { color: var(--cream-dark); }
+  .day-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cream-dark);
+    font-style: italic;
+    color: var(--driftwood);
+    font-size: 15px;
+  }
+  .day-after .day-footer {
+    border-top-color: rgba(225, 218, 215, 0.2);
+    color: var(--cream-dark);
+  }
+
+  /* ─────── WHO THIS IS FOR ─────── */
+  .who {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+  }
+  .who-block h3 {
+    margin-bottom: 24px;
+    font-size: 26px;
+  }
+  .who-block p {
+    color: var(--ink);
+    font-size: 16px;
+  }
+
+  /* ─────── INCLUDED ─────── */
+  .included {
+    background: var(--cream-dark);
+  }
+  .included-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+  }
+  .included-item {
+    border-top: 1px solid var(--bordeaux);
+    padding-top: 24px;
+  }
+  .included-item h4 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--bordeaux);
+    margin-bottom: 12px;
+  }
+  .included-item p {
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ─────── INVESTMENT ─────── */
+  .investment {
+    text-align: center;
+  }
+  .price-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 60px auto 60px;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 56px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .price-card.featured {
+    border: 1px solid var(--bordeaux);
+    background: var(--bordeaux);
+    color: var(--pearl);
+  }
+  .price-card .label {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .price-card.featured .label { color: var(--cream-dark); }
+  .price-card .sublabel {
+    font-size: 13px;
+    color: var(--driftwood);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+  .price-card.featured .sublabel { color: var(--cream-dark); }
+  .price-card .price {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .price-card.featured .price { color: var(--pearl); }
+  .price-card .currency {
+    font-size: 14px;
+    color: var(--driftwood);
+    letter-spacing: 0.1em;
+  }
+  .price-card.featured .currency { color: var(--cream-dark); }
+  .maths {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .maths p {
+    color: var(--ink);
+    font-size: 17px;
+  }
+
+  /* ─────── KELLY NOTE ─────── */
+  .kelly {
+    background: var(--white);
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .kelly .signoff {
+    font-family: var(--script);
+    color: var(--bordeaux);
+    font-size: 56px;
+    line-height: 1;
+    margin-top: 24px;
+    display: block;
+  }
+
+  /* ─────── OBJECTIONS (ACCORDION) ─────── */
+  .objections-grid {
+    margin-top: 60px;
+  }
+  .objection {
+    border-top: 1px solid var(--cream-dark);
+  }
+  .objection:last-child {
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .objection summary {
+    padding: 32px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    transition: padding 0.2s ease;
+  }
+  .objection summary::-webkit-details-marker {
+    display: none;
+  }
+  .objection summary .question {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--bordeaux);
+    line-height: 1.35;
+    flex: 1;
+  }
+  .objection summary:hover .question {
+    color: var(--ink);
+  }
+  .toggle {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--bordeaux);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .toggle::before,
+  .toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--bordeaux);
+    top: 50%;
+    left: 50%;
+    transition: transform 0.3s ease;
+  }
+  .toggle::before {
+    width: 12px;
+    height: 1px;
+    transform: translate(-50%, -50%);
+  }
+  .toggle::after {
+    width: 1px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+  }
+  details[open] .toggle {
+    background: var(--bordeaux);
+  }
+  details[open] .toggle::before,
+  details[open] .toggle::after {
+    background: var(--pearl);
+  }
+  details[open] .toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .objection .answer {
+    padding: 0 0 36px;
+    max-width: 90%;
+  }
+  .objection .answer p {
+    color: var(--ink);
+    font-size: 16px;
+  }
+
+  /* ─────── GUARANTEE ─────── */
+  .guarantee {
+    background: var(--cream-dark);
+    text-align: center;
+  }
+  .guarantee h2 {
+    font-style: italic;
+  }
+  .guarantee p {
+    max-width: 580px;
+    margin: 0 auto 16px;
+    font-size: 17px;
+  }
+
+  /* ─────── FAQ (ACCORDION) ─────── */
+  .faq-item {
+    border-top: 1px solid var(--cream-dark);
+  }
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .faq-item summary {
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary .question {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink);
+    flex: 1;
+    line-height: 1.4;
+  }
+  .faq-item summary:hover .question {
+    color: var(--bordeaux);
+  }
+  .faq-item .toggle {
+    width: 28px;
+    height: 28px;
+    border-color: var(--driftwood);
+  }
+  .faq-item .toggle::before,
+  .faq-item .toggle::after {
+    background: var(--driftwood);
+    width: 10px;
+  }
+  .faq-item .toggle::after {
+    width: 1px;
+    height: 10px;
+  }
+  .faq-item summary:hover .toggle {
+    border-color: var(--bordeaux);
+  }
+  .faq-item summary:hover .toggle::before,
+  .faq-item summary:hover .toggle::after {
+    background: var(--bordeaux);
+  }
+  .faq-item[open] .toggle {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .faq-item[open] .toggle::before,
+  .faq-item[open] .toggle::after {
+    background: var(--pearl);
+  }
+  .faq-item .answer {
+    padding: 0 0 28px;
+    max-width: 90%;
+  }
+  .faq-item .answer p {
+    color: var(--driftwood);
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  /* ─────── DECISION ─────── */
+  .decision {
+    background: var(--ink);
+    color: var(--pearl);
+  }
+  .decision h2 { color: var(--pearl); }
+  .decision .preamble p {
+    color: var(--cream-dark);
+    font-size: 18px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin: 60px 0;
+  }
+  .decision-col {
+    padding: 40px;
+  }
+  .decision-col.before {
+    border: 1px solid rgba(225, 218, 215, 0.2);
+  }
+  .decision-col.after {
+    background: var(--bordeaux);
+    border: 1px solid var(--bordeaux);
+  }
+  .decision-col h3 {
+    color: var(--pearl);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .decision-col ul {
+    list-style: none;
+  }
+  .decision-col li {
+    padding: 10px 0;
+    color: var(--cream-dark);
+    font-size: 15px;
+    border-bottom: 1px solid rgba(225, 218, 215, 0.12);
+  }
+  .decision-col li:last-child { border-bottom: none; }
+  .decision-col.after li { color: var(--pearl); }
+  .decision-cta {
+    text-align: center;
+  }
+  .decision-cta .btn {
+    background: var(--pearl);
+    color: var(--ink);
+    border-color: var(--pearl);
+  }
+  .decision-cta .btn:hover {
+    background: var(--bordeaux);
+    color: var(--pearl);
+    border-color: var(--bordeaux);
+  }
+
+  /* ─────── RESPONSIVE ─────── */
+  @media (max-width: 768px) {
+    .container, .container-narrow { padding: 0 24px; }
+    section { padding: 70px 0; }
+    .hero { padding: 80px 0 60px; }
+    .speed { padding: 80px 0; }
+    .days, .who, .included-list, .price-cards, .decision-grid { grid-template-columns: 1fr; gap: 24px; }
+    .layer, .day, .price-card, .decision-col { padding: 36px 28px; }
+    .hero .eyebrow { font-size: 32px; }
+    .kelly .signoff { font-size: 42px; }
+    .speed .closer { font-size: 20px; }
+  }
+
+  /* ─────── SITE NAV (overrides design file centred wordmark nav) ─────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--pearl);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex: 0 0 auto;
+    max-width: fit-content;
+  }
+  .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+
+  .nav-wordmark {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+    align-self: stretch;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--driftwood);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+  }
+  .nav-link:hover { color: var(--bordeaux); }
+
+  .btn-solid {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pearl);
+    background: var(--ink);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-link { display: none; }
+  }
+
+  /* ─────── SITE FOOTER (overrides design file minimal footer) ─────── */
+  footer {
+    padding: 40px 48px;
+    border-top: 1px solid var(--cream-dark);
+    background: var(--pearl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+
+  .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+  .footer-link:hover { color: var(--bordeaux); }
+
+  .social-links { display: flex; gap: 20px; align-items: center; }
+  .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+  .social-link:hover { color: var(--bordeaux); }
+
+  .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/hub-install" class="nav-link">AI Business Hub</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+  </div>
+</nav>
+
+<!-- ─────── HERO ─────── -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">introducing</span>
+    <h1>The Hub That Holds Your Business <em>So You Don't Have To.</em></h1>
+    <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use. <strong>Built in two weeks. Yours forever.</strong> Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course. They're the ones who got the structure in early and started using it.</p>
+    <p class="audience">For solo women founders five to fifteen years in. Brilliant at what you do, quietly exhausted from holding it all together.</p>
+    <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn">Apply for a Hub Install</a>
+    <span class="scarcity">Four spots per month. May founders' pricing closes soon.</span>
+  </div>
+</section>
+
+<!-- ─────── THREE-ACT ─────── -->
+<section class="three-act">
+  <div class="container-narrow">
+
+    <div class="act">
+      <span class="marker">Where you are</span>
+      <h3>You're already using AI. You're not behind in the way you think you are.</h3>
+      <p>You open Claude or ChatGPT, you type a prompt, you get something useful. You draft an email, you brainstorm a launch, you sort out a tricky client message. You've been doing this for months.</p>
+      <p>But here's what's actually happening. Every time you open a new chat, you're starting from scratch. You re-explain your business, your audience, your offers, your tone. The good outputs disappear when you close the tab. The structure you keep meaning to build never quite gets built. And the work piles up in twenty different places: a Google Doc here, a Notion page there, a folder full of half-finished templates, three browser tabs you're scared to close.</p>
+      <p>You know there's a better way to do this. You just haven't had the time, the energy, or the brain space to build it.</p>
+    </div>
+
+    <div class="act">
+      <span class="marker">What changed</span>
+      <h3>The last six months reshaped what's possible.</h3>
+      <p>A year ago, the version of AI most of us were using could write text and answer questions. That was about it. It didn't know your business. It didn't remember anything. Every conversation started from zero.</p>
+      <p>That's not where we are anymore. Claude can now hold the structure of an entire business. It can read your client list, your offers, your past content, your brand voice, your processes. It can pull from all of it without you re-explaining a single thing. It can do work that actually sounds like you, because it's been trained on you.</p>
+      <p>But none of that works if your business lives in scattered tabs and half-finished documents. The structure has to come first. The Hub has to come first.</p>
+    </div>
+
+    <div class="act">
+      <span class="marker">What's possible now</span>
+      <h3>Your business with a place to land.</h3>
+      <p>Your morning starts with a Hub Helper Claude Project that already knows what you're working on this week. You ask it to draft your newsletter and it writes in your actual voice, pulling from your actual offers. You open Notion and your business is right there, in one place, the way you wish you'd been able to organise it for the last five years.</p>
+      <p>You stop being the person who holds everything in her head. You become the person who built the system that holds it instead. The mental weight lifts. Brain fog has somewhere to land. Your business stops feeling like a thing you carry and starts feeling like a thing you run.</p>
+      <p>This is what the Hub does.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────── THREE LAYERS ─────── -->
+<section>
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <span class="section-num">The install</span>
+      <h2>Three layers. <em>One install.</em></h2>
+      <div class="divider"></div>
+      <p style="color: var(--driftwood); font-size: 17px;">You don't need another course. You don't need another tool. You need three things connected properly.</p>
+    </div>
+
+    <div class="layers">
+      <div class="layer">
+        <span class="num">01</span>
+        <h3>Your Business in Notion</h3>
+        <p>Every part of your business in one workspace, structured the way your brain wants to think about it. Clients, offers, content, finances, lead magnets, brand assets. Master databases that actually talk to each other. No more "I know I wrote that down somewhere."</p>
+      </div>
+
+      <div class="layer">
+        <span class="num">02</span>
+        <h3>The Hub Helper Claude Project</h3>
+        <p>A custom Claude Project trained on your business from day one. It knows your offers, your voice, your audience, your processes. When you ask it for a launch email, it writes one for <em>your</em> launch. When you ask for a client onboarding sequence, it pulls from <em>your</em> onboarding. No more re-explaining your business every time you open a chat.</p>
+      </div>
+
+      <div class="layer">
+        <span class="num">03</span>
+        <h3>Fourteen Days of Real Support</h3>
+        <p>This isn't a "watch the videos and figure it out" install. For two weeks after your Hub goes live, you've got me. Async, via voice notes and Loom walkthroughs. Stuck on something? Send a voice note. Want to add a database? I'll walk you through it. The point is that you're never alone with it.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px;">
+      <p style="color: var(--ink); font-style: italic; max-width: 580px; margin: 0 auto 32px;">If any one of these layers is missing, the other two don't really work. By the end of your install, you've got all three.</p>
+      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn">Apply for a Hub Install</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── SPEED ─────── -->
+<section class="speed">
+  <div class="container-narrow">
+    <span class="section-num" style="color: var(--cream-dark);">A note on tempo</span>
+    <h2>Speed is the skill <em>now.</em></h2>
+    <div class="divider"></div>
+    <p>You don't need another twelve-week programme. You need the thing built, this fortnight.</p>
+    <p>Here's the rule no one is saying out loud. The cost of waiting is now higher than the cost of acting. A year ago, you could afford to research the right approach for three months before you started. Today, by the time you finish a twelve-week course, the tools you started with have been replaced twice over. The founders pulling ahead right now aren't the ones who studied AI most thoroughly. They're the ones who got something built and started using it.</p>
+    <p>This isn't an argument for sloppy work. It's an argument for the right kind of fast. Slow when it matters: getting the architecture right, choosing what to build, doing it properly the first time. Fast everywhere else: shipping, testing, using, refining.</p>
+    <p>Your Hub goes in over two weeks. Your active time on it is around three hours total. Then you actually have it. You're not three months into a course wondering when the implementation phase begins. You're three months into using the thing. And that gap compounds.</p>
+    <div class="closer">The version of you that decides to "learn AI properly next year" is already six months behind. Not in skills. In time.</div>
+  </div>
+</section>
+
+<!-- ─────── DAY IN THE LIFE ─────── -->
+<section>
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <span class="section-num">A day in the life</span>
+      <h2>What changes when your business <em>has a Hub.</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <h3>Your day now</h3>
+        <ul class="timeline">
+          <li><span class="time">7:00</span><span>Open laptop. Three tabs already open from yesterday. Can't remember why.</span></li>
+          <li><span class="time">8:30</span><span>Try to write a newsletter. Open ChatGPT. Re-explain your business. Get something generic. Rewrite it from scratch.</span></li>
+          <li><span class="time">10:00</span><span>Client emails asking for a thing you already sent her. You know you did. You can't find where.</span></li>
+          <li><span class="time">11:30</span><span>Open Notion. Five different pages that all might be the right one. Give up. Make tea instead.</span></li>
+          <li><span class="time">1:00</span><span>Brain fog hits. Try to push through.</span></li>
+          <li><span class="time">3:00</span><span>Finally find the document you needed at 10:00.</span></li>
+          <li><span class="time">5:30</span><span>Realise you haven't done the actual creative work you wanted to do today.</span></li>
+          <li><span class="time">8:00</span><span>Laptop open at dinner. Again.</span></li>
+        </ul>
+        <div class="day-footer">Zero time for the work you actually love.</div>
+      </div>
+
+      <div class="day day-after">
+        <h3>Your day with the Hub</h3>
+        <ul class="timeline">
+          <li><span class="time">7:00</span><span>Open Notion. Your week is right there.</span></li>
+          <li><span class="time">8:30</span><span>Ask the Hub Helper for a newsletter draft. It pulls from this week's plan and your last three newsletters. Sounds like you. Edit lightly. Send.</span></li>
+          <li><span class="time">10:00</span><span>Client emails. You search the client database. You find what you sent her in eight seconds.</span></li>
+          <li><span class="time">11:30</span><span>You're already on creative work.</span></li>
+          <li><span class="time">1:00</span><span>Brain fog hits. The Hub doesn't care. It still knows where everything is.</span></li>
+          <li><span class="time">5:30</span><span>You've actually done the work that matters today.</span></li>
+          <li><span class="time">7:00</span><span>Laptop closed.</span></li>
+        </ul>
+        <div class="day-footer">This is not a productivity fantasy. This is what happens when you stop using your brain as a filing cabinet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── WHO THIS IS FOR ─────── -->
+<section style="background: var(--white); border-top: 1px solid var(--cream-dark); border-bottom: 1px solid var(--cream-dark);">
+  <div class="container-narrow">
+    <span class="section-num">Who this is for</span>
+    <h2>The Hub is built <em>for a specific Sarah.</em></h2>
+    <div class="divider-left"></div>
+
+    <div class="who">
+      <div class="who-block">
+        <h3>This is for you if</h3>
+        <p>You've been in business between five and fifteen years. You're good at what you do. The work itself isn't the problem. The mental load of keeping it all running is.</p>
+        <p>You've tried ChatGPT and Claude. You can see the potential. You've also seen plenty of generic outputs that didn't sound like you, and you've quietly given up on AI being genuinely useful for the way <em>you</em> actually work.</p>
+        <p>You've tried to organise your business in Notion before. Maybe twice. Maybe four times. You watched a YouTube tutorial, started a workspace, got 60% of the way through, and now it sits there with three half-built databases and a nagging feeling.</p>
+        <p>You don't want another course. You don't want another community. You want someone to just build the thing, properly, and walk you through using it.</p>
+      </div>
+
+      <div class="who-block">
+        <h3>This is not for you if</h3>
+        <p>You're brand new in business and still figuring out your offers. The Hub assumes you have a real business to organise.</p>
+        <p>You want to build it all yourself from scratch. That's valid. There are plenty of free templates online for that path.</p>
+        <p>You're looking for an agency-built, multi-team enterprise system. The Hub is for solo founders and small teams. Beautifully fitted, not over-engineered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── WHAT'S INCLUDED ─────── -->
+<section class="included">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <span class="section-num">What's included</span>
+      <h2>Everything you need. <em>Nothing you don't.</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="included-list">
+      <div class="included-item">
+        <h4>The Notion Hub Build</h4>
+        <p>A custom Notion workspace built for your specific business. Master databases for clients, offers, content, finances, brand assets, and lead magnets. Linked relationships so nothing lives in two places. Brand-aligned aesthetic. Designed to actually feel good to open.</p>
+      </div>
+
+      <div class="included-item">
+        <h4>The Hub Helper Claude Project</h4>
+        <p>Pre-loaded with your business context, brand voice, audience profile, and current offers. Set up to pull from your Notion pages so it always has the latest version of your work. Yours forever.</p>
+      </div>
+
+      <div class="included-item">
+        <h4>Onboarding Call</h4>
+        <p>Sixty minutes on Zoom before we build. We map your business, talk through how you actually work, and make sure the Hub fits the shape of your brain, not someone else's template.</p>
+      </div>
+
+      <div class="included-item">
+        <h4>Loom Walkthroughs</h4>
+        <p>Once your Hub is live, you get a full set of Looms walking you through every part of it. Watch them once, watch them ten times, send them to a VA. They're yours.</p>
+      </div>
+
+      <div class="included-item">
+        <h4>Fourteen Days of Async Support</h4>
+        <p>Voice notes and Looms back and forth for two weeks after your Hub goes live. Real support from a real person who built the thing.</p>
+      </div>
+
+      <div class="included-item">
+        <h4>Lifetime Access</h4>
+        <p>The Hub is yours forever. The Hub Helper Project is yours forever. Notion stays connected to your account, not mine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── INVESTMENT ─────── -->
+<section class="investment">
+  <div class="container">
+    <span class="section-num">The investment</span>
+    <h2>Two ways <em>in.</em></h2>
+    <div class="divider"></div>
+
+    <div class="price-cards">
+      <div class="price-card featured">
+        <span class="label">Founders' pricing</span>
+        <p class="sublabel">Available until the next round of installs</p>
+        <div class="price">$1,500</div>
+        <span class="currency">AUD · pay in full</span>
+      </div>
+
+      <div class="price-card">
+        <span class="label">Standard pricing</span>
+        <p class="sublabel">After founders' pricing closes</p>
+        <div class="price">$2,500</div>
+        <span class="currency">AUD · pay in full</span>
+      </div>
+    </div>
+
+    <div class="maths">
+      <h3 style="text-align: center; margin-bottom: 24px; font-style: italic;">Let's do the maths.</h3>
+      <p>A Notion consultant build alone runs $2,000 to $5,000, and you still don't get the Claude Project or the support.</p>
+      <p>A virtual assistant, even at junior rates, costs more in three months than the Hub costs once.</p>
+      <p>You've probably spent more than $1,500 on courses in the last two years. Most of them are sitting half-watched in a tab you forgot to close.</p>
+      <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the thing the courses keep telling you to build.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn">Apply for a Hub Install</a>
+      <span class="scarcity">Four installs per month. When May fills, founders' pricing closes for good.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── KELLY NOTE ─────── -->
+<section class="kelly">
+  <div class="container-narrow">
+    <span class="section-num">A note from Kelly</span>
+    <h2>Why <em>me.</em></h2>
+    <div class="divider-left"></div>
+
+    <p>I left employment in December 2025 with a system, not just a plan. The Hub I'm building for you is the same system I built for myself first.</p>
+
+    <p>I'm a British-born, Melbourne-based founder of Wise Women Use AI. Before I taught any of this, I built my own AI-powered content engine that runs my marketing across five platforms. I built my own financial command centre in Notion. I built my own Hub Helper that sits underneath my whole business and knows me better than most of my friends, which is funny and slightly true.</p>
+
+    <p>I'm not the loudest voice in this space. I'm not selling you a $9,000 cohort. I'm one woman who built the thing for herself, decided it was too good not to share, and is now installing it for other women who don't have time to figure it out from scratch.</p>
+
+    <p>The Hub is the most useful thing I've ever built. I'd quite like you to have one.</p>
+
+    <span class="signoff">Kelly</span>
+  </div>
+</section>
+
+<!-- ─────── OBJECTIONS ─────── -->
+<section>
+  <div class="container-narrow">
+    <span class="section-num">You might be thinking</span>
+    <h2>The honest answers to <em>the questions in your head.</em></h2>
+    <div class="divider-left"></div>
+
+    <div class="objections-grid">
+      <details class="objection">
+        <summary>
+          <span class="question">"I've tried Notion before and it didn't stick."</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>This is the thing I hear most often. It's almost never your fault. The reason most Notion attempts fall apart is that you're trying to design the structure and use the structure at the same time. That's two completely different brain modes and most of us only have one of them on any given day.</p>
+          <p>The Hub Install does the structural work for you. You bring the business. I bring the architecture. By the time you're using it, it's already built. You don't have to design and use at the same time, and that's the difference.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"I've tried AI before and the outputs were generic."</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>You're right. Generic AI gives you generic outputs. The Hub Helper isn't generic AI. It's a Claude Project trained on your business from day one. It knows your offers, your voice, your audience. The outputs sound like you because they are pulled from you.</p>
+          <p>If you've ever read something Claude wrote and thought "this isn't quite right, but I don't have the energy to fix it," that's the gap the Hub closes.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"I'm not technical enough."</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>If you can use Notion and Google Docs, you're technical enough. There's nothing in the Hub that requires code. The Loom walkthroughs are designed for someone who has never set up a database before. My mum could use it. My mum will probably end up using it, actually.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"I don't have the time."</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>The install runs over about two weeks of your calendar, including the onboarding call and a couple of feedback rounds. Your active time investment is around three hours total. The Hub then saves you somewhere between two and ten hours a week, every week, forever.</p>
+          <p>If you genuinely don't have three hours over the next fortnight, what you're describing isn't a scheduling problem. It's the exact reason the Hub exists.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"Is this really worth it for a solo business?"</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>Especially for a solo business. When you're solo, you are the whole organisation. Marketing, sales, ops, finance, customer success. Every system you don't have, you're being. The Hub is what stops you having to be all of it in your head.</p>
+          <p>The founders who get the most out of this are the ones running real businesses on lean teams. Not the ones with a COO and a marketing department.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"Can I just figure this out from your free content?"</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>Honestly, yes. You can. Everything I teach is on TikTok, the newsletter, and the Skool community. If you're someone who genuinely loves building systems and you've got the hours to spend, you don't need me.</p>
+          <p>But if you're someone who values shortcuts, who wants the thing built properly the first time, who would rather pay once and have it done than spend the next six months stop-starting on it, the Hub is built for you.</p>
+        </div>
+      </details>
+
+      <details class="objection">
+        <summary>
+          <span class="question">"Shouldn't I do a longer programme first to really learn this properly?"</span>
+          <span class="toggle"></span>
+        </summary>
+        <div class="answer">
+          <p>If you have twelve weeks to spare and learning is your goal, do a longer programme. There are good ones.</p>
+          <p>But if your goal is to actually use AI in your business this quarter, the longer programme is the wrong tool. By the time you finish it, you'll have learned a lot of theory and built nothing real. The Hub gives you something working in two weeks. Everything you need to learn after that, you learn while using it. Which is the only way the learning sticks anyway.</p>
+          <p>The slow path feels like the safer path. It isn't. It's the one where you arrive next year having learned a lot, with very little to show for it.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── GUARANTEE ─────── -->
+<section class="guarantee">
+  <div class="container-narrow">
+    <span class="section-num">The promise</span>
+    <h2>The Show Up <em>Guarantee.</em></h2>
+    <div class="divider"></div>
+    <p>Show up to the onboarding call. Send me the inputs I ask for. Use the Hub for fourteen days.</p>
+    <p>If you've done all three of those things and the Hub isn't working for you, I'll refund you in full.</p>
+    <p style="font-style: italic; color: var(--bordeaux); margin-top: 24px;">I'm confident in this because I've yet to meet a Sarah who actually used the Hub for two weeks and didn't want to keep it.</p>
+  </div>
+</section>
+
+<!-- ─────── FAQ ─────── -->
+<section>
+  <div class="container-narrow">
+    <span class="section-num">The practicals</span>
+    <h2>Frequently asked.</h2>
+    <div class="divider-left"></div>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">When does my Hub get built?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>Within two weeks of your onboarding call. I cap installs at four per month so each one gets the attention it deserves.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">Do I need a Notion subscription?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>You'll need a free Notion account. The free plan covers everything in the Hub. If you'd like Notion AI included, that's a separate paid feature you can add yourself.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">Do I need Claude Pro?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>Yes. The Hub Helper Project lives inside Claude, which means you'll need a Claude Pro account. I'll show you how to set this up if you don't have one.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">What if my business changes after the install?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>The Hub is built to grow with you. Adding new offers, new clients, new content categories is straightforward. The fourteen days of support covers any tweaks you need in that window. After that, you can update it yourself or come back for a tune-up.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">Can I add a team member later?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>Yes. Notion makes this simple, and I'll show you how during the install.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">What if I'm not based in Australia?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>Doesn't matter. Most of the install is async. The onboarding call works in any time zone. I work with founders across the UK, US, Canada, and Europe.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">How does the support actually work?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>We use a private channel where you can send voice notes, screenshots, or Loom recordings. I respond within 24 hours on weekdays.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <span class="question">What happens after the fourteen days?</span>
+        <span class="toggle"></span>
+      </summary>
+      <div class="answer">
+        <p>The Hub is yours forever. The Hub Helper is yours forever. If you want ongoing support, there are options I'll walk you through. If you don't, you keep using everything you built.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ─────── DECISION ─────── -->
+<section class="decision">
+  <div class="container">
+    <div style="text-align: center;">
+      <span class="section-num" style="color: var(--cream-dark);">The decision</span>
+      <h2>Two <em>paths.</em></h2>
+      <div class="divider" style="background: var(--cream-dark);"></div>
+    </div>
+
+    <div class="preamble">
+      <p>Every week you wait is another week your business runs on memory instead of structure.</p>
+      <p>Another week of re-explaining yourself to a generic AI that doesn't know you.</p>
+      <p>Another week the founders who already built their Hubs are getting further ahead.</p>
+      <p style="font-style: italic; margin-top: 16px;">The maths on waiting doesn't work in your favour. It never did.</p>
+    </div>
+
+    <div class="decision-grid">
+      <div class="decision-col before">
+        <h3>Stay where you are</h3>
+        <ul>
+          <li>Business living across twenty browser tabs</li>
+          <li>Re-explaining yourself to ChatGPT every morning</li>
+          <li>Notion attempts gathering dust</li>
+          <li>Brain fog with nowhere to land</li>
+          <li>Still figuring it out alone, slowly</li>
+        </ul>
+      </div>
+
+      <div class="decision-col after">
+        <h3>Get your Hub installed</h3>
+        <ul>
+          <li>Business in one place, by Friday fortnight</li>
+          <li>Claude that knows you and your work</li>
+          <li>Notion that finally feels right</li>
+          <li>Mental load lifted</li>
+          <li>Real support from a real person, fast</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="decision-cta">
+      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn">Apply for a Hub Install</a>
+      <span class="scarcity" style="color: var(--cream-dark);">$1,500 founders' pricing · Four spots per month · After May, founders' pricing closes</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── FOOTER ─────── -->
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+
+  <div class="footer-links">
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/hub-install" class="footer-link">AI Business Hub</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+</footer>
+
+</body>
+</html>
