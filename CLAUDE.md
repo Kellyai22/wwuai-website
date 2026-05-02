@@ -30,7 +30,7 @@ There is a public image library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - `ai-business-hub-install.html` — Earlier shorter version of Hub Install page. Still live at `/ai-business-hub-install`. Nav links updated to point to `/hub-install`.
 
 ## Routing notes (vercel.json)
-- `/hub` → `hub-install.html` (changed 2026-05-02, previously pointed to hub.html)
-- `/hub-install` → `hub-install.html`
+- `/hub` → `hub-install.html` (canonical URL as of 2026-05-02)
+- `/hub-install` → 301 redirect to `/hub`
 - `/hub/welcome` → `hub-welcome.html`
-- `/ai-business-hub-install` → `ai-business-hub-install.html`
+- `/ai-business-hub-install` → 301 redirect to `/hub`
