@@ -20,3 +20,17 @@ There is a public image library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - Static HTML (no framework)
 - Deployed on Vercel
 - WWUAI brand colours, fonts, and button styles (see global CLAUDE.md)
+- All CSS is inline `<style>` blocks — no external stylesheets. Each page is self-contained.
+- All pages load Google Fonts (Playfair Display, Plus Jakarta Sans, Allison) independently in their own `<head>`
+
+## Key pages
+- `hub-install.html` — Hub Install sales page (done-with-you service, $1,500–$2,500 AUD). Live at `/hub-install` and `/hub`. Design source in Google Drive: WWUAI/AI Business Hub/hub-install-sales-page.html. All 4 CTAs → cal.com/kelly-yuaiol/discoverycall.
+- `hub.html` — Old "Start Here" links page. No longer routed to `/hub` (as of 2026-05-02). Still in repo.
+- `hub-welcome.html` — Post-purchase thank-you page for $47 Notion template buyers. Live at `/hub/welcome`.
+- `ai-business-hub-install.html` — Earlier shorter version of Hub Install page. Still live at `/ai-business-hub-install`. Nav links updated to point to `/hub-install`.
+
+## Routing notes (vercel.json)
+- `/hub` → `hub-install.html` (changed 2026-05-02, previously pointed to hub.html)
+- `/hub-install` → `hub-install.html`
+- `/hub/welcome` → `hub-welcome.html`
+- `/ai-business-hub-install` → `ai-business-hub-install.html`
