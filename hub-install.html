@@ -180,6 +180,37 @@
     max-width: 520px;
     margin: 0 auto 48px;
   }
+  .hero .subtitle {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero .pull-quote {
+    background: rgba(138, 31, 46, 0.05);
+    border: 1px solid rgba(138, 31, 46, 0.12);
+    padding: 28px 36px;
+    margin: 0 auto 48px;
+    max-width: 620px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--bordeaux);
+    line-height: 1.65;
+    text-align: center;
+    position: relative;
+  }
+  .hero .pull-quote::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 72px;
+    color: var(--bordeaux);
+    opacity: 0.22;
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    line-height: 1;
+  }
 
   /* ─────── BUTTONS ─────── */
   .btn {
@@ -818,8 +849,9 @@
   <div class="container">
     <span class="eyebrow">introducing</span>
     <h1>The Hub That Holds Your Business <em>So You Don't Have To.</em></h1>
-    <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use. <strong>Set up in a single 90-minute call. Yours forever.</strong></p>
-    <p class="audience">"Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course. They're the ones who built the foundation early and started using it."</p>
+    <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use.</p>
+    <p class="subtitle">Set up in a single 90-minute call. Yours forever.</p>
+    <blockquote class="pull-quote">Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course. They're the ones who built the foundation early and started using it.</blockquote>
     <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
     <span class="scarcity">Four spots per month. May founders' pricing closes soon.</span>
   </div>
@@ -833,7 +865,7 @@
       <span class="marker">Where you are</span>
       <h3>You're already using AI. You're not behind in the way you think you are.</h3>
       <p>You open Claude or ChatGPT, you type a prompt, you get something useful. You draft an email, you brainstorm a launch, you sort out a tricky client message. You've been doing this for months.</p>
-      <p>But here's what's actually happening. Every time you open a new chat, you're starting from scratch. You re-explain your business, your audience, your offers, your tone. The good outputs disappear when you close the tab. The structure you keep meaning to build never quite gets built. And the work piles up in twenty different places: a Google Doc here, a Notion page there, a folder full of half-finished templates, three browser tabs you're scared to close.</p>
+      <p>But here's what's actually happening. Every time you open a new chat, you're starting from scratch. You re-explain your business, your audience, your offers, your tone. The good outputs disappear when you close the tab. The structure you keep meaning to build never quite gets built. And the work piles up in twenty different places: a Google Doc here, a Notion page there, a folder full of half-finished templates, the forty-seven browser tabs you're scared to close.</p>
       <p>You know there's a better way to do this. You just haven't had the time, the energy, or the brain space to build it.</p>
     </div>
 
@@ -861,11 +893,9 @@
   <div class="container">
     <div style="text-align: center; max-width: 700px; margin: 0 auto;">
       <span class="section-num">The install</span>
-      <h2>Three layers. <em>One install.</em></h2>
-      <div class="divider"></div>
-      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">Two ways into the AI Business Hub. The $47 template, which you set up yourself in your own time. Or this. The same hub, built with you on a 90-minute call, tailored to your business as we go. Off-the-rack versus made to fit. Both work. They fit very differently.</p>
-      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">This is the made-to-fit one. Step by step. Done in one call. Yours forever.</p>
-      <p style="color: var(--driftwood); font-size: 17px;">You don't need another course. You don't need another tool. You need the foundation set up properly, in one place, in one sitting.</p>
+      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">Two ways to set up your AI Business Hub. The $47 template is the off-the-shelf version. The basics, in a generic structure. You spend the hours learning Notion yourself, working out what goes where, customising it to your business one slow afternoon at a time.</p>
+      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">This is the made-to-fit version. My expertise. A 90-minute call. A hub built around your specific business as we go, by the end of the call. No solo Notion struggle. No half-built workspace gathering dust.</p>
+      <p style="color: var(--ink); font-size: 17px;">Step by step. Done in one call. Yours forever.</p>
     </div>
 
     <div class="layers">
@@ -885,8 +915,8 @@
         <span class="num">03</span>
         <h3>Fourteen days to embed it</h3>
         <p>You walk away from the install call with your own AI assistant, loaded with your business context. It's your first stop for anything: how to use your hub, how to add to it, how to get more out of Claude. It already knows you.</p>
-        <p>For two weeks after the install, I'm also here. Not on a schedule, not on call. Backup, in case something comes up that your assistant can't unstick. Reach out when you need to.</p>
-        <p>Day 14, my support window closes. Your Claude Project stays on your account. Your hub stays in your Notion. The system doesn't expire and nothing reverts. By that point you're not relying on me anyway. The hub is doing the work.</p>
+        <p>For two weeks after the install, you also have my direct support. Not on a schedule, not on call. Backup, in case something comes up your assistant can't unstick. Reach out when you need to.</p>
+        <p>Day 14, my support window closes. Your AI assistant stays on your Claude account, your hub stays in your Notion, your Skool community access stays open. The system doesn't expire. Nothing reverts. By that point you're not relying on me anyway. The hub is doing the work.</p>
       </div>
     </div>
 
@@ -900,13 +930,15 @@
 <section class="speed">
   <div class="container-narrow">
     <span class="section-num" style="color: var(--cream-dark);">A note on tempo</span>
-    <h2>Speed is the skill <em>now.</em></h2>
+    <h2>This isn't a course. <em>It's a foundation.</em></h2>
     <div class="divider"></div>
     <p>You don't need another twelve-week programme. You don't need another library of videos to work through when you "have time." You need the foundation set up, today, so you can start working from it tomorrow.</p>
+    <p>That's what this is. Not a course. Not a programme. Not a set of lessons that will sit half-watched in a Notion tab you forgot to close.</p>
+    <p>A workbook. A 90-minute call. Two weeks of support. By the end of the install call, your hub is live. By the end of week two, you're using it daily. That's the entire offer.</p>
     <p>Here's the rule no one is saying out loud. The cost of waiting is now higher than the cost of acting. A year ago, you could afford to research the right approach for three months before you started. Today, by the time you finish a twelve-week course, the tools you started with have been replaced twice over. The founders pulling ahead right now aren't the ones who studied AI most thoroughly. They're the ones who got the foundation in and started using it.</p>
     <p>This isn't an argument for sloppy work. It's an argument for the right kind of fast. Slow when it matters: getting the architecture right, choosing what to build, doing it properly the first time. Fast everywhere else: shipping, using, refining.</p>
     <p>Your active time on this is about an hour on the workbook, 90 minutes on the call, and whatever you choose to spend in the support window. Then you have it. You're not three months in wondering when the implementation phase begins. You're three months in using the thing. And that gap compounds.</p>
-    <div class="closer">The version of you that decides to "learn AI properly next year" is already six months behind. Not in skills. In time.</div>
+    <div class="closer">The version of you who decides to "learn AI properly next year" is already six months behind. Not in skills. In time.</div>
   </div>
 </section>
 
@@ -923,7 +955,7 @@
       <div class="day">
         <h3>Your day now</h3>
         <ul class="timeline">
-          <li><span class="time">7:00</span><span>Open laptop. Three tabs already open from yesterday. Can't remember why.</span></li>
+          <li><span class="time">7:00</span><span>Open laptop. 47 tabs already open from yesterday. Can't remember why most of them are there.</span></li>
           <li><span class="time">8:30</span><span>Try to write a newsletter. Open ChatGPT. Re-explain your business. Get something generic. Rewrite it from scratch.</span></li>
           <li><span class="time">10:00</span><span>Client emails asking for a thing you already sent her. You know you did. You can't find where.</span></li>
           <li><span class="time">11:30</span><span>Open Notion. Five different pages that all might be the right one. Give up. Make tea instead.</span></li>
@@ -956,23 +988,23 @@
 <section style="background: var(--white); border-top: 1px solid var(--cream-dark); border-bottom: 1px solid var(--cream-dark);">
   <div class="container-narrow">
     <span class="section-num">Who this is for</span>
-    <h2>The Hub is built <em>for a specific Sarah.</em></h2>
+    <h2>The Hub is built <em>for women who carry a lot in their head.</em></h2>
     <div class="divider-left"></div>
 
     <div class="who">
       <div class="who-block">
         <h3>This is for you if</h3>
-        <p>You've been in business between five and fifteen years. You're good at what you do. The work itself isn't the problem. The mental load of keeping it all running is.</p>
-        <p>You've tried ChatGPT and Claude. You can see the potential. You've also seen plenty of generic outputs that didn't sound like you, and you've quietly given up on AI being genuinely useful for the way <em>you</em> actually work.</p>
-        <p>You've tried to organise your business in Notion before. Maybe twice. Maybe four times. You watched a YouTube tutorial, started a workspace, got 60% of the way through, and now it sits there with three half-built databases and a nagging feeling.</p>
-        <p>You don't want another course. You don't want another community. You want someone to just build the thing, properly, and walk you through using it.</p>
+        <p>You're running a business and a household. Maybe both for years, maybe in your first year. The work itself isn't the problem. The mental load of holding it all together is. You're remembering the school pickup, the client invoice, the launch you keep meaning to plan, the email you owe a friend, the offer you've been "about to write" since March.</p>
+        <p>You've tried Notion. You've also closed Notion. Once you got two pages in and realised you'd need a YouTube tutorial just to add a third. The learning curve is steep, and you don't have the time or brain capacity to figure it out alone.</p>
+        <p>You've tried Claude or ChatGPT. You can see what's possible. But every chat starts from scratch. The outputs sound generic. You're tired of explaining yourself.</p>
+        <p>You want an AI assistant and a hub that act as your second brain. Somewhere your business actually lives, that you can pick up and work from at speed when you have an hour.</p>
       </div>
 
       <div class="who-block">
         <h3>This is not for you if</h3>
-        <p>You're brand new in business and still figuring out your offers. The Hub assumes you have a real business to organise.</p>
-        <p>You want it built for you while you stay hands-off. That's not what this is. You show up. You drive Notion on the call. The system works because you build it.</p>
-        <p>You're looking for an agency-built, multi-team enterprise system. The Hub is for solo founders and small teams. Beautifully fitted, not over-engineered.</p>
+        <p>You don't mind having forty-seven tabs open. You're happy spending Tuesday morning hunting for the document you wrote on Monday. You don't mind re-explaining your business to Claude every time you open a chat. You like having brand notes in three different docs and a client list you can't quite find.</p>
+        <p>You're fine doing it slowly.</p>
+        <p>That's fine. Plenty of women run their businesses that way. The Hub is for the ones who are done with it.</p>
       </div>
     </div>
   </div>
@@ -1005,12 +1037,12 @@
 
       <div class="included-item">
         <h4>Your own AI assistant</h4>
-        <p>On the call, we build your AI assistant: a Claude Project on your account, named whatever you like, loaded with your business context, voice, offers, audience. From then on, when you open Claude inside this project, it already knows who you are. No more re-explaining yourself.</p>
+        <p>On the call, we build your AI assistant: a Claude Project on your account, named whatever you like, loaded with your business context, voice, offers, audience. From then on, when you open Claude inside this project, it already knows who you are. No more re-explaining yourself. Yours forever.</p>
       </div>
 
       <div class="included-item">
         <h4>Fourteen days of support</h4>
-        <p>For two weeks after the call, your AI assistant is your first stop for anything: how to use the hub, how to add to it, how to get more out of Claude. I'm there in the background if something comes up that your assistant can't unstick. Reach out when you need to.</p>
+        <p>For two weeks after the call, you have my support as backup. Your AI assistant is your first stop because it knows you, but I'm there for anything it can't sort. After day 14 my support window closes, but your AI assistant doesn't, your hub doesn't, your Skool access doesn't. Those stay.</p>
       </div>
 
       <div class="included-item">
@@ -1030,7 +1062,16 @@
 <section class="investment">
   <div class="container">
     <span class="section-num">The investment</span>
-    <h2>Two ways <em>in.</em></h2>
+
+    <div class="maths">
+      <h3 style="text-align: center; margin-bottom: 24px; font-style: italic;">Let's do the maths.</h3>
+      <p>A Notion consultant build alone runs $2,000 to $5,000, and you still don't get the AI assistant or the support.</p>
+      <p>A virtual assistant, even at junior rates, costs more in three months than the Hub costs once.</p>
+      <p>You've probably spent more than $1,500 on courses in the last two years. Most of them are sitting half-watched in a tab you forgot to close.</p>
+      <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the foundation the courses keep telling you to build.</p>
+    </div>
+
+    <h2 style="text-align: center; margin-top: 60px;">Two ways <em>in.</em></h2>
     <div class="divider"></div>
 
     <div class="price-cards">
@@ -1047,14 +1088,6 @@
         <div class="price">$2,500</div>
         <span class="currency">AUD · pay in full</span>
       </div>
-    </div>
-
-    <div class="maths">
-      <h3 style="text-align: center; margin-bottom: 24px; font-style: italic;">Let's do the maths.</h3>
-      <p>A Notion consultant build alone runs $2,000 to $5,000, and you still don't get the Claude Project or the support.</p>
-      <p>A virtual assistant, even at junior rates, costs more in three months than the Hub costs once.</p>
-      <p>You've probably spent more than $1,500 on courses in the last two years. Most of them are sitting half-watched in a tab you forgot to close.</p>
-      <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the thing the courses keep telling you to build.</p>
     </div>
 
     <div style="text-align: center; margin-top: 48px;">
@@ -1153,7 +1186,7 @@
 
       <details class="objection">
         <summary>
-          <span class="question">"Shouldn't I do a longer programme first to really learn this properly?"</span>
+          <span class="question">"Shouldn't I do a longer programme first to learn this properly?"</span>
           <span class="toggle"></span>
         </summary>
         <div class="answer">
@@ -1161,18 +1194,6 @@
         </div>
       </details>
     </div>
-  </div>
-</section>
-
-<!-- ─────── GUARANTEE ─────── -->
-<section class="guarantee">
-  <div class="container-narrow">
-    <span class="section-num">The promise</span>
-    <h2>The Show Up <em>Guarantee.</em></h2>
-    <div class="divider"></div>
-    <p>Send me your completed workbook. Show up to the 90-minute install call. Use your AI assistant and your hub for the fourteen days after.</p>
-    <p>If you've done all three and the hub isn't working for you, I'll refund you in full.</p>
-    <p style="font-style: italic; color: var(--bordeaux); margin-top: 24px;">I'm confident in this because I've yet to meet a Sarah who actually used the Hub for two weeks and didn't want to keep it.</p>
   </div>
 </section>
 
@@ -1249,7 +1270,7 @@
         <span class="toggle"></span>
       </summary>
       <div class="answer">
-        <p>For two weeks after the install, your AI assistant is your first stop. It's loaded with your business context, so you can ask it anything about your hub or your work and get an answer that sounds like you. I'm there as backup. If something comes up that your assistant can't unstick, send me a message and I'll sort it. Not on a schedule, not on call. Day 14 my support window closes. Your Claude Project stays on your account, your Skool community access stays open.</p>
+        <p>You get fourteen days of my direct support after the install. The window is mine, but the tools stay yours forever. Your AI assistant is loaded with your full business context, so for most things you'd ask me, it can answer faster, in your voice, at any time of day. Ask it first. If you hit something it genuinely can't sort, send me a message during the 14 days and I'll help. Day 14, my window closes, but your AI assistant doesn't go anywhere. Neither does your hub. Neither does your Skool community access. You keep all of those, indefinitely.</p>
       </div>
     </details>
 
@@ -1259,7 +1280,7 @@
         <span class="toggle"></span>
       </summary>
       <div class="answer">
-        <p>The hub is yours forever. Your AI assistant is yours forever. The 14-day support window closes, that's all. Your Skool community access keeps you in the loop after that: masterclass walkthroughs, a place to ask questions, and ongoing prompt updates as I publish them. Most clients are running fully on their own by week three. If you want to add the seven-skill content automation system on top of your hub, the AI Content Team Install is the next step ($2,500).</p>
+        <p>The hub is yours forever. Your AI assistant is yours forever. Your Skool community access stays open. The 14-day support window closes, that's all. Skool keeps you in the loop after that: you've got the masterclass walkthrough, a place to ask questions, and ongoing prompt updates as I publish them. Most clients are running fully on their own by week three. If you want to add the seven-skill content automation system on top of your hub, the AI Content Team Install is the next step ($2,500).</p>
       </div>
     </details>
   </div>
@@ -1285,7 +1306,7 @@
       <div class="decision-col before">
         <h3>Stay where you are</h3>
         <ul>
-          <li>Business living across twenty browser tabs</li>
+          <li>Business living across forty-seven browser tabs</li>
           <li>Re-explaining yourself to ChatGPT every morning</li>
           <li>Notion attempts gathering dust</li>
           <li>Brain fog with nowhere to land</li>
@@ -1300,7 +1321,7 @@
           <li>Claude that knows you and your work</li>
           <li>Notion that finally feels right</li>
           <li>Mental load lifted</li>
-          <li>Real support from a real person, fast</li>
+          <li>Real support while you embed it</li>
         </ul>
       </div>
     </div>
