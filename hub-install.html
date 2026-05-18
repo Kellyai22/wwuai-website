@@ -198,14 +198,20 @@
   }
   .quote-mark {
     color: var(--bordeaux);
-    font-size: 2.2em;
     font-family: var(--serif);
     font-style: normal;
-    line-height: 0;
-    letter-spacing: -0.02em;
   }
-  .quote-mark.open { vertical-align: 0.18em; }
-  .quote-mark.close { vertical-align: -0.22em; }
+  .quote-mark.open {
+    display: block;
+    font-size: 4em;
+    line-height: 0.75;
+    margin-bottom: 8px;
+  }
+  .quote-mark.close {
+    font-size: 1.5em;
+    line-height: 0;
+    vertical-align: -0.25em;
+  }
 
   /* ─────── BUTTONS ─────── */
   .btn {
