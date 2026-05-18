@@ -198,12 +198,14 @@
   }
   .quote-mark {
     color: var(--bordeaux);
-    font-size: 1.25em;
+    font-size: 2.2em;
     font-family: var(--serif);
     font-style: normal;
     line-height: 0;
-    vertical-align: -0.1em;
+    letter-spacing: -0.02em;
   }
+  .quote-mark.open { vertical-align: 0.18em; }
+  .quote-mark.close { vertical-align: -0.22em; }
 
   /* ─────── BUTTONS ─────── */
   .btn {
@@ -844,7 +846,7 @@
     <h1>The Hub That Holds Your Business<br><em>So You Don't Have To.</em></h1>
     <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use.</p>
     <p class="subtitle">Set up in a single 90-minute call. Yours forever.</p>
-    <blockquote class="pull-quote"><span class="quote-mark">"</span>Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course. They're the ones who built the foundation early and started using it.<span class="quote-mark">"</span></blockquote>
+    <blockquote class="pull-quote"><span class="quote-mark open">"</span>Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course.<br>They're the ones who built the foundation early and started using it.<span class="quote-mark close">"</span></blockquote>
     <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
     <span class="scarcity">Four spots per month. May founders' pricing closes soon.</span>
   </div>
