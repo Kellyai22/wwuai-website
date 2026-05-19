@@ -233,6 +233,41 @@
     background: var(--ink);
     border-color: var(--ink);
   }
+  .btn-ghost {
+    display: inline-block;
+    padding: 18px 40px;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-ghost:hover {
+    background: var(--bordeaux);
+    border-color: var(--bordeaux);
+    color: var(--pearl);
+  }
+  .btn-ghost-light {
+    border-color: var(--cream-dark);
+    color: var(--cream-dark);
+  }
+  .btn-ghost-light:hover {
+    background: var(--bordeaux);
+    border-color: var(--bordeaux);
+    color: var(--pearl);
+  }
+  .btn-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
   .scarcity {
     display: block;
     margin-top: 20px;
@@ -823,6 +858,7 @@
     .hero { padding: 80px 0 60px; }
     .speed { padding: 80px 0; }
     .days, .who, .included-list, .price-cards, .decision-grid { grid-template-columns: 1fr; gap: 24px; }
+    .btn, .btn-ghost { padding: 16px 28px; font-size: 13px; }
     .layer, .day, .price-card, .decision-col { padding: 36px 28px; }
     .hero .eyebrow { font-size: 32px; }
     .kelly .signoff { font-size: 42px; }
@@ -853,7 +889,10 @@
     <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use.</p>
     <p class="subtitle">Set up in a single 90-minute call. Yours forever.</p>
     <blockquote class="pull-quote"><span class="quote-mark open">"</span>Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course.<br>They're the ones who built the foundation early and started using it.<span class="quote-mark close">"</span></blockquote>
-    <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+    <div class="btn-pair">
+      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+      <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+    </div>
     <span class="scarcity">Four spots per month. May founders' pricing closes soon.</span>
   </div>
 </section>
@@ -909,7 +948,7 @@
       <div class="layer">
         <span class="num">02</span>
         <h3>The 90-minute install call</h3>
-        <p>We meet on Zoom. You drive Notion, I instruct. We work through your hub section by section, and you populate each one in your own workspace as we go. Strategy and positioning. Brand and voice. Brain dump. Offers. Financial command centre. Working with Claude. By minute 35 you've used Claude with your own hub for the first time. By minute 75 you've built your own AI assistant, a Claude Project on your account, named whatever you like, trained on the hub you just built. By minute 90 your hub is live and populated, and you know how to use it because you just built it.</p>
+        <p>We meet on Zoom. You drive Notion, I instruct. We work through your hub section by section, and you populate each one in your own workspace as we go. Strategy and positioning. Brand and voice. Brain dump. Offers. Content. Financial command centre. Working with Claude. By minute 35 you've used Claude with your own hub for the first time. By minute 75 you've built your own AI assistant, a Claude Project on your account, named whatever you like, trained on the hub you just built. By minute 90 your hub is live and populated, and you know how to use it because you just built it.</p>
       </div>
 
       <div class="layer">
@@ -922,7 +961,10 @@
     </div>
 
     <div style="text-align: center; margin-top: 60px;">
-      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+      <div class="btn-pair" style="align-items: center;">
+        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1028,7 +1070,7 @@
 
       <div class="included-item">
         <h4>The hub template, ready to duplicate</h4>
-        <p>A clean Notion template with six sections built for solo women in business: Strategy and Positioning, Brand and Voice, Brain Dump, Offers, Financial Command Centre, Working with Claude. You duplicate it into your own Notion workspace before the call.</p>
+        <p>A clean Notion template with seven sections built for solo women in business: Strategy and Positioning, Brand and Voice, Brain Dump, Offers, Content, Financial Command Centre, Working with Claude. You duplicate it into your own Notion workspace before the call.</p>
       </div>
 
       <div class="included-item">
@@ -1092,7 +1134,10 @@
     </div>
 
     <div style="text-align: center; margin-top: 48px;">
-      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+      <div class="btn-pair" style="align-items: center;">
+        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+      </div>
       <span class="scarcity">Four installs per month. When May fills, founders' pricing closes for good.</span>
     </div>
   </div>
@@ -1281,7 +1326,7 @@
         <span class="toggle"></span>
       </summary>
       <div class="answer">
-        <p>The hub is yours forever. Your AI assistant is yours forever. Your Skool community access stays open. The 14-day support window closes, that's all. Skool keeps you in the loop after that: you've got the masterclass walkthrough, a place to ask questions, and ongoing prompt updates as I publish them. Most clients are running fully on their own by week three. If you want to add the seven-skill content automation system on top of your hub, the AI Content Team Install is the next step ($2,500).</p>
+        <p>The hub is yours forever. Your AI assistant is yours forever. Your Skool community access stays open. The 14-day support window closes, that's all. Skool keeps you in the loop after that, you've got the masterclass walkthrough, a place to ask questions, and ongoing prompt updates as I publish them. Most clients are running fully on their own by week three. If you want to add the seven-skill content automation system on top of your hub, the AI Content Team Install is the next step ($2,500).</p>
       </div>
     </details>
   </div>
@@ -1328,7 +1373,10 @@
     </div>
 
     <div class="decision-cta">
-      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+      <div class="btn-pair" style="align-items: center;">
+        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost btn-ghost-light">Buy now</a>
+      </div>
       <span class="scarcity" style="color: var(--cream-dark);">$1,500 founders' pricing · Four spots per month · After May, founders' pricing closes</span>
     </div>
   </div>

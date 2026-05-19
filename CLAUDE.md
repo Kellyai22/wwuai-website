@@ -24,7 +24,7 @@ There is a public image library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - All pages load Google Fonts (Playfair Display, Plus Jakarta Sans, Allison) independently in their own `<head>`
 
 ## Key pages
-- `hub-install.html` — Hub Install sales page (done-with-you service, $1,500–$2,500 AUD). Live at `/hub-install` and `/hub`. Design source in Google Drive: WWUAI/AI Business Hub/hub-install-sales-page.html. All 4 CTAs → cal.com/kelly-yuaiol/discoverycall.
+- `hub-install.html` — Hub Install sales page (done-with-you service, $1,500–$2,500 AUD). Live at `/hub`. All 4 CTAs → cal.com/kelly-yuaiol/discoverycall. **Copy source of truth: Notion doc `352f53df20e4817fa9eecf88d9222d62`** (last synced 18 May 2026 — Google Drive source is now stale).
 - `hub.html` — Old "Start Here" links page. No longer routed to `/hub` (as of 2026-05-02). Still in repo.
 - `hub-welcome.html` — Post-purchase thank-you page for $47 Notion template buyers. Live at `/hub/welcome`.
 - `ai-business-hub-install.html` — Earlier shorter version of Hub Install page. Still live at `/ai-business-hub-install`. Nav links updated to point to `/hub-install`.
