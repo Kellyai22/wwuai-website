@@ -951,6 +951,71 @@
     margin-bottom: 0;
   }
 
+  /* ─────── INCLUDED STEPS ─────── */
+  .included-steps {
+    margin-top: 48px;
+  }
+  .included-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .included-step:first-child {
+    border-top: 1px solid var(--cream-dark);
+  }
+  .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 38px;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .included-step h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .included-step p {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+
+  /* ─────── TWO-CARD DOWNSELL ─────── */
+  .downsell-pair {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .downsell-card {
+    background: var(--cream-dark);
+    padding: 28px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 280px;
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+  .downsell-card .downsell-body {
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  .downsell-card .downsell-heading {
+    margin-bottom: 12px;
+  }
+  .downsell-card .downsell-price {
+    margin-bottom: 12px;
+  }
+
   /* ─────── RESPONSIVE ─────── */
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
@@ -968,6 +1033,9 @@
     .hero .eyebrow { font-size: 32px; }
     .kelly .signoff { font-size: 42px; }
     .speed .closer { font-size: 20px; }
+    .downsell-pair { flex-direction: column; align-items: center; }
+    .downsell-card { max-width: 100%; width: 100%; }
+    .included-step { grid-template-columns: 44px 1fr; gap: 16px; }
   }
 </style>
 </head>
@@ -994,11 +1062,6 @@
     <p class="lede">A done-with-you Notion install that gets your work out of your head and into a system Claude can actually use.</p>
     <p class="subtitle">Set up in a single 90-minute call. Yours forever.</p>
     <blockquote class="pull-quote"><span class="quote-mark open">"</span>Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course.<br>They're the ones who built the foundation early and started using it.<span class="quote-mark close">"</span></blockquote>
-    <div class="btn-pair">
-      <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-      <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
-    </div>
-    <span class="scarcity">Four installs per month. Limited time offer.</span>
   </div>
 </section>
 
@@ -1033,47 +1096,6 @@
   </div>
 </section>
 
-<!-- ─────── THREE LAYERS ─────── -->
-<section>
-  <div class="container">
-    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-      <span class="section-num">The install</span>
-      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">Two ways to set up your AI Business Hub. The $47 template is the off-the-shelf version. The basics, in a generic structure. You spend the hours learning Notion yourself, working out what goes where, customising it to your business one slow afternoon at a time.</p>
-      <p style="color: var(--ink); font-size: 17px; margin-bottom: 12px;">This is the made-to-fit version. My expertise. A 90-minute call. A hub built around your specific business as we go, by the end of the call. No solo Notion struggle. No half-built workspace gathering dust.</p>
-      <p style="color: var(--ink); font-size: 17px;">Step by step. Done in one call. Yours forever.</p>
-    </div>
-
-    <div class="layers">
-      <div class="layer">
-        <span class="num">01</span>
-        <h3>The pre-call workbook</h3>
-        <p>Before we meet, you complete a workbook that gets your business out of your head and onto paper. Positioning, voice, audience, offers, the messes you've been carrying alone. You do it at your own pace. No timer, no module 4, no homework guilt. The workbook is the thinking. The call is the building.</p>
-      </div>
-
-      <div class="layer">
-        <span class="num">02</span>
-        <h3>The 90-minute install call</h3>
-        <p>We meet on Zoom. You drive Notion, I instruct. We work through your hub section by section, and you populate each one in your own workspace as we go. Strategy and positioning. Brand and voice. Brain dump. Offers. Content. Financial command centre. Working with Claude. By minute 35 you've used Claude with your own hub for the first time. By minute 75 you've built your own AI assistant, a Claude Project on your account, named whatever you like, trained on the hub you just built. By minute 90 your hub is live and populated, and you know how to use it because you just built it.</p>
-      </div>
-
-      <div class="layer">
-        <span class="num">03</span>
-        <h3>Fourteen days to embed it</h3>
-        <p>You walk away from the install call with your own AI assistant, loaded with your business context. It's your first stop for anything: how to use your hub, how to add to it, how to get more out of Claude. It already knows you.</p>
-        <p>For two weeks after the install, you also have my direct support. Not on a schedule, not on call. Backup, in case something comes up your assistant can't unstick. Reach out when you need to.</p>
-        <p>Day 14, my support window closes. Your AI assistant stays on your Claude account, your hub stays in your Notion, your Skool community access stays open. The system doesn't expire. Nothing reverts. By that point you're not relying on me anyway. The hub is doing the work.</p>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 60px;">
-      <div class="btn-pair">
-        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-        <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─────── SPEED ─────── -->
 <section class="speed">
   <div class="container-narrow">
@@ -1087,6 +1109,91 @@
     <p>This isn't an argument for sloppy work. It's an argument for the right kind of fast. Slow when it matters: getting the architecture right, choosing what to build, doing it properly the first time. Fast everywhere else: shipping, using, refining.</p>
     <p>Your active time on this is about an hour on the workbook, 90 minutes on the call, and whatever you choose to spend in the support window. Then you have it. You're not three months in wondering when the implementation phase begins. You're three months in using the thing. And that gap compounds.</p>
     <div class="closer">The version of you who decides to "learn AI properly next year" is already six months behind. Not in skills. In time.</div>
+  </div>
+</section>
+
+<!-- ─────── INVESTMENT ─────── -->
+<section class="investment">
+  <div class="container">
+    <span class="section-num">The investment</span>
+
+    <div class="maths">
+      <h3 style="text-align: center; margin-bottom: 24px; font-style: italic;">Let's do the maths.</h3>
+      <p>A Notion consultant build alone runs $2,000 to $5,000, and you still don't get the AI assistant or the support.</p>
+      <p>A virtual assistant, even at junior rates, costs more in three months than the Hub costs once.</p>
+      <p>You've probably spent more than $1,500 on courses in the last two years. Most of them are sitting half-watched in a tab you forgot to close.</p>
+      <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the foundation the courses keep telling you to build.</p>
+    </div>
+
+    <div style="width: 40px; height: 1px; background: var(--bordeaux); margin: 60px auto 48px;"></div>
+
+    <div class="price-card-single">
+      <h2 style="margin-bottom: 20px;">The <em>investment</em></h2>
+      <del class="price-old">$2,500 AUD</del>
+      <div class="price-new">
+        <span class="price-new-amount">$1,500</span>
+        <span class="price-new-currency">AUD</span>
+      </div>
+      <span class="price-offer-tag">Limited time offer</span>
+      <p class="price-meta">Pay in full · One time · Yours forever</p>
+      <p class="price-skool">Includes lifetime Skool community access (valued at $197)</p>
+      <div class="btn-pair">
+        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+        <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
+      </div>
+      <p class="price-footnote">Four installs per month.</p>
+    </div>
+
+    <div class="claude-pro-callout">
+      <h4>Claude Pro is required</h4>
+      <p>You'll need Claude Pro for the install and for ongoing use of your AI assistant. Free Claude doesn't support custom projects. $20 USD per month at claude.ai.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────── WHAT'S INCLUDED ─────── -->
+<section style="background: var(--pearl); border-top: 1px solid var(--cream-dark);">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+      <span class="section-num">What's included</span>
+      <h2>Everything you need. <em>Nothing you don't.</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="included-steps">
+      <div class="included-step">
+        <span class="step-num">1</span>
+        <div>
+          <h3>The pre-call workbook</h3>
+          <p>A short workbook you complete before we meet. You walk through your positioning, voice, audience, offers, and what's currently scattered. The thinking happens here so the call can be the building. You do it at your own pace, in your own time.</p>
+        </div>
+      </div>
+
+      <div class="included-step">
+        <span class="step-num">2</span>
+        <div>
+          <h3>The 90-minute install call</h3>
+          <p>We meet on Zoom. You drive Notion, I instruct. We work through your hub section by section, and you populate each one with your real business as we go. By minute 90, your hub is live, populated, and you've already used your AI assistant on your own account. No homework. No implementation phase stretching out for weeks.</p>
+        </div>
+      </div>
+
+      <div class="included-step">
+        <span class="step-num">3</span>
+        <div>
+          <h3>Your own AI assistant</h3>
+          <p>On the call, we build your AI assistant together. A Claude Project on your account, named whatever you like, loaded with your business context, voice, offers, and audience. From then on, when you open Claude inside this project, it already knows who you are. No more re-explaining yourself. Yours forever.</p>
+        </div>
+      </div>
+
+      <div class="included-step">
+        <span class="step-num">4</span>
+        <div>
+          <h3>Fourteen days of support, then lifetime access to everything</h3>
+          <p>For two weeks after the call, you have my direct support as backup. Your AI assistant is your first stop, but I'm there for anything it can't sort. After day 14, my support window closes. Your hub, your AI assistant, and your Skool community access stay open indefinitely. Nothing reverts. Nothing expires.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1155,94 +1262,6 @@
         <p>That's fine. Plenty of women run their businesses that way. The Hub is for the ones who are done with it.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ─────── WHAT'S INCLUDED ─────── -->
-<section class="included">
-  <div class="container">
-    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-      <span class="section-num">What's included</span>
-      <h2>Everything you need. <em>Nothing you don't.</em></h2>
-      <div class="divider"></div>
-    </div>
-
-    <div class="included-list">
-      <div class="included-item">
-        <h4>The pre-call workbook</h4>
-        <p>A short workbook you complete before we meet. It walks you through positioning, voice, audience, offers, and what's currently scattered. The thinking happens here so the call can be the building. You do it at your own pace.</p>
-      </div>
-
-      <div class="included-item">
-        <h4>The hub template, ready to duplicate</h4>
-        <p>A clean Notion template with seven sections built for solo women in business: Strategy and Positioning, Brand and Voice, Brain Dump, Offers, Content, Financial Command Centre, Working with Claude. You duplicate it into your own Notion workspace before the call.</p>
-      </div>
-
-      <div class="included-item">
-        <h4>The 90-minute install call</h4>
-        <p>We meet on Zoom. You drive Notion, I instruct. We work through your hub section by section, and you populate each one with your real business as we go. By the end of the call, your hub is live, populated, and you've used it with Claude on your own account. No homework.</p>
-      </div>
-
-      <div class="included-item">
-        <h4>Your own AI assistant</h4>
-        <p>On the call, we build your AI assistant: a Claude Project on your account, named whatever you like, loaded with your business context, voice, offers, audience. From then on, when you open Claude inside this project, it already knows who you are. No more re-explaining yourself. Yours forever.</p>
-      </div>
-
-      <div class="included-item">
-        <h4>Fourteen days of support</h4>
-        <p>For two weeks after the call, you have my support as backup. Your AI assistant is your first stop because it knows you, but I'm there for anything it can't sort. After day 14 my support window closes, but your AI assistant doesn't, your hub doesn't, your Skool access doesn't. Those stay.</p>
-      </div>
-
-      <div class="included-item">
-        <h4>Lifetime Skool community access</h4>
-        <p>The Wise Women Use AI Skool community, where I run masterclasses, share prompts, and answer questions as I keep building my own business. Lifetime access included with your install. Stated value $99 founders / $197 standard.</p>
-      </div>
-
-      <div class="included-item" style="grid-column: 1 / -1;">
-        <h4>Lifetime access to everything</h4>
-        <p>The hub is yours forever. Your Claude Project sits on your Claude account, not mine. Nothing reverts, nothing expires.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────── INVESTMENT ─────── -->
-<section class="investment">
-  <div class="container">
-    <span class="section-num">The investment</span>
-
-    <div class="maths">
-      <h3 style="text-align: center; margin-bottom: 24px; font-style: italic;">Let's do the maths.</h3>
-      <p>A Notion consultant build alone runs $2,000 to $5,000, and you still don't get the AI assistant or the support.</p>
-      <p>A virtual assistant, even at junior rates, costs more in three months than the Hub costs once.</p>
-      <p>You've probably spent more than $1,500 on courses in the last two years. Most of them are sitting half-watched in a tab you forgot to close.</p>
-      <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the foundation the courses keep telling you to build.</p>
-    </div>
-
-    <div style="width: 40px; height: 1px; background: var(--bordeaux); margin: 60px auto 48px;"></div>
-
-    <div class="price-card-single">
-      <h2 style="margin-bottom: 20px;">The <em>investment</em></h2>
-      <del class="price-old">$2,500 AUD</del>
-      <div class="price-new">
-        <span class="price-new-amount">$1,500</span>
-        <span class="price-new-currency">AUD</span>
-      </div>
-      <span class="price-offer-tag">Limited time offer</span>
-      <p class="price-meta">Pay in full · One time · Yours forever</p>
-      <p class="price-skool">Includes lifetime Skool community access (valued at $197)</p>
-      <div class="btn-pair">
-        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-        <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
-      </div>
-      <p class="price-footnote">Four installs per month.</p>
-    </div>
-
-    <div class="claude-pro-callout">
-      <h4>Claude Pro is required</h4>
-      <p>You'll need Claude Pro for the install and for ongoing use of your AI assistant. Free Claude doesn't support custom projects. $20 USD per month at claude.ai.</p>
-    </div>
-
   </div>
 </section>
 
@@ -1437,15 +1456,29 @@
 
 
 <!-- ─────── DOWNSELL ─────── -->
-<section style="padding: 60px 0; background: var(--pearl);">
+<section style="padding: 60px 0; background: var(--pearl); border-top: 1px solid var(--cream-dark);">
   <div class="container">
-    <div class="downsell-wrap">
-      <span class="downsell-eyebrow">Or start with the template</span>
-      <h3 class="downsell-heading">Not ready to invest in a custom hub?</h3>
-      <p class="downsell-body">The AI Business Hub Template gives you the basic structure to duplicate into your Notion. You set it up, customise it, and learn to add to it yourself, at your own pace. No call, no done-with-you, no customisation. Just the foundation, ready for you to make it yours.</p>
-      <span class="downsell-price">$47 AUD</span>
-      <a href="https://buy.stripe.com/dRm8wRgpl28b4Vb5JR6Ri02" class="btn-downsell" target="_blank" rel="noopener">Buy the template</a>
-      <p class="downsell-footer">Instant download. Yours forever.</p>
+    <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+      <span class="downsell-eyebrow">Not ready for the full install?</span>
+      <h2 style="font-size: 26px;">Two other ways <em>to get started.</em></h2>
+    </div>
+    <div class="downsell-pair">
+      <div class="downsell-card">
+        <span class="downsell-eyebrow">Template</span>
+        <h3 class="downsell-heading">The $47 template</h3>
+        <p class="downsell-body">The AI Business Hub Template gives you the structure to duplicate into your Notion and set up yourself. No call, no done-with-you. Just the foundation, ready for you to make it yours at your own pace.</p>
+        <span class="downsell-price">$47 AUD</span>
+        <a href="https://buy.stripe.com/dRm8wRgpl28b4Vb5JR6Ri02" class="btn-downsell" target="_blank" rel="noopener">Buy the template</a>
+        <p class="downsell-footer">Instant download. Yours forever.</p>
+      </div>
+      <div class="downsell-card">
+        <span class="downsell-eyebrow">Community</span>
+        <h3 class="downsell-heading">Join the community</h3>
+        <p class="downsell-body">The Wise Women Use AI Skool community, where I run masterclasses, share prompts, and answer questions as I keep building my own business. If you want to learn alongside other women, this is where to find us.</p>
+        <span class="downsell-price">$197 AUD</span>
+        <a href="https://www.skool.com/wise-women-use-ai-1109" class="btn-downsell" target="_blank" rel="noopener">Join the community</a>
+        <p class="downsell-footer">One-time. Lifetime access.</p>
+      </div>
     </div>
   </div>
 </section>
