@@ -237,14 +237,14 @@
     display: inline-block;
     padding: 18px 40px;
     background: transparent;
-    color: var(--ink);
+    color: var(--bordeaux);
     text-decoration: none;
     font-family: var(--sans);
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    border: 1px solid var(--ink);
+    border: 1px solid var(--bordeaux);
     transition: all 0.3s ease;
     cursor: pointer;
   }
@@ -264,9 +264,11 @@
   }
   .btn-pair {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
   .scarcity {
     display: block;
@@ -765,68 +767,7 @@
     margin-bottom: 0;
   }
 
-  /* ─────── DECISION ─────── */
-  .decision {
-    background: var(--ink);
-    color: var(--pearl);
-  }
-  .decision h2 { color: var(--pearl); }
-  .decision .preamble p {
-    color: var(--cream-dark);
-    font-size: 18px;
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 16px;
-  }
-  .decision-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    margin: 60px 0;
-  }
-  .decision-col {
-    padding: 40px;
-  }
-  .decision-col.before {
-    border: 1px solid rgba(225, 218, 215, 0.2);
-  }
-  .decision-col.after {
-    background: var(--bordeaux);
-    border: 1px solid var(--bordeaux);
-  }
-  .decision-col h3 {
-    color: var(--pearl);
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 22px;
-    margin-bottom: 24px;
-  }
-  .decision-col ul {
-    list-style: none;
-  }
-  .decision-col li {
-    padding: 10px 0;
-    color: var(--cream-dark);
-    font-size: 15px;
-    border-bottom: 1px solid rgba(225, 218, 215, 0.12);
-  }
-  .decision-col li:last-child { border-bottom: none; }
-  .decision-col.after li { color: var(--pearl); }
-  .decision-cta {
-    text-align: center;
-  }
-  .decision-cta .btn {
-    background: var(--pearl);
-    color: var(--ink);
-    border-color: var(--pearl);
-  }
-  .decision-cta .btn:hover {
-    background: var(--bordeaux);
-    color: var(--pearl);
-    border-color: var(--bordeaux);
-  }
-
-  /* ─────── FOOTER ─────── */
+/* ─────── FOOTER ─────── */
   footer {
     padding: 40px 48px;
     border-top: 1px solid var(--cream-dark);
@@ -848,6 +789,168 @@
 
   .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
 
+  /* ─────── SINGLE PRICE CARD ─────── */
+  .price-card-single {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 48px;
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .price-old {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--driftwood);
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .price-new {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .price-new-amount {
+    font-family: var(--serif);
+    font-size: 54px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .price-new-currency {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--driftwood);
+  }
+  .price-offer-tag {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .price-meta {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--driftwood);
+    margin-bottom: 8px;
+  }
+  .price-skool {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .price-footnote {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--driftwood);
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  /* ─────── CLAUDE PRO CALLOUT ─────── */
+  .claude-pro-callout {
+    max-width: 580px;
+    margin: 24px auto 0;
+    background: var(--cream-dark);
+    border-left: 4px solid var(--bordeaux);
+    padding: 24px 32px;
+    text-align: left;
+  }
+  .claude-pro-callout h4 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .claude-pro-callout p {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  /* ─────── DOWNSELL ─────── */
+  .downsell-wrap {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--cream-dark);
+    padding: 36px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .downsell-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--driftwood);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .downsell-heading {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .downsell-body {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .downsell-price {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--bordeaux);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .btn-downsell {
+    display: inline-block;
+    padding: 11px 20px;
+    background: transparent;
+    color: var(--bordeaux);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--bordeaux);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+  }
+  .btn-downsell:hover {
+    background: var(--bordeaux);
+    color: var(--pearl);
+  }
+  .downsell-footer {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--driftwood);
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
   /* ─────── RESPONSIVE ─────── */
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
@@ -857,9 +960,11 @@
     section { padding: 70px 0; }
     .hero { padding: 80px 0 60px; }
     .speed { padding: 80px 0; }
-    .days, .who, .included-list, .price-cards, .decision-grid { grid-template-columns: 1fr; gap: 24px; }
+    .days, .who, .included-list, .price-cards { grid-template-columns: 1fr; gap: 24px; }
+    .btn-pair { flex-direction: column; }
     .btn, .btn-ghost { padding: 16px 28px; font-size: 13px; }
-    .layer, .day, .price-card, .decision-col { padding: 36px 28px; }
+    .layer, .day, .price-card { padding: 36px 28px; }
+    .price-card-single { padding: 36px 24px; }
     .hero .eyebrow { font-size: 32px; }
     .kelly .signoff { font-size: 42px; }
     .speed .closer { font-size: 20px; }
@@ -891,9 +996,9 @@
     <blockquote class="pull-quote"><span class="quote-mark open">"</span>Because in the age of AI, the founders pulling ahead aren't the ones taking the longest course.<br>They're the ones who built the foundation early and started using it.<span class="quote-mark close">"</span></blockquote>
     <div class="btn-pair">
       <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-      <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+      <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
     </div>
-    <span class="scarcity">Four spots per month. May founders' pricing closes soon.</span>
+    <span class="scarcity">Four installs per month. Limited time offer.</span>
   </div>
 </section>
 
@@ -961,9 +1066,9 @@
     </div>
 
     <div style="text-align: center; margin-top: 60px;">
-      <div class="btn-pair" style="align-items: center;">
+      <div class="btn-pair">
         <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+        <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
       </div>
     </div>
   </div>
@@ -1114,32 +1219,30 @@
       <p style="font-style: italic; color: var(--bordeaux); font-size: 19px; text-align: center; margin-top: 32px;">The Hub isn't another course. It's the foundation the courses keep telling you to build.</p>
     </div>
 
-    <h2 style="text-align: center; margin-top: 60px;">Two ways <em>in.</em></h2>
-    <div class="divider"></div>
+    <div style="width: 40px; height: 1px; background: var(--bordeaux); margin: 60px auto 48px;"></div>
 
-    <div class="price-cards">
-      <div class="price-card featured">
-        <span class="label">Founders' pricing</span>
-        <p class="sublabel">Available until the next round of installs</p>
-        <div class="price">$1,500</div>
-        <span class="currency">AUD · pay in full</span>
+    <div class="price-card-single">
+      <h2 style="margin-bottom: 20px;">The <em>investment</em></h2>
+      <del class="price-old">$2,500 AUD</del>
+      <div class="price-new">
+        <span class="price-new-amount">$1,500</span>
+        <span class="price-new-currency">AUD</span>
       </div>
-
-      <div class="price-card">
-        <span class="label">Standard pricing</span>
-        <p class="sublabel">After founders' pricing closes</p>
-        <div class="price">$2,500</div>
-        <span class="currency">AUD · pay in full</span>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 48px;">
-      <div class="btn-pair" style="align-items: center;">
+      <span class="price-offer-tag">Limited time offer</span>
+      <p class="price-meta">Pay in full · One time · Yours forever</p>
+      <p class="price-skool">Includes lifetime Skool community access (valued at $197)</p>
+      <div class="btn-pair">
         <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost">Buy now</a>
+        <a href="https://buy.stripe.com/00wcN7gpl28bgDT6NV6Ri01" class="btn-ghost" target="_blank" rel="noopener">Buy now</a>
       </div>
-      <span class="scarcity">Four installs per month. When May fills, founders' pricing closes for good.</span>
+      <p class="price-footnote">Four installs per month.</p>
     </div>
+
+    <div class="claude-pro-callout">
+      <h4>Claude Pro is required</h4>
+      <p>You'll need Claude Pro for the install and for ongoing use of your AI assistant. Free Claude doesn't support custom projects. $20 USD per month at claude.ai.</p>
+    </div>
+
   </div>
 </section>
 
@@ -1332,52 +1435,17 @@
   </div>
 </section>
 
-<!-- ─────── DECISION ─────── -->
-<section class="decision">
+
+<!-- ─────── DOWNSELL ─────── -->
+<section style="padding: 60px 0; background: var(--pearl);">
   <div class="container">
-    <div style="text-align: center;">
-      <span class="section-num" style="color: var(--cream-dark);">The decision</span>
-      <h2>Two <em>paths.</em></h2>
-      <div class="divider" style="background: var(--cream-dark);"></div>
-    </div>
-
-    <div class="preamble">
-      <p>Every week you wait is another week your business runs on memory instead of structure.</p>
-      <p>Another week of re-explaining yourself to a generic AI that doesn't know you.</p>
-      <p>Another week the founders who already built their Hubs are getting further ahead.</p>
-      <p style="font-style: italic; margin-top: 16px;">The maths on waiting doesn't work in your favour. It never did.</p>
-    </div>
-
-    <div class="decision-grid">
-      <div class="decision-col before">
-        <h3>Stay where you are</h3>
-        <ul>
-          <li>Business living across forty-seven browser tabs</li>
-          <li>Re-explaining yourself to ChatGPT every morning</li>
-          <li>Notion attempts gathering dust</li>
-          <li>Brain fog with nowhere to land</li>
-          <li>Still figuring it out alone, slowly</li>
-        </ul>
-      </div>
-
-      <div class="decision-col after">
-        <h3>Get your Hub installed</h3>
-        <ul>
-          <li>Business in one place, by the end of one 90-minute call</li>
-          <li>Claude that knows you and your work</li>
-          <li>Notion that finally feels right</li>
-          <li>Mental load lifted</li>
-          <li>Real support while you embed it</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="decision-cta">
-      <div class="btn-pair" style="align-items: center;">
-        <a href="https://cal.com/kelly-yuaiol/discoverycall" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
-        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-ghost btn-ghost-light">Buy now</a>
-      </div>
-      <span class="scarcity" style="color: var(--cream-dark);">$1,500 founders' pricing · Four spots per month · After May, founders' pricing closes</span>
+    <div class="downsell-wrap">
+      <span class="downsell-eyebrow">Or start with the template</span>
+      <h3 class="downsell-heading">Not ready to invest in a custom hub?</h3>
+      <p class="downsell-body">The AI Business Hub Template gives you the basic structure to duplicate into your Notion. You set it up, customise it, and learn to add to it yourself, at your own pace. No call, no done-with-you, no customisation. Just the foundation, ready for you to make it yours.</p>
+      <span class="downsell-price">$47 AUD</span>
+      <a href="https://buy.stripe.com/dRm8wRgpl28b4Vb5JR6Ri02" class="btn-downsell" target="_blank" rel="noopener">Buy the template</a>
+      <p class="downsell-footer">Instant download. Yours forever.</p>
     </div>
   </div>
 </section>
