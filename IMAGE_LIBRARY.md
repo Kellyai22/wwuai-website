@@ -41,3 +41,11 @@
 ## Lifestyle (`assets/lifestyle/`)
 
 *No images yet.*
+
+## Workbooks (`assets/workbooks/`)
+
+| Filename | Description | Tags |
+|----------|-------------|------|
+| hub-install-workbook.pdf | Hub Install pre-call digital workbook — sent to clients before their onboarding call | hub-install, workbook, pdf, client |
+
+> Public URL: https://wisewomenuseai.com/assets/workbooks/hub-install-workbook.pdf
