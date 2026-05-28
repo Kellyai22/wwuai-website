@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The thing holding your AI back isn't your prompts | Wise Women Use AI</title>
+  <meta name="description" content="There are 47 browser tabs open from yesterday. This is not a discipline problem or a prompting problem. It's a foundation problem.">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/posts/the-thing-holding-your-ai-back-isnt-your-prompts">
+
+  <meta property="og:title" content="The thing holding your AI back isn't your prompts">
+  <meta property="og:description" content="There are 47 browser tabs open from yesterday. This is not a discipline problem or a prompting problem. It's a foundation problem.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/posts/the-thing-holding-your-ai-back-isnt-your-prompts">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="article:author" content="Kelly Hartley">
+  <meta property="article:published_time" content="2026-05-26">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The thing holding your AI back isn't your prompts",
+    "description": "There are 47 browser tabs open from yesterday. This is not a discipline problem or a prompting problem. It's a foundation problem.",
+    "author": {
+      "@type": "Person",
+      "name": "Kelly Hartley",
+      "url": "https://www.wisewomenuseai.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wise Women Use AI",
+      "url": "https://www.wisewomenuseai.com",
+      "logo": {"@type": "ImageObject", "url": "https://www.wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png"}
+    },
+    "datePublished": "2026-05-26",
+    "url": "https://www.wisewomenuseai.com/posts/the-thing-holding-your-ai-back-isnt-your-prompts",
+    "mainEntityOfPage": "https://www.wisewomenuseai.com/posts/the-thing-holding-your-ai-back-isnt-your-prompts",
+    "keywords": "Real talk"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allison&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pearl: #F8F8F8;
+      --ink: #29232A;
+      --bordeaux: #8A1F2E;
+      --driftwood: #908486;
+      --cream: #E1DAD7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--pearl); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--pearl); border-bottom: 1px solid var(--cream); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-wordmark { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+    .nav-actions { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--driftwood); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--ink); }
+    .btn-nav { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink); border: 1.5px solid var(--ink); padding: 8px 20px; border-radius: 2px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .btn-nav:hover { background: var(--ink); color: var(--pearl); }
+
+    .back-link { max-width: 760px; margin: 0 auto; padding: 32px 24px 0; }
+    .back-link a { font-size: 13px; color: var(--driftwood); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s; }
+    .back-link a:hover { color: var(--ink); }
+
+    .article-header { max-width: 760px; margin: 0 auto; padding: 48px 24px 40px; }
+    .article-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bordeaux); display: block; margin-bottom: 20px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 50px); font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; font-size: 14px; color: var(--driftwood); padding-bottom: 40px; border-bottom: 1px solid var(--cream); }
+    .meta-sep { color: var(--cream); }
+
+    .article-body { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
+    .article-body p { font-size: 17px; line-height: 1.8; color: var(--ink); margin-bottom: 1.6em; max-width: 65ch; }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: var(--ink); margin: 2.4em 0 0.8em; line-height: 1.3; }
+    .article-body strong { font-weight: 600; }
+    .article-body em { font-style: italic; color: var(--bordeaux); }
+    .article-body a { color: var(--bordeaux); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+    .article-body blockquote { margin: 2.2em 0; padding: 1em 0 1em 1.5em; border-left: 3px solid var(--bordeaux); }
+    .article-body blockquote p { font-size: 18px; line-height: 1.75; color: var(--ink); margin-bottom: 0; font-style: italic; max-width: 60ch; }
+
+    .article-attribution { max-width: 760px; margin: 0 auto; padding: 32px 24px 64px; border-top: 1px solid var(--cream); }
+    .attribution-text { font-size: 14px; color: var(--driftwood); line-height: 1.6; }
+    .attribution-text a { color: var(--bordeaux); text-decoration: none; }
+    .attribution-text a:hover { text-decoration: underline; }
+
+    .subscribe-strip { background: var(--ink); padding: 80px 24px; text-align: center; margin-top: 40px; }
+    .subscribe-strip .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bordeaux); display: block; margin-bottom: 16px; }
+    .subscribe-strip h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 400; color: var(--pearl); line-height: 1.25; margin-bottom: 16px; }
+    .subscribe-strip h2 em { font-style: italic; color: var(--pearl); }
+    .subscribe-strip p { font-size: 16px; color: var(--driftwood); max-width: 460px; margin: 0 auto 32px; line-height: 1.65; }
+    .subscribe-link { display: inline-block; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; color: var(--pearl); border: 1.5px solid var(--bordeaux); padding: 12px 28px; border-radius: 2px; text-decoration: none; transition: background 0.2s; }
+    .subscribe-link:hover { background: var(--bordeaux); }
+
+    footer { background: var(--pearl); border-top: 1px solid var(--cream); padding: 48px 32px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+    .footer-link { font-size: 14px; color: var(--driftwood); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--ink); }
+    .social-links { display: flex; gap: 20px; }
+    .social-link { color: var(--driftwood); transition: color 0.2s; text-decoration: none; }
+    .social-link:hover { color: var(--ink); }
+    .footer-legal { font-size: 12px; color: var(--driftwood); }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-link { display: none; }
+      .article-header, .article-body, .back-link, .article-attribution { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" width="28" height="28">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/work" class="nav-link">Work with me</a>
+      <a href="/hub" class="nav-link">AI Business Hub</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-nav">Join the community</a>
+    </div>
+  </nav>
+
+  <div class="back-link">
+    <a href="/blog">&larr; All posts</a>
+  </div>
+
+  <article>
+    <header class="article-header reveal">
+      <span class="article-eyebrow">Real talk</span>
+      <h1 class="article-title">The thing holding your AI back isn&#8217;t your prompts</h1>
+      <div class="article-meta">
+        <span>26 May 2026</span>
+        <span class="meta-sep">&#183;</span>
+        <span>By Kelly Hartley</span>
+        <span class="meta-sep">&#183;</span>
+        <span>Wise Women Use AI</span>
+      </div>
+    </header>
+
+    <div class="article-body reveal">
+      <p>There are 47 browser tabs open from yesterday. You can&#39;t remember why most of them are there.</p>
+      <p>You open Claude and start a new conversation. Before you can even get to the work, you&#39;re explaining yourself again. Your business. What you do. Who your clients are. What makes your approach different. What you never say. The same explanation you typed last week. And the week before that.</p>
+      <p>The output comes back and it&#39;s fine. Generic, but fine. You spend the next twenty minutes reshaping it into something that actually sounds like it came from you.</p>
+      <p>By 10am you&#39;re looking for a document a client asked for. You sent it before. You know you sent it. You spend fifteen minutes across four different apps before you find it buried in a folder you haven&#39;t opened since January.</p>
+      <p>Brain fog sets in around 11. You wanted to do the creative work today. The strategic thinking. The stuff that actually moves things forward. It keeps getting pushed.</p>
+      <p>At 8pm, you&#39;re still at it.</p>
+      <p>This is not a discipline problem. This is not a prompting problem. This is what happens when your business lives in ten different places and none of them talk to each other.</p>
+      <p>It&#39;s a foundation problem.</p>
+      <p>The women I see getting genuinely useful, genuinely on-brand output from AI aren&#39;t the ones with the cleverest prompts. They&#39;re the ones who built the thing underneath the prompts. A proper foundation. One place where everything that matters about their business actually lives.</p>
+      <p>Not scattered Notion pages set up three months ago and not touched since. Not a folder full of documents they&#39;d have to dig through to find. Not a one-page positioning brief pasted into a Claude Project and hoped for the best.</p>
+      <blockquote>
+        <p>A structured, functioning workspace with six clear sections: strategy and positioning, brand and voice, offers, brain dump, a financial command centre, and a dedicated space for working with AI.</p>
+      </blockquote>
+      <p>When that&#39;s in place, everything changes.</p>
+      <p>You open Claude and it already knows you. Your voice, your offers, your clients, the things you say and the things you&#39;d never say. You stop explaining. You start doing. The first draft actually sounds like you. The suggestions actually apply to your business. The back-and-forth becomes much, much shorter.</p>
+      <p>And here&#39;s something I want to be clear about: this is not about Claude specifically.</p>
+      <p>The hub lives in Notion. It&#39;s yours. It works with any other AI tool you point it at. If something better comes along next year, your business context travels with you. You&#39;re not pouring everything into one tool and hoping that tool stays useful.</p>
+      <p>It&#39;s also not a thing you build once and leave alone. It&#39;s a working document. A living system that gets smarter as your business does. Every time you clarify your positioning, every time your offers shift, every time you work out a better way to describe what you do, it goes in. The hub improves. Your AI conversations improve with it. The longer you have it, the better it gets.</p>
+      <p>This is what separates the women who feel like AI is actually working for them from the ones who are still getting outputs that could have been written for anyone.</p>
+      <p>I built mine about six months ago. Not because I had spare time. Because I was losing too much time not having it.</p>
+      <blockquote>
+        <p>The before is embarrassingly recognisable if you&#39;re where most women are right now: brain fog by 11am, the same four-minute explanation every time I opened a new Claude conversation, Notion pages I&#39;d half-set-up and abandoned, creative work pushed to the end of the day when I was already running on empty.</p>
+      </blockquote>
+      <p>The after is the reason I turned this into a service.</p>
+      <p>The Hub Install is a 90-minute 1:1 live Zoom call where we build this for your business. Not a template to fill in later. Not a course to work through. A live build, with me walking you through it and your actual business going in as we go.</p>
+      <p>By 35 minutes, you&#39;re using Claude with your hub for the first time. By 75 minutes, your AI assistant is built, named, and loaded with your context. By 90 minutes, you&#39;re done. Hub live, populated, yours.</p>
+      <p>This is the right fit if you&#39;re running a business and a household, if the mental load of holding everything is the real problem, if you&#39;ve tried Notion before and it didn&#39;t stick, and if you&#39;re tired of AI outputs that could have been written for anyone. It&#39;s not the right fit if you&#39;re happy with 47 tabs open and you don&#39;t mind hunting for documents on a Tuesday morning.</p>
+      <p>If you&#39;re using AI regularly and still feel like you&#39;re not getting what you should be getting out of it, this is almost certainly why. The tools are capable. The foundation is missing.</p>
+      <p>Details and discovery call booking: <a href="https://wisewomenuseai.com/hub">wisewomenuseai.com/hub</a></p>
+    </div>
+
+    <div class="article-attribution reveal">
+      <p class="attribution-text">This post was first sent to email subscribers. <a href="https://wisewomenuseai.substack.com/p/the-thing-holding-your-ai-back-isnt-38b" target="_blank" rel="noopener">Read it on Substack</a> or <a href="https://wisewomenuseai.substack.com" target="_blank" rel="noopener">subscribe to get future issues</a> straight to your inbox.</p>
+    </div>
+  </article>
+
+  <div class="subscribe-strip">
+    <span class="eyebrow">Never miss an issue</span>
+    <h2>Practical AI,<br><em>every week.</em></h2>
+    <p>Real things I&#39;m testing, building, and learning in my business. If it didn&#39;t work or wasn&#39;t worth your time, it doesn&#39;t get written about.</p>
+    <a href="https://wisewomenuseai.substack.com" target="_blank" class="subscribe-link">Subscribe on Substack</a>
+  </div>
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" width="28" height="28">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="footer-links">
+      <a href="/guide" class="footer-link">Free guide</a>
+      <a href="/starter" class="footer-link">Starter kit</a>
+      <a href="/blog" class="footer-link">Blog</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="/hub" class="footer-link">AI Business Hub</a>
+      <a href="/community" class="footer-link">Join the community</a>
+      <a href="/about" class="footer-link">About</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/kelly-hartley-wwuai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <p class="footer-legal">&copy; 2026 Wise Women Use AI. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((e) => {
+      e.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
