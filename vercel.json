@@ -1,5 +1,6 @@
 {
   "routes": [
+    { "src": "/posts/(.*)",          "dest": "/posts/$1.html" },
     { "src": "/emails",              "dest": "/emails.html" },
     { "src": "/guide",               "dest": "/guide.html" },
     { "src": "/switch",              "dest": "/switch.html" },
