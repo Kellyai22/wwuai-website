@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/">
+  <link rel="preload" as="image" href="/assets/photos/kelly-hero.webp" type="image/webp">
   <title>Wise Women Use AI | AI for Women in Business</title>
   <meta name="description" content="A community for women in business who want to use AI to get their time, confidence, and business back. No hype, no hustle. Just things that actually work.">
   <meta name="keywords" content="AI for women in business, Claude AI community, AI tools for female entrepreneurs, women and AI, AI Australia, Kelly Wise Women">
   <meta property="og:title" content="Wise Women Use AI | AI for Women in Business">
   <meta property="og:description" content="No hype. No hustle. Just AI systems that actually work for real business women in their 40s and 50s.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
@@ -867,6 +871,84 @@
       footer { padding: 32px 24px; flex-direction: column; align-items: center; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.wisewomenuseai.com/#organization",
+        "name": "Wise Women Use AI",
+        "url": "https://www.wisewomenuseai.com",
+        "logo": "https://www.wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png",
+        "description": "AI education community for women entrepreneurs aged 40+. Practical, jargon-free AI training and a paid Skool community.",
+        "founder": {
+          "@type": "Person",
+          "name": "Kelly Hartley",
+          "url": "https://www.wisewomenuseai.com/about"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@kellyh.ai",
+          "https://www.instagram.com/kellyh.ai",
+          "https://www.facebook.com/wisewomenuseai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.wisewomenuseai.com/#website",
+        "url": "https://www.wisewomenuseai.com",
+        "name": "Wise Women Use AI",
+        "publisher": {"@id": "https://www.wisewomenuseai.com/#organization"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Wise Women Use AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wise Women Use AI is an AI education community for women in business, founded by Kelly Hartley in Melbourne, Australia. It provides practical, jargon-free training on tools like Claude and ChatGPT, along with a paid Skool community where women support each other to use AI in their real businesses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is Wise Women Use AI for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wise Women Use AI is designed for women entrepreneurs aged 40 and over who want to use AI tools practically in their business. No technical background is needed. It is especially for women who have tried AI, felt overwhelmed, and want a calm, peer-level approach to learning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to be technical to use AI for my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Wise Women Use AI is built specifically for non-technical business owners. The training focuses on practical, real-world applications using tools like Claude and ChatGPT, not coding or technical theory."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which AI tools does Wise Women Use AI teach?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The primary focus is on Claude (Anthropic's AI assistant) and ChatGPT (OpenAI). The community teaches how to use these tools for real business tasks including content creation, email drafting, workflow automation, and client communication."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost to join the Wise Women Use AI community?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Wise Women Use AI Skool community has a one-time membership fee, not a subscription. Visit the community page at wisewomenuseai.com/community for current pricing."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -916,11 +998,15 @@
 
     <div class="hero-right">
       <div class="hero-photo-frame">
-        <img
-          src="/assets/photos/kelly-hero.jpg"
-          alt="Kelly, founder of Wise Women Use AI"
-          onerror="this.style.display='none'; this.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';"
-        />
+        <picture>
+          <source srcset="/assets/photos/kelly-hero.webp" type="image/webp">
+          <img
+            src="/assets/photos/kelly-hero.jpg"
+            alt="Kelly, founder of Wise Women Use AI"
+            width="600" height="750"
+            onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';"
+          />
+        </picture>
         <div class="hero-photo-placeholder" style="display:none;">
           <div style="width:64px;height:64px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--driftwood);">K</div>
           <span>kelly-hero.jpg</span>
@@ -1095,11 +1181,16 @@
 
   <section id="about" class="kelly-section">
     <div class="kelly-photo reveal">
-      <img
-        src="/assets/photos/kelly-about.jpg"
-        alt="Kelly, founder of Wise Women Use AI, Melbourne"
-        onerror="this.style.display='none'; this.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
-      />
+      <picture>
+        <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
+        <img
+          src="/assets/photos/kelly-about.jpg"
+          alt="Kelly, founder of Wise Women Use AI, Melbourne"
+          width="400" height="500"
+          loading="lazy"
+          onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
+        />
+      </picture>
       <div class="kelly-photo-placeholder" style="display:none;">
         <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;color:var(--driftwood);">K</div>
         <span style="color:var(--driftwood);font-size:13px;">kelly-about.jpg</span>
@@ -1153,6 +1244,32 @@
     </div>
   </section>
 
+  <section id="faq" style="max-width:800px;margin:0 auto;padding:80px 48px;">
+    <p class="eyebrow" style="margin-bottom:20px;">Questions</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;margin-bottom:48px;color:var(--ink);">Common questions,<br><em>honest answers.</em></h2>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
+        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is Wise Women Use AI?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
+        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">An AI education community for women in business, founded by Kelly Hartley in Melbourne. Practical, jargon-free training on tools like Claude and ChatGPT, plus a paid Skool community where women support each other to actually use AI in their real businesses.</p>
+      </details>
+      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
+        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Who is it for?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
+        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Women entrepreneurs, particularly those in their 40s and 50s, who want to use AI tools in their business but have found the usual content too technical, too salesy, or just not relevant to what they actually do. No coding, no tech background needed.</p>
+      </details>
+      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
+        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Do I need to be technical?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
+        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">No. The entire approach is built for non-technical business owners. Kelly teaches from the perspective of someone who uses AI as a business tool, not as a developer. If you can write an email, you can learn this.</p>
+      </details>
+      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
+        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Which AI tools do you teach?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
+        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Primarily Claude (by Anthropic), with content on ChatGPT as well. The focus is on practical business use: content creation, emails, client communication, workflow automation, and building reusable AI systems inside your business.</p>
+      </details>
+      <details style="border-top:1px solid var(--cream-dark);border-bottom:1px solid var(--cream-dark);padding:24px 0;">
+        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Where do I start if I'm not ready to join?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
+        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Start with one of the free resources: <a href="/guide" style="color:var(--bordeaux);">Claude, Clearly</a> is a practical guide to getting set up in ten minutes, or grab the <a href="/starter" style="color:var(--bordeaux);">AI Starter Kit</a> which includes a Claude comparison tool, five real business prompts, and your first workflow. Both are free, no strings.</p>
+      </details>
+    </div>
+  </section>
 
   <footer>
     <a href="/" class="nav-logo">
@@ -1161,10 +1278,13 @@
     </a>
 
     <div class="footer-links">
+      <a href="/guide" class="footer-link">Free guide</a>
+      <a href="/starter" class="footer-link">Starter kit</a>
       <a href="/blog" class="footer-link">Blog</a>
       <a href="/work" class="footer-link">Work with me</a>
       <a href="/hub" class="footer-link">AI Business Hub</a>
       <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="/about" class="footer-link">About</a>
       <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
     </div>
 
