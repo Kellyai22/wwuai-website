@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://wisewomenuseai.com/sitemap.xml
+Sitemap: https://www.wisewomenuseai.com/sitemap.xml
