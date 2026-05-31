@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Content System Programme for Women in Business | Wise Women Use AI</title>
+<meta name="description" content="A five-week live programme that builds your content system in Claude, in your voice, running by week three. For women in business who are done starting from scratch every week.">
+
+<meta property="og:title" content="You don't need more content ideas. You need a system.">
+<meta property="og:description" content="A five-week live programme that builds your content system in Claude, in your voice, running by week three. For women in business who are done starting from scratch every week.">
+<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta property="og:url" content="https://www.wisewomenuseai.com/content-system">
+<link rel="canonical" href="https://www.wisewomenuseai.com/content-system">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You don't need more content ideas. You need a system.">
+<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Allison&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pearl: #F8F8F8;
+    --ink: #29232A;
+    --bordeaux: #8A1F2E;
+    --bordeaux-dk: #7a1a27;
+    --driftwood: #908486;
+    --driftwood-text: #6E6266; /* darker driftwood for small text, passes WCAG AA (~5.6:1 on Pearl) */
+    --cream-dark: #E1DAD7;
+    --white: #FFFFFF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --script: 'Allison', cursive;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection { background: var(--bordeaux); color: var(--pearl); }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--bordeaux);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ─────── NAV (site shell) ─────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #F8F8F8;
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex: 0 0 auto; max-width: fit-content; }
+  .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+  .nav-wordmark { font-size: 9px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); }
+  .nav-actions { display: flex; align-items: center; gap: 24px; position: relative; z-index: 2; align-self: stretch; }
+  .nav-link { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--driftwood); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; align-self: stretch; }
+  .nav-link:hover { color: var(--bordeaux); }
+  .btn-solid {
+    font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pearl); background: var(--ink); text-decoration: none;
+    padding: 10px 20px; border-radius: 2px; transition: background 0.2s, transform 0.1s; display: inline-block;
+  }
+  .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+  /* ─────── LAYOUT ─────── */
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  main section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  main section:last-of-type { border-bottom: none; }
+
+  /* ─────── TYPOGRAPHY ─────── */
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5.4vw, 42px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.6vw, 30px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 28px;
+  }
+  h3 { font-weight: inherit; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 20px; }
+  p:last-child { margin-bottom: 0; }
+
+  .eyebrow { font-family: var(--script); font-size: 30px; color: var(--bordeaux); display: block; margin-bottom: 16px; line-height: 1.2; }
+
+  /* ─────── PRIMARY CTA ─────── */
+  .cta {
+    display: inline-block;
+    background: var(--bordeaux);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.14s ease;
+  }
+  .cta:hover { background: var(--bordeaux-dk); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+
+  /* ─────── HERO ─────── */
+  .hero { padding: 64px 0 48px; }
+  .hero-sub { font-size: 18px; color: var(--driftwood-text); line-height: 1.65; margin-bottom: 28px; max-width: 90%; }
+  .hero-cta-row { margin-bottom: 36px; }
+  .hero-figure { margin: 0; }
+  .hero-img {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    object-position: 50% 22%;
+    border-radius: 14px;
+    display: block;
+  }
+
+  /* ─────── OPENING COPY ─────── */
+  .lead-define { font-size: 17px; }
+
+  /* ─────── MODULES ─────── */
+  .module-block { padding: 36px 0; border-bottom: 1px solid var(--cream-dark); }
+  .module-block:first-of-type { padding-top: 0; }
+  .module-block:last-of-type { border-bottom: none; padding-bottom: 0; }
+  .module-num { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bordeaux); display: block; margin-bottom: 10px; }
+  .module-title { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--ink); line-height: 1.3; margin: 0 0 10px; }
+  .module-problem { font-size: 14px; font-style: italic; color: var(--driftwood-text); line-height: 1.6; margin-bottom: 14px; }
+  .module-body { font-size: 15px; line-height: 1.72; color: var(--ink); margin-bottom: 0; }
+
+  /* ─────── HOW IT WORKS ─────── */
+  .how-paras { margin-bottom: 32px; }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .how-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 8px; padding: 20px 22px; transition: box-shadow 0.2s ease, transform 0.18s ease; }
+  .how-card:hover { box-shadow: 0 6px 20px rgba(41, 35, 42, 0.07); transform: translateY(-2px); }
+  .how-label { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bordeaux); display: block; margin-bottom: 8px; }
+  .how-body { font-size: 15px; color: var(--ink); line-height: 1.55; margin-bottom: 0; }
+
+  /* ─────── WALK-AWAY LIST ─────── */
+  .walkaway-list { list-style: none; margin-top: 4px; }
+  .walkaway-list li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--cream-dark); font-size: 15px; color: var(--ink); line-height: 1.55; }
+  .walkaway-list li:first-child { padding-top: 0; }
+  .walkaway-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .walkaway-list li::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--bordeaux); flex-shrink: 0; margin-top: 7px; }
+
+  /* ─────── MID CTA ─────── */
+  .mid-cta { text-align: center; margin-top: 40px; }
+
+  /* ─────── FOR / NOT FOR ─────── */
+  .subsection-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 18px; }
+  .for-list, .not-list { list-style: none; }
+  .for-list li { display: flex; align-items: flex-start; gap: 14px; padding: 9px 0; font-size: 15px; color: var(--ink); line-height: 1.55; }
+  .for-list li::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--bordeaux); flex-shrink: 0; margin-top: 7px; }
+  .not-section { margin-top: 40px; }
+  .not-list li { display: flex; align-items: flex-start; gap: 14px; padding: 9px 0; font-size: 15px; color: var(--driftwood-text); line-height: 1.55; }
+  .not-list li::before { content: ''; display: block; width: 10px; height: 1px; background: var(--driftwood); flex-shrink: 0; margin-top: 11px; }
+
+  /* ─────── PRICING ─────── */
+  #pricing { scroll-margin-top: 80px; }
+  .pricing-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 10px; padding: 40px; text-align: center; }
+  .pricing-eyebrow { font-family: var(--script); font-size: 22px; color: var(--bordeaux); display: block; margin-bottom: 14px; }
+  .price { font-family: var(--serif); font-size: 52px; font-weight: 700; color: var(--ink); line-height: 1; display: block; margin-bottom: 10px; }
+  .price-note { font-size: 14px; color: var(--driftwood-text); display: block; margin-bottom: 6px; }
+  .price-standard { font-size: 13px; color: var(--driftwood-text); display: block; margin-bottom: 28px; }
+  .pricing-footer { font-size: 13px; color: var(--driftwood-text); margin-top: 16px; margin-bottom: 0; }
+  .pricing-footer a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 2px; }
+  .pricing-footer a:hover { color: var(--bordeaux-dk); }
+  .pricing-body { font-size: 15px; color: var(--ink); line-height: 1.7; margin-top: 28px; text-align: left; margin-bottom: 0; }
+
+  /* ─────── KELLY NOTE ─────── */
+  .kelly-card { background: var(--white); border: 1px solid var(--cream-dark); border-left: 3px solid var(--bordeaux); border-radius: 0 8px 8px 0; padding: 28px 32px; }
+  .kelly-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .kelly-portrait { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; flex-shrink: 0; filter: grayscale(0); }
+  .kelly-head-meta { line-height: 1.3; }
+  .kelly-head-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); }
+  .kelly-head-role { font-size: 13px; color: var(--driftwood-text); }
+  .kelly-card p { font-size: 15px; line-height: 1.7; color: var(--ink); }
+  .kelly-sig { font-family: var(--script); font-size: 28px; color: var(--bordeaux); display: block; margin-top: 20px; }
+
+  /* ─────── FINAL CTA ─────── */
+  .final-cta { text-align: center; padding: 64px 0; }
+  .final-line-1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 28px; color: var(--ink); display: block; margin-bottom: 12px; }
+  .final-line-2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 22px; color: var(--driftwood-text); display: block; margin-bottom: 36px; }
+
+  /* ─────── STICKY MOBILE CTA ─────── */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 200;
+    background: var(--white);
+    border-top: 1px solid var(--cream-dark);
+    padding: 12px 16px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -4px 18px rgba(41, 35, 42, 0.08);
+  }
+  .sticky-cta .sticky-price { font-size: 14px; color: var(--ink); font-weight: 600; }
+  .sticky-cta .sticky-price span { display: block; font-size: 11px; font-weight: 400; color: var(--driftwood-text); }
+  .sticky-cta .cta { padding: 12px 22px; font-size: 14px; }
+
+  /* ─────── FOOTER (site shell) ─────── */
+  footer { padding: 40px 48px; border-top: 1px solid var(--cream-dark); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+  .footer-link:hover { color: var(--bordeaux); }
+  .social-links { display: flex; gap: 20px; align-items: center; }
+  .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+  .social-link:hover { color: var(--bordeaux); }
+  .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+  /* ─────── RESPONSIVE ─────── */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-wordmark, .nav-link + .nav-link { display: none; }
+    footer { padding: 32px 24px; }
+    .container-narrow { padding: 0 24px; }
+  }
+
+  @media (max-width: 580px) {
+    .how-grid { grid-template-columns: 1fr; }
+    .pricing-card { padding: 28px 20px; }
+    .hero { padding: 40px 0 36px; }
+    .final-line-1 { font-size: 24px; }
+    .final-line-2 { font-size: 19px; }
+    .sticky-cta { display: flex; }
+    main { padding-bottom: 68px; } /* clear the sticky bar */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+    .how-card:hover, .cta:hover, .btn-solid:hover { transform: none; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "The Content System Programme",
+  "description": "A five-week live programme that builds your content system in Claude, in your voice, running by week three. You leave with a Claude Project built for your business, a content strategy, a weekly workflow already run with real content, and a personal style guide.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Wise Women Use AI",
+    "url": "https://www.wisewomenuseai.com"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Kelly Hartley",
+    "url": "https://www.wisewomenuseai.com/about"
+  },
+  "inLanguage": "en-AU",
+  "url": "https://www.wisewomenuseai.com/content-system",
+  "offers": {
+    "@type": "Offer",
+    "price": "495",
+    "priceCurrency": "AUD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.wisewomenuseai.com/content-system",
+    "category": "Founding cohort"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "P5W",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://www.wisewomenuseai.com/content-system"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/content-system" class="nav-link" style="color:var(--ink);">Content System</a>
+    <a href="/hub" class="nav-link">AI Business Hub</a>
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container-narrow">
+
+    <!-- HERO -->
+    <header class="hero">
+      <span class="eyebrow">For women in business who are done starting from scratch every week</span>
+      <h1>You don't need more content ideas. You need a system that does more with the ones you've already had.</h1>
+      <p class="hero-sub">A five-week live programme that builds your content system from the ground up. In your voice. Running by Week 3.</p>
+      <div class="hero-cta-row">
+        <a href="#pricing" class="cta">Join the founding cohort</a>
+      </div>
+      <figure class="hero-figure">
+        <img class="hero-img" src="/assets/photos/content-hero.jpg" width="787" height="1400" alt="A woman working at a laptop at her kitchen table with a cup of tea, warm natural light" loading="eager">
+      </figure>
+    </header>
+
+    <!-- OPENING COPY -->
+    <section>
+      <p>You've seen what's possible when Claude actually knows your business.</p>
+      <p>One idea. A newsletter. Five posts. A video script. All in your voice. In under two hours.</p>
+      <p>That's not a trick. That's a system. And right now you don't have one.</p>
+      <p>What you have is a version of this: you open Claude when you remember, type something in, get something back that's almost right but not quite, edit it into something usable, post it, and forget about it until next week when you do the same thing again from scratch.</p>
+      <p>It works. Sort of. But it's not a system. And it's definitely not saving you time.</p>
+      <p>The Content System Programme builds the real thing. Not a course about AI. Not a set of prompts to copy. A working content system, built around your business, that you actually run during the five weeks we work together.</p>
+      <p>By the time we finish, your system exists. Your content is scheduled. Claude knows who you are.</p>
+    </section>
+
+    <!-- MODULES -->
+    <section>
+      <h2>What we build together</h2>
+
+      <div class="module-block">
+        <span class="module-num">Module 1</span>
+        <h3 class="module-title">Teach Claude who you are</h3>
+        <p class="module-problem">This is the step most people skip. Which is why their AI content sounds like everyone else's.</p>
+        <p class="module-body">You already have what Claude needs. It lives in your about page, your old conversations, your brain. We collect it, shape it, and load it into a Claude Project that knows your voice, your audience, your offers, and the things you'd never say. Every piece of content you produce from here starts from the right place.</p>
+      </div>
+
+      <div class="module-block">
+        <span class="module-num">Module 2</span>
+        <h3 class="module-title">Your content strategy</h3>
+        <p class="module-problem">Not a complicated framework. Not a content calendar with seventeen columns.</p>
+        <p class="module-body">A simple structure. Three or four content pillars that reflect what your business actually does and what your audience actually needs. A posting rhythm that fits your real life, not someone else's. Once this is in your Claude Project, you stop deciding what to post. You just start.</p>
+      </div>
+
+      <div class="module-block">
+        <span class="module-num">Module 3</span>
+        <h3 class="module-title">The weekly workflow</h3>
+        <p class="module-problem">This is where you feel it working.</p>
+        <p class="module-body">From rough thinking on Sunday to scheduled content by Wednesday. You run the full workflow during this module with your real business, producing your actual content for that week. Not a practice run. Most people leave this session with a newsletter draft, five Instagram posts, and a video script. All from one idea. All in their voice.</p>
+      </div>
+
+      <div class="module-block">
+        <span class="module-num">Module 4</span>
+        <h3 class="module-title">Making it sound like you</h3>
+        <p class="module-problem">The fear is real. "But it won't sound like me." This module answers it properly.</p>
+        <p class="module-body">You learn to read AI output for what gives it away, edit for rhythm and specificity, and add the detail that makes it true and yours. You also build your personal style guide, a one-page reference that makes every future edit faster.</p>
+      </div>
+
+      <div class="module-block">
+        <span class="module-num">Module 5</span>
+        <h3 class="module-title">Making it stick</h3>
+        <p class="module-problem">You've had the Week 3 feeling before. The energy that doesn't last. This module builds the structure that makes it last anyway.</p>
+        <p class="module-body">Your minimal weekly routine. Your batching option for harder weeks. The checklists and references that mean you never have to reinvent it. The system runs because you've designed it to run. Not because you remembered to.</p>
+      </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section>
+      <h2>How it works</h2>
+      <div class="how-paras">
+        <p>Five weeks. Five live sessions. You build the actual system during the programme, not after it.</p>
+        <p>Each week focuses on one layer of the system. You work on your real business, not example content. By Week 3, the workflow is already running.</p>
+        <p>Between sessions, you have async support and a cohort of women working through the same process at the same time. That part matters more than it sounds like it will.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <span class="how-label">Format</span>
+          <p class="how-body">Five weekly live Zoom calls plus async support throughout</p>
+        </div>
+        <div class="how-card">
+          <span class="how-label">Pace</span>
+          <p class="how-body">Self-paced within each week. No rigid deadlines, no public falling behind</p>
+        </div>
+        <div class="how-card">
+          <span class="how-label">Community</span>
+          <p class="how-body">Your cohort classroom in Skool, then the wider Wise Women community on graduation</p>
+        </div>
+        <div class="how-card">
+          <span class="how-label">Requirement</span>
+          <p class="how-body">Claude Pro. It's non-negotiable and the first thing we sort in the pre-module</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WALK-AWAY -->
+    <section>
+      <h2>What you walk away with</h2>
+      <ul class="walkaway-list">
+        <li>Claude Project built for your business</li>
+        <li>Content strategy document and posting rhythm</li>
+        <li>Weekly workflow already run with real content</li>
+        <li>A week of actual content produced during the programme</li>
+        <li>Personal style guide</li>
+        <li>First month of content planned</li>
+        <li>Checklists and reference docs for every repeating task</li>
+        <li>Lifetime access to programme materials</li>
+        <li>Ongoing community access as a graduate</li>
+      </ul>
+      <div class="mid-cta">
+        <a href="#pricing" class="cta">Join the founding cohort</a>
+      </div>
+    </section>
+
+    <!-- FOR YOU / NOT FOR YOU -->
+    <section>
+      <h3 class="subsection-title">This is for you if</h3>
+      <ul class="for-list">
+        <li>You've been using Claude but you know you're not using it properly</li>
+        <li>You post when you remember, not on a system</li>
+        <li>You want content that sounds like you, not like a generic AI output</li>
+        <li>You're a service-based business owner who wants to stop starting from scratch every single week</li>
+        <li>You're ready to actually build the thing, not just learn about it</li>
+      </ul>
+
+      <div class="not-section">
+        <h3 class="subsection-title">This is not for you if</h3>
+        <ul class="not-list">
+          <li>You're looking for a set of prompts to copy and paste</li>
+          <li>You're not willing to get Claude Pro (it's a hard requirement, not an optional extra)</li>
+          <li>You want to save it for later and come back to the videos when you have more time</li>
+          <li>You're after a course to collect, not a system to run</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>Your investment</h2>
+      <div class="pricing-card">
+        <span class="pricing-eyebrow">Founding cohort</span>
+        <span class="price">$495</span>
+        <span class="price-note">AUD, one payment, no subscription</span>
+        <span class="price-standard">Standard pricing from the next cohort: $595 AUD</span>
+        <!-- TODO: replace href="#" with the real Stripe checkout link -->
+        <a href="#" class="cta">Join the founding cohort for $495 AUD</a>
+        <p class="pricing-footer">Secure checkout via Stripe. <a href="https://claude.ai/upgrade" target="_blank" rel="noopener">Claude Pro required.</a></p>
+      </div>
+      <p class="pricing-body">This is a founding cohort, which means a smaller group, more direct access, and the lowest price this programme will ever be offered at. The feedback from this cohort shapes how the programme runs for every future intake. Spots are limited by design, not by marketing. When they're gone, the next opportunity is at full price.</p>
+    </section>
+
+    <!-- KELLY NOTE -->
+    <section>
+      <h2>A note from Kelly</h2>
+      <div class="kelly-card">
+        <div class="kelly-head">
+          <img class="kelly-portrait" src="/assets/photos/kelly-note.jpg" width="440" height="640" alt="Kelly Hartley, founder of Wise Women Use AI" loading="lazy">
+          <div class="kelly-head-meta">
+            <div class="kelly-head-name">Kelly Hartley</div>
+            <div class="kelly-head-role">Founder, Wise Women Use AI</div>
+          </div>
+        </div>
+        <p>I built this programme because I kept watching smart women spend an hour producing one piece of content when they could have done five. Not because they were doing anything wrong. Because they were using a powerful tool without a system underneath it.</p>
+        <p>I've been running my own content system for over a year now. One idea on Sunday morning becomes a newsletter, a week of posts, and a video script by Tuesday. I don't start from scratch. I don't spend an hour wondering what to write. I open the workflow and run it.</p>
+        <p>What I want for you, by the end of these five weeks, is that same feeling. Not wonder at what AI can do in theory. The specific, grounded confidence of knowing exactly what you do each week and watching it work.</p>
+        <p>This isn't a course you finish and then figure out the rest. We build the system together, with your real business, during the time we have. You leave with something that runs.</p>
+        <span class="kelly-sig">Kelly</span>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <span class="final-line-1">You don't need more ideas.</span>
+      <span class="final-line-2">You need to do more with the ones you've already had.</span>
+      <!-- TODO: replace href="#" with the real Stripe checkout link -->
+      <a href="#" class="cta">Join the founding cohort for $495 AUD</a>
+    </section>
+
+  </div>
+</main>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <div class="sticky-price">$495 AUD<span>Founding cohort</span></div>
+  <a href="#pricing" class="cta">Join now</a>
+</div>
+
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="footer-links">
+    <a href="/content-system" class="footer-link">Content System</a>
+    <a href="/hub" class="footer-link">AI Business Hub</a>
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+</footer>
+
+</body>
+</html>
