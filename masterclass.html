@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Masterclass: One Idea, a Week of Content | Wise Women Use AI</title>
+<meta name="description" content="A free live masterclass for women in business. See how one idea becomes a full week of content, in your voice, in one sitting with Claude. No experience needed.">
+
+<meta property="og:title" content="Free masterclass: one idea, a week of content">
+<meta property="og:description" content="See how a single idea becomes a newsletter, a week of posts, and a video script, in your voice, in one sitting with Claude. Live and free.">
+<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta property="og:url" content="https://www.wisewomenuseai.com/masterclass">
+<link rel="canonical" href="https://www.wisewomenuseai.com/masterclass">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free masterclass: one idea, a week of content">
+<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Allison&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --pearl: #F8F8F8;
+    --ink: #29232A;
+    --ink-soft: #3A333C;
+    --bordeaux: #8A1F2E;
+    --bordeaux-dk: #7a1a27;
+    --driftwood: #908486;
+    --driftwood-text: #6E6266; /* darker driftwood for small text, passes WCAG AA (~5.6:1 on Pearl) */
+    --cream-dark: #E1DAD7;
+    --blush: #FBF3F2; /* soft bordeaux tint for accent panels */
+    --white: #FFFFFF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --script: 'Allison', cursive;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection { background: var(--bordeaux); color: var(--pearl); }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--bordeaux);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ─────── NAV (site shell) ─────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #F8F8F8;
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex: 0 0 auto; max-width: fit-content; }
+  .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+  .nav-wordmark { font-size: 9px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--driftwood); }
+  .nav-actions { display: flex; align-items: center; gap: 24px; position: relative; z-index: 2; align-self: stretch; }
+  .nav-link { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; color: var(--driftwood); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; align-self: stretch; }
+  .nav-link:hover { color: var(--bordeaux); }
+  .btn-solid {
+    font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pearl); background: var(--ink); text-decoration: none;
+    padding: 10px 20px; border-radius: 2px; transition: background 0.2s, transform 0.1s; display: inline-block;
+  }
+  .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+  /* ─────── LAYOUT ─────── */
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  main section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  main section:last-of-type { border-bottom: none; }
+
+  /* ─────── TYPOGRAPHY ─────── */
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5.6vw, 46px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.14;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  h1 em { font-style: italic; font-weight: 600; color: var(--bordeaux); }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.6vw, 30px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 28px;
+  }
+  h2 em { font-style: italic; font-weight: 600; color: var(--bordeaux); }
+  h3 { font-weight: inherit; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 20px; }
+  p:last-child { margin-bottom: 0; }
+
+  .eyebrow { font-family: var(--script); font-size: 32px; color: var(--bordeaux); display: block; margin-bottom: 10px; line-height: 1.2; }
+
+  .mc-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    border: 1px solid var(--bordeaux);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+
+  /* ─────── PRIMARY CTA ─────── */
+  .cta {
+    display: inline-block;
+    background: var(--bordeaux);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.14s ease;
+  }
+  .cta:hover { background: var(--bordeaux-dk); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+
+  /* ─────── HERO ─────── */
+  .hero { padding: 56px 0 48px; }
+  .hero-sub { font-size: 18px; color: var(--driftwood-text); line-height: 1.65; margin-bottom: 24px; max-width: 94%; }
+
+  /* date / logistics line */
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .when .when-item { display: inline-flex; align-items: center; gap: 7px; }
+  .when svg { color: var(--bordeaux); flex-shrink: 0; }
+  .when .when-free { color: var(--bordeaux); font-weight: 600; }
+
+  .hero-figure { margin: 32px 0 0; }
+  .hero-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: 50% 24%;
+    border-radius: 14px;
+    display: block;
+  }
+
+  /* ─────── REGISTER FORM (light) ─────── */
+  .register-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 26px 26px 24px;
+    box-shadow: 0 10px 30px -18px rgba(41, 35, 42, 0.22);
+  }
+  .register-card .register-title { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .register-card .register-sub { font-size: 14px; color: var(--driftwood-text); line-height: 1.55; margin-bottom: 18px; }
+
+  .register-form { display: grid; gap: 10px; }
+  .field { display: grid; gap: 6px; }
+  .field label { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: var(--driftwood-text); }
+  .register-form input {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--pearl);
+    border: 1px solid var(--cream-dark);
+    border-radius: 6px;
+    padding: 13px 14px;
+    width: 100%;
+    transition: border-color 0.18s ease, background 0.18s ease;
+  }
+  .register-form input::placeholder { color: #A99FA0; }
+  .register-form input:focus { outline: none; border-color: var(--bordeaux); background: var(--white); }
+  .register-form button {
+    margin-top: 4px;
+    width: 100%;
+    background: var(--bordeaux);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.14s ease;
+  }
+  .register-form button:hover { background: var(--bordeaux-dk); transform: translateY(-1px); }
+  .register-form button:active { transform: translateY(0); }
+  .form-note { font-size: 12.5px; color: var(--driftwood-text); margin-top: 12px; margin-bottom: 0; text-align: center; }
+
+  /* ─────── OPENING COPY ─────── */
+  .lead p { font-size: 17px; }
+
+  /* ─────── WALK-AWAY LIST ─────── */
+  .walkaway-list { list-style: none; margin-top: 4px; }
+  .walkaway-list li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--cream-dark); font-size: 15px; color: var(--ink); line-height: 1.55; }
+  .walkaway-list li:first-child { padding-top: 0; }
+  .walkaway-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .walkaway-list li::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--bordeaux); flex-shrink: 0; margin-top: 7px; }
+
+  /* ─────── AGENDA (numbered blocks, not equal cards) ─────── */
+  .agenda-block { padding: 30px 0; border-bottom: 1px solid var(--cream-dark); display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
+  .agenda-block:first-of-type { padding-top: 0; }
+  .agenda-block:last-of-type { border-bottom: none; padding-bottom: 0; }
+  .agenda-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--bordeaux); line-height: 1; opacity: 0.85; }
+  .agenda-title { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); line-height: 1.3; margin: 0 0 8px; }
+  .agenda-body { font-size: 15px; line-height: 1.7; color: var(--ink); margin-bottom: 0; }
+
+  /* ─────── FOR / NOT FOR ─────── */
+  .subsection-title { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 18px; }
+  .for-list, .not-list { list-style: none; }
+  .for-list li, .not-list li { display: flex; align-items: flex-start; gap: 13px; padding: 10px 0; font-size: 15px; line-height: 1.55; }
+  .for-list li { color: var(--ink); }
+  .not-list li { color: var(--driftwood-text); }
+  .for-list li .marker, .not-list li .marker { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; margin-top: 0; }
+  .for-list li .marker svg, .not-list li .marker svg { width: 26px; height: 26px; display: block; }
+  .for-list li .marker { color: var(--bordeaux); }
+  .not-list li .marker { color: var(--driftwood); }
+  .not-section { margin-top: 40px; }
+
+  /* ─────── KELLY NOTE ─────── */
+  .kelly-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 8px; padding: 28px 32px; }
+  .kelly-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .kelly-portrait { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; flex-shrink: 0; }
+  .kelly-head-meta { line-height: 1.3; }
+  .kelly-head-name { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); }
+  .kelly-head-role { font-size: 13px; color: var(--driftwood-text); }
+  .kelly-card p { font-size: 15px; line-height: 1.7; color: var(--ink); }
+  .kelly-sig { font-family: var(--script); font-size: 30px; color: var(--bordeaux); display: block; margin-top: 18px; line-height: 1; }
+
+  /* ─────── FAQ (accordion) ─────── */
+  .faq { border-bottom: 1px solid var(--cream-dark); }
+  .faq:last-of-type { border-bottom: none; }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 38px 20px 0;
+    position: relative;
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--bordeaux); }
+  .faq summary::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 25px;
+    width: 9px;
+    height: 9px;
+    border-right: 1.8px solid var(--bordeaux);
+    border-bottom: 1.8px solid var(--bordeaux);
+    transform: rotate(45deg);
+    transition: transform 0.22s ease;
+  }
+  .faq[open] summary::after { transform: rotate(-135deg); top: 29px; }
+  .faq .faq-a { font-size: 15px; line-height: 1.7; color: var(--driftwood-text); padding: 0 38px 22px 0; margin: 0; }
+
+  /* ─────── CTA PANEL (Ink / Red) ─────── */
+  .cta-panel {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 44px 40px;
+    text-align: center;
+    margin: 8px 0;
+  }
+  .cta-panel .eyebrow { color: #E7C9CC; }
+  .cta-panel .panel-head { font-family: var(--serif); font-size: clamp(24px, 4vw, 32px); font-weight: 600; color: var(--pearl); line-height: 1.25; margin-bottom: 14px; }
+  .cta-panel .panel-head em { font-style: italic; color: var(--pearl); }
+  .cta-panel .panel-sub { font-size: 16px; color: #C9C0C2; line-height: 1.6; margin-bottom: 24px; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .cta-panel .register-card { max-width: 440px; margin: 0 auto; text-align: left; }
+  /* red variant for the closing CTA */
+  .cta-panel--red { background: var(--bordeaux); }
+  .cta-panel--red .eyebrow { color: #F6DEE0; }
+  .cta-panel--red .panel-sub { color: #F2DDDF; }
+
+  /* ─────── FOOTER (site shell) ─────── */
+  footer { padding: 40px 48px; border-top: 1px solid var(--cream-dark); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+  .footer-link:hover { color: var(--bordeaux); }
+  .social-links { display: flex; gap: 20px; align-items: center; }
+  .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+  .social-link:hover { color: var(--bordeaux); }
+  .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+  /* ─────── RESPONSIVE ─────── */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-wordmark, .nav-link { display: none; }
+    footer { padding: 32px 24px; }
+    .container-narrow { padding: 0 24px; }
+  }
+
+  @media (max-width: 580px) {
+    .hero { padding: 36px 0 36px; }
+    .hero-sub { max-width: 100%; }
+    .agenda-block { grid-template-columns: 1fr; gap: 8px; }
+    .agenda-num { font-size: 28px; }
+    .cta-panel { padding: 32px 20px; }
+    .kelly-card { padding: 24px 22px; }
+    .bridge { padding: 22px 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+    .cta:hover, .btn-solid:hover, .register-form button:hover { transform: none; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Wise Women Use AI Masterclass: One Idea, a Week of Content",
+  "description": "A free live masterclass showing how a single idea becomes a full week of content, in your voice, in one sitting with Claude.",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Wise Women Use AI",
+    "url": "https://www.wisewomenuseai.com"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Kelly Hartley"
+  },
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://www.wisewomenuseai.com/masterclass"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "AUD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.wisewomenuseai.com/masterclass"
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/content-system" class="nav-link">Content System</a>
+    <a href="/hub" class="nav-link">AI Business Hub</a>
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="#register" class="btn-solid">Save your seat</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container-narrow">
+
+    <!-- HERO -->
+    <header class="hero">
+      <span class="mc-tag">Free live masterclass</span>
+      <span class="eyebrow">For women in business who start from scratch every week</span>
+      <h1><em>One</em> piece is all you need to start.</h1>
+      <p class="hero-sub">You've already written more than you realise. In this free hour, I'll take one thing you've already made, a newsletter, an email, a post that landed, and show you how it becomes five complete Instagram posts, all in your voice, using Claude. You don't need more ideas. You need to do more with the ones you've already had.</p>
+
+      <!-- TODO: replace "Date and time to be confirmed" with the live date once locked, e.g. "Thursday 19 June · 11am AEST" -->
+      <div class="when">
+        <span class="when-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Date and time to be confirmed</span>
+        </span>
+        <span class="when-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.55-2.28A1 1 0 0 1 21 8.62v6.76a1 1 0 0 1-1.45.9L15 14"/><rect x="1" y="6" width="14" height="12" rx="2"/></svg>
+          <span>Live online</span>
+        </span>
+        <span class="when-item when-free">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Free to join</span>
+        </span>
+      </div>
+
+      <!-- REGISTRATION: hero (eye-catching ink panel) -->
+      <div class="cta-panel" id="register">
+        <p class="panel-head">Come and see how a <em>week</em> of posts gets made.</p>
+        <p class="panel-sub">Live, free, and made for women who are done starting over every week. Save your seat and I'll send you the link, plus the replay if you can't make it on the day.</p>
+        <div class="register-card">
+          <!-- Masterclass Registration Form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies tag masterclass-registered and starts the confirmation sequence (Rules 5457118 + 5457120). -->
+          <form action="https://app.kit.com/forms/9507453/subscriptions" method="post" class="seva-form formkit-form register-form" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/thank-you?source=masterclass"}}}'>
+            <input type="hidden" name="fields[source]" value="masterclass">
+            <div class="field">
+              <label for="mc-name-1">First name</label>
+              <input id="mc-name-1" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="mc-email-1">Email address</label>
+              <input id="mc-email-1" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+            </div>
+            <button type="submit">Save my seat</button>
+          </form>
+          <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img class="hero-img" src="/assets/photos/content-hero.jpg" width="787" height="1400" alt="A woman working at her laptop at the kitchen table with a cup of tea, in warm natural light" loading="eager">
+      </figure>
+    </header>
+
+    <!-- OPENING COPY -->
+    <section class="lead">
+      <p>You're not short of ideas. You've got a newsletter you wrote, an email that landed, a caption people actually replied to. The thinking is already done.</p>
+      <p>But most weeks you sit down and start again from a blank screen, as if none of it ever existed.</p>
+      <p>That's the part that eats your time. Not the ideas. The starting over.</p>
+      <p>When Claude knows your business and your voice, one thing you've already written becomes five complete posts in about an hour. Same idea, more places, still sounding like you.</p>
+      <p>That's what this masterclass is. Not the theory of AI, not a folder of prompts. The real method, shown live, turning one piece you'd recognise into a week of posts while you watch. Then it's yours to keep using.</p>
+    </section>
+
+    <!-- WALK-AWAY -->
+    <section>
+      <h2>What you'll walk away with</h2>
+      <ul class="walkaway-list">
+        <li>How to turn one piece you've already written into five complete Instagram posts</li>
+        <li>How to get Claude sounding like you, not like generic AI</li>
+        <li>A repurposing method you can run again every week</li>
+        <li>The quiet confidence that you can do this, without being technical</li>
+      </ul>
+    </section>
+
+    <!-- AGENDA -->
+    <section>
+      <h2>What we'll cover together</h2>
+
+      <div class="agenda-block">
+        <span class="agenda-num">1</span>
+        <div>
+          <h3 class="agenda-title">Start with what you've already written</h3>
+          <p class="agenda-body">How to spot the piece worth turning into more. A newsletter, an email, a post that did well. The idea is already there, we just put it to work.</p>
+        </div>
+      </div>
+
+      <div class="agenda-block">
+        <span class="agenda-num">2</span>
+        <div>
+          <h3 class="agenda-title">One piece becomes five</h3>
+          <p class="agenda-body">I'll take a real newsletter and turn it into five complete Instagram posts, live. Hook, caption, hashtags, visual direction, and call to action. All in your voice, using Claude.</p>
+        </div>
+      </div>
+
+      <div class="agenda-block">
+        <span class="agenda-num">3</span>
+        <div>
+          <h3 class="agenda-title">Making it sound like you, and keeping it going</h3>
+          <p class="agenda-body">How to teach Claude your voice so the posts read like you wrote them, and a simple weekly rhythm so you can do this again without me in the room.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR YOU / NOT FOR YOU -->
+    <section>
+      <h3 class="subsection-title">This is for you if</h3>
+      <ul class="for-list">
+        <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M19 49 C28 55 36 63 43 72 C56 52 70 33 86 18 C77 35 64 56 53 76 C50 82 45 86 41 84 C32 78 24 64 16 53 C16 51 17 50 19 49 Z"/></svg></span><span>You're using AI a bit, but you know you're not using it well</span></li>
+        <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M19 49 C28 55 36 63 43 72 C56 52 70 33 86 18 C77 35 64 56 53 76 C50 82 45 86 41 84 C32 78 24 64 16 53 C16 51 17 50 19 49 Z"/></svg></span><span>You've already made content and you're not doing enough with it</span></li>
+        <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M19 49 C28 55 36 63 43 72 C56 52 70 33 86 18 C77 35 64 56 53 76 C50 82 45 86 41 84 C32 78 24 64 16 53 C16 51 17 50 19 49 Z"/></svg></span><span>You want posts that sound like you, not like a generic AI output</span></li>
+        <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M19 49 C28 55 36 63 43 72 C56 52 70 33 86 18 C77 35 64 56 53 76 C50 82 45 86 41 84 C32 78 24 64 16 53 C16 51 17 50 19 49 Z"/></svg></span><span>You'd rather build a way of working than collect another stack of tips</span></li>
+      </ul>
+
+      <div class="not-section">
+        <h3 class="subsection-title">This is not for you if</h3>
+        <ul class="not-list">
+          <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M26 22 C33 26 39 33 70 74 C73 78 76 80 78 78 C80 76 78 73 74 68 C43 27 36 21 30 18 C27 18 25 20 26 22 Z"/><path d="M74 22 C67 26 61 33 30 74 C27 78 24 80 22 78 C20 76 22 73 26 68 C57 27 64 21 70 18 C73 18 75 20 74 22 Z"/></svg></span><span>You want a folder of prompts to copy and paste</span></li>
+          <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M26 22 C33 26 39 33 70 74 C73 78 76 80 78 78 C80 76 78 73 74 68 C43 27 36 21 30 18 C27 18 25 20 26 22 Z"/><path d="M74 22 C67 26 61 33 30 74 C27 78 24 80 22 78 C20 76 22 73 26 68 C57 27 64 21 70 18 C73 18 75 20 74 22 Z"/></svg></span><span>You're after a quick trick rather than a way of working</span></li>
+          <li><span class="marker"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M26 22 C33 26 39 33 70 74 C73 78 76 80 78 78 C80 76 78 73 74 68 C43 27 36 21 30 18 C27 18 25 20 26 22 Z"/><path d="M74 22 C67 26 61 33 30 74 C27 78 24 80 22 78 C20 76 22 73 26 68 C57 27 64 21 70 18 C73 18 75 20 74 22 Z"/></svg></span><span>You're not willing to actually try it for yourself</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KELLY NOTE -->
+    <section>
+      <h2>A note from Kelly</h2>
+      <div class="kelly-card">
+        <div class="kelly-head">
+          <img class="kelly-portrait" src="/assets/photos/kelly-note.jpg" width="440" height="640" alt="Kelly Hartley, founder of Wise Women Use AI" loading="lazy">
+          <div class="kelly-head-meta">
+            <div class="kelly-head-name">Kelly Hartley</div>
+            <div class="kelly-head-role">Founder, Wise Women Use AI</div>
+          </div>
+        </div>
+        <p>For years I had big ideas and no good way to act on them. I'd see exactly what I wanted to build, and getting there was the hard part. Working full-time, raising a family, every spare hour going into something that never quite got off the ground.</p>
+        <p>AI is what closed that gap for me. Not because I'm technical, I'm not. Because I found a way of working with it that actually fits a busy life, and it changed what I could get done in a week.</p>
+        <p>That's what I want to show you. One hour, the real method, no jargon. You'll leave knowing you can do this, and that there's a lot more available to you than you realised.</p>
+        <span class="kelly-sig">Kelly</span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2>A few quick questions</h2>
+
+      <details class="faq">
+        <summary>Is it really free?</summary>
+        <p class="faq-a">Yes. The masterclass is free to join. Register and I'll send you the link.</p>
+      </details>
+
+      <details class="faq">
+        <summary>How long is it?</summary>
+        <p class="faq-a">About 60 minutes. I'll teach and demo the whole thing, then stay on afterwards for questions.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Is it live or recorded?</summary>
+        <p class="faq-a">It's live first, so you can ask questions as we go. If you can't make it, register anyway and I'll send you the replay to watch whenever suits you.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Do I need to be technical?</summary>
+        <p class="faq-a">Not at all. This is made for women who run a business, not for tech people. I'll show you everything on screen, step by step, in plain language.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Do I need anything set up beforehand?</summary>
+        <p class="faq-a">No. A Claude account helps if you want to follow along, but it's not required to attend. Just come and watch how it works.</p>
+      </details>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section>
+      <div class="cta-panel cta-panel--red">
+        <span class="eyebrow">Still here?</span>
+        <p class="panel-head">Your seat is free. Come and <em>take</em> it.</p>
+        <p class="panel-sub">One piece you've already written, turned into a week of posts, live. Pop your details in and I'll send you the link.</p>
+        <div class="register-card">
+          <!-- Masterclass Registration Form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies tag masterclass-registered and starts the confirmation sequence (Rules 5457118 + 5457120). -->
+          <form action="https://app.kit.com/forms/9507453/subscriptions" method="post" class="seva-form formkit-form register-form" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/thank-you?source=masterclass"}}}'>
+            <input type="hidden" name="fields[source]" value="masterclass">
+            <div class="field">
+              <label for="mc-name-2">First name</label>
+              <input id="mc-name-2" type="text" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="mc-email-2">Email address</label>
+              <input id="mc-email-2" type="email" name="email_address" placeholder="Email address" autocomplete="email" required>
+            </div>
+            <button type="submit">Save my seat</button>
+          </form>
+          <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="footer-links">
+    <a href="/content-system" class="footer-link">Content System</a>
+    <a href="/hub" class="footer-link">AI Business Hub</a>
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+</footer>
+
+</body>
+</html>
