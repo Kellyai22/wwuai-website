@@ -3,6 +3,7 @@
     { "src": "/posts/(.*)",          "dest": "/posts/$1.html" },
     { "src": "/emails",              "dest": "/emails.html" },
     { "src": "/content-system",      "dest": "/content-system.html" },
+    { "src": "/content-system-offer", "dest": "/content-system-offer.html" },
     { "src": "/guide",               "dest": "/guide.html" },
     { "src": "/switch",              "dest": "/switch.html" },
     { "src": "/switch-to-claude",    "dest": "/switch-to-claude.html" },
