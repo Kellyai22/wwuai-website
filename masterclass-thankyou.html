@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're in — Stop Asking Claude to Write Captions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bordeaux: #8A1F2E;
+    --bordeaux-light: #b3374a;
+    --bordeaux-pale: #f5e8ea;
+    --pearl: #F8F8F8;
+    --ink: #29232A;
+    --driftwood: #908486;
+    --cream: #E1DAD7;
+    --cream-dark: #d4ccc9;
+    --white: #FFFFFF;
+  }
+
+  html, body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--cream);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--bordeaux);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-site {
+    font-size: 12px;
+    color: var(--driftwood);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .nav-site:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 60px;
+    text-align: center;
+  }
+
+  .script-you {
+    font-family: 'Allison', cursive;
+    font-size: clamp(90px, 18vw, 140px);
+    color: var(--bordeaux);
+    display: block;
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--driftwood);
+    max-width: 460px;
+    margin: 20px auto 0;
+    line-height: 1.75;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--bordeaux);
+    margin: 40px auto;
+    border-radius: 2px;
+    opacity: 0.35;
+  }
+
+  /* DATE CARD */
+  .date-section {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+  }
+
+  .date-card {
+    background: var(--white);
+    border: 1px solid var(--cream);
+    border-radius: 16px;
+    padding: 36px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .date-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--bordeaux);
+  }
+
+  .date-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--bordeaux);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .date-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .date-time {
+    font-size: 17px;
+    color: var(--driftwood);
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+  .date-time strong { color: var(--ink); font-weight: 500; }
+
+  .timezone-note {
+    font-size: 12px;
+    color: var(--driftwood);
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .cal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 13px 28px;
+    border-radius: 8px;
+    transition: background 0.18s ease;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .cal-btn:hover { background: var(--bordeaux); }
+
+  .cal-svg {
+    width: 17px; height: 17px;
+    stroke: currentColor; fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* EMAIL NOTE */
+  .email-note {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+  }
+
+  .email-box {
+    background: var(--bordeaux-pale);
+    border-left: 4px solid var(--bordeaux);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .email-icon-wrap {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    background: var(--bordeaux);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .email-icon-wrap svg {
+    width: 18px; height: 18px;
+    stroke: var(--white); fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .email-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .email-text p {
+    font-size: 14px;
+    color: var(--driftwood);
+    line-height: 1.65;
+  }
+  .email-text a { color: var(--bordeaux); text-decoration: none; }
+  .email-text a:hover { text-decoration: underline; }
+
+  /* WHAT TO EXPECT */
+  .expect-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--driftwood);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .expect-card {
+    background: var(--white);
+    border: 1px solid var(--cream);
+    border-radius: 14px;
+    padding: 26px 22px;
+  }
+
+  .expect-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--cream-dark);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .expect-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 7px;
+    line-height: 1.4;
+  }
+
+  .expect-body {
+    font-size: 13px;
+    color: var(--driftwood);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* NEXT STEPS */
+  .steps-section {
+    background: var(--ink);
+    padding: 60px 32px;
+  }
+
+  .steps-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .steps-section .section-heading { color: var(--pearl); margin-bottom: 6px; }
+  .steps-section .section-sub { color: var(--driftwood); margin-bottom: 32px; }
+
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-dot {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    background: var(--bordeaux);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 1px;
+  }
+
+  .step-content strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pearl);
+    margin-bottom: 3px;
+  }
+  .step-content p {
+    font-size: 13.5px;
+    color: var(--driftwood);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* PROGRAMME SEED */
+  .prg-strip {
+    border-top: 1px solid var(--cream);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .prg-strip p {
+    font-size: 15px;
+    color: var(--driftwood);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .prg-strip p em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--cream);
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--driftwood);
+    line-height: 1.9;
+  }
+  .footer a { color: var(--bordeaux); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 560px) {
+    .hero { padding: 56px 24px 40px; }
+    .script-you { font-size: clamp(80px, 22vw, 110px); }
+    .date-card { padding: 28px 22px; }
+    .date-section, .email-note, .expect-section { padding-left: 20px; padding-right: 20px; }
+    .email-box { flex-direction: column; gap: 12px; }
+    .steps-section { padding: 48px 20px; }
+    .prg-strip { padding: 32px 20px; }
+    .nav { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://wisewomenuseai.com" class="logo">Wise Women Use AI</a>
+  <a href="https://wisewomenuseai.com" class="nav-site">wisewomenuseai.com</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="script-you">you're in.</span>
+  <p class="hero-sub">Check your inbox for everything you need — your Zoom link is on its way. We'll see you on the 17th.</p>
+</section>
+
+<!-- DATE CARD -->
+<div class="date-section">
+  <div class="date-card">
+    <p class="date-label">You're registered for</p>
+    <p class="date-main">Wednesday, 17 June 2026</p>
+    <p class="date-time">at <strong>7:00pm AEST</strong></p>
+    <p class="timezone-note">Sydney · Melbourne · Brisbane &nbsp;|&nbsp; 5:00pm AWST &nbsp;|&nbsp; 9:00am BST</p>
+    <button class="cal-btn" onclick="downloadICS()">
+      <svg class="cal-svg" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      Add to my calendar
+    </button>
+  </div>
+</div>
+
+<!-- EMAIL NOTE -->
+<div class="email-note">
+  <div class="email-box">
+    <div class="email-icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </div>
+    <div class="email-text">
+      <strong>The Zoom link will arrive by email shortly.</strong>
+      <p>Can't find it? Check your spam folder and mark us as a contact so you don't miss the reminders. Any questions — <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section">
+  <h2 class="section-heading">What we're covering</h2>
+  <p class="section-sub">60 minutes. No fluff. No slides you'll never look at again.</p>
+
+  <div class="expect-grid">
+    <div class="expect-card">
+      <div class="expect-num">01</div>
+      <p class="expect-title">Why Claude keeps writing generic captions</p>
+      <p class="expect-body">It's not the AI. It's the setup. We'll look at exactly what's missing and why it matters.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">02</div>
+      <p class="expect-title">The one-idea content method</p>
+      <p class="expect-body">How to take a single thought from your week and turn it into a full week of platform-ready content — without starting from scratch every time.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">03</div>
+      <p class="expect-title">A live demonstration</p>
+      <p class="expect-body">You'll see exactly how this works in real time — so you can replicate it the moment you close the Zoom.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">04</div>
+      <p class="expect-title">What comes next, if you want it</p>
+      <p class="expect-body">At the end I'll share how to keep building this — for women who want the full system, not just the idea.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE WE MEET -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <h2 class="section-heading">Before we meet on the 17th</h2>
+    <p class="section-sub">Three things that'll make the session more useful for you.</p>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-dot">1</div>
+        <div class="step-content">
+          <strong>Have Claude open</strong>
+          <p>Free or Pro — either works. If you've been meaning to get started, now's the moment. We'll be using it live.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">2</div>
+        <div class="step-content">
+          <strong>Think of one piece of content you keep meaning to create</strong>
+          <p>An idea sitting in your notes, a question a client asked, something you said in conversation this week. That's your raw material.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3</div>
+        <div class="step-content">
+          <strong>Come with your camera off and your tea on</strong>
+          <p>No hot seats, no homework before you arrive. Just show up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME SEED — subtle, one line -->
+<div class="prg-strip">
+  <p>At the end of the session, I'll be opening the doors to <em>The Content System Programme</em> — a five-week group build for women who want the whole system. There'll be a bonus for those attending live on the night.</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    Wise Women Use AI &nbsp;·&nbsp; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a><br>
+    Questions? <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a>
+  </p>
+</footer>
+
+<script>
+function downloadICS() {
+  var ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Wise Women Use AI//Masterclass//EN',
+    'BEGIN:VEVENT',
+    'DTSTART;TZID=Australia/Sydney:20260617T190000',
+    'DTEND;TZID=Australia/Sydney:20260617T200000',
+    'SUMMARY:Stop Asking Claude to Write Captions — Free Masterclass',
+    'DESCRIPTION:A free 60-minute masterclass with Kelly at Wise Women Use AI.\\nYour Zoom link will be emailed to you — check your inbox.\\n\\nwisewomenuseai.com',
+    'ORGANIZER;CN=Wise Women Use AI:mailto:hello@wisewomenuseai.com',
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'BEGIN:VALARM',
+    'TRIGGER:-PT60M',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:Masterclass starts in 1 hour',
+    'END:VALARM',
+    'BEGIN:VALARM',
+    'TRIGGER:-PT15M',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:Masterclass starts in 15 minutes — check your email for the Zoom link',
+    'END:VALARM',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'wwuai-masterclass-17-june.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
