@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're in — Stop Asking Claude to Write Captions</title>
+<title>You're in. Stop Asking Claude to Write Captions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
@@ -64,12 +64,21 @@
     text-align: center;
   }
 
-  .script-you {
+  .script-lead {
     font-family: 'Allison', cursive;
-    font-size: clamp(90px, 18vw, 140px);
+    font-size: clamp(48px, 9vw, 72px);
     color: var(--bordeaux);
     display: block;
-    line-height: 0.95;
+    line-height: 0.85;
+    margin-bottom: -28px;
+  }
+
+  .script-you {
+    font-family: 'Allison', cursive;
+    font-size: clamp(78px, 15vw, 118px);
+    color: var(--bordeaux);
+    display: block;
+    line-height: 0.9;
     margin-bottom: 8px;
   }
 
@@ -229,6 +238,7 @@
     max-width: 720px;
     margin: 0 auto;
     padding: 0 32px 60px;
+    text-align: center;
   }
 
   .section-heading {
@@ -248,7 +258,7 @@
 
   .expect-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
 
@@ -257,6 +267,7 @@
     border: 1px solid var(--cream);
     border-radius: 14px;
     padding: 26px 22px;
+    text-align: left;
   }
 
   .expect-num {
@@ -374,9 +385,11 @@
   /* RESPONSIVE */
   @media (max-width: 560px) {
     .hero { padding: 56px 24px 40px; }
-    .script-you { font-size: clamp(80px, 22vw, 110px); }
+    .script-lead { font-size: clamp(40px, 11vw, 60px); }
+    .script-you { font-size: clamp(64px, 18vw, 96px); }
     .date-card { padding: 28px 22px; }
     .date-section, .email-note, .expect-section { padding-left: 20px; padding-right: 20px; }
+    .expect-grid { grid-template-columns: 1fr; }
     .email-box { flex-direction: column; gap: 12px; }
     .steps-section { padding: 48px 20px; }
     .prg-strip { padding: 32px 20px; }
@@ -394,8 +407,9 @@
 
 <!-- HERO -->
 <section class="hero">
+  <span class="script-lead">Wise woman,</span>
   <span class="script-you">you're in.</span>
-  <p class="hero-sub">Check your inbox for everything you need — your Zoom link is on its way. We'll see you on the 17th.</p>
+  <p class="hero-sub">Check your inbox for everything you need. Your Zoom link is on its way. We'll see you on the 17th.</p>
 </section>
 
 <!-- DATE CARD -->
@@ -428,7 +442,7 @@
     </div>
     <div class="email-text">
       <strong>The Zoom link will arrive by email shortly.</strong>
-      <p>Can't find it? Check your spam folder and mark us as a contact so you don't miss the reminders. Any questions — <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a></p>
+      <p>Can't find it? Check your spam folder and mark us as a contact so you don't miss the reminders. Any questions? Email <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a></p>
     </div>
   </div>
 </div>
@@ -447,17 +461,17 @@
     <div class="expect-card">
       <div class="expect-num">02</div>
       <p class="expect-title">The one-idea content method</p>
-      <p class="expect-body">How to take a single thought from your week and turn it into a full week of platform-ready content — without starting from scratch every time.</p>
+      <p class="expect-body">How to take a single thought from your week and turn it into a full week of platform-ready content, without starting from scratch every time.</p>
     </div>
     <div class="expect-card">
       <div class="expect-num">03</div>
       <p class="expect-title">A live demonstration</p>
-      <p class="expect-body">You'll see exactly how this works in real time — so you can replicate it the moment you close the Zoom.</p>
+      <p class="expect-body">You'll see exactly how this works in real time, so you can replicate it the moment you close the Zoom.</p>
     </div>
     <div class="expect-card">
       <div class="expect-num">04</div>
       <p class="expect-title">What comes next, if you want it</p>
-      <p class="expect-body">At the end I'll share how to keep building this — for women who want the full system, not just the idea.</p>
+      <p class="expect-body">At the end I'll share how to keep building this, for women who want the full system, not just the idea.</p>
     </div>
   </div>
 </section>
@@ -473,7 +487,7 @@
         <div class="step-dot">1</div>
         <div class="step-content">
           <strong>Have Claude open</strong>
-          <p>Free or Pro — either works. If you've been meaning to get started, now's the moment. We'll be using it live.</p>
+          <p>Free or Pro, either works. If you've been meaning to get started, now's the moment. We'll be using it live.</p>
         </div>
       </div>
       <div class="step-item">
@@ -494,9 +508,9 @@
   </div>
 </section>
 
-<!-- PROGRAMME SEED — subtle, one line -->
+<!-- PROGRAMME SEED - subtle, one line -->
 <div class="prg-strip">
-  <p>At the end of the session, I'll be opening the doors to <em>The Content System Programme</em> — a five-week group build for women who want the whole system. There'll be a bonus for those attending live on the night.</p>
+  <p>At the end of the session, I'll be opening the doors to <em>The Content System Programme</em>, a five-week group build for women who want the whole system. There'll be a bonus for those attending live on the night.</p>
 </div>
 
 <!-- FOOTER -->
@@ -516,8 +530,8 @@ function downloadICS() {
     'BEGIN:VEVENT',
     'DTSTART;TZID=Australia/Sydney:20260617T190000',
     'DTEND;TZID=Australia/Sydney:20260617T200000',
-    'SUMMARY:Stop Asking Claude to Write Captions — Free Masterclass',
-    'DESCRIPTION:A free 60-minute masterclass with Kelly at Wise Women Use AI.\\nYour Zoom link will be emailed to you — check your inbox.\\n\\nwisewomenuseai.com',
+    'SUMMARY:Stop Asking Claude to Write Captions (Free Masterclass)',
+    'DESCRIPTION:A free 60-minute masterclass with Kelly at Wise Women Use AI.\\nYour Zoom link will be emailed to you. Check your inbox.\\n\\nwisewomenuseai.com',
     'ORGANIZER;CN=Wise Women Use AI:mailto:hello@wisewomenuseai.com',
     'STATUS:CONFIRMED',
     'SEQUENCE:0',
@@ -529,7 +543,7 @@ function downloadICS() {
     'BEGIN:VALARM',
     'TRIGGER:-PT15M',
     'ACTION:DISPLAY',
-    'DESCRIPTION:Masterclass starts in 15 minutes — check your email for the Zoom link',
+    'DESCRIPTION:Masterclass starts in 15 minutes. Check your email for the Zoom link',
     'END:VALARM',
     'END:VEVENT',
     'END:VCALENDAR'

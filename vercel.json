@@ -3,6 +3,7 @@
     { "src": "/posts/(.*)",          "dest": "/posts/$1.html" },
     { "src": "/emails",              "dest": "/emails.html" },
     { "src": "/masterclass",         "dest": "/masterclass.html" },
+    { "src": "/masterclass-thankyou", "dest": "/masterclass-thankyou.html" },
     { "src": "/guide",               "dest": "/guide.html" },
     { "src": "/switch",              "dest": "/switch.html" },
     { "src": "/switch-to-claude",    "dest": "/switch-to-claude.html" },
