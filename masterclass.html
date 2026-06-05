@@ -634,5 +634,26 @@
   <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
 </footer>
 
+
+<script>
+  // The Kit registration forms post directly to Kit. Without Kit's FormKit JS,
+  // the browser followed the POST to Kit's generic success page instead of our
+  // branded thank-you page. This intercepts the submit, sends the signup to Kit
+  // in the background, then redirects to the thank-you page.
+  document.querySelectorAll("form.register-form").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      if (btn) { btn.disabled = true; btn.textContent = "Saving your seat…"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new URLSearchParams(new FormData(form)),
+        mode: "no-cors"
+      }).finally(function () {
+        window.location.href = "https://www.wisewomenuseai.com/masterclass-thankyou";
+      });
+    });
+  });
+</script>
 </body>
 </html>
