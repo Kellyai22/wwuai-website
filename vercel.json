@@ -1,28 +1,113 @@
 {
   "routes": [
-    { "src": "/posts/(.*)",          "dest": "/posts/$1.html" },
-    { "src": "/emails",              "dest": "/emails.html" },
-    { "src": "/masterclass",         "dest": "/masterclass.html" },
-    { "src": "/masterclass-thankyou", "dest": "/masterclass-thankyou.html" },
-    { "src": "/guide",               "dest": "/guide.html" },
-    { "src": "/switch",              "dest": "/switch.html" },
-    { "src": "/switch-to-claude",    "dest": "/switch-to-claude.html" },
-    { "src": "/switch-wwuai",        "dest": "/switch-wwuai.html" },
-    { "src": "/starter",             "dest": "/starter.html" },
-    { "src": "/community",           "dest": "/community.html" },
-    { "src": "/work",                "dest": "/work.html" },
-    { "src": "/blog",                "dest": "/blog.html" },
-    { "src": "/voice",               "dest": "/voice.html" },
-    { "src": "/thankyou",            "dest": "/thankyou.html" },
-    { "src": "/thank-you",           "dest": "/thank-you.html" },
-    { "src": "/dashboard",           "dest": "/dashboard.html" },
-    { "src": "/carousel",            "dest": "/carousel-maker.html" },
-    { "src": "/carousel-maker",      "dest": "/carousel-maker.html" },
-    { "src": "/carousel-guide",      "dest": "/carousel-guide.html" },
-    { "src": "/hub/welcome",         "dest": "/hub-welcome.html" },
-    { "src": "/hub-install",              "headers": {"Location": "/hub"}, "status": 301 },
-    { "src": "/hub",                      "dest": "/hub-install.html" },
-    { "src": "/links",                    "dest": "/hub.html" },
-    { "src": "/ai-business-hub-install",  "headers": {"Location": "/hub"}, "status": 301 }
+    {
+      "src": "/masterclass.ics",
+      "headers": {
+        "Content-Type": "text/calendar; charset=utf-8"
+      },
+      "continue": true
+    },
+    {
+      "src": "/posts/(.*)",
+      "dest": "/posts/$1.html"
+    },
+    {
+      "src": "/emails",
+      "dest": "/emails.html"
+    },
+    {
+      "src": "/masterclass",
+      "dest": "/masterclass.html"
+    },
+    {
+      "src": "/masterclass-thankyou",
+      "dest": "/masterclass-thankyou.html"
+    },
+    {
+      "src": "/guide",
+      "dest": "/guide.html"
+    },
+    {
+      "src": "/switch",
+      "dest": "/switch.html"
+    },
+    {
+      "src": "/switch-to-claude",
+      "dest": "/switch-to-claude.html"
+    },
+    {
+      "src": "/switch-wwuai",
+      "dest": "/switch-wwuai.html"
+    },
+    {
+      "src": "/starter",
+      "dest": "/starter.html"
+    },
+    {
+      "src": "/community",
+      "dest": "/community.html"
+    },
+    {
+      "src": "/work",
+      "dest": "/work.html"
+    },
+    {
+      "src": "/blog",
+      "dest": "/blog.html"
+    },
+    {
+      "src": "/voice",
+      "dest": "/voice.html"
+    },
+    {
+      "src": "/thankyou",
+      "dest": "/thankyou.html"
+    },
+    {
+      "src": "/thank-you",
+      "dest": "/thank-you.html"
+    },
+    {
+      "src": "/dashboard",
+      "dest": "/dashboard.html"
+    },
+    {
+      "src": "/carousel",
+      "dest": "/carousel-maker.html"
+    },
+    {
+      "src": "/carousel-maker",
+      "dest": "/carousel-maker.html"
+    },
+    {
+      "src": "/carousel-guide",
+      "dest": "/carousel-guide.html"
+    },
+    {
+      "src": "/hub/welcome",
+      "dest": "/hub-welcome.html"
+    },
+    {
+      "src": "/hub-install",
+      "headers": {
+        "Location": "/hub"
+      },
+      "status": 301
+    },
+    {
+      "src": "/hub",
+      "dest": "/hub-install.html"
+    },
+    {
+      "src": "/links",
+      "dest": "/hub.html"
+    },
+    {
+      "src": "/ai-business-hub-install",
+      "headers": {
+        "Location": "/hub"
+      },
+      "status": 301
+    }
   ]
 }
