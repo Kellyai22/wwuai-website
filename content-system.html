@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content System Programme · Wise Women Use AI</title>
+  <meta name="description" content="A five-week live programme that builds your content system from the ground up. In your voice. Running by Week 3.">
+
+  <meta property="og:title" content="Content System Programme · Wise Women Use AI">
+  <meta property="og:description" content="A five-week live programme that builds your content system from the ground up. In your voice. Running by Week 3.">
+  <meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+  <meta property="og:url" content="https://wisewomenuseai.com/content-system">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pearl:      #F8F8F8;
+      --ink:        #29232A;
+      --bordeaux:   #8A1F2E;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Nav */
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248,248,248,0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 10px;
+      letter-spacing: 0.20em;
+      color: var(--driftwood);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--bordeaux);
+      text-decoration: none;
+      border: 1px solid var(--bordeaux);
+      padding: 7px 16px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--bordeaux);
+      color: var(--pearl);
+    }
+
+    /* Page layout */
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 72px 0 28px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Allison', cursive;
+      font-size: 28px;
+      color: var(--bordeaux);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--bordeaux);
+    }
+
+    .hero-subheadline {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-cta-btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--pearl);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-cta-btn:hover {
+      background: var(--bordeaux);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(138,31,46,0.18);
+    }
+
+    .hero-cta-note {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--driftwood);
+      margin-top: 12px;
+    }
+
+    /* Section divider */
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--cream-dark);
+      margin: 36px 0;
+    }
+
+    /* Opening prose */
+
+    .prose p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Section headings */
+
+    .section-eyebrow {
+      font-family: 'Allison', cursive;
+      font-size: 22px;
+      color: var(--bordeaux);
+      font-weight: 400;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-family: 'Allison', cursive;
+      font-size: clamp(36px, 5.5vw, 52px);
+      font-weight: 400;
+      color: var(--bordeaux);
+      line-height: 1.2;
+      margin-bottom: 36px;
+    }
+
+    /* Modules */
+
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .module {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .module:last-child {
+      border-bottom: none;
+    }
+
+    .module-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--bordeaux);
+      padding-top: 4px;
+      line-height: 1;
+    }
+
+    .module-number-big {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .module-number-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+    }
+
+    .module-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .module-note {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--driftwood);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .module-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    /* How it works */
+
+    .how-prose {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .cards-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .mini-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+
+    .mini-card-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--bordeaux);
+      margin-bottom: 6px;
+    }
+
+    .mini-card-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.55;
+    }
+
+    /* Outcomes */
+
+    .outcomes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .outcomes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: var(--bordeaux);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .check-icon svg {
+      color: var(--pearl);
+    }
+
+    /* For / Not for */
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .fit-col-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .fit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink);
+      font-weight: 300;
+    }
+
+    .fit-dot {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+
+    .fit-dot.yes { background: var(--bordeaux); }
+    .fit-dot.no  { background: var(--cream-dark); border: 1px solid var(--driftwood); }
+
+    /* Investment card */
+
+    .investment-card {
+      background: var(--ink);
+      border-radius: 8px;
+      padding: 36px 44px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .investment-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(138,31,46,0.09);
+      pointer-events: none;
+    }
+
+    .investment-eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 10px;
+    }
+
+    .investment-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--pearl);
+      margin-bottom: 16px;
+    }
+
+    .investment-price {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 10vw, 76px);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--pearl);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .investment-currency {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(248,248,248,0.45);
+      margin-bottom: 18px;
+    }
+
+    .investment-note {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(248,248,248,0.50);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .investment-btn {
+      display: inline-block;
+      background: var(--bordeaux);
+      color: var(--pearl);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 18px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .investment-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .investment-secure {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(248,248,248,0.30);
+      margin-top: 16px;
+    }
+
+    /* Kelly note */
+
+    .kelly-note {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 32px 40px 28px;
+      position: relative;
+    }
+
+    .kelly-note::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      color: var(--cream-dark);
+      position: absolute;
+      top: 8px;
+      left: 24px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .kelly-note-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink);
+      padding-top: 28px;
+    }
+
+    .kelly-note-body p {
+      margin-bottom: 18px;
+    }
+
+    .kelly-note-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .kelly-sig {
+      font-family: 'Allison', cursive;
+      font-size: 40px;
+      color: var(--bordeaux);
+      display: block;
+      margin-top: 24px;
+      line-height: 1;
+    }
+
+    /* Final CTA */
+
+    .final-cta {
+      text-align: center;
+      padding: 36px 0 0;
+    }
+
+    .final-cta-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
+
+    .final-cta-headline strong {
+      font-weight: 700;
+      color: var(--bordeaux);
+    }
+
+    /* Social row */
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .social-btn:hover {
+      background: var(--ink);
+      color: var(--pearl);
+      border-color: var(--ink);
+    }
+
+    /* Footer */
+
+    .page-footer {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--cream-dark);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--driftwood);
+    }
+
+    .page-footer a {
+      color: var(--driftwood);
+      text-decoration: none;
+    }
+
+    .page-footer a:hover {
+      color: var(--bordeaux);
+    }
+
+    .page-footer .script {
+      font-family: 'Allison', cursive;
+      font-size: 18px;
+      color: var(--bordeaux);
+      font-weight: 400;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    /* Scroll reveal */
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 560px) {
+      .fit-grid { grid-template-columns: 1fr; }
+      .cards-2x2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .site-nav { padding: 12px 16px; }
+      .nav-wordmark { display: none; }
+      .page { padding: 0 16px 60px; }
+      .hero { padding: 48px 0 40px; }
+      .investment-card { padding: 36px 24px; }
+      .kelly-note { padding: 28px 24px 28px; }
+      .kelly-note::before { font-size: 60px; left: 16px; }
+      .kelly-note-body { padding-top: 18px; }
+      .module { grid-template-columns: 44px 1fr; gap: 0 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="site-nav">
+  <a href="/" class="nav-logo" aria-label="Wise Women Use AI home">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <!-- STRIPE: replace href below with your $595 AUD Stripe payment link -->
+  <a href="#invest" class="nav-cta">Join the cohort</a>
+</nav>
+
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-eyebrow">For the woman in business who knows she needs to be more visible,<br>and is ready to do something about it</span>
+    <h1 class="hero-headline">
+      You don't need more content ideas.<br>
+      You need a system that does <em>more</em> with the ones you've already had.
+    </h1>
+    <p class="hero-subheadline">
+      A five-week live programme that builds your content system from the ground up. In your voice. Running by Week&nbsp;3.
+    </p>
+    <!-- STRIPE: replace href below with your $595 AUD Stripe payment link -->
+    <a href="#invest" class="hero-cta-btn">Join the next cohort &middot; $595 AUD</a>
+    <p class="hero-cta-note">One payment &middot; Secure checkout via Stripe &middot; Claude Pro required</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Opening -->
+  <div class="prose reveal">
+    <p>You already have the ideas. That has never been the problem.</p>
+    <p>The problem is that every week those ideas go through the same cycle. You think of something worth saying. You open Claude, type something in, get something back that is almost right but not quite you. You edit it into something usable. You post it. And next week you start again from zero.</p>
+    <p>The visibility that attracts new clients, the consistent presence that keeps you front of mind, the ability to show up first and often in your space: all of it depends on content that compounds. And it cannot compound if you are rebuilding it from scratch every single week.</p>
+    <p>That is not a prompting problem. And it is not an ideas problem. It is a systems problem.</p>
+    <p>The Content System Programme builds the real thing. Not a course about AI. Not a set of prompts to copy. A working content system, built around your business and your voice, that takes what you already know and makes it go further every week.</p>
+    <p>By the time we finish, your system exists. Your ideas have somewhere to go. Claude knows who you are.</p>
+  </div>
+
+  <hr class="rule" style="margin-bottom: 20px;">
+
+  <!-- Modules -->
+  <div class="reveal" style="margin-bottom: 0;">
+    <h2 class="section-heading" style="margin-bottom: 10px;">What we build together</h2>
+  </div>
+
+  <div class="modules">
+
+    <div class="module reveal">
+      <div class="module-number">
+        <span class="module-number-big">01</span>
+        <span class="module-number-label">Week</span>
+      </div>
+      <div class="module-content">
+        <h3 class="module-title">Teach Claude who you are</h3>
+        <p class="module-note">This is the step most people skip. Which is why their AI content sounds like everyone else's.</p>
+        <p class="module-body">You already have what Claude needs. It lives in your about page, your old conversations, your brain. We collect it, shape it, and load it into a Claude Project that knows your voice, your audience, your offers, and the things you'd never say. Every piece of content you produce from here starts from the right place.</p>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-number">
+        <span class="module-number-big">02</span>
+        <span class="module-number-label">Week</span>
+      </div>
+      <div class="module-content">
+        <h3 class="module-title">Your content strategy</h3>
+        <p class="module-note">Not a complicated framework. Not a content calendar with seventeen columns.</p>
+        <p class="module-body">A simple structure. Three or four content pillars that reflect what your business actually does and what your audience actually needs. A posting rhythm that fits your real life, not someone else's. Once this is in your Claude Project, you stop deciding what to post. You just start.</p>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-number">
+        <span class="module-number-big">03</span>
+        <span class="module-number-label">Week</span>
+      </div>
+      <div class="module-content">
+        <h3 class="module-title">The weekly workflow</h3>
+        <p class="module-note">This is where you feel it working.</p>
+        <p class="module-body">From rough thinking on Sunday to scheduled content by Wednesday. You run the full workflow during this module with your real business, producing your actual content for that week. Not a practice run. Most people leave this session with a newsletter draft, five Instagram posts, and a video script. All from one idea. All in their voice.</p>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-number">
+        <span class="module-number-big">04</span>
+        <span class="module-number-label">Week</span>
+      </div>
+      <div class="module-content">
+        <h3 class="module-title">Making it sound like you</h3>
+        <p class="module-note">The fear is real. "But it won't sound like me." This module answers it properly.</p>
+        <p class="module-body">You learn to read AI output for what gives it away, edit for rhythm and specificity, and add the detail that makes it true and yours. You also build your personal style guide, a one-page reference that makes every future edit faster.</p>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="module-number">
+        <span class="module-number-big">05</span>
+        <span class="module-number-label">Week</span>
+      </div>
+      <div class="module-content">
+        <h3 class="module-title">Making it stick</h3>
+        <p class="module-note">You've had the Week 3 feeling before. The energy that doesn't last. This module builds the structure that makes it last anyway.</p>
+        <p class="module-body">Your minimal weekly routine. Your batching option for harder weeks. The checklists and references that mean you never have to reinvent it. The system runs because you've designed it to run. Not because you remembered to.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="rule">
+
+  <!-- How it works -->
+  <div class="reveal">
+    <h2 class="section-heading">How it works</h2>
+  </div>
+
+  <div class="reveal">
+    <p class="how-prose">Five weeks. One live Zoom call per week. Async support in between.</p>
+    <p class="how-prose">Each week has a focus, a call, and something real you walk away with. You work at your own pace.</p>
+    <p class="how-prose">The calls are where the real work happens. You bring your actual business. Share your screen, ask the question, get it sorted. Recordings go into the Skool classroom promptly after each call if you can't make it live.</p>
+    <p class="how-prose">When you graduate, you've built your system. From there, the Growth Membership is the natural next step: monthly live sessions, ongoing support, and a community of women running their systems alongside yours. This monthly membership is open to programme graduates only.</p>
+
+    <div class="cards-2x2">
+      <div class="mini-card">
+        <div class="mini-card-label">Format</div>
+        <div class="mini-card-body">Five weekly live Zoom calls plus async support throughout</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Pace</div>
+        <div class="mini-card-body">Self-paced within each week. Work at the speed that fits your life.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Community</div>
+        <div class="mini-card-body">Your cohort classroom in Skool during the programme, and access to the Growth Membership after graduation.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Requirement</div>
+        <div class="mini-card-body">Claude Pro. It's non-negotiable and the first thing we sort in the pre-module.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Outcomes -->
+  <div class="reveal">
+    <h2 class="section-heading">What you walk away with</h2>
+  </div>
+
+  <ul class="outcomes-list reveal">
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>A Claude Project built for your business: voice, audience, offers, content strategy, style guide. All loaded. All working.</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Your content strategy document and posting rhythm</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>The weekly workflow you've already run with your real content</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>A week of actual content produced during the programme</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Your personal style guide</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Your first month of content planned</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Checklists and reference docs for every repeating task</span>
+    </li>
+    <li>
+      <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span>Lifetime access to the programme materials</span>
+    </li>
+  </ul>
+
+  <hr class="rule">
+
+  <!-- For / Not for -->
+  <div class="reveal">
+    <h2 class="section-heading">Is this for you?</h2>
+  </div>
+
+  <div class="fit-grid reveal">
+    <div class="fit-col">
+      <div class="fit-col-heading">This is for you if&hellip;</div>
+      <ul class="fit-list">
+        <li><span class="fit-dot yes"></span><span>You're a coach, consultant, or service-based business owner</span></li>
+        <li><span class="fit-dot yes"></span><span>You've been using Claude or ChatGPT but the output doesn't quite sound like you</span></li>
+        <li><span class="fit-dot yes"></span><span>You post inconsistently. Not because you don't care, but because you don't have a system that makes it easy enough.</span></li>
+        <li><span class="fit-dot yes"></span><span>You watched the masterclass and thought: I need that to work every week, not just once</span></li>
+        <li><span class="fit-dot yes"></span><span>You're ready to actually build it, not just learn about it</span></li>
+      </ul>
+    </div>
+    <div class="fit-col">
+      <div class="fit-col-heading">This is not for you if&hellip;</div>
+      <ul class="fit-list">
+        <li><span class="fit-dot no"></span><span>You're looking for a content strategy course with lots of theory and no doing</span></li>
+        <li><span class="fit-dot no"></span><span>You want someone to create your content for you</span></li>
+        <li><span class="fit-dot no"></span><span>You're not willing to show up for five weeks and do the work during the programme</span></li>
+        <li><span class="fit-dot no"></span><span>You don't have Claude Pro. It's a non-negotiable requirement.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Investment -->
+  <div id="invest" class="reveal">
+    <h2 class="section-heading">Your investment</h2>
+  </div>
+
+  <div class="investment-card reveal">
+    <p class="investment-eyebrow">Standard pricing</p>
+    <h3 class="investment-heading">Content System Programme</h3>
+    <div class="investment-price">$595</div>
+    <div class="investment-currency">AUD &middot; one payment, no subscription</div>
+    <p class="investment-note">
+      Five live Zoom calls &middot; Async support throughout<br>
+      Skool cohort classroom &middot; Lifetime access to materials<br>
+      Growth Membership access after graduation
+    </p>
+    <!-- STRIPE: replace href below with your $595 AUD Stripe payment link -->
+    <a href="https://buy.stripe.com/00wbJ3dd9aEH2N30px6Ri03" class="investment-btn">Join the next cohort &middot; $595 AUD</a>
+    <p class="investment-secure">Secure checkout via Stripe &middot; Claude Pro required</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Kelly note -->
+  <div class="kelly-note reveal">
+    <div class="kelly-note-body">
+      <p>I built this programme because I run this system myself.</p>
+      <p>Every week, my content starts with one idea. Claude knows my business, my voice, the things I'd never say. By Tuesday my newsletter is drafted, my posts are written, my video scripts are ready. I don't spend my week thinking about content. I spend it doing the work that actually moves my business forward.</p>
+      <p>That's what I want for you. Not the idea of AI content. The actual thing, running, in your business, every week.</p>
+      <p>The cohort is small on purpose. I want to know your business and I want this to work for you. If you're ready to build the real system, this is the next step.</p>
+      <span class="kelly-sig">Kelly</span>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta reveal">
+    <p class="final-cta-headline">
+      You don't need more ideas.<br>
+      You need to do <strong>more</strong> with the ones you've already had.
+    </p>
+    <!-- STRIPE: replace href below with your $595 AUD Stripe payment link -->
+    <a href="https://buy.stripe.com/00wbJ3dd9aEH2N30px6Ri03" class="hero-cta-btn">Join the next cohort &middot; $595 AUD</a>
+    <p class="hero-cta-note" style="margin-top:14px;">One payment &middot; Secure checkout via Stripe &middot; Claude Pro required</p>
+  </div>
+
+  <!-- Socials -->
+  <div class="social-row">
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="mailto:hello@wisewomenuseai.com" class="social-btn" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p><a href="/">Wise Women Use AI</a> &middot; Made with <span class="script">care</span> in Melbourne &middot; <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a></p>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length || !window.IntersectionObserver) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
