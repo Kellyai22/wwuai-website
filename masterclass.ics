@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wise Women Use AI//Masterclass//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:masterclass-2026-06-17@wisewomenuseai.com
+DTSTAMP:20260605T000000Z
+DTSTART:20260617T090000Z
+DTEND:20260617T100000Z
+SUMMARY:Stop Asking Claude to Write Captions (Free Masterclass)
+DESCRIPTION:A free 60-minute masterclass with Kelly at Wise Women Use AI.\nYour Zoom link will be emailed to you. Check your inbox.\n\nwisewomenuseai.com
+LOCATION:Online (Zoom link emailed)
+ORGANIZER;CN=Wise Women Use AI:mailto:hello@wisewomenuseai.com
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+DESCRIPTION:Masterclass starts in 1 hour
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Masterclass starts in 15 minutes. Check your email for the Zoom link
+END:VALARM
+END:VEVENT
+END:VCALENDAR
