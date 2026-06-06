@@ -24,6 +24,10 @@
       "dest": "/masterclass-thankyou.html"
     },
     {
+      "src": "/content-system",
+      "dest": "/content-system.html"
+    },
+    {
       "src": "/guide",
       "dest": "/guide.html"
     },
