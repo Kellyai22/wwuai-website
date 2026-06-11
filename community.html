@@ -4,31 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/community">
-  <title>AI Community for Women Entrepreneurs | Wise Women Use AI</title>
-  <meta name="description" content="A paid Skool community for women entrepreneurs who want to use AI practically, without the jargon, hype, or starting over every five minutes.">
+  <title>Free AI Community for Women Entrepreneurs | Wise Women Use AI</title>
+  <meta name="description" content="A free Skool community for women in business who want to use AI practically, without the jargon or hype. Optional Growth Membership when you're ready for the full library.">
 
-  <meta property="og:title" content="Join the Community | Wise Women Use AI">
-  <meta property="og:description" content="A paid Skool community for women entrepreneurs who want to use AI practically, without the jargon or starting over every five minutes.">
+  <meta property="og:title" content="Join the free community | Wise Women Use AI">
+  <meta property="og:description" content="A free Skool community for women in business who want to use AI practically. Join free, and upgrade to Growth Membership whenever you're ready.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/community">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ink:        #29232A;
-      --brown-mid:    #968880;
-      --brown-light:  #8C7E74;
-      --bordeaux:        #8A1F2E;
-      --terra-deep:   #a85c3c;
+      --ink:          #29232A;
+      --driftwood:    #908486;
+      --brown-mid:    #908486;
+      --brown-light:  #908486;
+      --bordeaux:     #8A1F2E;
+      --bordeaux-deep:#6E1925;
+      --terra-deep:   #6E1925;
+      --pearl:        #F8F8F8;
       --cream:        #F8F8F8;
-      --cream-dark:   #EAE5DF;
-      --cream-mid:    #F0EBE5;
+      --cream-dark:   #E1DAD7;
+      --cream-mid:    #EFEAE7;
       --white:        #FFFFFF;
       --serif: 'Playfair Display', Georgia, serif;
-      --sans:         'Montserrat', sans-serif;
+      --sans:  'Plus Jakarta Sans', sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -470,6 +473,159 @@
 
     .footer-links a:hover { color: var(--ink); }
 
+    /* ââ Hero join card ââââââââââââââââââââââââââ */
+    .join-card { display: flex; flex-direction: column; }
+
+    .join-card-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 12px;
+    }
+
+    .btn-join-block {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px 20px;
+    }
+
+    .btn-join-outline {
+      background: transparent;
+      color: var(--bordeaux);
+    }
+
+    .btn-join-outline:hover {
+      background: var(--bordeaux);
+      border-color: var(--bordeaux);
+      color: var(--white);
+    }
+
+    /* ââ Growth upsell âââââââââââââââââââââââââââ */
+    .growth {
+      background: var(--ink);
+      padding: 72px 48px;
+    }
+
+    .growth-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .growth .section-eyebrow {
+      color: var(--cream-dark);
+      opacity: 0.75;
+    }
+
+    .growth h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .growth h2 em {
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    .growth-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .tier {
+      border: 1px solid rgba(248, 248, 248, 0.16);
+      border-radius: 10px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tier-featured {
+      border-color: var(--bordeaux);
+      background: rgba(138, 31, 46, 0.14);
+    }
+
+    .tier-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #E0909B;
+      margin-bottom: 10px;
+    }
+
+    .tier-name {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cream-dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .tier-price {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .tier-per {
+      font-size: 15px;
+      color: var(--brown-mid);
+    }
+
+    .tier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 26px;
+      flex: 1;
+    }
+
+    .tier-list li {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .tier-list li::before {
+      content: "\2192";
+      position: absolute;
+      left: 0;
+      color: #E0909B;
+    }
+
+    .growth-note {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--brown-mid);
+      margin-top: 28px;
+    }
+
     /* ââ Responsive âââââââââââââââââââââââââââââ */
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
@@ -487,7 +643,8 @@
       .for-who { padding: 48px 24px; }
       .for-grid { grid-template-columns: 1fr; }
 
-      .pricing { padding: 48px 24px; }
+      .growth { padding: 48px 24px; }
+      .tier-grid { grid-template-columns: 1fr; }
 
       .bottom-cta { padding: 48px 24px; }
 
@@ -505,19 +662,29 @@
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Wise Women Use AI Community",
-  "description": "A paid Skool community for women entrepreneurs who want to use AI practically, without the jargon, hype, or starting over every five minutes. Monthly training, a library of resources, and a room full of women doing the same work.",
+  "description": "A free Skool community for women in business who want to use AI practically, without the jargon or hype. Free to join, with an optional paid Growth Membership for the full library of tools, prompts and workflows.",
   "provider": {
     "@type": "Organization",
     "name": "Wise Women Use AI",
     "url": "https://www.wisewomenuseai.com"
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "197",
-    "priceCurrency": "AUD",
-    "description": "One-time membership fee",
-    "availability": "https://schema.org/InStock"
-  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AUD",
+      "description": "Free community membership",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Growth Membership",
+      "price": "49",
+      "priceCurrency": "AUD",
+      "description": "Optional paid upgrade, billed monthly, for the full library of tools, prompts and workflows",
+      "availability": "https://schema.org/InStock"
+    }
+  ],
   "url": "https://www.wisewomenuseai.com/community",
   "courseMode": "online",
   "educationalLevel": "beginner",
@@ -546,45 +713,40 @@
       <p class="hero-eyebrow">Wise Women Use AI · the community</p>
       <h1>You found your<br>way here. <em>Good.</em></h1>
       <p class="hero-sub">
-        This is where women entrepreneurs learn to use AI properly, not the hype version. The one that actually saves you time. The community is practical, no-jargon, and built around the way you actually run a business.
+        This is where women in business learn to use AI properly, not the hype version. The kind that actually saves you time. It's free to join, practical, no jargon, and built around the way you really run a business.
       </p>
     </div>
 
-    <div class="form-card">
-      <h3 class="form-card-title">Get the details first</h3>
-      <p class="form-card-sub">I'll send you everything you need to know: what's inside, what it costs, and exactly what to do first when you join.</p>
-
-      <form action="https://app.kit.com/forms/9321097/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9321097" data-uid="bd10030ef9" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://www.skool.com/wise-women-use-ai-1109"}}}'>
-        <input type="hidden" name="fields[source]" value="wise-community">
-        <input type="text" name="fields[first_name]" placeholder="First name">
-        <input type="email" name="email_address" placeholder="Email address" required>
-        <button type="submit">Tell me more</button>
-      </form>
-      <p class="form-note">No spam. Just the details you need to decide if it's right for you.</p>
+    <div class="form-card join-card">
+      <p class="join-card-tag">Free to join</p>
+      <h3 class="form-card-title">Come and have a look</h3>
+      <p class="form-card-sub">No payment, no catch. Join free, find your feet, and use the tools at your own pace. When you want the full library, Growth Membership is there.</p>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn-join btn-join-block">Join the community, free</a>
+      <p class="form-note">Free, always. You can upgrade to Growth later if you want to.</p>
     </div>
   </section>
 
   <!-- What's Inside -->
   <section class="inside">
     <div class="inside-inner">
-      <p class="section-eyebrow">What's inside the community</p>
-      <h2>Real tools. Real women.<br><em>Real results.</em></h2>
-      <p class="inside-sub">Everything inside is built around one question: what does a woman running a real business actually need from AI?</p>
+      <p class="section-eyebrow">What you get, free</p>
+      <h2>A real place to start,<br><em>no card needed.</em></h2>
+      <p class="inside-sub">The free community is built around one question: what does a woman running a real business actually need to get going with AI? Here's what's waiting when you join.</p>
 
       <div class="modules">
         <div class="module">
           <div class="module-num">01</div>
           <div class="module-text">
-            <h3>The Claude Classroom</h3>
-            <p>Step-by-step tutorials for using Claude in your business, from setting up your first Project to building workflows that run on autopilot. No coding required. No prior knowledge assumed.</p>
+            <h3>The starter lessons</h3>
+            <p>Short, plain-English walkthroughs to get you set up with Claude, from your very first Project to the basics that make everything else easier. No coding, no prior knowledge assumed.</p>
           </div>
         </div>
 
         <div class="module">
           <div class="module-num">02</div>
           <div class="module-text">
-            <h3>Ready-to-run workflows</h3>
-            <p>Copy-paste prompts and systems for the tasks you repeat every week: emails, content, client communication, planning. Pick one up, run it in your business today.</p>
+            <h3>A starter set of prompts</h3>
+            <p>A handful of copy-and-paste prompts you can use today for the jobs you repeat every week, like emails and content. A proper taste of what the full library holds.</p>
           </div>
         </div>
 
@@ -599,8 +761,8 @@
         <div class="module">
           <div class="module-num">04</div>
           <div class="module-text">
-            <h3>New content every week</h3>
-            <p>Tools, resources, and walkthroughs added weekly. AI moves fast. The community keeps up so you don't have to spend your Sundays doing research.</p>
+            <h3>Something new every week</h3>
+            <p>Fresh tools, resources, and conversations added all the time. AI moves fast. The community keeps up so you don't have to spend your Sundays trawling for the good stuff.</p>
           </div>
         </div>
       </div>
@@ -612,53 +774,69 @@
     <h2>This is for you if...</h2>
     <div class="for-grid">
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You're a solo or small business owner doing everything yourself
+        <span class="for-dot">&#8594;</span> You're a solo or small business owner doing everything yourself
       </div>
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You've tried AI and it didn't stick, or didn't do what you expected
+        <span class="for-dot">&#8594;</span> You've tried AI and it didn't stick, or didn't do what you expected
       </div>
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You want to save time without learning something new every week
+        <span class="for-dot">&#8594;</span> You want to save time without learning something new every week
       </div>
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You're done wading through generic AI content that isn't built for you
+        <span class="for-dot">&#8594;</span> You're done wading through generic AI content that isn't built for you
       </div>
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You want tools, not theory. Things you can actually use today
+        <span class="for-dot">&#8594;</span> You want tools, not theory. Things you can actually use today
       </div>
       <div class="for-item">
-        <span class="for-dot">&#8212;</span> You'd rather learn alongside other women than figure it out alone
+        <span class="for-dot">&#8594;</span> You'd rather learn alongside other women than figure it out alone
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing">
-    <div class="pricing-inner">
-      <p class="section-eyebrow">Membership</p>
-      <h2>One price.<br><em>No subscription.</em></h2>
-      <div class="pricing-amount"><sup>$</sup>99</div>
-      <p class="pricing-note">One-off payment. Lifetime access. No recurring fees.</p>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-join">Join the community</a>
+  <!-- Growth Membership upsell -->
+  <section class="growth">
+    <div class="growth-inner">
+      <p class="section-eyebrow">When you're ready for more</p>
+      <h2>Start free.<br><em>Grow when it suits you.</em></h2>
+      <p class="growth-sub">The free community is a real place to begin, not a locked demo. When you want the full library, you upgrade to Growth Membership. No rush, no pressure, and you can do it any time once you're in.</p>
+
+      <div class="tier-grid">
+        <div class="tier">
+          <p class="tier-name">The free community</p>
+          <p class="tier-price">Free</p>
+          <ul class="tier-list">
+            <li>The starter lessons to get set up</li>
+            <li>A starter set of prompts to use today</li>
+            <li>The community of women, always</li>
+            <li>Something new added every week</li>
+          </ul>
+          <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn-join btn-join-outline btn-join-block">Join free</a>
+        </div>
+
+        <div class="tier tier-featured">
+          <p class="tier-tag">Growth Membership</p>
+          <p class="tier-name">Everything in free, and the full library</p>
+          <p class="tier-price">$49<span class="tier-per">/month</span></p>
+          <ul class="tier-list">
+            <li>The full library of tools and resources</li>
+            <li>Every copy-and-paste prompt, organised by job</li>
+            <li>The ready-to-run workflows for your weekly tasks</li>
+            <li>The deeper lessons as your confidence grows</li>
+          </ul>
+          <!-- TODO: replace href with the Growth Membership upgrade link once it's set up in Skool. Falls back to the community page for now. -->
+          <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn-join btn-join-block">Upgrade to Growth</a>
+        </div>
+      </div>
+      <p class="growth-note">Growth is billed monthly and you can stop any time.</p>
     </div>
   </section>
 
   <!-- Bottom CTA -->
   <section class="bottom-cta">
-    <h2>Not quite ready?<br><em>That's fine.</em></h2>
-    <p>Get the full details first: what's inside, what to do when you join, and why this is different from every other AI course you've looked at.</p>
-    <div class="form-card">
-      <h3 class="form-card-title">Send me the details</h3>
-      <p class="form-card-sub">Everything you need to decide if this is right for you, straight to your inbox.</p>
-
-      <form action="https://app.kit.com/forms/9321097/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9321097" data-uid="bd10030ef9" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://www.skool.com/wise-women-use-ai-1109"}}}'>
-        <input type="hidden" name="fields[source]" value="wise-community">
-        <input type="text" name="fields[first_name]" placeholder="First name">
-        <input type="email" name="email_address" placeholder="Email address" required>
-        <button type="submit">Yes, send me the details</button>
-      </form>
-      <p class="form-note">No spam. Unsubscribe any time.</p>
-    </div>
+    <h2>Come on in.<br><em>It's free.</em></h2>
+    <p>You don't have to be ready for everything. Join the free community, have a look around, and start with one small thing that saves you time this week.</p>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn-join">Join the community, free</a>
   </section>
 
   <!-- Footer -->
