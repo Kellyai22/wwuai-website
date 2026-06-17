@@ -28,6 +28,10 @@
       "dest": "/content-system.html"
     },
     {
+      "src": "/programme-welcome",
+      "dest": "/programme-welcome.html"
+    },
+    {
       "src": "/guide",
       "dest": "/guide.html"
     },
