@@ -52,3 +52,17 @@
 | hub-install-workbook.pdf | Hub Install pre-call digital workbook — sent to clients before their onboarding call | hub-install, workbook, pdf, client |
 
 > Public URL: https://wisewomenuseai.com/assets/workbooks/hub-install-workbook.pdf
+
+## Email (`assets/email/`)
+
+Assets for the branded Kit email template (header + social icons). Referenced by the Kit default template.
+
+| Filename | Description | Tags |
+|----------|-------------|------|
+| header-art.png | Kit email header: logo on soft off-white with "for women who mean business" tagline in Allison/Bordeaux | email, kit, header, logo |
+| icon-instagram.png | Instagram social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
+| icon-tiktok.png | TikTok social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
+| icon-facebook.png | Facebook social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
+| icon-linkedin.png | LinkedIn social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
+
+> Public URL pattern: https://wisewomenuseai.com/assets/email/{filename}
