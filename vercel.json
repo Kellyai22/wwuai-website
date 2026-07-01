@@ -46,7 +46,10 @@
     },
     {
       "src": "/masterclass-thankyou",
-      "dest": "/masterclass-thankyou.html"
+      "headers": {
+        "Location": "/workshop"
+      },
+      "status": 301
     },
     {
       "src": "/masterclass-prompts",
