@@ -9,8 +9,9 @@ DTSTAMP:20260701T000000Z
 DTSTART:20260714T233000Z
 DTEND:20260715T003000Z
 SUMMARY:The Unfair Advantage (Free Workshop)
-DESCRIPTION:A free hands-along hour with Kelly at Wise Women Use AI. Watch Claude build the first home for your business, just by talking to it.\nYour Zoom link will be emailed to you. Check your inbox.\n\nwisewomenuseai.com
-LOCATION:Online (Zoom link emailed)
+DESCRIPTION:A free hands-along hour with Kelly at Wise Women Use AI. Watch Claude build the first home for your business, just by talking to it.\n\nJoin here: https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1\n\nwisewomenuseai.com
+LOCATION:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1
+URL:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1
 ORGANIZER;CN=Wise Women Use AI:mailto:hello@wisewomenuseai.com
 STATUS:CONFIRMED
 SEQUENCE:0
