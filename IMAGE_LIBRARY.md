@@ -24,6 +24,7 @@
 | kelly-about.jpg | Kelly portrait (4:5), used in About section of AI Business Hub install page | kelly, founder, portrait, about |
 | kelly-about.webp | WebP version of kelly-about.jpg — use in `<picture>` elements for performance | kelly, founder, portrait, about, webp |
 | kelly-hero.jpg | Kelly hero photo | kelly, founder, hero |
+| workshop-hero.jpg | Kelly at her laptop with a cup of tea, natural light. Contained hero band photo on the `/workshop` page (extracted from the workshop preview) | kelly, founder, workshop, lifestyle, hero |
 | kelly-hero.webp | WebP version of kelly-hero.jpg (100KB vs 2.4MB) — primary format for hero image, use in `<picture>` elements | kelly, founder, hero, webp |
 
 > Note: `kelly-portrait.jpg` was referenced in the original AI Business Hub source file but does not exist in this repo. Replaced with `kelly-about.jpg`.

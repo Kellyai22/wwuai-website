@@ -16,12 +16,23 @@
       "dest": "/emails.html"
     },
     {
+      "src": "/workshop",
+      "dest": "/workshop.html"
+    },
+    {
       "src": "/masterclass",
-      "dest": "/masterclass.html"
+      "headers": {
+        "Location": "/workshop"
+      },
+      "status": 301
     },
     {
       "src": "/masterclass-thankyou",
       "dest": "/masterclass-thankyou.html"
+    },
+    {
+      "src": "/masterclass-prompts",
+      "dest": "/masterclass-prompts.html"
     },
     {
       "src": "/content-system",
@@ -54,6 +65,10 @@
     {
       "src": "/community",
       "dest": "/community.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about.html"
     },
     {
       "src": "/work",

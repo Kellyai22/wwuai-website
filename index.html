@@ -52,6 +52,34 @@
       color: var(--bordeaux);
     }
 
+    .announce-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      background: var(--cream-dark);
+      color: var(--ink);
+      text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 9px 20px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .announce-bar:hover { background: #D8CFCB; }
+    .announce-bar .announce-cta {
+      color: var(--bordeaux);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .announce-bar .announce-cta .arrow { transition: transform 0.2s; }
+    .announce-bar:hover .announce-cta .arrow { transform: translateX(3px); }
+
     nav {
       position: sticky;
       top: 0;
@@ -954,13 +982,18 @@
 
 <body>
 
+  <a href="/workshop" class="announce-bar">
+    <span>Free live workshop · 15 July</span>
+    <span class="announce-cta">Save your seat <span class="arrow">&#8594;</span></span>
+  </a>
+
   <nav>
     <a href="/" class="nav-logo">
       <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
       <span class="nav-wordmark">Wise Women Use AI</span>
     </a>
     <div class="nav-actions">
-      <a href="/masterclass" class="nav-link">Masterclass</a>
+      <a href="/workshop" class="nav-link">Workshop</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/work" class="nav-link">Work with me</a>
       <a href="/content-system" class="nav-link">Content System</a>
@@ -1277,7 +1310,7 @@
     </a>
 
     <div class="footer-links">
-      <a href="/masterclass" class="footer-link">Masterclass</a>
+      <a href="/workshop" class="footer-link">Workshop</a>
       <a href="/guide" class="footer-link">Free guide</a>
       <a href="/starter" class="footer-link">Starter kit</a>
       <a href="/blog" class="footer-link">Blog</a>

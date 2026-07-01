@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Unfair Advantage: Free Workshop, 15 July | Wise Women Use AI</title>
+<meta name="description" content="A free, hands-along hour for women in business. Watch Claude build the first home for your business, just by talking to it. Live and free, Wednesday 15 July.">
+
+<meta property="og:title" content="Free workshop: your business can't run without you. It's time it could.">
+<meta property="og:description" content="A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. No tech skills, nothing to set up alone. Live and free.">
+<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta property="og:url" content="https://www.wisewomenuseai.com/workshop">
+<link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free workshop: your business can't run without you. It's time it could.">
+<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pearl:#F8F8F8;--ink:#29232A;--bordeaux:#8A1F2E;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
+    --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
+    /* aliases + extras for the site-shell nav/footer ported from other pages */
+    --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);background:var(--pearl);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:var(--bordeaux);color:var(--pearl);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .narrow{max-width:680px;}
+  section{padding:clamp(2rem,4vw,3.2rem) 0;}
+  .eyebrow{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--driftwood);display:inline-flex;align-items:center;gap:0.65em;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--bordeaux);display:inline-block;flex:none;}
+  h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.12;}
+  h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-0.01em;}
+  h2{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-0.01em;}
+  h3{font-size:1.18rem;font-weight:600;}
+  em{font-style:italic;color:var(--bordeaux);}
+  .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.6rem,5vw,3.6rem);line-height:0.9;display:block;}
+  p{color:#3c353f;}
+  .lead{font-size:1.18rem;color:#3c353f;}
+  .sub{color:var(--driftwood);}
+  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:1rem;letter-spacing:0.01em;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:2px;padding:0.95em 2em;cursor:pointer;text-decoration:none;transition:background .25s ease,color .25s ease;}
+  .btn:hover{background:var(--ink);color:var(--pearl);}
+  .btn:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;}
+  .btn--filled{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--pearl);}
+  .btn--filled:hover{background:transparent;color:var(--bordeaux);}
+  .micro{font-size:0.85rem;color:var(--driftwood);margin-top:1rem;}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;border-radius:2px;}
+
+  /* ---- nav (site shell) ---- */
+  nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;max-width:fit-content;}
+  .nav-logo img{height:32px;width:32px;object-fit:contain;}
+  .nav-wordmark{font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--driftwood);}
+  .nav-actions{display:flex;align-items:center;gap:24px;position:relative;z-index:2;align-self:stretch;}
+  .nav-link{font-size:12px;font-weight:400;letter-spacing:0.08em;color:var(--driftwood);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;align-self:stretch;}
+  .nav-link:hover{color:var(--bordeaux);}
+  .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background 0.2s,transform 0.1s;display:inline-block;}
+  .btn-solid:hover{background:var(--bordeaux);transform:translateY(-1px);}
+
+  /* ---- sign-up form ---- */
+  .signup{max-width:460px;}
+  .signup .fields{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:0.7rem;}
+  .signup input{font-family:var(--body);font-size:1rem;width:100%;padding:0.85em 1em;border:1.5px solid #d3c7c3;border-radius:8px;background:var(--white);color:var(--ink);text-align:left;}
+  .signup input::placeholder{color:var(--driftwood);}
+  .signup input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:2px;border-color:var(--bordeaux);}
+  .signup .btn{width:100%;}
+  @media (max-width:540px){.signup .fields{grid-template-columns:1fr;}}
+
+  /* ---- hero (centred) ---- */
+  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
+  .hero .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 auto 1.4rem;}
+  .hero h1{margin:0.9rem 0 1.2rem;max-width:none;}
+  .hero .lead{max-width:34rem;margin:0 auto 1.8rem;}
+  .hero .script{margin-bottom:0.1rem;}
+  .hero .signup{margin-left:auto;margin-right:auto;}
+
+  /* ---- contained hero photo band ---- */
+  .band{max-width:940px;margin:clamp(0.4rem,2.5vw,1.2rem) auto 0;padding:0 28px;}
+  .band .frame{aspect-ratio:16/10;overflow:hidden;border:1px solid var(--cream);border-radius:10px;}
+  .band img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block;}
+
+  .problem p{font-size:1.22rem;color:#352f3b;margin-bottom:1.3rem;}
+  .problem p:last-child{margin-bottom:0;}
+  .problem .kicker{font-size:clamp(1.7rem,3.2vw,2.4rem);font-family:var(--display);color:var(--ink);line-height:1.2;margin-bottom:1.6rem;}
+
+  .panel{background:var(--cream);}
+  .panel p{color:#46393c;}
+  .oneline{font-size:clamp(1.5rem,2.9vw,2.15rem);margin:0.9rem 0 0.4rem;}
+
+  .gifts{list-style:none;margin-top:1.8rem;display:grid;gap:1.2rem;}
+  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:1.2rem;border-bottom:1px solid var(--cream);}
+  .gifts li:last-child{border-bottom:none;padding-bottom:0;}
+  .gifts .mk{margin-top:0.55em;}
+  .gifts strong{font-weight:600;color:var(--ink);}
+  .gifts span.t{display:block;}
+
+  /* ---- who is this for - elevated cards ---- */
+  .foryou-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.8rem;}
+  .box{background:var(--white);border-radius:14px;padding:1.7rem 1.6rem;transition:transform .25s ease,box-shadow .25s ease;}
+  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(138,31,46,0.12),0 2px 6px rgba(41,35,42,0.06);}
+  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(41,35,42,0.08),0 2px 6px rgba(41,35,42,0.05);}
+  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(138,31,46,0.16),0 4px 10px rgba(41,35,42,0.07);}
+  .box .label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:0.5em;}
+  .box.yes .label{color:var(--bordeaux);}
+  .box.no .label{color:var(--driftwood);}
+  .box ul{list-style:none;display:grid;gap:0.85rem;margin-top:1rem;}
+  .box li{padding-left:1.7rem;position:relative;color:#3c353f;font-size:0.98rem;line-height:1.5;}
+  .box.yes li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--bordeaux);font-weight:700;font-size:0.95rem;}
+  .box.no li::before{content:"\2013";position:absolute;left:0.15rem;top:-0.05rem;color:var(--driftwood);font-weight:700;font-size:1.1rem;}
+
+  .details dl{margin-top:1.8rem;display:grid;gap:0;}
+  .details .row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:1.05rem 0;border-bottom:1px solid rgba(41,35,42,0.12);}
+  .details .row:last-child{border-bottom:none;}
+  .details dt{font-weight:600;color:var(--ink);font-size:0.95rem;}
+  .details dd{color:#46393c;}
+
+  .about{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3rem;align-items:center;}
+  .portrait{aspect-ratio:4/5;background:linear-gradient(150deg,#E7E0DD,#CDBCB7);border:1px solid var(--cream);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
+  .about .sig{font-family:var(--script);color:var(--bordeaux);font-size:3rem;line-height:0.8;margin-top:1.1rem;}
+
+  .final{background:var(--ink);color:var(--pearl);text-align:center;}
+  .final .eyebrow{color:#b9aeb0;justify-content:center;}
+  .final .script-light{font-family:var(--script);color:var(--pearl);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:0.9;display:block;margin:0.6rem 0 0.3rem;}
+  .final h2{color:var(--pearl);max-width:18ch;margin:0 auto 1.4rem;}
+  .final em{color:var(--pearl);font-style:italic;}
+  .final .signup{margin:0 auto;}
+  .final input{background:var(--white);}
+  .final .micro{color:#9a9098;}
+
+  .faq h2{margin-bottom:1.6rem;}
+  .faq details{border-top:1px solid var(--cream);}
+  .faq details:last-of-type{border-bottom:1px solid var(--cream);}
+  .faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";font-family:var(--body);font-size:1.5rem;font-weight:400;color:var(--bordeaux);line-height:1;transition:transform .2s ease;}
+  .faq details[open] summary::after{content:"\2013";}
+  .faq details p{padding:0 0 1.3rem;color:#46393c;max-width:48rem;}
+
+  /* ---- footer (site shell) ---- */
+  footer{padding:40px 48px;border-top:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
+  .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
+  .footer-link{font-size:12px;color:var(--driftwood);text-decoration:none;letter-spacing:0.05em;}
+  .footer-link:hover{color:var(--bordeaux);}
+  .social-links{display:flex;gap:20px;align-items:center;}
+  .social-link{color:var(--driftwood);transition:color 0.2s;display:flex;}
+  .social-link:hover{color:var(--bordeaux);}
+  .footer-legal{font-size:11px;color:var(--driftwood);opacity:0.5;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (max-width:768px){
+    nav{padding:0 24px;}
+    .nav-wordmark,.nav-link{display:none;}
+    footer{padding:32px 24px;}
+  }
+  @media (max-width:720px){
+    .about{grid-template-columns:1fr;gap:2rem;}
+    .foryou-grid{grid-template-columns:1fr;gap:1rem;}
+    .details .row{grid-template-columns:1fr;gap:0.3rem;}
+    .portrait{max-width:260px;}
+    .band{padding:0 20px;}
+    .band .frame{aspect-ratio:4/3;}
+    .band img{object-position:center 30%;}
+  }
+  @media (min-width:721px){ .oneline{white-space:nowrap;} }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .box:hover{transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Wise Women Use AI Workshop: Your business can't run without you. It's time it could.",
+  "description": "A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. No tech skills, nothing to set up alone.",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "startDate": "2026-07-15T09:30:00+10:00",
+  "endDate": "2026-07-15T10:30:00+10:00",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Wise Women Use AI",
+    "url": "https://www.wisewomenuseai.com"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Kelly Hartley"
+  },
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://www.wisewomenuseai.com/workshop"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "AUD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.wisewomenuseai.com/workshop"
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/content-system" class="nav-link">Content System</a>
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="#register" class="btn-solid">Save your seat</a>
+  </div>
+</nav>
+
+<!-- HERO (centred) -->
+<header class="hero">
+  <div class="wrap narrow">
+    <div class="reveal">
+      <div class="rule"></div>
+      <span class="eyebrow">Free live workshop</span>
+      <span class="script">wednesday 15 july</span>
+      <h1>Your business can't run without you. <em>It's time it could.</em></h1>
+      <p class="lead">A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. You bring what's in your head. Claude does the building. No tech skills, nothing to set up alone.</p>
+      <!-- Registration form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies the registered tag and starts the confirmation sequence (Rules 5457118 + 5457120). -->
+      <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/masterclass-thankyou"}}}'>
+        <input type="hidden" name="fields[source]" value="workshop">
+        <div class="fields">
+          <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+          <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn--filled">Save my seat</button>
+      </form>
+      <p class="micro">Free, live and recorded. Can't make it? Register anyway and I'll send you the replay.</p>
+    </div>
+  </div>
+</header>
+
+<!-- CONTAINED HERO PHOTO -->
+<div class="band reveal">
+  <div class="frame"><img src="/assets/photos/workshop-hero.jpg" width="665" height="1182" alt="Kelly working at her laptop with a cup of tea in natural light" loading="eager"></div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap narrow reveal">
+    <p class="kicker">If you stopped tomorrow, so would the business.</p>
+    <p>Not because you've done anything wrong. Because it's all you. The plan is in your head. The client details are in your phone, your inbox, three different notebooks and a voice note you left yourself in the car. You're the only one who knows how any of it actually works.</p>
+    <p>That's the part no one warns you about. You didn't just build a business, you became it. And a business that is you has no off switch, because you don't. There's no holiday that isn't a working holiday, no sick day that doesn't cost you, no evening that's fully your own.</p>
+    <p>You weren't meant to carry all of it in your head. You've just never been shown how to put it down.</p>
+  </div>
+</section>
+
+<!-- SHIFT -->
+<section class="panel">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>The shift</span>
+    <h2 style="margin:1rem 0 1.4rem;">This time, you don't build the system. Claude does.</h2>
+    <p style="margin-bottom:1.3rem;">If you've ever started a Notion setup, a planner, some folder system, and quietly let it die, here's why. It became one more thing for you to keep alive. That isn't a system, that's another job.</p>
+    <span class="script" style="margin:0.4rem 0 1.1rem;">So we're not doing that.</span>
+    <p>In this hour you'll connect Claude to Notion, then watch it build the first part of your business's new home for you, just by answering a few questions out loud. You talk, it builds. It's the kind of help a one-woman business could never afford to hire, and now you can.</p>
+  </div>
+</section>
+
+<!-- WALK AWAY -->
+<section>
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>What you'll walk away with</span>
+    <h2 class="oneline">In one hour, here's what you'll <em>have</em>.</h2>
+    <ul class="gifts">
+      <li><span class="dot mk"></span><span class="t"><strong>Claude and Notion connected.</strong> The foundation everything else builds on.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>The exact prompt to get you started.</strong> Yours to keep and run again any time.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>The front page of your business HQ, built live while you talk.</strong> What your business is, who it's for, what you sell, and a Brain Dump to catch everything rattling round your head.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>A home you actually own.</strong> Not locked in your head, not tied to one tool. Point any AI at it, switch tools whenever you like, and it's all still there. Your second brain, and your backup.</span></li>
+    </ul>
+    <p style="margin-top:1.8rem;" class="sub">And it's yours whether you do anything else or not. Stop after the hour and you've still got something real.</p>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="panel">
+  <div class="wrap narrow reveal">
+    <h2 style="margin:0;">Who is this for?</h2>
+    <div class="foryou-grid">
+      <div class="box yes">
+        <span class="label"><span class="dot"></span>Yes, this is me</span>
+        <ul>
+          <li>You run your business mostly on your own, and you're the one holding all the threads.</li>
+          <li>You're curious about AI but you've been burned by a tool that did nothing.</li>
+          <li>You don't want to become a tech person. You just want some of the weight off.</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <span class="label">Maybe not this one</span>
+        <ul>
+          <li>You're after a deep technical build.</li>
+          <li>You already run on slick, settled systems.</li>
+          <li>This is the calm, first-step version, on purpose.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>The details</span>
+    <h2 style="margin:1rem 0 0;">Everything you need to know</h2>
+    <dl>
+      <div class="row"><dt>When</dt><dd>Wednesday 15 July, 9:30am Melbourne time (AEST). That's Tuesday 14 July, 7:30pm US Eastern. In the UK? Register and I'll send the replay.</dd></div>
+      <div class="row"><dt>How long</dt><dd>About an hour, including time for your questions.</dd></div>
+      <div class="row"><dt>Where</dt><dd>Live online. The link is sent when you register.</dd></div>
+      <div class="row"><dt>Cost</dt><dd>Free.</dd></div>
+      <div class="row"><dt>To build along</dt><dd>A Claude Pro account and a Notion account, and we'll connect them together on the day. Don't have them yet, or would rather not fuss live? Come and watch, and keep the step-by-step to do it after.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="wrap reveal">
+    <div class="about">
+      <div class="portrait" role="img" aria-label="Portrait of Kelly">
+        <picture>
+          <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
+          <img src="/assets/photos/kelly-about.jpg" alt="Kelly Hartley, founder of Wise Women Use AI" width="490" height="613" loading="lazy">
+        </picture>
+      </div>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Who's running it</span>
+        <h2 style="margin:1rem 0 1.2rem;">Hello, I'm Kelly.</h2>
+        <p style="margin-bottom:1.1rem;">I help women in business use AI to build systems, so the business stops depending entirely on them. British, Melbourne-based, tea not coffee, and not at all interested in hype.</p>
+        <p>I've been the woman carrying the whole thing in her head, and I know the way out, because I've walked it myself. I'll be right there with you the whole hour.</p>
+        <span class="sig">Kelly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="register">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Save your seat</span>
+    <span class="script-light">come and get one thing off your plate</span>
+    <h2>Get the <em>foundation</em> right, in one free hour.</h2>
+    <!-- Registration form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies the registered tag and starts the confirmation sequence (Rules 5457118 + 5457120). -->
+    <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/masterclass-thankyou"}}}'>
+      <input type="hidden" name="fields[source]" value="workshop">
+      <div class="fields">
+        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+        <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+      </div>
+      <button type="submit" class="btn btn--filled">Save my seat</button>
+    </form>
+    <p class="micro">Free, live and recorded. Register and the replay is yours even if you can't make it live.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap narrow reveal">
+    <h2>A few quick questions</h2>
+    <details><summary>Do I need to know anything about AI?</summary><p>No. If you can hold a conversation, you can do this.</p></details>
+    <details><summary>Is it really free?</summary><p>Yes, the hour is yours, no strings. Right at the end I'll show you two optional ways to keep going if you'd like to, and you're very welcome to ignore both.</p></details>
+    <details><summary>Do I have to build anything myself?</summary><p>No. You watch Claude do it, and you keep the prompt to run again whenever you like.</p></details>
+    <details><summary>What if I can't make it live?</summary><p>Register and I'll send you the recording.</p></details>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="footer-links">
+    <a href="/content-system" class="footer-link">Content System</a>
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+</footer>
+
+<script>
+  // Reveal-on-scroll (from preview)
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+
+<script>
+  // The Kit registration forms post directly to Kit. This intercepts the submit,
+  // sends the signup to Kit in the background, then redirects to the thank-you page.
+  document.querySelectorAll("form.register-form").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      if (btn) { btn.disabled = true; btn.textContent = "Saving your seat…"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new URLSearchParams(new FormData(form)),
+        mode: "no-cors"
+      }).finally(function () {
+        window.location.href = "https://www.wisewomenuseai.com/masterclass-thankyou";
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
