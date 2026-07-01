@@ -15,6 +15,13 @@
       "continue": true
     },
     {
+      "src": "/posts/the-thing-holding-your-ai-back-isnt-your-prompts",
+      "headers": {
+        "Location": "/blog"
+      },
+      "status": 301
+    },
+    {
       "src": "/posts/(.*)",
       "dest": "/posts/$1.html"
     },
@@ -61,7 +68,10 @@
     },
     {
       "src": "/programme-welcome",
-      "dest": "/programme-welcome.html"
+      "headers": {
+        "Location": "/"
+      },
+      "status": 301
     },
     {
       "src": "/guide",
