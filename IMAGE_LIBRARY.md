@@ -64,5 +64,6 @@ Assets for the branded Kit email template (header + social icons). Referenced by
 | icon-tiktok.png | TikTok social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
 | icon-facebook.png | Facebook social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
 | icon-linkedin.png | LinkedIn social icon, Bordeaux, 128px transparent | email, kit, footer, icon, social |
+| kelly-signature.png | "Kelly" sign-off in Allison script, Bordeaux, transparent | email, kit, signature, sign-off |
 
 > Public URL pattern: https://wisewomenuseai.com/assets/email/{filename}
