@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to The Notion Advantage Pack</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pearl:       #F8F8F8;
+      --ink:         #29232A;
+      --bordeaux:    #8A1F2E;
+      --driftwood:   #908486;
+      --cream-dark:  #E1DAD7;
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Layout ── */
+
+    .welcome {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 56px 20px 60px;
+    }
+
+    /* ── Hero ── */
+
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--driftwood);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-headline .headline-accent {
+      display: block;
+      font-style: italic;
+      color: var(--bordeaux);
+      font-size: 36px;
+      margin-top: 4px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.6;
+    }
+
+    /* ── Section dividers ── */
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 36px 0 20px;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+
+    .divider-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--driftwood);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ── Step 1 card (Ink background) ── */
+
+    .step-card {
+      background: var(--ink);
+      border-radius: 6px;
+      padding: 32px;
+    }
+
+    .step-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--pearl);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .step-card-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: var(--bordeaux);
+      color: var(--pearl);
+      border: none;
+      border-radius: 2px;
+      padding: 16px 24px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: #a02436;
+      transform: translateY(-1px);
+    }
+
+    .note-small {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--cream-dark);
+      opacity: 0.7;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── Module grid ── */
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 6px;
+      padding: 16px;
+    }
+
+    .module-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .module-number {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--bordeaux);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .module-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .module-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.5;
+    }
+
+    /* ── Step 2 card (white, Cream Dark border) ── */
+
+    .step2-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 6px;
+      padding: 24px;
+    }
+
+    .step2-card-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .step2-card-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ── Membership invitation card ── */
+
+    .upsell-card {
+      background: var(--white);
+      border: 1.5px solid var(--bordeaux);
+      border-radius: 6px;
+      padding: 24px;
+    }
+
+    .upsell-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .upsell-card-title em {
+      font-style: italic;
+      color: var(--bordeaux);
+    }
+
+    .upsell-card-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .btn-outline {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      border-radius: 2px;
+      padding: 14px 24px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+
+    .welcome-footer {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .welcome-footer-line {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--driftwood);
+      line-height: 1.6;
+    }
+
+    .welcome-footer-line a {
+      color: var(--driftwood);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .welcome-footer-line a:hover {
+      color: var(--ink);
+    }
+
+    .welcome-footer-made {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--driftwood);
+      margin-top: 8px;
+    }
+
+    .welcome-footer-made .script {
+      font-family: 'Allison', cursive;
+      font-size: 20px;
+      color: var(--bordeaux);
+      font-weight: 400;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    /* ── Responsive ── */
+
+    @media (max-width: 480px) {
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+      .module-card.full-width {
+        grid-column: 1;
+      }
+      .step-card {
+        padding: 24px;
+      }
+      .hero-headline {
+        font-size: 28px;
+      }
+      .hero-headline .headline-accent {
+        font-size: 30px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="welcome">
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="eyebrow">Order confirmed</p>
+    <h1 class="hero-headline">
+      It's all yours.
+      <span class="headline-accent">Welcome.</span>
+    </h1>
+    <p class="hero-sub">Your Business HQ is ready and waiting. Three small steps and everything moves out of your head, for good.</p>
+  </div>
+
+  <!-- Step 1 card -->
+  <div class="step-card">
+    <h2 class="step-card-title">Step 1: Duplicate your Business HQ</h2>
+    <p class="step-card-body">
+      Click the button below and your Business HQ opens in a new tab. In the top right of the Notion page, click Duplicate to copy the whole thing into your own workspace. That's the building done. You never had to lift a finger.
+    </p>
+    <a
+      href="https://bevel-falcon-307.notion.site/Your-Business-HQ-391f53df20e481c781accae0fe73dcbe"
+      target="_blank"
+      rel="noopener"
+      class="btn-primary"
+    >
+      Duplicate your Business HQ
+    </a>
+    <p class="note-small">No Notion account yet? You'll be asked to create one. The free plan is all you need.</p>
+  </div>
+
+  <!-- What's inside -->
+  <div class="divider">
+    <span class="divider-line"></span>
+    <span class="divider-label">What's inside</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="module-grid">
+
+    <div class="module-card">
+      <p class="module-number">01</p>
+      <p class="module-title">Business at a Glance</p>
+      <p class="module-desc">What your business is, who it's for and what you sell, on one page</p>
+    </div>
+
+    <div class="module-card">
+      <p class="module-number">02</p>
+      <p class="module-title">Brand Voice Guide</p>
+      <p class="module-desc">How you sound in writing, so nothing goes out sounding like someone else</p>
+    </div>
+
+    <div class="module-card">
+      <p class="module-number">03</p>
+      <p class="module-title">Content Hub</p>
+      <p class="module-desc">Ideas, drafts and plans in one place, at last</p>
+    </div>
+
+    <div class="module-card">
+      <p class="module-number">04</p>
+      <p class="module-title">Clients and People</p>
+      <p class="module-desc">Everyone you work with, and where things are up to</p>
+    </div>
+
+    <div class="module-card">
+      <p class="module-number">05</p>
+      <p class="module-title">Offers and Money</p>
+      <p class="module-desc">What you sell, what it costs, what's coming in</p>
+    </div>
+
+    <div class="module-card">
+      <p class="module-number">06</p>
+      <p class="module-title">Weekly Rhythm</p>
+      <p class="module-desc">The Monday Reset that starts your week calm</p>
+    </div>
+
+    <div class="module-card full-width">
+      <p class="module-number">07</p>
+      <p class="module-title">Ask Claude prompt library</p>
+      <p class="module-desc">12+ copy and paste prompts that let Claude update your Business HQ for you</p>
+    </div>
+
+  </div>
+
+  <!-- Step 2 card (walk-through video) -->
+  <div class="divider">
+    <span class="divider-line"></span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="step2-card">
+    <h2 class="step2-card-title">Step 2: Set it up with Kelly beside you</h2>
+    <p class="step2-card-body" style="margin-bottom: 20px;">
+      I've filmed a walk-through, about 15 minutes. Press play and I'll duplicate the HQ with you, show you round every section, and we'll do your first Monday Reset together. Pop the kettle on and follow along.
+    </p>
+    <a
+      href="PLACEHOLDER_WALKTHROUGH_VIDEO_URL"
+      target="_blank"
+      rel="noopener"
+      class="btn-outline"
+    >
+      Watch the walk-through
+    </a>
+  </div>
+
+  <!-- Step 3 card -->
+  <div class="step2-card" style="margin-top: 12px;">
+    <h2 class="step2-card-title">Step 3: Open Start Here</h2>
+    <p class="step2-card-body">
+      Once the template is in your workspace, the Start Here page is sitting at the top. It's the written version of the walk-through. Fill in the essentials, about 15 minutes, and the business officially lives somewhere that isn't your head.
+    </p>
+  </div>
+
+  <!-- Membership invitation -->
+  <div class="divider">
+    <span class="divider-line"></span>
+    <span class="divider-label">No rush, but</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="upsell-card">
+    <h2 class="upsell-card-title">When you'd like company, there's <em>The Unfair Advantage</em></h2>
+    <p class="upsell-card-body">
+      Your Pack works beautifully on its own, and you don't need anything else. But if you'd ever like a live monthly workshop and a room of women building the same calm way, the membership is $49 a month at the founding rate. Have a look whenever suits you. No pressure from me, ever.
+    </p>
+    <a
+      href="https://www.skool.com/wise-women-use-ai-1109/about"
+      target="_blank"
+      rel="noopener"
+      class="btn-outline"
+    >
+      See what's inside The Unfair Advantage
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <div class="welcome-footer">
+    <p class="welcome-footer-line">
+      Questions? Reply to your order email or message me
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener">on Instagram</a>.
+    </p>
+    <p class="welcome-footer-made">
+      Made with <span class="script">care</span> in Melbourne
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

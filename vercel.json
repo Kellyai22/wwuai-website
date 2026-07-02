@@ -77,6 +77,14 @@
       "status": 301
     },
     {
+      "src": "/notion-advantage",
+      "dest": "/notion-advantage.html"
+    },
+    {
+      "src": "/notion-advantage/welcome",
+      "dest": "/notion-advantage-welcome.html"
+    },
+    {
       "src": "/guide",
       "dest": "/guide.html"
     },
