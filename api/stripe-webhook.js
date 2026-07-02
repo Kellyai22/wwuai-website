@@ -13,6 +13,12 @@ const PRODUCT_MAP = {
     tagId: 20815815,
     sequenceId: 2813464,
   },
+  // Member price ($79), offered only inside the membership classroom
+  plink_1ToieUPUfAlFO1z9kxOxMsQ0: {
+    product: 'notion-advantage-member',
+    tagId: 20815815,
+    sequenceId: 2813464,
+  },
   default: {
     product: 'unmapped',
     tagId: 20815815,
