@@ -12,13 +12,13 @@
 
   <style>
     :root {
-      --ink:       #29232A;
-      --brown-mid:   #968880;
+      --ink:       #3A131B;
+      --brown-mid:   #908486;
       --brown-light: #8C7E74;
-      --bordeaux:       #8A1F2E;
+      --bordeaux:       #3A131B;
       --terra-deep:  #a85c3c;
-      --cream:       #F8F8F8;
-      --cream-dark:  #EAE5DF;
+      --cream:       #FAF8F6;
+      --cream-dark:  #E1DAD7;
       --cream-mid:   #F0EBE5;
       --serif: 'Playfair Display', Georgia, serif;
       --sans:        'Montserrat', sans-serif;
@@ -170,8 +170,8 @@
       color: var(--brown-mid);
     }
 
-    .bg-brown .section-num-line { background: rgba(248,248,248,0.15); }
-    .bg-brown .section-tag { color: rgba(248,248,248,0.45); }
+    .bg-brown .section-num-line { background: rgba(250,248,246,0.15); }
+    .bg-brown .section-tag { color: rgba(250,248,246,0.45); }
     .bg-brown .section-num { color: var(--bordeaux); }
 
     .section-h2 {
@@ -183,10 +183,10 @@
       margin-bottom: 16px;
     }
 
-    .section-h2 em { font-style: italic; color: var(--bordeaux); }
+    .section-h2 em { font-style: italic; color: #DDA983; }
 
     .bg-brown .section-h2 { color: var(--cream); }
-    .bg-brown .section-h2 em { color: var(--bg); }
+    .bg-brown .section-h2 em { color: #E2B592; }
 
     .section-intro {
       font-size: 15px;
@@ -197,7 +197,7 @@
       margin-bottom: 48px;
     }
 
-    .bg-brown .section-intro { color: rgba(248,248,248,0.65); }
+    .bg-brown .section-intro { color: rgba(250,248,246,0.65); }
 
     /* ─────────────────────────────────────────────
        HERO
@@ -234,7 +234,7 @@
       margin-bottom: 24px;
     }
 
-    #hero h1 em { font-style: italic; color: var(--bordeaux); }
+    #hero h1 em { font-style: italic; color: #DDA983; }
 
     .hero-sub {
       font-size: 15px;
@@ -350,8 +350,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: rgba(248,248,248,0.1);
-      border: 1px solid rgba(248,248,248,0.1);
+      background: rgba(250,248,246,0.1);
+      border: 1px solid rgba(250,248,246,0.1);
     }
 
     .compare-col {
@@ -366,10 +366,10 @@
       text-transform: uppercase;
       margin-bottom: 20px;
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(248,248,248,0.12);
+      border-bottom: 1px solid rgba(250,248,246,0.12);
     }
 
-    .col-before .compare-col-head { color: rgba(248,248,248,0.35); }
+    .col-before .compare-col-head { color: rgba(250,248,246,0.35); }
     .col-after  .compare-col-head { color: var(--bordeaux); }
 
     .compare-item {
@@ -382,8 +382,8 @@
       line-height: 1.6;
     }
 
-    .col-before .compare-item { color: rgba(248,248,248,0.38); }
-    .col-after  .compare-item { color: rgba(248,248,248,0.88); }
+    .col-before .compare-item { color: rgba(250,248,246,0.38); }
+    .col-after  .compare-item { color: rgba(250,248,246,0.88); }
 
     .compare-dot {
       width: 5px; height: 5px;
@@ -392,7 +392,7 @@
       margin-top: 8px;
     }
 
-    .col-before .compare-dot { background: rgba(248,248,248,0.2); }
+    .col-before .compare-dot { background: rgba(250,248,246,0.2); }
     .col-after  .compare-dot { background: var(--bordeaux); }
 
     /* ─────────────────────────────────────────────
@@ -536,7 +536,7 @@
       font-family: 'Courier New', monospace;
       font-size: 12px;
       line-height: 2;
-      color: rgba(248,248,248,0.55);
+      color: rgba(250,248,246,0.55);
     }
 
     .config-block .label {
@@ -552,7 +552,7 @@
 
     .ck { color: var(--bordeaux); }
     .cv { color: var(--cream); }
-    .cc { color: rgba(248,248,248,0.28); }
+    .cc { color: rgba(250,248,246,0.28); }
 
     /* ─────────────────────────────────────────────
        04 — THE ITALIC MOVE
@@ -595,7 +595,7 @@
       margin-bottom: 8px;
     }
 
-    .em-example p em { font-style: italic; color: var(--bordeaux); }
+    .em-example p em { font-style: italic; color: #DDA983; }
 
     .em-note {
       font-size: 11.5px;
@@ -812,12 +812,12 @@
       justify-content: space-between;
       align-items: baseline;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(248,248,248,0.1);
+      border-bottom: 1px solid rgba(250,248,246,0.1);
       font-size: 13px;
     }
 
     .timing-row:last-child { border-bottom: none; }
-    .timing-row .tr-label { font-weight: 300; color: rgba(248,248,248,0.6); }
+    .timing-row .tr-label { font-weight: 300; color: rgba(250,248,246,0.6); }
     .timing-row .tr-val { font-weight: 500; color: var(--cream); }
 
     .playwright-note {
@@ -980,7 +980,7 @@
       margin-bottom: 20px;
     }
 
-    .cta-dark > p { color: rgba(248,248,248,0.65); }
+    .cta-dark > p { color: rgba(250,248,246,0.65); }
     .cta-light > p { color: var(--brown-light); }
 
     .cta-includes {
@@ -1001,7 +1001,7 @@
       line-height: 1.5;
     }
 
-    .cta-dark .cta-includes li { color: rgba(248,248,248,0.8); }
+    .cta-dark .cta-includes li { color: rgba(250,248,246,0.8); }
     .cta-light .cta-includes li { color: var(--ink); }
 
     .li-dot {
@@ -1225,7 +1225,7 @@
         </div>
         <div class="needs-item needs-required">
           <p class="needs-item-label">Required</p>
-          <p>Your brand hex colour codes (e.g. #29232A)</p>
+          <p>Your brand hex colour codes (e.g. #3A131B)</p>
         </div>
         <div class="needs-item needs-required">
           <p class="needs-item-label">Required</p>

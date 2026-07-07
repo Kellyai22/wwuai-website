@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pearl:#F8F8F8;--ink:#29232A;--bordeaux:#8A1F2E;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
+    --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
     --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
     /* aliases + extras for the site-shell nav/footer ported from other pages */
     --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
@@ -40,7 +40,7 @@
   h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-0.01em;}
   h2{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-0.01em;}
   h3{font-size:1.18rem;font-weight:600;}
-  em{font-style:italic;color:var(--bordeaux);}
+  em{font-style:italic;color:#DDA983;}
   .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.6rem,5vw,3.6rem);line-height:0.9;display:block;}
   p{color:#3c353f;}
   .lead{font-size:1.18rem;color:#3c353f;}
@@ -104,9 +104,9 @@
   /* ---- who is this for - elevated cards ---- */
   .foryou-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.8rem;}
   .box{background:var(--white);border-radius:14px;padding:1.7rem 1.6rem;transition:transform .25s ease,box-shadow .25s ease;}
-  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(138,31,46,0.12),0 2px 6px rgba(41,35,42,0.06);}
-  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(41,35,42,0.08),0 2px 6px rgba(41,35,42,0.05);}
-  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(138,31,46,0.16),0 4px 10px rgba(41,35,42,0.07);}
+  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(58,19,27,0.12),0 2px 6px rgba(58,19,27,0.06);}
+  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(58,19,27,0.08),0 2px 6px rgba(58,19,27,0.05);}
+  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(58,19,27,0.16),0 4px 10px rgba(58,19,27,0.07);}
   .box .label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:0.5em;}
   .box.yes .label{color:var(--bordeaux);}
   .box.no .label{color:var(--driftwood);}
@@ -116,7 +116,7 @@
   .box.no li::before{content:"\2013";position:absolute;left:0.15rem;top:-0.05rem;color:var(--driftwood);font-weight:700;font-size:1.1rem;}
 
   .details dl{margin-top:1.8rem;display:grid;gap:0;}
-  .details .row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:1.05rem 0;border-bottom:1px solid rgba(41,35,42,0.12);}
+  .details .row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:1.05rem 0;border-bottom:1px solid rgba(58,19,27,0.12);}
   .details .row:last-child{border-bottom:none;}
   .details dt{font-weight:600;color:var(--ink);font-size:0.95rem;}
   .details dd{color:#46393c;}
@@ -130,7 +130,7 @@
   .final .eyebrow{color:#b9aeb0;justify-content:center;}
   .final .script-light{font-family:var(--script);color:var(--pearl);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:0.9;display:block;margin:0.6rem 0 0.3rem;}
   .final h2{color:var(--pearl);max-width:18ch;margin:0 auto 1.4rem;}
-  .final em{color:var(--pearl);font-style:italic;}
+  .final em{color:#E2B592;font-style:italic;}
   .final .signup{margin:0 auto;}
   .final input{background:var(--white);}
   .final .micro{color:#9a9098;}

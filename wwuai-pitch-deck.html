@@ -9,11 +9,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --cream:      #F8F8F8;
-  --text:       #968880;
-  --ink:      #29232A;
-  --bordeaux: #8A1F2E;
-  --cream-dark: #EAE5DF;
+  --cream:      #FAF8F6;
+  --text:       #908486;
+  --ink:      #3A131B;
+  --bordeaux: #3A131B;
+  --cream-dark: #E1DAD7;
   --dark-slide: #2e2825;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 .nav-dot {
   width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(150,136,128,0.35);
+  background: rgba(144,132,134,0.35);
   cursor: pointer; transition: all 0.3s ease; border: none;
 }
 .nav-dot.active { background: var(--bordeaux); transform: scale(1.4); }
@@ -67,7 +67,7 @@ body {
 
 .s1-right::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(140deg, rgba(46,40,37,0.5) 0%, rgba(138,31,46,0.08) 100%);
+  background: linear-gradient(140deg, rgba(46,40,37,0.5) 0%, rgba(58,19,27,0.08) 100%);
   z-index: 1;
 }
 
@@ -85,7 +85,7 @@ body {
   font-size: 88px; font-weight: 300;
   line-height: 0.85; letter-spacing: -0.02em;
   color: #ece7e0;
-  text-shadow: 2px 3px 6px rgba(41,35,42,0.22), -1px -1px 0px rgba(255,255,255,0.88);
+  text-shadow: 2px 3px 6px rgba(58,19,27,0.22), -1px -1px 0px rgba(255,255,255,0.88);
   position: relative; display: inline-block;
 }
 
@@ -125,7 +125,7 @@ body {
   color: var(--cream); letter-spacing: -0.02em;
   margin-bottom: 22px;
 }
-.hero-heading em { font-style: italic; color: var(--bordeaux); }
+.hero-heading em { font-style: italic; color: #DDA983; }
 
 .hero-sub {
   font-size: 10px; font-weight: 300;
@@ -170,7 +170,7 @@ body {
   color: var(--ink); letter-spacing: -0.02em;
   margin-bottom: 44px;
 }
-.big-q em { font-style: italic; color: var(--bordeaux); }
+.big-q em { font-style: italic; color: #DDA983; }
 
 .body-text {
   font-size: 13px; font-weight: 300;
@@ -224,7 +224,7 @@ body {
 
 .s3-body {
   font-size: 13px; font-weight: 300;
-  line-height: 1.9; color: rgba(234,229,223,0.58);
+  line-height: 1.9; color: rgba(225,218,215,0.58);
   max-width: 400px; letter-spacing: 0.02em;
 }
 
@@ -244,7 +244,7 @@ body {
 .pillar-desc {
   font-size: 9px; font-weight: 400;
   letter-spacing: 0.26em; text-transform: uppercase;
-  color: rgba(234,229,223,0.38);
+  color: rgba(225,218,215,0.38);
 }
 
 /* ── SLIDE 4 ── */
@@ -309,7 +309,7 @@ body {
 
 .slide-5::after {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 90% 10%, rgba(138,31,46,0.11) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 90% 10%, rgba(58,19,27,0.11) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -326,7 +326,7 @@ body {
   font-weight: 300; color: var(--cream); line-height: 1;
   letter-spacing: -0.02em; margin-bottom: 56px; max-width: 580px;
 }
-.s5-heading em { font-style: italic; color: rgba(248,248,248,0.36); }
+.s5-heading em { font-style: italic; color: #E2B592; }
 
 .caps {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -353,7 +353,7 @@ body {
 
 .cap-body {
   font-size: 11px; font-weight: 300;
-  line-height: 1.9; color: rgba(234,229,223,0.46); letter-spacing: 0.02em;
+  line-height: 1.9; color: rgba(225,218,215,0.46); letter-spacing: 0.02em;
 }
 
 /* ── SLIDE 6 ── */
@@ -371,7 +371,7 @@ body {
 }
 .s6-right::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 85%, rgba(138,31,46,0.16) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 85%, rgba(58,19,27,0.16) 0%, transparent 60%);
 }
 
 .close-heading {
@@ -380,7 +380,7 @@ body {
   font-weight: 300; color: var(--ink);
   line-height: 0.92; letter-spacing: -0.02em; margin-bottom: 36px;
 }
-.close-heading em { font-style: italic; color: var(--bordeaux); }
+.close-heading em { font-style: italic; color: #DDA983; }
 
 .close-body {
   font-size: 13px; font-weight: 300;
@@ -404,7 +404,7 @@ body {
 .avail-eyebrow {
   font-size: 8px; font-weight: 500;
   letter-spacing: 0.32em; text-transform: uppercase;
-  color: rgba(248,248,248,0.35); margin-bottom: 24px;
+  color: rgba(250,248,246,0.35); margin-bottom: 24px;
 }
 .avail-head {
   font-family: 'Playfair Display', serif;
@@ -413,7 +413,7 @@ body {
 }
 .avail-note {
   font-size: 11px; font-weight: 300;
-  line-height: 1.9; color: rgba(248,248,248,0.42); letter-spacing: 0.02em;
+  line-height: 1.9; color: rgba(250,248,246,0.42); letter-spacing: 0.02em;
 }
 .tc-line {
   width: 32px; height: 2px;
@@ -422,7 +422,7 @@ body {
 .bg-ai {
   font-family: 'Playfair Display', serif;
   font-size: 140px; font-weight: 300;
-  color: rgba(248,248,248,0.04); line-height: 1;
+  color: rgba(250,248,246,0.04); line-height: 1;
   letter-spacing: -0.04em;
   position: absolute; bottom: -18px; right: -6px;
 }
@@ -581,7 +581,7 @@ body {
   </div>
   <div class="s6-right">
     <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=85" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.32) saturate(0.5);z-index:0;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(41,35,42,0.7) 0%,rgba(46,40,37,0.4) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(58,19,27,0.7) 0%,rgba(46,40,37,0.4) 100%);z-index:1;"></div>
     <div class="bg-ai">ai</div>
   </div>
 </section>

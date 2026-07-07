@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The masterclass prompts | Wise Women Use AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Allison&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pearl: #FAF8F6;
+            --ink: #3A131B;
+            --bordeaux: #3A131B;
+            --driftwood: #908486;
+            --cream: #E1DAD7;
+            --surface: #FCFBFB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--pearl);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 4.5rem 0 1rem;
+        }
+
+        .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--driftwood);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 6vw, 3.4rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        header h1 em {
+            font-style: italic;
+            color: #DDA983;
+        }
+
+        header .lede {
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--ink);
+            max-width: 56ch;
+        }
+
+        header .note {
+            margin-top: 1rem;
+            font-size: 0.92rem;
+            color: var(--driftwood);
+            max-width: 60ch;
+        }
+
+        .rule {
+            height: 1px;
+            background: var(--cream);
+            border: none;
+            margin: 3rem 0 0;
+        }
+
+        /* Prompt list */
+        .prompts {
+            padding: 1rem 0 1rem;
+        }
+
+        .prompt {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--cream);
+        }
+
+        .prompt:last-child { border-bottom: none; }
+
+        .prompt-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--bordeaux);
+            line-height: 1;
+            flex-shrink: 0;
+            min-width: 1.4rem;
+        }
+
+        .prompt h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .what {
+            margin: 0 0 1.25rem 2.4rem;
+            font-size: 0.95rem;
+            color: var(--driftwood);
+            max-width: 58ch;
+        }
+
+        .prompt-box {
+            position: relative;
+            margin-left: 2.4rem;
+            background: var(--surface);
+            border: 1px solid var(--cream);
+            border-radius: 10px;
+            padding: 1.5rem 1.5rem 1.5rem;
+        }
+
+        .prompt-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--ink);
+            white-space: pre-wrap;
+            word-break: break-word;
+            padding-right: 4.5rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--pearl);
+            border: 1px solid var(--cream);
+            border-radius: 6px;
+            padding: 0.35rem 0.8rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+            cursor: pointer;
+            transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.06s ease;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--bordeaux);
+            color: var(--bordeaux);
+        }
+
+        .copy-btn:active { transform: translateY(1px); }
+
+        .copy-btn.copied {
+            background: var(--bordeaux);
+            border-color: var(--bordeaux);
+            color: var(--pearl);
+        }
+
+        /* The human-edit sub-step */
+        .substep {
+            margin: 1.25rem 0 0 2.4rem;
+            border-left: none;
+        }
+
+        .substep .sub-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--bordeaux);
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .substep .what {
+            margin-left: 0;
+        }
+
+        .substep .prompt-box {
+            margin-left: 0;
+        }
+
+        /* Closing */
+        .closing {
+            padding: 3.5rem 0 1rem;
+            text-align: center;
+        }
+
+        .closing .script {
+            font-family: 'Allison', cursive;
+            font-size: 3rem;
+            color: var(--bordeaux);
+            line-height: 1;
+        }
+
+        .closing p {
+            margin-top: 0.75rem;
+            font-size: 0.98rem;
+            color: var(--ink);
+            max-width: 50ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .closing .cta {
+            display: inline-block;
+            margin-top: 1.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--bordeaux);
+            text-decoration: none;
+            border-bottom: 1px solid var(--bordeaux);
+            padding-bottom: 2px;
+        }
+
+        .closing .cta:hover { opacity: 0.78; }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0 3.5rem;
+            font-size: 0.78rem;
+            color: var(--driftwood);
+        }
+
+        footer a { color: var(--driftwood); text-decoration: underline; }
+
+        @media (max-width: 640px) {
+            header { padding-top: 3rem; }
+            .prompt-box { margin-left: 0; }
+            .what { margin-left: 0; }
+            .substep { margin-left: 0; }
+            .prompt-text { padding-right: 0; }
+            .copy-btn { position: static; display: inline-block; margin-bottom: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <header>
+            <p class="eyebrow">Wise Women Use AI &middot; Masterclass</p>
+            <h1>Every prompt from <em>the demo</em></h1>
+            <p class="lede">These are the exact prompts I used to turn one of Jo's newsletters into five complete Instagram posts. Same order I ran them in, copy and paste straight across.</p>
+            <p class="note">A quick word before you start: these are starting points, not magic spells. They worked because Jo's Claude already knew her voice, her audience and her business. Tune each one to yours and the output gets sharper every time. Swap Jo's details for your own, change the angles to suit what you do, and make them sound like you.</p>
+            <hr class="rule">
+        </header>
+
+        <section class="prompts">
+
+            <!-- 1: Content plan -->
+            <article class="prompt">
+                <div class="prompt-head">
+                    <span class="num">1</span>
+                    <h2>The content plan</h2>
+                </div>
+                <p class="what">Start here. Upload your source (a newsletter, a podcast, a voice note) and ask for the shape of the week before any drafting. You want to see the five angles first.</p>
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <div class="prompt-text">Attached is the newsletter Jo wrote this week.
+
+I want to turn this into five Instagram posts for her, each approaching the same core idea from a different angle. The thinking, the voice, and the story are already in the newsletter. I want you to use them as the source. Don't invent new examples. Don't rewrite her voice. Take what she's already said and spread it across five posts that each do a different job.
+
+The five angles:
+1. The moment itself. First-person story, intimate, no big lesson.
+2. The bigger principle. What this moment actually was, why it matters in this season of life.
+3. A question for the audience. Engagement-led, invites comments.
+4. A client story. Adapt or expand on anything in the newsletter that hints at a client experience.
+5. CTA post. Inviting people to work with her, soft sell in her voice.
+
+Give me the content plan first, just the angle and one-line summary for each, before we write any of them. I want to see the shape before we start drafting.</div>
+                </div>
+
+                <div class="substep">
+                    <p class="sub-label">Then, the human edit</p>
+                    <p class="what">When Claude refused to invent a client story (because Jo's setup tells it never to fabricate one), I re-angled that post instead of forcing it. This is the prompt I used to change the plan. Your version will have its own moments like this, where you steer rather than accept.</p>
+                    <div class="prompt-box">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                        <div class="prompt-text">Drop the client story for Post 4, you're right not to invent one.
+
+Post 4 is now a permission post. Update the plan only, don't draft any posts yet: give Jo's audience permission to reclaim one small joy of their own this week, no productivity attached, no guilt. Build it from the invitation in her newsletter (find one moment this week).
+
+Change only the one-line plan entry for Post 4. Leave Posts 1, 2, 3 and 5 exactly as they are. Don't write, draft, or summarise any posts, and don't tell me anything is "done." Just show me the updated plan and wait for me to ask for the drafts.</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2: Post 1 -->
+            <article class="prompt">
+                <div class="prompt-head">
+                    <span class="num">2</span>
+                    <h2>Post one, the story</h2>
+                </div>
+                <p class="what">The moment itself. First person, intimate, no big lesson at the end. Notice the output format you ask for: hook, caption, hashtags, visual direction, CTA. That is what turns a caption into a complete post.</p>
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <div class="prompt-text">Let's write post 1. The story of the moment in the car. First person, in Jo's voice, pulled directly from the newsletter. Intimate. Specific. No big lesson at the end. Just the moment, told well. Caption should feel like Jo's writing in her journal, not lecturing.
+
+Give me:
+- Hook (first line, the scroll-stopper)
+- Full caption
+- 3-5 hashtags, specific phrases not generic single words
+- Visual direction (specific enough Jo can execute or hand to Canva)
+- CTA</div>
+                </div>
+            </article>
+
+            <!-- 3: Post 2 -->
+            <article class="prompt">
+                <div class="prompt-head">
+                    <span class="num">3</span>
+                    <h2>Post two, the principle</h2>
+                </div>
+                <p class="what">Same idea, zoomed out. This one is allowed to teach a little. Keep the output format identical so every post arrives ready to schedule.</p>
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <div class="prompt-text">Post 2. Same core idea, small joy returning, but now we're zooming out. What's actually happening in that car moment, and why does it matter in this season of life? Tie it to perimenopause or midlife if it fits naturally. Losing access to your own joy is a real symptom, not just a metaphor. Pull from the newsletter wherever the thinking is already there.
+
+Same output format: hook, caption, hashtags, visual direction, CTA. This one's allowed to teach a little. Jo's audience trusts her, they want her thinking.</div>
+                </div>
+            </article>
+
+            <!-- 4: Posts 3, 4, 5 -->
+            <article class="prompt">
+                <div class="prompt-head">
+                    <span class="num">4</span>
+                    <h2>Posts three, four and five</h2>
+                </div>
+                <p class="what">Once you have the rhythm, batch the rest. Three posts in one go: the question, the permission post and the soft CTA, each with the same five-part format.</p>
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <div class="prompt-text">Now post 3, 4, and 5.
+
+Post 3. The audience question. When did you last sing along to something just for you? Or a variation. Make it specific and answerable, not a vague 'tell me your thoughts.' The job is to start conversations in the comments.
+
+Post 4. The permission post, as per the updated plan. Give Jo's audience permission to reclaim one small joy of their own this week, no productivity attached, no guilt. Build it from the invitation in her newsletter ('find one moment this week'). Warm, direct, ends with a gentle nudge to act, not a lesson.
+
+Post 5. The CTA post. A soft invitation to work with Jo 1:1. No hype, no scarcity, no pressure. Just a clear 'this is what I do and here's how to find me.' Jo's voice.
+
+Same output format for each: hook, caption, hashtags, visual direction, CTA.</div>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="closing">
+            <p class="script">You don't need more ideas</p>
+            <p>You need to do more with the ones you already have. That is the whole point of the system. One good thought, properly spread across a week.</p>
+            <a class="cta" href="https://buy.stripe.com/00wbJ3dd9aEH2N30px6Ri03">Build this for your business &rarr;</a>
+        </section>
+
+        <footer>
+            <p>Made for the women who came to the masterclass &middot; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> &middot; @wisewomenuseai</p>
+        </footer>
+    </main>
+
+    <script>
+        function copyPrompt(btn) {
+            var text = btn.parentElement.querySelector('.prompt-text').innerText;
+            navigator.clipboard.writeText(text).then(function () {
+                btn.textContent = 'Copied';
+                btn.classList.add('copied');
+                setTimeout(function () {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
