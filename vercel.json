@@ -3,9 +3,9 @@
     {
       "src": "/masterclass.ics",
       "headers": {
-        "Content-Type": "text/calendar; charset=utf-8"
+        "Location": "/workshop.ics"
       },
-      "continue": true
+      "status": 301
     },
     {
       "src": "/workshop.ics",
