@@ -111,6 +111,10 @@
       "dest": "/starter.html"
     },
     {
+      "src": "/fable",
+      "dest": "/fable.html"
+    },
+    {
       "src": "/community",
       "dest": "/community.html"
     },

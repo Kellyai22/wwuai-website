@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/fable">
+  <title>Four jobs to give Claude Fable 5 before the meter starts | Wise Women Use AI</title>
+  <meta name="description" content="Fable 5 is included in your paid Claude plan until 12 July, then it bills by the token. Here are the four jobs it's genuinely best at, with the exact prompts to paste in.">
+
+  <meta property="og:title" content="Four jobs to give Fable 5 before the meter starts">
+  <meta property="og:description" content="Fable 5 is included in your paid Claude plan until 12 July, then it bills by the token. Here are the four jobs it's genuinely best at, with the exact prompts to paste in.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/fable">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Four jobs to give Fable 5 before the meter starts">
+  <meta name="twitter:description" content="Fable 5 is included in your paid Claude plan until 12 July, then it bills by the token. Here are the four jobs it's genuinely best at.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 640px; }
+
+    /* ── Top brand bar ─────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      font-weight: 500;
+    }
+
+    /* ── Sticky section nav ────────────────────── */
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 246, 0.86);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
+      backdrop-filter: saturate(150%) blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+    }
+    .brand-mini {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      font-weight: 500;
+    }
+    .section-links { display: none; gap: 30px; list-style: none; }
+    .section-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--driftwood);
+      padding: 6px 0;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .section-links a:hover,
+    .section-links a.current { color: var(--bordeaux); border-color: var(--clay); }
+    .nav-cta {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 9px 18px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    }
+    .nav-cta:hover { background: var(--bordeaux); color: var(--pearl); }
+    .nav-cta:active { transform: translateY(1px); }
+
+    /* When the guide is unlocked, swap the nav CTA for the section links (desktop) */
+    body.unlocked .nav-cta { display: none; }
+    @media (min-width: 761px) {
+      body.unlocked .section-links { display: flex; }
+    }
+
+    /* ── Hero ──────────────────────────────────── */
+    .hero { padding: 68px 0 40px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 22px;
+    }
+    .eyebrow b { color: var(--bordeaux); font-weight: 600; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(38px, 6.4vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+      max-width: 15ch;
+    }
+    h1 em { color: var(--clay); font-weight: 400; }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.72;
+      color: var(--bordeaux);
+      max-width: 60ch;
+      margin-bottom: 34px;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 16px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover { background: #2c0e15; box-shadow: var(--shadow-lift); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--driftwood);
+      margin-top: 2px;
+      max-width: 52ch;
+      line-height: 1.6;
+    }
+
+    /* ── Deadline banner ───────────────────────── */
+    .deadline {
+      margin: 8px 0 4px;
+      background: var(--warm-tint);
+      border: 1px solid rgba(221, 169, 131, 0.5);
+      border-radius: 4px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .deadline-dot {
+      flex-shrink: 0;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bordeaux);
+      box-shadow: 0 0 0 4px rgba(58, 19, 27, 0.12);
+    }
+    .deadline p { font-size: 14.5px; font-weight: 400; color: var(--bordeaux); line-height: 1.55; }
+    .deadline b { font-weight: 600; }
+
+    /* ── Email gate ────────────────────────────── */
+    .gate { padding: 40px 0 56px; }
+    body.unlocked #gate { display: none; }
+    .gate-card {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      border-radius: 8px;
+      padding: 46px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-lift);
+    }
+    .gate-card h2 { color: var(--pearl); margin-bottom: 12px; }
+    .gate-card .gate-line {
+      font-size: 16px;
+      color: rgba(250, 248, 246, 0.82);
+      line-height: 1.65;
+      max-width: 46ch;
+      margin: 0 auto 26px;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 380px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: -4px;
+    }
+    .gate-form input {
+      font-family: var(--body);
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(250, 248, 246, 0.28);
+      background: rgba(250, 248, 246, 0.06);
+      color: var(--pearl);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .gate-form input::placeholder { color: rgba(250, 248, 246, 0.5); }
+    .gate-form input:focus { border-color: var(--blush); background: rgba(250, 248, 246, 0.1); }
+    .gate-form button {
+      margin-top: 6px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      background: var(--blush);
+      border: 1.5px solid var(--blush);
+      padding: 15px 22px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .gate-form button:hover { background: var(--clay); border-color: var(--clay); }
+    .gate-form button:active { transform: translateY(1px); }
+    .gate-form button:disabled { opacity: 0.7; cursor: default; }
+    .gate-note { font-size: 12px; color: rgba(250, 248, 246, 0.6); margin-top: 16px; }
+    .gate-reassure {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--driftwood);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Unlocked guide ────────────────────────── */
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section.block { padding: 46px 0; }
+    section.block + section.block { border-top: 1px solid var(--cream-dark); }
+    .kicker {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--clay);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .lead { font-size: 16.5px; line-height: 1.78; color: var(--bordeaux); max-width: 62ch; }
+    .lead strong { font-weight: 600; }
+    .lead .fig {
+      font-weight: 500;
+      color: var(--bordeaux);
+      border-bottom: 1.5px solid var(--clay);
+      white-space: nowrap;
+    }
+    .jobs-lead { margin-bottom: 6px; }
+
+    /* ── A job (title + why + its prompt) ──────── */
+    .job {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 26px;
+      padding: 34px 0;
+      border-top: 1px solid var(--cream-dark);
+      align-items: start;
+    }
+    .job:first-of-type { border-top: none; }
+    .job-num {
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 58px);
+      line-height: 0.9;
+      font-weight: 400;
+      color: var(--clay);
+    }
+    .job-title {
+      font-family: var(--display);
+      font-size: clamp(21px, 2.8vw, 26px);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .job-why { font-size: 16px; line-height: 1.75; color: var(--bordeaux); max-width: 58ch; }
+
+    /* ── Prompt card ───────────────────────────── */
+    .prompt {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .prompt-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--warm-tint);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .prompt-top .p-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+    .btn-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: none;
+      padding: 9px 15px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-copy:hover { background: #2c0e15; }
+    .btn-copy:active { transform: translateY(1px); }
+    .btn-copy.copied { background: var(--clay); color: var(--bordeaux); }
+    .btn-copy svg { width: 13px; height: 13px; }
+    .prompt-body {
+      padding: 20px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.72;
+      color: var(--bordeaux);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ── Skool CTA ─────────────────────────────── */
+    .skool {
+      margin: 8px 0 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 44px 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .skool h2 { margin-bottom: 12px; }
+    .skool p { color: var(--bordeaux); font-size: 16px; line-height: 1.7; max-width: 48ch; margin: 0 auto 24px; }
+    .btn-skool {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-skool:hover { background: #2c0e15; }
+    .btn-skool:active { transform: translateY(1px); }
+    .btn-skool svg { width: 15px; height: 15px; }
+
+    /* ── Footer ────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 30px 24px 44px;
+      text-align: center;
+    }
+    .foot-brand {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 8px;
+    }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
+
+    /* ── Responsive ────────────────────────────── */
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .section-nav-inner { justify-content: space-between; }
+      .hero { padding: 44px 0 32px; }
+      .job { grid-template-columns: 1fr; gap: 4px; padding: 28px 0; }
+      .job-num { font-size: 40px; margin-bottom: 6px; }
+      .gate-card { padding: 34px 22px; }
+      .skool { padding: 34px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body.unlocked #guide { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
+    </a>
+    <span class="topbar-note">Free guide</span>
+  </div>
+
+  <!-- Sticky section nav -->
+  <nav class="section-nav" aria-label="On this page">
+    <div class="section-nav-inner">
+      <span class="brand-mini">Fable 5</span>
+      <ul class="section-links">
+        <li><a href="#whats-happening">The quick version</a></li>
+        <li><a href="#jobs">The four jobs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free guide</p>
+      <h1>Four jobs to give Fable 5 <em>before the meter starts</em></h1>
+      <p class="hero-sub">
+        Anthropic's most capable model is included in your paid plan until 12 July. After that it's still there, it just bills by the token at a rate that'll make your eyes water. <span class="soft">So before the window shuts, put it on the work it's genuinely best at. Here are the four jobs I'd give it, and the exact prompts to paste in.</span>
+      </p>
+      <p class="hero-note">You'll need a paid Claude plan (Pro, Max or Team) with Fable 5 selected. Paste each prompt into Claude Code or Cowork.</p>
+    </div>
+  </header>
+
+  <!-- Deadline banner -->
+  <div class="wrap">
+    <div class="deadline">
+      <span class="deadline-dot" aria-hidden="true"></span>
+      <p><b>Included free in your plan until 12 July.</b> After that it moves to usage credits.</p>
+    </div>
+  </div>
+
+  <!-- Email gate -->
+  <section class="gate" id="gate">
+    <div class="wrap wrap-narrow">
+      <div class="gate-card">
+        <h2>Get the guide and the four prompts</h2>
+        <p class="gate-line">Pop your email in and the whole thing unlocks right here on the page: the quick rundown, all four jobs, and the exact prompts to copy and paste.</p>
+        <form class="gate-form register-form" action="https://app.kit.com/forms/9173305/subscriptions" method="post" data-sv-form="9173305" data-uid="c0dd7062fc" data-format="inline" data-version="5">
+          <input type="hidden" name="fields[source]" value="fable">
+          <label class="field-label" for="fn">First name</label>
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <label class="field-label" for="em">Email</label>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit">Unlock the guide</button>
+        </form>
+        <p class="gate-note">Free. No spam. Unsubscribe any time.</p>
+      </div>
+      <p class="gate-reassure">One email, and it all opens on this page. Nothing to download, nothing to wait for.</p>
+    </div>
+  </section>
+
+  <!-- The guide (hidden until unlocked) -->
+  <div id="guide">
+
+    <!-- What's happening -->
+    <section class="block" id="whats-happening">
+      <div class="wrap">
+        <p class="kicker">The quick version</p>
+        <h2>What's actually going on with Fable 5</h2>
+        <p class="lead">
+          Fable 5 is included on paid plans (Pro, Max, Team and select Enterprise) for up to half your weekly usage, now through 12 July. From the 13th it moves to usage credits at <span class="fig">$10 per million input tokens</span> and <span class="fig">$50 per million output tokens</span>, around double Opus. It doesn't vanish. It just gets expensive enough that you'll want a proper reason to open it. These four jobs are the reason.
+        </p>
+      </div>
+    </section>
+
+    <!-- The four jobs, each with its prompt -->
+    <section class="block" id="jobs">
+      <div class="wrap">
+        <p class="kicker">The work it's best at</p>
+        <h2>The four jobs I'd give it</h2>
+        <p class="lead jobs-lead">Copy each prompt, paste it into Claude Code or Cowork with Fable 5 selected, and let it work.</p>
+
+        <!-- Job 1 -->
+        <div class="job">
+          <div class="job-num">1</div>
+          <div>
+            <h3 class="job-title">Hand it your big goal and get the plan</h3>
+            <p class="job-why">Start here. Give it the goal you actually care about this year, the revenue, the launch, the thing you keep not getting to, and let it reverse engineer the path with the next move marked. A smaller model guesses. This one reads your whole business first.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p1', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p1">Here's the big goal I'm holding: [write your goal here, with the deadline and any numbers that matter, for example the revenue, the launch, the milestone].
+
+Reverse engineer it from there. First read everything you can see about my business and the way I work, so the plan fits me and not a generic template. Then map the path: the milestones between here and the goal, in order, with rough timing. Under each milestone, the specific actions, and which ones are mine to do versus which ones you or my other tools could take off my plate.
+
+Flag the two or three things most likely to trip me up and what I'd do about each. End with the very next action I should take this week.
+
+Keep it honest. If the goal needs more time or money than I've hinted at, tell me plainly rather than making it work on paper.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job">
+          <div class="job-num">2</div>
+          <div>
+            <h3 class="job-title">Audit and upgrade your skills</h3>
+            <p class="job-why">Your skills were written on different days, in different moods, some of them by an older model. Fable reads the whole lot in one sitting, finds the ones quietly costing you time, and rewrites the worst offenders properly.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p2', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p2">Go through every skill I've built, all of them, start to finish. Don't sample.
+
+For each one, tell me in plain terms: what it's meant to do, where it's letting me down (fuzzy instructions, steps that assume I'll remember something, references to files or tools that have moved or gone), and whether any two skills are stepping on each other.
+
+Then rank them from "pulling its weight" to "quietly broken". Pick the three where a fix would save me the most time each week and rewrite those three in full. Show me the before and after for anything you change so I can follow your thinking.
+
+Don't invent new skills and don't make anything cleverer than it needs to be. I maintain all of this on my own, so plain and reliable wins.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job">
+          <div class="job-num">3</div>
+          <div>
+            <h3 class="job-title">Run a security review on your own setup</h3>
+            <p class="job-why">This is the one Fable is genuinely best-in-class at, and not by accident. It is so sharp at finding security holes that access to it was restricted for a few weeks before it came back with guardrails. So point it at your own business, your keys, your webhooks, anything Claude Code has built, and let it find the gaps before anyone else does.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p3', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p3">I want a security review of my own setup. Everything you can see here belongs to me and I'm asking you to check it over.
+
+Go looking for: keys, passwords or tokens sitting somewhere they shouldn't be, like hardcoded in a script, saved into notes, or committed into a git repo. Webhook links or form endpoints a stranger could hit. Anything left open to the world, like a test page, a staging link, or a doc or sheet set to "anyone with the link". Connections and permissions broader than the job needs. And any automation that would cost me money or embarrass me if the wrong person set it off.
+
+For each thing you find, give me the risk in one plain sentence, how likely it really is, how much damage it could do, and the exact fix. Group it into "sort today", "sort this week", and "worth doing eventually".
+
+Report it all back first. Don't change a single thing until I've read it and said go.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job">
+          <div class="job-num">4</div>
+          <div>
+            <h3 class="job-title">Audit your whole setup, then fix it</h3>
+            <p class="job-why">Memory, instruction files, skills, connections, the folders that quietly pile up. Fable holds all of it in its head at once, hands you a ranked list of what to fix, then works down the list with you instead of leaving you a pile of homework.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p4', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p4">Put your consultant hat on and look at my whole setup, the way someone I was paying to find every improvement would. My instruction files, my memory, my skills, my connected tools, my folders, and how my business runs day to day as far as you can see it.
+
+Give me four things: what's working that I should lean on harder; what's redundant or arguing with itself (duplicate instructions, stale memory, skills that overlap); what's missing that someone running a business like mine would obviously want; and the single highest-impact change if I could only make one.
+
+Name the actual files and be specific. Hand me the full list first, sorted by impact. Then work down it with me one item at a time, making each fix and showing me what changed before you move on.
+
+Assume I look after all of this myself with no developer. If I won't understand a change in six months, it's the wrong change.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skool CTA -->
+    <section class="block">
+      <div class="wrap wrap-narrow">
+        <div class="skool">
+          <h2>You don't have to work this out on your own</h2>
+          <p>Wise Women Use AI is the free community where women running everything themselves get this stuff done together. Calls, templates, and people who actually reply. Come in and say hi.</p>
+          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">
+            Join the free community
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Copy to clipboard ─────────────────────
+    function copyPrompt(id, btn) {
+      var text = document.getElementById(id).textContent;
+      var original = btn.innerHTML;
+      function done() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Copied';
+        setTimeout(function () { btn.classList.remove('copied'); btn.innerHTML = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    }
+    function fallback(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // ── Unlock the guide ──────────────────────
+    function unlockGuide(scroll) {
+      document.body.classList.add('unlocked');
+      if (scroll) {
+        setTimeout(function () {
+          var el = document.getElementById('whats-happening');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    // Deep-link: /fable?unlocked=1 opens the guide without re-submitting
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') {
+          unlockGuide(false);
+        }
+      } catch (e) {}
+    })();
+
+    // Submit intercept: post to Kit in the background, then open the guide
+    document.querySelectorAll('form.register-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
+        fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form)),
+          mode: 'no-cors'
+        }).finally(function () {
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set('unlocked', '1');
+            window.history.replaceState({}, '', url);
+          } catch (e) {}
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          unlockGuide(true);
+        });
+      });
+    });
+
+    // ── Sticky nav: highlight the section in view ──
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('current'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('current');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['whats-happening', 'jobs'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
