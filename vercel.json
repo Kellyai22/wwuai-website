@@ -94,11 +94,17 @@
     },
     {
       "src": "/switch-to-claude",
-      "dest": "/switch-to-claude.html"
+      "headers": {
+        "Location": "/switch"
+      },
+      "status": 301
     },
     {
       "src": "/switch-wwuai",
-      "dest": "/switch-wwuai.html"
+      "headers": {
+        "Location": "/switch"
+      },
+      "status": 301
     },
     {
       "src": "/starter",

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/switch">
-  <title>Switch to Claude — Wise Women Use AI</title>
+  <title>Switch to Claude | Wise Women Use AI</title>
   <meta name="description" content="Move your ChatGPT memory and preferences to Claude in about five minutes. Free, private, and built for women in business.">
 
   <meta property="og:title" content="Switch to Claude | Wise Women Use AI">
@@ -27,6 +27,8 @@
       --cream:        #FAF8F6;
       --cream-dark:   #E1DAD7;
       --white:        #FFFFFF;
+      --blush:        #E2B592;
+      --clay:         #DDA983;
       --serif: 'Playfair Display', Georgia, serif;
       --sans:         'Montserrat', sans-serif;
     }
@@ -182,6 +184,7 @@
     .email-gate-card {
       background: var(--white);
       border: 1px solid var(--cream-dark);
+      border-top: 3px solid var(--blush);
       padding: 32px 28px;
     }
 
@@ -801,8 +804,8 @@
     }
 
     .done-box {
-      background: var(--white);
-      border: 1.5px solid var(--cream-dark);
+      background: rgba(226, 181, 146, 0.10);
+      border: 1.5px solid rgba(226, 181, 146, 0.45);
       border-radius: 8px;
       padding: 40px;
       text-align: center;
@@ -861,6 +864,74 @@
 
     .footer-links a:hover { color: var(--ink); }
 
+    /* ── HQ Bridge (Step 4) ───────────────────── */
+    .hq-bridge {
+      background: rgba(226, 181, 146, 0.12);
+      border: 1.5px solid rgba(226, 181, 146, 0.5);
+      border-radius: 8px;
+      padding: 36px 32px;
+      margin: 40px 0;
+    }
+
+    .hq-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 12px;
+    }
+
+    .hq-bridge h3 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3.5vw, 28px);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hq-bridge > p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .hq-cta {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(226, 181, 146, 0.5);
+    }
+
+    .hq-cta p {
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .btn-hq {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--bordeaux);
+      background: transparent;
+      border: 1.5px solid var(--bordeaux);
+      padding: 14px 32px;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-hq:hover {
+      background: var(--bordeaux);
+      color: var(--white);
+    }
+
     /* ── Responsive ───────────────────────────── */
     @media (max-width: 640px) {
       nav { padding: 0 20px; }
@@ -874,6 +945,9 @@
       .wizard { padding: 0 20px 48px; }
 
       .guidance-grid { grid-template-columns: 1fr; }
+
+      .hq-bridge { padding: 28px 22px; }
+      .btn-hq { display: block; text-align: center; }
 
       .import-options { grid-template-columns: 1fr; }
 
@@ -1176,6 +1250,33 @@ Again, format this as a clean profile with headings and bullet points.</div>
         </p>
       </div>
 
+      <!-- Honest comparison -->
+      <div class="tips-section">
+        <h3>Claude and ChatGPT, honestly</h3>
+        <p>You don't have to pick a side. Here's where each one earns its place, so you know what to reach for.</p>
+        <div class="guidance-grid">
+          <div class="guidance-box keep">
+            <h4>Where Claude shines</h4>
+            <ul>
+              <li>Writing that sounds like you, not a robot</li>
+              <li>Following a long, detailed brief without losing the thread</li>
+              <li>Reading and making sense of long documents</li>
+              <li>Thinking a problem through before it answers</li>
+              <li>Building real tools and pages right in the chat</li>
+            </ul>
+          </div>
+          <div class="guidance-box skip">
+            <h4>Where ChatGPT still has the edge</h4>
+            <ul>
+              <li>Making images from a description</li>
+              <li>Talking back and forth out loud</li>
+              <li>Its bigger library of plug-ins and add-ons</li>
+              <li>Being the place your hands already know</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- What to expect -->
       <div class="tips-section">
         <h3>What to expect in the first week</h3>
@@ -1183,9 +1284,20 @@ Again, format this as a clean profile with headings and bullet points.</div>
           <li>Claude has a different style to ChatGPT. It tends to be more careful, more nuanced, and sometimes more honest about what it doesn't know. That's a feature, not a bug.</li>
           <li>Your memory will build up naturally over conversations. The import gives Claude a head start, but the real value comes as you work together.</li>
           <li>If something feels off, just tell Claude. It learns from corrections, same as ChatGPT does.</li>
-          <li>Claude is especially strong at writing, analysis, and following detailed instructions. Give it a proper brief and it will surprise you.</li>
-          <li>You don't have to pick one or the other. Plenty of people use both ChatGPT and Claude for different tasks. Try Claude for a week and see how it feels.</li>
         </ul>
+      </div>
+
+      <!-- HQ Bridge -->
+      <div class="hq-bridge">
+        <p class="hq-eyebrow">The next step most people skip</p>
+        <h3>Give Claude somewhere to live: your business HQ</h3>
+        <p>Moving your profile across is the first half. This next bit is the one that actually changes how the business feels day to day.</p>
+        <p>Right now Claude knows about you. What it doesn't have is one place to look when it's helping you run things. Your offers, your clients, your content, your numbers, all of it scattered across chats and your own head.</p>
+        <p>So give it a home. A simple HQ in Notion holds the important parts of your business in one spot. You can even use ChatGPT to help you build the first version, then point Claude at it. Now when you sit down, Claude isn't starting from scratch every time. It's working from your real business.</p>
+        <div class="hq-cta">
+          <p>Building one is exactly what we do together inside my free community. Come in and set yours up, step by step, alongside women doing the same thing.</p>
+          <a href="/community" class="btn-hq">Join the free community</a>
+        </div>
       </div>
 
       <!-- Done box -->
