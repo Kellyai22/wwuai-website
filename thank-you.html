@@ -770,17 +770,19 @@
           + '<div class="kit-item"><div class="kit-number">03</div><h3>Import to Claude</h3><p>Paste your profile into Claude and let it store everything. One conversation, done.</p></div>'
           + '<div class="kit-item"><div class="kit-number">04</div><h3>What comes next</h3><p>Set up Projects, understand what to expect in your first week, and tips for getting the most out of Claude.</p></div>';
         document.querySelector('.upsell .section-label').textContent = 'What comes next';
-        upsellHeading.innerHTML = 'You\'re making the move to Claude.<br>Here\'s where we go <em>deeper.</em>';
-        upsellBody.textContent = 'The community is where women who\'ve made this switch share what\'s actually working — prompts, projects, time-saving workflows. If you\'re going all-in on Claude, this is your people.';
+        upsellHeading.innerHTML = 'You\'ve made the move to Claude.<br>Come and <em>settle in.</em>';
+        upsellBody.textContent = 'There\'s a free community of women who\'ve made the same switch, sharing what\'s actually working: prompts, projects, and the little time-savers. If you\'re giving Claude a proper go, this is your people.';
         document.querySelector('.upsell-grid').innerHTML =
-            '<div class="upsell-card"><p class="upsell-card-label">Classroom</p><h3>Claude Classroom</h3><p>Prompts, projects, and the full Claude Starter Kit. Everything you need to get fluent fast.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Community</p><h3>Real Q&A with Kelly</h3><p>Ask questions, share wins, get Kelly\'s take. Real answers for the real things you\'re working on.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Always growing</p><h3>Resource Library</h3><p>New templates and workflows added regularly. Pay once, access everything that comes after.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Framework</p><h3>AI as Your Business Team</h3><p>The mental model that changes how you use AI — from a tool you open to a team you lead.</p></div>';
-        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. Claude, properly.<br><em>Join at the founding price.</em>';
-        document.querySelector('.upsell-pricing-body').textContent = 'You\'ve already taken the first step by trying Claude. Inside the community, women who\'ve made the same switch share prompts, projects, and what\'s actually working. Join at the founding price before it goes up.';
-        upsellCta.textContent = 'Join as a founding member';
-        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109/about');
+            '<div class="upsell-card"><p class="upsell-card-label">Free to join</p><h3>The community</h3><p>Start Here, the 7-day challenge, and the good habits that make Claude actually stick. No cost, no catch.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Free to join</p><h3>Real Q&A with Kelly</h3><p>Ask questions, share wins, and get Kelly\'s take on the real things you\'re working on.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Inside, when ready</p><h3>The Unfair Advantage</h3><p>The $49/mo membership within the community: prompts, walk-throughs, pre-built systems, and a monthly live workshop.</p></div>'
+          + '<div class="upsell-card"><p class="upsell-card-label">Inside, when ready</p><h3>Build your business HQ</h3><p>The guided classroom that helps you set up a Notion HQ and run the whole business from it, with Claude.</p></div>';
+        document.querySelector('.upsell-pricing-label').textContent = 'Free to join';
+        document.querySelector('.upsell-pricing-title').innerHTML = 'The community is free.<br><em>Go deeper when you\'re ready.</em>';
+        document.querySelector('.upsell-pricing-body').textContent = 'Joining costs nothing. Come in, meet the room, and use what\'s there. When you want the deeper tools and the monthly workshop, The Unfair Advantage is the $49/mo membership inside, at the founding rate while it lasts.';
+        document.querySelector('.price-box').innerHTML = '<p class="price-box-label">To join the community</p><div class="price-row"><span class="price-current">Free</span></div><p class="price-note">The Unfair Advantage membership inside is $49/mo, founding rate, rising.</p>';
+        upsellCta.textContent = 'Join the free community';
+        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109');
         document.querySelector('.upsell-fallback').innerHTML = 'Or go do the wizard first. No rush. <a href="/switch">Open the wizard</a>';
         return;
       }
