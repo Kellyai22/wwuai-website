@@ -107,6 +107,22 @@
       "status": 301
     },
     {
+      "src": "/tools/clear-the-decks",
+      "dest": "/tools-clear-the-decks.html"
+    },
+    {
+      "src": "/tools/first-wins",
+      "dest": "/tools-first-wins.html"
+    },
+    {
+      "src": "/tools/out-of-your-head",
+      "dest": "/tools-out-of-your-head.html"
+    },
+    {
+      "src": "/tools/claude-connectors",
+      "dest": "/tools-claude-connectors.html"
+    },
+    {
       "src": "/starter",
       "dest": "/starter.html"
     },

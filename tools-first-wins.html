@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>First Wins · Recipe Cards — Wise Women Use AI</title>
+  <meta name="description" content="Interactive prompt cards from the First Wins course inside the Wise Women Use AI community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid var(--cream-dark);
+    }
+    .bar .wordmark {
+      font-family: var(--serif); font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .bar .back {
+      font-size: 13px; font-weight: 500; color: var(--driftwood);
+      transition: color 0.2s ease-out;
+    }
+    .bar .back:hover { color: var(--bordeaux); }
+
+    main { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+
+    .kicker {
+      font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--driftwood); font-weight: 500; margin-bottom: 14px;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 500;
+      font-size: clamp(34px, 6vw, 46px); line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .intro { max-width: 58ch; color: var(--bordeaux); margin-bottom: 44px; }
+
+    /* Make it yours */
+    .yours {
+      border: 1px solid var(--cream-dark); border-radius: 2px;
+      padding: 26px 26px 22px; margin-bottom: 20px; background: #FFFFFF;
+    }
+    .yours h2 {
+      font-family: var(--serif); font-weight: 500; font-size: 21px; margin-bottom: 4px;
+    }
+    .yours p { font-size: 14px; color: var(--driftwood); margin-bottom: 18px; }
+    .yours .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 560px) { .yours .fields { grid-template-columns: 1fr; } }
+    .field label {
+      display: block; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .field input {
+      width: 100%; padding: 11px 12px; font: 500 15px var(--sans);
+      color: var(--bordeaux); background: var(--pearl);
+      border: 1px solid var(--cream-dark); border-radius: 2px;
+      transition: border-color 0.2s ease-out;
+    }
+    .field input:focus { outline: none; border-color: var(--clay); }
+    .field input::placeholder { color: var(--driftwood); font-weight: 400; }
+    .yours .note {
+      font-size: 12.5px; color: var(--driftwood); margin: 12px 0 0;
+    }
+    .yours .note.saved { color: var(--bordeaux); }
+
+    /* Progress */
+    .progress {
+      display: flex; align-items: center; gap: 14px;
+      margin: 0 0 36px; font-size: 13px; color: var(--driftwood);
+    }
+    .progress .track {
+      flex: 1; height: 3px; background: var(--cream-dark); border-radius: 2px; overflow: hidden;
+    }
+    .progress .fill {
+      height: 100%; width: 0; background: var(--clay);
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Cards */
+    .card {
+      border-top: 1px solid var(--cream-dark);
+      padding: 40px 0 44px;
+    }
+    .card:last-of-type { border-bottom: 1px solid var(--cream-dark); }
+    .card-head { display: flex; align-items: baseline; gap: 16px; }
+    .card-num {
+      font-family: var(--serif); font-style: italic; font-size: 15px;
+      color: var(--clay); min-width: 22px;
+    }
+    .card h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1.25;
+    }
+    .card .purpose {
+      margin: 8px 0 20px; padding-left: 38px;
+      font-size: 14.5px; color: var(--driftwood); max-width: 56ch;
+    }
+    @media (max-width: 560px) {
+      .card .purpose { padding-left: 0; }
+    }
+    .recipe {
+      background: #FFFFFF; border: 1px solid var(--cream-dark); border-radius: 2px;
+      padding: 22px 24px; font-size: 14.5px; line-height: 1.75;
+      white-space: pre-wrap; word-break: break-word;
+    }
+    .recipe .fill-token { color: var(--clay); font-style: italic; font-weight: 500; }
+    .recipe .fill-token.filled { color: var(--bordeaux); font-style: italic; font-weight: 600; }
+    .card-actions {
+      display: flex; align-items: center; gap: 18px; margin-top: 16px; flex-wrap: wrap;
+    }
+    .copy-btn {
+      font: 500 14px var(--sans); letter-spacing: 0.04em;
+      color: var(--bordeaux); background: transparent;
+      border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 10px 26px; cursor: pointer;
+      transition: background 0.2s ease-out, color 0.2s ease-out, transform 0.1s ease-out;
+    }
+    .copy-btn:hover { background: var(--bordeaux); color: var(--pearl); }
+    .copy-btn:active { transform: scale(0.98); }
+    .copy-btn:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+    .copy-btn.copied { background: var(--bordeaux); color: var(--pearl); }
+    .done {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13.5px; color: var(--driftwood); cursor: pointer; user-select: none;
+    }
+    .done input {
+      appearance: none; width: 18px; height: 18px; margin: 0;
+      border: 1.5px solid var(--driftwood); border-radius: 2px;
+      cursor: pointer; display: grid; place-content: center;
+      transition: border-color 0.2s ease-out, background 0.2s ease-out;
+    }
+    .done input:checked { background: var(--clay); border-color: var(--clay); }
+    .done input:checked::before {
+      content: ''; width: 9px; height: 5px;
+      border-left: 2px solid var(--pearl); border-bottom: 2px solid var(--pearl);
+      transform: rotate(-45deg) translateY(-1px);
+    }
+    .closing {
+      margin-top: 48px; font-size: 15px; max-width: 58ch;
+    }
+    .closing em { font-style: italic; color: var(--clay); }
+    .foot {
+      border-top: 1px solid var(--cream-dark);
+      padding: 26px 24px; text-align: center;
+      font-size: 12.5px; color: var(--driftwood);
+    }
+</style>
+</head>
+<body data-slug="first-wins">
+  <div class="bar">
+    <a class="wordmark" href="https://www.wisewomenuseai.com">Wise Women Use AI</a>
+    <a class="back" href="https://www.skool.com/wise-women-use-ai-1109/classroom">Back to the classroom</a>
+  </div>
+  <main>
+    <p class="kicker">Recipe cards</p>
+    <h1>First Wins</h1>
+    <p class="intro">The three deeper set-ups from the First Wins course. Fill in your details once below and the cards rewrite themselves for your business.</p>
+
+      <div class="yours">
+        <h2>Make it yours</h2>
+        <p>Fill these in once. Every card on this page rewrites itself with your words, and it stays saved on this device.</p>
+        <div class="fields">
+          <div class="field">
+            <label for="field-offering">What you sell</label>
+            <input id="field-offering" type="text" placeholder="e.g. handmade candles and gift boxes" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="field-audience">Who you sell to</label>
+            <input id="field-audience" type="text" placeholder="e.g. busy women who love a calm home" autocomplete="off">
+          </div>
+        </div>
+        <p class="note" id="yours-note">Nothing is sent anywhere. Your words live only in your browser.</p>
+      </div>
+    <div class="progress">
+      <span id="progress-label">0 of 3 used</span>
+      <div class="track"><div class="fill" id="progress-fill"></div></div>
+    </div>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="card-num">01</span>
+          <h3>Set Claude up so it knows you</h3>
+        </div>
+        <p class="purpose">Paste this into your Claude Project instructions. Do it once, never re-explain yourself again.</p>
+        <div class="recipe" id="recipe-0">You are my business right-hand. I run a business that sells <span class="fill-token" data-fill="offering" data-blank="[what you sell]">[what you sell]</span> to <span class="fill-token" data-fill="audience" data-blank="[who you sell to]">[who you sell to]</span>. My tone is warm, clear and practical, no jargon, no corporate speak. I prefer short, useful answers over long explanations. Your job is to help me with planning, writing, customer replies and ideas, and to keep everything sounding like me. When I ask for something, give me a draft I can use straight away, then offer one way to make it better.</div>
+        <div class="card-actions">
+          <button class="copy-btn" type="button" data-target="recipe-0">Copy this prompt</button>
+          <label class="done"><input type="checkbox" data-card="0"> I've used this one</label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="card-num">02</span>
+          <h3>Hand over the job you dread</h3>
+        </div>
+        <p class="purpose">Does the task with you today, and writes the reusable recipe so next time takes two minutes.</p>
+        <div class="recipe" id="recipe-1">There's a recurring task in my business I dread: [name the task]. I want to hand as much of it as possible to you, permanently. First, interview me about it. Ask one question at a time: what the task involves, how often it comes up, what a finished version looks like, what parts truly need me, and what I've got (examples, templates, past versions) that you can work from. Then do two things. One: do the task with me right now, start to finish. Two: write me a reusable prompt I can paste every time this task comes up, so we never have to have this conversation again. Make that prompt detailed enough that future-you gets it right first go.</div>
+        <div class="card-actions">
+          <button class="copy-btn" type="button" data-target="recipe-1">Copy this prompt</button>
+          <label class="done"><input type="checkbox" data-card="1"> I've used this one</label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="card-num">03</span>
+          <h3>Build one small thing</h3>
+        </div>
+        <p class="purpose">A real, finished thing for your business, made in one sitting.</p>
+        <div class="recipe" id="recipe-2">I want to create [a welcome guide / a customer checklist / a weekly planner] for my business selling <span class="fill-token" data-fill="offering" data-blank="[what you sell]">[what you sell]</span>. Ask me a few questions first so it genuinely fits: who it's for, what needs to be in it, and anything I already have that should be included. Then build it for me as a clean, well-organised document I could share tomorrow. Keep the design calm and simple. When it's done, suggest one small improvement I might not have thought of.</div>
+        <div class="card-actions">
+          <button class="copy-btn" type="button" data-target="recipe-2">Copy this prompt</button>
+          <label class="done"><input type="checkbox" data-card="2"> I've used this one</label>
+        </div>
+      </section>
+    <p class="closing">These cards are the floor, not the ceiling. Change any of them until they sound like <em>you</em>, and bring what you make back to the community. We love a show and tell.</p>
+    <!-- AUDIO SLOT: when Kelly records a welcome, add above the progress bar:
+         <audio controls preload="none" src="/assets/audio/tools-first-wins.mp3"></audio> -->
+  </main>
+  <div class="foot">Made for the Wise Women Use AI community · wisewomenuseai.com</div>
+  <script>
+  (function () {
+    var PROFILE_KEY = 'wwuai-tools-profile';
+    var PAGE_KEY = 'wwuai-tools-done-' + document.body.dataset.slug;
+
+    // ---- Personalisation ----
+    var inputs = {
+      offering: document.getElementById('field-offering'),
+      audience: document.getElementById('field-audience')
+    };
+    var note = document.getElementById('yours-note');
+
+    function loadProfile() {
+      try { return JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}'); }
+      catch (e) { return {}; }
+    }
+    function saveProfile(p) {
+      try { localStorage.setItem(PROFILE_KEY, JSON.stringify(p)); } catch (e) {}
+    }
+    function applyProfile() {
+      var p = loadProfile();
+      document.querySelectorAll('.fill-token').forEach(function (el) {
+        var key = el.dataset.fill;
+        var val = (p[key] || '').trim();
+        if (val) { el.textContent = val; el.classList.add('filled'); }
+        else { el.textContent = el.dataset.blank; el.classList.remove('filled'); }
+      });
+    }
+    if (inputs.offering && inputs.audience) {
+      var p0 = loadProfile();
+      if (p0.offering) inputs.offering.value = p0.offering;
+      if (p0.audience) inputs.audience.value = p0.audience;
+      Object.keys(inputs).forEach(function (key) {
+        inputs[key].addEventListener('input', function () {
+          var p = loadProfile();
+          p[key] = inputs[key].value;
+          saveProfile(p);
+          applyProfile();
+          if (note) {
+            note.textContent = 'Saved on this device. Every card below now uses your words.';
+            note.classList.add('saved');
+          }
+        });
+      });
+    }
+    applyProfile();
+
+    // ---- Copy buttons ----
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var recipe = document.getElementById(btn.dataset.target);
+        var text = recipe.innerText;
+        function flash(label) {
+          var old = btn.textContent;
+          btn.textContent = label;
+          btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { flash('Copied'); },
+            function () { fallbackCopy(text); flash('Copied'); });
+        } else { fallbackCopy(text); flash('Copied'); }
+      });
+    });
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // ---- Progress ----
+    var boxes = document.querySelectorAll('.done input');
+    var fill = document.getElementById('progress-fill');
+    var label = document.getElementById('progress-label');
+    function loadDone() {
+      try { return JSON.parse(localStorage.getItem(PAGE_KEY) || '[]'); }
+      catch (e) { return []; }
+    }
+    function render() {
+      var done = loadDone();
+      boxes.forEach(function (box) { box.checked = done.indexOf(box.dataset.card) !== -1; });
+      var pct = boxes.length ? Math.round(done.length / boxes.length * 100) : 0;
+      if (fill) fill.style.width = pct + '%';
+      if (label) label.textContent = done.length + ' of ' + boxes.length + ' used';
+    }
+    boxes.forEach(function (box) {
+      box.addEventListener('change', function () {
+        var done = loadDone();
+        var i = done.indexOf(box.dataset.card);
+        if (box.checked && i === -1) done.push(box.dataset.card);
+        if (!box.checked && i !== -1) done.splice(i, 1);
+        try { localStorage.setItem(PAGE_KEY, JSON.stringify(done)); } catch (e) {}
+        render();
+      });
+    });
+    render();
+  })();
+</script>
+</body>
+</html>
