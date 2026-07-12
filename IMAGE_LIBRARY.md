@@ -26,6 +26,10 @@
 | kelly-hero.jpg | Kelly hero photo | kelly, founder, hero |
 | workshop-hero.jpg | Kelly at her laptop with a cup of tea, natural light. Contained hero band photo on the `/workshop` page (extracted from the workshop preview) | kelly, founder, workshop, lifestyle, hero |
 | kelly-hero.webp | WebP version of kelly-hero.jpg (100KB vs 2.4MB) — primary format for hero image, use in `<picture>` elements | kelly, founder, hero, webp |
+| tools-clear-the-decks.jpg | Woman typing at laptop with notebook, warm linen, natural light. Hero photo on the /tools/clear-the-decks recipe cards page | lifestyle, laptop, work, tools, hero |
+| tools-first-wins.jpg | Hand on laptop keyboard, watch, phone and glasses on pale desk. Hero photo on the /tools/first-wins recipe cards page | lifestyle, desk, work, tools, hero |
+| tools-out-of-your-head.jpg | Hands cradling a steaming cup, soft natural light. Hero photo on the /tools/out-of-your-head recipe cards page | lifestyle, tea, calm, tools, hero |
+| tools-claude-connectors.jpg | Laptop and teacup on side table, soft morning light. Hero photo on the /tools/claude-connectors recipe cards page | lifestyle, laptop, tea, tools, hero |
 
 > Note: `kelly-portrait.jpg` was referenced in the original AI Business Hub source file but does not exist in this repo. Replaced with `kelly-about.jpg`.
 
