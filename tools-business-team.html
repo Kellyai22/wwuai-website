@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>AI as Your Business Team — Wise Women Use AI</title>
+  <meta name="description" content="A simple mental model for using AI well: think of it as a team of specialists you brief, not a search engine you question.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .shell { max-width: 860px; margin: 0 auto; padding: 0 24px 60px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 56px 44px 50px; text-align: center; margin: 40px 0 40px;
+    }
+    @media (max-width: 620px) { .hero { padding: 40px 26px 36px; margin-top: 24px; } }
+    .hero .eyebrow {
+      display: inline-block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 600; color: var(--blush); border: 1px solid rgba(226, 181, 146, 0.45);
+      border-radius: 999px; padding: 5px 16px; margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.18; margin-bottom: 18px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero p {
+      font-size: 15.5px; color: rgba(250, 248, 246, 0.82); line-height: 1.7;
+      max-width: 46ch; margin: 0 auto;
+    }
+
+    /* ── Intro comparison ── */
+    .intro { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 52px; }
+    @media (max-width: 620px) { .intro { grid-template-columns: 1fr; } }
+    .intro-block {
+      border-radius: 5px; padding: 26px 26px 24px;
+      background: var(--white); border: 1px solid var(--cream-dark);
+    }
+    .intro-block.dark { background: var(--bordeaux); color: var(--pearl); border-color: var(--bordeaux); }
+    .intro-block .kick {
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+      color: var(--clay); margin-bottom: 10px;
+    }
+    .intro-block.dark .kick { color: var(--blush); }
+    .intro-block h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin-bottom: 10px; }
+    .intro-block p { font-size: 14px; line-height: 1.7; color: var(--driftwood); }
+    .intro-block.dark p { color: rgba(250, 248, 246, 0.78); }
+
+    /* ── Team section ── */
+    .team-section { margin-bottom: 56px; }
+    .section-kick {
+      display: block; text-align: center; font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 600; color: var(--clay); margin-bottom: 8px;
+    }
+    .team-section h2, .shifts h2, .brief h2 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 3vw, 30px);
+      text-align: center; margin-bottom: 34px; line-height: 1.25;
+    }
+
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 620px) { .team-grid { grid-template-columns: 1fr; } }
+
+    .team-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 5px;
+      padding: 26px 26px 24px; position: relative; overflow: hidden;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .team-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--clay);
+    }
+    .team-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -20px rgba(58, 19, 27, 0.28);
+    }
+    .role-icon { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+    .role-title { font-family: var(--serif); font-weight: 500; font-size: 21px; margin-bottom: 3px; }
+    .role-subtitle {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 12px;
+    }
+    .role-desc { font-size: 14px; line-height: 1.65; color: var(--driftwood); margin-bottom: 14px; }
+    .role-tasks { list-style: none; border-top: 1px solid var(--cream-dark); padding-top: 12px; }
+    .role-tasks li {
+      font-size: 13px; line-height: 1.55; color: var(--bordeaux);
+      padding: 3px 0 3px 18px; position: relative;
+    }
+    .role-tasks li::before {
+      content: '→'; position: absolute; left: 0; color: var(--clay); font-size: 12px;
+    }
+
+    /* ── Briefing framework ── */
+    .brief {
+      background: var(--cream-dark); border-radius: 6px;
+      padding: 40px 40px 44px; margin-bottom: 56px;
+    }
+    @media (max-width: 620px) { .brief { padding: 30px 22px 34px; } }
+    .brief h2 { margin-bottom: 8px; }
+    .brief .sub {
+      text-align: center; font-size: 14px; color: var(--driftwood);
+      max-width: 48ch; margin: 0 auto 30px; line-height: 1.6;
+    }
+    .flow { display: flex; flex-direction: column; gap: 12px; }
+    .flow-row { display: flex; align-items: center; gap: 14px; }
+    @media (max-width: 560px) { .flow-row { flex-direction: column; align-items: stretch; } }
+    .flow-label {
+      background: var(--bordeaux); color: var(--pearl);
+      font-size: 12.5px; font-weight: 600; padding: 10px 16px;
+      min-width: 110px; text-align: center; flex-shrink: 0; border-radius: 3px;
+    }
+    @media (max-width: 560px) { .flow-label { min-width: auto; text-align: left; } }
+    .flow-arrow { color: var(--clay); font-size: 1.1rem; flex-shrink: 0; }
+    @media (max-width: 560px) { .flow-arrow { display: none; } }
+    .flow-desc {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 3px;
+      padding: 12px 18px; font-size: 13.5px; line-height: 1.6; color: var(--driftwood); flex: 1;
+    }
+    .flow-desc strong { color: var(--bordeaux); font-weight: 600; }
+
+    /* ── Mindset shifts ── */
+    .shifts { margin-bottom: 56px; }
+    .shift-table-wrap { overflow-x: auto; }
+    .shift-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+    .shift-table thead tr { background: var(--bordeaux); color: var(--pearl); }
+    .shift-table thead th {
+      padding: 12px 20px; text-align: left; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .shift-table thead th:first-child { border-top-left-radius: 4px; }
+    .shift-table thead th:last-child { border-top-right-radius: 4px; }
+    .shift-table tbody tr { border-bottom: 1px solid var(--cream-dark); background: var(--white); }
+    .shift-table tbody tr:hover { background: var(--pearl); }
+    .shift-table tbody td {
+      padding: 14px 20px; font-size: 14px; line-height: 1.5; vertical-align: top;
+    }
+    .shift-table tbody td:first-child { color: var(--driftwood); }
+    .shift-table tbody td:last-child { color: var(--bordeaux); font-weight: 500; }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 46px 44px; text-align: center; margin-bottom: 48px;
+    }
+    @media (max-width: 620px) { .cta { padding: 34px 26px; } }
+    .cta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 28px); margin-bottom: 12px; }
+    .cta p { font-size: 14.5px; color: rgba(250, 248, 246, 0.8); max-width: 48ch; margin: 0 auto 26px; line-height: 1.7; }
+    .cta a.btn {
+      display: inline-block; font: 500 14px var(--sans); letter-spacing: 0.04em;
+      color: var(--pearl); border: 1.5px solid var(--pearl); border-radius: 2px;
+      padding: 11px 28px; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .cta a.btn:hover { background: var(--pearl); color: var(--bordeaux); }
+
+    .foot { text-align: center; font-size: 12.5px; color: var(--driftwood); line-height: 1.9; }
+    .foot a { color: var(--clay); font-weight: 500; }
+    .foot a:hover { color: var(--bordeaux); }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <section class="hero">
+    <span class="eyebrow">Wise Women Use AI · Mental Model</span>
+    <h1>Think of AI as<br><em>your business team</em></h1>
+    <p>The fastest way to start using AI effectively is to stop thinking of it as a search engine, and start thinking of it as a team of specialists on call 24/7.</p>
+  </section>
+
+  <div class="intro">
+    <div class="intro-block">
+      <p class="kick">The old way of thinking</p>
+      <h3>"I'll ask AI a question and see what it says."</h3>
+      <p>This leads to generic, unhelpful answers, and the feeling that AI isn't really that useful for your business.</p>
+    </div>
+    <div class="intro-block dark">
+      <p class="kick">The better mental model</p>
+      <h3>"I'm briefing a skilled team member on a specific task."</h3>
+      <p>This leads to precise, useful outputs, and the feeling that you have a capable team behind you.</p>
+    </div>
+  </div>
+
+  <div class="team-section">
+    <span class="section-kick">Your AI team</span>
+    <h2>What each role does</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">✍️</span>
+        <p class="role-title">The Copywriter</p>
+        <p class="role-subtitle">Content &amp; Words</p>
+        <p class="role-desc">Writes, edits and polishes all your business copy, from social posts to sales pages.</p>
+        <ul class="role-tasks">
+          <li>Social media captions</li>
+          <li>Email newsletters</li>
+          <li>Website copy</li>
+          <li>Product descriptions</li>
+          <li>Blog posts and articles</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">🧠</span>
+        <p class="role-title">The Strategist</p>
+        <p class="role-subtitle">Strategy &amp; Planning</p>
+        <p class="role-desc">Helps you think clearly, make decisions, and plan your next moves without the overwhelm.</p>
+        <ul class="role-tasks">
+          <li>Content planning</li>
+          <li>Offer development</li>
+          <li>Business decisions</li>
+          <li>Goal setting and priority</li>
+          <li>Competitor research</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">📋</span>
+        <p class="role-title">The PA</p>
+        <p class="role-subtitle">Admin &amp; Organisation</p>
+        <p class="role-desc">Handles the time-consuming admin tasks that drain your energy and clutter your to-do list.</p>
+        <ul class="role-tasks">
+          <li>Email drafting</li>
+          <li>Document summarising</li>
+          <li>Meeting notes cleanup</li>
+          <li>Templates and FAQs</li>
+          <li>Research and fact-finding</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">🎨</span>
+        <p class="role-title">The Creative Director</p>
+        <p class="role-subtitle">Ideas &amp; Concepts</p>
+        <p class="role-desc">Generates ideas, concepts and creative angles when you're stuck or need fresh thinking.</p>
+        <ul class="role-tasks">
+          <li>Content ideas and hooks</li>
+          <li>Campaign concepts</li>
+          <li>Naming and branding</li>
+          <li>Story angles</li>
+          <li>Lead magnet ideas</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">📊</span>
+        <p class="role-title">The Analyst</p>
+        <p class="role-subtitle">Data &amp; Insights</p>
+        <p class="role-desc">Looks at information, spots patterns, and helps you understand what's working and why.</p>
+        <ul class="role-tasks">
+          <li>Reviewing feedback</li>
+          <li>Comparing options</li>
+          <li>Analysing your content</li>
+          <li>Identifying gaps</li>
+          <li>Summarising research</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <span class="role-icon" aria-hidden="true">🎓</span>
+        <p class="role-title">The Coach</p>
+        <p class="role-subtitle">Clarity &amp; Mindset</p>
+        <p class="role-desc">Asks the right questions, helps you get unstuck, and brings outside perspective when you need it.</p>
+        <ul class="role-tasks">
+          <li>Thinking through decisions</li>
+          <li>Challenging assumptions</li>
+          <li>Reframing problems</li>
+          <li>Building confidence in ideas</li>
+          <li>Accountability check-ins</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="brief">
+    <h2>How to brief your team</h2>
+    <p class="sub">The better your brief, the better the output. Think of every prompt as a briefing document.</p>
+    <div class="flow">
+      <div class="flow-row">
+        <div class="flow-label">Your role</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-desc">The <strong>director</strong>. You set the goal, context and standards. AI does the execution.</div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-label">Context</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-desc">Tell Claude <strong>who you are, who you serve, and what tone you use.</strong> Do this once per session.</div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-label">The task</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-desc">Be specific: <strong>what exactly do you need, in what format, for what purpose?</strong></div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-label">The standard</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-desc">Tell Claude what <strong>good looks like.</strong> Length, tone, examples, what to avoid.</div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-label">Feedback</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-desc">Not right? <strong>Tell it exactly what to change</strong>, like you would a real team member. It won't be offended.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shifts">
+    <h2>The mindset shifts that change everything</h2>
+    <div class="shift-table-wrap">
+      <table class="shift-table">
+        <thead>
+          <tr>
+            <th>Instead of thinking…</th>
+            <th>Think…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"I'll ask it a quick question"</td>
+            <td>"I'm briefing a specialist on a task"</td>
+          </tr>
+          <tr>
+            <td>"The first answer is the final answer"</td>
+            <td>"This is a first draft, I'll refine it"</td>
+          </tr>
+          <tr>
+            <td>"AI will replace my voice and ideas"</td>
+            <td>"AI amplifies my voice and executes my ideas"</td>
+          </tr>
+          <tr>
+            <td>"If the output is bad, AI doesn't work"</td>
+            <td>"If the output is bad, my brief needs work"</td>
+          </tr>
+          <tr>
+            <td>"I need to learn all of this before I start"</td>
+            <td>"I learn by doing, start now, refine as I go"</td>
+          </tr>
+          <tr>
+            <td>"AI is a tech thing, not for me"</td>
+            <td>"AI is a business tool, built for anyone with work to do"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="cta">
+    <h2>Put your team to work</h2>
+    <p>Pick one role from above and use it today. Then come and share what you tried, post your prompt and result in the community and let's learn together.</p>
+    <a class="btn" href="https://www.skool.com/wise-women-use-ai-1109/about">Share in the community →</a>
+  </section>
+
+  <p class="foot">Created for the Wise Women Use AI community · <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> · <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> · @wisewomenuseai</p>
+
+</div>
+</body>
+</html>

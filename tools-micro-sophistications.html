@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Micro Sophistications Prompt Pack — Wise Women Use AI</title>
+  <meta name="description" content="Twelve considered prompts for communication, decisions, thinking and confidence, ready to copy into Claude. From the Wise Women Use AI community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Header ── */
+    header { text-align: center; padding: 64px 24px 8px; }
+    header .eyebrow {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--driftwood); font-weight: 600; margin-bottom: 16px;
+    }
+    header h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.18; margin-bottom: 18px;
+    }
+    header h1 em { color: var(--clay); font-style: italic; }
+    header .subtitle {
+      font-size: 16px; color: var(--driftwood); max-width: 560px;
+      margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ── Filters ── */
+    .filters {
+      display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+      padding: 36px 24px 8px;
+    }
+    .filter-btn {
+      font: 500 13px var(--sans); letter-spacing: 0.02em; color: var(--bordeaux);
+      background: transparent; border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 9px 18px; cursor: pointer;
+      transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .filter-btn:hover { background: rgba(58, 19, 27, 0.06); }
+    .filter-btn.active { background: var(--bordeaux); color: var(--pearl); }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px; padding: 32px 24px 8px; max-width: 900px; margin: 0 auto;
+    }
+    .card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 5px;
+      padding: 26px 26px 24px; display: flex; flex-direction: column;
+    }
+    .card-meta {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+    }
+    .card-category {
+      font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--bordeaux); background: var(--pearl); border: 1px solid var(--cream-dark);
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .card-time {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12.5px; color: var(--driftwood);
+    }
+    .card h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 21px; line-height: 1.28;
+      margin-bottom: 8px;
+    }
+    .card .description {
+      font-size: 13.5px; color: var(--driftwood); line-height: 1.65; margin-bottom: 16px;
+    }
+    .prompt-box {
+      background: var(--pearl); border: 1px solid var(--cream-dark); border-radius: 4px;
+      padding: 16px 18px; margin-bottom: 14px; position: relative;
+    }
+    .prompt-box p {
+      font-size: 13.5px; font-style: italic; color: var(--bordeaux); line-height: 1.7;
+      padding-right: 4px;
+    }
+    .copy-btn {
+      font: 500 11.5px var(--sans); letter-spacing: 0.03em; color: var(--driftwood);
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 2px;
+      padding: 6px 12px; cursor: pointer; margin-top: 12px; align-self: flex-start;
+      transition: background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+    }
+    .copy-btn:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
+    .copy-btn.copied { background: var(--bordeaux); border-color: var(--bordeaux); color: var(--pearl); }
+    .card .benefit {
+      font-size: 12.5px; color: var(--driftwood); margin-top: auto; padding-top: 10px;
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+    .card .benefit .tick { color: var(--clay); font-weight: 600; flex-shrink: 0; }
+
+    /* ── Checklist ── */
+    .checklist-section {
+      max-width: 600px; margin: 56px auto 0; padding: 34px 32px 30px;
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      text-align: center;
+    }
+    .checklist-section h2 {
+      font-family: var(--serif); font-weight: 500; font-size: 25px; margin-bottom: 6px;
+    }
+    .checklist-section .intro { font-size: 13.5px; color: var(--driftwood); margin-bottom: 22px; }
+    .progress-bar {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+      font-size: 12px; color: var(--driftwood);
+    }
+    .progress-track { flex: 1; height: 5px; background: var(--cream-dark); border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: var(--clay); border-radius: 3px; transition: width 0.4s ease-out; }
+    .checklist { list-style: none; text-align: left; }
+    .checklist li {
+      padding: 11px 0; font-size: 14px; color: var(--bordeaux); cursor: pointer;
+      display: flex; align-items: center; gap: 12px;
+      border-bottom: 1px solid var(--pearl);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li .check {
+      width: 20px; height: 20px; border: 1.5px solid var(--cream-dark); border-radius: 50%;
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: transparent;
+      transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+    }
+    .checklist li.done .check { background: var(--clay); border-color: var(--clay); color: var(--pearl); }
+    .checklist li.done span.label { text-decoration: line-through; color: var(--driftwood); }
+
+    /* ── CTA ── */
+    .cta-section { text-align: center; padding: 48px 24px 8px; max-width: 520px; margin: 0 auto; }
+    .cta-section h2 { font-family: var(--serif); font-weight: 500; font-size: 22px; margin-bottom: 8px; }
+    .cta-section p { font-size: 13.5px; color: var(--driftwood); margin-bottom: 18px; line-height: 1.65; }
+    .cta-link {
+      display: inline-block; font: 500 14px var(--sans); letter-spacing: 0.02em;
+      color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 11px 26px; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .cta-link:hover { background: var(--bordeaux); color: var(--pearl); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 40px 24px 48px; font-size: 12.5px; color: var(--driftwood);
+      margin-top: 40px;
+    }
+    footer a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 2px; }
+
+    @media (max-width: 600px) {
+      header { padding: 44px 20px 8px; }
+      .cards { padding: 24px 16px 8px; grid-template-columns: 1fr; }
+      .checklist-section { padding: 26px 20px 24px; margin: 40px 16px 0; }
+    }
+  </style>
+</head>
+<body data-slug="tools-micro-sophistications">
+
+  <header>
+    <p class="eyebrow">Wise Women Use AI · Community Exclusive</p>
+    <h1>Micro <em>sophistications</em></h1>
+    <p class="subtitle">These aren't flashy AI tricks. They're the small, considered ways to use Claude that make your work sharper, your decisions clearer and your communication stronger.</p>
+  </header>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all" type="button">All prompts</button>
+    <button class="filter-btn" data-filter="thinking" type="button">Thinking</button>
+    <button class="filter-btn" data-filter="comms" type="button">Communication</button>
+    <button class="filter-btn" data-filter="decisions" type="button">Decisions</button>
+    <button class="filter-btn" data-filter="confidence" type="button">Confidence</button>
+  </div>
+
+  <div class="cards" id="cards">
+
+    <div class="card" data-category="comms">
+      <div class="card-meta">
+        <span class="card-category">Communication</span>
+        <span class="card-time">2 minutes</span>
+      </div>
+      <h3>The email second opinion</h3>
+      <p class="description">Before you hit send on anything important, get a sceptical read. Claude catches the things you're too close to see.</p>
+      <div class="prompt-box">
+        <p id="prompt-1">"I'm about to send this email to [describe the person and context]. What would a sceptical reader push back on? Be specific."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-1" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Fewer regretful sends, better first impressions</p>
+    </div>
+
+    <div class="card" data-category="confidence">
+      <div class="card-meta">
+        <span class="card-category">Confidence</span>
+        <span class="card-time">3 minutes</span>
+      </div>
+      <h3>The brand voice check</h3>
+      <p class="description">Before you post, make sure it sounds like you. Not like a template. Not like AI. Like you on a good day.</p>
+      <div class="prompt-box">
+        <p id="prompt-2">"Here's something I'm about to post. Does it sound like a real person wrote it? Flag anything that feels generic, stiff or like it could have come from anyone. Suggest specific edits that would make it sound more like a warm, confident business owner."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-2" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Everything you publish sounds unmistakably like you</p>
+    </div>
+
+    <div class="card" data-category="decisions">
+      <div class="card-meta">
+        <span class="card-category">Decisions</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The proposal stress-test</h3>
+      <p class="description">Before you send a proposal or pitch, let Claude poke holes in it so your client doesn't have to.</p>
+      <div class="prompt-box">
+        <p id="prompt-3">"I'm about to send this proposal to [describe the client and project]. Read it as if you're the client receiving it. What questions would you still have? What feels vague or risky? Where might you hesitate before saying yes?"</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-3" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Proposals that close because you addressed concerns before they were raised</p>
+    </div>
+
+    <div class="card" data-category="thinking">
+      <div class="card-meta">
+        <span class="card-category">Thinking</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The meeting prep briefing</h3>
+      <p class="description">Walk into every meeting feeling prepared, not scrambling. A couple of minutes of prep that changes the whole dynamic.</p>
+      <div class="prompt-box">
+        <p id="prompt-4">"I have a meeting with [who] about [topic] in [timeframe]. Give me: 1) the three most important things to cover, 2) one question I should ask that shows I've thought about this, 3) anything I should watch out for or avoid saying."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-4" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Walk in prepared, not winging it</p>
+    </div>
+
+    <div class="card" data-category="comms">
+      <div class="card-meta">
+        <span class="card-category">Communication</span>
+        <span class="card-time">3 minutes</span>
+      </div>
+      <h3>The follow-up tone check</h3>
+      <p class="description">Following up without sounding desperate or pushy is an art. Let Claude find the right note.</p>
+      <div class="prompt-box">
+        <p id="prompt-5">"I need to follow up with [person] about [what]. It's been [how long] since my last message. Write a follow-up that's warm and professional but doesn't sound desperate or passive-aggressive. Keep it short."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-5" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Follow-ups that get replies, not eye rolls</p>
+    </div>
+
+    <div class="card" data-category="decisions">
+      <div class="card-meta">
+        <span class="card-category">Decisions</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The decision sounding board</h3>
+      <p class="description">When you're going in circles in your own head, an outside perspective cuts through the noise.</p>
+      <div class="prompt-box">
+        <p id="prompt-6">"I'm trying to decide between [option A] and [option B]. Here's the context: [situation]. I'm leaning toward [which one] but I'm not sure. What am I probably not considering? Ask me three questions that would help me decide."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-6" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Clarity without the overthinking spiral</p>
+    </div>
+
+    <div class="card" data-category="thinking">
+      <div class="card-meta">
+        <span class="card-category">Thinking</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The weekly reflection</h3>
+      <p class="description">End each week knowing what actually moved your business forward, not just what kept you busy.</p>
+      <div class="prompt-box">
+        <p id="prompt-7">"Here's what I worked on this week: [list your main activities]. Help me sort these into two buckets: things that moved my business forward, and things that just kept me busy. Then suggest one thing I should do more of next week and one thing I should drop or delegate."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-7" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> A weekly habit that compounds into better decisions</p>
+    </div>
+
+    <div class="card" data-category="confidence">
+      <div class="card-meta">
+        <span class="card-category">Confidence</span>
+        <span class="card-time">3 minutes</span>
+      </div>
+      <h3>The "explain it simply" translator</h3>
+      <p class="description">When you need to explain something complex to a client, a partner, or yourself. No jargon, no confusion.</p>
+      <div class="prompt-box">
+        <p id="prompt-8">"Explain [concept or topic] to me like I'm a smart person who just hasn't encountered this before. No jargon, no dumbing it down. Use a real-world analogy if it helps."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-8" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Understand anything well enough to explain it to anyone</p>
+    </div>
+
+    <div class="card" data-category="thinking">
+      <div class="card-meta">
+        <span class="card-category">Thinking</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The scope check</h3>
+      <p class="description">Before you say yes to a new project, request or collaboration, make sure it actually makes sense for your business right now.</p>
+      <div class="prompt-box">
+        <p id="prompt-9">"Someone has asked me to [describe the opportunity]. Here's what I'm already working on: [list current priorities]. Help me think through whether this is worth taking on. What would I need to say no to? What's the real cost of saying yes?"</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-9" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Say yes with intention, not obligation</p>
+    </div>
+
+    <div class="card" data-category="thinking">
+      <div class="card-meta">
+        <span class="card-category">Thinking</span>
+        <span class="card-time">5 minutes</span>
+      </div>
+      <h3>The pricing gut-check</h3>
+      <p class="description">Before you set or change a price, pressure-test it. Pricing with confidence instead of anxiety.</p>
+      <div class="prompt-box">
+        <p id="prompt-10">"I'm thinking of pricing [product or service] at [amount]. My audience is [who they are] and the main outcome they get is [what they get]. Does this pricing feel right? What would make someone hesitate at this price, and what would make them feel it's worth it?"</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-10" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Price with logic, not just hope</p>
+    </div>
+
+    <div class="card" data-category="comms">
+      <div class="card-meta">
+        <span class="card-category">Communication</span>
+        <span class="card-time">3 minutes</span>
+      </div>
+      <h3>The testimonial ask</h3>
+      <p class="description">Getting social proof from happy clients without it feeling awkward or transactional. The right words make all the difference.</p>
+      <div class="prompt-box">
+        <p id="prompt-11">"I want to ask [client name/type] for a testimonial. They were happy with [what you did for them]. Write a short, warm message asking if they'd be willing to share a few words about their experience. Make it easy for them to say yes and keep it under 100 words."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-11" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Social proof that arrives because you made it easy to say yes</p>
+    </div>
+
+    <div class="card" data-category="comms">
+      <div class="card-meta">
+        <span class="card-category">Communication</span>
+        <span class="card-time">3 minutes</span>
+      </div>
+      <h3>The difficult conversation prep</h3>
+      <p class="description">When you need to say something tricky, practise the conversation first. Find the words before you need them.</p>
+      <div class="prompt-box">
+        <p id="prompt-12">"I need to have a conversation with [who] about [what]. The tricky part is [why it's difficult]. Help me find the right way to say this. I want to be honest and direct but not hurtful. Give me the opening line and two ways to respond if they push back."</p>
+      </div>
+      <button class="copy-btn" data-target="prompt-12" type="button">Copy prompt</button>
+      <p class="benefit"><span class="tick">✓</span> Hard conversations that go better than you expected</p>
+    </div>
+
+  </div>
+
+  <div class="checklist-section">
+    <h2>Your micro sophistications checklist</h2>
+    <p class="intro">Try one each day this week. Small moves, real impact.</p>
+    <div class="progress-bar">
+      <span>Progress</span>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <span id="progress-text">0 of 12 complete</span>
+    </div>
+    <ul class="checklist" id="checklist">
+      <li data-item="0"><span class="check">✓</span><span class="label">Used the email second opinion before sending</span></li>
+      <li data-item="1"><span class="check">✓</span><span class="label">Ran a brand voice check on a post</span></li>
+      <li data-item="2"><span class="check">✓</span><span class="label">Stress-tested a proposal or pitch</span></li>
+      <li data-item="3"><span class="check">✓</span><span class="label">Prepped for a meeting with Claude</span></li>
+      <li data-item="4"><span class="check">✓</span><span class="label">Nailed a follow-up without sounding pushy</span></li>
+      <li data-item="5"><span class="check">✓</span><span class="label">Used Claude as a decision sounding board</span></li>
+      <li data-item="6"><span class="check">✓</span><span class="label">Done a weekly reflection</span></li>
+      <li data-item="7"><span class="check">✓</span><span class="label">Had something complex explained simply</span></li>
+      <li data-item="8"><span class="check">✓</span><span class="label">Checked scope before saying yes</span></li>
+      <li data-item="9"><span class="check">✓</span><span class="label">Gut-checked a pricing decision</span></li>
+      <li data-item="10"><span class="check">✓</span><span class="label">Asked for a testimonial the easy way</span></li>
+      <li data-item="11"><span class="check">✓</span><span class="label">Prepped for a difficult conversation</span></li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h2>Share your micro sophistications</h2>
+    <p>Tried one of these? Tell us what happened. The best ideas in this community come from women sharing what actually worked for them.</p>
+    <a href="https://www.skool.com/wise-women-use-ai-1109/about" class="cta-link">Post in the community</a>
+  </div>
+
+  <footer>
+    <p>Created for the Wise Women Use AI community · <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> · <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> · @wisewomenuseai</p>
+  </footer>
+
+  <script>
+  (function () {
+    var PAGE_KEY = 'wwuai-tools-done-' + document.body.dataset.slug;
+
+    function loadJSON(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key) || fallback); } catch (e) { return JSON.parse(fallback); }
+    }
+    function saveJSON(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+
+    // ---- Filters ----
+    var filterBtns = [].slice.call(document.querySelectorAll('.filter-btn'));
+    var cards = [].slice.call(document.querySelectorAll('.card'));
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var category = btn.dataset.filter;
+        cards.forEach(function (card) {
+          card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+        });
+      });
+    });
+
+    // ---- Copy ----
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = document.getElementById(btn.dataset.target).innerText;
+        function flash() {
+          var old = btn.textContent;
+          btn.textContent = 'Copied'; btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(flash, function () { fallbackCopy(text); flash(); });
+        } else { fallbackCopy(text); flash(); }
+      });
+    });
+
+    // ---- Checklist ----
+    var items = [].slice.call(document.querySelectorAll('.checklist li'));
+    var fill = document.getElementById('progress-fill');
+    var text = document.getElementById('progress-text');
+    function render() {
+      var done = loadJSON(PAGE_KEY, '[]');
+      items.forEach(function (li) {
+        li.classList.toggle('done', done.indexOf(li.dataset.item) !== -1);
+      });
+      if (fill) fill.style.width = (items.length ? Math.round(done.length / items.length * 100) : 0) + '%';
+      if (text) text.textContent = done.length + ' of ' + items.length + ' complete';
+    }
+    items.forEach(function (li) {
+      li.addEventListener('click', function () {
+        var done = loadJSON(PAGE_KEY, '[]');
+        var i = done.indexOf(li.dataset.item);
+        if (i === -1) { done.push(li.dataset.item); } else { done.splice(i, 1); }
+        saveJSON(PAGE_KEY, done);
+        render();
+      });
+    });
+    render();
+  })();
+  </script>
+
+</body>
+</html>

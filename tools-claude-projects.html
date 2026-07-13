@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Projects — Wise Women Use AI</title>
+  <meta name="description" content="What Claude Projects are, how to set one up, and six ready-made Project ideas for your business, from Wise Women Use AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 52px 48px 48px; text-align: center; margin-bottom: 44px;
+    }
+    @media (max-width: 600px) { .hero { padding: 40px 26px 36px; } }
+    .hero .badge {
+      display: inline-block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 600; color: var(--blush); border: 1px solid rgba(226, 181, 146, 0.45);
+      border-radius: 999px; padding: 5px 16px; margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero p {
+      font-size: 15.5px; color: rgba(250, 248, 246, 0.82);
+      max-width: 46ch; margin: 0 auto;
+    }
+
+    /* ── Intro two-up ── */
+    .intro-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 600px) { .intro-grid { grid-template-columns: 1fr; } }
+    .intro-card {
+      border-radius: 5px; padding: 26px 26px 24px;
+    }
+    .intro-card.light {
+      background: var(--white); border: 1px solid var(--cream-dark);
+    }
+    .intro-card.dark {
+      background: var(--bordeaux); color: var(--pearl);
+    }
+    .intro-card .lab {
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .intro-card.light .lab { color: var(--driftwood); }
+    .intro-card.dark .lab { color: var(--blush); }
+    .intro-card h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 20px; margin-bottom: 10px;
+    }
+    .intro-card p { font-size: 14px; line-height: 1.7; }
+    .intro-card.light p { color: var(--driftwood); }
+    .intro-card.dark p { color: rgba(250, 248, 246, 0.8); }
+
+    /* ── Section heading ── */
+    .section-head { text-align: center; margin-bottom: 34px; }
+    .section-head .kick {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--clay);
+      font-weight: 600; margin-bottom: 8px;
+    }
+    .section-head h2 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 3vw, 30px);
+      color: var(--bordeaux);
+    }
+
+    /* ── Steps ── */
+    .steps { margin-bottom: 60px; }
+    .step {
+      display: grid; grid-template-columns: 52px 1fr; gap: 20px;
+      padding: 22px 0; border-top: 1px solid var(--cream-dark);
+    }
+    .step:first-child { border-top: none; }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--bordeaux);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--bordeaux);
+      flex-shrink: 0;
+    }
+    .step-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 6px;
+    }
+    .step h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--bordeaux);
+      margin-bottom: 6px;
+    }
+    .step p { font-size: 14.5px; line-height: 1.7; color: var(--driftwood); max-width: 58ch; }
+    @media (max-width: 560px) {
+      .step { grid-template-columns: 40px 1fr; gap: 14px; }
+      .step-num { width: 38px; height: 38px; font-size: 16px; }
+    }
+
+    /* ── Project cards ── */
+    .projects { margin-bottom: 60px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 620px) { .projects-grid { grid-template-columns: 1fr; } }
+    .project-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 5px;
+      padding: 24px 24px 22px; position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--clay);
+    }
+    .project-card:nth-child(3n)::before { background: var(--bordeaux); }
+    .project-icon { font-size: 1.4rem; display: block; margin-bottom: 10px; }
+    .project-name {
+      font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--bordeaux);
+      margin-bottom: 8px;
+    }
+    .project-desc { font-size: 13.5px; line-height: 1.65; color: var(--driftwood); margin-bottom: 14px; }
+    .project-includes { list-style: none; border-top: 1px solid var(--cream-dark); padding-top: 12px; }
+    .project-includes li {
+      font-size: 12.5px; line-height: 1.6; color: var(--bordeaux);
+      padding: 3px 0 3px 16px; position: relative;
+    }
+    .project-includes li::before {
+      content: '✦'; position: absolute; left: 0; top: 5px; font-size: 8px; color: var(--clay);
+    }
+
+    /* ── Instructions box ── */
+    .instructions-box {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 44px 44px 40px; margin-bottom: 60px;
+    }
+    @media (max-width: 600px) { .instructions-box { padding: 32px 24px 30px; } }
+    .instructions-box .kick {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blush);
+      font-weight: 600; margin-bottom: 10px;
+    }
+    .instructions-box h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 28px); margin-bottom: 8px; }
+    .instructions-box .sub { font-size: 14px; color: rgba(250, 248, 246, 0.7); margin-bottom: 28px; }
+    .example-instruction {
+      background: rgba(250, 248, 246, 0.07); border: 1px solid rgba(250, 248, 246, 0.16);
+      border-radius: 4px; padding: 24px 24px 22px; margin-bottom: 16px;
+    }
+    .example-instruction:last-child { margin-bottom: 0; }
+    .example-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blush); margin-bottom: 12px;
+    }
+    .example-text {
+      font-family: var(--serif); font-size: 16px; font-style: italic; line-height: 1.7;
+      color: rgba(250, 248, 246, 0.92); margin-bottom: 16px; max-width: 62ch;
+    }
+    .copy-btn {
+      font: 500 13px var(--sans); letter-spacing: 0.03em; color: var(--pearl);
+      background: transparent; border: 1.5px solid var(--pearl); border-radius: 2px;
+      padding: 9px 22px; cursor: pointer;
+      transition: background 0.2s ease-out, color 0.2s ease-out, transform 0.1s ease-out;
+    }
+    .copy-btn:hover { background: var(--pearl); color: var(--bordeaux); }
+    .copy-btn:active { transform: scale(0.97); }
+    .copy-btn.copied { background: var(--blush); color: var(--bordeaux); border-color: var(--blush); }
+
+    /* ── Tips block ── */
+    .tips-block {
+      background: var(--cream-dark); border-radius: 6px; padding: 40px 40px 36px; margin-bottom: 44px;
+    }
+    @media (max-width: 600px) { .tips-block { padding: 30px 22px 26px; } }
+    .tips-block h2 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 26px);
+      color: var(--bordeaux); margin-bottom: 24px;
+    }
+    .tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 600px) { .tips-grid { grid-template-columns: 1fr; } }
+    .tip {
+      background: var(--white); border-radius: 3px;
+      padding: 18px 20px;
+      display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: start;
+    }
+    .tip .tip-num {
+      width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--clay);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic; font-size: 12.5px; color: var(--bordeaux);
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .tip h4 { font-family: var(--serif); font-weight: 600; font-size: 15.5px; color: var(--bordeaux); margin-bottom: 6px; }
+    .tip p { font-size: 13px; line-height: 1.6; color: var(--driftwood); }
+
+    /* ── CTA ── */
+    .cta { text-align: center; padding: 8px 12px 4px; margin-bottom: 8px; }
+    .cta h2 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 27px);
+      color: var(--bordeaux); margin-bottom: 12px;
+    }
+    .cta p {
+      font-size: 14.5px; line-height: 1.7; color: var(--driftwood);
+      max-width: 50ch; margin: 0 auto 22px;
+    }
+    .cta a.btn {
+      display: inline-block; font: 500 14px var(--sans); letter-spacing: 0.04em;
+      color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 12px 30px; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .cta a.btn:hover { background: var(--bordeaux); color: var(--pearl); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; font-size: 12.5px; color: var(--driftwood);
+      padding: 48px 24px 0; letter-spacing: 0.02em;
+    }
+    footer a { color: var(--bordeaux); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <p class="badge">Wise Women Use AI · Claude feature guide</p>
+      <h1>Claude Projects: your business <em>workspaces</em></h1>
+      <p>Projects are one of the most powerful features in Claude, and one of the most underused. Here's what they are, why they matter, and how to set one up today.</p>
+    </header>
+
+    <div class="intro-grid">
+      <div class="intro-card light">
+        <p class="lab">Without Projects</p>
+        <h3>Every chat starts from zero</h3>
+        <p>You re-explain your business, your tone, your audience. Claude has no memory of the work you've done together before.</p>
+      </div>
+      <div class="intro-card dark">
+        <p class="lab">With Projects</p>
+        <h3>Claude already knows the context</h3>
+        <p>Claude already knows your business, your brand voice, and your goals before you type a word. Every conversation picks up where you left off.</p>
+      </div>
+    </div>
+
+    <section class="steps">
+      <div class="section-head">
+        <p class="kick">The basics</p>
+        <h2>What exactly is a Project?</h2>
+      </div>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <p class="step-label">The simple version</p>
+          <h3>A Project is a dedicated workspace</h3>
+          <p>Think of it like a separate folder for a specific area of your business. Each Project has its own instructions, its own uploaded files, and its own conversation history. Nothing bleeds across from one Project to another.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <p class="step-label">The instructions</p>
+          <h3>You tell Claude who it is inside this Project</h3>
+          <p>When you set up a Project, you write a set of instructions that Claude reads at the start of every conversation. Your brand voice, your audience, your goals, your preferences. You only write this once, and it applies every time you open that Project.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <p class="step-label">The files</p>
+          <h3>Upload documents Claude can refer to</h3>
+          <p>You can upload files directly into a Project. A brand style guide, a product list, a client brief, a list of your services and prices. Claude can reference these in every conversation inside that Project without you having to paste them in each time.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <p class="step-label">The conversations</p>
+          <h3>All your related chats stay together</h3>
+          <p>Every conversation you have inside a Project is stored there. So if you worked on your email newsletter last Tuesday, you can open that conversation back up, pick up where you left off, or reference what Claude wrote for you before.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="section-head">
+        <p class="kick">Get started</p>
+        <h2>Project ideas for your business</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <span class="project-icon">📱</span>
+          <p class="project-name">Social media</p>
+          <p class="project-desc">Your go-to workspace for all things content. Claude knows your voice, your audience, and your platforms from the moment you open it.</p>
+          <ul class="project-includes">
+            <li>Brand voice instructions</li>
+            <li>Platform preferences</li>
+            <li>Audience description</li>
+            <li>Examples of posts you love</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon">✉️</span>
+          <p class="project-name">Email marketing</p>
+          <p class="project-desc">Draft newsletters, nurture sequences, and client emails with Claude already briefed on your tone and your list.</p>
+          <ul class="project-includes">
+            <li>Email tone and style guide</li>
+            <li>Past emails as examples</li>
+            <li>Subscriber audience details</li>
+            <li>Offer and product list</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon">💼</span>
+          <p class="project-name">Client work</p>
+          <p class="project-desc">One Project per client. Upload their brief, their brand guidelines, their preferences. Claude treats every conversation like a dedicated account manager.</p>
+          <ul class="project-includes">
+            <li>Client brief and background</li>
+            <li>Brand guidelines</li>
+            <li>Previous deliverables</li>
+            <li>Tone and communication notes</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon">🌱</span>
+          <p class="project-name">Business strategy</p>
+          <p class="project-desc">A thinking space for your big picture planning. Claude knows your goals, your offers, and where you're heading.</p>
+          <ul class="project-includes">
+            <li>Business overview and goals</li>
+            <li>Offer stack description</li>
+            <li>Target audience details</li>
+            <li>Current focus and priorities</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon">🛒</span>
+          <p class="project-name">Products and offers</p>
+          <p class="project-desc">Upload your product or service information once. Use it every time you need copy, descriptions, or sales content.</p>
+          <ul class="project-includes">
+            <li>Full offer descriptions</li>
+            <li>Pricing and inclusions</li>
+            <li>FAQs and objections</li>
+            <li>Testimonials and results</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon">📚</span>
+          <p class="project-name">Course and content creation</p>
+          <p class="project-desc">Building a course, a guide, or a resource library? Keep all your creation work in one place with your curriculum and style already loaded.</p>
+          <ul class="project-includes">
+            <li>Course outline and structure</li>
+            <li>Learning outcomes</li>
+            <li>Audience and skill level</li>
+            <li>Existing modules for reference</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="instructions-box">
+      <p class="kick">Worked examples</p>
+      <h2>What good Project instructions look like</h2>
+      <p class="sub">Here are two examples you can adapt for your own Projects.</p>
+
+      <div class="example-instruction">
+        <p class="example-label">Example: social media Project</p>
+        <p class="example-text" id="example-1">"You are a social media copywriter for my business, Wise Women Use AI. I teach women in business how to use Claude practically, without the overwhelm. My audience is women 40 and over who are not tech-savvy but are smart, driven, and ready to use AI in their business. My tone is warm, direct, and peer-level. Never corporate, never jargon-heavy. I post on TikTok and Instagram. Always write in Australian English."</p>
+        <button class="copy-btn" type="button" data-target="example-1">Copy this example</button>
+      </div>
+
+      <div class="example-instruction">
+        <p class="example-label">Example: email marketing Project</p>
+        <p class="example-text" id="example-2">"You write emails for my business. My list consists of women entrepreneurs who have opted in for AI education. My tone in emails is conversational, warm, and practical. Emails should feel like a message from a smart friend, not a brand. Keep them concise, under 200 words where possible, and always end with one clear action. I do not use jargon, hype, or urgency tactics."</p>
+        <button class="copy-btn" type="button" data-target="example-2">Copy this example</button>
+      </div>
+    </section>
+
+    <section class="tips-block">
+      <h2>Tips for getting the most out of Projects</h2>
+      <div class="tips-grid">
+        <div class="tip">
+          <span class="tip-num">1</span>
+          <div>
+            <h4>Start with one</h4>
+            <p>Don't try to set up five Projects at once. Pick the area of your business where you use Claude most and start there.</p>
+          </div>
+        </div>
+        <div class="tip">
+          <span class="tip-num">2</span>
+          <div>
+            <h4>Instructions are a living document</h4>
+            <p>Update your Project instructions as your business evolves. The more accurate they are, the better Claude performs.</p>
+          </div>
+        </div>
+        <div class="tip">
+          <span class="tip-num">3</span>
+          <div>
+            <h4>Upload reference files</h4>
+            <p>Got a brand guide, a services list, or an example of writing you love? Upload it. Claude will reference it without you asking.</p>
+          </div>
+        </div>
+        <div class="tip">
+          <span class="tip-num">4</span>
+          <div>
+            <h4>Name your Projects clearly</h4>
+            <p>You will accumulate Projects over time. Name them so you know instantly what each one is for when you open your sidebar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Set up your first Project today</h2>
+      <p>Open Claude, click Projects in the left sidebar, and create your first one. Pick whichever area of your business you use Claude for most. Then come and share what you created in the community.</p>
+      <a class="btn" href="https://www.skool.com/wise-women-use-ai-1109/about">Share in the community</a>
+    </section>
+
+    <footer>
+      <p>Created for the Wise Women Use AI community · <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> · <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> · @wisewomenuseai</p>
+    </footer>
+
+  </div>
+
+  <script>
+  (function () {
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = document.getElementById(btn.dataset.target).innerText;
+        function flash() {
+          var old = btn.textContent;
+          btn.textContent = 'Copied'; btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(flash, function () { fallbackCopy(text); flash(); });
+        } else { fallbackCopy(text); flash(); }
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

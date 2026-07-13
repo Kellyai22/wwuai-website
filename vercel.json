@@ -124,6 +124,34 @@
       "dest": "/starter.html"
     },
     {
+      "src": "/tools/which-claude",
+      "dest": "/tools-which-claude.html"
+    },
+    {
+      "src": "/tools/five-ai-prompts",
+      "dest": "/tools-five-ai-prompts.html"
+    },
+    {
+      "src": "/tools/first-ai-workflow",
+      "dest": "/tools-first-ai-workflow.html"
+    },
+    {
+      "src": "/tools/quick-wins",
+      "dest": "/tools-quick-wins.html"
+    },
+    {
+      "src": "/tools/business-team",
+      "dest": "/tools-business-team.html"
+    },
+    {
+      "src": "/tools/claude-projects",
+      "dest": "/tools-claude-projects.html"
+    },
+    {
+      "src": "/tools/micro-sophistications",
+      "dest": "/tools-micro-sophistications.html"
+    },
+    {
       "src": "/fable",
       "dest": "/fable.html"
     },

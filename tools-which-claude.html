@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Which Claude Is Right For You? — Wise Women Use AI</title>
+  <meta name="description" content="A plain-English guide to the different ways you can use Claude, made for women who want to get started without the tech overwhelm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 20px 64px;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 860px; margin: 0 auto; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 52px 48px 46px; margin: 40px 0 44px; text-align: left;
+    }
+    @media (max-width: 640px) { .hero { padding: 38px 26px 34px; margin: 24px 0 32px; } }
+    .hero .badge {
+      display: inline-block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 600; color: var(--blush); border: 1px solid rgba(226, 181, 146, 0.45);
+      border-radius: 999px; padding: 5px 14px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 500;
+      font-size: clamp(32px, 5.4vw, 46px); line-height: 1.12; margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero p { font-size: 16px; color: rgba(250, 248, 246, 0.84); max-width: 56ch; }
+
+    /* ── Section headings ── */
+    .sec-kick {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--clay); font-weight: 600; margin-bottom: 8px; text-align: center;
+    }
+    .sec-title {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 4vw, 30px);
+      text-align: center; line-height: 1.2; margin-bottom: 6px;
+    }
+    .sec-title em { font-style: italic; color: var(--clay); }
+    .sec-lead {
+      text-align: center; font-size: 14.5px; color: var(--driftwood);
+      max-width: 52ch; margin: 0 auto 30px;
+    }
+
+    /* ── Option cards (stacked, full width) ── */
+    .cards { display: grid; gap: 18px; margin-bottom: 56px; }
+    .opt {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      padding: 30px 34px 28px;
+      box-shadow: 0 18px 36px -26px rgba(58, 19, 27, 0.16);
+    }
+    @media (max-width: 640px) { .opt { padding: 24px 22px 22px; } }
+    .opt-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 4px; }
+    .opt-label {
+      font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+      color: var(--pearl); background: var(--clay); border-radius: 999px; padding: 4px 12px;
+      align-self: center;
+    }
+    .opt h3 { font-family: var(--serif); font-weight: 500; font-size: 27px; line-height: 1.1; }
+    .opt .tagline { font-size: 14.5px; color: var(--driftwood); margin: 4px 0 20px; }
+    .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 30px; }
+    @media (max-width: 560px) { .opt-grid { grid-template-columns: 1fr; gap: 18px; } }
+    .opt-grid .col-kick {
+      font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+      color: var(--driftwood); margin-bottom: 10px;
+    }
+    .opt-grid ul { list-style: none; }
+    .opt-grid li {
+      position: relative; padding-left: 22px; font-size: 14.5px; line-height: 1.6;
+      margin-bottom: 8px; color: var(--bordeaux);
+    }
+    .opt-grid li:last-child { margin-bottom: 0; }
+    .opt-grid .for li::before {
+      content: ''; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px;
+      border-radius: 50%; background: var(--clay);
+    }
+    .opt-grid .watch li { color: var(--driftwood); }
+    .opt-grid .watch li::before {
+      content: ''; position: absolute; left: 2px; top: 11px; width: 10px; height: 1.5px;
+      background: var(--driftwood);
+    }
+
+    /* ── Comparison table ── */
+    .compare { margin-bottom: 56px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+    table {
+      width: 100%; border-collapse: collapse; font-size: 14px; min-width: 620px;
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px; overflow: hidden;
+    }
+    thead tr { background: var(--bordeaux); color: var(--pearl); }
+    thead th {
+      padding: 14px 12px; text-align: center; font-weight: 600;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    thead th:first-child { text-align: left; width: 30%; }
+    tbody tr { border-top: 1px solid var(--cream-dark); }
+    tbody td { padding: 13px 12px; text-align: center; vertical-align: middle; }
+    tbody td:first-child {
+      text-align: left; font-weight: 500; font-size: 13.5px; color: var(--bordeaux);
+    }
+    tbody tr:nth-child(even) { background: rgba(225, 218, 215, 0.28); }
+    .mk { font-size: 17px; line-height: 1; font-weight: 600; }
+    .yes { color: var(--clay); }
+    .part { color: var(--driftwood); }
+    .no { color: rgba(58, 19, 27, 0.22); }
+    .legend {
+      display: flex; gap: 22px; flex-wrap: wrap; justify-content: center;
+      margin-top: 16px; font-size: 12.5px; color: var(--driftwood);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 7px; }
+
+    /* ── Best for callouts ── */
+    .best { margin-bottom: 8px; }
+    .best-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 560px) { .best-grid { grid-template-columns: 1fr; } }
+    .best-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      padding: 24px 26px;
+    }
+    .best-card .bk {
+      font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--clay); font-weight: 600; margin-bottom: 8px;
+    }
+    .best-card h4 { font-family: var(--serif); font-weight: 500; font-size: 20px; line-height: 1.25; margin-bottom: 8px; }
+    .best-card h4 em { font-style: italic; color: var(--clay); }
+    .best-card p { font-size: 14px; color: var(--driftwood); line-height: 1.6; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 860px; margin: 56px auto 0; padding-top: 26px;
+      border-top: 1px solid var(--cream-dark); text-align: center;
+      font-size: 12.5px; color: var(--driftwood); line-height: 1.9;
+    }
+    footer a { color: var(--bordeaux); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--clay); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <span class="badge">Wise Women Use AI · Tool guide</span>
+      <h1>Which Claude is <em>right for you?</em></h1>
+      <p>Claude comes in a few different shapes now, and that can feel like one more thing to work out. It isn't. Here is a plain-English look at each one, so you can pick where to start and get on with your day.</p>
+    </header>
+
+    <!-- Option cards -->
+    <section>
+      <p class="sec-kick">The line-up</p>
+      <h2 class="sec-title">Five ways to <em>use</em> Claude</h2>
+      <p class="sec-lead">Start at the top. Each one down the list does a little more, and asks a little more of you.</p>
+
+      <div class="cards">
+
+        <article class="opt">
+          <div class="opt-top">
+            <span class="opt-label">Start here</span>
+            <h3>Claude.ai</h3>
+          </div>
+          <p class="tagline">Your everyday assistant</p>
+          <div class="opt-grid">
+            <div class="for">
+              <p class="col-kick">What it's for</p>
+              <ul>
+                <li>Writing, brainstorming, summarising and thinking things through</li>
+                <li>Works in your browser, on your desktop and on your phone</li>
+                <li>It now remembers your past conversations, so it gets more helpful the more you use it</li>
+                <li>A free plan to start, and a paid plan that lifts the limits and opens up everything below</li>
+              </ul>
+            </div>
+            <div class="watch">
+              <p class="col-kick">Worth knowing</p>
+              <ul>
+                <li>The free plan has usage limits you'll start to feel once you're using it every day</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="opt">
+          <div class="opt-top">
+            <span class="opt-label">For visuals</span>
+            <h3>Claude Design</h3>
+          </div>
+          <p class="tagline">Describe it, and Claude designs it</p>
+          <div class="opt-grid">
+            <div class="for">
+              <p class="col-kick">What it's for</p>
+              <ul>
+                <li>One-pagers, slides, simple graphics, mock-ups and prototypes</li>
+                <li>Made for people who aren't designers, so you describe what you want in plain words</li>
+                <li>Lives at claude.ai/design and comes with the paid plans</li>
+              </ul>
+            </div>
+            <div class="watch">
+              <p class="col-kick">Worth knowing</p>
+              <ul>
+                <li>It's newer, launched in April 2026, so expect it to keep changing and improving</li>
+                <li>Works in your browser</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="opt">
+          <div class="opt-top">
+            <span class="opt-label">Hands-on help</span>
+            <h3>Cowork</h3>
+          </div>
+          <p class="tagline">Claude doing tasks on your computer</p>
+          <div class="opt-grid">
+            <div class="for">
+              <p class="col-kick">What it's for</p>
+              <ul>
+                <li>Claude working through the desktop app, on Mac and Windows, actually doing jobs with your files and apps</li>
+                <li>Sorting folders, filling in documents, working through multi-step tasks</li>
+                <li>You approve what it does, so you stay in charge</li>
+              </ul>
+            </div>
+            <div class="watch">
+              <p class="col-kick">Worth knowing</p>
+              <ul>
+                <li>You'll want a tidy brief</li>
+                <li>Give it one job at a time when you're starting out</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="opt">
+          <div class="opt-top">
+            <span class="opt-label">From your phone</span>
+            <h3>Dispatch</h3>
+          </div>
+          <p class="tagline">Send a task, then get on with your life</p>
+          <div class="opt-grid">
+            <div class="for">
+              <p class="col-kick">What it's for</p>
+              <ul>
+                <li>Send Claude a task from your phone and it works away on your computer while you're out and about</li>
+                <li>Pairs the mobile app with the desktop app, so the two talk to each other</li>
+              </ul>
+            </div>
+            <div class="watch">
+              <p class="col-kick">Worth knowing</p>
+              <ul>
+                <li>Your computer needs to be on with the desktop app open</li>
+                <li>It's the newest of the family</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="opt">
+          <div class="opt-top">
+            <span class="opt-label">Advanced</span>
+            <h3>Claude Code</h3>
+          </div>
+          <p class="tagline">For building automations and little tools</p>
+          <div class="opt-grid">
+            <div class="for">
+              <p class="col-kick">What it's for</p>
+              <ul>
+                <li>Building automations and small tools for your business</li>
+                <li>More capable, and more technical with it</li>
+              </ul>
+            </div>
+            <div class="watch">
+              <p class="col-kick">Worth knowing</p>
+              <ul>
+                <li>Don't start here</li>
+                <li>Come back to it once Claude.ai feels easy</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="compare">
+      <p class="sec-kick">Side by side</p>
+      <h2 class="sec-title">The <em>quick</em> comparison</h2>
+      <p class="sec-lead">A tick means yes, a dash means sort of, and a cross means not really.</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>Claude.ai</th>
+              <th>Design</th>
+              <th>Cowork</th>
+              <th>Dispatch</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Works in your browser</td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+            <tr>
+              <td>Works on your phone</td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+            <tr>
+              <td>No tech skills needed</td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+            <tr>
+              <td>Remembers your context</td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+            <tr>
+              <td>Creates visuals</td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+            <tr>
+              <td>Does tasks on your computer</td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Builds automations and tools</td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk no">✕</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Beginner friendly</td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk yes">✓</span></td>
+              <td><span class="mk part">–</span></td>
+              <td><span class="mk no">✕</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><span class="mk yes">✓</span> Yes</span>
+        <span><span class="mk part">–</span> Sort of</span>
+        <span><span class="mk no">✕</span> Not really</span>
+      </div>
+    </section>
+
+    <!-- Best for -->
+    <section class="best">
+      <p class="sec-kick">Where to begin</p>
+      <h2 class="sec-title">So, <em>which one</em>?</h2>
+      <p class="sec-lead">Most people only ever need the first one or two. There's no prize for using all five.</p>
+
+      <div class="best-grid">
+        <div class="best-card">
+          <p class="bk">Begin here</p>
+          <h4>Start with <em>Claude.ai</em> if…</h4>
+          <p>You're new to AI, or you just want a hand with writing and thinking today. This is the one to open first.</p>
+        </div>
+        <div class="best-card">
+          <p class="bk">Then add</p>
+          <h4>Add <em>Claude Design</em> when…</h4>
+          <p>You need something visual and you don't want to sit and fight with a design tool to get it.</p>
+        </div>
+        <div class="best-card">
+          <p class="bk">When you're settled</p>
+          <h4>Try <em>Cowork and Dispatch</em> when…</h4>
+          <p>You're comfortable chatting with Claude and you'd like it to get some actual tasks done for you.</p>
+        </div>
+        <div class="best-card">
+          <p class="bk">Down the track</p>
+          <h4>Explore <em>Claude Code</em> when…</h4>
+          <p>You're ready to build things that quietly run parts of your business in the background.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Created for the Wise Women Use AI community &nbsp;·&nbsp;
+    <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> &nbsp;·&nbsp;
+    <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> &nbsp;·&nbsp;
+    @wisewomenuseai
+  </footer>
+</body>
+</html>

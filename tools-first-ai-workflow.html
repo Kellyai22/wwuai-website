@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First AI Workflow — Wise Women Use AI</title>
+  <meta name="description" content="A simple, repeatable guide to building your first AI workflow with Claude, in under 30 minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px 0;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .page-wrap { max-width: 860px; margin: 0 auto; padding-bottom: 60px; }
+
+    /* Hero */
+    .hero {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 56px 48px 52px; text-align: center; margin-bottom: 44px;
+    }
+    .hero .eyebrow {
+      display: inline-block; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 600; color: var(--blush); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.1rem);
+      line-height: 1.15; margin-bottom: 18px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero p {
+      font-size: 15.5px; color: rgba(250, 248, 246, 0.82); line-height: 1.75;
+      max-width: 480px; margin: 0 auto;
+    }
+    @media (max-width: 600px) { .hero { padding: 42px 26px 38px; } }
+
+    /* Intro */
+    .intro {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      padding: 30px 34px; margin-bottom: 52px;
+      box-shadow: 0 14px 28px -18px rgba(58, 19, 27, 0.1);
+    }
+    .intro p { font-size: 15px; line-height: 1.8; color: var(--bordeaux); }
+    .intro p + p { margin-top: 0.9rem; }
+    @media (max-width: 600px) { .intro { padding: 24px 22px; } }
+
+    /* Steps */
+    .steps-heading {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 3vw, 1.9rem);
+      text-align: center; margin-bottom: 40px;
+    }
+    .step {
+      display: grid; grid-template-columns: 56px 1fr; gap: 22px;
+      margin-bottom: 20px; align-items: start;
+    }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 1.5px solid var(--bordeaux); display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--bordeaux);
+      flex-shrink: 0; background: var(--white);
+    }
+    .step-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 6px;
+    }
+    .step h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 1.35rem; margin-bottom: 8px;
+    }
+    .step p.step-desc {
+      font-size: 14.5px; line-height: 1.75; color: var(--driftwood); margin-bottom: 14px; max-width: 60ch;
+    }
+    .step-example {
+      background: var(--pearl); border: 1px solid var(--cream-dark); border-left: 3px solid var(--clay);
+      border-radius: 4px; padding: 14px 20px; font-family: var(--serif); font-style: italic;
+      font-size: 1rem; color: var(--bordeaux); line-height: 1.65;
+    }
+    .step-connector { width: 1px; height: 26px; background: var(--cream-dark); margin: 0 0 0 27px; }
+    @media (max-width: 560px) {
+      .step { grid-template-columns: 44px 1fr; gap: 14px; }
+      .step-num { width: 42px; height: 42px; font-size: 1.15rem; }
+      .step-connector { margin-left: 21px; }
+    }
+
+    .steps { margin-bottom: 52px; }
+
+    /* Workflow example */
+    .workflow-box {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      padding: 32px 36px 30px; margin-bottom: 52px;
+      box-shadow: 0 14px 28px -18px rgba(58, 19, 27, 0.1);
+    }
+    .workflow-box h2 {
+      font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin-bottom: 22px;
+    }
+    .flow-item {
+      display: flex; align-items: flex-start; gap: 16px; padding: 16px 0;
+      border-top: 1px solid var(--cream-dark);
+    }
+    .flow-item:first-child { border-top: none; }
+    .flow-dot {
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(221, 169, 131, 0.16); color: var(--clay); font-size: 0.85rem;
+    }
+    .flow-text h4 { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
+    .flow-text p { font-size: 13.5px; color: var(--driftwood); line-height: 1.6; }
+    @media (max-width: 600px) { .workflow-box { padding: 24px 22px; } }
+
+    /* Tips */
+    .tips {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px; margin-bottom: 52px;
+    }
+    .tip-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      padding: 24px 22px;
+    }
+    .tip-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; margin-bottom: 8px; }
+    .tip-card p { font-size: 13.5px; line-height: 1.65; color: var(--driftwood); }
+
+    /* CTA */
+    .cta {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 48px 44px; text-align: center; margin-bottom: 40px;
+    }
+    .cta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3.4vw, 2rem); margin-bottom: 12px; }
+    .cta p {
+      font-size: 14.5px; line-height: 1.75; color: rgba(250, 248, 246, 0.82);
+      max-width: 440px; margin: 0 auto 26px;
+    }
+    .cta a.btn {
+      display: inline-block; font: 500 13.5px var(--sans); letter-spacing: 0.05em;
+      color: var(--pearl); border: 1.5px solid var(--pearl); border-radius: 2px;
+      padding: 12px 30px; text-decoration: none; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .cta a.btn:hover { background: var(--pearl); color: var(--bordeaux); }
+    @media (max-width: 600px) { .cta { padding: 36px 26px; } }
+
+    footer { text-align: center; font-size: 12.5px; color: var(--driftwood); padding: 0 20px; }
+    footer a { color: var(--bordeaux); font-weight: 500; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="hero">
+    <span class="eyebrow">Wise Women Use AI · Getting Started</span>
+    <h1>Your first AI <em>workflow</em></h1>
+    <p>Not sure where to begin? This guide walks you through building a simple, repeatable workflow using Claude, in under 30 minutes.</p>
+  </header>
+
+  <section class="intro">
+    <p>A workflow is just a repeatable process. Instead of starting from scratch every time you write a caption, draft an email, or plan your content, you build a system once and use it over and over.</p>
+    <p>AI makes this dramatically faster. This guide shows you exactly how to build your first one.</p>
+  </section>
+
+  <section class="steps">
+    <h2 class="steps-heading">Build your workflow in 5 steps</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <p class="step-label">Identify</p>
+        <h3>Pick one repetitive task</h3>
+        <p class="step-desc">Don't try to automate everything at once. Pick the one task you do most often that takes the most energy. Common starting points: writing social captions, drafting emails, creating weekly content plans.</p>
+        <div class="step-example">"The task I do most often that drains me is writing Instagram captions."</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <p class="step-label">Document</p>
+        <h3>Write down exactly what you do</h3>
+        <p class="step-desc">Before AI can help, you need to be clear on the steps yourself. What information do you always need? What does a good result look like? What tone, length, style do you want?</p>
+        <div class="step-example">"I always need: my business context, the topic, my tone of voice, and the platform. A good result is 3 options under 150 words each."</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <p class="step-label">Build</p>
+        <h3>Turn that into a prompt template</h3>
+        <p class="step-desc">Take everything from step 2 and write it into a reusable prompt. Use square brackets for the parts that change each time.</p>
+        <div class="step-example">"Write 3 Instagram captions for my [business type] targeting [audience]. Topic: [topic]. Tone: warm and encouraging. Max 150 words each. End with a question."</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <p class="step-label">Test</p>
+        <h3>Run it 3 times and refine</h3>
+        <p class="step-desc">Paste your prompt into Claude with real details filled in. Do it three times with different topics. Notice what's missing, what's off, what works brilliantly. Adjust your template each time.</p>
+        <div class="step-example">"The captions were too formal. I'll add 'casual and conversational' to the tone instruction."</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <p class="step-label">Save</p>
+        <h3>Store it somewhere you'll actually use it</h3>
+        <p class="step-desc">A workflow only works if you can find it quickly. Save your final prompt in Notion, a pinned note, or a doc called "My AI Prompts." Then just open, fill in the brackets, paste, and go.</p>
+        <div class="step-example">"Saved in Notion under AI Tools → My Prompt Library → Content."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow-box">
+    <h2>Example: a weekly content workflow</h2>
+
+    <div class="flow-item">
+      <div class="flow-dot">✦</div>
+      <div class="flow-text">
+        <h4>Monday · Content plan</h4>
+        <p>Paste your content planning prompt into Claude → get 5 post ideas for the week in 2 minutes.</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-dot">✦</div>
+      <div class="flow-text">
+        <h4>Tuesday/Wednesday · Write captions</h4>
+        <p>Use your caption template for each idea → edit lightly → schedule in Canva or your scheduler.</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-dot">✦</div>
+      <div class="flow-text">
+        <h4>Thursday · Email draft</h4>
+        <p>Use your email template → paste in Claude → edit → send or schedule.</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-dot">✦</div>
+      <div class="flow-text">
+        <h4>Friday · Review and reset</h4>
+        <p>Note what worked this week → tweak any prompts that didn't land → plan next week in 10 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tips">
+    <div class="tip-card">
+      <h3>Start small</h3>
+      <p>One workflow done well beats five half-built ones. Master one before you move to the next.</p>
+    </div>
+    <div class="tip-card">
+      <h3>Your prompt is a living doc</h3>
+      <p>Every time you get a result you don't love, update the prompt. It gets better with every use.</p>
+    </div>
+    <div class="tip-card">
+      <h3>Context is everything</h3>
+      <p>The more Claude knows about your business, your audience and your style, the better the output.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to go deeper?</h2>
+    <p>Join Wise Women Use AI, a community built for women 40+ who want to use AI practically in their business. Real workflows, real tools, real support.</p>
+    <a class="btn" href="https://www.skool.com/wise-women-use-ai-1109/about">Join the community →</a>
+  </section>
+
+  <footer>
+    <p>Created for the Wise Women Use AI community &nbsp;·&nbsp; <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> &nbsp;·&nbsp; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> &nbsp;·&nbsp; @wisewomenuseai</p>
+  </footer>
+
+</div>
+</body>
+</html>

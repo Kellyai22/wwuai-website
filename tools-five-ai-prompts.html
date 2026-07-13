@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>5 AI Prompts Every Woman in Business Needs — Wise Women Use AI</title>
+  <meta name="description" content="Five copy-ready Claude prompts for real business owners: captions, emails, brainstorming, document summaries and decision-making.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 20px 80px;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: 860px; margin: 0 auto; }
+
+    /* Header */
+    header { text-align: center; padding: 64px 0 48px; max-width: 640px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--driftwood); margin-bottom: 18px;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 5.4vw, 48px);
+      line-height: 1.18; color: var(--bordeaux); margin-bottom: 18px;
+    }
+    h1 em { font-style: italic; color: var(--clay); }
+    .subtitle { font-size: 15.5px; color: var(--driftwood); line-height: 1.75; max-width: 460px; margin: 0 auto; }
+
+    /* Prompt cards */
+    .prompts { display: flex; flex-direction: column; gap: 24px; margin-bottom: 56px; }
+
+    .prompt-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      overflow: hidden; box-shadow: 0 14px 28px -20px rgba(58, 19, 27, 0.14);
+    }
+
+    .prompt-header {
+      display: flex; align-items: center; gap: 18px;
+      padding: 26px 28px 22px; border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .prompt-number {
+      display: grid; place-content: center; width: 44px; height: 44px; flex: none;
+      border: 1.5px solid var(--bordeaux); border-radius: 50%;
+      font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 18px;
+      color: var(--bordeaux);
+    }
+
+    .prompt-meta { flex: 1; }
+
+    .prompt-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .tag-clay { color: var(--clay); }
+    .tag-driftwood { color: var(--driftwood); }
+
+    .prompt-title { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--bordeaux); line-height: 1.25; }
+
+    .prompt-body { padding: 22px 28px 26px; }
+
+    .prompt-intro { font-size: 14.5px; line-height: 1.75; color: var(--driftwood); margin-bottom: 20px; }
+
+    .prompt-box {
+      background: var(--pearl); border: 1px solid var(--cream-dark); border-radius: 5px;
+      padding: 18px 20px; margin-bottom: 18px;
+    }
+
+    .prompt-box-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--driftwood); margin-bottom: 10px;
+    }
+
+    .prompt-text { font-size: 14.5px; line-height: 1.75; color: var(--bordeaux); }
+
+    .prompt-tip {
+      font-size: 13.5px; color: var(--driftwood); line-height: 1.65;
+      padding-left: 14px; border-left: 2px solid var(--clay); margin-bottom: 20px;
+    }
+    .prompt-tip strong { color: var(--bordeaux); font-weight: 600; }
+
+    .copy-btn {
+      font: 500 13.5px var(--sans); letter-spacing: 0.03em; color: var(--bordeaux);
+      background: transparent; border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 10px 26px; cursor: pointer;
+      transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .copy-btn:hover { background: var(--bordeaux); color: var(--pearl); }
+    .copy-btn:active { transform: scale(0.98); }
+    .copy-btn.copied { background: var(--bordeaux); color: var(--pearl); }
+
+    /* Closing */
+    .closing {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 48px 40px; text-align: center; margin-bottom: 40px;
+    }
+    .closing h2 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 3.4vw, 30px);
+      margin-bottom: 12px;
+    }
+    .closing p {
+      font-size: 14.5px; line-height: 1.75; color: rgba(250, 248, 246, 0.82);
+      max-width: 460px; margin: 0 auto 24px;
+    }
+    .closing a.btn {
+      display: inline-block; font: 500 13.5px var(--sans); letter-spacing: 0.05em;
+      color: var(--pearl); border: 1.5px solid var(--pearl); border-radius: 2px;
+      padding: 12px 28px; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .closing a.btn:hover { background: var(--pearl); color: var(--bordeaux); }
+
+    footer { text-align: center; font-size: 12.5px; color: var(--driftwood); letter-spacing: 0.02em; }
+    footer a { color: var(--bordeaux); font-weight: 500; }
+    footer a:hover { color: var(--clay); }
+
+    @media (max-width: 600px) {
+      header { padding: 48px 0 36px; }
+      .prompt-header { padding: 22px 20px 18px; gap: 14px; }
+      .prompt-body { padding: 20px 20px 22px; }
+      .closing { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Wise Women Use AI &middot; Prompt Guide</p>
+    <h1>5 AI prompts every woman in business <em>needs</em> to know</h1>
+    <p class="subtitle">These aren't generic prompts. They're built for real business owners who want real results. Copy, tweak and use them today.</p>
+  </header>
+
+  <div class="prompts">
+
+    <!-- Prompt 1 -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <div class="prompt-number">01</div>
+        <div class="prompt-meta">
+          <p class="prompt-tag tag-clay">Content Creation</p>
+          <h2 class="prompt-title">The Caption Writer</h2>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-intro">Stop staring at a blank screen. This prompt generates on-brand social captions in seconds. Just swap in your details.</p>
+        <div class="prompt-box">
+          <p class="prompt-box-label">Copy this prompt</p>
+          <p class="prompt-text" id="p1">"You are a social media copywriter for my business. I run [describe your business] and my audience is [describe your ideal client]. Write 3 Instagram captions for a post about [topic]. Use a warm, encouraging tone. Each caption should be 3&ndash;5 sentences and end with a question to spark engagement."</p>
+        </div>
+        <p class="prompt-tip"><strong>Pro tip:</strong> Tell Claude your brand voice once, then reference it in every content prompt. Save it in a note to paste in quickly.</p>
+        <button class="copy-btn" onclick="copyPrompt('p1', this)" type="button">Copy prompt</button>
+      </div>
+    </div>
+
+    <!-- Prompt 2 -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <div class="prompt-number">02</div>
+        <div class="prompt-meta">
+          <p class="prompt-tag tag-driftwood">Email Writing</p>
+          <h2 class="prompt-title">The Email Drafter</h2>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-intro">Whether it's a newsletter, a pitch or a follow-up, Claude can draft it in your voice so you just edit and send.</p>
+        <div class="prompt-box">
+          <p class="prompt-box-label">Copy this prompt</p>
+          <p class="prompt-text" id="p2">"Write an email to [audience, e.g. my email list or a potential client]. The purpose of the email is [goal, e.g. to share a new offer or check in after a discovery call]. My tone is [e.g. warm, professional, casual]. Keep it under 200 words and end with a clear call to action: [what you want them to do]."</p>
+        </div>
+        <p class="prompt-tip"><strong>Pro tip:</strong> Paste in a previous email you loved and say "match this tone". Claude will mirror your voice almost perfectly.</p>
+        <button class="copy-btn" onclick="copyPrompt('p2', this)" type="button">Copy prompt</button>
+      </div>
+    </div>
+
+    <!-- Prompt 3 -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <div class="prompt-number">03</div>
+        <div class="prompt-meta">
+          <p class="prompt-tag tag-clay">Strategy</p>
+          <h2 class="prompt-title">The Brainstorm Partner</h2>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-intro">Stuck on ideas? Claude is the best brainstorm partner you've ever had, and it never gets tired of your questions.</p>
+        <div class="prompt-box">
+          <p class="prompt-box-label">Copy this prompt</p>
+          <p class="prompt-text" id="p3">"I need content ideas for [platform, e.g. TikTok, Instagram or email]. My business is [brief description] and my audience is [who they are]. Give me 10 content ideas that are practical, relatable and not overly promotional. Focus on ideas that show my expertise without me needing to be on camera."</p>
+        </div>
+        <p class="prompt-tip"><strong>Pro tip:</strong> Ask Claude to give you ideas in different formats, e.g. "give me 3 as reels, 3 as carousels, 4 as text posts."</p>
+        <button class="copy-btn" onclick="copyPrompt('p3', this)" type="button">Copy prompt</button>
+      </div>
+    </div>
+
+    <!-- Prompt 4 -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <div class="prompt-number">04</div>
+        <div class="prompt-meta">
+          <p class="prompt-tag tag-driftwood">Productivity</p>
+          <h2 class="prompt-title">The Document Summariser</h2>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-intro">Long contracts, reports, PDFs: paste them in and get a clear summary in seconds. One of Claude's most useful everyday tools.</p>
+        <div class="prompt-box">
+          <p class="prompt-box-label">Copy this prompt</p>
+          <p class="prompt-text" id="p4">"Please read the following document and give me: 1) A 3-sentence summary of what it's about. 2) The 5 most important points I need to know. 3) Any actions I need to take or decisions I need to make. Keep your response clear and simple. [Paste document below]"</p>
+        </div>
+        <p class="prompt-tip"><strong>Pro tip:</strong> Works brilliantly with contracts, terms and conditions, course content and long emails. Just paste the text straight in.</p>
+        <button class="copy-btn" onclick="copyPrompt('p4', this)" type="button">Copy prompt</button>
+      </div>
+    </div>
+
+    <!-- Prompt 5 -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <div class="prompt-number">05</div>
+        <div class="prompt-meta">
+          <p class="prompt-tag tag-clay">Decision Making</p>
+          <h2 class="prompt-title">The Thinking Partner</h2>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-intro">When you're overthinking a business decision, Claude can help you get out of your head and see things clearly.</p>
+        <div class="prompt-box">
+          <p class="prompt-box-label">Copy this prompt</p>
+          <p class="prompt-text" id="p5">"I'm trying to decide between [option A] and [option B] for my business. Here's the context: [explain your situation briefly]. Can you help me think through the pros and cons of each? Consider my goal, which is [your goal]. Don't just list facts, help me think through what actually matters here."</p>
+        </div>
+        <p class="prompt-tip"><strong>Pro tip:</strong> Claude won't make the decision for you, but it will surface things you hadn't considered. Treat it like a smart friend, not a magic answer machine.</p>
+        <button class="copy-btn" onclick="copyPrompt('p5', this)" type="button">Copy prompt</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="closing">
+    <h2>Want more prompts like these?</h2>
+    <p>Join the Wise Women Use AI community, where women 40+ learn to use AI practically in their business. Real tools, real workflows, zero overwhelm.</p>
+    <a class="btn" href="https://www.skool.com/wise-women-use-ai-1109/about">Join the community &rarr;</a>
+  </div>
+
+  <footer>
+    <p>Created for the Wise Women Use AI community &middot; <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> &middot; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> &middot; @wisewomenuseai</p>
+  </footer>
+
+</div>
+
+<script>
+function copyPrompt(id, btn) {
+  var text = document.getElementById(id).innerText;
+  function flash() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('copied');
+    setTimeout(function () {
+      btn.textContent = old;
+      btn.classList.remove('copied');
+    }, 1800);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(flash, function () { fallbackCopy(text); flash(); });
+  } else {
+    fallbackCopy(text);
+    flash();
+  }
+}
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+}
+</script>
+</body>
+</html>

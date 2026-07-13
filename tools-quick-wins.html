@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>AI Quick Wins Starter Kit — Wise Women Use AI</title>
+  <meta name="description" content="Eight AI quick wins you can do today, with ready-to-copy prompts and a checklist to track your progress.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #3A131B;
+      --pearl: #FAF8F6;
+      --clay: #DDA983;
+      --blush: #E2B592;
+      --driftwood: #908486;
+      --cream-dark: #E1DAD7;
+      --white: #FFFFFF;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--pearl); color: var(--bordeaux);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 64px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 52px 44px 46px; text-align: center; margin: 32px 0 40px;
+    }
+    @media (max-width: 620px) { .hero { padding: 40px 24px 36px; } }
+    .hero .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--blush); margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3rem);
+      line-height: 1.18; margin-bottom: 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero .subtitle {
+      font-size: 15.5px; line-height: 1.75; color: rgba(250, 248, 246, 0.82);
+      max-width: 480px; margin: 0 auto;
+    }
+
+    /* ── Time filter bar ── */
+    .filter-bar {
+      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      font: 500 12.5px var(--sans); letter-spacing: 0.05em;
+      color: var(--bordeaux); background: transparent;
+      border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 9px 20px; cursor: pointer;
+      transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .filter-btn:hover { background: rgba(58, 19, 27, 0.06); }
+    .filter-btn.active { background: var(--bordeaux); color: var(--pearl); }
+
+    /* ── Wins grid ── */
+    .wins-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px; margin-bottom: 48px;
+    }
+    @media (max-width: 620px) { .wins-grid { grid-template-columns: 1fr; } }
+    .win-card {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 5px;
+      padding: 26px 26px 24px; transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    }
+    .win-card:hover { box-shadow: 0 14px 28px -18px rgba(58, 19, 27, 0.18); transform: translateY(-2px); }
+    .win-card.hidden { display: none; }
+    .win-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px; gap: 10px; flex-wrap: wrap;
+    }
+    .win-category {
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--bordeaux); background: var(--cream-dark);
+      border-radius: 2px; padding: 4px 10px;
+    }
+    .win-time {
+      font-size: 12px; font-weight: 500; color: var(--driftwood);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .win-card h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 21px; line-height: 1.28;
+      margin-bottom: 8px;
+    }
+    .win-card > p {
+      font-size: 13.5px; line-height: 1.65; color: var(--driftwood); margin-bottom: 14px;
+    }
+    .win-prompt {
+      background: var(--pearl); border-left: 2px solid var(--clay);
+      border-radius: 0 3px 3px 0; padding: 13px 16px;
+      font-family: var(--serif); font-style: italic; font-size: 14px; line-height: 1.6;
+      color: var(--bordeaux); margin-bottom: 12px;
+    }
+    .win-result {
+      font-size: 12.5px; font-weight: 500; color: var(--bordeaux);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .win-result::before { content: '✓'; color: var(--clay); font-weight: 700; }
+
+    /* ── Checklist band ── */
+    .checklist-band {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 6px;
+      padding: 40px 40px 36px; margin-bottom: 40px;
+    }
+    @media (max-width: 620px) { .checklist-band { padding: 30px 22px; } }
+    .checklist-band h2 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin-bottom: 6px; }
+    .checklist-band h2 em { font-style: italic; color: var(--blush); }
+    .checklist-band .sub {
+      font-size: 13.5px; color: rgba(250, 248, 246, 0.72); margin-bottom: 24px;
+    }
+    .progress-wrap { margin-bottom: 22px; }
+    .progress-label {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(250, 248, 246, 0.6); margin-bottom: 7px;
+    }
+    .progress-track {
+      height: 5px; background: rgba(250, 248, 246, 0.15); border-radius: 3px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; width: 0%; background: var(--blush); border-radius: 3px;
+      transition: width 0.3s ease-out;
+    }
+    .progress-count { font-size: 12.5px; color: rgba(250, 248, 246, 0.6); margin-top: 8px; }
+
+    .checklist {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px;
+    }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 12px; cursor: pointer;
+      padding: 10px; border: 1px solid rgba(250, 248, 246, 0.14); border-radius: 3px;
+      transition: background 0.15s ease-out; user-select: none;
+    }
+    .check-item:hover { background: rgba(250, 248, 246, 0.06); }
+    .check-item.done { opacity: 0.55; }
+    .checkbox {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+      border: 1.5px solid rgba(250, 248, 246, 0.4); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; transition: background 0.2s ease-out, border-color 0.2s ease-out;
+    }
+    .check-item.done .checkbox { background: var(--blush); border-color: var(--blush); color: var(--bordeaux); }
+    .check-item.done .checkbox::after { content: '✓'; }
+    .check-label { font-size: 13.5px; line-height: 1.5; }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px;
+      text-align: center; padding: 40px 32px; margin-bottom: 40px;
+    }
+    .cta h2 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin-bottom: 10px; }
+    .cta h2 em { font-style: italic; color: var(--clay); }
+    .cta p {
+      font-size: 14px; line-height: 1.7; color: var(--driftwood);
+      max-width: 440px; margin: 0 auto 22px;
+    }
+    .cta a {
+      display: inline-block; font: 500 13.5px var(--sans); letter-spacing: 0.04em;
+      color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 2px;
+      padding: 11px 28px; transition: background 0.2s ease-out, color 0.2s ease-out;
+    }
+    .cta a:hover { background: var(--bordeaux); color: var(--pearl); }
+
+    footer {
+      text-align: center; font-size: 12.5px; color: var(--driftwood); line-height: 1.9;
+    }
+    footer a { color: var(--bordeaux); font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Wise Women Use AI &middot; Starter Kit</p>
+    <h1>AI quick wins you can use <em>today</em></h1>
+    <p class="subtitle">No setup, no tech skills, no learning curve. These are the fastest ways to get real value from AI in your business, starting right now.</p>
+  </header>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" type="button" data-time="all">All wins</button>
+    <button class="filter-btn" type="button" data-time="5">Under 5 mins</button>
+    <button class="filter-btn" type="button" data-time="15">Under 15 mins</button>
+    <button class="filter-btn" type="button" data-time="30">Under 30 mins</button>
+  </div>
+
+  <section class="wins-grid">
+
+    <div class="win-card" data-time="5">
+      <div class="win-top">
+        <span class="win-category">Content</span>
+        <span class="win-time">2 minutes</span>
+      </div>
+      <h3>Repurpose a post you've already written</h3>
+      <p>Take something you already created and turn it into a different format instantly.</p>
+      <div class="win-prompt">"Take this Instagram caption and turn it into a short LinkedIn post. Keep the same message but make the tone slightly more professional. [paste caption]"</div>
+      <p class="win-result">One piece of content becomes two in minutes</p>
+    </div>
+
+    <div class="win-card" data-time="5">
+      <div class="win-top">
+        <span class="win-category">Admin</span>
+        <span class="win-time">3 minutes</span>
+      </div>
+      <h3>Summarise a long email thread</h3>
+      <p>Paste in a long email chain and get the key points without reading every word.</p>
+      <div class="win-prompt">"Here is an email thread. Give me: 1) what it's about in one sentence, 2) what I need to do next, 3) any deadlines mentioned. [paste thread]"</div>
+      <p class="win-result">Never re-read a long email chain again</p>
+    </div>
+
+    <div class="win-card" data-time="5">
+      <div class="win-top">
+        <span class="win-category">Communications</span>
+        <span class="win-time">5 minutes</span>
+      </div>
+      <h3>Write a tricky email you've been avoiding</h3>
+      <p>That email you keep putting off? Claude will draft it in 30 seconds.</p>
+      <div class="win-prompt">"Write an email to [person] about [situation]. I want to [goal, for example: decline politely, follow up without being pushy, or ask for a discount]. Keep it short, warm, and professional."</div>
+      <p class="win-result">Off your to-do list, done professionally</p>
+    </div>
+
+    <div class="win-card" data-time="15">
+      <div class="win-top">
+        <span class="win-category">Content</span>
+        <span class="win-time">10 minutes</span>
+      </div>
+      <h3>Plan a week of content in one go</h3>
+      <p>Stop thinking about what to post each day. Plan it all at once and batch your work.</p>
+      <div class="win-prompt">"I run [business type] for [audience]. Give me 5 social media post ideas for this week. Mix formats: 2 tips, 1 personal story angle, 1 question post, 1 promotion. Keep topics relevant to [your niche]."</div>
+      <p class="win-result">A full week of ideas in one sitting</p>
+    </div>
+
+    <div class="win-card" data-time="15">
+      <div class="win-top">
+        <span class="win-category">Strategy</span>
+        <span class="win-time">10 minutes</span>
+      </div>
+      <h3>Get unstuck on a business decision</h3>
+      <p>When you're going in circles in your own head, an outside perspective changes everything.</p>
+      <div class="win-prompt">"I'm stuck on [decision]. Here's my situation: [context]. What are the most important things to consider? What am I probably not thinking about? Help me think this through clearly."</div>
+      <p class="win-result">Clarity without the overthinking spiral</p>
+    </div>
+
+    <div class="win-card" data-time="15">
+      <div class="win-top">
+        <span class="win-category">Admin</span>
+        <span class="win-time">15 minutes</span>
+      </div>
+      <h3>Create a simple FAQ for your business</h3>
+      <p>Save yourself from answering the same questions over and over. Build it once.</p>
+      <div class="win-prompt">"I run [business]. Write a FAQ section with 8 common questions my customers or clients might ask, and clear helpful answers. Base it on this information about my business: [brief description of what you do and offer]."</div>
+      <p class="win-result">A FAQ page ready to copy straight onto your website</p>
+    </div>
+
+    <div class="win-card" data-time="30">
+      <div class="win-top">
+        <span class="win-category">Content</span>
+        <span class="win-time">20 minutes</span>
+      </div>
+      <h3>Write your About page or bio</h3>
+      <p>One of the hardest things to write about yourself. Let Claude do the heavy lifting.</p>
+      <div class="win-prompt">"Write an About page for my business website. Here are the facts about me and my business: [brief bullet points]. My audience is [who they are]. The tone should be [warm/professional/conversational]. Keep it under 200 words and make it feel personal, not corporate."</div>
+      <p class="win-result">A finished About page in one session</p>
+    </div>
+
+    <div class="win-card" data-time="30">
+      <div class="win-top">
+        <span class="win-category">Strategy</span>
+        <span class="win-time">25 minutes</span>
+      </div>
+      <h3>Build a simple offer description</h3>
+      <p>Struggling to explain what you sell in a way that lands? Claude can help you find the right words.</p>
+      <div class="win-prompt">"Help me write a clear, compelling description of my offer. Here's what it is: [describe your product or service]. The person buying it wants to [outcome they want]. Their main worry is [their biggest concern]. Write 3 versions: a one-liner, a short paragraph, and a 5-bullet summary."</div>
+      <p class="win-result">Three ready-to-use versions of your offer description</p>
+    </div>
+
+  </section>
+
+  <section class="checklist-band">
+    <h2>Your quick wins <em>checklist</em></h2>
+    <p class="sub">Tick off each one as you do it. Try to complete all 8 in your first week.</p>
+
+    <div class="progress-wrap">
+      <p class="progress-label">Progress</p>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="progress-count" id="progressCount">0 of 8 complete</p>
+    </div>
+
+    <div class="checklist">
+      <div class="check-item" data-check="0">
+        <div class="checkbox"></div>
+        <span class="check-label">Repurposed a post into a new format</span>
+      </div>
+      <div class="check-item" data-check="1">
+        <div class="checkbox"></div>
+        <span class="check-label">Summarised a long email thread</span>
+      </div>
+      <div class="check-item" data-check="2">
+        <div class="checkbox"></div>
+        <span class="check-label">Written a tricky email</span>
+      </div>
+      <div class="check-item" data-check="3">
+        <div class="checkbox"></div>
+        <span class="check-label">Planned a week of content</span>
+      </div>
+      <div class="check-item" data-check="4">
+        <div class="checkbox"></div>
+        <span class="check-label">Got unstuck on a decision</span>
+      </div>
+      <div class="check-item" data-check="5">
+        <div class="checkbox"></div>
+        <span class="check-label">Created a business FAQ</span>
+      </div>
+      <div class="check-item" data-check="6">
+        <div class="checkbox"></div>
+        <span class="check-label">Written my About page or bio</span>
+      </div>
+      <div class="check-item" data-check="7">
+        <div class="checkbox"></div>
+        <span class="check-label">Built an offer description</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Share your <em>wins</em> with us</h2>
+    <p>Completed a quick win? We want to hear about it. Post your results in the community. Your experience might be exactly what another member needs to see.</p>
+    <a href="https://www.skool.com/wise-women-use-ai-1109/about">Post in the community</a>
+  </section>
+
+  <footer>
+    <p>Created for the Wise Women Use AI community &middot; <a href="https://www.skool.com/wise-women-use-ai-1109/about">Join us</a> &middot; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a> &middot; @wisewomenuseai</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // ---- Time filters ----
+  var filterBtns = [].slice.call(document.querySelectorAll('.filter-btn'));
+  var cards = [].slice.call(document.querySelectorAll('.win-card'));
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var time = btn.dataset.time;
+      cards.forEach(function (card) {
+        var t = parseInt(card.dataset.time, 10);
+        var show = time === 'all' || t <= parseInt(time, 10);
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
+
+  // ---- Checklist ----
+  var checkItems = [].slice.call(document.querySelectorAll('.check-item'));
+  var fill = document.getElementById('progressFill');
+  var count = document.getElementById('progressCount');
+  function updateProgress() {
+    var total = checkItems.length;
+    var done = document.querySelectorAll('.check-item.done').length;
+    fill.style.width = (total ? (done / total * 100) : 0) + '%';
+    count.textContent = done + ' of ' + total + ' complete';
+  }
+  checkItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      item.classList.toggle('done');
+      updateProgress();
+    });
+  });
+})();
+</script>
+</body>
+</html>
