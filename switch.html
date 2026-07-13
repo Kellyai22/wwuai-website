@@ -1496,6 +1496,13 @@ Again, format this as a clean profile with headings and bullet points.</div>
 
     function checkUnlocked() {
       try {
+        // Skool members reach the gate-free route (/switch-wwuai or ?members) and skip the email form.
+        var params = new URLSearchParams(location.search);
+        var isMember = location.pathname.replace(/\/+$/, '').endsWith('switch-wwuai') || params.has('members');
+        if (isMember) {
+          showGuideContent();
+          return;
+        }
         if (localStorage.getItem('wwuai-switch-unlocked') === 'true') {
           showGuideContent();
           return;

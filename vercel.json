@@ -101,10 +101,7 @@
     },
     {
       "src": "/switch-wwuai",
-      "headers": {
-        "Location": "/switch"
-      },
-      "status": 301
+      "dest": "/switch.html"
     },
     {
       "src": "/tools/clear-the-decks",
