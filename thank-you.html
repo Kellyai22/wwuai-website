@@ -3,791 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're in! — Wise Women Use AI</title>
+  <link rel="canonical" href="https://www.wisewomenuseai.com/thank-you">
+  <title>You're in | Wise Women Use AI</title>
+  <meta name="description" content="You're on the list. Here's the one thing worth doing next.">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:title" content="You're in">
+  <meta property="og:description" content="You're on the list. Here's the one thing worth doing next.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/thank-you">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
 
   <style>
-    /* ── Variables ──────────────────────────────── */
     :root {
-      --ink:        #3A131B;
-      --brown-light:  #8C7E74;
-      --bordeaux:        #3A131B;
-      --cream:        #F6F3EE;
-      --cream-dark:   #E1DAD7;
-      --white:        #FFFFFF;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:         'Montserrat', sans-serif;
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Nav ──────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--cream);
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 64px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .nav-logo img {
-      height: 28px;
-      width: auto;
-    }
-
-    .nav-wordmark {
-      font-family: var(--serif);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--brown-light);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--ink); }
-
-    .nav-cta {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--bordeaux) !important;
-      border: 1.5px solid var(--bordeaux);
-      padding: 8px 18px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .nav-cta:hover {
-      background: var(--bordeaux);
-      color: var(--white) !important;
-    }
-
-    /* ── Hero ─────────────────────────────────── */
-    .hero {
-      text-align: center;
-      padding: 80px 24px 64px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      background: var(--pearl);
       color: var(--bordeaux);
-      background: rgba(221, 169, 131, 0.1);
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-bottom: 32px;
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 6vw, 64px);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .hero-script {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-size: 22px;
-      font-weight: 300;
-      color: var(--bordeaux);
-      margin-bottom: 28px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero p {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      max-width: 480px;
-      margin: 0 auto 40px;
-    }
-
-    /* Inbox tip box */
-    .inbox-tip {
-      background: var(--white);
-      border: 1.5px solid var(--cream-dark);
-      border-left: 4px solid var(--bordeaux);
-      border-radius: 6px;
-      padding: 20px 24px;
-      text-align: left;
-      max-width: 500px;
-      margin: 0 auto 64px;
-    }
-
-    .inbox-tip p {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .inbox-tip p strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* ── What's in the kit ────────────────────── */
-    .kit-section {
-      background: var(--white);
-      border-top: 1px solid var(--cream-dark);
-      border-bottom: 1px solid var(--cream-dark);
-      padding: 72px 24px;
-    }
-
-    .kit-inner {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--bordeaux);
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 300;
-      text-align: center;
-      color: var(--ink);
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-
-    .section-sub {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--brown-light);
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .kit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .kit-item {
-      background: var(--cream);
-      border: 1px solid var(--cream-dark);
-      border-radius: 8px;
-      padding: 28px 24px;
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .kit-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(58, 19, 27, 0.1);
-    }
-
-    .kit-number {
-      font-family: var(--serif);
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--bordeaux);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .kit-item h3 {
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .kit-item p {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.6;
-    }
-
-    /* ── Community Upsell ─────────────────────── */
-    .upsell {
-      background: var(--cream-dark);
-      padding: 72px 24px;
-    }
-
-    .upsell-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .upsell-intro {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .upsell-intro h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .upsell-intro h2 em {
-      font-style: italic;
-    }
-
-    .upsell-intro p {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .upsell-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .upsell-card {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      padding: 24px;
-      border-top: 3px solid var(--bordeaux);
-    }
-
-    .upsell-card-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--bordeaux);
-      margin-bottom: 8px;
-    }
-
-    .upsell-card h3 {
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .upsell-card p {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.6;
-    }
-
-    /* Pricing block */
-    .upsell-pricing {
-      background: var(--ink);
-      padding: 48px 40px;
-      text-align: center;
-      margin-bottom: 0;
-    }
-
-    .upsell-pricing-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--brown-light);
-      margin-bottom: 12px;
-    }
-
-    .upsell-pricing-title {
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .upsell-pricing-title em {
-      font-style: italic;
-      color: var(--brown-light);
-    }
-
-    .upsell-pricing-body {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto 24px;
-    }
-
-    .price-box {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 24px;
-      max-width: 320px;
-      margin: 0 auto 28px;
-    }
-
-    .price-box-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--brown-light);
-      margin-bottom: 8px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 6px;
-    }
-
-    .price-current {
-      font-family: var(--serif);
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    .price-was {
+      font-family: var(--body);
       font-size: 16px;
-      color: var(--brown-light);
-      text-decoration: line-through;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+    .wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* Brand bar */
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px; border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display); font-size: 13px; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--driftwood); font-weight: 500;
     }
 
-    .price-note {
-      font-size: 12px;
-      color: var(--brown-light);
-      line-height: 1.5;
+    /* Hero */
+    .hero { padding: 74px 0 20px; text-align: center; }
+    .confirmed {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--bordeaux);
+      background: var(--warm-tint); border: 1px solid rgba(221, 169, 131, 0.5);
+      border-radius: 40px; padding: 8px 18px; margin-bottom: 26px;
     }
+    .confirmed .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--bordeaux);
+    }
+    h1 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(36px, 6vw, 58px); line-height: 1.1;
+      letter-spacing: -0.01em; margin-bottom: 22px;
+    }
+    h1 em { color: var(--clay); }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 18px); line-height: 1.72;
+      color: var(--bordeaux); max-width: 52ch; margin: 0 auto;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
 
+    /* Community card */
+    .next { padding: 40px 0 20px; }
+    .card {
+      background: var(--white); border: 1px solid var(--cream-dark);
+      border-radius: 10px; padding: 46px 40px; text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .card .kicker {
+      font-family: var(--display); font-style: italic; font-size: 17px;
+      color: var(--clay); margin-bottom: 10px;
+    }
+    .card h2 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(25px, 3.4vw, 33px); line-height: 1.2; margin-bottom: 16px;
+    }
+    .card p {
+      color: var(--bordeaux); font-size: 16px; line-height: 1.72;
+      max-width: 46ch; margin: 0 auto 14px;
+    }
+    .card p.small { font-size: 14px; color: var(--driftwood); max-width: 44ch; }
     .btn-primary {
-      display: inline-block;
-      background: var(--bordeaux);
-      color: var(--white);
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 16px 36px;
-      border-radius: 6px;
-      transition: opacity 0.2s;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--body); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--pearl);
+      background: var(--bordeaux); border: 1.5px solid var(--bordeaux);
+      padding: 16px 32px; border-radius: 2px; cursor: pointer; margin-top: 12px;
+      transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-soft);
     }
+    .btn-primary:hover { background: #2c0e15; box-shadow: var(--shadow-lift); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
 
-    .btn-primary:hover { opacity: 0.88; }
-
-    .upsell-fallback {
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: var(--brown-light);
+    /* Inbox tip */
+    .tip { max-width: 560px; margin: 30px auto 0; }
+    .tip-inner {
+      background: var(--warm-tint); border: 1px solid rgba(221, 169, 131, 0.4);
+      border-radius: 6px; padding: 16px 20px; text-align: center;
     }
+    .tip-inner p { font-size: 14px; color: var(--bordeaux); line-height: 1.6; }
+    .tip-inner strong { font-weight: 600; }
 
-    .upsell-fallback a {
-      color: var(--bordeaux);
-      text-decoration: underline;
+    .backhome { text-align: center; padding: 30px 0 10px; }
+    .backhome a {
+      font-size: 14px; color: var(--driftwood);
+      border-bottom: 1px solid transparent; transition: border-color 0.2s ease;
     }
+    .backhome a:hover { border-color: var(--driftwood); }
 
-    /* ── Footer ───────────────────────────────── */
+    /* Footer */
     footer {
       border-top: 1px solid var(--cream-dark);
-      padding: 32px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      padding: 30px 24px 44px; text-align: center; margin-top: 30px;
     }
-
-    .footer-brand {
-      font-family: var(--serif);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--brown-light);
+    .foot-brand {
+      font-family: var(--display); font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--driftwood); margin-bottom: 8px;
     }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
 
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .hero { padding: 48px 0 16px; }
+      .card { padding: 34px 24px; }
     }
-
-    .footer-links a {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--brown-light);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--ink); }
-
-    /* ── Animations ───────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-up {
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-    }
-
-    .fade-up-1 { animation-delay: 0.1s; }
-    .fade-up-2 { animation-delay: 0.25s; }
-    .fade-up-3 { animation-delay: 0.4s; }
-    .fade-up-4 { animation-delay: 0.55s; }
-    .fade-up-5 { animation-delay: 0.7s; }
-
-    /* ── Responsive ───────────────────────────── */
-    @media (max-width: 640px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      footer { flex-direction: column; text-align: center; padding: 24px 20px; }
-      .kit-grid { grid-template-columns: 1fr; }
-      .upsell { padding: 48px 20px; }
-      .upsell-grid { grid-template-columns: 1fr; }
-      .upsell-pricing { padding: 40px 20px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="assets/logos/WWUAI Logo OG.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
-      <span class="nav-wordmark">WWUAI</span>
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#community">The Kit &amp; Community</a></li>
-      <li><a href="/#quiz" class="nav-cta">Free AI Quiz</a></li>
-    </ul>
-  </nav>
+    <span class="topbar-note">You're in</span>
+  </div>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge fade-up fade-up-1">✓ &nbsp;You're confirmed</div>
-
-    <h1 class="fade-up fade-up-2" id="heroTitle">
-      Your free kit<br>is on its way, <em>lovely.</em>
-    </h1>
-
-    <p class="hero-script fade-up fade-up-3" id="heroScript">check your inbox</p>
-
-    <p class="fade-up fade-up-4" id="heroDesc">
-      Your AI Starter Kit is headed to your inbox right now. While you wait, here's a reminder of what you're about to get.
-    </p>
-  </section>
-
-  <!-- What's in the kit -->
-  <section class="kit-section" id="kitSection">
-    <div class="kit-inner">
-      <p class="section-label">What's inside</p>
-      <h2 class="section-title" id="kitTitle">Your AI Starter Kit</h2>
-      <p class="section-sub" id="kitSub">Five tools to get you using AI properly — starting today.</p>
-
-      <div class="kit-grid" id="kitGrid">
-
-        <div class="kit-item">
-          <div class="kit-number">01</div>
-          <h3>Claude Model Comparison Tool</h3>
-          <p>An interactive guide to the different Claude models so you know exactly which one to use and when.</p>
-        </div>
-
-        <div class="kit-item">
-          <div class="kit-number">02</div>
-          <h3>5 AI Prompts for Real Business Tasks</h3>
-          <p>Five plug-and-play prompts built for women in business — not tech demos. Copy, paste, go.</p>
-        </div>
-
-        <div class="kit-item">
-          <div class="kit-number">03</div>
-          <h3>Your First AI Workflow</h3>
-          <p>A step-by-step guide to setting up your very first automated workflow — even if you've never tried before.</p>
-        </div>
-
-        <div class="kit-item">
-          <div class="kit-number" style="color:var(--brown-light)">04</div>
-          <p class="upsell-card-label" style="margin-bottom:8px">Inside the community</p>
-          <h3>AI Quick Wins Starter Kit</h3>
-          <p>Small, high-impact wins you can implement this week to start saving real time in your business.</p>
-        </div>
-
-        <div class="kit-item">
-          <div class="kit-number" style="color:var(--brown-light)">05</div>
-          <p class="upsell-card-label" style="margin-bottom:8px">Inside the community</p>
-          <h3>AI as Your Business Team</h3>
-          <p>A mental model that changes how you think about AI — from a tool you use to a team you lead.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Inbox tip -->
-  <div style="max-width: 600px; margin: 48px auto; padding: 0 24px;">
-    <div class="inbox-tip">
-      <p>
-        <strong>Can't see the email?</strong> Check your Promotions or Spam folder and move it to your inbox — that way you won't miss future tips either.
+    <div class="wrap">
+      <div class="confirmed"><span class="dot" aria-hidden="true"></span> You're confirmed</div>
+      <h1>You're in, <em>lovely.</em></h1>
+      <p class="hero-sub">
+        You're on the list, and what you signed up for is ready for you. <span class="soft">If it landed in your inbox, give it a minute to arrive. If it opened on the page you came from, it's waiting for you there. And while you're here, there's one thing I'd do next.</span>
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Community Upsell -->
-  <section class="upsell">
-    <div class="upsell-inner">
-      <div class="upsell-intro">
-        <p class="section-label">Ready for more?</p>
-        <h2 id="upsellHeading">Come join us inside <em>the community</em></h2>
-        <p id="upsellBody">A warm, practical space for women in business who want to use AI properly. Not a course. Not coaching. Just a group of women figuring it out together, with Kelly sharing what she learns along the way.</p>
+  <!-- The one next step: the free community -->
+  <section class="next">
+    <div class="wrap">
+      <div class="card">
+        <p class="kicker">The one thing I'd do next</p>
+        <h2>Come into the free community</h2>
+        <p>
+          Wise Women Use AI is the free community where women running everything themselves get this stuff done together. Real questions, real answers, templates and calls, and me in there sharing what's actually working. It's the fastest way to go from "I grabbed a guide" to "my business runs on this now."
+        </p>
+        <p class="small">
+          Free to join. There's an optional membership inside, The Unfair Advantage, for when you're ready for the full library. No rush, and no catch.
+        </p>
+        <a class="btn-primary" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">
+          Join the free community
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
 
-      <div class="upsell-grid">
-        <div class="upsell-card">
-          <p class="upsell-card-label">Extended</p>
-          <h3>The Full AI Starter Kit</h3>
-          <p>You just got the first three tools free. Inside the community, you get the complete kit: all five tools, including AI Quick Wins and the AI as Your Business Team framework.</p>
-        </div>
-        <div class="upsell-card">
-          <p class="upsell-card-label">Included</p>
-          <h3>Skool Community Access</h3>
-          <p>Support, Q&A, updates, and real guidance from Kelly as she builds and shares what's working. Ask questions, share wins, learn from other women doing the same thing.</p>
-        </div>
-        <div class="upsell-card">
-          <p class="upsell-card-label">Included</p>
-          <h3>Growing Resource Library</h3>
-          <p>New workflows, templates, and tools added as the community grows. Pay once, access everything that comes after.</p>
-        </div>
-        <div class="upsell-card">
-          <p class="upsell-card-label">Included</p>
-          <h3>Curated Courses and Resources</h3>
-          <p>Access to vetted courses on AI avatars, AI twins, and more. Added as Kelly discovers and recommends them.</p>
+      <div class="tip">
+        <div class="tip-inner">
+          <p><strong>Checking your inbox?</strong> If it's not there, have a look in Promotions or Spam and drag it across to your main inbox, so you don't miss what comes next either.</p>
         </div>
       </div>
 
-      <div class="upsell-pricing">
-        <p class="upsell-pricing-label">Founding member pricing</p>
-        <p class="upsell-pricing-title">The full kit. The community.<br><em>One payment. Everything included.</em></p>
-        <p class="upsell-pricing-body">You got a taste of what AI can do for your business. Inside the community, you get the full toolkit, ongoing resources, and a group of women working through it alongside you. Join now at the founding member price before it goes up.</p>
-
-        <div class="price-box">
-          <p class="price-box-label">Founding Member Price</p>
-          <div class="price-row">
-            <span class="price-current">$99</span>
-            <span class="price-was">$197</span>
-          </div>
-          <p class="price-note">One-time payment. Not a subscription.</p>
-        </div>
-
-        <a href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" class="btn-primary" id="upsellCta">Claim founding member price</a>
+      <div class="backhome">
+        <a href="/">Back to the website</a>
       </div>
-
-      <p class="upsell-fallback">Not ready yet? No worries. Your free guide is on its way. <a href="/">Back to the website</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <span class="footer-brand">Wise Women Use AI</span>
-    <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
-    </ul>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+    </div>
   </footer>
-
-  <script>
-    (function() {
-      var params     = new URLSearchParams(window.location.search);
-      var source     = params.get('source') || 'homepage';
-
-      var heroTitle     = document.getElementById('heroTitle');
-      var heroScript    = document.getElementById('heroScript');
-      var heroDesc      = document.getElementById('heroDesc');
-      var kitSection    = document.getElementById('kitSection');
-      var kitTitle      = document.getElementById('kitTitle');
-      var kitSub        = document.getElementById('kitSub');
-      var kitGrid       = document.getElementById('kitGrid');
-      var upsellHeading = document.getElementById('upsellHeading');
-      var upsellBody    = document.getElementById('upsellBody');
-      var upsellCta     = document.getElementById('upsellCta');
-
-      if (source === 'homepage') {
-        return; // base HTML is the homepage variant — no changes
-      }
-
-      if (source === 'starter') {
-        heroTitle.innerHTML = 'You\'re in. Here\'s Part 1 of<br>your <em>Claude Starter Kit.</em>';
-        heroScript.textContent = 'Part 1 is ready now';
-        heroDesc.innerHTML = '<a href="https://claude.ai/public/artifacts/00038cde-ae2c-43b5-8fbe-303466640698" target="_blank" style="display:inline-block;background:var(--bordeaux);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the Claude Comparison Tool</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:4px">The next four parts land in your inbox over the coming days. Watch for the subject line starting \u2018Part 2 of 5\u2019 tomorrow.</span>';
-        kitSection.style.display = 'none';
-        upsellHeading.innerHTML = 'Don\u2019t want to wait?';
-        upsellBody.textContent = 'The full kit plus the entire system is inside the community. Four classrooms, lifetime access, one payment.';
-        document.querySelector('.upsell-grid').innerHTML =
-            '<div class="upsell-card"><p class="upsell-card-label">Classroom 1</p><h3>Wise Women Starter Kit</h3><p>AI basics, starter templates, and simple workflows for women new to AI.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 2</p><h3>Claude Classroom</h3><p>Your complete Claude starter kit, the Micro Sophistications Prompt Pack, and Claude-specific resources.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 3</p><h3>Organise Your Business in Notion</h3><p>The system behind how Kelly actually runs the whole thing.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Classroom 4</p><h3>Systems Library</h3><p>Home of the Content Skill Pack and other ready-to-install systems.</p></div>';
-        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. Lifetime access.<br><em>Lock in the founding price now.</em>';
-        document.querySelector('.upsell-pricing-body').textContent = 'Founding member price is $99. Once the founding places have been taken, it goes to $197 and keeps climbing.';
-        upsellCta.textContent = 'Join the community';
-        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109');
-        document.querySelector('.upsell-fallback').innerHTML = 'Or just enjoy the free parts coming your way. No wrong answer. <a href="/">Back to the website</a>';
-        return;
-      }
-
-      if (source === 'claude-clearly') {
-        heroTitle.innerHTML = 'Your guide<br>is on its way, <em>lovely.</em>';
-        heroDesc.textContent = 'Claude, Clearly is headed to your inbox right now. Six clear sections to get you from zero to your first automation.';
-        kitTitle.textContent = 'Claude, Clearly';
-        kitSub.textContent = 'Your practical guide to getting started with Claude.';
-        kitGrid.innerHTML = ''
-          + '<div class="kit-item"><div class="kit-number">01</div><h3>What Claude actually is</h3><p>Not a chatbot, not a search engine. What it does, how it reasons, and why it matters for your business.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">02</div><h3>Getting set up</h3><p>Download, install, and find your way around. Including Cowork, where the real automation happens.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">03</div><h3>Your brand voice</h3><p>Write your brand guidelines once. Every output after that sounds like you, automatically.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">04</div><h3>Your first workflow</h3><p>Document your most repetitive task step by step. This becomes the blueprint Claude follows.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">05</div><h3>Reusable Skills</h3><p>Turn your workflow into a Skill you can run on command. Build it once, run it always.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">06</div><h3>Connect your tools</h3><p>Notion, Google Drive, Gmail, Slack. Claude connects to the tools you already use.</p></div>';
-        return;
-      }
-
-      if (source === 'carousel-maker') {
-        heroTitle.innerHTML = 'Your skill file<br>is on its way, <em>lovely.</em>';
-        heroDesc.innerHTML = 'Check your inbox for the download link. While you wait, the full setup guide is at <a href="/carousel-maker" style="color:var(--bordeaux)">wisewomenuseai.com/carousel-maker</a>.';
-        kitTitle.textContent = 'Getting started with the carousel maker';
-        kitSub.textContent = 'Four steps from download to your first carousel.';
-        kitGrid.innerHTML =
-          '<div class="kit-item"><div class="kit-number">01</div><h3>Unzip the file</h3><p>Move the folder into your Claude Code skills folder: <code style="font-size:12px;background:var(--cream-dark);padding:2px 6px;border-radius:3px">~/.claude/skills/</code></p></div>'
-        + '<div class="kit-item"><div class="kit-number">02</div><h3>Run the setup wizard</h3><p>Open Claude Code and type: <strong>setup carousel maker</strong>. The wizard takes about 20 minutes the first time.</p></div>'
-        + '<div class="kit-item"><div class="kit-number">03</div><h3>Add your brand photos</h3><p>Drop 3 to 5 photos into the <code style="font-size:12px;background:var(--cream-dark);padding:2px 6px;border-radius:3px">photos/my-brand/</code> folder. The skill picks from these at random.</p></div>'
-        + '<div class="kit-item"><div class="kit-number">04</div><h3>Create your first carousel</h3><p>Type “create a carousel about [your topic]” and you’re off. Every carousel after setup takes under two minutes.</p></div>';
-        upsellHeading.innerHTML = 'The carousel maker is<br>one piece of a <em>bigger system.</em>';
-        upsellBody.textContent = 'Inside the community, you get the full seven-skill content workflow — from one weekly topic to carousels, video scripts, email content, and captions. All from the same idea. All in under an hour.';
-        document.querySelector('.upsell-grid').innerHTML =
-          '<div class="upsell-card"><p class="upsell-card-label">The full workflow</p><h3>Seven-Skill Content System</h3><p>The complete document Kelly runs every Monday: topic brief, talking head script, carousel, editorial, email, captions, and publishing.</p></div>'
-        + '<div class="upsell-card"><p class="upsell-card-label">Training</p><h3>Claude Classroom</h3><p>Video training on using Claude Code for your business. Built for women who want to go further, not just dabble.</p></div>'
-        + '<div class="upsell-card"><p class="upsell-card-label">Community</p><h3>Real Q&amp;A with Kelly</h3><p>Ask questions, share what you’re building, and get Kelly’s take. Women at all stages of the same journey.</p></div>'
-        + '<div class="upsell-card"><p class="upsell-card-label">Always growing</p><h3>Systems Library</h3><p>New skills and workflows added as Kelly builds them. Pay once, access everything that comes after.</p></div>';
-        document.querySelector('.upsell-pricing-title').innerHTML = 'One payment. The full content system.<br><em>Join at the founding price.</em>';
-        document.querySelector('.upsell-pricing-body').textContent = 'You’ve got the carousel maker. Inside the community, you get the other six skills, the full workflow document, and a group of women building the same kind of content system. Join at the founding price while it’s still $99.';
-        upsellCta.textContent = 'Join as a founding member';
-        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109/about');
-        document.querySelector('.upsell-fallback').innerHTML = 'Or check the setup guide first. The skill will be there when you’re ready. <a href="/carousel-maker">Setup guide</a>';
-        return;
-      }
-
-      if (source === 'switch-to-claude') {
-        heroTitle.innerHTML = 'Your guide is open.<br>Let\'s get you <em>switched.</em>';
-        heroScript.textContent = 'four steps, about five minutes';
-        heroDesc.innerHTML = '<a href="/switch" style="display:inline-block;background:var(--bordeaux);color:#fff;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:6px;margin-bottom:20px">Open the wizard</a><span style="display:block;font-size:14px;font-weight:300;color:var(--brown-light);margin-top:12px">Work through all four steps and Claude will know exactly how you work. A confirmation email is on its way too.</span>';
-        kitTitle.textContent = 'What you\'ll do in the wizard';
-        kitSub.textContent = 'Four steps to bring your ChatGPT setup across to Claude.';
-        kitGrid.innerHTML = ''
-          + '<div class="kit-item"><div class="kit-number">01</div><h3>Extract from ChatGPT</h3><p>Two prompts that pull out everything ChatGPT knows about you, your preferences, and your custom instructions.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">02</div><h3>Review and refine</h3><p>Clean up what ChatGPT gives you so Claude gets the best version of your profile.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">03</div><h3>Import to Claude</h3><p>Paste your profile into Claude and let it store everything. One conversation, done.</p></div>'
-          + '<div class="kit-item"><div class="kit-number">04</div><h3>What comes next</h3><p>Set up Projects, understand what to expect in your first week, and tips for getting the most out of Claude.</p></div>';
-        document.querySelector('.upsell .section-label').textContent = 'What comes next';
-        upsellHeading.innerHTML = 'You\'ve made the move to Claude.<br>Come and <em>settle in.</em>';
-        upsellBody.textContent = 'There\'s a free community of women who\'ve made the same switch, sharing what\'s actually working: prompts, projects, and the little time-savers. If you\'re giving Claude a proper go, this is your people.';
-        document.querySelector('.upsell-grid').innerHTML =
-            '<div class="upsell-card"><p class="upsell-card-label">Free to join</p><h3>The community</h3><p>Start Here, the 7-day challenge, and the good habits that make Claude actually stick. No cost, no catch.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Free to join</p><h3>Real Q&A with Kelly</h3><p>Ask questions, share wins, and get Kelly\'s take on the real things you\'re working on.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Inside, when ready</p><h3>The Unfair Advantage</h3><p>The $49/mo membership within the community: prompts, walk-throughs, pre-built systems, and a monthly live workshop.</p></div>'
-          + '<div class="upsell-card"><p class="upsell-card-label">Inside, when ready</p><h3>Build your business HQ</h3><p>The guided classroom that helps you set up a Notion HQ and run the whole business from it, with Claude.</p></div>';
-        document.querySelector('.upsell-pricing-label').textContent = 'Free to join';
-        document.querySelector('.upsell-pricing-title').innerHTML = 'The community is free.<br><em>Go deeper when you\'re ready.</em>';
-        document.querySelector('.upsell-pricing-body').textContent = 'Joining costs nothing. Come in, meet the room, and use what\'s there. When you want the deeper tools and the monthly workshop, The Unfair Advantage is the $49/mo membership inside, at the founding rate while it lasts.';
-        document.querySelector('.price-box').innerHTML = '<p class="price-box-label">To join the community</p><div class="price-row"><span class="price-current">Free</span></div><p class="price-note">The Unfair Advantage membership inside is $49/mo, founding rate, rising.</p>';
-        upsellCta.textContent = 'Join the free community';
-        upsellCta.setAttribute('href', 'https://www.skool.com/wise-women-use-ai-1109');
-        document.querySelector('.upsell-fallback').innerHTML = 'Or go do the wizard first. No rush. <a href="/switch">Open the wizard</a>';
-        return;
-      }
-    })();
-  </script>
 
 </body>
 </html>
