@@ -156,6 +156,10 @@
       "dest": "/fable.html"
     },
     {
+      "src": "/calm",
+      "dest": "/calm.html"
+    },
+    {
       "src": "/community",
       "dest": "/community.html"
     },

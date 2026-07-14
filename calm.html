@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/calm">
+  <title>The Sunday Reset: get the week out of your head | Wise Women Use AI</title>
+  <meta name="description" content="Four copy-and-paste prompts that take everything you're carrying in your head and turn it into a calm, sorted plan for the week. About fifteen minutes, and the swirl is gone.">
+
+  <meta property="og:title" content="The Sunday Reset: get the week out of your head">
+  <meta property="og:description" content="Four prompts that turn the mental load into a sorted plan for the week. About fifteen minutes, and the swirl is gone.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/calm">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Sunday Reset: get the week out of your head">
+  <meta name="twitter:description" content="Four prompts that turn the mental load into a sorted plan for the week.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 640px; }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px; border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display); font-size: 13px; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--driftwood); font-weight: 500;
+    }
+
+    .section-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 246, 0.86);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
+      backdrop-filter: saturate(150%) blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .section-nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; max-width: 980px; margin: 0 auto; padding: 0 24px; height: 56px;
+    }
+    .brand-mini {
+      font-family: var(--display); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--bordeaux); font-weight: 500;
+    }
+    .section-links { display: none; gap: 30px; list-style: none; }
+    .section-links a {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--driftwood); padding: 6px 0;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease; white-space: nowrap;
+    }
+    .section-links a:hover,
+    .section-links a.current { color: var(--bordeaux); border-color: var(--clay); }
+    .nav-cta {
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux); padding: 9px 18px; border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    }
+    .nav-cta:hover { background: var(--bordeaux); color: var(--pearl); }
+    .nav-cta:active { transform: translateY(1px); }
+
+    body.unlocked .nav-cta { display: none; }
+    @media (min-width: 761px) {
+      body.unlocked .section-links { display: flex; }
+    }
+
+    .hero { padding: 68px 0 40px; }
+    .eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--driftwood); margin-bottom: 22px;
+    }
+    .eyebrow b { color: var(--bordeaux); font-weight: 600; }
+    h1 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(38px, 6.4vw, 66px); line-height: 1.08;
+      letter-spacing: -0.01em; margin-bottom: 26px; max-width: 15ch;
+    }
+    h1 em { color: var(--clay); font-weight: 400; }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px); line-height: 1.72;
+      color: var(--bordeaux); max-width: 60ch; margin-bottom: 34px;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
+    .hero-note {
+      font-size: 13px; color: var(--driftwood); margin-top: 2px;
+      max-width: 52ch; line-height: 1.6;
+    }
+
+    .gate { padding: 40px 0 56px; }
+    body.unlocked #gate { display: none; }
+    .gate-card {
+      background: var(--bordeaux); color: var(--pearl); border-radius: 8px;
+      padding: 46px 40px; text-align: center; box-shadow: var(--shadow-lift);
+    }
+    .gate-card h2 { color: var(--pearl); margin-bottom: 12px; }
+    .gate-card .gate-line {
+      font-size: 16px; color: rgba(250, 248, 246, 0.82); line-height: 1.65;
+      max-width: 46ch; margin: 0 auto 26px;
+    }
+    .gate-form {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 380px; margin: 0 auto; text-align: left;
+    }
+    .field-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--blush); margin-bottom: -4px;
+    }
+    .gate-form input {
+      font-family: var(--body); font-size: 15px; padding: 14px 16px;
+      border: 1.5px solid rgba(250, 248, 246, 0.28);
+      background: rgba(250, 248, 246, 0.06); color: var(--pearl);
+      border-radius: 3px; outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .gate-form input::placeholder { color: rgba(250, 248, 246, 0.5); }
+    .gate-form input:focus { border-color: var(--blush); background: rgba(250, 248, 246, 0.1); }
+    .gate-form button {
+      margin-top: 6px; font-family: var(--body); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--bordeaux);
+      background: var(--blush); border: 1.5px solid var(--blush);
+      padding: 15px 22px; border-radius: 3px; cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .gate-form button:hover { background: var(--clay); border-color: var(--clay); }
+    .gate-form button:active { transform: translateY(1px); }
+    .gate-form button:disabled { opacity: 0.7; cursor: default; }
+    .gate-note { font-size: 12px; color: rgba(250, 248, 246, 0.6); margin-top: 16px; }
+    .gate-reassure {
+      margin-top: 22px; font-size: 13px; color: var(--driftwood);
+      text-align: center; line-height: 1.6;
+    }
+
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section.block { padding: 46px 0; }
+    section.block + section.block { border-top: 1px solid var(--cream-dark); }
+    .kicker {
+      font-family: var(--display); font-style: italic; font-size: 17px;
+      color: var(--clay); margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 36px); line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 18px;
+    }
+    .lead { font-size: 16.5px; line-height: 1.78; color: var(--bordeaux); max-width: 62ch; }
+    .lead strong { font-weight: 600; }
+    .jobs-lead { margin-bottom: 6px; }
+
+    .job {
+      display: grid; grid-template-columns: 92px 1fr; gap: 8px 26px;
+      padding: 34px 0; border-top: 1px solid var(--cream-dark); align-items: start;
+    }
+    .job:first-of-type { border-top: none; }
+    .job-num {
+      font-family: var(--display); font-size: clamp(42px, 6vw, 58px);
+      line-height: 0.9; font-weight: 400; color: var(--clay);
+    }
+    .job-title {
+      font-family: var(--display); font-size: clamp(21px, 2.8vw, 26px);
+      font-weight: 500; line-height: 1.25; margin-bottom: 12px;
+    }
+    .job-why { font-size: 16px; line-height: 1.75; color: var(--bordeaux); max-width: 58ch; }
+
+    .prompt {
+      background: var(--white); border: 1px solid var(--cream-dark);
+      border-radius: 8px; margin-top: 20px; overflow: hidden; box-shadow: var(--shadow-soft);
+    }
+    .prompt-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 18px; background: var(--warm-tint);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .prompt-top .p-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--driftwood);
+    }
+    .btn-copy {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--body); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--pearl);
+      background: var(--bordeaux); border: none; padding: 9px 15px;
+      border-radius: 2px; cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-copy:hover { background: #2c0e15; }
+    .btn-copy:active { transform: translateY(1px); }
+    .btn-copy.copied { background: var(--clay); color: var(--bordeaux); }
+    .btn-copy svg { width: 13px; height: 13px; }
+    .prompt-body {
+      padding: 20px 18px; font-family: var(--mono); font-size: 13px;
+      line-height: 1.72; color: var(--bordeaux); white-space: pre-wrap; word-wrap: break-word;
+    }
+
+    .skool {
+      margin: 8px 0 0; text-align: center; background: var(--white);
+      border: 1px solid var(--cream-dark); border-radius: 8px;
+      padding: 44px 34px; box-shadow: var(--shadow-soft);
+    }
+    .skool h2 { margin-bottom: 12px; }
+    .skool p { color: var(--bordeaux); font-size: 16px; line-height: 1.7; max-width: 48ch; margin: 0 auto 24px; }
+    .btn-skool {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--body); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--pearl);
+      background: var(--bordeaux); border: 1.5px solid var(--bordeaux);
+      padding: 15px 30px; border-radius: 2px;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-skool:hover { background: #2c0e15; }
+    .btn-skool:active { transform: translateY(1px); }
+    .btn-skool svg { width: 15px; height: 15px; }
+
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 30px 24px 44px; text-align: center;
+    }
+    .foot-brand {
+      font-family: var(--display); font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--driftwood); margin-bottom: 8px;
+    }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
+
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .section-nav-inner { justify-content: space-between; }
+      .hero { padding: 44px 0 32px; }
+      .job { grid-template-columns: 1fr; gap: 4px; padding: 28px 0; }
+      .job-num { font-size: 40px; margin-bottom: 6px; }
+      .gate-card { padding: 34px 22px; }
+      .skool { padding: 34px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body.unlocked #guide { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
+    </a>
+    <span class="topbar-note">Free guide</span>
+  </div>
+
+  <!-- Sticky section nav -->
+  <nav class="section-nav" aria-label="On this page">
+    <div class="section-nav-inner">
+      <span class="brand-mini">The Sunday Reset</span>
+      <ul class="section-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#prompts">The four prompts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free guide</p>
+      <h1>Get the whole week <em>out of your head</em></h1>
+      <p class="hero-sub">
+        It's Sunday night and the week has already started, just in your head. Every deadline, every follow-up, every don't-forget, all of it running on the one person who can't clock off. <span class="soft">This is the reset I run to put it all down. Four prompts, about fifteen minutes, and the swirl becomes a calm, sorted plan you can actually see.</span>
+      </p>
+      <p class="hero-note">Works in Claude, ChatGPT, or whichever assistant you already use. No setup, just paste each one in and answer honestly.</p>
+    </div>
+  </header>
+
+  <!-- Email gate -->
+  <section class="gate" id="gate">
+    <div class="wrap wrap-narrow">
+      <div class="gate-card">
+        <h2>Get the four prompts</h2>
+        <p class="gate-line">Pop your email in and the whole reset unlocks right here on the page: how it works, and all four prompts to copy and paste.</p>
+        <!-- Kit form: Sunday Reset (id 9685014), source 'sunday-reset'. -->
+        <form class="gate-form register-form" action="https://app.kit.com/forms/9685014/subscriptions" method="post" data-sv-form="9685014" data-uid="c6c25954d2" data-format="inline" data-version="5">
+          <input type="hidden" name="fields[source]" value="sunday-reset">
+          <label class="field-label" for="fn">First name</label>
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <label class="field-label" for="em">Email</label>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit">Unlock the reset</button>
+        </form>
+        <p class="gate-note">Free. No spam. Unsubscribe any time.</p>
+      </div>
+      <p class="gate-reassure">One email, and it all opens on this page. Nothing to download, nothing to wait for.</p>
+    </div>
+  </section>
+
+  <!-- The guide (hidden until unlocked) -->
+  <div id="guide">
+
+    <!-- How it works -->
+    <section class="block" id="how">
+      <div class="wrap">
+        <p class="kicker">How it works</p>
+        <h2>Why this gets the load off you</h2>
+        <p class="lead">
+          The reason it all lives in your head is that it has nowhere else to go. You're the plan, the memory and the backup, all at once. These four prompts do it in order: first they empty your head onto the page, then they sort the pile, then they shape a real week, then they show you what only you can do and what you can finally hand off. Do them one after the other on a Sunday, or any evening the week feels like too much. By the end, the week is written down and out of you, and you can look at it instead of carrying it.
+        </p>
+      </div>
+    </section>
+
+    <!-- The four prompts -->
+    <section class="block" id="prompts">
+      <div class="wrap">
+        <p class="kicker">The reset</p>
+        <h2>The four prompts, in order</h2>
+        <p class="lead jobs-lead">Paste each one in, answer honestly, and let it work before you move to the next.</p>
+
+        <!-- Prompt 1 -->
+        <div class="job">
+          <div class="job-num">1</div>
+          <div>
+            <h3 class="job-title">Empty your head onto the page</h3>
+            <p class="job-why">Don't sort yet. Just get it all out, work and home tangled together, exactly as it lives in your mind. The point is to stop holding it, not to organise it. That comes next.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">Prompt one</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p1', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p1">I'm going to empty my head out to you. It's going to be messy and out of order, business and home all mixed together, and that's fine. I just need to stop carrying it.
+
+Here's everything on my mind for the week ahead: [start typing, no order, no filter. Deadlines, the thing you keep forgetting, who you owe a reply to, the appointment, the invoice, what's for dinner, the half-finished idea, all of it.]
+
+Don't do anything with it yet. Just read it all back to me grouped into loose buckets so I can see I've got it out, and gently ask me what I've left out, the things that tend to hide until 3am.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt 2 -->
+        <div class="job">
+          <div class="job-num">2</div>
+          <div>
+            <h3 class="job-title">Sort the pile</h3>
+            <p class="job-why">Now let it do the sorting you don't have the headspace for. What actually matters this week, what only feels urgent, and what can quietly wait without anything falling over.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">Prompt two</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p2', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p2">Take everything I just gave you and sort it into four honest groups: matters this week, matters but not this week, someone else could do this, and this can quietly drop off.
+
+Be firm with me. I tend to treat everything as urgent because it's all sitting on me, so push back where something is loud but not actually important. For anything you put in "someone else could do this", say who or what could take it, even if that's a tool, a template, or a five-minute ask to another person.
+
+Give it back to me as four short lists, nothing else.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt 3 -->
+        <div class="job">
+          <div class="job-num">3</div>
+          <div>
+            <h3 class="job-title">Shape a week that fits a real person</h3>
+            <p class="job-why">Not a fantasy schedule that assumes nothing goes sideways. A week with room in it, built around your actual energy, so Monday morning already has a shape before you open your laptop.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">Prompt three</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p3', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p3">Using only the "matters this week" list, help me lay the week out so it fits a real person, not a machine.
+
+A few things about me: [when your brain is sharpest, when you're wrung out, any fixed commitments, school runs, appointments, the days that are already heavy.]
+
+Give me a simple day-by-day plan. Put the hard-thinking work where my energy is best. Leave genuine gaps for the things that always come up. Don't stack the week so tightly that one late reply topples the lot. Keep it to a page I can actually glance at, and tell me the one thing that, if I only did that this week, would make the biggest difference.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt 4 -->
+        <div class="job">
+          <div class="job-num">4</div>
+          <div>
+            <h3 class="job-title">See what only you can do</h3>
+            <p class="job-why">This is the one that starts to change things. The whole reason it's all on you is that no one's ever drawn the line between what genuinely needs you and what just ended up with you. This draws it.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">Prompt four</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p4', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p4">Look at my whole week and everything I emptied out earlier. I've been the only one holding all of it, and I want to start changing that.
+
+Split it into two honest lists: the things that genuinely need me, my judgement, my relationships, my voice, and the things that only landed on me because there was no one and nothing else to catch them.
+
+For that second list, give me the very first thing I could hand off this week, and exactly how. Whether that's a prompt I could reuse, a simple checklist someone else could follow, or a task a tool could take. Start me with one. Small enough that I'll actually do it, real enough that I feel the weight come off.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skool CTA -->
+    <section class="block">
+      <div class="wrap wrap-narrow">
+        <div class="skool">
+          <h2>You don't have to carry it on your own</h2>
+          <p>Wise Women Use AI is the free community where women running everything themselves learn to put the load down for good, with systems that hold it instead of your head. Calls, templates, and people who actually reply. Come in and say hi.</p>
+          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">
+            Join the free community
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(id, btn) {
+      var text = document.getElementById(id).textContent;
+      var original = btn.innerHTML;
+      function done() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Copied';
+        setTimeout(function () { btn.classList.remove('copied'); btn.innerHTML = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    }
+    function fallback(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    function unlockGuide(scroll) {
+      document.body.classList.add('unlocked');
+      if (scroll) {
+        setTimeout(function () {
+          var el = document.getElementById('how');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') {
+          unlockGuide(false);
+        }
+      } catch (e) {}
+    })();
+
+    document.querySelectorAll('form.register-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
+        fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form)),
+          mode: 'no-cors'
+        }).finally(function () {
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set('unlocked', '1');
+            window.history.replaceState({}, '', url);
+          } catch (e) {}
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          unlockGuide(true);
+        });
+      });
+    });
+
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('current'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('current');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['how', 'prompts'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
