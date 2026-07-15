@@ -160,6 +160,10 @@
       "dest": "/calm.html"
     },
     {
+      "src": "/backup",
+      "dest": "/backup.html"
+    },
+    {
       "src": "/community",
       "dest": "/community.html"
     },
