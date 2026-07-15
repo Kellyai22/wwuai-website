@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Unfair Advantage: Free Workshop, 15 July | Wise Women Use AI</title>
-<meta name="description" content="A free, hands-along hour for women in business. Watch Claude build the first home for your business, just by talking to it. Live and free, Wednesday 15 July.">
+<title>The next free workshop | Wise Women Use AI</title>
+<meta name="description" content="The next free, hands-along workshop for women in business is on its way. Pop your email in and I'll send you the date and your seat.">
 
-<meta property="og:title" content="Free workshop: your business can't run without you. It's time it could.">
-<meta property="og:description" content="A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. No tech skills, nothing to set up alone. Live and free.">
+<meta property="og:title" content="The next free workshop is on its way">
+<meta property="og:description" content="A free, hands-along hour for women in business, coming soon. Register your interest and I'll send you the details the moment they're live.">
 <meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
 <meta property="og:url" content="https://www.wisewomenuseai.com/workshop">
 <link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free workshop: your business can't run without you. It's time it could.">
-<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta name="robots" content="noindex">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +21,6 @@
   :root{
     --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
     --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
-    /* aliases + extras for the site-shell nav/footer ported from other pages */
     --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
     --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
   }
@@ -53,7 +50,6 @@
   .micro{font-size:0.85rem;color:var(--driftwood);margin-top:1rem;}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;border-radius:2px;}
 
-  /* ---- nav (site shell) ---- */
   nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;}
   .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;max-width:fit-content;}
   .nav-logo img{height:32px;width:32px;object-fit:contain;}
@@ -64,7 +60,6 @@
   .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background 0.2s,transform 0.1s;display:inline-block;}
   .btn-solid:hover{background:var(--bordeaux);transform:translateY(-1px);}
 
-  /* ---- sign-up form ---- */
   .signup{max-width:460px;}
   .signup .fields{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:0.7rem;}
   .signup input{font-family:var(--body);font-size:1rem;width:100%;padding:0.85em 1em;border:1.5px solid #d3c7c3;border-radius:8px;background:var(--white);color:var(--ink);text-align:left;}
@@ -73,78 +68,22 @@
   .signup .btn{width:100%;}
   @media (max-width:540px){.signup .fields{grid-template-columns:1fr;}}
 
-  /* ---- hero (centred) ---- */
-  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
+  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2.4rem,5vw,4rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
   .hero .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 auto 1.4rem;}
   .hero h1{margin:0.9rem 0 1.2rem;max-width:none;}
   .hero .lead{max-width:34rem;margin:0 auto 1.8rem;}
   .hero .script{margin-bottom:0.1rem;}
   .hero .signup{margin-left:auto;margin-right:auto;}
-
-  /* ---- contained hero photo band ---- */
-  .band{max-width:940px;margin:clamp(0.4rem,2.5vw,1.2rem) auto 0;padding:0 28px;}
-  .band .frame{aspect-ratio:16/10;overflow:hidden;border:1px solid var(--cream);border-radius:10px;}
-  .band img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block;}
-
-  .problem p{font-size:1.22rem;color:#352f3b;margin-bottom:1.3rem;}
-  .problem p:last-child{margin-bottom:0;}
-  .problem .kicker{font-size:clamp(1.7rem,3.2vw,2.4rem);font-family:var(--display);color:var(--ink);line-height:1.2;margin-bottom:1.6rem;}
+  .hero .success{display:none;max-width:34rem;margin:1.2rem auto 0;font-size:1.1rem;color:var(--ink);}
 
   .panel{background:var(--cream);}
   .panel p{color:#46393c;}
-  .oneline{font-size:clamp(1.5rem,2.9vw,2.15rem);margin:0.9rem 0 0.4rem;}
-
-  .gifts{list-style:none;margin-top:1.8rem;display:grid;gap:1.2rem;}
-  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:1.2rem;border-bottom:1px solid var(--cream);}
-  .gifts li:last-child{border-bottom:none;padding-bottom:0;}
+  .gifts{list-style:none;margin-top:1.6rem;display:grid;gap:1.1rem;}
+  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;}
   .gifts .mk{margin-top:0.55em;}
   .gifts strong{font-weight:600;color:var(--ink);}
   .gifts span.t{display:block;}
 
-  /* ---- who is this for - elevated cards ---- */
-  .foryou-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.8rem;}
-  .box{background:var(--white);border-radius:14px;padding:1.7rem 1.6rem;transition:transform .25s ease,box-shadow .25s ease;}
-  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(58,19,27,0.12),0 2px 6px rgba(58,19,27,0.06);}
-  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(58,19,27,0.08),0 2px 6px rgba(58,19,27,0.05);}
-  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(58,19,27,0.16),0 4px 10px rgba(58,19,27,0.07);}
-  .box .label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:0.5em;}
-  .box.yes .label{color:var(--bordeaux);}
-  .box.no .label{color:var(--driftwood);}
-  .box ul{list-style:none;display:grid;gap:0.85rem;margin-top:1rem;}
-  .box li{padding-left:1.7rem;position:relative;color:#3c353f;font-size:0.98rem;line-height:1.5;}
-  .box.yes li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--bordeaux);font-weight:700;font-size:0.95rem;}
-  .box.no li::before{content:"\2013";position:absolute;left:0.15rem;top:-0.05rem;color:var(--driftwood);font-weight:700;font-size:1.1rem;}
-
-  .details dl{margin-top:1.8rem;display:grid;gap:0;}
-  .details .row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:1.05rem 0;border-bottom:1px solid rgba(58,19,27,0.12);}
-  .details .row:last-child{border-bottom:none;}
-  .details dt{font-weight:600;color:var(--ink);font-size:0.95rem;}
-  .details dd{color:#46393c;}
-
-  .about{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3rem;align-items:center;}
-  .portrait{aspect-ratio:4/5;background:linear-gradient(150deg,#E7E0DD,#CDBCB7);border:1px solid var(--cream);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
-  .about .sig{font-family:var(--script);color:var(--bordeaux);font-size:3rem;line-height:0.8;margin-top:1.1rem;}
-
-  .final{background:var(--ink);color:var(--pearl);text-align:center;}
-  .final .eyebrow{color:#b9aeb0;justify-content:center;}
-  .final .script-light{font-family:var(--script);color:var(--pearl);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:0.9;display:block;margin:0.6rem 0 0.3rem;}
-  .final h2{color:var(--pearl);max-width:18ch;margin:0 auto 1.4rem;}
-  .final em{color:#E2B592;font-style:italic;}
-  .final .signup{margin:0 auto;}
-  .final input{background:var(--white);}
-  .final .micro{color:#9a9098;}
-
-  .faq h2{margin-bottom:1.6rem;}
-  .faq details{border-top:1px solid var(--cream);}
-  .faq details:last-of-type{border-bottom:1px solid var(--cream);}
-  .faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink);}
-  .faq summary::-webkit-details-marker{display:none;}
-  .faq summary::after{content:"+";font-family:var(--body);font-size:1.5rem;font-weight:400;color:var(--bordeaux);line-height:1;transition:transform .2s ease;}
-  .faq details[open] summary::after{content:"\2013";}
-  .faq details p{padding:0 0 1.3rem;color:#46393c;max-width:48rem;}
-
-  /* ---- footer (site shell) ---- */
   footer{padding:40px 48px;border-top:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
   .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
   .footer-link{font-size:12px;color:var(--driftwood);text-decoration:none;letter-spacing:0.05em;}
@@ -161,55 +100,11 @@
     .nav-wordmark,.nav-link{display:none;}
     footer{padding:32px 24px;}
   }
-  @media (max-width:720px){
-    .about{grid-template-columns:1fr;gap:2rem;}
-    .foryou-grid{grid-template-columns:1fr;gap:1rem;}
-    .details .row{grid-template-columns:1fr;gap:0.3rem;}
-    .portrait{max-width:260px;}
-    .band{padding:0 20px;}
-    .band .frame{aspect-ratio:4/3;}
-    .band img{object-position:center 30%;}
-  }
-  @media (min-width:721px){ .oneline{white-space:nowrap;} }
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
-    .box:hover{transform:none;}
     html{scroll-behavior:auto;}
   }
 </style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Wise Women Use AI Workshop: Your business can't run without you. It's time it could.",
-  "description": "A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. No tech skills, nothing to set up alone.",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "startDate": "2026-07-15T09:30:00+10:00",
-  "endDate": "2026-07-15T10:30:00+10:00",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Wise Women Use AI",
-    "url": "https://www.wisewomenuseai.com"
-  },
-  "performer": {
-    "@type": "Person",
-    "name": "Kelly Hartley"
-  },
-  "location": {
-    "@type": "VirtualLocation",
-    "url": "https://www.wisewomenuseai.com/workshop"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "AUD",
-    "availability": "https://schema.org/InStock",
-    "url": "https://www.wisewomenuseai.com/workshop"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -221,162 +116,45 @@
   <div class="nav-actions">
     <a href="/work" class="nav-link">Work with me</a>
     <a href="/blog" class="nav-link">Blog</a>
-    <a href="#register" class="btn-solid">Save your seat</a>
+    <a href="#register" class="btn-solid">Get the details</a>
   </div>
 </nav>
 
-<!-- HERO (centred) -->
-<header class="hero">
+<!-- HERO (holding) -->
+<header class="hero" id="register">
   <div class="wrap narrow">
     <div class="reveal">
       <div class="rule"></div>
       <span class="eyebrow">Free live workshop</span>
-      <span class="script">wednesday 15 july</span>
-      <h1>Your business can't run without you. <em>It's time it could.</em></h1>
-      <p class="lead">A free, hands-along hour where you watch Claude build the first home for your business, just by talking to it. You bring what's in your head. Claude does the building. No tech skills, nothing to set up alone.</p>
-      <!-- Registration form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies the registered tag and starts the confirmation sequence (Rules 5457118 + 5457120). -->
+      <span class="script">coming in august</span>
+      <h1>The next free workshop is <em>on its way</em>.</h1>
+      <p class="lead">Stop carrying the content in your head. In one hour we build a system that carries it for you. Pop your email in and I'll send you the full details and your seat as soon as they're ready. It's on Wednesday 12 August 2026 at 9:30am AEST.</p>
+      <!-- Registration form: Kit ID 9507453, UID 4a313d4988. Same form + cohort tag as the live workshop, so everyone who registers here is already on the list for the reminders. -->
       <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
-        <input type="hidden" name="fields[source]" value="workshop">
+        <input type="hidden" name="fields[source]" value="workshop-holding">
         <div class="fields">
           <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
           <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
         </div>
-        <button type="submit" class="btn btn--filled">Save my seat</button>
+        <button type="submit" class="btn btn--filled">Send me the details</button>
       </form>
-      <p class="micro">Free, live and recorded. Can't make it? Register anyway and I'll send you the replay.</p>
+      <p class="micro">Free, live and recorded. No spam, just the workshop details.</p>
+      <p class="success" id="success">You're on the list. I'll email you the date and your seat as soon as they're set. Keep an eye on your inbox.</p>
     </div>
   </div>
 </header>
 
-<!-- CONTAINED HERO PHOTO -->
-<div class="band reveal">
-  <div class="frame"><img src="/assets/photos/workshop-hero.jpg" width="665" height="1182" alt="Kelly working at her laptop with a cup of tea in natural light" loading="eager"></div>
-</div>
-
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="wrap narrow reveal">
-    <p class="kicker">If you stopped tomorrow, so would the business.</p>
-    <p>Not because you've done anything wrong. Because it's all you. The plan is in your head. The client details are in your phone, your inbox, three different notebooks and a voice note you left yourself in the car. You're the only one who knows how any of it actually works.</p>
-    <p>That's the part no one warns you about. You didn't just build a business, you became it. And a business that is you has no off switch, because you don't. There's no holiday that isn't a working holiday, no sick day that doesn't cost you, no evening that's fully your own.</p>
-    <p>You weren't meant to carry all of it in your head. You've just never been shown how to put it down.</p>
-  </div>
-</section>
-
-<!-- SHIFT -->
+<!-- WHAT THESE ARE -->
 <section class="panel">
   <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The shift</span>
-    <h2 style="margin:1rem 0 1.4rem;">This time, you don't build the system. Claude does.</h2>
-    <p style="margin-bottom:1.3rem;">If you've ever started a Notion setup, a planner, some folder system, and quietly let it die, here's why. It became one more thing for you to keep alive. That isn't a system, that's another job.</p>
-    <span class="script" style="margin:0.4rem 0 1.1rem;">So we're not doing that.</span>
-    <p>In this hour you'll connect Claude to Notion, then watch it build the first part of your business's new home for you, just by answering a few questions out loud. You talk, it builds. It's the kind of help a one-woman business could never afford to hire, and now you can.</p>
-  </div>
-</section>
-
-<!-- WALK AWAY -->
-<section>
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>What you'll walk away with</span>
-    <h2 class="oneline">In one hour, here's what you'll <em>have</em>.</h2>
+    <span class="eyebrow"><span class="dot"></span>What these hours are like</span>
+    <h2 style="margin:1rem 0 1.4rem;">A calm, hands-along hour. You build the first piece with me.</h2>
+    <p style="margin-bottom:1.3rem;">Once a month I run a free, live workshop for women in business. No hype, no homework, nothing to set up alone. You bring what's in your head, and we use AI to take some of the weight off, together, in real time.</p>
     <ul class="gifts">
-      <li><span class="dot mk"></span><span class="t"><strong>Claude and Notion connected.</strong> The foundation everything else builds on.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>The exact prompt to get you started.</strong> Yours to keep and run again any time.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>The front page of your business HQ, built live while you talk.</strong> What your business is, who it's for, what you sell, and a Brain Dump to catch everything rattling round your head.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>A home you actually own.</strong> Not locked in your head, not tied to one tool. Point any AI at it, switch tools whenever you like, and it's all still there. Your second brain, and your backup.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Live and hands-along.</strong> Build along with me, or come with your camera off and just watch. Both are welcome.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Yours to keep.</strong> You leave with something real you can use again, whether you do anything else or not.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Recorded.</strong> Can't make it live? Register anyway and I'll send you the replay.</span></li>
     </ul>
-    <p style="margin-top:1.8rem;" class="sub">And it's yours whether you do anything else or not. Stop after the hour and you've still got something real.</p>
-  </div>
-</section>
-
-<!-- WHO IS THIS FOR -->
-<section class="panel">
-  <div class="wrap narrow reveal">
-    <h2 style="margin:0;">Who is this for?</h2>
-    <div class="foryou-grid">
-      <div class="box yes">
-        <span class="label"><span class="dot"></span>Yes, this is me</span>
-        <ul>
-          <li>You run your business mostly on your own, and you're the one holding all the threads.</li>
-          <li>You're curious about AI but you've been burned by a tool that did nothing.</li>
-          <li>You don't want to become a tech person. You just want some of the weight off.</li>
-        </ul>
-      </div>
-      <div class="box no">
-        <span class="label">Maybe not this one</span>
-        <ul>
-          <li>You're after a deep technical build.</li>
-          <li>You already run on slick, settled systems.</li>
-          <li>This is the calm, first-step version, on purpose.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section class="details">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The details</span>
-    <h2 style="margin:1rem 0 0;">Everything you need to know</h2>
-    <dl>
-      <div class="row"><dt>When</dt><dd>Wednesday 15 July, 9:30am Melbourne time (AEST). That's Tuesday 14 July, 7:30pm US Eastern. In the UK? Register and I'll send the replay.</dd></div>
-      <div class="row"><dt>How long</dt><dd>About an hour, including time for your questions.</dd></div>
-      <div class="row"><dt>Where</dt><dd>Live online. The link is sent when you register.</dd></div>
-      <div class="row"><dt>Cost</dt><dd>Free.</dd></div>
-      <div class="row"><dt>To build along</dt><dd>A Claude Pro account and a Notion account, and we'll connect them together on the day. Don't have them yet, or would rather not fuss live? Come and watch, and keep the step-by-step to do it after.</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section>
-  <div class="wrap reveal">
-    <div class="about">
-      <div class="portrait" role="img" aria-label="Portrait of Kelly">
-        <picture>
-          <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
-          <img src="/assets/photos/kelly-about.jpg" alt="Kelly Hartley, founder of Wise Women Use AI" width="490" height="613" loading="lazy">
-        </picture>
-      </div>
-      <div>
-        <span class="eyebrow"><span class="dot"></span>Who's running it</span>
-        <h2 style="margin:1rem 0 1.2rem;">Hello, I'm Kelly.</h2>
-        <p style="margin-bottom:1.1rem;">I help women in business use AI to build systems, so the business stops depending entirely on them. British, Melbourne-based, tea not coffee, and not at all interested in hype.</p>
-        <p>I've been the woman carrying the whole thing in her head, and I know the way out, because I've walked it myself. I'll be right there with you the whole hour.</p>
-        <span class="sig">Kelly</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final" id="register">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>Save your seat</span>
-    <span class="script-light">come and get one thing off your plate</span>
-    <h2>Get the <em>foundation</em> right, in one free hour.</h2>
-    <!-- Registration form: Kit ID 9507453, UID 4a313d4988. On signup Kit applies the registered tag and starts the confirmation sequence (Rules 5457118 + 5457120). -->
-    <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
-      <input type="hidden" name="fields[source]" value="workshop">
-      <div class="fields">
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-      </div>
-      <button type="submit" class="btn btn--filled">Save my seat</button>
-    </form>
-    <p class="micro">Free, live and recorded. Register and the replay is yours even if you can't make it live.</p>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap narrow reveal">
-    <h2>A few quick questions</h2>
-    <details><summary>Do I need to know anything about AI?</summary><p>No. If you can hold a conversation, you can do this.</p></details>
-    <details><summary>Is it really free?</summary><p>Yes, the hour is yours, no strings. Right at the end I'll show you two optional ways to keep going if you'd like to, and you're very welcome to ignore both.</p></details>
-    <details><summary>Do I have to build anything myself?</summary><p>No. You watch Claude do it, and you keep the prompt to run again whenever you like.</p></details>
-    <details><summary>What if I can't make it live?</summary><p>Register and I'll send you the recording.</p></details>
   </div>
 </section>
 
@@ -409,7 +187,6 @@
 </footer>
 
 <script>
-  // Reveal-on-scroll (from preview)
   (function(){
     var els=document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
@@ -421,13 +198,14 @@
 </script>
 
 <script>
-  // The Kit registration forms post directly to Kit. This intercepts the submit,
-  // sends the signup to Kit in the background, then redirects to the thank-you page.
+  // Same pattern as the live workshop page: post to Kit in the background, then
+  // redirect to the thank-you page. During the holding period /workshop-thankyou is
+  // the "you're on the list" page.
   document.querySelectorAll("form.register-form").forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button[type=submit]");
-      if (btn) { btn.disabled = true; btn.textContent = "Saving your seat…"; }
+      if (btn) { btn.disabled = true; btn.textContent = "Adding you…"; }
       fetch(form.action, {
         method: "POST",
         body: new URLSearchParams(new FormData(form)),

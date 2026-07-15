@@ -1,0 +1,51 @@
+{
+  "_comment": "Single source of truth for the current monthly workshop. Edited each month by the workshop skill, then used to regenerate the funnel. Date is Melbourne local; the skill works out the timezone (AEST/AEDT) automatically.",
+  "date": "2026-08-12",
+  "startTimeLocal": "09:30",
+  "durationMinutes": 60,
+  "title": "The Unfair Advantage",
+  "joinUrl": "https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1",
+  "cohortTagId": 19959089,
+  "communityUrl": "https://www.skool.com/wise-women-use-ai-1109",
+  "siteBase": "https://www.wisewomenuseai.com",
+  "calendarSummary": "The Unfair Advantage (Free Workshop)",
+  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Watch Claude build the first home for your business, just by talking to it.",
+  "thankYou": {
+    "whatWeDoingSub": "One hour. You talk, Claude builds. Nothing to set up alone.",
+    "cards": [
+      {
+        "title": "Claude and Notion, connected",
+        "body": "We'll link the two together on the day, so Claude can start building the first home for your business."
+      },
+      {
+        "title": "Your business HQ, built live while you talk",
+        "body": "What your business is, who it's for, what you sell, and a brain dump to catch everything rattling round your head."
+      },
+      {
+        "title": "The exact prompt to get you started",
+        "body": "Yours to keep and run again any time, so you're never starting from a blank page."
+      },
+      {
+        "title": "A home you actually own",
+        "body": "Not locked in your head, not tied to one tool. Your second brain, and your backup."
+      }
+    ],
+    "beforeSub": "A few things that'll make the hour more useful for you.",
+    "steps": [
+      {
+        "title": "Have Claude and Notion ready, if you'd like to build along",
+        "body": "A Claude Pro account and a Notion account, and we'll connect them on the day. Don't have them yet, or would rather just watch? That's completely fine, come as you are and keep the step-by-step for after."
+      },
+      {
+        "title": "Bring the basics of your business in your head",
+        "body": "What it is, who it's for, what you sell. Plus anything rattling round that you've been meaning to write down. That's your raw material for the brain dump."
+      },
+      {
+        "title": "Come with your camera off and your tea on",
+        "body": "No hot seats, no homework before you arrive. Just show up."
+      }
+    ]
+  },
+  "topic": "Your content system, off your plate",
+  "holdingTeaser": "Stop carrying the content in your head. In one hour we build a system that carries it for you."
+}
