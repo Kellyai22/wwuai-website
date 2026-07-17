@@ -160,6 +160,10 @@
       "dest": "/review.html"
     },
     {
+      "src": "/dream",
+      "dest": "/dream.html"
+    },
+    {
       "src": "/calm",
       "dest": "/calm.html"
     },

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/dream">
+  <title>The Dream Life Interview | Wise Women Use AI</title>
+  <meta name="description" content="A free prompt that turns Claude into your interviewer: your dream Tuesday, the honest numbers, and the bridge from daydream to this week. For women who know what they want but keep putting it off.">
+
+  <meta property="og:title" content="The Dream Life Interview">
+  <meta property="og:description" content="A free prompt that turns Claude into your interviewer, then designs the bridge from your dream life back to this Tuesday. 30 to 45 minutes, one cuppa.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/dream">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Dream Life Interview">
+  <meta name="twitter:description" content="A free prompt that turns Claude into your interviewer, then designs the bridge from daydream to this Tuesday.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 640px; }
+
+    /* ── Top brand bar ─────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      font-weight: 500;
+    }
+
+    /* ── Sticky section nav ────────────────────── */
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 246, 0.86);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
+      backdrop-filter: saturate(150%) blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+    }
+    .brand-mini {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      font-weight: 500;
+    }
+    .section-links { display: none; gap: 30px; list-style: none; }
+    .section-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--driftwood);
+      padding: 6px 0;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .section-links a:hover,
+    .section-links a.current { color: var(--bordeaux); border-color: var(--clay); }
+    .nav-cta {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 9px 18px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    }
+    .nav-cta:hover { background: var(--bordeaux); color: var(--pearl); }
+    .nav-cta:active { transform: translateY(1px); }
+
+    /* When the guide is unlocked, swap the nav CTA for the section links (desktop) */
+    body.unlocked .nav-cta { display: none; }
+    @media (min-width: 761px) {
+      body.unlocked .section-links { display: flex; }
+    }
+
+    /* ── Hero ──────────────────────────────────── */
+    .hero { padding: 68px 0 40px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 22px;
+    }
+    .eyebrow b { color: var(--bordeaux); font-weight: 600; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(38px, 6.4vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+      max-width: 15ch;
+    }
+    h1 em { color: var(--clay); font-weight: 400; }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.72;
+      color: var(--bordeaux);
+      max-width: 60ch;
+      margin-bottom: 34px;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 16px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover { background: #2c0e15; box-shadow: var(--shadow-lift); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--driftwood);
+      margin-top: 2px;
+      max-width: 52ch;
+      line-height: 1.6;
+    }
+
+    /* ── Deadline banner ───────────────────────── */
+    .deadline {
+      margin: 8px 0 4px;
+      background: var(--warm-tint);
+      border: 1px solid rgba(221, 169, 131, 0.5);
+      border-radius: 4px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .deadline-dot {
+      flex-shrink: 0;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bordeaux);
+      box-shadow: 0 0 0 4px rgba(58, 19, 27, 0.12);
+    }
+    .deadline p { font-size: 14.5px; font-weight: 400; color: var(--bordeaux); line-height: 1.55; }
+    .deadline b { font-weight: 600; }
+
+    /* ── Email gate ────────────────────────────── */
+    .gate { padding: 40px 0 56px; }
+    body.unlocked #gate { display: none; }
+    .gate-card {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      border-radius: 8px;
+      padding: 46px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-lift);
+    }
+    .gate-card h2 { color: var(--pearl); margin-bottom: 12px; }
+    .gate-card .gate-line {
+      font-size: 16px;
+      color: rgba(250, 248, 246, 0.82);
+      line-height: 1.65;
+      max-width: 46ch;
+      margin: 0 auto 26px;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 380px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: -4px;
+    }
+    .gate-form input {
+      font-family: var(--body);
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(250, 248, 246, 0.28);
+      background: rgba(250, 248, 246, 0.06);
+      color: var(--pearl);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .gate-form input::placeholder { color: rgba(250, 248, 246, 0.5); }
+    .gate-form input:focus { border-color: var(--blush); background: rgba(250, 248, 246, 0.1); }
+    .gate-form button {
+      margin-top: 6px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      background: var(--blush);
+      border: 1.5px solid var(--blush);
+      padding: 15px 22px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .gate-form button:hover { background: var(--clay); border-color: var(--clay); }
+    .gate-form button:active { transform: translateY(1px); }
+    .gate-form button:disabled { opacity: 0.7; cursor: default; }
+    .gate-note { font-size: 12px; color: rgba(250, 248, 246, 0.6); margin-top: 16px; }
+    .gate-reassure {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--driftwood);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Unlocked guide ────────────────────────── */
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section.block { padding: 46px 0; }
+    section.block + section.block { border-top: 1px solid var(--cream-dark); }
+    .kicker {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--clay);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .lead { font-size: 16.5px; line-height: 1.78; color: var(--bordeaux); max-width: 62ch; }
+    .lead strong { font-weight: 600; }
+    .lead .fig {
+      font-weight: 500;
+      color: var(--bordeaux);
+      border-bottom: 1.5px solid var(--clay);
+      white-space: nowrap;
+    }
+    .jobs-lead { margin-bottom: 6px; }
+
+    /* ── A job (title + why + its prompt) ──────── */
+    .job {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 26px;
+      padding: 34px 0;
+      border-top: 1px solid var(--cream-dark);
+      align-items: start;
+    }
+    .job:first-of-type { border-top: none; }
+    .job-num {
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 58px);
+      line-height: 0.9;
+      font-weight: 400;
+      color: var(--clay);
+    }
+    .job-title {
+      font-family: var(--display);
+      font-size: clamp(21px, 2.8vw, 26px);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .job-why { font-size: 16px; line-height: 1.75; color: var(--bordeaux); max-width: 58ch; }
+
+    /* ── Prompt card ───────────────────────────── */
+    .prompt {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .prompt-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--warm-tint);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .prompt-top .p-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+    .btn-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: none;
+      padding: 9px 15px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-copy:hover { background: #2c0e15; }
+    .btn-copy:active { transform: translateY(1px); }
+    .btn-copy.copied { background: var(--clay); color: var(--bordeaux); }
+    .btn-copy svg { width: 13px; height: 13px; }
+    .prompt-body {
+      padding: 20px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.72;
+      color: var(--bordeaux);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ── Skool CTA ─────────────────────────────── */
+    .skool {
+      margin: 8px 0 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 44px 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .skool h2 { margin-bottom: 12px; }
+    .skool p { color: var(--bordeaux); font-size: 16px; line-height: 1.7; max-width: 48ch; margin: 0 auto 24px; }
+    .btn-skool {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-skool:hover { background: #2c0e15; }
+    .btn-skool:active { transform: translateY(1px); }
+    .btn-skool svg { width: 15px; height: 15px; }
+    .skool-alt { margin-top: 20px; font-size: 14px; color: var(--driftwood); line-height: 1.6; }
+    .skool-alt a { color: var(--bordeaux); border-bottom: 1px solid var(--clay); transition: border-color 0.2s ease; }
+    .skool-alt a:hover { border-color: var(--bordeaux); }
+
+    /* ── Footer ────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 30px 24px 44px;
+      text-align: center;
+    }
+    .foot-brand {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 8px;
+    }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
+
+    /* ── Responsive ────────────────────────────── */
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .section-nav-inner { justify-content: space-between; }
+      .hero { padding: 44px 0 32px; }
+      .job { grid-template-columns: 1fr; gap: 4px; padding: 28px 0; }
+      .job-num { font-size: 40px; margin-bottom: 6px; }
+      .gate-card { padding: 34px 22px; }
+      .skool { padding: 34px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body.unlocked #guide { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
+    </a>
+    <span class="topbar-note">Free guide</span>
+  </div>
+
+  <!-- Sticky section nav -->
+  <nav class="section-nav" aria-label="On this page">
+    <div class="section-nav-inner">
+      <span class="brand-mini">Dream Life Interview</span>
+      <ul class="section-links">
+        <li><a href="#quick">The quick version</a></li>
+        <li><a href="#prompts">The prompt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free prompt</p>
+      <h1>The Dream Life <em>Interview</em></h1>
+      <p class="hero-sub">
+        You have a picture of the life you want. You can see the morning, the house, the freedom. What you probably don't have is the bridge between that picture and this Tuesday. So the picture stays a daydream, and the daydream quietly becomes proof that you're not doing enough. <span class="soft">This prompt turns Claude into your interviewer. Not a cheerleader, an interviewer. It asks one question at a time, pushes past your tidy answers, then designs the bridge: what time you get up, what you do daily, and the one thing to focus on first.</span>
+      </p>
+      <p class="hero-note">Set aside 30 to 45 minutes with a cuppa. A free Claude account (claude.ai) is all you need, and ChatGPT works too. The messier your answers, the better this works.</p>
+    </div>
+  </header>
+
+  <!-- Email gate -->
+  <section class="gate" id="gate">
+    <div class="wrap wrap-narrow">
+      <div class="gate-card">
+        <h2>Get the Dream Life Interview</h2>
+        <p class="gate-line">Pop your email in and the whole thing unlocks right here on the page: how it works, plus the full interview prompt ready to copy and paste.</p>
+        <form class="gate-form register-form" action="https://app.kit.com/forms/9694100/subscriptions" method="post" data-sv-form="9694100" data-uid="6b2682f15f" data-format="inline" data-version="5">
+          <input type="hidden" name="fields[source]" value="dream">
+          <label class="field-label" for="fn">First name</label>
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <label class="field-label" for="em">Email</label>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit">Unlock the interview</button>
+        </form>
+        <p class="gate-note">Free. Unsubscribe any time.</p>
+      </div>
+      <p class="gate-reassure">One email, and it all opens on this page. Nothing to download, nothing to wait for.</p>
+    </div>
+  </section>
+
+  <!-- The guide (hidden until unlocked) -->
+  <div id="guide">
+
+    <!-- The quick version -->
+    <section class="block" id="quick">
+      <div class="wrap">
+        <p class="kicker">The quick version</p>
+        <h2>An interviewer, not a cheerleader</h2>
+        <p class="lead">
+          This prompt turns Claude (or ChatGPT) into your interviewer. It will ask you one question at a time, push past your tidy answers, and notice the things you skip over, <strong>because the questions you dodge are usually the ones that matter.</strong> It takes you through your dream Tuesday, the work that funds it, the honest numbers, and where you actually are right now. Then it designs the bridge: what time you get up, what you do daily, and the one thing to focus on first. Answer honestly, especially the money questions. The messier your answers, the better this works.
+        </p>
+      </div>
+    </section>
+
+    <!-- The prompt -->
+    <section class="block" id="prompts">
+      <div class="wrap">
+        <p class="kicker">One sitting, five stages</p>
+        <h2>The interview prompt</h2>
+        <p class="lead jobs-lead">Open Claude or ChatGPT, copy everything in the box below, paste it in, and answer the questions as they come. Don't tidy yourself up.</p>
+
+        <!-- The one prompt -->
+        <div class="job">
+          <div class="job-num">1</div>
+          <div>
+            <h3 class="job-title">The full interview, five stages, one paste</h3>
+            <p class="job-why">Your dream Tuesday, the work that funds it, the honest numbers, where you actually are now, and the bridge. One question at a time, and it waits for your answer before moving on.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p1', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p1">I want you to interview me to uncover the life I actually want, then design the bridge from where I am now to that life. I'm a woman in my 40s or 50s and I have a rough picture of my dream life, but I keep daydreaming instead of acting, and I want that to stop.
+
+Run this as a proper interview. One question (or one small set) at a time. Wait for my answer before moving on. Push me when I'm vague. If I give you a highlight reel, ask for the detail underneath it. If I skip a question, gently point it out and ask again, because the questions I dodge are usually the ones that matter.
+
+Work through these five stages in order:
+
+STAGE 1. THE DREAM TUESDAY
+Ask me to describe a random Tuesday in my dream life, cinematically, from the moment I open my eyes. What time is it, where am I, who's there, what do I do in the first two hours, how does my body feel, what am I no longer doing? Push for specifics: the drink, the room, the order of things. Then take me through the rest of the day.
+
+STAGE 2. THE ENGINE
+Ask me what funds that Tuesday. Not the tasks, the shape of the work. What am I known for? What am I selling and to whom? What have I stopped doing entirely? What lands in my inbox on that Tuesday? If my dream day was vivid but my answer here is fuzzy, tell me so, because that gap is usually why the dream stays a dream.
+
+STAGE 3. THE HONEST NUMBERS
+Ask me what the dream life actually costs per year, and help me separate one-off capital costs (like a house) from annual living costs. Challenge my numbers kindly if they seem inflated or bundled together. Ask what my household actually earns and spends now. Ask whether the dream is the lifestyle itself or the expensive version of it, because those can be very different distances away.
+
+STAGE 4. THE CURRENT-STATE AUDIT
+Ask me, without judgement: What time do I actually get up, and what do the first two hours really look like? What is genuinely coming in financially from my own work right now? What habit or struggle keeps repeating (health, food, phone, avoidance), and what would 'won' look like to me in my own words? Whose schedule or needs am I letting shape my days? Notice anything from my dream Tuesday that hasn't appeared in my answers here, and ask me about it.
+
+STAGE 5. THE BRIDGE
+Now design my plan. Keep it brutally simple, four things maximum:
+1. A wake time, drawn from my dream morning, not from hustle culture
+2. A morning routine built only from pieces of my dream morning that are available to me now, in the right order
+3. One daily non-negotiable action that moves my biggest gap (usually money or health), done before anything else
+4. One thing to remove or stop deciding daily, to take willpower out of the equation
+
+Tell me plainly what to ignore for the next 90 days. Do not give me a 20-item habit list. Do not let me add projects. If my plan depends on things I said I can't afford, redesign it with free alternatives.
+
+Throughout the whole interview: be warm but honest. Don't flatter me. If you spot me talking myself into comfort or out of action, name the pattern kindly and keep going. At the end, summarise my dream Tuesday in one paragraph so I can read it every morning.
+
+Start with Stage 1 now.</div>
+            </div>
+          </div>
+        </div>
+
+
+        <p class="lead" style="margin-top: 34px;">One last thing. The point of this isn't the plan. Plans are easy. The point is the moment, somewhere around the honest numbers or the current-state audit, where you write down something true that you've been walking around. That's where the bridge actually starts.</p>
+      </div>
+    </section>
+
+    <!-- Skool CTA -->
+    <section class="block">
+      <div class="wrap wrap-narrow">
+        <div class="skool">
+          <h2>The interview finds the bridge. We build it together.</h2>
+          <p>Inside The Unfair Advantage, that one daily non-negotiable gets a system behind it: AI carrying the admin and the noise so the bridge actually gets walked, month by month, alongside a room full of women over 40 doing the same. The Your Business HQ classroom is where it starts.</p>
+          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener">
+            See The Unfair Advantage
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="skool-alt">Not ready for that yet? Come into the <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">free community</a> first, no commitment.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Copy to clipboard ─────────────────────
+    function copyPrompt(id, btn) {
+      var text = document.getElementById(id).textContent;
+      var original = btn.innerHTML;
+      function done() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Copied';
+        setTimeout(function () { btn.classList.remove('copied'); btn.innerHTML = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    }
+    function fallback(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // ── Unlock the guide ──────────────────────
+    function unlockGuide(scroll) {
+      document.body.classList.add('unlocked');
+      if (scroll) {
+        setTimeout(function () {
+          var el = document.getElementById('quick');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    // Deep-link: /fable?unlocked=1 opens the guide without re-submitting
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') {
+          unlockGuide(false);
+        }
+      } catch (e) {}
+    })();
+
+    // Submit intercept: post to Kit in the background, then open the guide
+    document.querySelectorAll('form.register-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
+        fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form)),
+          mode: 'no-cors'
+        }).finally(function () {
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set('unlocked', '1');
+            window.history.replaceState({}, '', url);
+          } catch (e) {}
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          unlockGuide(true);
+        });
+      });
+    });
+
+    // ── Sticky nav: highlight the section in view ──
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('current'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('current');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['quick', 'prompts'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
