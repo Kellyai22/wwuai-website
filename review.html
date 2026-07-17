@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/review">
+  <title>The mid-year business review you'll actually finish | Wise Women Use AI</title>
+  <meta name="description" content="Four Claude prompts that walk you through a calm mid-year review of your business: what worked, what drained you, what to drop, and where the next six months should go. One sitting.">
+
+  <meta property="og:title" content="The mid-year business review you'll actually finish">
+  <meta property="og:description" content="Four Claude prompts for a calm mid-year review: what worked, what drained you, what to drop, and where the next six months should go. One sitting.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/review">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The mid-year business review you'll actually finish">
+  <meta name="twitter:description" content="Four Claude prompts for a calm mid-year review of your business. One sitting, one page out the other end.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 640px; }
+
+    /* ── Top brand bar ─────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      font-weight: 500;
+    }
+
+    /* ── Sticky section nav ────────────────────── */
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 246, 0.86);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
+      backdrop-filter: saturate(150%) blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+    }
+    .brand-mini {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      font-weight: 500;
+    }
+    .section-links { display: none; gap: 30px; list-style: none; }
+    .section-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--driftwood);
+      padding: 6px 0;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .section-links a:hover,
+    .section-links a.current { color: var(--bordeaux); border-color: var(--clay); }
+    .nav-cta {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 9px 18px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    }
+    .nav-cta:hover { background: var(--bordeaux); color: var(--pearl); }
+    .nav-cta:active { transform: translateY(1px); }
+
+    /* When the guide is unlocked, swap the nav CTA for the section links (desktop) */
+    body.unlocked .nav-cta { display: none; }
+    @media (min-width: 761px) {
+      body.unlocked .section-links { display: flex; }
+    }
+
+    /* ── Hero ──────────────────────────────────── */
+    .hero { padding: 68px 0 40px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 22px;
+    }
+    .eyebrow b { color: var(--bordeaux); font-weight: 600; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(38px, 6.4vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+      max-width: 15ch;
+    }
+    h1 em { color: var(--clay); font-weight: 400; }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.72;
+      color: var(--bordeaux);
+      max-width: 60ch;
+      margin-bottom: 34px;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 16px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover { background: #2c0e15; box-shadow: var(--shadow-lift); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--driftwood);
+      margin-top: 2px;
+      max-width: 52ch;
+      line-height: 1.6;
+    }
+
+    /* ── Deadline banner ───────────────────────── */
+    .deadline {
+      margin: 8px 0 4px;
+      background: var(--warm-tint);
+      border: 1px solid rgba(221, 169, 131, 0.5);
+      border-radius: 4px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .deadline-dot {
+      flex-shrink: 0;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bordeaux);
+      box-shadow: 0 0 0 4px rgba(58, 19, 27, 0.12);
+    }
+    .deadline p { font-size: 14.5px; font-weight: 400; color: var(--bordeaux); line-height: 1.55; }
+    .deadline b { font-weight: 600; }
+
+    /* ── Email gate ────────────────────────────── */
+    .gate { padding: 40px 0 56px; }
+    body.unlocked #gate { display: none; }
+    .gate-card {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      border-radius: 8px;
+      padding: 46px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-lift);
+    }
+    .gate-card h2 { color: var(--pearl); margin-bottom: 12px; }
+    .gate-card .gate-line {
+      font-size: 16px;
+      color: rgba(250, 248, 246, 0.82);
+      line-height: 1.65;
+      max-width: 46ch;
+      margin: 0 auto 26px;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 380px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: -4px;
+    }
+    .gate-form input {
+      font-family: var(--body);
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(250, 248, 246, 0.28);
+      background: rgba(250, 248, 246, 0.06);
+      color: var(--pearl);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .gate-form input::placeholder { color: rgba(250, 248, 246, 0.5); }
+    .gate-form input:focus { border-color: var(--blush); background: rgba(250, 248, 246, 0.1); }
+    .gate-form button {
+      margin-top: 6px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      background: var(--blush);
+      border: 1.5px solid var(--blush);
+      padding: 15px 22px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .gate-form button:hover { background: var(--clay); border-color: var(--clay); }
+    .gate-form button:active { transform: translateY(1px); }
+    .gate-form button:disabled { opacity: 0.7; cursor: default; }
+    .gate-note { font-size: 12px; color: rgba(250, 248, 246, 0.6); margin-top: 16px; }
+    .gate-reassure {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--driftwood);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Unlocked guide ────────────────────────── */
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section.block { padding: 46px 0; }
+    section.block + section.block { border-top: 1px solid var(--cream-dark); }
+    .kicker {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--clay);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .lead { font-size: 16.5px; line-height: 1.78; color: var(--bordeaux); max-width: 62ch; }
+    .lead strong { font-weight: 600; }
+    .lead .fig {
+      font-weight: 500;
+      color: var(--bordeaux);
+      border-bottom: 1.5px solid var(--clay);
+      white-space: nowrap;
+    }
+    .jobs-lead { margin-bottom: 6px; }
+
+    /* ── A job (title + why + its prompt) ──────── */
+    .job {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 26px;
+      padding: 34px 0;
+      border-top: 1px solid var(--cream-dark);
+      align-items: start;
+    }
+    .job:first-of-type { border-top: none; }
+    .job-num {
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 58px);
+      line-height: 0.9;
+      font-weight: 400;
+      color: var(--clay);
+    }
+    .job-title {
+      font-family: var(--display);
+      font-size: clamp(21px, 2.8vw, 26px);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .job-why { font-size: 16px; line-height: 1.75; color: var(--bordeaux); max-width: 58ch; }
+
+    /* ── Prompt card ───────────────────────────── */
+    .prompt {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .prompt-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--warm-tint);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .prompt-top .p-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+    .btn-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: none;
+      padding: 9px 15px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-copy:hover { background: #2c0e15; }
+    .btn-copy:active { transform: translateY(1px); }
+    .btn-copy.copied { background: var(--clay); color: var(--bordeaux); }
+    .btn-copy svg { width: 13px; height: 13px; }
+    .prompt-body {
+      padding: 20px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.72;
+      color: var(--bordeaux);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ── Skool CTA ─────────────────────────────── */
+    .skool {
+      margin: 8px 0 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 44px 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .skool h2 { margin-bottom: 12px; }
+    .skool p { color: var(--bordeaux); font-size: 16px; line-height: 1.7; max-width: 48ch; margin: 0 auto 24px; }
+    .btn-skool {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-skool:hover { background: #2c0e15; }
+    .btn-skool:active { transform: translateY(1px); }
+    .btn-skool svg { width: 15px; height: 15px; }
+    .skool-alt { margin-top: 20px; font-size: 14px; color: var(--driftwood); line-height: 1.6; }
+    .skool-alt a { color: var(--bordeaux); border-bottom: 1px solid var(--clay); transition: border-color 0.2s ease; }
+    .skool-alt a:hover { border-color: var(--bordeaux); }
+
+    /* ── Footer ────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 30px 24px 44px;
+      text-align: center;
+    }
+    .foot-brand {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 8px;
+    }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
+
+    /* ── Responsive ────────────────────────────── */
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .section-nav-inner { justify-content: space-between; }
+      .hero { padding: 44px 0 32px; }
+      .job { grid-template-columns: 1fr; gap: 4px; padding: 28px 0; }
+      .job-num { font-size: 40px; margin-bottom: 6px; }
+      .gate-card { padding: 34px 22px; }
+      .skool { padding: 34px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body.unlocked #guide { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
+    </a>
+    <span class="topbar-note">Free guide</span>
+  </div>
+
+  <!-- Sticky section nav -->
+  <nav class="section-nav" aria-label="On this page">
+    <div class="section-nav-inner">
+      <span class="brand-mini">Mid-Year Review</span>
+      <ul class="section-links">
+        <li><a href="#quick">The quick version</a></li>
+        <li><a href="#prompts">The four prompts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free guide</p>
+      <h1>The mid-year review you'll actually <em>finish</em></h1>
+      <p class="hero-sub">
+        Half of 2026 is gone, and if you're anything like me, you haven't stopped once to ask what's actually working. The whole year is still being carried in your head. <span class="soft">These four prompts hand the heavy lifting to Claude: what worked, what drained you, what to drop, and where the next six months should go. One sitting, one cup of tea, and you finish with a one-page plan instead of a vague sense of guilt.</span>
+      </p>
+      <p class="hero-note">You'll need a Claude account, and the free one at claude.ai is fine. Paste each prompt into a new chat, and if typing's not your thing, tap the microphone and talk.</p>
+    </div>
+  </header>
+
+  <!-- Deadline banner -->
+  <div class="wrap">
+    <div class="deadline">
+      <span class="deadline-dot" aria-hidden="true"></span>
+      <p><b>It's half-time for 2026.</b> This works best while there's still a whole half left to steer.</p>
+    </div>
+  </div>
+
+  <!-- Email gate -->
+  <section class="gate" id="gate">
+    <div class="wrap wrap-narrow">
+      <div class="gate-card">
+        <h2>Get the four review prompts</h2>
+        <p class="gate-line">Pop your email in and the whole review unlocks right here on the page: how to run it in one sitting, plus all four prompts ready to copy.</p>
+        <form class="gate-form register-form" action="https://app.kit.com/forms/9693677/subscriptions" method="post" data-sv-form="9693677" data-uid="2633f06e66" data-format="inline" data-version="5">
+          <input type="hidden" name="fields[source]" value="review">
+          <label class="field-label" for="fn">First name</label>
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <label class="field-label" for="em">Email</label>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit">Unlock the review</button>
+        </form>
+        <p class="gate-note">Free. Unsubscribe any time.</p>
+      </div>
+      <p class="gate-reassure">One email, and it all opens on this page. Nothing to download, nothing to wait for.</p>
+    </div>
+  </section>
+
+  <!-- The guide (hidden until unlocked) -->
+  <div id="guide">
+
+    <!-- The quick version -->
+    <section class="block" id="quick">
+      <div class="wrap">
+        <p class="kicker">The quick version</p>
+        <h2>Why this works when the usual review doesn't</h2>
+        <p class="lead">
+          Most of us skip the mid-year review because it feels like homework. Spreadsheets, judgement, a whole day you don't have. So the year keeps rolling and every win, worry and half-finished thing stays in your head, where it weighs the most. This one is different because you don't do the heavy lifting. <strong>You talk, Claude sorts. You decide, Claude writes it down.</strong> Four prompts, run in order, in one chat. You finish with a one-page plan for the rest of 2026, and that's the advantage we never used to have: a second brain that holds all of it, so yours doesn't have to.
+        </p>
+      </div>
+    </section>
+
+    <!-- The four prompts -->
+    <section class="block" id="prompts">
+      <div class="wrap">
+        <p class="kicker">One sitting, four steps</p>
+        <h2>The four prompts</h2>
+        <p class="lead jobs-lead">Open one new chat in Claude and run these in order, copy, paste, answer. Keep the same chat for all four so it remembers everything as you go.</p>
+
+        <!-- Job 1 -->
+        <div class="job">
+          <div class="job-num">1</div>
+          <div>
+            <h3 class="job-title">Empty the half-year out of your head</h3>
+            <p class="job-why">Start here, and don't tidy anything first. You tell Claude everything you can remember about the year so far, in whatever order it comes out, and it does the sorting. If typing feels like work, tap the microphone and just talk. Rambling is allowed. Rambling is the point.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p1', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p1">I run my own business and I'm doing a calm mid-year review with you. This is step one: getting the last six months out of my head.
+
+I'm going to tell you everything I can remember about the year so far. The wins, the flops, the half-finished things, the clients, the money moments, the weeks that disappeared. Don't fix anything yet, just take it in. If I speak instead of type, treat the rambling exactly the same.
+
+When I'm done, sort what I said into four lists: what went well, what drained me, what I started and never finished, and what I keep saying I'll do but haven't.
+
+Then ask me up to five questions to fill the gaps, one at a time, and update the lists. Hold onto them, we'll use them for the rest of the review.
+
+Ready? Here's my half-year:</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job">
+          <div class="job-num">2</div>
+          <div>
+            <h3 class="job-title">Sort what's working from what just looks busy</h3>
+            <p class="job-why">This is the step we never do on our own, because it means admitting some of the busyness produced nothing. Claude has no feelings about your Instagram grid or that offer you spent three weekends on, so it can say the quiet part kindly and plainly.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p2', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p2">Step two of my mid-year review. Using the four lists from step one, help me see what's actually working.
+
+Go through what went well and tell me what those things have in common: which kind of work, which kind of client, which offer, which price. Then look at everything else and be honest about what kept me busy without really producing money, energy or momentum.
+
+Give me two short lists: "more of this" and "this was noise". For anything on the noise list, tell me plainly why it's there.
+
+If you need rough numbers to judge something, ask me rather than guessing. Close enough is fine. This is a compass, not a tax return.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job">
+          <div class="job-num">3</div>
+          <div>
+            <h3 class="job-title">Decide what to drop, shrink or hand over</h3>
+            <p class="job-why">Here's where the headspace comes back. You're used to carrying all of it, so you'll defend things out of habit. This prompt asks Claude to push back gently, and to name what each thing actually costs you every week you keep it.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p3', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p3">Step three: the drop list. Take everything from this review so far and help me decide what I'll stop doing, shrink down, or hand over for the rest of the year.
+
+Push me a little here. I'm used to carrying all of it, so I'll defend things out of habit. For each thing you suggest dropping, tell me what it costs me each week, what would honestly happen if it stopped, and what I could do with the room it frees up.
+
+For anything that can't be dropped but drains me, suggest how AI could carry part of it. Be specific about what I'd hand over and what stays mine.
+
+I want to finish this step with at least three things gone, and the reasons written down so future me doesn't quietly pick them back up.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job">
+          <div class="job-num">4</div>
+          <div>
+            <h3 class="job-title">Point the next six months</h3>
+            <p class="job-why">The finish line. One focus for the rest of the year, milestones that fit around a real life, the very next action for this week, and the whole review written up as one page you keep. Six months from now, you read that page and do this again.</p>
+            <div class="prompt">
+              <div class="prompt-top">
+                <span class="p-tag">The prompt</span>
+                <button class="btn-copy" type="button" onclick="copyPrompt('p4', this)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="prompt-body" id="p4">Last step: point the next six months. From everything in this review, give me one clear focus for the rest of the year, the single thing that would make the biggest difference if it got most of my attention.
+
+Then break it down: what the next three months look like, then the three after that, with a handful of milestones I can actually hit around a real life. School terms, family, the lot.
+
+Under the first milestone, give me the very next action for this week, small enough to do in under an hour.
+
+Then write the whole review up as one page I can keep: what worked, what I dropped, my focus, my milestones and my next action. Dated, warm, in my words, no corporate speak. That page is the whole point. Six months from now I want to read it and do this again.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skool CTA -->
+    <section class="block">
+      <div class="wrap wrap-narrow">
+        <div class="skool">
+          <h2>The review is one sitting. The system is the year.</h2>
+          <p>Inside The Unfair Advantage we take what this review surfaced and build your business a proper home, month by month, in the Your Business HQ classroom. Next year's review reads itself out of a dashboard instead of your head, and there's a room full of women over 40 building theirs alongside you.</p>
+          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener">
+            See The Unfair Advantage
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="skool-alt">Not ready for that yet? Come into the <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">free community</a> first, no commitment.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Copy to clipboard ─────────────────────
+    function copyPrompt(id, btn) {
+      var text = document.getElementById(id).textContent;
+      var original = btn.innerHTML;
+      function done() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Copied';
+        setTimeout(function () { btn.classList.remove('copied'); btn.innerHTML = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    }
+    function fallback(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // ── Unlock the guide ──────────────────────
+    function unlockGuide(scroll) {
+      document.body.classList.add('unlocked');
+      if (scroll) {
+        setTimeout(function () {
+          var el = document.getElementById('quick');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    // Deep-link: /fable?unlocked=1 opens the guide without re-submitting
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') {
+          unlockGuide(false);
+        }
+      } catch (e) {}
+    })();
+
+    // Submit intercept: post to Kit in the background, then open the guide
+    document.querySelectorAll('form.register-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
+        fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form)),
+          mode: 'no-cors'
+        }).finally(function () {
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set('unlocked', '1');
+            window.history.replaceState({}, '', url);
+          } catch (e) {}
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          unlockGuide(true);
+        });
+      });
+    });
+
+    // ── Sticky nav: highlight the section in view ──
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('current'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('current');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['quick', 'prompts'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
