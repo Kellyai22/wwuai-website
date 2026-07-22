@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/starter">
-  <title>Free AI Starter Kit — Wise Women Use AI</title>
+  <title>Free AI Starter Kit | Wise Women Use AI</title>
   <meta name="description" content="Your calm, practical entry point into using AI in your business. Get the Claude comparison tool, 5 real business prompts, and your first AI workflow.">
 
   <meta property="og:title" content="Free AI Starter Kit | Wise Women Use AI">
@@ -141,26 +141,27 @@
       max-width: 460px;
     }
 
-    /* ── Form Card ────────────────────────────── */
+    /* ── Form Card (dark) ─────────────────────── */
     .form-card {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
+      background: var(--ink);
+      border: 1px solid rgba(250,248,246,0.12);
       padding: 36px 32px;
       max-width: 420px;
+      border-radius: 8px;
     }
 
     .form-card-title {
       font-family: var(--serif);
       font-size: 22px;
       font-weight: 400;
-      color: var(--ink);
+      color: var(--cream);
       margin-bottom: 8px;
     }
 
     .form-card-sub {
       font-size: 13px;
       font-weight: 300;
-      color: var(--brown-mid);
+      color: rgba(250,248,246,0.6);
       line-height: 1.7;
       margin-bottom: 20px;
     }
@@ -176,14 +177,15 @@
       font-family: var(--sans);
       font-size: 13px;
       padding: 12px 14px;
-      border: 1px solid var(--cream-dark);
-      background: var(--cream);
-      color: var(--ink);
+      border: 1px solid rgba(250,248,246,0.18);
+      background: rgba(250,248,246,0.06);
+      color: var(--cream);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .form-card input:focus { border-color: var(--bordeaux); }
+    .form-card input::placeholder { color: rgba(250,248,246,0.4); }
+    .form-card input:focus { border-color: #E2B592; }
 
     .form-card button {
       font-family: var(--sans);
@@ -191,23 +193,23 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--white);
-      background: var(--bordeaux);
-      border: 1.5px solid var(--bordeaux);
+      color: var(--ink);
+      background: #E2B592;
+      border: 1.5px solid #E2B592;
       padding: 14px 20px;
       cursor: pointer;
       border-radius: 6px;
-      transition: background 0.2s;
+      transition: background 0.2s, border-color 0.2s;
     }
 
     .form-card button:hover {
-      background: var(--terra-deep);
-      border-color: var(--terra-deep);
+      background: #D2A078;
+      border-color: #D2A078;
     }
 
     .form-note {
       font-size: 11px;
-      color: var(--brown-mid);
+      color: rgba(250,248,246,0.5);
       margin-top: 10px;
     }
 
@@ -443,6 +445,9 @@
       <p class="hero-sub">
         Your calm, practical entry point into using AI in your business. No jargon, no hype, no starting over. Just three tools you can use today.
       </p>
+      <p class="hero-sub">
+        I run my whole business on small systems like these, and they're what give me my time back. This kit is where it starts for you.
+      </p>
     </div>
 
     <div class="form-card">
@@ -454,7 +459,7 @@
         <input type="email" name="email_address" placeholder="Email address" required>
         <button type="submit">Yes, send me the kit</button>
       </form>
-      <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+      <p class="form-note">Free, and you can unsubscribe any time.</p>
     </div>
   </section>
 
@@ -497,12 +502,12 @@
   <section class="for-who">
     <h2>This kit is for you if...</h2>
     <div class="for-grid">
-      <div class="for-item"><span class="for-dash">&#8212;</span> You're a solo or small business owner who does everything yourself</div>
-      <div class="for-item"><span class="for-dash">&#8212;</span> You've tried AI before and it didn't stick</div>
-      <div class="for-item"><span class="for-dash">&#8212;</span> You want practical tools, not another course to finish</div>
-      <div class="for-item"><span class="for-dash">&#8212;</span> Content planning feels like a weekly reset you dread</div>
-      <div class="for-item"><span class="for-dash">&#8212;</span> You're done with AI hype and ready for AI that's actually useful</div>
-      <div class="for-item"><span class="for-dash">&#8212;</span> You want to save time without learning something new every week</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You're a solo or small business owner who does everything yourself</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You've tried AI before and it didn't stick</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You want practical tools, not another course to finish</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> Content planning feels like a weekly reset you dread</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You're done with AI hype and ready for AI that's actually useful</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You want to save time without learning something new every week</div>
     </div>
   </section>
 
@@ -519,7 +524,7 @@
         <input type="email" name="email_address" placeholder="Email address" required>
         <button type="submit">Yes, send me the kit</button>
       </form>
-      <p class="form-note">Free. No spam. Unsubscribe any time.</p>
+      <p class="form-note">Free, and you can unsubscribe any time.</p>
     </div>
   </section>
 
