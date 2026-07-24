@@ -35,6 +35,14 @@ There is a public asset library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - `about.html` — **Restored 1 July 2026.** The page existed but had no route (so `/about` 404'd). Added the `/about` route; now live at `/about`.
 - `posts/the-thing-holding-your-ai-back-isnt-your-prompts.html` — **RETIRED 1 July 2026** (deleted; it was a Hub Install sales piece). URL 301-redirects to `/blog`; removed from the blog listing and sitemap.
 
+## SEO / AEO (audit shipped 24 July 2026)
+- `work.html` is the "AI consultant Melbourne" target page: title, hero copy, FAQ section, and ProfessionalService + FAQPage schema all carry it. Don't retitle it away from that phrase without checking with Kelly.
+- Person schema (about/index) says "AI Consultant and Educator" and includes the full sameAs set (LinkedIn: linkedin.com/in/wisewomenuseai). Keep the social list in sync across index/about/work.
+- All main pages carry `og:locale` `en_AU`. New pages should too.
+- **When a new blog post goes live, add it to `sitemap.xml`** (with the post's date as lastmod, priority 0.6). The nightly pipeline does not do this; the July audit found 6 of 10 posts missing.
+- `llms.txt` describes the current offer structure. Update it when offers change (it went stale for a full rebrand cycle once).
+- `404.html` is the custom not-found page, wired in vercel.json via `{"handle": "filesystem"}` + a catch-all 404 route. Those two entries must stay LAST in the routes array; anything added after them never runs.
+
 ## Routing notes (vercel.json)
 - `/hub` → 301 redirect to homepage (Hub Install removed 1 July 2026)
 - `/hub-install` → 301 redirect to homepage
