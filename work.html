@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/work">
-  <title>Work With Kelly | AI for Women in Business | Wise Women Use AI</title>
-  <meta name="description" content="Work directly with Kelly. One-to-one AI setup, systems building, and done-with-you support for women in business who are serious about making AI actually work.">
-  <meta property="og:title" content="Work With Me | Wise Women Use AI">
-  <meta property="og:description" content="Work directly with Kelly. One-to-one AI setup, systems building, and done-with-you support for women in business.">
+  <title>AI Consultant Melbourne | Work With Kelly | Wise Women Use AI</title>
+  <meta name="description" content="Kelly Hartley is an AI consultant in Melbourne working with women in business across Australia. One-to-one AI setup, systems building, and done-with-you support that actually works.">
+  <meta property="og:title" content="AI Consultant Melbourne | Work With Kelly | Wise Women Use AI">
+  <meta property="og:description" content="One-to-one AI setup, systems building, and done-with-you support for women in business. Based in Melbourne, working across Australia.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/work">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -450,6 +451,63 @@
 
     .right-for-list li:last-child { border-bottom: none; }
 
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 96px 48px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-section .eyebrow { display: block; margin-bottom: 20px; }
+
+    .faq-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 48px;
+    }
+
+    .faq-section h2 em { font-style: italic; color: #DDA983; }
+
+    .faq-item {
+      border-top: 1px solid var(--cream-dark);
+    }
+    .faq-item:last-of-type { border-bottom: 1px solid var(--cream-dark); }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary .faq-mark {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--driftwood);
+      flex: 0 0 auto;
+      transition: transform 0.25s ease;
+    }
+    .faq-item[open] summary .faq-mark { transform: rotate(45deg); }
+
+    .faq-item p {
+      font-size: 15px;
+      color: var(--driftwood);
+      line-height: 1.75;
+      padding: 0 40px 24px 0;
+    }
+
     /* ── CTA ── */
     .cta-section {
       padding: 96px 48px;
@@ -549,6 +607,8 @@
       .steps { grid-template-columns: 1fr; gap: 32px; }
       .right-for-section { padding: 56px 24px; }
       .right-for-inner { grid-template-columns: 1fr; gap: 40px; }
+      .faq-section { padding: 64px 24px; }
+      .faq-item p { padding-right: 24px; }
       .cta-section { padding: 64px 24px; }
       footer { padding: 32px 24px; flex-direction: column; align-items: center; }
     }
@@ -557,21 +617,105 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Done-With-You AI Setup and Strategy",
-  "description": "Work directly with Kelly Hartley for one-to-one AI setup, systems building, and done-with-you support. For women in business who want AI working properly, not just in theory.",
-  "provider": {
-    "@type": "Person",
-    "name": "Kelly Hartley",
-    "url": "https://www.wisewomenuseai.com/about"
-  },
-  "url": "https://www.wisewomenuseai.com/work",
-  "areaServed": "AU",
-  "serviceType": "AI Business Consulting and Implementation",
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Women entrepreneurs and small business owners"
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.wisewomenuseai.com/work#service",
+      "name": "Wise Women Use AI, AI Consulting",
+      "description": "AI consulting for women in business. Kelly Hartley works one-to-one on AI setup, systems building, and done-with-you support. Based in Melbourne, working online across Australia.",
+      "url": "https://www.wisewomenuseai.com/work",
+      "email": "hello@wisewomenuseai.com",
+      "image": "https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Melbourne" },
+        { "@type": "Country", "name": "Australia" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Kelly Hartley",
+        "url": "https://www.wisewomenuseai.com/about",
+        "jobTitle": "AI Consultant and Educator"
+      },
+      "knowsAbout": [
+        "Claude AI",
+        "AI systems for small business",
+        "AI education for women in business",
+        "Business workflow automation"
+      ],
+      "sameAs": [
+        "https://www.tiktok.com/@kellyh.ai",
+        "https://www.instagram.com/kellyh.ai",
+        "https://www.facebook.com/wisewomenuseai",
+        "https://substack.com/@wisewomenuseai"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Setup and Strategy Session",
+            "description": "A focused 90-minute working session with a written action plan and 30 days of email follow-up."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Done-With-You Systems Build",
+            "description": "A four-week hands-on engagement designing, building and installing AI workflows into the business."
+          }
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Women entrepreneurs and small business owners"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.wisewomenuseai.com/work#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you only work with businesses in Melbourne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kelly Hartley is an AI consultant based in Melbourne, and nearly all of her consulting work happens over video. She works with women in business right across Australia, so location does not change what is possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does an AI consultant actually do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kelly looks at how your business runs, finds the jobs that eat your time, and sets up AI systems to take them off your plate. Content, emails, admin, planning. You end up with working systems, not a strategy document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be technical to work with an AI consultant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Most of the women Kelly works with would not call themselves technical. Everything is set up together, in plain English, and you finish knowing how to run it yourself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI tools does Kelly work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mainly Claude, because it is what Kelly runs her own businesses on, so she knows it deeply rather than in theory. Where another tool genuinely fits a business better, she says so."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -592,9 +736,9 @@
 
   <!-- Hero -->
   <section class="hero">
-    <span class="eyebrow">Work with Kelly</span>
+    <span class="eyebrow">AI Consulting · Melbourne &amp; Online</span>
     <h1>A business that runs<br>without you <em>at the desk.</em></h1>
-    <p class="hero-lead">That's what we build together. Right now you're the system, every job routes back through you, the business and the home admin tangled up, and it never fully switches off. I sit alongside a small number of women and build the systems into the business, so the day-to-day runs on its own and the time comes back, to slow down or to grow.</p>
+    <p class="hero-lead">That's what we build together. I'm Kelly Hartley, an AI consultant based in Melbourne, working with women in business across Australia. Right now you're the system, every job routes back through you, the business and the home admin tangled up, and it never fully switches off. I sit alongside a small number of women and build the systems into the business, so the day-to-day runs on its own and the time comes back, to slow down or to grow.</p>
     <div class="hero-divider"></div>
   </section>
 
@@ -730,6 +874,33 @@
         </ul>
       </div>
     </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <span class="eyebrow">Questions people ask</span>
+    <h2>Before you <em>email.</em></h2>
+
+    <details class="faq-item">
+      <summary>Do you only work with businesses in Melbourne?<span class="faq-mark">+</span></summary>
+      <p>I'm based in Melbourne, and I love working with local businesses, but nearly all of my work happens over video. I work with women in business right across Australia, so where you live doesn't change what's possible.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does an AI consultant actually do?<span class="faq-mark">+</span></summary>
+      <p>In my case, something very practical. I look at how your business runs, find the jobs that eat your time, and set up AI systems to take them off your plate. Content, emails, admin, planning. You end up with systems that run, not a strategy document.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need to be technical?<span class="faq-mark">+</span></summary>
+      <p>No. Most of the women I work with wouldn't call themselves technical at all. We set everything up together, in plain English, and you finish knowing how to run it yourself.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Which AI tools do you work with?<span class="faq-mark">+</span></summary>
+      <p>Mainly Claude. It's what I run my own businesses on, so I know it deeply, not just in theory. Where another tool genuinely fits your business better, I'll say so.</p>
+    </details>
   </section>
 
 

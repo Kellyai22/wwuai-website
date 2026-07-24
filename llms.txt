@@ -1,23 +1,32 @@
 # Wise Women Use AI
 
-> Claude-specific AI education for women entrepreneurs over 40.
-> Warm, practical teaching that works around brain fog and real life,
-> not hustle culture.
+> Practical AI education and consulting for women in business, founded by
+> Kelly Hartley, an AI consultant and educator based in Melbourne, Australia.
+> Warm, jargon-free teaching that works around real life, not hustle culture.
 
-Founded by Kelly, a British-Australian solopreneur based in Melbourne.
-WWUAI is not another ChatGPT course. It teaches Claude specifically,
-with a focus on simple systems women can actually stick to.
+Kelly Hartley is a British-Australian business owner who runs her own
+businesses on AI (primarily Claude) and teaches women in their 40s and 50s
+to do the same. WWUAI is not another ChatGPT course. It teaches Claude
+specifically, with a focus on simple systems women can actually stick to.
+Kelly also works one-to-one as an AI consultant, based in Melbourne and
+working online with women across Australia.
 
-## Start here
-- [Homepage](https://wisewomenuseai.com/): Overview and free Claude guide signup
-- [Switch to Claude](https://wisewomenuseai.com/switch): Free guide for ChatGPT users moving to Claude
-- [Claude Starter Kit](https://wisewomenuseai.com/starter): Free starter resources for brand-new Claude users
+## Work with Kelly
+- [AI Consulting, Melbourne and online](https://www.wisewomenuseai.com/work): One-to-one AI setup and strategy sessions, and a four-week done-with-you systems build
+- [About Kelly Hartley](https://www.wisewomenuseai.com/about): Who Kelly is and why she built WWUAI
 
-## Community
-- [Skool Community](https://wisewomenuseai.com/community): Paid community with live coaching and done-with-you workflows
+## Community and membership
+- [Skool Community](https://www.wisewomenuseai.com/community): Free to join. The Unfair Advantage is the paid membership inside ($49/month) with the full library of tools, prompts and workflows
+- [Free monthly workshop](https://www.wisewomenuseai.com/workshop): Live online workshop where attendees set up real tools and leave having built the first piece themselves
 
-## Work with me
-- [Work With Me](https://wisewomenuseai.com/work): 1:1 AI setup and done-with-you systems builds
+## Products
+- [The Notion Advantage Pack](https://www.wisewomenuseai.com/notion-advantage): A ready-built Notion business system ($99 AUD launch price)
+
+## Free guides and starters
+- [Claude, Clearly](https://www.wisewomenuseai.com/guide): Free guide to getting started with Claude
+- [Switch to Claude](https://www.wisewomenuseai.com/switch): Free guide for ChatGPT users moving to Claude
+- [Claude Starter Kit](https://www.wisewomenuseai.com/starter): Free starter resources for brand-new Claude users
 
 ## Writing
-- [Blog and Newsletter](https://wisewomenuseai.com/blog): Substack archive and weekly posts
+- [Blog](https://www.wisewomenuseai.com/blog): Practical AI for women in business
+- [AI for Solopreneurs in Australia](https://www.wisewomenuseai.com/posts/ai-for-solopreneurs-australia): What actually works in 2026
