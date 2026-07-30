@@ -166,6 +166,10 @@
       "status": 301
     },
     {
+      "src": "/hours",
+      "dest": "/hours.html"
+    },
+    {
       "src": "/slop",
       "dest": "/slop.html"
     },
