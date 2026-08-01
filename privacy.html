@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/privacy">
+  <title>Privacy | Wise Women Use AI</title>
+  <meta name="description" content="What I collect, where it is kept, and how to have it removed. In plain English, because a privacy policy nobody can read is not much of a promise.">
+  <meta property="og:title" content="Privacy | Wise Women Use AI">
+  <meta property="og:description" content="What I collect, where it is kept, and how to have it removed. In plain English.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/privacy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:          #FAF8F6;
+      --pearl:       #FAF8F6;
+      --ink:         #3A131B;
+      --bordeaux:    #3A131B;
+      --clay:        #DDA983;
+      --blush:       #E2B592;
+      --driftwood:   #908486;
+      --cream-dark:  #E1DAD7;
+      --cream-mid:   #EDEBE9;
+      --cream-light: #F2F0EE;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap { max-width: 680px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FAF8F6;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex: 0 0 auto;
+      max-width: fit-content;
+    }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+
+    .nav-wordmark {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+      align-self: stretch;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--driftwood);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+    }
+    .nav-link:hover { color: var(--bordeaux); }
+
+    .btn-solid {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--ink);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+    /* ── Hero, drenched ── */
+    .hero {
+      background: var(--bordeaux);
+      padding: 76px 32px 72px;
+    }
+
+    .hero .eyebrow { color: var(--blush); display: block; margin-bottom: 18px; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.2vw, 54px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--pearl);
+      margin-bottom: 22px;
+    }
+    .hero h1 { text-wrap: balance; }
+    .hero h1 em { font-style: italic; font-weight: 400; color: var(--blush); }
+
+    .hero .standfirst {
+      font-size: 17px;
+      line-height: 1.85;
+      color: rgba(250, 248, 246, 0.74);
+      max-width: 560px;
+    }
+
+    /* ── Reading sections ── */
+    .read { padding: 48px 32px 8px; }
+    .read + .read { padding-top: 8px; }
+    .read.last { padding-bottom: 60px; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--ink);
+      margin: 0 0 14px;
+      padding-top: 4px;
+    }
+    .read + .read h2 { margin-top: 22px; }
+
+    p {
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--driftwood);
+      margin-bottom: 14px;
+    }
+    p strong { color: var(--ink); font-weight: 400; }
+    p em { font-style: italic; color: var(--clay); }
+
+    .read a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--cream-dark); transition: text-decoration-color 0.2s; }
+    .read a:hover { text-decoration-color: var(--clay); }
+
+    ul { list-style: none; margin: 0 0 4px; }
+
+    li {
+      position: relative;
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--driftwood);
+      padding-left: 26px;
+      margin-bottom: 11px;
+    }
+    li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--clay);
+    }
+    li strong { color: var(--ink); font-weight: 400; }
+
+    /* ── Dark band ── */
+    .band {
+      background: var(--bordeaux);
+      padding: 56px 32px;
+      margin-top: 52px;
+    }
+
+    .band .eyebrow { color: var(--blush); display: block; margin-bottom: 16px; }
+
+    .band .lede {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.2vw, 31px);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--pearl);
+      margin-bottom: 18px;
+    }
+    .band .lede { text-wrap: balance; }
+    .band .lede em { font-style: italic; color: var(--blush); }
+
+    .band p {
+      color: rgba(250, 248, 246, 0.78);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+    .band p:last-child { margin-bottom: 0; }
+    .band p strong { color: var(--pearl); font-weight: 400; }
+
+    /* Light twin of the band, so two dark sections never touch */
+    .band-light {
+      background: var(--cream-light);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 52px 32px;
+    }
+    .band-light .eyebrow { color: var(--bordeaux); display: block; margin-bottom: 16px; }
+    .band-light .lede {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(23px, 3vw, 29px);
+      font-weight: 400;
+      line-height: 1.38;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .band-light .lede { text-wrap: balance; }
+    .band-light .lede em { font-style: italic; color: var(--clay); }
+    .band-light p:last-child { margin-bottom: 0; }
+
+    /* ── Closing ── */
+    .closing {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 4px 0 0;
+    }
+
+    .updated {
+      margin-top: 38px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cream-dark);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--driftwood);
+    }
+    .updated a { color: var(--driftwood); }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--cream-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+    .footer-link:hover { color: var(--bordeaux); }
+
+    .social-links { display: flex; gap: 20px; align-items: center; }
+    .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+    .social-link:hover { color: var(--bordeaux); }
+
+    .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-wordmark, .nav-link + .nav-link { display: none; }
+      .hero { padding: 52px 24px 48px; }
+      .read { padding: 34px 24px 8px; }
+      .read.last { padding-bottom: 44px; }
+      .band { padding: 42px 24px; margin-top: 40px; }
+      .band-light { padding: 36px 24px; }
+      h2 { font-size: 23px; }
+      .read + .read h2 { margin-top: 18px; }
+      .closing { font-size: 21px; }
+      footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/work" class="nav-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Privacy</span>
+      <h1>What I collect,<br><em>and what I do with it.</em></h1>
+      <p class="standfirst">A privacy policy nobody can read is not much of a promise, so here is mine in plain English.</p>
+    </div>
+  </section>
+
+
+  <section class="band-light">
+    <div class="wrap">
+      <span class="eyebrow">The short version</span>
+      <p class="lede">I collect your name and email when you hand them over, and I use them to send you <em>the thing you asked for.</em></p>
+      <p>I do not sell your details, share them, or hand them to anyone for advertising. You can leave whenever you like, and if you ask me to delete you, I will.</p>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>What I collect</h2>
+
+      <ul>
+        <li><strong>Your name and email address</strong>, when you fill in a form on this site to get a free guide, save a seat at a workshop, or join the email list.</li>
+        <li><strong>The answers you type into the free tools.</strong> Some pages here have a quiz or a calculator. If you finish one and give me your email, your answers come with it, so what I send you next is actually relevant rather than generic.</li>
+        <li><strong>Your payment details, indirectly.</strong> If you buy something, Stripe handles the payment. Your card number never reaches me. I see that a purchase happened, what it was for, and the email attached to it.</li>
+        <li><strong>Whatever you tell me directly</strong>, in an email, a DM, or on a call.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>Where it is kept</h2>
+
+      <p>I do not run my own database. Your details sit with the tools I use to run the business, and each one has its own security and its own privacy policy.</p>
+
+      <ul>
+        <li><strong>Kit</strong> holds the email list and sends the emails.</li>
+        <li><strong>Stripe</strong> handles payments.</li>
+        <li><strong>Skool</strong> runs the community, if you join it.</li>
+        <li><strong>ManyChat</strong> sends the automatic DM when you comment a keyword on Instagram, Facebook or TikTok.</li>
+        <li><strong>Cal.com</strong> takes the booking if you book a call with me.</li>
+        <li><strong>Vercel</strong> hosts this website and keeps standard server logs, which include visitor IP addresses.</li>
+      </ul>
+
+      <p>Most of these companies are based overseas, mainly in the United States, so your details are stored there. That is normal for tools of this kind, and worth knowing.</p>
+    </div>
+  </section>
+
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">What I do not do</span>
+      <p class="lede">There is <em>nothing</em> on this site following you around the internet afterwards.</p>
+      <p>No Facebook pixel. No Google Analytics. No tag manager. No advertising cookies. This is unusual, and it is deliberate.</p>
+      <p>I also do not sell, rent or swap lists, and I will not add you to something you did not ask for. Download a free guide and you get emails about that, not a quiet enrolment in something else.</p>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>Things saved in your own browser</h2>
+
+      <p>A few pages here save your progress so a checklist or a calculator remembers where you were if you close the tab. That is stored in your own browser and never sent to me. Clearing your browser data wipes it.</p>
+    </div>
+  </section>
+
+
+  <section class="read last">
+    <div class="wrap">
+      <h2>How to leave</h2>
+
+      <p>Every email I send has an unsubscribe link at the bottom, and it works immediately. No hoops.</p>
+
+      <p>If you want the record gone entirely rather than just unsubscribed, email me at <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a> and ask. I will delete it and tell you when it is done. You can also ask what I hold on you, and I will send it.</p>
+
+      <h2>If this page changes</h2>
+
+      <p>I will update the date below. If something changes in a way that actually affects you, I will say so in an email rather than quietly editing this page and hoping you notice.</p>
+
+      <p class="updated">Last updated 1 August 2026. Wise Women Use AI, Melbourne, Australia. Questions to <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a>. You may also want to read <a href="/ai-disclosure">how I use AI</a>.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="/blog" class="footer-link">Blog</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="/ai-disclosure" class="footer-link">How I use AI</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+
+    <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
+  </footer>
+
+  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+</body>
+</html>

@@ -30,3 +30,7 @@ working online with women across Australia.
 ## Writing
 - [Blog](https://www.wisewomenuseai.com/blog): Practical AI for women in business
 - [AI for Solopreneurs in Australia](https://www.wisewomenuseai.com/posts/ai-for-solopreneurs-australia): What actually works in 2026
+
+## Transparency
+- [How I use AI](https://www.wisewomenuseai.com/ai-disclosure): Kelly's open disclosure of exactly where AI does the work in this business, what stays hers, and what she will not use it for
+- [Privacy](https://www.wisewomenuseai.com/privacy): What is collected, where it is kept, and how to have it removed. No tracking pixels, no analytics, no advertising cookies on this site

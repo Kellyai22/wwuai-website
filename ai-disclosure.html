@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/ai-disclosure">
+  <title>How I use AI | Wise Women Use AI</title>
+  <meta name="description" content="I teach women to use AI, so here is exactly where AI does the work in this business, what stays mine, and what I will never use it for.">
+  <meta property="og:title" content="How I use AI | Wise Women Use AI">
+  <meta property="og:description" content="Exactly where AI does the work in this business, what stays mine, and what I will never use it for.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/ai-disclosure">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:          #FAF8F6;
+      --pearl:       #FAF8F6;
+      --ink:         #3A131B;
+      --bordeaux:    #3A131B;
+      --clay:        #DDA983;
+      --blush:       #E2B592;
+      --driftwood:   #908486;
+      --cream-dark:  #E1DAD7;
+      --cream-mid:   #EDEBE9;
+      --cream-light: #F2F0EE;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap { max-width: 680px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FAF8F6;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex: 0 0 auto;
+      max-width: fit-content;
+    }
+    .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
+
+    .nav-wordmark {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+      align-self: stretch;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--driftwood);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+    }
+    .nav-link:hover { color: var(--bordeaux); }
+
+    .btn-solid {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--ink);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
+
+    /* ── Hero, drenched ── */
+    .hero {
+      background: var(--bordeaux);
+      padding: 76px 32px 72px;
+    }
+
+    .hero .eyebrow { color: var(--blush); display: block; margin-bottom: 18px; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.2vw, 54px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--pearl);
+      margin-bottom: 22px;
+    }
+    .hero h1 { text-wrap: balance; }
+    .hero h1 em { font-style: italic; font-weight: 400; color: var(--blush); }
+
+    .hero .standfirst {
+      font-size: 17px;
+      line-height: 1.85;
+      color: rgba(250, 248, 246, 0.74);
+      max-width: 560px;
+    }
+
+    /* ── Reading sections ── */
+    .read { padding: 48px 32px 8px; }
+    .read + .read { padding-top: 8px; }
+    .read.last { padding-bottom: 60px; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--ink);
+      margin: 0 0 14px;
+      padding-top: 4px;
+    }
+    .read + .read h2 { margin-top: 22px; }
+
+    p {
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--driftwood);
+      margin-bottom: 14px;
+    }
+    p strong { color: var(--ink); font-weight: 400; }
+    p em { font-style: italic; color: var(--clay); }
+
+    .read a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--cream-dark); transition: text-decoration-color 0.2s; }
+    .read a:hover { text-decoration-color: var(--clay); }
+
+    ul { list-style: none; margin: 0 0 4px; }
+
+    li {
+      position: relative;
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--driftwood);
+      padding-left: 26px;
+      margin-bottom: 11px;
+    }
+    li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--clay);
+    }
+    li strong { color: var(--ink); font-weight: 400; }
+
+    /* ── Dark band, the one that matters ── */
+    .band {
+      background: var(--bordeaux);
+      padding: 56px 32px;
+      margin-top: 52px;
+    }
+
+    .band .eyebrow { color: var(--blush); display: block; margin-bottom: 16px; }
+
+    .band .lede {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.2vw, 31px);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--pearl);
+      margin-bottom: 18px;
+    }
+    .band .lede { text-wrap: balance; }
+    .band .lede em { font-style: italic; color: var(--blush); }
+
+    .band p {
+      color: rgba(250, 248, 246, 0.78);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+    .band p:last-child { margin-bottom: 0; }
+    .band p strong { color: var(--pearl); font-weight: 400; }
+
+    /* ── Closing ── */
+    .closing {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 4px 0 0;
+    }
+
+    .updated {
+      margin-top: 38px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cream-dark);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--driftwood);
+    }
+    .updated a { color: var(--driftwood); }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--cream-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
+    .footer-link:hover { color: var(--bordeaux); }
+
+    .social-links { display: flex; gap: 20px; align-items: center; }
+    .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
+    .social-link:hover { color: var(--bordeaux); }
+
+    .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-wordmark, .nav-link + .nav-link { display: none; }
+      .hero { padding: 52px 24px 48px; }
+      .read { padding: 34px 24px 8px; }
+      .read.last { padding-bottom: 44px; }
+      .band { padding: 42px 24px; margin-top: 40px; }
+      h2 { font-size: 23px; }
+      .read + .read h2 { margin-top: 18px; }
+      .closing { font-size: 21px; }
+      footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+    <div class="nav-actions">
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/work" class="nav-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">How I use AI</span>
+      <h1>I run this business on AI.<br><em>Here's exactly where.</em></h1>
+      <p class="standfirst">I teach women to use AI. It would be a bit rich to do that and then go vague about my own setup, so this page lays it out plainly.</p>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>Where AI does the work</h2>
+
+      <p>Almost everything you see from me starts as something I said or wrote, and gets shaped by Claude into the thing you actually read.</p>
+
+      <ul>
+        <li><strong>Social captions and posts.</strong> Drafted by my setup from a topic I choose, in a voice I have spent months teaching it.</li>
+        <li><strong>The weekly newsletter.</strong> Drafted from my notes, then I read it, change it, and approve it before it goes anywhere.</li>
+        <li><strong>Blog posts and lesson pages.</strong> Written with Claude, from my material, and read by me before they go up.</li>
+        <li><strong>This website.</strong> Built with Claude, including this page.</li>
+        <li><strong>The unglamorous half.</strong> Research, first drafts, sorting my inbox, and the admin nobody sees.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>What stays mine</h2>
+
+      <p>The thinking. The opinions. The stories about my own business, including the parts that did not work. Deciding what is worth saying in the first place.</p>
+
+      <p>When you see my face on a video, those are my words and my voice. There is no avatar and no cloned version of me talking.</p>
+
+      <p>One exception, so you have the whole picture. For long training videos inside the community, I sometimes use a synthetic narrator voice rather than recording forty minutes of narration myself. The script is mine either way, and it is never my voice being faked. If any of that changes, this page changes first.</p>
+    </div>
+  </section>
+
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">The specific bit</span>
+      <p class="lede">Here is the part most people in my industry <em>leave vague.</em></p>
+      <p>I approve one topic a week. My setup then drafts the daily posts from it and schedules them, and I do not read every single caption on the morning it goes out.</p>
+      <p>I wrote the voice rules. I built the checks it has to pass. I fix what slips through.</p>
+      <p><strong>That is the whole thing I teach, running on me first.</strong></p>
+    </div>
+  </section>
+
+
+  <section class="read">
+    <div class="wrap">
+      <h2>What I will not do with it</h2>
+
+      <ul>
+        <li><strong>No invented testimonials or reviews.</strong> If you ever see a member quoted here, she is a real person and she said yes to it.</li>
+        <li><strong>No made-up numbers.</strong> If I quote a statistic, it has a source I have actually read.</li>
+        <li><strong>No AI pretending to be a person.</strong> When you comment a keyword and a link lands in your DMs, that part is automated, and it never pretends otherwise. The real conversations are me, typing.</li>
+        <li><strong>No claiming I wrote something by hand when I did not.</strong> Which is what this page is for.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="read last">
+    <div class="wrap">
+      <h2>Why this page exists</h2>
+
+      <p>The done thing in my corner of the internet is to use these tools heavily and let everyone assume you don't. Some people go further and advertise that their content scores zero on an AI detector. I am not going to do that. Those detectors don't work, and the hiding is the part that actually costs people their trust.</p>
+
+      <p>You are allowed to use AI. So am I. What matters is whether there is a real person behind it who stands behind what it says.</p>
+
+      <p class="closing">There is. Hello.</p>
+
+      <p class="updated">Last updated 1 August 2026. If something here stops being true, I will change it. Questions are welcome at <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a>, and you can read <a href="/privacy">what I do with your details</a> too.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+      <span class="nav-wordmark">Wise Women Use AI</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="/blog" class="footer-link">Blog</a>
+      <a href="/work" class="footer-link">Work with me</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="/ai-disclosure" class="footer-link">How I use AI</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+
+    <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
+  </footer>
+
+  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+</body>
+</html>

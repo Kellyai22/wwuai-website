@@ -16,6 +16,18 @@ There is a public asset library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - OGTP for light backgrounds
 - DarkTP for dark backgrounds only
 
+## Footer standard (set 1 August 2026)
+Three things were inconsistent across the site before this date. Keep them consistent now.
+
+- **Copyright line, one wording everywhere:** `&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia`, paired with the small inline `yr` script before `</body>`. It renders `© 2026` now and `© 2026–2027` from January, fixed start year 2026 (the site's first commit was 25 Feb 2026). Never hardcode a bare year again, and never reintroduce "All rights reserved" (legally meaningless, and against the voice rules). The dash is an **en dash** inside the script, which is correct for a numeric range and is NOT the banned em dash. 30 pages carry this line; the 26 lead-magnet and tool pages deliberately keep a minimal footer with no copyright line.
+- **Every audience-facing page links `/privacy` and `/ai-disclosure`.** 51 pages do. There are three footer shapes in this repo (main-site `.footer-links`, capture-page `.foot-links` / `<ul class="footer-links">`, and a plain `<p>`); a new page should copy whichever shape its neighbours use and carry both links.
+- **Deliberately footerless:** `dashboard.html`, `journey-map-*.html`, `wwuai-pitch-deck.html`. Internal working documents, not landing pages. Leave them alone.
+
+## Transparency pages (added 1 August 2026)
+- `ai-disclosure.html` → `/ai-disclosure`. Kelly's open account of where AI does the work in the business. **Every line is a factual claim about how she actually operates, so it is not ordinary marketing copy.** Under Australian Consumer Law the misleading-conduct provision has no turnover threshold, and the ACCC has flagged AI-washing as an enforcement focus, so a claim here that drifts from reality is a real liability. Before editing this page, verify the claim against the actual pipeline. Known specifics it commits to: the weekly topic is approved but individual captions are not read before posting; long community training videos may use an ElevenLabs synthetic narrator; the ManyChat keyword DM is disclosed as automated. If any of that changes, change the page in the same pass.
+- `privacy.html` → `/privacy`. Plain-language statement of actual practice, not boilerplate. It asserts **no tracking pixels, no Google Analytics, no tag manager, no advertising cookies**, which was true of the site code on 1 Aug 2026. **Adding any pixel or analytics to this site makes that page false, so update it in the same pass.** It names Kit, Stripe, Skool, ManyChat, Cal.com and Vercel as the places data actually sits.
+- Both pages use a shared visual pattern: drenched Bordeaux hero, Blush italic emphasis on dark, Clay italic on light, full-bleed dark bands alternating with light reading sections. They are twins; a change to one usually belongs in the other.
+
 ## Tech
 - Static HTML (no framework)
 - Deployed on Vercel
@@ -53,4 +65,6 @@ There is a public asset library in `assets/`. The `IMAGE_LIBRARY.md` file in the
 - `/links` → `hub.html`
 - `/content-system`, `/content-system.html`, `/programme-welcome` → 301 redirect to homepage (removed 1 July 2026)
 - `/about` → `about.html` (route added 1 July 2026)
+- `/privacy` → `privacy.html` (added 1 August 2026)
+- `/ai-disclosure` → `ai-disclosure.html` (added 1 August 2026)
 - `/posts/the-thing-holding-your-ai-back-isnt-your-prompts` → 301 redirect to `/blog` (post retired 1 July 2026)
