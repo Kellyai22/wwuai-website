@@ -1,72 +1,538 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're on the list | Wise Women Use AI</title>
-<meta name="description" content="You're on the list for the next free workshop. I'll email you the date and your seat as soon as they're set.">
+<title>You're in · The Unfair Advantage workshop | Wise Women Use AI</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
-    --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
-    --cream-dark:#E1DAD7;--sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bordeaux: #3A131B;
+    --bordeaux-light: #b3374a;
+    --bordeaux-pale: #f5e8ea;
+    --pearl: #FAF8F6;
+    --ink: #3A131B;
+    --driftwood: #908486;
+    --cream: #E1DAD7;
+    --cream-dark: #d4ccc9;
+    --white: #FFFFFF;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:var(--body);background:var(--pearl);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
-  .narrow{max-width:640px;}
-  section{padding:clamp(2rem,4vw,3.2rem) 0;}
-  .eyebrow{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--driftwood);display:inline-flex;align-items:center;gap:0.65em;}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--bordeaux);display:inline-block;flex:none;}
-  h1{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.12;font-size:clamp(2.3rem,5vw,3.4rem);letter-spacing:-0.01em;margin:0.9rem 0 1.2rem;}
-  em{font-style:italic;color:#DDA983;}
-  .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.4rem,4.6vw,3.2rem);line-height:0.9;display:block;}
-  p{color:#3c353f;}
-  .lead{font-size:1.18rem;color:#3c353f;}
-  .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 0 1.4rem;}
-  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:1rem;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:2px;padding:0.9em 1.9em;text-decoration:none;transition:background .25s ease,color .25s ease;margin-top:1.6rem;}
-  .btn:hover{background:var(--ink);color:var(--pearl);}
-  nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;}
-  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .nav-logo img{height:32px;width:32px;object-fit:contain;}
-  .nav-wordmark{font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--driftwood);}
-  footer{padding:40px 48px;border-top:1px solid var(--cream-dark);text-align:center;}
-  .footer-legal{font-size:11px;color:var(--driftwood);opacity:0.5;}
-  @media (max-width:768px){nav{padding:0 24px;}.nav-wordmark{display:none;}footer{padding:32px 24px;}}
+
+  html, body {
+    background: var(--pearl);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--cream);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--bordeaux);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-site {
+    font-size: 12px;
+    color: var(--driftwood);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .nav-site:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 60px;
+    text-align: center;
+  }
+
+  .script-lead {
+    font-family: 'Allison', cursive;
+    font-size: clamp(48px, 9vw, 72px);
+    color: var(--bordeaux);
+    display: block;
+    line-height: 0.85;
+    margin-bottom: -28px;
+  }
+
+  .script-you {
+    font-family: 'Allison', cursive;
+    font-size: clamp(78px, 15vw, 118px);
+    color: var(--bordeaux);
+    display: block;
+    line-height: 0.9;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--driftwood);
+    max-width: 460px;
+    margin: 20px auto 0;
+    line-height: 1.75;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--bordeaux);
+    margin: 40px auto;
+    border-radius: 2px;
+    opacity: 0.35;
+  }
+
+  /* DATE CARD */
+  .date-section {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+  }
+
+  .date-card {
+    background: var(--white);
+    border: 1px solid var(--cream);
+    border-radius: 16px;
+    padding: 36px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .date-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--bordeaux);
+  }
+
+  .date-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--bordeaux);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .date-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .date-time {
+    font-size: 17px;
+    color: var(--driftwood);
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+  .date-time strong { color: var(--ink); font-weight: 500; }
+
+  .timezone-note {
+    font-size: 12px;
+    color: var(--driftwood);
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .cal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 13px 28px;
+    border-radius: 8px;
+    transition: background 0.18s ease;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .cal-btn:hover { background: var(--bordeaux); }
+
+  .cal-svg {
+    width: 17px; height: 17px;
+    stroke: currentColor; fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* EMAIL NOTE */
+  .email-note {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+  }
+
+  .email-box {
+    background: var(--bordeaux-pale);
+    border-left: 4px solid var(--bordeaux);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .email-icon-wrap {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    background: var(--bordeaux);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .email-icon-wrap svg {
+    width: 18px; height: 18px;
+    stroke: var(--white); fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .email-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .email-text p {
+    font-size: 14px;
+    color: var(--driftwood);
+    line-height: 1.65;
+  }
+  .email-text a { color: var(--bordeaux); text-decoration: none; }
+  .email-text a:hover { text-decoration: underline; }
+
+  /* WHAT TO EXPECT */
+  .expect-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+    text-align: center;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--driftwood);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .expect-card {
+    background: var(--white);
+    border: 1px solid var(--cream);
+    border-radius: 14px;
+    padding: 26px 22px;
+    text-align: left;
+  }
+
+  .expect-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--cream-dark);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .expect-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 7px;
+    line-height: 1.4;
+  }
+
+  .expect-body {
+    font-size: 13px;
+    color: var(--driftwood);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* NEXT STEPS */
+  .steps-section {
+    background: var(--ink);
+    padding: 60px 32px;
+  }
+
+  .steps-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .steps-section .section-heading { color: var(--pearl); margin-bottom: 6px; }
+  .steps-section .section-sub { color: var(--driftwood); margin-bottom: 32px; }
+
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-dot {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    background: var(--bordeaux);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 1px;
+  }
+
+  .step-content strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pearl);
+    margin-bottom: 3px;
+  }
+  .step-content p {
+    font-size: 13.5px;
+    color: var(--driftwood);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* NEXT-STEP SEED */
+  .prg-strip {
+    border-top: 1px solid var(--cream);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .prg-strip p {
+    font-size: 15px;
+    color: var(--driftwood);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .prg-strip p em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--cream);
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--driftwood);
+    line-height: 1.9;
+  }
+  .footer a { color: var(--bordeaux); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 560px) {
+    .hero { padding: 56px 24px 40px; }
+    .script-lead { font-size: clamp(40px, 11vw, 60px); }
+    .script-you { font-size: clamp(64px, 18vw, 96px); }
+    .date-card { padding: 28px 22px; }
+    .date-section, .email-note, .expect-section { padding-left: 20px; padding-right: 20px; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .email-box { flex-direction: column; gap: 12px; }
+    .steps-section { padding: 48px 20px; }
+    .prg-strip { padding: 32px 20px; }
+    .nav { padding: 16px 20px; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">
-    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-    <span class="nav-wordmark">Wise Women Use AI</span>
-  </a>
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://wisewomenuseai.com" class="logo">Wise Women Use AI</a>
+  <a href="https://wisewomenuseai.com" class="nav-site">wisewomenuseai.com</a>
 </nav>
 
-<section>
-  <div class="wrap narrow">
-    <div class="rule"></div>
-    <span class="eyebrow"><span class="dot"></span>You're registered</span>
-    <span class="script">lovely, you're in</span>
-    <h1>Your seat is saved for <em>Wednesday 12 August</em>.</h1>
-    <p class="lead">Thank you for saving your spot. You're in for the free workshop, where we'll build the one place your content lives, just by talking to Claude.</p>
-    <p style="margin-top:1.2rem;">It's Wednesday 12 August 2026 at 9:30am Melbourne time (AEST). I'll email you the joining link before we begin, so keep an eye on your inbox. If you'd like to build along on the day, have a Claude Pro account and a Notion account ready, and we'll connect them together. Would rather just watch this time? Come as you are, and keep the step-by-step for after.</p>
-    <p style="margin-top:1.2rem;">While you wait, come and say hello in the free community. It's a warm, quiet corner of women figuring this out together.</p>
-    <a href="/workshop.ics" class="btn">Add it to your calendar</a>
-    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="btn" style="margin-left:0.8rem;">Join the free community</a>
+<!-- HERO -->
+<section class="hero">
+  <span class="script-lead">Wise woman,</span>
+  <span class="script-you">you're in.</span>
+  <p class="hero-sub">Everything you need is right here, including your join link. Save this page. I'll see you on the 12th.</p>
+</section>
+
+<!-- DATE CARD -->
+<div class="date-section">
+  <div class="date-card">
+    <p class="date-label">You're registered for</p>
+    <p class="date-main">Wednesday, 12 August 2026</p>
+    <p class="date-time">at <strong>9:30am AEST</strong></p>
+    <p class="timezone-note">Sydney · Melbourne · Brisbane &nbsp;|&nbsp; 7:30am AWST &nbsp;|&nbsp; Tue 7:30pm US Eastern</p>
+    <div class="cal-btns" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px;">
+      <a class="cal-btn" href="/workshop.ics">
+        <svg class="cal-svg" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Apple / Outlook
+      </a>
+      <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=The%20Unfair%20Advantage%20(Free%20Workshop)&amp;dates=20260811T233000Z/20260812T003000Z&amp;details=A%20free%20hands-along%20hour%20with%20Kelly%20at%20Wise%20Women%20Use%20AI.%20Build%20the%20one%20place%20your%20content%20lives%2C%20just%20by%20talking%20to%20Claude.%20Your%20Zoom%20link%20is%20on%20this%20page%20and%20emailed%20to%20you.&amp;location=Online%20(Zoom%20link%20on%20your%20thank-you%20page)" target="_blank" rel="noopener">
+        <svg class="cal-svg" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Google Calendar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- JOIN LINK -->
+<div class="email-note">
+  <div class="email-box">
+    <div class="email-icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 10l4.55-2.28A1 1 0 0 1 21 8.62v6.76a1 1 0 0 1-1.45.9L15 14"></path>
+        <rect x="3" y="6" width="12" height="12" rx="2"></rect>
+      </svg>
+    </div>
+    <div class="email-text">
+      <strong>Your join link</strong>
+      <p>This is your link for the workshop, and it's the same one every time, so you can save this page. I'll email it to you before we start too.</p>
+      <a href="https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;background:var(--bordeaux);color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:0.02em;">Join the workshop</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE'RE COVERING -->
+<section class="expect-section">
+  <h2 class="section-heading">What we're doing together</h2>
+  <p class="section-sub">One hour. You talk, Claude does the sorting, and you leave with a real start.</p>
+
+  <div class="expect-grid">
+    <div class="expect-card">
+      <div class="expect-num">01</div>
+      <p class="expect-title">Claude and Notion, connected</p>
+      <p class="expect-body">We'll link the two together at the start, so Claude can build straight into your Notion while you talk. Already connected? Even better, you'll be straight into the good part.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">02</div>
+      <p class="expect-title">Your content pillars, named</p>
+      <p class="expect-body">The handful of things you're actually here to talk about, out of your head and on the page where you can see them.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">03</div>
+      <p class="expect-title">A one-page Content Command Centre</p>
+      <p class="expect-body">One calm home for all of it, with a simple calendar you can keep going even on a bad week.</p>
+    </div>
+    <div class="expect-card">
+      <div class="expect-num">04</div>
+      <p class="expect-title">Your first few days, filled in</p>
+      <p class="expect-body">We'll do the first ones together, so you leave with something real to build on instead of another blank page.</p>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
-  <p style="margin-top:10px;font-size:12px;line-height:1.6;"><a href="/privacy" style="color:inherit;opacity:0.75;">Privacy</a> &middot; <a href="/ai-disclosure" style="color:inherit;opacity:0.75;">How I use AI</a></p>
+<!-- BEFORE WE MEET -->
+<section class="steps-section">
+  <div class="steps-inner">
+    <h2 class="section-heading">Before we meet on the 12th</h2>
+    <p class="section-sub">A few things that'll make the hour more useful for you.</p>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-dot">1</div>
+        <div class="step-content">
+          <strong>Connect Claude and Notion before the day, if you can</strong>
+          <p>A Claude Pro account and a Notion account, linked together. We'll do it quickly at the start, but you'll get far more out of the hour if it's already done. Never connected them before? July's workshop walks through it properly and it's free to watch: <a href="https://share.descript.com/view/EfyJyOtewLp">the July replay is here</a>. And if it plays up on the day, don't worry, you'll build the page anyway and I'll send the walkthrough after.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">2</div>
+        <div class="step-content">
+          <strong>Bring the things you already talk about</strong>
+          <p>The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material Claude turns into your pillars.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3</div>
+        <div class="step-content">
+          <strong>Come with your camera off and your tea on</strong>
+          <p>No hot seats, no homework before you arrive. Just show up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT-STEP SEED - subtle, one line -->
+<div class="prg-strip">
+  <p>Right at the end I'll show you <em>two optional ways to keep going</em> if you'd like to, and you're very welcome to ignore both. The hour is yours either way.</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    Wise Women Use AI &nbsp;·&nbsp; <a href="https://wisewomenuseai.com">wisewomenuseai.com</a><br>
+    Questions? <a href="mailto:hello@wisewomenuseai.com">hello@wisewomenuseai.com</a>
+  </p>
 </footer>
 
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
 </body>
 </html>

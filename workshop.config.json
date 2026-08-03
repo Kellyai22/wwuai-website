@@ -9,36 +9,36 @@
   "communityUrl": "https://www.skool.com/wise-women-use-ai-1109",
   "siteBase": "https://www.wisewomenuseai.com",
   "calendarSummary": "The Unfair Advantage (Free Workshop)",
-  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Watch Claude build the first home for your business, just by talking to it.",
+  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Build the one place your content lives, just by talking to Claude.",
   "thankYou": {
-    "whatWeDoingSub": "One hour. You talk, Claude builds. Nothing to set up alone.",
+    "whatWeDoingSub": "One hour. You talk, Claude does the sorting, and you leave with a real start.",
     "cards": [
       {
         "title": "Claude and Notion, connected",
-        "body": "We'll link the two together on the day, so Claude can start building the first home for your business."
+        "body": "We'll link the two together at the start, so Claude can build straight into your Notion while you talk. Already connected? Even better, you'll be straight into the good part."
       },
       {
-        "title": "Your business HQ, built live while you talk",
-        "body": "What your business is, who it's for, what you sell, and a brain dump to catch everything rattling round your head."
+        "title": "Your content pillars, named",
+        "body": "The handful of things you're actually here to talk about, out of your head and on the page where you can see them."
       },
       {
-        "title": "The exact prompt to get you started",
-        "body": "Yours to keep and run again any time, so you're never starting from a blank page."
+        "title": "A one-page Content Command Centre",
+        "body": "One calm home for all of it, with a simple calendar you can keep going even on a bad week."
       },
       {
-        "title": "A home you actually own",
-        "body": "Not locked in your head, not tied to one tool. Your second brain, and your backup."
+        "title": "Your first few days, filled in",
+        "body": "We'll do the first ones together, so you leave with something real to build on instead of another blank page."
       }
     ],
     "beforeSub": "A few things that'll make the hour more useful for you.",
     "steps": [
       {
-        "title": "Have Claude and Notion ready, if you'd like to build along",
-        "body": "A Claude Pro account and a Notion account, and we'll connect them on the day. Don't have them yet, or would rather just watch? That's completely fine, come as you are and keep the step-by-step for after."
+        "title": "Connect Claude and Notion before the day, if you can",
+        "body": "A Claude Pro account and a Notion account, linked together. We'll do it quickly at the start, but you'll get far more out of the hour if it's already done. Never connected them before? July's workshop walks through it properly and it's free to watch: <a href=\"https://share.descript.com/view/EfyJyOtewLp\">the July replay is here</a>. And if it plays up on the day, don't worry, you'll build the page anyway and I'll send the walkthrough after."
       },
       {
-        "title": "Bring the basics of your business in your head",
-        "body": "What it is, who it's for, what you sell. Plus anything rattling round that you've been meaning to write down. That's your raw material for the brain dump."
+        "title": "Bring the things you already talk about",
+        "body": "The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material Claude turns into your pillars."
       },
       {
         "title": "Come with your camera off and your tea on",
@@ -46,6 +46,8 @@
       }
     ]
   },
+  "_reminderPrep_comment": "Topic-specific prep for the day-before email. Rewrite this each month. Leave it out and the generator falls back to generic copy.",
+  "reminderPrep": "<p>One thing worth doing before tomorrow: connect Claude and Notion. We'll do it quickly at the start, but the hour is much better if it's already sorted. Never done it? <a href=\"https://share.descript.com/view/EfyJyOtewLp\">July's workshop walks through it properly</a> and it's free to watch.</p>\n\n  <p>If it plays up on the day, don't worry about it. You'll build the page anyway and I'll send you the walkthrough after.</p>\n\n  <p>The other thing to bring is the stuff you already talk about. The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material.</p>",
   "topic": "Your content system, off your plate",
   "holdingTeaser": "Stop carrying the content in your head. In one hour we build a system that carries it for you."
 }
