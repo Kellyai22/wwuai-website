@@ -19,6 +19,23 @@ const PRODUCT_MAP = {
     tagId: 20815815,
     sequenceId: 2813464,
   },
+  // August: the Content Advantage Pack. $129 public.
+  plink_1U0xQbPUfAlFO1z9fXQeifON: {
+    product: 'content-advantage',
+    tagId: 22012636,
+    sequenceId: 2850379,
+  },
+  // Member price ($99), offered only inside the membership classroom
+  plink_1U0xQcPUfAlFO1z9wDBPnOtR: {
+    product: 'content-advantage-member',
+    tagId: 22012636,
+    sequenceId: 2850379,
+  },
+  // Safety net for sessions with no payment link (manual invoices, say) so a
+  // buyer is never silently dropped. NOTE: it tags them as a Notion Advantage
+  // buyer, which was harmless with one product and is now misleading with two.
+  // It still beats losing the record. If a third product lands, give this its
+  // own neutral tag rather than letting it keep guessing.
   default: {
     product: 'unmapped',
     tagId: 20815815,

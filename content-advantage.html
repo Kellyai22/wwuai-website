@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Content Advantage | Wise Women Use AI</title>
+<meta name="description" content="Ninety days of content, already written. A 13-week calendar of frameworks to adapt, a 150-line hook bank, a prompt library that keeps your voice, and a pre-built Content Command Centre in Notion. $129 AUD.">
+
+<meta property="og:title" content="The Content Advantage: ninety days, already written.">
+<meta property="og:description" content="Thirteen weeks of content as frameworks you adapt in minutes, not blanks you stare at. Plus the hooks, the prompts and a calm Notion home to keep it all in.">
+<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta property="og:url" content="https://www.wisewomenuseai.com/content-advantage">
+<link rel="canonical" href="https://www.wisewomenuseai.com/content-advantage">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Content Advantage: ninety days, already written.">
+<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
+    --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
+    /* aliases + extras for the site-shell nav/footer ported from other pages */
+    --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);background:var(--pearl);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:var(--bordeaux);color:var(--pearl);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .narrow{max-width:680px;}
+  section{padding:clamp(2rem,4vw,3.2rem) 0;}
+  .eyebrow{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--driftwood);display:inline-flex;align-items:center;gap:0.65em;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--bordeaux);display:inline-block;flex:none;}
+  h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.12;}
+  h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-0.01em;}
+  h2{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-0.01em;}
+  h3{font-size:1.18rem;font-weight:600;}
+  em{font-style:italic;color:#DDA983;}
+  .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.6rem,5vw,3.6rem);line-height:0.9;display:block;}
+  p{color:#3c353f;}
+  .lead{font-size:1.18rem;color:#3c353f;}
+  .sub{color:var(--driftwood);}
+  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:1rem;letter-spacing:0.01em;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:2px;padding:0.95em 2em;cursor:pointer;text-decoration:none;transition:background .25s ease,color .25s ease;}
+  .btn:hover{background:var(--ink);color:var(--pearl);}
+  .btn:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;}
+  .btn--filled{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--pearl);}
+  .btn--filled:hover{background:transparent;color:var(--bordeaux);}
+  .micro{font-size:0.85rem;color:var(--driftwood);margin-top:1rem;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;border-radius:2px;}
+
+  /* ---- nav (site shell) ---- */
+  nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;max-width:fit-content;}
+  .nav-logo img{height:32px;width:32px;object-fit:contain;}
+  .nav-wordmark{font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--driftwood);}
+  .nav-actions{display:flex;align-items:center;gap:24px;position:relative;z-index:2;align-self:stretch;}
+  .nav-link{font-size:12px;font-weight:400;letter-spacing:0.08em;color:var(--driftwood);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;align-self:stretch;}
+  .nav-link:hover{color:var(--bordeaux);}
+  .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background 0.2s,transform 0.1s;display:inline-block;}
+  .btn-solid:hover{background:var(--bordeaux);transform:translateY(-1px);}
+
+  /* ---- hero (centred) ---- */
+  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2.4rem,5vw,3.6rem);padding-bottom:clamp(2.4rem,5vw,3.6rem);text-align:center;}
+  .hero .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 auto 1.4rem;}
+  .hero h1{margin:0.9rem 0 1.2rem;max-width:none;}
+  .hero .lead{max-width:34rem;margin:0 auto 1.8rem;}
+  .hero .script{margin-bottom:0.1rem;}
+
+  .problem p{font-size:1.22rem;color:#352f3b;margin-bottom:1.3rem;}
+  .problem p:last-child{margin-bottom:0;}
+  .problem .kicker{font-size:clamp(1.7rem,3.2vw,2.4rem);font-family:var(--display);color:var(--ink);line-height:1.2;margin-bottom:1.6rem;}
+
+  .proof-dark{background:var(--ink);color:var(--pearl);text-align:center;}
+  .proof-dark .eyebrow{color:#b9aeb0;justify-content:center;margin-bottom:1rem;}
+  .proof-dark .dot{background:#E2B592;}
+  .proof-dark p{font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1.5;color:var(--pearl);}
+  .proof-dark em{color:#E2B592;font-style:italic;}
+
+  .panel{background:var(--cream);}
+  .panel p{color:#46393c;}
+
+  /* ---- the eight sections, 2 per row, plus card full width ---- */
+  .modules{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.8rem;}
+  .module{background:var(--white);border:1px solid rgba(58,19,27,0.1);border-radius:10px;padding:1.4rem 1.4rem 1.3rem;transition:transform .25s ease,box-shadow .25s ease;}
+  .module:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(58,19,27,0.08);}
+  .module.full{grid-column:1 / -1;}
+  .module.plus{background:transparent;border:1.5px solid rgba(58,19,27,0.28);}
+  .module .num{font-family:var(--display);font-style:italic;font-size:0.9rem;color:var(--bordeaux);display:block;margin-bottom:0.35rem;}
+  .module h3{font-family:var(--body);font-size:1rem;font-weight:600;margin-bottom:0.25rem;}
+  .module p{font-size:0.95rem;color:#5c5257;line-height:1.55;}
+
+  /* ---- how it works, vertical steps ---- */
+  .steps{list-style:none;margin-top:1.8rem;display:grid;gap:0;counter-reset:step;}
+  .steps li{counter-increment:step;display:grid;grid-template-columns:56px 1fr;gap:1.2rem;align-items:start;padding:1.3rem 0;border-bottom:1px solid var(--cream);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(step,decimal-leading-zero);font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--bordeaux);line-height:1.3;}
+  .steps strong{font-weight:600;color:var(--ink);display:block;font-size:1.05rem;}
+  .steps span{color:#46393c;font-size:1rem;}
+
+  /* ---- workshop vs pack ---- */
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.8rem;}
+  .box{background:var(--white);border-radius:14px;padding:1.7rem 1.6rem;transition:transform .25s ease,box-shadow .25s ease;}
+  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(58,19,27,0.12),0 2px 6px rgba(58,19,27,0.06);}
+  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(58,19,27,0.08),0 2px 6px rgba(58,19,27,0.05);}
+  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(58,19,27,0.16),0 4px 10px rgba(58,19,27,0.07);}
+  .box .label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:0.5em;}
+  .box.yes .label{color:var(--bordeaux);}
+  .box.no .label{color:var(--driftwood);}
+  .box ul{list-style:none;display:grid;gap:0.85rem;margin-top:1rem;}
+  .box li{padding-left:1.7rem;position:relative;color:#3c353f;font-size:0.98rem;line-height:1.5;}
+  .box.yes li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--bordeaux);font-weight:700;font-size:0.95rem;}
+  .box.no li::before{content:"\2013";position:absolute;left:0.15rem;top:-0.05rem;color:var(--driftwood);font-weight:700;font-size:1.1rem;}
+
+  /* ---- price card ---- */
+  .price-card{background:var(--white);border:1px solid var(--cream);border-radius:14px;padding:clamp(2rem,4vw,2.8rem);max-width:520px;margin:1.8rem auto 0;text-align:center;box-shadow:0 20px 44px rgba(58,19,27,0.09),0 3px 8px rgba(58,19,27,0.05);}
+  .price-card .name{font-family:var(--display);font-size:1.35rem;font-weight:600;margin-bottom:1.1rem;}
+  .price-row{display:flex;align-items:baseline;justify-content:center;gap:0.7rem;margin-bottom:0.35rem;}
+  .price-now{font-family:var(--display);font-size:clamp(3rem,6vw,3.8rem);font-weight:500;line-height:1;color:var(--ink);}
+  .price-was{font-family:var(--display);font-size:1.4rem;color:var(--driftwood);text-decoration:line-through;text-decoration-thickness:1px;}
+  .price-meta{font-size:0.85rem;color:var(--driftwood);letter-spacing:0.04em;margin-bottom:1.5rem;}
+  .price-card ul{list-style:none;display:grid;gap:0.7rem;text-align:left;margin:0 auto 1.7rem;max-width:26rem;}
+  .price-card li{padding-left:1.7rem;position:relative;color:#3c353f;font-size:0.98rem;line-height:1.5;}
+  .price-card li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--bordeaux);font-weight:700;font-size:0.95rem;}
+  .price-card .btn{width:100%;}
+  .price-note{font-size:0.88rem;color:var(--driftwood);max-width:26rem;margin:1rem auto 0;line-height:1.6;}
+
+  /* ---- guarantee ---- */
+  .guarantee{max-width:520px;margin:1.4rem auto 0;border:1px solid rgba(58,19,27,0.12);border-radius:10px;padding:1.5rem 1.7rem;text-align:center;background:transparent;}
+  .guarantee .g-label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--driftwood);display:block;margin-bottom:0.7rem;}
+  .guarantee p{font-family:var(--display);font-size:1.15rem;line-height:1.5;color:var(--ink);}
+  .guarantee .g-small{font-family:var(--body);font-size:0.85rem;color:var(--driftwood);margin-top:0.6rem;}
+
+  /* ---- note from kelly ---- */
+  .about{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3rem;align-items:center;}
+  .portrait{aspect-ratio:4/5;background:linear-gradient(150deg,#E7E0DD,#CDBCB7);border:1px solid var(--cream);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
+  .about .sig{font-family:var(--script);color:var(--bordeaux);font-size:3rem;line-height:0.8;margin-top:1.1rem;}
+
+  /* ---- final dark CTA ---- */
+  .final{background:var(--ink);color:var(--pearl);text-align:center;}
+  .final .eyebrow{color:#b9aeb0;justify-content:center;}
+  .final .script-light{font-family:var(--script);color:var(--pearl);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:0.9;display:block;margin:0.6rem 0 0.3rem;}
+  .final h2{color:var(--pearl);max-width:20ch;margin:0 auto 1.6rem;}
+  .final em{color:#E2B592;font-style:italic;}
+  .final .micro{color:#9a9098;}
+
+  .faq h2{margin-bottom:1.6rem;}
+  .faq details{border-top:1px solid var(--cream);}
+  .faq details:last-of-type{border-bottom:1px solid var(--cream);}
+  .faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";font-family:var(--body);font-size:1.5rem;font-weight:400;color:var(--bordeaux);line-height:1;transition:transform .2s ease;}
+  .faq details[open] summary::after{content:"\2013";}
+  .faq details p{padding:0 0 1.3rem;color:#46393c;max-width:48rem;}
+
+  /* ---- footer (site shell) ---- */
+  footer{padding:40px 48px;border-top:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
+  .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
+  .footer-link{font-size:12px;color:var(--driftwood);text-decoration:none;letter-spacing:0.05em;}
+  .footer-link:hover{color:var(--bordeaux);}
+  .social-links{display:flex;gap:20px;align-items:center;}
+  .social-link{color:var(--driftwood);transition:color 0.2s;display:flex;}
+  .social-link:hover{color:var(--bordeaux);}
+  .footer-legal{font-size:11px;color:var(--driftwood);opacity:0.5;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (max-width:768px){
+    nav{padding:0 24px;}
+    .nav-wordmark,.nav-link{display:none;}
+    footer{padding:32px 24px;}
+  }
+  @media (max-width:720px){
+    .about{grid-template-columns:1fr;gap:2rem;}
+    .compare-grid{grid-template-columns:1fr;gap:1rem;}
+    .modules{grid-template-columns:1fr;}
+    .module.full{grid-column:1;}
+    .portrait{max-width:260px;}
+    .steps li{grid-template-columns:44px 1fr;gap:0.9rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .box:hover,.module:hover{transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "The Content Advantage",
+  "description": "Ninety days of content for women business owners, written as frameworks to adapt. A 13-week calendar, a 150-line hook bank, a voice-preserving prompt library, and a pre-built Content Command Centre in Notion.",
+  "brand": {
+    "@type": "Organization",
+    "name": "Wise Women Use AI",
+    "url": "https://www.wisewomenuseai.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "129.00",
+    "priceCurrency": "AUD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.wisewomenuseai.com/content-advantage"
+  }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="/work" class="nav-link">Work with me</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="#get" class="btn-solid">Get it</a>
+  </div>
+</nav>
+
+<!-- HERO (DREAM) -->
+<header class="hero">
+  <div class="wrap narrow">
+    <div class="reveal">
+      <div class="rule"></div>
+      <span class="eyebrow">The Content Advantage</span>
+      <span class="script">ninety days, already written</span>
+      <h1>The blank page, <em>already filled in</em>.</h1>
+      <p class="lead">Thirteen weeks of content, written as frameworks you adapt in minutes rather than blanks you stare at. Plus the hooks, the prompts and a calm home to keep it all in. You bring your business. It brings the words.</p>
+      <a href="#get" class="btn btn--filled">Get the Content Advantage</a>
+      <p class="micro">$129 AUD, GST inclusive. Yours to keep, no subscription.</p>
+    </div>
+  </div>
+</header>
+
+<!-- PROOF (dark band, near the top) -->
+<section class="proof-dark">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Why listen to me</span>
+    <p>I run my whole business on systems like this one, which is why my evenings are mine again. This is the content one, handed over finished. <em>I'm not teaching from the top of a mountain.</em></p>
+  </div>
+</section>
+
+<!-- PROBLEM (stacked pain) -->
+<section class="problem">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Sound familiar?</span>
+    <p class="kicker">It isn't that you can't write. It's that you're starting from nothing, every single time.</p>
+    <p>Sunday night, and you know you should get ahead on the week's posts. So you open a blank doc and wait for something to arrive. Twenty minutes later you close it again.</p>
+    <p>The ideas are there. They turn up on the dog walk, in the shower, halfway through answering someone's question for the fortieth time. They just never turn up when you're sitting down to write.</p>
+    <p>And the weeks you do manage it, you're pulling it out of yourself. Which is fine once. It is not fine as a way of running a business for the next ten years.</p>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="panel">
+  <div class="wrap reveal">
+    <div class="narrow" style="margin-left:0;">
+      <span class="eyebrow"><span class="dot"></span>What you get</span>
+      <h2 style="margin:1rem 0 0.6rem;">Four things, and they work together.</h2>
+      <p class="sub">Everything lives in Notion. Duplicate it once and it's yours.</p>
+    </div>
+    <div class="modules">
+      <div class="module">
+        <span class="num">01</span>
+        <h3>A 90-day calendar, already written</h3>
+        <p>Sixty-five entries across thirteen weeks. Four posts a week, one for each pillar, plus an optional fifth. Every one is a framework with your specifics in brackets and a hook starter attached, so you're editing rather than inventing.</p>
+      </div>
+      <div class="module">
+        <span class="num">02</span>
+        <h3>A 150-line hook bank</h3>
+        <p>Sorted by pillar and by where the line goes, because a spoken opener and a line on screen are different jobs. Most swipe files hand you one list, which is why people end up reading an advert to camera.</p>
+      </div>
+      <div class="module">
+        <span class="num">03</span>
+        <h3>A prompt library that keeps your voice</h3>
+        <p>Build a voice brief once from three things you've already written, and every prompt inherits it. Then one written piece becomes five: caption, carousel, email, LinkedIn post, short posts. It checks its own work before handing anything back.</p>
+      </div>
+      <div class="module">
+        <span class="num">04</span>
+        <h3>A pre-built Content Command Centre</h3>
+        <p>The Notion home the whole thing lives in, already built. Pillars, calendar, the lot. If you came to the workshop you'll recognise it, because it's the finished version of what we started there.</p>
+      </div>
+      <div class="module full plus">
+        <span class="num">Also</span>
+        <h3>The remap prompt, and a monthly refresh</h3>
+        <p>The remap prompt turns the generic 90 days into yours in about ten minutes, and it'll work out your pillars first if you don't know them. The monthly refresh tells you which pillar you leaned on too hard, where you repeated yourself, and one thing you should stop making. It's blunt, which is the point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>How it goes</span>
+    <h2 style="margin:1rem 0 0;">From buying it to posting, in an afternoon.</h2>
+    <ol class="steps">
+      <li><strong>Duplicate it into your Notion</strong><span>One click. Everything arrives together, already organised.</span></li>
+      <li><strong>Build your voice brief</strong><span>Fifteen minutes. Paste in three things you've written and it works out how you actually write. This is the piece that stops everything sounding like a competent stranger.</span></li>
+      <li><strong>Run the remap prompt</strong><span>Ten minutes to turn the generic pillars into yours. Do four or five weeks and stop, there's no prize for finishing in one sitting.</span></li>
+      <li><strong>Write this week's four</strong><span>Open week one, pick a framework, fill the brackets. You're editing something rather than starting from nothing, which is the whole difference.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- WHERE IT SITS -->
+<section class="panel">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Before you buy</span>
+    <h2 style="margin:1rem 0 0.6rem;">Make sure this is the right one of the three.</h2>
+    <p class="sub">There are three ways to get a content system from me and they do different jobs. I'd rather you picked correctly than bought twice.</p>
+    <div class="compare-grid">
+      <div class="box yes">
+        <span class="label"><span class="dot"></span>The Pack, this page</span>
+        <p style="margin-top:0.8rem;font-size:0.98rem;">You want it done and you'll adapt it yourself.</p>
+        <ul>
+          <li>Ninety days handed over, finished</li>
+          <li>Work through it in your own time</li>
+          <li>One payment, yours forever</li>
+          <li>No calls, no schedule, no room</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <span class="label"><span class="dot"></span>The membership</span>
+        <p style="margin-top:0.8rem;font-size:0.98rem;">You'd rather build it with people around you.</p>
+        <ul>
+          <li>Six guided steps across the month</li>
+          <li>A room of women doing the same thing</li>
+          <li>The Content Drop app included</li>
+          <li>This Pack at the member price</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note" style="max-width:none;margin-top:1.4rem;">There's also the free workshop, where we start a Content Command Centre together in an hour. If you haven't been to one yet, start there and decide afterwards. <a href="/workshop" style="color:var(--bordeaux);">The next one is here</a>.</p>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="get">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow" style="display:flex;justify-content:center;"><span class="dot"></span>Get it</span>
+    <div class="price-card">
+      <div class="name">The Content Advantage</div>
+      <div class="price-row">
+        <span class="price-now">$129</span>
+      </div>
+      <div class="price-meta">AUD &middot; GST inclusive &middot; one payment</div>
+      <ul>
+        <li>65-entry calendar across 13 weeks</li>
+        <li>150-line hook and swipe bank</li>
+        <li>Voice brief and repurposing prompt library</li>
+        <li>Pre-built Content Command Centre in Notion</li>
+        <li>Remap prompt and monthly refresh prompt</li>
+        <li>Yours to keep, and it doesn't expire</li>
+      </ul>
+      <a href="https://buy.stripe.com/dRm8wR7SP6ordrH7RZ6Ri07" class="btn btn--filled">Get the Content Advantage</a>
+      <p class="price-note">Members of The Unfair Advantage pay $99. The link is in your classroom, so grab it from there rather than here.</p>
+    </div>
+    <div class="guarantee">
+      <span class="g-label">Before you buy</span>
+      <p>This is 90 days of frameworks to adapt, not 90 days of finished posts to publish untouched.</p>
+      <p class="g-small">The adapting is what makes it sound like you, and it's far faster than a blank page. Because it's a digital product you get straight away, I can't offer refunds for change of mind. If something is broken or missing, email me and I'll sort it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTE FROM KELLY -->
+<section class="panel">
+  <div class="wrap reveal">
+    <div class="about">
+      <div class="portrait"><img src="/assets/photos/kelly-about.jpg" alt="Kelly at her desk with a cup of tea, natural light through the window" loading="lazy"></div>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>A note from me</span>
+        <h2 style="margin:1rem 0 1.1rem;">I built this because I needed it.</h2>
+        <p>My earlier businesses didn't fail because the ideas were bad. They failed because I was doing all of it, at once, all day, and eventually I ran out. Content was always the first thing to go, and the first thing I felt guilty about.</p>
+        <p style="margin-top:1rem;">What changed wasn't discipline. It was never having to start from nothing again. That's the whole thing this hands you, and it's why it's frameworks rather than a course about frameworks.</p>
+        <div class="sig">Kelly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA (dark) -->
+<section class="final">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Ninety days, ready to go</span>
+    <span class="script-light">no more blank page</span>
+    <h2>Stop writing from <em>nothing</em>.</h2>
+    <a href="https://buy.stripe.com/dRm8wR7SP6ordrH7RZ6Ri07" class="btn" style="border-color:var(--pearl);color:var(--pearl);">Get the Content Advantage</a>
+    <p class="micro">$129 AUD, GST inclusive. Yours to keep.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap narrow reveal">
+    <h2>A few quick questions</h2>
+    <details><summary>Do I need Notion?</summary><p>Yes, and the free plan is plenty. The whole thing arrives as a Notion template you duplicate in one click. If you have never used Notion, the pack walks you through the only three things you actually need to know.</p></details>
+    <details><summary>Do I need to pay for AI?</summary><p>The prompts work with the free version of Claude or ChatGPT. A paid plan makes longer sessions easier, but nothing here requires one.</p></details>
+    <details><summary>Will it sound like me, or like AI?</summary><p>That is what the voice brief is for. You build it once from three things you have already written, and every prompt uses it. You will still read what comes back and change lines, and you should. Anything that promises writing you never have to touch is selling you something that will not sound like you.</p></details>
+    <details><summary>Is this the same as what you teach in the membership?</summary><p>No, and deliberately not. In the membership you build your own system over the month, guided, one step at a time. The Pack hands you ninety days already written to adapt. If you would rather learn to do it yourself, the membership is the better buy.</p></details>
+    <details><summary>What if my business is nothing like yours?</summary><p>The calendar is built on four pillar types that work for almost any business, and the remap prompt relabels the whole thing to your own pillars in about ten minutes. It also works out your pillars first if you do not know them yet.</p></details>
+    <details><summary>How long until I can actually post something?</summary><p>An afternoon, if you sit down with it. Fifteen minutes on the voice brief, ten on the remap, then you are picking a framework and filling in the brackets.</p></details>
+    <details><summary>Do I have to post four times a week?</summary><p>No. It is built at four because that is a rhythm most people can keep on a bad week, and a calendar you abandon in week three is worth nothing. Do two if two is what you have.</p></details>
+  </div>
+</section>
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
+    <span class="nav-wordmark">Wise Women Use AI</span>
+  </a>
+  <div class="footer-links">
+    <a href="/work" class="footer-link">Work with me</a>
+    <a href="/blog" class="footer-link">Blog</a>
+    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="footer-link">Join the community</a>
+    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+    <a href="/privacy" class="footer-link">Privacy</a>
+    <a href="/ai-disclosure" class="footer-link">How I use AI</a>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+  <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
+</footer>
+
+<script>
+  // Reveal-on-scroll (site shell)
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+
+  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+</body>
+</html>

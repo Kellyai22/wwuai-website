@@ -85,6 +85,14 @@
       "dest": "/notion-advantage-welcome.html"
     },
     {
+      "src": "/content-advantage",
+      "dest": "/content-advantage.html"
+    },
+    {
+      "src": "/content-advantage/welcome",
+      "dest": "/content-advantage-welcome.html"
+    },
+    {
       "src": "/guide",
       "dest": "/guide.html"
     },
