@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for the current monthly workshop. Edited each month by the workshop skill, then used to regenerate the funnel. Date is Melbourne local; the skill works out the timezone (AEST/AEDT) automatically.",
-  "date": "2026-08-12",
+  "date": "2026-09-09",
   "startTimeLocal": "09:30",
   "durationMinutes": 60,
   "_title_comment": "DESCRIBES the workshop, never a product name. It surfaces on the thank-you page tab and (via calendarSummary) in the calendar event people add. It said 'The Unfair Advantage' until 5 Aug 2026, which is the MEMBERSHIP's name, so registrants were adding a calendar event named after the paid offer. Never reuse a Pack name here either ('The Content Advantage' is August's paid Pack and owns that name exclusively). Keep it in step with the live page <title>.",
@@ -49,8 +49,8 @@
   },
   "_reminderPrep_comment": "Topic-specific prep for the day-before email. Rewrite this each month. Leave it out and the generator falls back to generic copy.",
   "reminderPrep": "<p>One thing worth doing before tomorrow: connect Claude and Notion. We'll do it quickly at the start, but the hour is much better if it's already sorted. Never done it? <a href=\"https://share.descript.com/view/EfyJyOtewLp\">July's workshop walks through it properly</a> and it's free to watch.</p>\n\n  <p>If it plays up on the day, don't worry about it. You'll build the page anyway and I'll send you the walkthrough after.</p>\n\n  <p>The other thing to bring is the stuff you already talk about. The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material.</p>",
-  "topic": "Your content system, off your plate",
-  "holdingTeaser": "Stop carrying the content in your head. In one hour we build a system that carries it for you.",
+  "topic": "Money and the numbers, without the dread",
+  "holdingTeaser": "Know where you stand in your business, calmly, with AI doing the heavy lifting.",
   "_replayUrl_comment": "The Descript share link for THIS month's replay. Leave empty until the cut exists. Follow-up email 1 carries it, and kit-workshop.mjs REFUSES to schedule that email while this is empty, so the replay promise can never go out unbacked. Clear it again at rollover.",
   "replayUrl": "",
   "_membershipPrice_comment": "The Unfair Advantage monthly price at the time the follow-up emails send. The rate steps up ON the workshop date, never the 1st of the month, so this is the post-workshop price.",

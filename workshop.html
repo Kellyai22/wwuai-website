@@ -3,19 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Content System: Free Workshop, 12 August | Wise Women Use AI</title>
-<meta name="description" content="A free, hands-along hour for women in business. Build the one place your content lives, just by talking to Claude. Live and free, Wednesday 12 August.">
+<title>The next free workshop | Wise Women Use AI</title>
+<meta name="description" content="The next free, hands-along workshop for women in business is on its way. Pop your email in and I'll send you the date and your seat.">
 
-<meta property="og:title" content="Free workshop: get your content out of your head and into one place.">
-<meta property="og:description" content="A free, hands-along hour where you build the one home for all your content, just by talking to Claude. No tech skills, nothing to set up alone. Live and free.">
+<meta property="og:title" content="The next free workshop is on its way">
+<meta property="og:description" content="A free, hands-along hour for women in business, coming soon. Register your interest and I'll send you the details the moment they're live.">
 <meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
 <meta property="og:url" content="https://www.wisewomenuseai.com/workshop">
 <link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_AU">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free workshop: get your content out of your head and into one place.">
-<meta name="twitter:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta name="robots" content="noindex">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +20,9 @@
 <style>
   :root{
     --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
-    --clay:#DDA983;--blush:#E2B592;
     --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
-    --cream-dark:#E1DAD7;--sans:'Plus Jakarta Sans',system-ui,sans-serif;
+    --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -40,7 +37,7 @@
   h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-0.01em;}
   h2{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-0.01em;}
   h3{font-size:1.18rem;font-weight:600;}
-  em{font-style:italic;color:var(--clay);}
+  em{font-style:italic;color:#DDA983;}
   .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.6rem,5vw,3.6rem);line-height:0.9;display:block;}
   p{color:#3c353f;}
   .lead{font-size:1.18rem;color:#3c353f;}
@@ -53,7 +50,6 @@
   .micro{font-size:0.85rem;color:var(--driftwood);margin-top:1rem;}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;border-radius:2px;}
 
-  /* ---- nav ---- */
   nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;}
   .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;max-width:fit-content;}
   .nav-logo img{height:32px;width:32px;object-fit:contain;}
@@ -64,7 +60,6 @@
   .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background 0.2s,transform 0.1s;display:inline-block;}
   .btn-solid:hover{background:var(--bordeaux);transform:translateY(-1px);}
 
-  /* ---- sign-up form ---- */
   .signup{max-width:460px;}
   .signup .fields{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:0.7rem;}
   .signup input{font-family:var(--body);font-size:1rem;width:100%;padding:0.85em 1em;border:1.5px solid #d3c7c3;border-radius:8px;background:var(--white);color:var(--ink);text-align:left;}
@@ -73,115 +68,22 @@
   .signup .btn{width:100%;}
   @media (max-width:540px){.signup .fields{grid-template-columns:1fr;}}
 
-  /* ---- hero ---- */
-  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
+  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2.4rem,5vw,4rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
   .hero .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 auto 1.4rem;}
   .hero h1{margin:0.9rem 0 1.2rem;max-width:none;}
-  .hero .lead{max-width:35rem;margin:0 auto 1.8rem;}
+  .hero .lead{max-width:34rem;margin:0 auto 1.8rem;}
   .hero .script{margin-bottom:0.1rem;}
   .hero .signup{margin-left:auto;margin-right:auto;}
+  .hero .success{display:none;max-width:34rem;margin:1.2rem auto 0;font-size:1.1rem;color:var(--ink);}
 
-  /* ---- contained hero photo band ---- */
-  .band{max-width:940px;margin:clamp(0.4rem,2.5vw,1.2rem) auto 0;padding:0 28px;}
-  .band .frame{aspect-ratio:16/10;overflow:hidden;border:1px solid var(--cream);border-radius:10px;}
-  .band img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block;}
-
-  /* ---- dream ---- */
-  .dream p{font-size:1.2rem;color:#352f3b;margin-bottom:1.3rem;}
-  .dream p:last-child{margin-bottom:0;}
-  .dream .oneline{font-size:clamp(1.6rem,3vw,2.3rem);margin:0.9rem 0 1.6rem;}
-
-  /* ---- proof band ---- */
-  .proofband{background:var(--ink);color:var(--pearl);text-align:center;}
-  .proofband .eyebrow{color:#b9aeb0;justify-content:center;}
-  .proofband .dot{background:var(--blush);}
-  .proofband p{font-family:var(--display);font-size:clamp(1.2rem,2.5vw,1.7rem);line-height:1.45;color:var(--pearl);max-width:36rem;margin:1rem auto 0;}
-  .proofband em{color:var(--blush);font-style:italic;}
-
-  /* ---- stacked pain ---- */
   .panel{background:var(--cream);}
   .panel p{color:#46393c;}
-  .stack{list-style:none;margin:1.8rem 0 0;display:grid;gap:0;}
-  .stack li{padding:1.15rem 0;border-bottom:1px solid rgba(58,19,27,0.14);font-size:1.14rem;color:#352f3b;line-height:1.5;}
-  .stack li:first-child{border-top:1px solid rgba(58,19,27,0.14);}
-  .stack li strong{font-weight:600;color:var(--ink);}
-  .stack .resolve{font-family:var(--display);font-size:clamp(1.4rem,2.7vw,1.95rem);color:var(--ink);line-height:1.25;margin-top:1.7rem;}
-
-  /* ---- shift ---- */
-  .oneline{font-size:clamp(1.5rem,2.9vw,2.15rem);margin:0.9rem 0 0.4rem;}
-
-  /* ---- walk away gifts ---- */
-  .gifts{list-style:none;margin-top:1.8rem;display:grid;gap:1.2rem;}
-  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:1.2rem;border-bottom:1px solid var(--cream);}
-  .gifts li:last-child{border-bottom:none;padding-bottom:0;}
+  .gifts{list-style:none;margin-top:1.6rem;display:grid;gap:1.1rem;}
+  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;}
   .gifts .mk{margin-top:0.55em;}
   .gifts strong{font-weight:600;color:var(--ink);}
   .gifts span.t{display:block;}
 
-  /* ---- membership: the room through the door ---- */
-  .members{background:var(--ink);color:var(--pearl);}
-  .members .eyebrow{color:#b9aeb0;}
-  .members h2{color:var(--pearl);}
-  .members h3{color:var(--pearl);}
-  .members em{color:var(--blush);}
-  .members .lead{color:#e7dcdc;}
-  .members .script{color:var(--blush);}
-  .inside{list-style:none;margin:2rem 0 0;display:grid;gap:1.5rem;max-width:44rem;}
-  .inside li{padding-bottom:1.5rem;border-bottom:1px solid rgba(250,248,246,0.14);}
-  .inside li:last-child{border-bottom:none;padding-bottom:0;}
-  .inside h3{margin-bottom:0.4rem;}
-  .inside p{color:#d9cccd;font-size:1rem;}
-  .price{margin-top:2rem;font-size:1.12rem;color:#e7dcdc;max-width:42rem;}
-  .price strong{color:var(--blush);font-weight:600;}
-
-  /* ---- who is this for ---- */
-  .foryou-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.8rem;}
-  .box{background:var(--white);border-radius:14px;padding:1.7rem 1.6rem;transition:transform .25s ease,box-shadow .25s ease;}
-  .box.yes{border:1.5px solid var(--bordeaux);box-shadow:0 14px 30px rgba(58,19,27,0.12),0 2px 6px rgba(58,19,27,0.06);}
-  .box.no{border:1.5px solid #d8b9bf;box-shadow:0 12px 26px rgba(58,19,27,0.08),0 2px 6px rgba(58,19,27,0.05);}
-  .box:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(58,19,27,0.16),0 4px 10px rgba(58,19,27,0.07);}
-  .box .label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:0.5em;}
-  .box.yes .label{color:var(--bordeaux);}
-  .box.no .label{color:var(--driftwood);}
-  .box ul{list-style:none;display:grid;gap:0.85rem;margin-top:1rem;}
-  .box li{padding-left:1.7rem;position:relative;color:#3c353f;font-size:0.98rem;line-height:1.5;}
-  .box.yes li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--bordeaux);font-weight:700;font-size:0.95rem;}
-  .box.no li::before{content:"\2013";position:absolute;left:0.15rem;top:-0.05rem;color:var(--driftwood);font-weight:700;font-size:1.1rem;}
-
-  /* ---- details ---- */
-  .details dl{margin-top:1.8rem;display:grid;gap:0;}
-  .details .row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding:1.05rem 0;border-bottom:1px solid rgba(58,19,27,0.12);}
-  .details .row:last-child{border-bottom:none;}
-  .details dt{font-weight:600;color:var(--ink);font-size:0.95rem;}
-  .details dd{color:#46393c;}
-
-  /* ---- about ---- */
-  .about{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3rem;align-items:center;}
-  .portrait{aspect-ratio:4/5;background:linear-gradient(150deg,#E7E0DD,#CDBCB7);border:1px solid var(--cream);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
-  .about .sig{font-family:var(--script);color:var(--bordeaux);font-size:3rem;line-height:0.8;margin-top:1.1rem;}
-
-  /* ---- final ---- */
-  .final{background:var(--ink);color:var(--pearl);text-align:center;}
-  .final .eyebrow{color:#b9aeb0;justify-content:center;}
-  .final .script-light{font-family:var(--script);color:var(--pearl);font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:0.9;display:block;margin:0.6rem 0 0.3rem;}
-  .final h2{color:var(--pearl);max-width:20ch;margin:0 auto 1.4rem;}
-  .final em{color:var(--blush);font-style:italic;}
-  .final .signup{margin:0 auto;}
-  .final input{background:var(--white);}
-  .final .micro{color:#9a9098;}
-
-  /* ---- faq ---- */
-  .faq h2{margin-bottom:1.6rem;}
-  .faq details{border-top:1px solid var(--cream);}
-  .faq details:last-of-type{border-bottom:1px solid var(--cream);}
-  .faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink);}
-  .faq summary::-webkit-details-marker{display:none;}
-  .faq summary::after{content:"+";font-family:var(--body);font-size:1.5rem;font-weight:400;color:var(--bordeaux);line-height:1;transition:transform .2s ease;}
-  .faq details[open] summary::after{content:"\2013";}
-  .faq details p{padding:0 0 1.3rem;color:#46393c;max-width:48rem;}
-
-  /* ---- footer ---- */
   footer{padding:40px 48px;border-top:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
   .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
   .footer-link{font-size:12px;color:var(--driftwood);text-decoration:none;letter-spacing:0.05em;}
@@ -198,39 +100,11 @@
     .nav-wordmark,.nav-link{display:none;}
     footer{padding:32px 24px;}
   }
-  @media (max-width:720px){
-    .about{grid-template-columns:1fr;gap:2rem;}
-    .foryou-grid{grid-template-columns:1fr;gap:1rem;}
-    .details .row{grid-template-columns:1fr;gap:0.3rem;}
-    .portrait{max-width:260px;}
-    .band{padding:0 20px;}
-    .band .frame{aspect-ratio:4/3;}
-    .band img{object-position:center 30%;}
-  }
-  @media (min-width:721px){ .oneline{white-space:nowrap;} }
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
-    .box:hover{transform:none;}
     html{scroll-behavior:auto;}
   }
 </style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Wise Women Use AI Workshop: Get your content out of your head and into one place.",
-  "description": "A free, hands-along hour where you build the one home for all your content, just by talking to Claude. No tech skills, nothing to set up alone.",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "startDate": "2026-08-12T09:30:00+10:00",
-  "endDate": "2026-08-12T10:30:00+10:00",
-  "organizer": { "@type": "Organization", "name": "Wise Women Use AI", "url": "https://www.wisewomenuseai.com" },
-  "performer": { "@type": "Person", "name": "Kelly Hartley" },
-  "location": { "@type": "VirtualLocation", "url": "https://www.wisewomenuseai.com/workshop" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "url": "https://www.wisewomenuseai.com/workshop" }
-}
-</script>
 </head>
 <body>
 
@@ -242,211 +116,45 @@
   <div class="nav-actions">
     <a href="/work" class="nav-link">Work with me</a>
     <a href="/blog" class="nav-link">Blog</a>
-    <a href="#register" class="btn-solid">Save your seat</a>
+    <a href="#register" class="btn-solid">Get the details</a>
   </div>
 </nav>
 
-<!-- HERO (DREAM) -->
-<header class="hero">
+<!-- HERO (holding) -->
+<header class="hero" id="register">
   <div class="wrap narrow">
     <div class="reveal">
       <div class="rule"></div>
       <span class="eyebrow">Free live workshop</span>
-      <span class="script">wednesday 12 august</span>
-      <h1>Imagine your content already sorted, and <em>off your mind</em>.</h1>
-      <p class="lead">A free, hands-along hour where you build the one place your content lives, just by talking to Claude. You bring what's in your head. Claude does the sorting. You leave with a real start, not a blank page.</p>
+      <span class="script">coming in september</span>
+      <h1>The next free workshop is <em>on its way</em>.</h1>
+      <p class="lead">Know where you stand in your business, calmly, with AI doing the heavy lifting. Pop your email in and I'll send you the full details and your seat as soon as they're ready. It's on Wednesday 9 September 2026 at 9:30am AEST.</p>
+      <!-- Registration form: Kit ID 9507453, UID 4a313d4988. Same form + cohort tag as the live workshop, so everyone who registers here is already on the list for the reminders. -->
       <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
-        <input type="hidden" name="fields[source]" value="workshop">
+        <input type="hidden" name="fields[source]" value="workshop-holding">
         <div class="fields">
           <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
           <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
         </div>
-        <button type="submit" class="btn btn--filled">Save my seat</button>
+        <button type="submit" class="btn btn--filled">Send me the details</button>
       </form>
-      <p class="micro">Free, live and recorded. Can't make it? Register anyway and I'll send you the replay.</p>
+      <p class="micro">Free, live and recorded. No spam, just the workshop details.</p>
+      <p class="success" id="success">You're on the list. I'll email you the date and your seat as soon as they're set. Keep an eye on your inbox.</p>
     </div>
   </div>
 </header>
 
-<!-- CONTAINED HERO PHOTO -->
-<div class="band reveal">
-  <div class="frame"><img src="/assets/photos/workshop-hero.jpg" width="665" height="1182" alt="Kelly working at her laptop with a cup of tea in natural light" loading="eager"></div>
-</div>
-
-<!-- DREAM (painted) -->
-<section class="dream">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The version I want for you</span>
-    <h2 class="oneline">Picture the Sunday where it's <em>already done</em>.</h2>
-    <p>Next week's posts are sitting in one place, roughed out, waiting. You glance at them, change a line, and close the laptop. The evening is actually yours. No circling, no low hum of the week ahead.</p>
-    <p>And through the week, when an idea turns up in the shower or the car, it has somewhere to go. Nothing good slips away any more, because there's finally a place for it to land.</p>
-    <p>You're not posting more. You're carrying less. That's the whole point of what we're building.</p>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="proofband">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>Why listen to me</span>
-    <p>I built my whole business on good systems, tried and tested, and now they do the running, so my time is my own again. In this hour I show you how to build your first one. I'm not teaching from the top of a mountain, <em>I'm the proof it works</em>.</p>
-  </div>
-</section>
-
-<!-- STACKED PAIN -->
+<!-- WHAT THESE ARE -->
 <section class="panel">
   <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>Sound familiar?</span>
-    <h2 style="margin:1rem 0 0;">Right now, all of it is on you.</h2>
-    <ul class="stack">
-      <li>You sit down to post, and there's nothing there. Just the blank screen and <strong>what do I even say today</strong>.</li>
-      <li>The best idea you had all week arrived while you were driving. By the time you sat down, it was gone.</li>
-      <li>You post for a fortnight, then vanish for a month, and the quiet starts to feel like proof you're not cut out for it.</li>
-      <li>Instagram, Facebook, now Threads as well. You're one woman running a business, not a media company.</li>
-      <li>Sunday evening, and next week's content is already on your chest. Not a word written.</li>
-      <li>And you're holding every bit of it in a head that's already full, some days working through brain fog.</li>
-    </ul>
-    <p class="stack resolve">It isn't that you're bad at content. It's that your content has never had anywhere to live except inside your own head.</p>
-  </div>
-</section>
-
-<!-- SHIFT -->
-<section>
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The shift</span>
-    <h2 style="margin:1rem 0 1.4rem;">This time, you don't build the system on your own.</h2>
-    <p style="margin-bottom:1.3rem;">If you've ever started a content planner, some folder or spreadsheet, and quietly let it die, here's why. It became one more thing for you to keep alive. That isn't a system, that's another job.</p>
-    <span class="script" style="margin:0.4rem 0 1.1rem;">So we're not doing that.</span>
-    <p>In the hour, Claude interviews you about your business, and out of that conversation it names your content pillars and helps you build a simple home for them. You talk, it builds. It's the kind of help a one-woman business could never afford to hire, and now you can.</p>
-  </div>
-</section>
-
-<!-- OFFER 1: THE FREE WORKSHOP -->
-<section class="panel">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The free workshop</span>
-    <h2 class="oneline">In one hour, here's what you'll <em>have</em>.</h2>
+    <span class="eyebrow"><span class="dot"></span>What these hours are like</span>
+    <h2 style="margin:1rem 0 1.4rem;">A calm, hands-along hour. You build the first piece with me.</h2>
+    <p style="margin-bottom:1.3rem;">Once a month I run a free, live workshop for women in business. No hype, no homework, nothing to set up alone. You bring what's in your head, and we use AI to take some of the weight off, together, in real time.</p>
     <ul class="gifts">
-      <li><span class="dot mk"></span><span class="t"><strong>Claude and Notion, connected.</strong> The foundation the whole system sits on, set up together on the day.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>A first pass at your content pillars.</strong> The handful of things you're actually here to talk about, named and on the page instead of swirling around your head.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>A one-page Content Command Centre in Notion.</strong> One calm home for all of it, with a simple calendar you can keep even on a bad week.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>Your first few days, filled in together.</strong> You leave with a real start you can build on, not another blank page.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Live and hands-along.</strong> Build along with me, or come with your camera off and just watch. Both are welcome.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Yours to keep.</strong> You leave with something real you can use again, whether you do anything else or not.</span></li>
+      <li><span class="dot mk"></span><span class="t"><strong>Recorded.</strong> Can't make it live? Register anyway and I'll send you the replay.</span></li>
     </ul>
-    <p style="margin-top:1.8rem;" class="sub">It's a real start, not a finished system, and I'll be honest with you about that on the day. And it's yours whether you go any further or not.</p>
-  </div>
-</section>
-
-<!-- OFFER 2: THE MEMBERSHIP (the room through the door) -->
-<section class="members">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot" style="background:var(--blush)"></span>And if you want the whole thing</span>
-    <h2 style="margin:1rem 0 1.2rem;">The workshop starts it. <em>The membership finishes it.</em></h2>
-    <p class="lead">The hour gets you the first piece. Inside The Unfair Advantage, we build the rest together, at a pace that fits a real life, so the system doesn't just start, it sticks.</p>
-    <ul class="inside">
-      <li>
-        <h3>Your Content System, built in full</h3>
-        <p>A six-part build across the month: lock in your pillars, grow out your full calendar, create a running bank of topics and hooks, and set a posting rhythm that survives a bad week. Guided, one step at a time.</p>
-      </li>
-      <li>
-        <h3>The Content Drop, included</h3>
-        <p>Drop in a filmed clip and it comes back transcribed, with captions written in your voice for each platform and a hook for the opening. Copy them out and post them wherever you like. You bring your own AI keys to run it, which cost very little, and I walk you through setting them up. If you'd rather not post by hand at all, you can add a scheduler later and it will send everything out for you.</p>
-      </li>
-      <li>
-        <h3>A room of women doing the same thing</h3>
-        <p>Monthly workshops, a weekly Power Hour, and people who actually notice when you go quiet. The accountability is half of why it sticks.</p>
-      </li>
-    </ul>
-    <p class="price">The Unfair Advantage is <strong>$49 a month</strong> until the workshop on 12 August, and <strong>$69</strong> after that. Whatever you join at stays yours for good, even as it rises. So if it has been calling you, joining now holds the lower price. No pressure at all: come for the free hour first, and the door is right there at the end.</p>
-  </div>
-</section>
-
-<!-- WHO IS THIS FOR -->
-<section>
-  <div class="wrap narrow reveal">
-    <h2 style="margin:0;">Who is this for?</h2>
-    <div class="foryou-grid">
-      <div class="box yes">
-        <span class="label"><span class="dot"></span>Yes, this is me</span>
-        <ul>
-          <li>You're the one who makes all the content, on top of everything else you carry.</li>
-          <li>You're curious about AI, but you've been burned by a tool that did nothing.</li>
-          <li>You don't want to become a content machine. You just want it off your plate.</li>
-        </ul>
-      </div>
-      <div class="box no">
-        <span class="label">Maybe not this one</span>
-        <ul>
-          <li>You already run a slick, settled content system.</li>
-          <li>You're after a deep technical build.</li>
-          <li>This is the calm, first-step version, on purpose.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section class="details panel">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>The details</span>
-    <h2 style="margin:1rem 0 0;">Everything you need to know</h2>
-    <dl>
-      <div class="row"><dt>When</dt><dd>Wednesday 12 August, 9:30am Melbourne time (AEST). That's Tuesday 11 August, 7:30pm US Eastern. In the UK? Register and I'll send the replay.</dd></div>
-      <div class="row"><dt>How long</dt><dd>About an hour, including time for your questions.</dd></div>
-      <div class="row"><dt>Where</dt><dd>Live online. The link is sent when you register.</dd></div>
-      <div class="row"><dt>Cost</dt><dd>Free.</dd></div>
-      <div class="row"><dt>To build along</dt><dd>A Claude Pro account and a Notion account, and we'll connect them together on the day. Don't have them yet, or would rather just watch? Come as you are and keep the step-by-step to do it after.</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section>
-  <div class="wrap reveal">
-    <div class="about">
-      <div class="portrait" role="img" aria-label="Portrait of Kelly">
-        <picture>
-          <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
-          <img src="/assets/photos/kelly-about.jpg" alt="Kelly Hartley, founder of Wise Women Use AI" width="490" height="613" loading="lazy">
-        </picture>
-      </div>
-      <div>
-        <span class="eyebrow"><span class="dot"></span>Who's running it</span>
-        <h2 style="margin:1rem 0 1.2rem;">Hello, I'm Kelly.</h2>
-        <p style="margin-bottom:1.1rem;">I help women in business use AI so the work stops living entirely in their heads. British, Melbourne-based, tea not coffee, and not at all interested in hype.</p>
-        <p>I've been the woman carrying the whole thing, the content and all of it, in her head. I know the way out, because I've walked it myself, and I'll be right there with you the whole hour.</p>
-        <span class="sig">Kelly</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final" id="register">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot" style="background:var(--blush)"></span>Save your seat</span>
-    <span class="script-light">come and get your content off your plate</span>
-    <h2>Get the <em>first piece</em> built, in one free hour.</h2>
-    <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
-      <input type="hidden" name="fields[source]" value="workshop">
-      <div class="fields">
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-      </div>
-      <button type="submit" class="btn btn--filled">Save my seat</button>
-    </form>
-    <p class="micro">Free, live and recorded. Register and the replay is yours even if you can't make it live.</p>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap narrow reveal">
-    <h2>A few quick questions</h2>
-    <details><summary>Do I need to know anything about AI?</summary><p>No. If you can hold a conversation, you can do this. You talk, Claude does the building.</p></details>
-    <details><summary>Is it really free?</summary><p>Yes, the hour is yours, no strings. Right at the end I'll show you where it goes if you'd like to keep building, and you're very welcome to leave it there.</p></details>
-    <details><summary>Do I have to build anything myself?</summary><p>You build the first piece with me, live, just by talking. You keep the prompt to run again whenever you like.</p></details>
-    <details><summary>What is the membership?</summary><p>The Unfair Advantage. It's where we build the full content system together over the month, with The Content Drop app and a community of women doing the same thing. I'll show you properly at the workshop, no pressure.</p></details>
-    <details><summary>What if I can't make it live?</summary><p>Register and I'll send you the recording.</p></details>
   </div>
 </section>
 
@@ -460,8 +168,6 @@
     <a href="/blog" class="footer-link">Blog</a>
     <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="footer-link">Join the community</a>
     <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
-    <a href="/privacy" class="footer-link">Privacy</a>
-    <a href="/ai-disclosure" class="footer-link">How I use AI</a>
   </div>
   <div class="social-links">
     <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
@@ -477,7 +183,7 @@
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
     </a>
   </div>
-  <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
+  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
 </footer>
 
 <script>
@@ -492,11 +198,14 @@
 </script>
 
 <script>
+  // Same pattern as the live workshop page: post to Kit in the background, then
+  // redirect to the thank-you page. During the holding period /workshop-thankyou is
+  // the "you're on the list" page.
   document.querySelectorAll("form.register-form").forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button[type=submit]");
-      if (btn) { btn.disabled = true; btn.textContent = "Saving your seat…"; }
+      if (btn) { btn.disabled = true; btn.textContent = "Adding you…"; }
       fetch(form.action, {
         method: "POST",
         body: new URLSearchParams(new FormData(form)),
@@ -508,6 +217,5 @@
   });
 </script>
 
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
 </body>
 </html>
