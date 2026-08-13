@@ -22,7 +22,7 @@ and installed, so you duplicate it and it is running.
 - [About Kelly Hartley](https://www.wisewomenuseai.com/about): Who Kelly is and why she built WWUAI
 
 ## Community and membership
-- [Skool Community](https://www.wisewomenuseai.com/community): Free to join. The Unfair Advantage is the paid membership inside ($49 USD/month, billed by Skool) with the full library of tools, prompts and workflows
+- [Skool Community](https://www.wisewomenuseai.com/community): Free to join. The Unfair Advantage is the paid membership inside ($69 USD/month, billed by Skool) with the full library of tools, prompts and workflows
 - [Free monthly workshop](https://www.wisewomenuseai.com/workshop): Live online workshop, one hour, free. Kelly shows the real tools and walks people through setting them up, so attendees leave having built the first piece themselves
 
 ## Products
