@@ -48,6 +48,37 @@ Three things were inconsistent across the site before this date. Keep them consi
 - `about.html` — **Restored 1 July 2026.** The page existed but had no route (so `/about` 404'd). Added the `/about` route; now live at `/about`.
 - `posts/the-thing-holding-your-ai-back-isnt-your-prompts.html` — **RETIRED 1 July 2026** (deleted; it was a Hub Install sales piece). URL 301-redirects to `/blog`; removed from the blog listing and sitemap.
 
+## Second SEO/AEO + mobile pass (shipped 12-13 August 2026)
+
+Read `reference_aeo_what_works` in memory before doing any more AEO here. **Do not add
+FAQ schema and do not expand `llms.txt`;** both were checked against primary sources and
+neither does anything (Google killed FAQ rich results in May 2026, and no AI system reads
+llms.txt). Existing markup stays, because unused markup is harmless.
+
+- **`/workshop` is deliberately INDEXABLE and carries Event JSON-LD.** It had `noindex`
+  while also sitting in sitemap.xml, and the only Event schema was stranded on
+  `masterclass.html`, which 301s away. The noindex lived in
+  `~/.claude/skills/workshop/templates/workshop-holding.template.html`, so a page-level fix
+  would have been wiped by the monthly rollover. **Never re-add noindex there.** The
+  thank-you pages keep theirs.
+- **`sitemap.xml` is GENERATED.** See the maintenance rule below.
+- **Fonts: check a Google Fonts URL actually returns 200.** Eight pages had `wght,400`
+  instead of `wght@0,400`, which is an HTTP 400, so all three brand fonts silently failed
+  and those pages rendered in system fallbacks. Six pages also set `--sans` to Montserrat,
+  which this site never loads. Both fixed; do not reintroduce either.
+- **`assets/social/og-card.jpg` is the sitewide share image** (1200x630, ~95KB). Before
+  this, `og:image` pointed at `kelly-hero.jpg`, a 1152x2048 **portrait** that is actually a
+  PNG with a `.jpg` extension, so every Facebook and LinkedIn preview was cropped through
+  Kelly's face. To change the card, edit `assets/social/og-card.source.html`, re-render at
+  exactly 1200x630 and export as JPEG. **Never edit the JPEG directly.**
+- **No em dashes anywhere.** 112 were removed. Page titles use the middot separator.
+- **Mobile:** never hide nav links with `.nav-link + .nav-link { display: none; }`. That is
+  an adjacent-sibling selector and it deleted every link after the first, so Blog and Work
+  with me were unreachable on a phone. All form inputs are **16px minimum**, or iOS zooms
+  the page the moment someone taps an email field.
+- **Never add analytics or a tracking pixel.** `/privacy` and `llms.txt` both promise none,
+  and that is a factual claim. If Search Console is wanted, verify by **DNS TXT record**.
+
 ## SEO / AEO (audit shipped 24 July 2026)
 - `work.html` is the "AI consultant Melbourne" target page: title, hero copy, FAQ section, and ProfessionalService + FAQPage schema all carry it. Don't retitle it away from that phrase without checking with Kelly.
 - Person schema (about/index) says "AI Consultant and Educator" and includes the full sameAs set (LinkedIn: linkedin.com/in/wisewomenuseai). Keep the social list in sync across index/about/work.
