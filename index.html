@@ -12,7 +12,7 @@
   <meta property="og:description" content="No hype. No pressure. Just AI systems that actually work for real business women in their 40s and 50s.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -834,7 +834,7 @@
       border: 1px solid rgba(250,248,246,0.15);
       border-radius: 2px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14px;
+      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
       font-weight: 300;
       color: var(--bg);
       outline: none;
@@ -895,7 +895,19 @@
 
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
-      .nav-wordmark, .nav-link + .nav-link { display: none; }
+      /* Mobile nav. This line used to read
+         `.nav-wordmark, .nav-link + .nav-link { display: none; }`. Because `+` is
+         an adjacent-sibling selector it deleted every nav link AFTER the first,
+         so on a phone only Workshop survived and Blog and Work with me were
+         unreachable with no menu to open them. Fixed 12 Aug 2026. The wordmark
+         still hides (the logo carries the brand); the links compact instead of
+         disappearing, and nav wraps to a second row rather than overflowing on
+         very narrow screens. Do not reintroduce a `display: none` on nav links. */
+      .nav-wordmark { display: none; }
+      nav { height: auto; min-height: 64px; padding: 8px 20px; flex-wrap: wrap; row-gap: 2px; }
+      .nav-actions { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-link { font-size: 11px; letter-spacing: 0.04em; }
+      .btn-solid { font-size: 10px; padding: 8px 12px; letter-spacing: 0.08em; }
 
       .hero { grid-template-columns: 1fr; padding: 48px 24px 64px; gap: 48px; min-height: auto; }
       .hero-right { order: -1; }

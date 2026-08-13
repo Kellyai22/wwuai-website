@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+  Source for assets/social/og-card.jpg, the site-wide Open Graph share image.
+
+  Rendered at exactly 1200x630 and screenshotted. To change it: edit this file,
+  then re-render with Playwright at 1200x630 and export as JPEG.
+
+  Why it exists: og:image was pointing at kelly-hero.jpg, a 1152x2048 PORTRAIT
+  saved as PNG with a .jpg extension, on 22 pages. Facebook and LinkedIn want
+  roughly 1.91:1, so every share preview was hard-cropped through her face.
+  hub.html carried a TODO for exactly this card.
+
+  Colours come from ~/.claude/wwuai-os/config/brand-tokens.json. Do not hardcode
+  a brand hex anywhere else; if the palette changes, change it here too.
+-->
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500&family=Allison&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bordeaux: #3A131B;
+    --pearl:    #FAF8F6;
+    --blush:    #E2B592;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: var(--bordeaux);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 452px;
+  }
+
+  /* ---- left: the words ---- */
+  .copy {
+    padding: 72px 0 72px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pearl);
+    opacity: 0.62;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 38px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--blush);
+    flex: none;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    color: var(--pearl);
+    /* 64px against the 19px sub is a 3.4x step, well past the 1.25 minimum */
+    font-size: 64px;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+  }
+  /* The script line is set optically, not on the same baseline rhythm:
+     Allison sits high and small at a given px size, so it needs its own scale. */
+  .script {
+    display: block;
+    font-family: 'Allison', cursive;
+    font-size: 92px;
+    line-height: 0.82;
+    color: var(--blush);
+    margin: 6px 0 2px -4px;
+  }
+
+  .sub {
+    margin-top: 34px;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--pearl);
+    opacity: 0.78;
+    max-width: 30ch;
+  }
+
+  .url {
+    margin-top: auto;
+    padding-top: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blush);
+  }
+
+  /* ---- right: the photo ---- */
+  .shot { position: relative; overflow: hidden; }
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Source is a tall selfie with her hand reaching toward the lens. Pull the
+       crop up and slightly left so her face leads and the hand reads as a
+       gesture at the edge rather than the subject. */
+    object-position: 44% 14%;
+    transform: scale(1.06);
+    transform-origin: 50% 20%;
+  }
+  /* Feathered seam. The photo's background is near-white, so a hard edge against
+     Bordeaux reads as two images stuck together. A long, low-contrast ramp
+     blends the join; a short one leaves a visible vertical band. */
+  .shot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--bordeaux) 0%,
+      rgba(58, 19, 27, 0.94) 8%,
+      rgba(58, 19, 27, 0.62) 22%,
+      rgba(58, 19, 27, 0.28) 38%,
+      rgba(58, 19, 27, 0.08) 54%,
+      rgba(58, 19, 27, 0) 68%
+    );
+  }
+  /* Settle the near-white photo into the palette instead of letting it glare. */
+  .shot img { filter: saturate(0.94) contrast(1.02); }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <p class="eyebrow">Wise Women Use AI</p>
+    <h1>
+      Your business.
+      <span class="script">Your life.</span>
+      Your time back.
+    </h1>
+    <p class="sub">Practical AI systems for women in business, taught by someone who runs hers on them.</p>
+    <p class="url">wisewomenuseai.com</p>
+  </div>
+
+  <div class="shot">
+    <img src="../photos/kelly-hero.jpg" alt="Kelly Hartley">
+  </div>
+</body>
+</html>

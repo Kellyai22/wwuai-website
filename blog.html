@@ -10,11 +10,11 @@
   <meta property="og:description" content="Honest, practical AI tips for women in business. No hype, no jargon. The WWUAI newsletter archive.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/blog">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
 
@@ -437,9 +437,28 @@
     .read-link:hover { color: var(--bordeaux); border-color: var(--bordeaux); }
 
     /* ── Mobile ── */
+    .cta-short { display: none; }
+    .cta-full  { display: inline; }
+
     @media (max-width: 768px) {
       nav { padding: 0 24px; }
-      .nav-wordmark, .nav-link + .nav-link { display: none; }
+      /* Mobile nav. This line used to read
+         `.nav-wordmark, .nav-link + .nav-link { display: none; }`. Because `+` is
+         an adjacent-sibling selector it deleted every nav link AFTER the first,
+         so on a phone only Workshop survived and Blog and Work with me were
+         unreachable with no menu to open them. Fixed 12 Aug 2026. The wordmark
+         still hides (the logo carries the brand); the links compact instead of
+         disappearing, and nav wraps to a second row rather than overflowing on
+         very narrow screens. Do not reintroduce a `display: none` on nav links. */
+      .nav-wordmark { display: none; }
+      nav { height: auto; min-height: 64px; padding: 8px 20px; flex-wrap: wrap; row-gap: 2px; }
+      .nav-actions { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .nav-link { font-size: 11px; letter-spacing: 0.04em; }
+      .btn-solid { font-size: 10px; padding: 8px 12px; letter-spacing: 0.08em; }
+      /* The long CTA label pushed the nav onto a second row at 375px, giving a
+         117px sticky header. Same link, shorter label on a phone. */
+      .cta-short { display: inline; }
+      .cta-full  { display: none; }
 
       .page-header { padding: 56px 24px 48px; }
       .filter-bar { padding: 20px 24px; }
@@ -461,9 +480,10 @@
       <span class="nav-wordmark">Wise Women Use AI</span>
     </a>
     <div class="nav-actions">
+      <a href="/workshop" class="nav-link">Workshop</a>
       <a href="/blog" class="nav-link" style="color:var(--ink);">Blog</a>
       <a href="/work" class="nav-link">Work with me</a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join the community</a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid"><span class="cta-full">Join the community</span><span class="cta-short">Join free</span></a>
     </div>
   </nav>
 
@@ -497,7 +517,7 @@
          - href on the read-link (link to your Substack post URL)
          ================================================================ -->
 
-    <!-- Empty state — shown only when no posts match the current filter -->
+    <!-- Empty state, shown only when no posts match the current filter -->
     <div class="empty-state" id="empty-state" style="display:none;">
       <p>Nothing here yet for this pillar.</p>
     </div>

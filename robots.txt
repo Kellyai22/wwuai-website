@@ -1,5 +1,48 @@
+# Wise Women Use AI — wisewomenuseai.com
+# Everything is open. The named groups below are documentation as much as
+# instruction: they record which bot does what, so a future edit does not
+# accidentally block the ones that decide whether this site can be CITED in an
+# AI answer. Reviewed 12 August 2026.
+
 User-agent: *
 Allow: /
+
+# --- Search and citation bots -------------------------------------------
+# These are the ones that matter for being quoted and linked in AI answers.
+# Blocking any of these removes the site from that assistant's answers.
+
+# ChatGPT search results
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT fetching a page live, because a user asked about it
+User-agent: ChatGPT-User
+Allow: /
+
+# Claude search results
+User-agent: Claude-SearchBot
+Allow: /
+
+# Claude fetching a page live, because a user asked about it
+User-agent: Claude-User
+Allow: /
+
+# Perplexity. Perplexity states it does not crawl for model training.
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI Overviews and AI Mode are features of Google Search and are
+# governed by Googlebot, NOT by Google-Extended. A page must be indexed and
+# eligible for a snippet to appear in them. There is no separate opt-in.
+User-agent: Googlebot
+Allow: /
+
+# --- Model training crawlers --------------------------------------------
+# These feed model training, not live answers. Allowed here deliberately.
+# Blocking them would not affect whether this site is cited in AI answers.
 
 User-agent: GPTBot
 Allow: /
@@ -7,9 +50,9 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
+# Google-Extended is a robots.txt control token only. No crawler sends it as a
+# user agent. It governs Gemini training and grounding, and has no effect on
+# AI Overviews.
 User-agent: Google-Extended
 Allow: /
 

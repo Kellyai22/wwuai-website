@@ -26,10 +26,6 @@
       "dest": "/posts/$1.html"
     },
     {
-      "src": "/emails",
-      "dest": "/emails.html"
-    },
-    {
       "src": "/workshop",
       "dest": "/workshop.html"
     },
@@ -182,6 +178,10 @@
       "dest": "/slop.html"
     },
     {
+      "src": "/architect",
+      "dest": "/architect.html"
+    },
+    {
       "src": "/review",
       "dest": "/review.html"
     },
@@ -212,14 +212,6 @@
     {
       "src": "/blog",
       "dest": "/blog.html"
-    },
-    {
-      "src": "/voice",
-      "dest": "/voice.html"
-    },
-    {
-      "src": "/thankyou",
-      "dest": "/thankyou.html"
     },
     {
       "src": "/thank-you",

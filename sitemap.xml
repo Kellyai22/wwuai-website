@@ -2,128 +2,168 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.wisewomenuseai.com/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/community</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/work</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/workshop</loc>
+    <lastmod>2026-08-12</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/about</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.wisewomenuseai.com/workshop</loc>
-    <lastmod>2026-07-22</lastmod>
+    <loc>https://www.wisewomenuseai.com/blog</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/content-advantage</loc>
+    <lastmod>2026-08-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/notion-advantage</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.wisewomenuseai.com/guide</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/starter</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/switch</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/calm</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/backup</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/review</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/dream</loc>
-    <lastmod>2026-07-22</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/blog</loc>
-    <lastmod>2026-07-24</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/posts/your-content-lives-in-one-place-your-head</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.wisewomenuseai.com/posts/7-roles-just-me</loc>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/ai-for-solopreneurs-australia</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/posts/7-roles-just-me</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.wisewomenuseai.com/posts/youre-measuring-ai-wrong</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/posts/we-dont-want-volume-we-want-clarity</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.wisewomenuseai.com/posts/the-lie-ai-influencers-keep-telling-you</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://www.wisewomenuseai.com/posts/building-your-business-on-part-time-hours</loc>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/it-was-never-a-discipline-problem</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/the-exhausting-part-isnt-the-writing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/posts/the-lie-ai-influencers-keep-telling-you</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/posts/we-dont-want-volume-we-want-clarity</loc>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/what-i-ask-claude-before-every-big-decision</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/you-shouldnt-feel-ashamed-for-using-ai-in-your-content</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/posts/you-were-never-meant-to-hold-all-of-it</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/posts/your-content-lives-in-one-place-your-head</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/posts/youre-measuring-ai-wrong</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/backup</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/calm</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/carousel</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/dream</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/guide</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/hours</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/links</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/review</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/slop</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/starter</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/switch</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/tools/claude-projects</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/tools/first-ai-workflow</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/ai-disclosure</loc>

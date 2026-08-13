@@ -482,7 +482,7 @@
 (function () {
   var a = document.querySelector('a[href="TEMPLATE_URL_NOT_SET"]');
   if (!a) return;
-  a.textContent = 'TEMPLATE LINK NOT SET — do not go live';
+  a.textContent = 'TEMPLATE LINK NOT SET, do not go live';
   a.setAttribute('aria-disabled', 'true');
   a.style.cssText += ';background:#8A1F2E;border-color:#8A1F2E;color:#FAF8F6;cursor:not-allowed;';
   a.addEventListener('click', function (e) { e.preventDefault(); });

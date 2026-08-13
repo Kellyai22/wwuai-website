@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/architect">
+  <title>The Architect Advantage | Founding cohort, September 2026 | Wise Women Use AI</title>
+  <meta name="description" content="Four weeks, ten women, and me in the room. We map what you actually do all week, sort every recurring job, and build the first systems so they are running before we finish. Doors open 2 September.">
+  <meta property="og:locale" content="en_AU">
+
+  <meta property="og:title" content="The Architect Advantage, founding cohort, September 2026">
+  <meta property="og:description" content="Four weeks, ten women, and me in the room. We map what you actually do all week, then build the systems so the business stops running on you. Doors open 2 September.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/architect">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Architect Advantage, founding cohort, September 2026">
+  <meta name="twitter:description" content="Four weeks, ten women, and me in the room. We map what you actually do all week, then build the systems so the business stops running on you.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/logos/WWUAI%20Logo%20OGTP.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --pearl:      #FAF8F6;
+      --bordeaux:   #3A131B;
+      --clay:       #DDA983;
+      --blush:      #E2B592;
+      --driftwood:  #908486;
+      --cream-dark: #E1DAD7;
+      --white:      #FFFFFF;
+      --warm-tint:  rgba(221, 169, 131, 0.14);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --mono: 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --shadow-soft: 0 18px 44px -24px rgba(58, 19, 27, 0.28);
+      --shadow-lift: 0 26px 60px -28px rgba(58, 19, 27, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--pearl);
+      color: var(--bordeaux);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 640px; }
+
+    /* ── Top brand bar ─────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand img { height: 26px; width: auto; }
+    .brand span {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .topbar-note {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      font-weight: 500;
+    }
+
+    /* ── Sticky section nav ────────────────────── */
+    .section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 246, 0.86);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
+      backdrop-filter: saturate(150%) blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+    }
+    .brand-mini {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      font-weight: 500;
+    }
+    .section-links { display: none; gap: 30px; list-style: none; }
+    .section-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--driftwood);
+      padding: 6px 0;
+      border-bottom: 1.5px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+    .section-links a:hover,
+    .section-links a.current { color: var(--bordeaux); border-color: var(--clay); }
+    .nav-cta {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 9px 18px;
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    }
+    .nav-cta:hover { background: var(--bordeaux); color: var(--pearl); }
+    .nav-cta:active { transform: translateY(1px); }
+
+    /* When the guide is unlocked, swap the nav CTA for the section links (desktop) */
+    @media (min-width: 761px) {
+      .section-links { display: flex; }
+    }
+
+    /* ── Hero ──────────────────────────────────── */
+    .hero { padding: 68px 0 40px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 22px;
+    }
+    .eyebrow b { color: var(--bordeaux); font-weight: 600; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(38px, 6.4vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+      max-width: 15ch;
+    }
+    h1 em { color: var(--clay); font-weight: 400; }
+    .hero-sub {
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.72;
+      color: var(--bordeaux);
+      max-width: 60ch;
+      margin-bottom: 34px;
+    }
+    .hero-sub .soft { color: var(--driftwood); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 16px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover { background: #2c0e15; box-shadow: var(--shadow-lift); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--driftwood);
+      margin-top: 2px;
+      max-width: 52ch;
+      line-height: 1.6;
+    }
+
+    /* ── Deadline banner ───────────────────────── */
+    .deadline {
+      margin: 8px 0 4px;
+      background: var(--warm-tint);
+      border: 1px solid rgba(221, 169, 131, 0.5);
+      border-radius: 4px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .deadline-dot {
+      flex-shrink: 0;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bordeaux);
+      box-shadow: 0 0 0 4px rgba(58, 19, 27, 0.12);
+    }
+    .deadline p { font-size: 14.5px; font-weight: 400; color: var(--bordeaux); line-height: 1.55; }
+    .deadline b { font-weight: 600; }
+
+    /* ── Email gate ────────────────────────────── */
+    .gate { padding: 40px 0 56px; }
+    body.unlocked #gate { display: none; }
+    .gate-card {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      border-radius: 8px;
+      padding: 46px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-lift);
+    }
+    .gate-card h2 { color: var(--pearl); margin-bottom: 12px; }
+    .gate-card .gate-line {
+      font-size: 16px;
+      color: rgba(250, 248, 246, 0.82);
+      line-height: 1.65;
+      max-width: 46ch;
+      margin: 0 auto 26px;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 380px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: -4px;
+    }
+    .gate-form input {
+      font-family: var(--body);
+      font-size: 15px;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(250, 248, 246, 0.28);
+      background: rgba(250, 248, 246, 0.06);
+      color: var(--pearl);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .gate-form input::placeholder { color: rgba(250, 248, 246, 0.5); }
+    .gate-form input:focus { border-color: var(--blush); background: rgba(250, 248, 246, 0.1); }
+    .gate-form button {
+      margin-top: 6px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      background: var(--blush);
+      border: 1.5px solid var(--blush);
+      padding: 15px 22px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .gate-form button:hover { background: var(--clay); border-color: var(--clay); }
+    .gate-form button:active { transform: translateY(1px); }
+    .gate-form button:disabled { opacity: 0.7; cursor: default; }
+    .gate-note { font-size: 12px; color: rgba(250, 248, 246, 0.6); margin-top: 16px; }
+    .gate-reassure {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--driftwood);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Unlocked guide ────────────────────────── */
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section.block { padding: 46px 0; }
+    section.block + section.block { border-top: 1px solid var(--cream-dark); }
+    .kicker {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--clay);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .lead { font-size: 16.5px; line-height: 1.78; color: var(--bordeaux); max-width: 62ch; }
+    .lead strong { font-weight: 600; }
+    .lead .fig {
+      font-weight: 500;
+      color: var(--bordeaux);
+      border-bottom: 1.5px solid var(--clay);
+      white-space: nowrap;
+    }
+    .jobs-lead { margin-bottom: 6px; }
+
+    /* ── A job (title + why + its prompt) ──────── */
+    .job {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 26px;
+      padding: 34px 0;
+      border-top: 1px solid var(--cream-dark);
+      align-items: start;
+    }
+    .job:first-of-type { border-top: none; }
+    .job-num {
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 58px);
+      line-height: 0.9;
+      font-weight: 400;
+      color: var(--clay);
+    }
+    .job-title {
+      font-family: var(--display);
+      font-size: clamp(21px, 2.8vw, 26px);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .job-why { font-size: 16px; line-height: 1.75; color: var(--bordeaux); max-width: 58ch; }
+
+    /* ── Prompt card ───────────────────────────── */
+    .prompt {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .prompt-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      background: var(--warm-tint);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .prompt-top .p-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+    }
+    .btn-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: none;
+      padding: 9px 15px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-copy:hover { background: #2c0e15; }
+    .btn-copy:active { transform: translateY(1px); }
+    .btn-copy.copied { background: var(--clay); color: var(--bordeaux); }
+    .btn-copy svg { width: 13px; height: 13px; }
+    .prompt-body {
+      padding: 20px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.72;
+      color: var(--bordeaux);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* ── Skool CTA ─────────────────────────────── */
+    /* ── Full-bleed Bordeaux band ───────────────
+       Bordeaux only reads as wine when it is a background; as text it reads
+       near-black. Two bands on this page, always separated by a light section
+       so they never merge into one slab. Italic emphasis on dark = Blush. */
+    .band {
+      background: var(--bordeaux);
+      color: var(--pearl);
+      padding: 58px 0;
+    }
+    .band .kicker { color: var(--blush); }
+    .band h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(26px, 4.2vw, 38px);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .band em { color: var(--blush); font-style: italic; }
+    .band p { color: rgba(250, 248, 246, 0.86); }
+    .band .lead { font-size: 17px; }
+
+    /* Even grids only: 2 across, never 3 */
+    .owns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 30px;
+    }
+    @media (min-width: 680px) { .owns { grid-template-columns: 1fr 1fr; gap: 26px 34px; } }
+    .own-n {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--blush);
+      margin-bottom: 6px;
+    }
+    .own h3 {
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 6px;
+      color: var(--pearl);
+    }
+    .own p { font-size: 14.5px; line-height: 1.65; }
+
+    /* ── Fit: for you / not for you (2 across, never 3) ── */
+    .fit {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      margin-top: 28px;
+    }
+    @media (min-width: 700px) { .fit { grid-template-columns: 1fr 1fr; gap: 34px; } }
+    .fit-col {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 28px 26px;
+    }
+    .fit-col h3 {
+      font-family: var(--body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: var(--driftwood);
+    }
+    .fit-col.yes h3 { color: var(--bordeaux); }
+    .fit-col ul { list-style: none; }
+    .fit-col li {
+      font-size: 15px;
+      line-height: 1.6;
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .fit-col li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--display);
+      font-style: italic;
+    }
+    .fit-col.yes li::before { content: "\2713"; color: var(--clay); font-style: normal; }
+    .fit-col.no li::before { content: "\00D7"; color: var(--driftwood); font-style: normal; font-size: 17px; }
+
+    /* ── What's included ───────────────────────── */
+    .incl { margin-top: 26px; }
+    .incl-row {
+      display: flex;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      align-items: baseline;
+    }
+    .incl-row:last-child { border-bottom: none; }
+    .incl-n {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--clay);
+      font-size: 17px;
+      min-width: 26px;
+    }
+    .incl-row h3 {
+      font-family: var(--body);
+      font-size: 15.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .incl-row p { font-size: 14.5px; color: var(--driftwood); line-height: 1.62; }
+
+    /* ── FAQ ───────────────────────────────────── */
+    .faq { margin-top: 24px; }
+    .faq details {
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 4px 0;
+    }
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 17px 34px 17px 0;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.18s ease;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 15px;
+      font-size: 21px;
+      font-weight: 300;
+      color: var(--clay);
+      transition: transform 0.18s ease;
+      line-height: 1;
+    }
+    .faq details[open] summary::after { content: "\2013"; }
+    .faq summary:hover { color: var(--clay); }
+    .faq .faq-a { padding: 0 8px 20px 0; font-size: 15px; color: var(--driftwood); line-height: 1.72; }
+
+    /* ── The honest note ───────────────────────── */
+    .honest {
+      margin-top: 30px;
+      border-left: 2px solid var(--clay);
+      padding: 4px 0 4px 24px;
+    }
+    .honest p { font-size: 16px; line-height: 1.74; }
+    .honest p + p { margin-top: 14px; }
+
+    /* ── Price ─────────────────────────────────── */
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 34px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      margin-top: 22px;
+    }
+    .price-founding {
+      font-family: var(--display);
+      font-size: clamp(38px, 7vw, 52px);
+      line-height: 1;
+      color: var(--bordeaux);
+    }
+    .price-founding span { font-size: 20px; vertical-align: super; }
+    .price-was {
+      font-size: 14px;
+      color: var(--driftwood);
+      margin-top: 10px;
+      letter-spacing: 0.01em;
+    }
+    .price-was b { color: var(--bordeaux); font-weight: 600; }
+    .price-note {
+      font-size: 14px;
+      color: var(--driftwood);
+      margin-top: 16px;
+      max-width: 42ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .seats {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--bordeaux);
+      border: 1px solid var(--clay);
+      border-radius: 2px;
+      padding: 9px 16px;
+    }
+
+    .skool {
+      margin: 8px 0 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 44px 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .skool h2 { margin-bottom: 12px; }
+    .skool p { color: var(--bordeaux); font-size: 16px; line-height: 1.7; max-width: 48ch; margin: 0 auto 24px; }
+    .btn-skool {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pearl);
+      background: var(--bordeaux);
+      border: 1.5px solid var(--bordeaux);
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.08s ease;
+    }
+    .btn-skool:hover { background: #2c0e15; }
+    .btn-skool:active { transform: translateY(1px); }
+    .btn-skool svg { width: 15px; height: 15px; }
+
+    /* ── Footer ────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 30px 24px 44px;
+      text-align: center;
+    }
+    .foot-brand {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      margin-bottom: 8px;
+    }
+    .foot-links { font-size: 12px; color: var(--driftwood); }
+    .foot-links a { border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .foot-links a:hover { border-color: var(--driftwood); }
+
+    /* ── Responsive ────────────────────────────── */
+    @media (max-width: 760px) {
+      .topbar { padding: 14px 20px; }
+      .topbar-note { display: none; }
+      .section-nav-inner { justify-content: space-between; }
+      .hero { padding: 44px 0 32px; }
+      .job { grid-template-columns: 1fr; gap: 4px; padding: 28px 0; }
+      .job-num { font-size: 40px; margin-bottom: 6px; }
+      .gate-card { padding: 34px 22px; }
+      .skool { padding: 34px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body.unlocked #guide { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand bar -->
+  <div class="topbar">
+    <a href="/" class="brand">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
+      <span>Wise Women Use AI</span>
+    </a>
+    <span class="topbar-note">Founding cohort</span>
+  </div>
+
+  <!-- Sticky section nav -->
+  <nav class="section-nav" aria-label="On this page">
+    <div class="section-nav-inner">
+      <span class="brand-mini">The Architect Advantage</span>
+      <ul class="section-links">
+        <li><a href="#what">What it is</a></li>
+        <li><a href="#weeks">The four weeks</a></li>
+        <li><a href="#included">What's included</a></li>
+        <li><a href="#seats">The seats</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;&middot;&nbsp; Founding cohort, September 2026</p>
+      <h1>You're not running the business. You're <em>working in it</em>.</h1>
+      <p class="hero-sub">
+        There's a difference between owning the thing and being the one it all runs through, and most of us end up on the wrong side of it without ever deciding to. <span class="soft">Four weeks, ten women, and me live in the room with you. We map what you actually do all week, sort every recurring job, and build the first systems so they're running before we finish.</span>
+      </p>
+      <p class="hero-note">Four live sessions, Mondays from 8 September. All recorded and yours to keep. Ten seats.</p>
+    </div>
+  </header>
+
+  <!-- Deadline banner -->
+  <div class="wrap">
+    <div class="deadline">
+      <span class="deadline-dot" aria-hidden="true"></span>
+      <p><b>Ten seats, and the doors open on 2 September.</b> The waitlist gets first look and the founding rate.</p>
+    </div>
+  </div>
+
+  <!-- Band 1: the proof -->
+  <section class="band">
+    <div class="wrap wrap-narrow">
+      <p class="kicker">Before I ask you to pay for it</p>
+      <h2>I'm running the whole thing on <em>my own business</em>, in public, first.</h2>
+      <p class="lead">
+        Twenty-three days, start to finish, on Instagram. The audit, the decisions, the builds, and the bits that break. By the time the doors open you'll have watched the exact method run on a real business, so you won't have to take my word for any of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- What it is -->
+  <section class="block" id="what">
+    <div class="wrap wrap-narrow">
+      <p class="kicker">What it is</p>
+      <h2>Done with you, live, on your business</h2>
+      <p class="lead">
+        This isn't a course you watch and it isn't a template you download. Ten of us on a call together, four weeks, working on your actual business while I'm there with you. You bring the mess you already have, and we sort it in the room.
+      </p>
+      <p class="lead" style="margin-top:16px">
+        Ten is the cap because that's roughly where a call stops being a room and starts being a webinar. At ten I can still get to everyone.
+      </p>
+      <p class="lead" style="margin-top:16px">
+        Every session is recorded, so if life lands on a Monday you're not behind, and you keep the recordings afterwards.
+      </p>
+    </div>
+  </section>
+
+  <!-- The four weeks -->
+  <section class="block" id="weeks">
+    <div class="wrap">
+      <p class="kicker">The four weeks</p>
+      <h2>Audit, decide, build, and then it's running</h2>
+      <p class="jobs-lead">One live 90-minute session a week, recorded. A space to ask things in between. No discovery call to sit through before you can buy.</p>
+
+      <div class="job">
+        <div class="job-num">1</div>
+        <div>
+          <h3 class="job-title">Everything you actually do, on paper</h3>
+          <p class="job-why">Not the job description, the real week. Every recurring task, every thing only you know how to do, every place the whole business stops if you're sick. Most people have never seen it written down, and it's usually the first shock.</p>
+          <p class="job-why" style="margin-top:10px"><b>You leave with:</b> your business mapped, and the honest list of where you're the single point of failure.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-num">2</div>
+        <div>
+          <h3 class="job-title">Six decisions, one for every job on the list</h3>
+          <p class="job-why">Keep it, get AI to assist it, turn it into a system, automate it, hand it to someone, or delete it. Every recurring task goes into exactly one, and you'll be surprised how much lands in the last one.</p>
+          <p class="job-why" style="margin-top:10px"><b>You leave with:</b> every job decided, and the three worth building first.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-num">3</div>
+        <div>
+          <h3 class="job-title">Build the first ones, live</h3>
+          <p class="job-why">We build, together, in the session. Including the bits that break, because they will and you should see what that looks like when it isn't a polished demo. You leave the week with things actually running, not notes about things to run.</p>
+          <p class="job-why" style="margin-top:10px"><b>You leave with:</b> at least three systems built by you and working.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-num">4</div>
+        <div>
+          <h3 class="job-title">What changed, and what you build next</h3>
+          <p class="job-why">In hours and specifics, not vibes. Then the plan for the rest, written so it still makes sense to you in six months when I'm not sitting there.</p>
+          <p class="job-why" style="margin-top:10px"><b>You leave with:</b> the before and after, and a plan you can actually follow on your own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 2: what you own -->
+  <section class="band">
+    <div class="wrap">
+      <p class="kicker">When we finish</p>
+      <h2>You own all of it. <em>It doesn't expire.</em></h2>
+      <div class="owns">
+        <div class="own">
+          <div class="own-n">i</div>
+          <h3>Your business, mapped</h3>
+          <p>Everything you do in a week, written down and sorted. The document people pay consultants for and rarely get.</p>
+        </div>
+        <div class="own">
+          <div class="own-n">ii</div>
+          <h3>Every job, decided</h3>
+          <p>Each recurring task sitting under keep, assist, systemise, automate, delegate or delete. No more carrying the question.</p>
+        </div>
+        <div class="own">
+          <div class="own-n">iii</div>
+          <h3>At least three systems running</h3>
+          <p>Built by you, in the sessions, and working when you leave. Not a folder of things you mean to set up.</p>
+        </div>
+        <div class="own">
+          <div class="own-n">iv</div>
+          <h3>The recordings, and the room</h3>
+          <p>Every session kept, and nine other women who watched you build yours while you watched them build theirs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="block" id="fit">
+    <div class="wrap">
+      <h2>Before you decide</h2>
+      <div class="fit">
+        <div class="fit-col yes">
+          <h3>This is for you if</h3>
+          <ul>
+            <li>You're already in business and it's already working. The problem isn't ideas or effort.</li>
+            <li>Every job still comes back to you, and you can feel it.</li>
+            <li>You've used AI a bit, in bits, and never turned it into anything that runs on its own.</li>
+            <li>You want the thing built, not explained.</li>
+            <li>You can make Monday sessions, or you're happy catching the recording.</li>
+          </ul>
+        </div>
+        <div class="fit-col no">
+          <h3>This isn't for you if</h3>
+          <ul>
+            <li>You're just starting out. The free workshop is the better door and it costs nothing.</li>
+            <li>You want me to build it for you. This is done with you, and you'll be doing the building.</li>
+            <li>You want to watch four sessions and not open your laptop in between.</li>
+            <li>You're hoping AI does it all without you learning how to point it at things.</li>
+            <li>September is already a write-off. Come to the next one instead.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="block" id="included">
+    <div class="wrap wrap-narrow">
+      <h2>What's included</h2>
+      <div class="incl">
+        <div class="incl-row">
+          <div class="incl-n">i</div>
+          <div>
+            <h3>Four live 90-minute sessions</h3>
+            <p>Mondays, from 8 September. Small enough that you get airtime, not a chat window.</p>
+          </div>
+        </div>
+        <div class="incl-row">
+          <div class="incl-n">ii</div>
+          <div>
+            <h3>Every session recorded, yours to keep</h3>
+            <p>Miss one and you're not behind. Keep them afterwards and rebuild any time.</p>
+          </div>
+        </div>
+        <div class="incl-row">
+          <div class="incl-n">iii</div>
+          <div>
+            <h3>Questions answered between sessions</h3>
+            <p>You get stuck on a Wednesday, you ask on the Wednesday. You don't sit on it until Monday.</p>
+          </div>
+        </div>
+        <div class="incl-row">
+          <div class="incl-n">iv</div>
+          <div>
+            <h3>The prompts, files and set-ups we use</h3>
+            <p>Everything I build with in the sessions, handed over, so you're not retyping off a screen.</p>
+          </div>
+        </div>
+        <div class="incl-row">
+          <div class="incl-n">v</div>
+          <div>
+            <h3>Nine other women doing it at the same time</h3>
+            <p>You'll watch them solve things you hadn't thought to ask about. That's most of the value and it's the bit you can't get from a course.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price -->
+  <section class="block" id="seats">
+    <div class="wrap wrap-narrow">
+      <p class="kicker">The seats</p>
+      <h2>Ten of them, and this is the founding round</h2>
+      <div class="price-card">
+        <div class="price-founding"><span>$</span>495</div>
+        <p class="price-was">Founding rate for the first cohort. It runs at <b>$895</b> after that.</p>
+        <span class="seats">Ten seats &middot; Doors open 2 September</span>
+        <p class="price-note">One payment, in Australian dollars. Four weeks, 8 September to 3 October.</p>
+      </div>
+      <div class="honest">
+        <p>I'm going to be straight with you about why it's cheaper this time, because you'll work it out anyway.</p>
+        <p>This is the first cohort. I have no members' results to show you yet, only my own, which you can watch happening on Instagram right now. So you'd be going first on the strength of that, and going first should cost less. The next one runs at $895.</p>
+        <p>I'm also not going to tell you four weeks will fix everything. It won't. What it will do is get the work out of your head and onto paper, get the decisions made, and get the first few systems actually running, which is the part most people never get to on their own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap wrap-narrow">
+      <h2>The things people ask me</h2>
+      <div class="faq">
+        <details>
+          <summary>What if I can't make a Monday?</summary>
+          <div class="faq-a">Every session is recorded and up the same day, and you can ask your questions in between, so you're never stuck waiting a week. If you know now that you'll miss two of the four, come to the next cohort instead and I'll say so honestly.</div>
+        </details>
+        <details>
+          <summary>Do I need to be technical?</summary>
+          <div class="faq-a">No. I'm not a developer and I've never pretended to be. Everything we build, we build by talking to Claude in plain English. If you can describe what you want, you can do this.</div>
+        </details>
+        <details>
+          <summary>What do I need before we start?</summary>
+          <div class="faq-a">A laptop, and a paid Claude plan. That's about $20 a month and you'll want it anyway. You don't need anything else set up beforehand, we do that in week one.</div>
+        </details>
+        <details>
+          <summary>How is this different from the membership?</summary>
+          <div class="faq-a">The Unfair Advantage is my membership and it's a shared set of steps you work through yourself with a room of women doing the same. This is your business specifically, live, with me in it. Different thing, not a bigger version of the same thing. If you're not sure which you want, start with the membership, it's a fraction of the price.</div>
+        </details>
+        <details>
+          <summary>What actually happens on a call?</summary>
+          <div class="faq-a">Ninety minutes. I share my screen and we work. Some of it is me showing you how a thing is built, most of it is you building yours while I'm there to unstick you. It's a working session, not a presentation with questions at the end.</div>
+        </details>
+        <details>
+          <summary>Will you build my systems for me?</summary>
+          <div class="faq-a">No, and that's deliberate. If I build them you don't understand them, and in six months when something changes you're stuck waiting for me. You build them, I'm in the room while you do it. That's the whole difference.</div>
+        </details>
+        <details>
+          <summary>Are there testimonials I can read?</summary>
+          <div class="faq-a">Not yet, and I'd rather say that than dress something up. This is the first cohort. What I can point you at is the series running on my Instagram right now, where I'm doing the whole thing on my own business in public, so you can judge the method before you pay for it.</div>
+        </details>
+        <details>
+          <summary>What happens after the four weeks?</summary>
+          <div class="faq-a">You keep everything, and there's nothing to cancel. Plenty of people carry on inside the membership afterwards because that's where the ongoing bit lives, but nothing rolls over automatically and I won't put you on anything.</div>
+        </details>
+        <details>
+          <summary>Why only ten?</summary>
+          <div class="faq-a">Because past about ten, a call stops being a room. Everyone goes quiet, one person asks something, and the rest watch. At ten I can actually get to everyone, which is the only reason to do this live rather than record it.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist gate -->
+  <section class="gate" id="gate">
+    <div class="wrap wrap-narrow">
+      <div class="gate-card">
+        <h2>Get on the founding waitlist</h2>
+        <p class="gate-line">Ten seats, and the waitlist gets first look before anyone else. Pop your email in and I'll send you the link the morning the doors open, along with what to have ready.</p>
+        <form class="gate-form register-form" action="https://app.kit.com/forms/FORM_ID/subscriptions" method="post" data-sv-form="FORM_ID" data-uid="FORM_UID" data-format="inline" data-version="5">
+          <input type="hidden" name="fields[source]" value="architect">
+          <label class="field-label" for="fn">First name</label>
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <label class="field-label" for="em">Email</label>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit">Put me on the waitlist</button>
+        </form>
+        <p class="gate-note">Joining the list doesn't commit you to anything.</p>
+      </div>
+      <p class="gate-reassure">You'll hear from me on 2 September with the link, and before then only if something about the cohort changes.</p>
+    </div>
+  </section>
+
+  <!-- Confirmation (revealed after the form is submitted) -->
+  <div id="guide">
+
+    <section class="block" id="youre-in">
+      <div class="wrap wrap-narrow">
+        <p class="kicker">You're on the list</p>
+        <h2>That's you down. Here's what happens next.</h2>
+        <p class="lead">
+          On <span class="fig">2 September</span> I'll email you the link to take a seat, a few hours before it goes anywhere else. There are ten, and the founding rate is <span class="fig">$495</span>. If you decide it isn't for you, ignore the email and nothing happens.
+        </p>
+        <p class="lead" style="margin-top:16px">
+          Between now and then, the best thing you can do is watch the build. I'm running the whole method on my own business on Instagram, every day until 2 September, so you'll know exactly what you're saying yes to.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap wrap-narrow">
+        <div class="skool">
+          <h2>Want to start before September?</h2>
+          <p>The Unfair Advantage is my membership, and it's where you build the same kind of systems yourself with a room of women doing the same thing. It's the sensible place to start if four weeks from now feels like a long wait.</p>
+          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener">
+            Have a look at the membership
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p style="margin-top:18px;font-size:14px;color:var(--driftwood)">Not ready to pay for anything? <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" style="text-decoration:underline">The free community is here</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-brand">Wise Women Use AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/ai-disclosure">How I use AI</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Reveal the confirmation ────────────────
+    function unlockGuide(scroll) {
+      document.body.classList.add('unlocked');
+      var gate = document.getElementById('gate');
+      if (gate) gate.style.display = 'none';
+      if (scroll) {
+        setTimeout(function () {
+          var el = document.getElementById('youre-in');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 60);
+      }
+    }
+
+    // Deep-link: /architect?unlocked=1 shows the confirmation without re-submitting
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') {
+          unlockGuide(false);
+        }
+      } catch (e) {}
+    })();
+
+    // Submit intercept: post to Kit in the background, then confirm
+    document.querySelectorAll('form.register-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Adding you...'; }
+        fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(form)),
+          mode: 'no-cors'
+        }).finally(function () {
+          try {
+            var url = new URL(window.location.href);
+            url.searchParams.set('unlocked', '1');
+            window.history.replaceState({}, '', url);
+          } catch (e) {}
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          unlockGuide(true);
+        });
+      });
+    });
+
+    // ── Sticky nav: highlight the section in view ──
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('current'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('current');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['what', 'weeks', 'included', 'seats'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>

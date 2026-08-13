@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WWUAI · Operations Dashboard</title>
+  <meta name="robots" content="noindex, nofollow"> <!-- internal ops page. Added 12 Aug 2026. -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
@@ -17,7 +18,7 @@
     ::-webkit-scrollbar-track { background:#E1DAD7; }
     ::-webkit-scrollbar-thumb { background:#C4B5AD; border-radius:2px; }
     .fade { opacity:0; animation: fadeUp 0.5s ease both; }
-    .todo-input { width:100%; border:1px solid #E1DAD7; background:#FAF8F6; border-radius:4px; padding:8px 12px; font-size:13px; color:#3A131B; outline:none; font-family:inherit; transition:border 0.15s; }
+    .todo-input { width:100%; border:1px solid #E1DAD7; background:#FAF8F6; border-radius:4px; padding:8px 12px; font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */ color:#3A131B; outline:none; font-family:inherit; transition:border 0.15s; }
     .todo-input:focus { border-color:#C4B5AD; }
     .todo-input::placeholder { color:#C4B5AD; }
     .todo-row { display:flex; align-items:flex-start; gap:10px; padding:9px 14px; border-bottom:1px solid #F8F5F2; }

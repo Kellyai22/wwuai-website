@@ -5,27 +5,38 @@
 > Warm, jargon-free teaching that works around real life, not hustle culture.
 
 Kelly Hartley is a British-Australian business owner who runs her own
-businesses on AI (primarily Claude) and teaches women in their 40s and 50s
-to do the same. WWUAI is not another ChatGPT course. It teaches Claude
-specifically, with a focus on simple systems women can actually stick to.
-Kelly also works one-to-one as an AI consultant, based in Melbourne and
-working online with women across Australia.
+businesses on AI (primarily Claude) and teaches women in midlife to do the
+same. WWUAI is not another ChatGPT course. It teaches Claude specifically,
+with a focus on simple systems women can actually stick to. Kelly also works
+one-to-one as an AI consultant, based in Melbourne and working online with
+women across Australia.
+
+Everything runs on the same three steps. The free monthly workshop is the
+first win, where you build the smallest real piece yourself and keep it. The
+membership is the complete system, built over six guided steps a month with a
+room of women doing the same. The Advantage Pack is that system already built
+and installed, so you duplicate it and it is running.
 
 ## Work with Kelly
 - [AI Consulting, Melbourne and online](https://www.wisewomenuseai.com/work): One-to-one AI setup and strategy sessions, and a four-week done-with-you systems build
 - [About Kelly Hartley](https://www.wisewomenuseai.com/about): Who Kelly is and why she built WWUAI
 
 ## Community and membership
-- [Skool Community](https://www.wisewomenuseai.com/community): Free to join. The Unfair Advantage is the paid membership inside ($49/month) with the full library of tools, prompts and workflows
-- [Free monthly workshop](https://www.wisewomenuseai.com/workshop): Live online workshop where attendees set up real tools and leave having built the first piece themselves
+- [Skool Community](https://www.wisewomenuseai.com/community): Free to join. The Unfair Advantage is the paid membership inside ($49 USD/month, billed by Skool) with the full library of tools, prompts and workflows
+- [Free monthly workshop](https://www.wisewomenuseai.com/workshop): Live online workshop, one hour, free. Kelly shows the real tools and walks people through setting them up, so attendees leave having built the first piece themselves
 
 ## Products
-- [The Notion Advantage Pack](https://www.wisewomenuseai.com/notion-advantage): A ready-built Notion business system ($99 AUD launch price)
+- [The Notion Advantage Pack](https://www.wisewomenuseai.com/notion-advantage): A ready-built Notion business system, installed rather than assembled
+- [The Content Advantage Pack](https://www.wisewomenuseai.com/content-advantage): A ready-built content system: a 13-week calendar, a hook bank, a prompt library that keeps your voice, and a Notion Content Command Centre
 
 ## Free guides and starters
 - [Claude, Clearly](https://www.wisewomenuseai.com/guide): Free guide to getting started with Claude
 - [Switch to Claude](https://www.wisewomenuseai.com/switch): Free guide for ChatGPT users moving to Claude
 - [Claude Starter Kit](https://www.wisewomenuseai.com/starter): Free starter resources for brand-new Claude users
+- [The Sunday Reset](https://www.wisewomenuseai.com/calm): Four prompts that turn a full head into a sorted week
+- [Where does your week actually go?](https://www.wisewomenuseai.com/hours): A one minute count of the jobs that quietly eat a small business owner's week
+- [Seven tells that make writing sound like AI](https://www.wisewomenuseai.com/slop): The list, in plain English, with the prompt that catches them
+- [Carousel Maker](https://www.wisewomenuseai.com/carousel-maker): A free Claude Code skill file that turns brand photos into Instagram carousels
 
 ## Writing
 - [Blog](https://www.wisewomenuseai.com/blog): Practical AI for women in business
@@ -34,3 +45,18 @@ working online with women across Australia.
 ## Transparency
 - [How I use AI](https://www.wisewomenuseai.com/ai-disclosure): Kelly's open disclosure of exactly where AI does the work in this business, what stays hers, and what she will not use it for
 - [Privacy](https://www.wisewomenuseai.com/privacy): What is collected, where it is kept, and how to have it removed. No tracking pixels, no analytics, no advertising cookies on this site
+
+<!--
+  Note for whoever maintains this: no AI system is known to read /llms.txt.
+  Google's John Mueller said so publicly in June 2025 ("no AI system currently
+  uses llms.txt"), Gary Illyes confirmed Google has no plans to support it, and
+  Google's own AI-features documentation says you do not need to create AI text
+  files to appear in its AI features. It was a proposal, not an agreed standard,
+  and adoption is entirely on the publishing side.
+
+  It is kept because it is cheap, harmless, and readable by a human. Do not
+  expand it, and do not treat it as an AEO lever. What actually decides whether
+  this site is quoted in an AI answer: ordinary search ranking, being
+  crawlable (see robots.txt), and clear on-page answers in visible text.
+  Checked 12 August 2026.
+-->

@@ -43,7 +43,12 @@
 
 ## Social (`assets/social/`)
 
-*No images yet.*
+| Filename | Description | Tags |
+|----------|-------------|------|
+| og-card.jpg | Site-wide Open Graph share card, 1200x630. Drenched Bordeaux with Kelly on the right and the "Your business. Your life. Your time back." line. This is the `og:image` on every page and the `image` in the blog and Event schema. | social, opengraph, share, brand, card |
+| og-card.source.html | The HTML the card is rendered from. Edit this, then re-render at exactly 1200x630 with Playwright and export as JPEG over `og-card.jpg`. Do not edit the JPEG directly. | source, template, opengraph |
+
+> Added 12 August 2026. Before this, `og:image` pointed at `kelly-hero.jpg` on 22 pages. That file is a **1152x2048 portrait**, and is actually a PNG saved with a `.jpg` extension. Facebook and LinkedIn want roughly 1.91:1, so every share preview was hard-cropped through Kelly's face, and the 2.5MB size was over the practical limit for scrapers. `hub.html` had carried a TODO for this card since March.
 
 ## Lifestyle (`assets/lifestyle/`)
 

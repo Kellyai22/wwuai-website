@@ -11,11 +11,11 @@
   <meta property="og:description" content="Move your ChatGPT memory and preferences to Claude in about five minutes. Free, private, and built for women in business.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/photos/kelly-hero.jpg">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/switch">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght;400;500&family=Allison&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
 
   <style>
     /* ── Variables ──────────────────────────────── */
@@ -31,7 +31,7 @@
       --blush:        #E2B592;
       --clay:         #DDA983;
       --serif: 'Playfair Display', Georgia, serif;
-      --sans:         'Montserrat', sans-serif;
+      --sans:         'Plus Jakarta Sans', system-ui, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -214,7 +214,7 @@
     .email-gate-card input[type="text"],
     .email-gate-card input[type="email"] {
       font-family: var(--sans);
-      font-size: 13px;
+      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
       padding: 12px 14px;
       border: 1px solid var(--cream-dark);
       background: var(--cream);
@@ -546,7 +546,7 @@
       border-radius: 8px;
       background: var(--white);
       font-family: var(--sans);
-      font-size: 14px;
+      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
       line-height: 1.7;
       color: var(--ink);
       resize: vertical;

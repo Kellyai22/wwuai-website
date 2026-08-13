@@ -8,11 +8,51 @@
 
 <meta property="og:title" content="The next free workshop is on its way">
 <meta property="og:description" content="A free, hands-along hour for women in business, coming soon. Register your interest and I'll send you the details the moment they're live.">
-<meta property="og:image" content="https://wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png">
+<meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
 <meta property="og:url" content="https://www.wisewomenuseai.com/workshop">
 <link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
 <meta property="og:type" content="website">
-<meta name="robots" content="noindex">
+
+<!-- Event schema. This page is deliberately INDEXABLE: a free, dated, recurring
+     online event is the strongest thing on the site for Google and for AI
+     assistants answering "when is the next free AI workshop". It carried
+     noindex until 12 Aug 2026, while also sitting in sitemap.xml, which was a
+     contradiction. Do not re-add noindex here. The thank-you page keeps its own. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Free workshop: Money and the numbers, without the dread",
+  "description": "Know where you stand in your business, calmly, with AI doing the heavy lifting.",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "startDate": "2026-09-09T09:30:00+10:00",
+  "endDate": "2026-09-09T10:30:00+10:00",
+  "inLanguage": "en-AU",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Wise Women Use AI",
+    "url": "https://www.wisewomenuseai.com"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Kelly Hartley"
+  },
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://www.wisewomenuseai.com/workshop"
+  },
+  "image": "https://www.wisewomenuseai.com/assets/social/og-card.jpg",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "AUD",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-09-09",
+    "url": "https://www.wisewomenuseai.com/workshop"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
