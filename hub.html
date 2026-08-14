@@ -3,559 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wise Women Use AI · Start Here</title>
-  <meta name="description" content="The free monthly Claude workshop, practical tools, and the newsletter for women in business.">
-
-  <meta property="og:title" content="Wise Women Use AI · Start Here">
-  <meta property="og:description" content="The free monthly Claude workshop, practical tools, and the newsletter for women in business.">
+  <title>Start Here | Wise Women Use AI</title>
+  <meta name="description" content="Practical AI and business systems for women in midlife who want a business that depends on them less.">
+  <meta property="og:title" content="Start Here | Wise Women Use AI">
+  <meta property="og:description" content="Become the architect of your business, not its busiest employee.">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
-  <!-- TODO: swap og:image for /assets/social/ card once one is created -->
   <meta property="og:url" content="https://www.wisewomenuseai.com/links">
-  <link rel="canonical" href="https://www.wisewomenuseai.com/links">
   <meta property="og:type" content="website">
-
+  <link rel="canonical" href="https://www.wisewomenuseai.com/links">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --pearl:       #FAF8F6;
-      --ink:         #3A131B;
-      --bordeaux:    #3A131B;
-      --driftwood:   #908486;
-      --cream-dark:  #E1DAD7;
-      --white:       #FFFFFF;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--pearl);
-      color: var(--ink);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ── Layout ── */
-
-    .hub {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 56px 20px 40px;
-    }
-
-    /* ── Hero ── */
-
-    .hero {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .hero-logo {
-      height: 64px;
-      width: auto;
-      display: block;
-      margin: 0 auto 20px;
-    }
-
-    .hero-wordmark {
-      font-family: 'Playfair Display', serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      color: var(--driftwood);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .hero-tagline {
-      font-size: 14px;
-      color: var(--driftwood);
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    .hero-tagline .script {
-      font-family: 'Allison', cursive;
-      font-size: 22px;
-      color: var(--bordeaux);
-      font-weight: 400;
-      line-height: 1;
-      display: block;
-      margin-top: 4px;
-    }
-
-    /* ── Section dividers ── */
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 28px 0 16px;
-    }
-
-    .divider-line {
-      flex: 1;
-      height: 1px;
-      background: var(--cream-dark);
-    }
-
-    .divider-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: var(--driftwood);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    /* ── Cards shared ── */
-
-    .card-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    /* ── Primary card (Skool) ── */
-
-    .card-primary {
-      display: flex;
-      align-items: center;
-      background: var(--ink);
-      color: var(--pearl);
-      border-radius: 6px;
-      padding: 18px 20px;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      min-height: 44px;
-    }
-
-    .card-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(58, 19, 27, 0.18);
-    }
-
-    .card-primary-body {
-      flex: 1;
-    }
-
-    .card-primary-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--pearl);
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .card-primary-title em {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .card-primary-sub {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(250, 248, 246, 0.55);
-    }
-
-    .card-primary-arrow {
-      color: var(--pearl);
-      opacity: 0.6;
-      flex-shrink: 0;
-      margin-left: 14px;
-    }
-
-    /* ── Lead magnet / newsletter cards ── */
-
-    .card {
-      display: flex;
-      align-items: center;
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: 6px;
-      padding: 14px 16px;
-      text-decoration: none;
-      gap: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      min-height: 44px;
-    }
-
-    .card:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(58, 19, 27, 0.06);
-    }
-
-    .card-icon {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--cream-dark);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--ink);
-    }
-
-    .card-body {
-      flex: 1;
-    }
-
-    .card-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 2px;
-    }
-
-    .card-sub {
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--driftwood);
-    }
-
-    .card-arrow {
-      color: var(--driftwood);
-      flex-shrink: 0;
-    }
-
-    /* ── Shop card ── */
-
-    .card-shop {
-      position: relative;
-      background: var(--white);
-      border: 1.5px solid var(--bordeaux);
-      border-radius: 6px;
-      padding: 18px 20px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      min-height: 44px;
-    }
-
-    .card-shop:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(58, 19, 27, 0.10);
-    }
-
-    .card-shop-body {
-      flex: 1;
-    }
-
-    .card-shop-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 3px;
-    }
-
-    .card-shop-sub {
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--driftwood);
-    }
-
-    .card-shop-sub .price {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--bordeaux);
-    }
-
-    .card-shop-arrow {
-      color: var(--bordeaux);
-      opacity: 0.7;
-      flex-shrink: 0;
-    }
-
-    .pill-new {
-      position: absolute;
-      top: 0;
-      right: 12px;
-      transform: translateY(-50%);
-      background: var(--bordeaux);
-      color: var(--pearl);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      padding: 3px 7px;
-      border-radius: 3px;
-      pointer-events: none;
-    }
-
-    /* ── Social row ── */
-
-    .social-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 36px;
-    }
-
-    .social-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .social-btn:hover {
-      background: var(--ink);
-      color: var(--pearl);
-      border-color: var(--ink);
-    }
-
-    /* ── Footer ── */
-
-    .hub-footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--driftwood);
-    }
-
-    .hub-footer .script {
-      font-family: 'Allison', cursive;
-      font-size: 18px;
-      color: var(--bordeaux);
-      font-weight: 400;
-      line-height: 1;
-      vertical-align: middle;
-    }
-
+    :root{--pearl:#FAF8F6;--ink:#3A131B;--driftwood:#786D70;--line:#E1DAD7;--white:#FFF}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--pearl);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+    .hub{max-width:480px;margin:0 auto;padding:44px 20px 32px}
+    .hero{text-align:center;margin-bottom:28px}
+    .hero-logo{height:58px;width:auto;display:block;margin:0 auto 18px}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);margin-bottom:12px}
+    h1{font-family:'Playfair Display',serif;font-size:34px;font-weight:500;line-height:1.08;letter-spacing:-.02em;margin:0 auto 14px;max-width:430px}
+    h1 em{font-weight:400}
+    .hero-copy{color:var(--driftwood);font-size:14px;font-weight:300;line-height:1.65;max-width:390px;margin:0 auto}
+    .hero-copy strong{color:var(--ink);font-weight:500}
+    .divider{display:flex;align-items:center;gap:12px;margin:28px 0 14px}
+    .divider::before,.divider::after{content:"";height:1px;background:var(--line);flex:1}
+    .divider span{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--driftwood);white-space:nowrap}
+    .stack{display:flex;flex-direction:column;gap:10px}
+    .card{display:flex;align-items:center;gap:14px;min-height:74px;padding:15px 16px;background:var(--white);border:1px solid var(--line);border-radius:8px;color:var(--ink);text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+    .card:hover{transform:translateY(-1px);box-shadow:0 5px 18px rgba(58,19,27,.08)}
+    .card.primary{background:var(--ink);border-color:var(--ink);color:var(--pearl);padding:18px}
+    .icon{width:40px;height:40px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .primary .icon{border-color:rgba(250,248,246,.25)}
+    .body{flex:1}
+    .title{font-size:14px;font-weight:600;line-height:1.3;margin-bottom:3px}
+    .primary .title{font-size:15px}
+    .sub{font-size:12px;font-weight:300;line-height:1.45;color:var(--driftwood)}
+    .primary .sub{color:rgba(250,248,246,.68)}
+    .arrow{opacity:.6;flex:0 0 auto}
+    .note{text-align:center;color:var(--driftwood);font-size:11px;font-weight:300;margin:12px 8px 0}
+    .socials{display:flex;justify-content:center;gap:10px;margin-top:34px}
+    .social{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);background:var(--white);text-decoration:none}
+    .social:hover{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
+    footer{text-align:center;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:11px;color:var(--driftwood);font-weight:300;line-height:2}
+    footer a{color:inherit;text-decoration:none}
+    @media(max-width:380px){.hub{padding-top:34px}h1{font-size:30px}}
   </style>
 </head>
 <body>
+  <main class="hub">
+    <header class="hero">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" class="hero-logo">
+      <p class="eyebrow">Wise Women Use AI</p>
+      <h1>Become the architect of your business. <em>Not its busiest employee.</em></h1>
+      <p class="hero-copy">Practical AI and systems for women in midlife. <strong>Keep the work that needs you. Redesign the rest.</strong></p>
+    </header>
 
-<div class="hub">
+    <div class="divider"><span>Start here</span></div>
+    <div class="stack">
+      <a href="/community" class="card primary" aria-label="Start free in the Wise Women community">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="19" height="19"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="body"><span class="title">Start free in the community</span><span class="sub">Find your first bottleneck and build the right foundations.</span></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener" class="card" aria-label="Explore The Architect Advantage membership">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="19" height="19"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg></span>
+        <span class="body"><span class="title">The Architect Advantage</span><span class="sub">Guided implementation, practical assets and support · $69 USD/month.</span></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+    <p class="note">New here? Start free. The paid membership is there when you want help implementing.</p>
 
-  <!-- Hero -->
-  <div class="hero">
-    <img
-      src="/assets/logos/WWUAI Logo OGTP.png"
-      alt="Wise Women Use AI"
-      class="hero-logo"
-    >
-    <h1 class="hero-wordmark">Wise Women Use AI</h1>
-    <p class="hero-tagline">
-      Practical Claude training for women in business
-      <span class="script">without the hype</span>
-    </p>
-    <p class="hero-tagline">
-      I built this to run on good systems, so I get my time back. Everything here is me handing you the same.
-    </p>
-  </div>
+    <div class="divider"><span>Keep exploring</span></div>
+    <div class="stack">
+      <a href="/" class="card" aria-label="Visit the Wise Women Use AI website">
+        <span class="body"><span class="title">Visit Wise Women Use AI</span><span class="sub">See the method, community and ways to work together.</span></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="https://wisewomenuseai.substack.com" target="_blank" rel="noopener" class="card" aria-label="Read the Wise Women newsletter">
+        <span class="body"><span class="title">Read the newsletter</span><span class="sub">One useful lesson about AI, systems and running a lighter business.</span></span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
 
-  <!-- Start Here -->
-  <div class="divider">
-    <span class="divider-line"></span>
-    <span class="divider-label">Start Here</span>
-    <span class="divider-line"></span>
-  </div>
+    <nav class="socials" aria-label="Social profiles">
+      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.09-2.78V9.01a6.34 6.34 0 1 0 6.54 6.29V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78c-.36 0-.72-.03-1.07-.09z"/></svg></a>
+      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="17" height="17"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a5 5 0 0 1 2-3zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="mailto:hello@wisewomenuseai.com" class="social" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></a>
+    </nav>
 
-  <div class="card-stack">
-    <a href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener" class="card-primary" aria-label="The Unfair Advantage membership">
-      <div class="card-primary-body">
-        <div class="card-primary-title">The Unfair <em>Advantage</em></div>
-        <div class="card-primary-sub">The full library, $69/month. Everything that makes the business run without you.</div>
-      </div>
-      <svg class="card-primary-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/community" class="card" aria-label="Join the free community">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Join the free community</div>
-        <div class="card-sub">Start free, step up any time</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/workshop" class="card-shop" aria-label="The next free workshop">
-      <span class="pill-new">Free</span>
-      <div class="card-icon" style="border-color:var(--bordeaux);color:var(--bordeaux);">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      </div>
-      <div class="card-shop-body">
-        <div class="card-shop-title">The next free workshop</div>
-        <div class="card-shop-sub">Build your first system with me, live</div>
-      </div>
-      <svg class="card-shop-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-  </div>
-
-  <!-- Free Tools -->
-  <div class="divider">
-    <span class="divider-line"></span>
-    <span class="divider-label">Free Tools</span>
-    <span class="divider-line"></span>
-  </div>
-
-  <div class="card-stack">
-
-    <a href="/switch" class="card" aria-label="Switch to Claude">
-      <div class="card-icon">
-        <!-- arrow-left-right: switching / migration -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M8 3L4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Switch to Claude</div>
-        <div class="card-sub">Move from ChatGPT in under an hour</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/guide" class="card" aria-label="Claude Clearly">
-      <div class="card-icon">
-        <!-- book-open: plain-English guide -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Claude Clearly</div>
-        <div class="card-sub">The plain-English starter guide</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/starter" class="card" aria-label="The Claude Starter Kit">
-      <div class="card-icon">
-        <!-- layers: starter kit / building blocks -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">The Claude Starter Kit</div>
-        <div class="card-sub">Six lessons to get up and running</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/calm" class="card" aria-label="The Sunday Reset">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.5 5.5L4 4M20 20l-1.5-1.5M18.5 5.5L20 4M4 20l1.5-1.5"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">The Sunday Reset</div>
-        <div class="card-sub">Empty the week out of your head</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/backup" class="card" aria-label="Your Headquarters">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Your Headquarters</div>
-        <div class="card-sub">One calm home for your business in Notion</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/review" class="card" aria-label="The Mid-Year Review">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">The Mid-Year Review</div>
-        <div class="card-sub">The review you'll actually finish</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-    <a href="/dream" class="card" aria-label="The Dream Life Interview">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">The Dream Life Interview</div>
-        <div class="card-sub">Design the life, then the plan to get there</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-
-  </div>
-
-  <!-- Read & Subscribe -->
-  <div class="divider">
-    <span class="divider-line"></span>
-    <span class="divider-label">Read &amp; Subscribe</span>
-    <span class="divider-line"></span>
-  </div>
-
-  <div class="card-stack">
-    <a href="https://wisewomenuseai.substack.com" target="_blank" rel="noopener" class="card" aria-label="The Newsletter on Substack">
-      <div class="card-icon">
-        <!-- mail -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-      </div>
-      <div class="card-body">
-        <div class="card-title">The Newsletter</div>
-        <div class="card-sub">One real lesson every Sunday on Substack</div>
-      </div>
-      <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-    </a>
-  </div>
-
-  <!-- Social row -->
-  <div class="social-row">
-    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    </a>
-    <a href="mailto:hello@wisewomenuseai.com" class="social-btn" aria-label="Email">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-    </a>
-  </div>
-
-  <!-- Footer -->
-  <p class="hub-footer">
-    Made with <span class="script">care</span> in Melbourne
-  </p>
-
-</div>
-
-  <footer style="padding:40px 24px;margin-top:56px;border-top:1px solid #E1DAD7;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;">
-    <p style="font-size:12px;line-height:2;color:#908486;margin:0;letter-spacing:0.03em;">
-      <a href="/" style="color:#908486;text-decoration:none;border-bottom:1px solid transparent;">wisewomenuseai.com</a>
-      &middot;
-      <a href="/privacy" style="color:#908486;text-decoration:none;border-bottom:1px solid transparent;">Privacy</a>
-      &middot;
-      <a href="/ai-disclosure" style="color:#908486;text-decoration:none;border-bottom:1px solid transparent;">How I use AI</a>
-    </p>
-    <p style="font-size:11px;color:#908486;opacity:0.6;margin:10px 0 0;">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
-  </footer>
-
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+    <footer>
+      <p>Made with care in Melbourne</p>
+      <p><a href="/privacy">Privacy</a> · <a href="/ai-disclosure">How I use AI</a></p>
+      <p>© <span class="yr">2026</span> Wise Women Use AI</p>
+    </footer>
+  </main>
+  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'–'+n:''+s;document.querySelector('.yr').textContent=t;}());</script>
 </body>
 </html>
