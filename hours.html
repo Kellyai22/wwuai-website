@@ -999,6 +999,7 @@
         <p class="gate-line">Pop your email in to see what is keeping the business dependent on you, then get your jobs sorted biggest first and a practical place to start.</p>
         <form class="gate-form register-form" action="https://app.kit.com/forms/9658821/subscriptions" method="post" novalidate data-sv-form="9658821" data-uid="c140f63fe5" data-format="inline" data-version="5">
           <input type="hidden" name="fields[source]" value="hours">
+          <input type="hidden" name="fields[bottleneck_type]" id="hidBottleneck" value="">
           <input type="hidden" name="fields[biggest_time_drain]" id="hidDrain" value="">
           <input type="hidden" name="fields[hours_a_week]" id="hidHours" value="">
           <label class="field-label" for="fn">First name</label>
@@ -1634,6 +1635,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
       // Hand her answers to Kit so the follow-up can be a real conversation
       document.getElementById('hidHours').value = shownTotal;
       document.getElementById('hidDrain').value = t.top ? t.top.kit : '';
+      document.getElementById('hidBottleneck').value = BOTTLENECKS[getBottleneck()].title.replace(/^The /, '');
 
       renderMoney();
       buildPlan();
