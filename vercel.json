@@ -170,6 +170,10 @@
       "status": 301
     },
     {
+      "src": "/audit",
+      "dest": "/hours.html"
+    },
+    {
       "src": "/hours",
       "dest": "/hours.html"
     },

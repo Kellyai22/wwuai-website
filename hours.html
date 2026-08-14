@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://www.wisewomenuseai.com/hours">
-  <title>Where does your week actually go? | Wise Women Use AI</title>
-  <meta name="description" content="A one minute count-up of the eight jobs that quietly eat a small business owner's week, the hours a setup could hold instead of you, and a prompt for each one you can paste in today.">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/audit">
+  <title>The Business Bottleneck Audit | Wise Women Use AI</title>
+  <meta name="description" content="A free five-minute audit for women in midlife running solo businesses. Find the work eating your week and the bottleneck keeping the business dependent on you.">
 
-  <meta property="og:title" content="Where does your week actually go?">
-  <meta property="og:description" content="Count the eight jobs that quietly eat your week, see the hours you could get back, and get a prompt for each one.">
+  <meta property="og:title" content="The Business Bottleneck Audit">
+  <meta property="og:description" content="Find the work eating your week and why your solo business still waits for you.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
-  <meta property="og:url" content="https://www.wisewomenuseai.com/hours">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/audit">
   <meta property="og:locale" content="en_AU">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Where does your week actually go?">
-  <meta name="twitter:description" content="Count the eight jobs that quietly eat your week, and see which of those hours a setup could hold instead of you.">
+  <meta name="twitter:title" content="The Business Bottleneck Audit">
+  <meta name="twitter:description" content="Find the work eating your week and why your solo business still waits for you.">
   <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -248,7 +248,7 @@
     }
     .progress-mobile-fill {
       height: 100%;
-      width: 33%;
+      width: 25%;
       background: var(--clay);
       border-radius: 2px;
       transition: width 0.4s var(--ease);
@@ -325,7 +325,11 @@
     }
     .band:hover { border-color: var(--clay); }
     .band:active { transform: translateY(1px); }
-    .band[aria-pressed="true"] { background: var(--clay); border-color: var(--clay); }
+    .band[aria-pressed="true"] {
+      background: var(--bordeaux);
+      border-color: var(--bordeaux);
+      color: var(--pearl);
+    }
     .band:focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 2px; }
 
     .running {
@@ -336,6 +340,52 @@
       color: var(--driftwood);
     }
     .running b { color: var(--bordeaux); font-weight: 600; }
+
+    /* ── Bottleneck questions (step 3) ────────── */
+    .diagnostic-list { display: grid; gap: 30px; }
+    .diagnostic-question {
+      padding-top: 26px;
+      border-top: 1px solid var(--cream-dark);
+    }
+    .diagnostic-question:first-child { padding-top: 0; border-top: 0; }
+    .question-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 8px;
+    }
+    .question-text { font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 13px; max-width: 58ch; }
+    .answer-list { display: grid; gap: 8px; }
+    .answer {
+      font-family: var(--body);
+      font-size: 14px;
+      line-height: 1.55;
+      text-align: left;
+      color: var(--bordeaux);
+      background: var(--white);
+      border: 1.5px solid var(--cream-dark);
+      padding: 13px 15px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .answer:hover { border-color: var(--clay); }
+    .answer[aria-pressed="true"] {
+      border-color: var(--bordeaux);
+      background: var(--bordeaux);
+      color: var(--pearl);
+    }
+    .answer:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+    .diagnostic-result {
+      background: var(--blush);
+      border-left: 4px solid var(--clay);
+      padding: 30px;
+      margin-bottom: 34px;
+    }
+    .diagnostic-result h2 { margin: 4px 0 12px; }
+    .diagnostic-result p { font-size: 16px; line-height: 1.72; max-width: 61ch; }
 
     /* ── Wizard nav ────────────────────────────── */
     .wizard-nav { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
@@ -762,7 +812,7 @@
       <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" onerror="this.style.display='none'">
       <span>Wise Women Use AI</span>
     </a>
-    <span class="topbar-note">Free tool</span>
+    <span class="topbar-note">Free audit</span>
   </div>
 
   <!-- Sticky section nav -->
@@ -779,12 +829,12 @@
   <!-- Hero -->
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free tool</p>
-      <h1>Where does your week <em>actually</em> go?</h1>
+      <p class="eyebrow"><b>Wise Women Use AI</b> &nbsp;·&nbsp; Free audit</p>
+      <h1>Where is your business still <em>waiting for you?</em></h1>
       <p class="hero-sub">
-        You get to Friday wondering what you actually did, and the honest answer is you were flat out on things nobody would call work. Admin. Chasing. Answering the same question for the ninth time. <span class="soft">Tap through the eight jobs below and this counts them up, then shows you which of those hours a setup could hold instead of you.</span>
+        You get to Friday wondering what you actually did, and the honest answer is you were flat out keeping everything moving. Admin. Chasing. Answering the same question again. <span class="soft">First, count the work quietly eating your week. Then find the bottleneck that explains why your business still depends on you to remember, repeat or restart it.</span>
       </p>
-      <p class="hero-note">Takes about a minute. Nothing to install, nothing to download.</p>
+      <p class="hero-note">Takes about five minutes. Nothing to install, nothing to download.</p>
     </div>
   </header>
 
@@ -796,11 +846,12 @@
       <div class="progress-steps">
         <div class="progress-step active"><div class="step-circle">1</div><div class="step-label">The jobs</div></div>
         <div class="progress-step"><div class="step-circle">2</div><div class="step-label">The hours</div></div>
-        <div class="progress-step"><div class="step-circle">3</div><div class="step-label">Your week</div></div>
+        <div class="progress-step"><div class="step-circle">3</div><div class="step-label">Your business</div></div>
+        <div class="progress-step"><div class="step-circle">4</div><div class="step-label">Your result</div></div>
       </div>
     </div>
     <div class="progress-mobile" aria-hidden="true">
-      <div class="progress-mobile-text">Step <span id="mobileStepNum">1</span> of 3</div>
+      <div class="progress-mobile-text">Step <span id="mobileStepNum">1</span> of 4</div>
       <div class="progress-mobile-bar"><div class="progress-mobile-fill" id="mobileFill"></div></div>
     </div>
 
@@ -828,12 +879,74 @@
 
       <div class="wizard-nav">
         <button class="btn-nav btn-back" type="button" onclick="goToStep(0)">Back</button>
-        <button class="btn-nav nav-right" type="button" onclick="goToStep(2)">Show me my week</button>
+        <button class="btn-nav nav-right" type="button" onclick="goToStep(2)">Next, your business</button>
       </div>
     </section>
 
-    <!-- Step 3: the result -->
-    <section class="wizard-step" id="step-2" aria-label="Step 3, your week">
+    <!-- Step 3: the bottleneck questions -->
+    <section class="wizard-step" id="step-2" aria-label="Step 3, your business">
+      <h2 class="step-heading">What keeps the business depending on you?</h2>
+      <p class="step-intro">Choose the answer that feels most true, not the one you think should be true. <span class="soft">This is built for a solo business, where work waits because there is no hidden team to pick it up.</span></p>
+
+      <div class="diagnostic-list" id="diagnosticList">
+        <div class="diagnostic-question" data-question="q1">
+          <p class="question-number">Question 1 of 5</p>
+          <p class="question-text">If you stepped away from your business for three working days, what would be waiting when you came back?</p>
+          <div class="answer-list" role="group" aria-label="Question 1 answers">
+            <button class="answer" type="button" data-score="headspace">Messages, enquiries or client questions that had not been answered.</button>
+            <button class="answer" type="button" data-score="repetition">Regular work such as content, follow-up, invoicing or admin that simply had not happened.</button>
+            <button class="answer" type="button" data-score="momentum">Important work I had started but had not found the time or headspace to finish.</button>
+            <button class="answer" type="button" data-score="momentum">Honestly, nearly everything. The business only moves when I move it.</button>
+          </div>
+        </div>
+        <div class="diagnostic-question" data-question="q2">
+          <p class="question-number">Question 2 of 5</p>
+          <p class="question-text">Which of these feels most familiar?</p>
+          <div class="answer-list" role="group" aria-label="Question 2 answers">
+            <button class="answer" type="button" data-score="headspace">Important information is spread across my head, inbox and notes.</button>
+            <button class="answer" type="button" data-score="repetition">I keep recreating work I know I have done before.</button>
+            <button class="answer" type="button" data-score="momentum">I have tools, but I still have to hold the whole process together.</button>
+          </div>
+        </div>
+        <div class="diagnostic-question" data-question="q3">
+          <p class="question-number">Question 3 of 5</p>
+          <p class="question-text">What interrupts you most during the week?</p>
+          <div class="answer-list" role="group" aria-label="Question 3 answers">
+            <button class="answer" type="button" data-score="headspace">Messages, questions or small decisions that pull me away.</button>
+            <button class="answer" type="button" data-score="repetition">Jobs I have to stop and do again.</button>
+            <button class="answer" type="button" data-score="momentum">Checking, chasing and remembering what needs to happen next.</button>
+          </div>
+        </div>
+        <div class="diagnostic-question" data-question="q4">
+          <p class="question-number">Question 4 of 5</p>
+          <p class="question-text">When you have tried AI, templates or automation, what usually happens?</p>
+          <div class="answer-list" role="group" aria-label="Question 4 answers">
+            <button class="answer" type="button" data-score="headspace">I still have to explain the context every time.</button>
+            <button class="answer" type="button" data-score="repetition">I use the setup briefly, then go back to doing it manually.</button>
+            <button class="answer" type="button" data-score="momentum">It works until I get busy or something unusual happens, then it stops.</button>
+            <button class="answer" type="button" data-score="none">I have not tried properly yet.</button>
+          </div>
+        </div>
+        <div class="diagnostic-question" data-question="q5">
+          <p class="question-number">Question 5 of 5</p>
+          <p class="question-text">If one weight could come off your week, which would matter most?</p>
+          <div class="answer-list" role="group" aria-label="Question 5 answers">
+            <button class="answer" type="button" data-score="headspace">Not having to remember everything.</button>
+            <button class="answer" type="button" data-score="repetition">Not starting recurring work from scratch.</button>
+            <button class="answer" type="button" data-score="momentum">Not checking, chasing or restarting everything.</button>
+            <button class="answer" type="button" data-score="none">Something else.</button>
+          </div>
+        </div>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn-nav btn-back" type="button" onclick="goToStep(1)">Back</button>
+        <button class="btn-nav nav-right" id="toResult" type="button" onclick="goToStep(3)" disabled>Show me my result</button>
+      </div>
+      <p class="nav-hint" id="diagnosticHint">Answer all five to see your result.</p>
+    </section>
+
+    <!-- Step 4: the result -->
+    <section class="wizard-step" id="step-3" aria-label="Step 4, your result">
 
       <!-- Zero state -->
       <div id="zeroState" style="display:none">
@@ -882,8 +995,8 @@
   <section class="gate" id="gate" style="display:none">
     <div class="wrap wrap-narrow">
       <div class="gate-card">
-        <h2>Where to start, in the order that matters</h2>
-        <p class="gate-line">Pop your email in and the rest of this page opens up: your jobs sorted biggest first, what to do about each one, and a prompt for each you can paste in today.</p>
+        <h2>Your bottleneck result is ready</h2>
+        <p class="gate-line">Pop your email in to see what is keeping the business dependent on you, then get your jobs sorted biggest first and a practical place to start.</p>
         <form class="gate-form register-form" action="https://app.kit.com/forms/9658821/subscriptions" method="post" novalidate data-sv-form="9658821" data-uid="c140f63fe5" data-format="inline" data-version="5">
           <input type="hidden" name="fields[source]" value="hours">
           <input type="hidden" name="fields[biggest_time_drain]" id="hidDrain" value="">
@@ -893,7 +1006,7 @@
           <label class="field-label" for="em">Email</label>
           <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
           <p class="field-error" id="emError">Pop in a real email address and it'll open right up.</p>
-          <button type="submit">Show me where to start</button>
+          <button type="submit">Show me my result</button>
         </form>
         <p class="gate-note">Free. It all opens right here on this page.</p>
       </div>
@@ -903,6 +1016,16 @@
 
   <!-- ── The plan (hidden until unlocked) ────── -->
   <div id="guide">
+
+    <section class="block" id="diagnosis">
+      <div class="wrap">
+        <div class="diagnostic-result">
+          <p class="kicker">Your business bottleneck</p>
+          <h2 id="bottleneckTitle">Your result</h2>
+          <p id="bottleneckCopy"></p>
+        </div>
+      </div>
+    </section>
 
     <section class="block" id="start">
       <div class="wrap">
@@ -1177,10 +1300,10 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
     <section class="block">
       <div class="wrap wrap-narrow">
         <div class="skool">
-          <h2>Come and use the rest of them</h2>
-          <p>This is one of a pile of free tools and setups I've built, and most of them live in the community rather than on this website. It's free to join. I'm in there most days, and there's a thread where women post which of the eight is eating their week, which is worth a read before you start. You won't be the only one.</p>
+          <h2>Want to go deeper?</h2>
+          <p>Your result shows where the business is relying on you. Inside the free Wise Women community, you’ll find practical tools, next steps and support to help you start changing it.</p>
           <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">
-            Join the free community
+            Get my next steps in the free community
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <p class="fallback">Come back in a month and run this again. Seeing a number move is the bit that keeps you going.</p>
@@ -1241,8 +1364,24 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
 
     var picked = {};   // id -> true
     var hours  = {};   // id -> hours a week
+    var diagnosticAnswers = {}; // question id -> bottleneck score
     var currentStep = 0;
-    var totalSteps = 3;
+    var totalSteps = 4;
+
+    var BOTTLENECKS = {
+      headspace: {
+        title: 'The Headspace Bottleneck',
+        copy: 'Too much of the business depends on what you remember, where you left the information and whether you have enough headspace to retrieve it. Your first move is not another app. It is getting the answers, decisions and useful context out of your head and into one reliable place you can work from.'
+      },
+      repetition: {
+        title: 'The Repetition Bottleneck',
+        copy: 'You are paying a start-from-scratch tax on work the business has already done before. Your first move is to capture one recurring job as a reusable starting point, then let AI help you adapt it instead of asking you to create it fresh every time.'
+      },
+      momentum: {
+        title: 'The Momentum Bottleneck',
+        copy: 'The business only moves when you actively push it. Useful work stalls between steps, gets restarted when life becomes busy, or waits for you to remember what comes next. Your first move is to build one small process that keeps its place and tells you the next action.'
+      }
+    };
 
     // ══ The maths. All of it, in one place. ══
     function tally() {
@@ -1360,6 +1499,47 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
       el.innerHTML = 'So far: <b>' + hoursWord(t.totalHours) + ' a week</b>';
     }
 
+    // ══ The solopreneur diagnostic ══
+    document.querySelectorAll('.diagnostic-question').forEach(function (question) {
+      var qid = question.getAttribute('data-question');
+      question.querySelectorAll('.answer').forEach(function (button) {
+        button.setAttribute('aria-pressed', 'false');
+        button.addEventListener('click', function () {
+          diagnosticAnswers[qid] = button.getAttribute('data-score');
+          question.querySelectorAll('.answer').forEach(function (other) {
+            other.setAttribute('aria-pressed', 'false');
+          });
+          button.setAttribute('aria-pressed', 'true');
+          refreshDiagnosticState();
+        });
+      });
+    });
+
+    function refreshDiagnosticState() {
+      var complete = Object.keys(diagnosticAnswers).length === 5;
+      document.getElementById('toResult').disabled = !complete;
+      document.getElementById('diagnosticHint').style.display = complete ? 'none' : 'block';
+    }
+
+    function getBottleneck() {
+      var scores = { headspace: 0, repetition: 0, momentum: 0 };
+      Object.keys(diagnosticAnswers).forEach(function (qid) {
+        var answer = diagnosticAnswers[qid];
+        if (scores.hasOwnProperty(answer)) scores[answer] += 1;
+      });
+      var highest = Math.max(scores.headspace, scores.repetition, scores.momentum);
+      var tied = Object.keys(scores).filter(function (key) { return scores[key] === highest; });
+      if (tied.length === 1) return tied[0];
+      if (tied.indexOf(diagnosticAnswers.q1) !== -1) return diagnosticAnswers.q1;
+      return tied[0] || 'momentum';
+    }
+
+    function renderBottleneck() {
+      var result = BOTTLENECKS[getBottleneck()];
+      document.getElementById('bottleneckTitle').textContent = result.title;
+      document.getElementById('bottleneckCopy').textContent = result.copy;
+    }
+
     // ══ Step navigation ══
     function goToStep(n) {
       if (n < 0 || n >= totalSteps) return;
@@ -1375,7 +1555,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
       document.getElementById('mobileStepNum').textContent = currentStep + 1;
       document.getElementById('mobileFill').style.width = ((currentStep + 1) / totalSteps * 100) + '%';
 
-      if (currentStep === 2) showResult();
+      if (currentStep === 3) showResult();
       else document.getElementById('gate').style.display = 'none';
 
       var anchor = document.getElementById('calc');
@@ -1457,6 +1637,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
 
       renderMoney();
       buildPlan();
+      renderBottleneck();
       save();
 
       gate.style.display = document.body.classList.contains('unlocked') ? 'none' : 'block';
@@ -1514,7 +1695,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
     // ══ Remember her answers, so the unlocked link still shows her plan ══
     function save() {
       try {
-        localStorage.setItem('wwuai_hours', JSON.stringify({ picked: picked, hours: hours }));
+        localStorage.setItem('wwuai_hours', JSON.stringify({ picked: picked, hours: hours, diagnosticAnswers: diagnosticAnswers }));
       } catch (e) {}
     }
     function restore() {
@@ -1525,11 +1706,19 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
         if (!d || !d.picked || !Object.keys(d.picked).length) return false;
         picked = d.picked;
         hours = d.hours || {};
+        diagnosticAnswers = d.diagnosticAnswers || {};
         document.querySelectorAll('.chip').forEach(function (c) {
           if (picked[c.getAttribute('data-job')]) c.setAttribute('aria-pressed', 'true');
         });
         refreshPickState();
         buildHoursRows();
+        document.querySelectorAll('.diagnostic-question').forEach(function (question) {
+          var qid = question.getAttribute('data-question');
+          question.querySelectorAll('.answer').forEach(function (button) {
+            button.setAttribute('aria-pressed', button.getAttribute('data-score') === diagnosticAnswers[qid] ? 'true' : 'false');
+          });
+        });
+        refreshDiagnosticState();
         return true;
       } catch (e) { return false; }
     }
@@ -1569,14 +1758,14 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
       }
     }
 
-    // /hours?unlocked=1 skips the gate. Her saved answers fill the plan back in.
+    // /audit?unlocked=1 skips the gate. Her saved answers fill the plan back in.
     (function () {
       var unlocked = false;
       try { unlocked = new URLSearchParams(window.location.search).get('unlocked') === '1'; } catch (e) {}
       var had = restore();
       if (unlocked) {
         document.body.classList.add('unlocked');
-        if (had) { goToStep(2); }
+        if (had && Object.keys(diagnosticAnswers).length === 5) { goToStep(3); }
       }
     })();
 
