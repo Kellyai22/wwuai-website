@@ -611,6 +611,35 @@
 
     .path-card.featured { border-color: var(--ink); position: relative; }
 
+    .path-card.membership {
+      grid-column: 1 / -1;
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--bg);
+    }
+
+    .path-card.membership .path-label,
+    .path-card.membership > p,
+    .path-card.membership .path-list li { color: rgba(250,248,246,0.72); }
+    .path-card.membership h3 { color: var(--bg); }
+    .path-card.membership .path-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+    }
+    .path-card.membership .path-list li { border-color: rgba(250,248,246,0.14); }
+    .path-card.membership .path-list li::before { color: #E2B592; }
+    .path-card.membership .btn-path-dark {
+      background: var(--bg);
+      border-color: var(--bg);
+      color: var(--ink);
+    }
+    .path-card.membership .btn-path-dark:hover {
+      background: #E2B592;
+      border-color: #E2B592;
+      color: var(--ink);
+    }
+
     .path-badge {
       position: absolute;
       top: -12px;
@@ -919,6 +948,8 @@
       .cred-item { padding: 16px 24px; }
       .loops-grid { grid-template-columns: 1fr; }
       .paths-grid { grid-template-columns: 1fr; }
+      .path-card.membership { grid-column: auto; }
+      .path-card.membership .path-list { grid-template-columns: 1fr; }
 
       .kelly-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
       .kelly-photo { aspect-ratio: 4/3; max-height: 280px; position: static; }
@@ -1009,7 +1040,7 @@
             "name": "How much does it cost to join the Wise Women Use AI community?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Wise Women Use AI Skool community is free to join. The Architect Advantage is the optional $69 USD monthly implementation membership for women ready to build the systems their business runs on. Visit the community page at wisewomenuseai.com/community for details."
+              "text": "The Wise Women Use AI Skool community is free to join. Architect Advantage is the optional $69 USD monthly implementation membership for women ready to build the systems their business runs on. Visit wisewomenuseai.com/architect for details."
             }
           }
         ]
@@ -1033,6 +1064,7 @@
     </a>
     <div class="nav-actions">
       <a href="/blog" class="nav-link">Blog</a>
+      <a href="/architect" class="nav-link">Membership</a>
       <a href="/work" class="nav-link">Work with me</a>
       <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join free</a>
     </div>
@@ -1080,8 +1112,8 @@
         </div>
       </div>
       <div class="hero-quote">
-        <p>"AI doesn't care if you're having a brain fog day. That's the whole point."</p>
-        <cite>Kelly, founder WWUAI</cite>
+        <p>"If it doesn't need your face, your voice, or your presence, it shouldn't need your day."</p>
+        <cite>Callan Faulkner</cite>
       </div>
     </div>
   </section>
@@ -1211,7 +1243,7 @@
     <div class="paths-inner">
       <div class="paths-header reveal">
         <p class="eyebrow">Where would you like to start?</p>
-        <h2>Two ways to get<br><em>your time back.</em></h2>
+        <h2>Three ways to get<br><em>your time back.</em></h2>
       </div>
 
       <div class="paths-grid">
@@ -1242,8 +1274,20 @@
             <li>New conversations and resources added every week</li>
             <li>Kelly in the room, answering real questions</li>
           </ul>
-          <p style="font-size:13px;color:var(--driftwood);line-height:1.6;margin-bottom:20px;">Ready to move from learning into implementation? <strong style="color:var(--bordeaux);font-weight:600;">The Architect Advantage</strong> is the optional $69 a month <span style="font-size:0.85em;color:var(--driftwood);">(USD)</span> membership where you build the systems your business runs on. You can step up when you're ready.</p>
           <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-path btn-path-dark">Join the community, free</a>
+        </div>
+
+        <div class="path-card membership reveal">
+          <div class="path-label">Ready to build the systems</div>
+          <h3>Join Architect Advantage</h3>
+          <p>The $69 USD monthly implementation membership for women who are ready to move beyond learning and build the systems their business actually runs on.</p>
+          <ul class="path-list">
+            <li>Choose the part of your business that depends on you too much</li>
+            <li>Build one useful system at a time with a clear implementation path</li>
+            <li>Use practical prompts, workflows and tools you can adapt to your business</li>
+            <li>Get the monthly build, live support and full member library</li>
+          </ul>
+          <a href="/architect" class="btn-path btn-path-dark">See Architect Advantage</a>
         </div>
 
       </div>
@@ -1286,9 +1330,9 @@
       </div>
 
       <div class="work-with-me">
-        <h3>Work with me directly</h3>
-        <p>If you're looking for something more personalised, I occasionally take on a small number of clients for one-to-one work. Whether you need help building a specific system, getting your AI setup right for your business, or just figuring out where to start, get in touch and we can talk through what that looks like.</p>
-        <a href="https://cal.com/kelly-yuaiol/discoverycall" target="_blank" rel="noopener" class="btn-work">Book a call</a>
+        <h3>Bring me into your organisation</h3>
+        <p>I run practical, hands-on AI workshops for small business teams, councils and business communities. People bring one recurring piece of work and start turning it into a useful system during the session.</p>
+        <a href="/work" class="btn-work">See the workshop</a>
       </div>
     </div>
   </section>
@@ -1354,6 +1398,7 @@
       <a href="/guide" class="footer-link">Free guide</a>
       <a href="/starter" class="footer-link">Starter kit</a>
       <a href="/blog" class="footer-link">Blog</a>
+      <a href="/architect" class="footer-link">Architect Advantage</a>
       <a href="/work" class="footer-link">Work with me</a>
       <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
       <a href="/about" class="footer-link">About</a>
