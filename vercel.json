@@ -5,6 +5,14 @@
       "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/vault"
     },
     {
+      "src": "/vault-starter",
+      "dest": "/vault-starter.html"
+    },
+    {
+      "src": "/vault-claude-clearly",
+      "dest": "/vault-claude-clearly.html"
+    },
+    {
       "src": "/_next/(.*)",
       "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/_next/$1"
     },
