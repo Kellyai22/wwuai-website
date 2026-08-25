@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "src": "/vault",
+      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/vault"
+    },
+    {
+      "src": "/_next/(.*)",
+      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/_next/$1"
+    },
+    {
+      "src": "/wwuai-logo.png",
+      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/wwuai-logo.png"
+    },
+    {
+      "src": "/Giza-Stencil.otf",
+      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/Giza-Stencil.otf"
+    },
+    {
       "src": "/masterclass.ics",
       "headers": {
         "Location": "/workshop.ics"
