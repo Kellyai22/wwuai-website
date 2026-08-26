@@ -1,56 +1,56 @@
 {
   "_comment": "Single source of truth for the current monthly workshop. Edited each month by the workshop skill, then used to regenerate the funnel. Date is Melbourne local; the skill works out the timezone (AEST/AEDT) automatically.",
-  "date": "2026-09-09",
+  "date": "2026-09-16",
   "startTimeLocal": "09:30",
   "durationMinutes": 60,
   "_title_comment": "DESCRIBES the workshop, never a product name. It surfaces on the thank-you page tab and (via calendarSummary) in the calendar event people add. It said 'The Unfair Advantage' until 5 Aug 2026, which is the MEMBERSHIP's name, so registrants were adding a calendar event named after the paid offer. Never reuse a Pack name here either ('The Content Advantage' is August's paid Pack and owns that name exclusively). Keep it in step with the live page <title>.",
-  "title": "Your Content System",
+  "title": "Find Your Bottleneck",
   "joinUrl": "https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1",
   "cohortTagId": 19959089,
   "communityUrl": "https://www.skool.com/wise-women-use-ai-1109",
   "siteBase": "https://www.wisewomenuseai.com",
-  "calendarSummary": "Free Workshop: Your Content System",
-  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Build the one place your content lives, just by talking to Claude.",
+  "calendarSummary": "Free Workshop: Find Your Bottleneck",
+  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Find the part of your business that still relies on you too heavily, and decide what to do about it.",
   "thankYou": {
-    "whatWeDoingSub": "One hour. You talk, Claude does the sorting, and you leave with a real start.",
+    "whatWeDoingSub": "One hour. We find the part of your business that still runs through you, and you leave having decided what to do about it.",
     "cards": [
       {
-        "title": "Claude and Notion, connected",
-        "body": "We'll link the two together at the start, so Claude can build straight into your Notion while you talk. Already connected? Even better, you'll be straight into the good part."
+        "title": "Your bottleneck, named",
+        "body": "Whether the business waits on what you remember, on work that restarts from scratch every time, or on you having the energy to push it. You'll know which one is yours."
       },
       {
-        "title": "Your content pillars, named",
-        "body": "The handful of things you're actually here to talk about, out of your head and on the page where you can see them."
+        "title": "A map of your recurring week",
+        "body": "Everything that comes round again, out of your head and onto one page where you can actually look at it. Most people have never seen it written down."
       },
       {
-        "title": "A one-page Content Command Centre",
-        "body": "One calm home for all of it, with a simple calendar you can keep going even on a bad week."
+        "title": "Every item classified",
+        "body": "Keep it human, let AI assist it, systemise it, automate it, delegate it, or delete it. We go through your list together and you decide, item by item."
       },
       {
-        "title": "Your first few days, filled in",
-        "body": "We'll do the first ones together, so you leave with something real to build on instead of another blank page."
+        "title": "One priority system chosen",
+        "body": "The single thing worth building first, and a decision about what you're changing in the next thirty days. A real start, not a finished business."
       }
     ],
-    "beforeSub": "A few things that'll make the hour more useful for you.",
+    "beforeSub": "Two small things, and neither of them takes long.",
     "steps": [
       {
-        "title": "Connect Claude and Notion before the day, if you can",
-        "body": "A Claude Pro account and a Notion account, linked together. We'll do it quickly at the start, but you'll get far more out of the hour if it's already done. Never connected them before? July's workshop walks through it properly and it's free to watch: <a href=\"https://share.descript.com/view/EfyJyOtewLp\">the July replay is here</a>. And if it plays up on the day, don't worry, you'll build the page anyway and I'll send the walkthrough after."
+        "title": "Take the Business Bottleneck Audit first",
+        "body": "About five minutes, and it tells you which of the three bottlenecks you're carrying. <a href=\"https://www.wisewomenuseai.com/audit\">You can take it here</a>. Bring your result with you and we'll work from it on the day. Haven't done it? Come anyway, we'll sort it in the room."
       },
       {
-        "title": "Bring the things you already talk about",
-        "body": "The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material Claude turns into your pillars."
+        "title": "Have a rough think about your week",
+        "body": "Not a list, just a sense of what comes round again. The things you do every week without thinking, the ones you'd notice if they stopped. Half-formed is perfect, that's the raw material."
       },
       {
         "title": "Come with your camera off and your tea on",
-        "body": "No hot seats, no homework before you arrive. Just show up."
+        "body": "No hot seats, nothing to prepare, no homework before you arrive. Just show up."
       }
     ]
   },
   "_reminderPrep_comment": "Topic-specific prep for the day-before email. Rewrite this each month. Leave it out and the generator falls back to generic copy.",
-  "reminderPrep": "<p>One thing worth doing before tomorrow: connect Claude and Notion. We'll do it quickly at the start, but the hour is much better if it's already sorted. Never done it? <a href=\"https://share.descript.com/view/EfyJyOtewLp\">July's workshop walks through it properly</a> and it's free to watch.</p>\n\n  <p>If it plays up on the day, don't worry about it. You'll build the page anyway and I'll send you the walkthrough after.</p>\n\n  <p>The other thing to bring is the stuff you already talk about. The questions you get asked, the parts of your work you love, the thing you always end up explaining. Half-formed is perfect. That's the raw material.</p>",
-  "topic": "Money and the numbers, without the dread",
-  "holdingTeaser": "Know where you stand in your business, calmly, with AI doing the heavy lifting.",
+  "reminderPrep": "<p>One thing worth doing before tomorrow, and it takes about five minutes: <a href=\"https://www.wisewomenuseai.com/audit\">take the Business Bottleneck Audit</a>. It tells you which of the three bottlenecks you're carrying, and we'll work from your result on the day.</p>\n\n  <p>Haven't got to it? Come anyway. We'll sort it in the room and you won't be behind.</p>\n\n  <p>The other thing to bring is a rough sense of your recurring week. Not a list, just the things that come round again, the ones you'd notice if they stopped. Half-formed is perfect. That's the raw material.</p>",
+  "topic": "Find the bottleneck that's still you",
+  "holdingTeaser": "Sixty minutes to find the part of your business that relies on you too heavily, and decide what to do about it.",
   "_replayUrl_comment": "The Descript share link for THIS month's replay. Leave empty until the cut exists. Follow-up email 1 carries it, and kit-workshop.mjs REFUSES to schedule that email while this is empty, so the replay promise can never go out unbacked. Clear it again at rollover.",
   "replayUrl": "",
   "_membershipPrice_comment": "The Unfair Advantage monthly price at the time the follow-up emails send. The rate steps up ON the workshop date, never the 1st of the month, so this is the post-workshop price.",

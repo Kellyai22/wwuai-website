@@ -4,12 +4,12 @@ PRODID:-//Wise Women Use AI//Workshop//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:workshop-2026-09-09@wisewomenuseai.com
-DTSTAMP:20260812T040005Z
-DTSTART:20260908T233000Z
-DTEND:20260909T003000Z
-SUMMARY:Free Workshop: Your Content System
-DESCRIPTION:A free hands-along hour with Kelly at Wise Women Use AI. Build the one place your content lives, just by talking to Claude.\n\nJoin here: https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1\n\nwisewomenuseai.com
+UID:workshop-2026-09-16@wisewomenuseai.com
+DTSTAMP:20260826T075538Z
+DTSTART:20260915T233000Z
+DTEND:20260916T003000Z
+SUMMARY:Free Workshop: Find Your Bottleneck
+DESCRIPTION:A free hands-along hour with Kelly at Wise Women Use AI. Find the part of your business that still relies on you too heavily, and decide what to do about it.\n\nJoin here: https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1\n\nwisewomenuseai.com
 LOCATION:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1
 URL:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1
 ORGANIZER;CN=Wise Women Use AI:mailto:hello@wisewomenuseai.com

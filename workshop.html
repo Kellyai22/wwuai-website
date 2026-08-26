@@ -3,52 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The next free workshop | Wise Women Use AI</title>
-<meta name="description" content="The next free, hands-along workshop for women in business is on its way. Pop your email in and I'll send you the date and your seat.">
+<title>Find Your Bottleneck: Free Workshop, 16 September &middot; Wise Women Use AI</title>
+<meta name="description" content="A free, hands-along hour for women in business. Find the part of your business that still relies on you too heavily, and decide what to do about it. Live and free, Wednesday 16 September.">
 
-<meta property="og:title" content="The next free workshop is on its way">
-<meta property="og:description" content="A free, hands-along hour for women in business, coming soon. Register your interest and I'll send you the details the moment they're live.">
+<meta property="og:title" content="Free workshop: find the part of your business that still runs on you.">
+<meta property="og:description" content="You've automated half your business and you're still the one holding it together. Sixty minutes to find your bottleneck and decide what to do about it. Live and free.">
 <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
 <meta property="og:url" content="https://www.wisewomenuseai.com/workshop">
-<link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free workshop: find the part of your business that still runs on you.">
+<meta name="twitter:description" content="Sixty minutes to find your bottleneck and decide what to do about it. Live and free, Wednesday 16 September.">
+<meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
 
 <!-- Event schema. This page is deliberately INDEXABLE: a free, dated, recurring
      online event is the strongest thing on the site for Google and for AI
      assistants answering "when is the next free AI workshop". It carried
      noindex until 12 Aug 2026, while also sitting in sitemap.xml, which was a
-     contradiction. Do not re-add noindex here. The thank-you page keeps its own. -->
+     contradiction. Do not re-add noindex here. The thank-you page keeps its own.
+     Dates below come from generate-workshop.mjs --derive-only, never typed by hand. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Free workshop: Money and the numbers, without the dread",
-  "description": "Know where you stand in your business, calmly, with AI doing the heavy lifting.",
+  "name": "Free workshop: Find the bottleneck that's still you",
+  "description": "Sixty minutes to find the part of your business that relies on you too heavily, and decide what to do about it.",
   "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
-  "startDate": "2026-09-09T09:30:00+10:00",
-  "endDate": "2026-09-09T10:30:00+10:00",
+  "startDate": "2026-09-16T09:30:00+10:00",
+  "endDate": "2026-09-16T10:30:00+10:00",
   "inLanguage": "en-AU",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Wise Women Use AI",
-    "url": "https://www.wisewomenuseai.com"
-  },
-  "performer": {
-    "@type": "Person",
-    "name": "Kelly Hartley"
-  },
-  "location": {
-    "@type": "VirtualLocation",
-    "url": "https://www.wisewomenuseai.com/workshop"
-  },
+  "organizer": { "@type": "Organization", "name": "Wise Women Use AI", "url": "https://www.wisewomenuseai.com" },
+  "performer": { "@type": "Person", "name": "Kelly Hartley" },
+  "location": { "@type": "VirtualLocation", "url": "https://www.wisewomenuseai.com/workshop" },
   "image": "https://www.wisewomenuseai.com/assets/social/og-card.jpg",
   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "AUD",
+    "@type": "Offer", "price": "0", "priceCurrency": "AUD",
     "availability": "https://schema.org/InStock",
-    "validFrom": "2026-09-09",
+    "validFrom": "2026-08-26",
     "url": "https://www.wisewomenuseai.com/workshop"
   }
 }
@@ -60,88 +54,163 @@
 <style>
   :root{
     --pearl:#FAF8F6;--ink:#3A131B;--bordeaux:#3A131B;--driftwood:#908486;--cream:#E1DAD7;--white:#FFFFFF;
+    --clay:#DDA983;--blush:#E2B592;
     --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--script:'Allison',cursive;
-    --bordeaux-dk:#7a1a27;--cream-dark:#E1DAD7;--driftwood-text:#6E6266;
-    --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;
+    --cream-dark:#E1DAD7;--sans:'Plus Jakarta Sans',system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{font-family:var(--body);background:var(--pearl);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
   ::selection{background:var(--bordeaux);color:var(--pearl);}
+
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
   .narrow{max-width:680px;}
-  section{padding:clamp(2rem,4vw,3.2rem) 0;}
-  .eyebrow{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--driftwood);display:inline-flex;align-items:center;gap:0.65em;}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--bordeaux);display:inline-block;flex:none;}
-  h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.12;}
-  h1{font-size:clamp(2.5rem,5.4vw,4rem);letter-spacing:-0.01em;}
-  h2{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-0.01em;}
-  h3{font-size:1.18rem;font-weight:600;}
-  em{font-style:italic;color:#DDA983;}
-  .script{font-family:var(--script);color:var(--bordeaux);font-size:clamp(2.6rem,5vw,3.6rem);line-height:0.9;display:block;}
+  .column{max-width:560px;}
+  section{padding:clamp(2.2rem,4.4vw,3.4rem) 0;}
+
+  h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.12;text-wrap:balance;}
+  h1{font-size:clamp(2.3rem,5.2vw,3.7rem);letter-spacing:-0.01em;}
+  h2{font-size:clamp(1.85rem,3.5vw,2.5rem);letter-spacing:-0.01em;}
+  h3{font-size:1.06rem;font-weight:600;font-family:var(--body);letter-spacing:-0.005em;}
   p{color:#3c353f;}
-  .lead{font-size:1.18rem;color:#3c353f;}
-  .sub{color:var(--driftwood);}
-  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:1rem;letter-spacing:0.01em;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:2px;padding:0.95em 2em;cursor:pointer;text-decoration:none;transition:background .25s ease,color .25s ease;}
+  .lead{font-size:1.16rem;color:var(--driftwood);}
+  .micro{font-size:0.85rem;color:var(--driftwood);}
+
+  /* Brand emphasis rule: Clay italic on light, Blush italic on dark.
+     Display italics stay Bordeaux: Clay measures roughly 1.9:1 on Pearl, which
+     fails contrast at any size, so it is used here as an accent (numerals,
+     rules, dots) rather than as text anyone has to read. */
+  em{font-style:italic;color:var(--clay);}
+  h1 em,h2 em,.pull em{color:inherit;}
+  .band em{color:var(--blush);}
+
+  .eyebrow{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--bordeaux);display:inline-flex;align-items:center;gap:0.65em;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--clay);display:inline-block;flex:none;}
+  .rule{width:38px;height:2px;background:var(--clay);margin:0 auto 1.3rem;}
+
+  /* ---- buttons ---- */
+  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:1rem;letter-spacing:0.01em;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:2px;padding:0.95em 2em;cursor:pointer;text-decoration:none;transition:background .25s cubic-bezier(0.16,1,0.3,1),color .25s cubic-bezier(0.16,1,0.3,1),transform .12s ease;}
   .btn:hover{background:var(--ink);color:var(--pearl);}
+  .btn:active{transform:translateY(1px);}
   .btn:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;}
   .btn--filled{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--pearl);}
   .btn--filled:hover{background:transparent;color:var(--bordeaux);}
-  .micro{font-size:0.85rem;color:var(--driftwood);margin-top:1rem;}
+  .btn--pearl{background:var(--pearl);border-color:var(--pearl);color:var(--bordeaux);}
+  .btn--pearl:hover{background:transparent;color:var(--pearl);}
+  .btn--pearl:focus-visible{outline:2px solid var(--blush);outline-offset:3px;}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px;border-radius:2px;}
 
+  /* Inline links in body copy. Without this they render in default browser blue,
+     which is what happened on the first build of this page. */
+  p a{color:var(--bordeaux);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:opacity .2s;}
+  p a:hover{opacity:0.65;}
+  .band p a{color:var(--blush);}
+
+  /* ---- nav ---- */
   nav{position:sticky;top:0;z-index:100;background:var(--pearl);border-bottom:1px solid var(--cream-dark);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;}
   .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;max-width:fit-content;}
   .nav-logo img{height:32px;width:32px;object-fit:contain;}
   .nav-wordmark{font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--driftwood);}
-  .nav-actions{display:flex;align-items:center;gap:24px;position:relative;z-index:2;align-self:stretch;}
-  .nav-link{font-size:12px;font-weight:400;letter-spacing:0.08em;color:var(--driftwood);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;align-self:stretch;}
+  .nav-actions{display:flex;align-items:center;gap:26px;}
+  .nav-link{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--driftwood);text-decoration:none;transition:color .2s;}
   .nav-link:hover{color:var(--bordeaux);}
-  .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background 0.2s,transform 0.1s;display:inline-block;}
+  .btn-solid{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--pearl);background:var(--ink);text-decoration:none;padding:10px 20px;border-radius:2px;transition:background .2s,transform .1s;display:inline-block;}
   .btn-solid:hover{background:var(--bordeaux);transform:translateY(-1px);}
 
-  .signup{max-width:460px;}
+  /* ---- hero ---- */
+  .hero{text-align:center;padding-top:clamp(2.4rem,5vw,3.6rem);padding-bottom:clamp(2rem,4vw,3rem);}
+  .hero .narrow{margin:0 auto;}
+  .hero h1{margin:1rem 0 1.1rem;}
+  .hero .lead{margin:0 auto;max-width:34rem;}
+  .hero .cta{margin-top:1.8rem;}
+  .hero .micro{margin-top:0.95rem;}
+
+  /* ---- dark bands ---- */
+  .band{background:var(--bordeaux);color:var(--pearl);}
+  .band h2{color:var(--pearl);}
+  .band p{color:#e7dcdc;}
+  .band .eyebrow{color:var(--blush);}
+  .band .dot{background:var(--blush);}
+  .proof{text-align:left;}
+  .proof .narrow{margin:0 auto;}
+  .proof p{font-size:1.1rem;}
+  .proof p + p{margin-top:1rem;}
+  .audit{text-align:center;}
+  .audit .narrow{margin:0 auto;}
+  .audit h2{margin:0.9rem 0 1rem;}
+  .audit p{margin:0 auto;max-width:32rem;}
+  .audit .cta{margin-top:1.7rem;}
+
+  /* ---- argument ---- */
+  .argument .column{margin:0 auto;border-top:1px solid var(--cream-dark);border-bottom:1px solid var(--cream-dark);padding:clamp(1.9rem,3.6vw,2.6rem) 0;}
+  .argument p + p{margin-top:1.05rem;}
+  .pull{font-family:var(--display);font-style:italic;color:var(--ink);font-size:clamp(1.28rem,2.6vw,1.42rem);line-height:1.3;margin:1.5rem 0 1.5rem;}
+  .close-line{margin-top:1.7rem;padding-top:1.4rem;border-top:1px solid var(--clay);font-weight:500;color:var(--ink);font-size:1.06rem;line-height:1.5;}
+
+  /* ---- what you'll leave with: 2 across, never 3 ---- */
+  .leave .narrow{margin:0 auto;}
+  .leave h2{text-align:center;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2rem;}
+  .cell{border:1px solid var(--cream-dark);border-radius:10px;padding:1.5rem 1.5rem 1.6rem;transition:border-color .25s cubic-bezier(0.16,1,0.3,1),transform .25s cubic-bezier(0.16,1,0.3,1);}
+  .cell:hover{border-color:var(--clay);transform:translateY(-2px);}
+  .cell .n{font-family:var(--display);font-size:clamp(2.3rem,4.4vw,2.9rem);line-height:1;color:var(--clay);display:block;margin-bottom:0.65rem;}
+  .cell h3{margin-bottom:0.45rem;}
+  .cell p{color:var(--driftwood);font-size:0.96rem;line-height:1.6;}
+  .leave .after{text-align:center;color:var(--driftwood);max-width:36rem;margin:1.9rem auto 0;font-size:0.99rem;}
+
+  /* ---- two columns ---- */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+  .col{border-top:1px solid var(--cream-dark);padding-top:1.5rem;}
+  .col h2{font-size:clamp(1.45rem,2.6vw,1.8rem);margin-bottom:1rem;}
+  .col p + p{margin-top:0.85rem;}
+  .col .soft{color:var(--driftwood);font-size:0.97rem;}
+  .col .when{color:var(--ink);font-weight:600;font-size:1.06rem;}
+
+  /* ---- register ---- */
+  .register{text-align:center;}
+  .register .narrow{margin:0 auto;}
+  .register h2{margin-bottom:1.4rem;}
+  .signup{max-width:460px;margin:0 auto;}
   .signup .fields{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:0.7rem;}
   .signup input{font-family:var(--body);font-size:1rem;width:100%;padding:0.85em 1em;border:1.5px solid #d3c7c3;border-radius:8px;background:var(--white);color:var(--ink);text-align:left;}
   .signup input::placeholder{color:var(--driftwood);}
   .signup input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:2px;border-color:var(--bordeaux);}
   .signup .btn{width:100%;}
-  @media (max-width:540px){.signup .fields{grid-template-columns:1fr;}}
+  .register .micro{margin-top:1rem;}
 
-  .hero{background:radial-gradient(130% 90% at 50% 0%, #FBF7F5 0%, var(--pearl) 55%);padding-top:clamp(2.4rem,5vw,4rem);padding-bottom:clamp(2rem,4vw,3rem);text-align:center;}
-  .hero .rule{width:38px;height:2px;background:var(--bordeaux);margin:0 auto 1.4rem;}
-  .hero h1{margin:0.9rem 0 1.2rem;max-width:none;}
-  .hero .lead{max-width:34rem;margin:0 auto 1.8rem;}
-  .hero .script{margin-bottom:0.1rem;}
-  .hero .signup{margin-left:auto;margin-right:auto;}
-  .hero .success{display:none;max-width:34rem;margin:1.2rem auto 0;font-size:1.1rem;color:var(--ink);}
+  /* ---- closing ---- */
+  .closing{text-align:center;padding-bottom:clamp(2.6rem,5vw,3.8rem);}
+  .closing .column{margin:0 auto;}
+  .closing .sig{font-family:var(--script);color:var(--bordeaux);font-size:3rem;line-height:0.8;margin-top:1.2rem;}
 
-  .panel{background:var(--cream);}
-  .panel p{color:#46393c;}
-  .gifts{list-style:none;margin-top:1.6rem;display:grid;gap:1.1rem;}
-  .gifts li{display:flex;gap:1.1rem;align-items:flex-start;}
-  .gifts .mk{margin-top:0.55em;}
-  .gifts strong{font-weight:600;color:var(--ink);}
-  .gifts span.t{display:block;}
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--cream-dark);padding:40px 48px;text-align:center;}
+  .foot-brand{font-family:var(--display);font-size:1.05rem;color:var(--ink);margin-bottom:0.7rem;}
+  .foot-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1.4rem;margin-bottom:0.9rem;}
+  .foot-links a{font-size:0.85rem;color:var(--driftwood);text-decoration:none;transition:color .2s;}
+  .foot-links a:hover{color:var(--bordeaux);}
+  .footer-legal{font-size:0.8rem;color:var(--driftwood);}
 
-  footer{padding:40px 48px;border-top:1px solid var(--cream-dark);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;}
-  .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
-  .footer-link{font-size:12px;color:var(--driftwood);text-decoration:none;letter-spacing:0.05em;}
-  .footer-link:hover{color:var(--bordeaux);}
-  .social-links{display:flex;gap:20px;align-items:center;}
-  .social-link{color:var(--driftwood);transition:color 0.2s;display:flex;}
-  .social-link:hover{color:var(--bordeaux);}
-  .footer-legal{font-size:11px;color:var(--driftwood);opacity:0.5;}
-
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+  /* ---- reveal ---- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s cubic-bezier(0.16,1,0.3,1);}
   .reveal.in{opacity:1;transform:none;}
+
+  /* ---- responsive ---- */
   @media (max-width:768px){
-    nav{padding:0 24px;}
+    nav{padding:0 20px;}
     .nav-wordmark,.nav-link{display:none;}
-    footer{padding:32px 24px;}
+    footer{padding:32px 20px;}
+  }
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;gap:0.9rem;}
+    .cols{grid-template-columns:1fr;gap:2rem;}
+  }
+  @media (max-width:540px){
+    .signup .fields{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
+    .cell:hover{transform:none;}
     html{scroll-behavior:auto;}
   }
 </style>
@@ -156,96 +225,152 @@
   <div class="nav-actions">
     <a href="/work" class="nav-link">Work with me</a>
     <a href="/blog" class="nav-link">Blog</a>
-    <a href="#register" class="btn-solid">Get the details</a>
+    <a href="#register" class="btn-solid">Save my seat</a>
   </div>
 </nav>
 
-<!-- HERO (holding) -->
-<header class="hero" id="register">
+<!-- HERO -->
+<header class="hero">
   <div class="wrap narrow">
-    <div class="reveal">
-      <div class="rule"></div>
-      <span class="eyebrow">Free live workshop</span>
-      <span class="script">coming in september</span>
-      <h1>The next free workshop is <em>on its way</em>.</h1>
-      <p class="lead">Know where you stand in your business, calmly, with AI doing the heavy lifting. Pop your email in and I'll send you the full details and your seat as soon as they're ready. It's on Wednesday 9 September 2026 at 9:30am AEST.</p>
-      <!-- Registration form: Kit ID 9507453, UID 4a313d4988. Same form + cohort tag as the live workshop, so everyone who registers here is already on the list for the reminders. -->
-      <form class="signup register-form seva-form formkit-form" action="https://app.kit.com/forms/9507453/subscriptions" method="post" data-sv-form="9507453" data-uid="4a313d4988" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
-        <input type="hidden" name="fields[source]" value="workshop-holding">
-        <div class="fields">
-          <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-          <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-        </div>
-        <button type="submit" class="btn btn--filled">Send me the details</button>
-      </form>
-      <p class="micro">Free, live and recorded. No spam, just the workshop details.</p>
-      <p class="success" id="success">You're on the list. I'll email you the date and your seat as soon as they're set. Keep an eye on your inbox.</p>
-    </div>
+    <div class="rule"></div>
+    <span class="eyebrow"><span class="dot"></span>Free online workshop &middot; Wednesday 16 September &middot; 9:30am Melbourne</span>
+    <h1>You've automated half your business and you're <em>still</em> the one holding it together</h1>
+    <p class="lead">Sixty minutes to find the part of your business that relies on you too heavily, and decide what to do about it.</p>
+    <div class="cta"><a href="#register" class="btn btn--filled">Save my seat</a></div>
+    <p class="micro">Free. Replay sent to everyone who registers.</p>
   </div>
 </header>
 
-<!-- WHAT THESE ARE -->
-<section class="panel">
+<!-- PROOF -->
+<section class="band proof">
   <div class="wrap narrow reveal">
-    <span class="eyebrow"><span class="dot"></span>What these hours are like</span>
-    <h2 style="margin:1rem 0 1.4rem;">A calm, hands-along hour. You build the first piece with me.</h2>
-    <p style="margin-bottom:1.3rem;">Once a month I run a free, live workshop for women in business. No hype, no homework, nothing to set up alone. You bring what's in your head, and we use AI to take some of the weight off, together, in real time.</p>
-    <ul class="gifts">
-      <li><span class="dot mk"></span><span class="t"><strong>Live and hands-along.</strong> Build along with me, or come with your camera off and just watch. Both are welcome.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>Yours to keep.</strong> You leave with something real you can use again, whether you do anything else or not.</span></li>
-      <li><span class="dot mk"></span><span class="t"><strong>Recorded.</strong> Can't make it live? Register anyway and I'll send you the replay.</span></li>
-    </ul>
+    <span class="eyebrow"><span class="dot"></span>Why me</span>
+    <p style="margin-top:1rem;">I built more AI and more automation into my own business, and I <em>still</em> ended up as the bottleneck in it. What fixed it was redesigning how the business worked, so the things that kept coming back to me stopped needing me.</p>
+    <p>Now three businesses run on systems I built, tested and fixed until they held. This hour is the part I got wrong, turned into something you can do for yourself.</p>
+  </div>
+</section>
+
+<!-- ARGUMENT -->
+<section class="argument">
+  <div class="wrap">
+    <div class="column reveal">
+      <p>You've done the work. You've tried Claude or ChatGPT, you've got a couple of automations running, maybe a Notion setup you built late at night. Individual tasks are faster than they were.</p>
+      <p class="pull">And your week looks much the same.</p>
+      <p>That isn't a discipline problem and it isn't a tools problem. Automating a task doesn't take you out of it. It moves you from doing the work to supervising the work, which is still your time and still your head.</p>
+      <p class="close-line">If your name is on every decision, nothing has actually left your plate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEAVE WITH -->
+<section class="leave">
+  <div class="wrap narrow">
+    <h2>What you'll leave with</h2>
+    <div class="grid">
+      <div class="cell reveal">
+        <span class="n">01</span>
+        <h3>Your bottleneck, named</h3>
+        <p>Whether the business waits on what you remember, on work that restarts from scratch, or on you having the energy to push it.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="n">02</span>
+        <h3>A map of your recurring week</h3>
+        <p>Out of your head and onto one page, where you can actually look at it.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="n">03</span>
+        <h3>Every item classified</h3>
+        <p>Keep it human, let AI assist it, systemise it, automate it, delegate it, or delete it.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="n">04</span>
+        <h3>One priority system chosen</h3>
+        <p>And a decision about what you're changing in the next thirty days.</p>
+      </div>
+    </div>
+    <p class="after">A real start, not a finished business. You'll leave with a decision you can act on rather than another list of things to do.</p>
+  </div>
+</section>
+
+<!-- AUDIT -->
+<section class="band audit">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow"><span class="dot"></span>Before you come</span>
+    <h2>Take the free Business Bottleneck Audit</h2>
+    <p>About five minutes. It tells you which of the three bottlenecks you're carrying. Bring your result with you, we'll work from it on the day.</p>
+    <div class="cta"><a href="/audit" class="btn btn--pearl">Take the audit</a></div>
+  </div>
+</section>
+
+<!-- TWO COLUMNS -->
+<section class="twocol">
+  <div class="wrap">
+    <div class="cols">
+      <div class="col reveal">
+        <h2>Who this is for</h2>
+        <p>Women in midlife running a real business, five, ten, fifteen years in. You're good at what you do, the business works, and it works because you're holding all of it.</p>
+        <p class="soft">If you haven't used AI at all yet, this one will move quickly. <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">Start in the free community</a> instead and come to a later workshop.</p>
+      </div>
+      <div class="col reveal">
+        <h2>The details</h2>
+        <p class="when">Wednesday 16 September</p>
+        <p>9:30 to 10:30am Melbourne time</p>
+        <p>Online, on Zoom. Link comes with your confirmation.</p>
+        <p class="soft">Cameras optional, chat very welcome. Replay goes to everyone who registers, so book in even if you can't be there live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <div class="wrap narrow reveal">
+    <h2>Save my seat</h2>
+    <form class="signup register-form seva-form formkit-form"
+          action="https://app.kit.com/forms/9507453/subscriptions"
+          method="post"
+          data-sv-form="9507453"
+          data-uid="4a313d4988"
+          data-format="inline"
+          data-version="5"
+          data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
+      <input type="hidden" name="fields[source]" value="workshop-sep">
+      <div class="fields">
+        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+        <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+      </div>
+      <button type="submit" class="btn btn--filled">Save my seat</button>
+    </form>
+    <p class="micro">Free. Replay sent to everyone who registers.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap column reveal">
+    <p>If this has been sitting on your list for months, this is the hour. Come as you are, camera off, tea on.</p>
+    <p class="sig">Kelly</p>
   </div>
 </section>
 
 <footer>
-  <a href="/" class="nav-logo">
-    <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-    <span class="nav-wordmark">Wise Women Use AI</span>
-  </a>
-  <div class="footer-links">
-    <a href="/work" class="footer-link">Work with me</a>
-    <a href="/blog" class="footer-link">Blog</a>
-    <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="footer-link">Join the community</a>
-    <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
+  <div class="foot-brand">Wise Women Use AI</div>
+  <div class="foot-links">
+    <a href="/">wisewomenuseai.com</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/ai-disclosure">How I use AI</a>
   </div>
-  <div class="social-links">
-    <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    </a>
-  </div>
-  <p class="footer-legal">2026 Wise Women Use AI · wisewomenuseai.com · Melbourne, Australia</p>
+  <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
 </footer>
 
 <script>
-  (function(){
-    var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
-    },{threshold:0.12});
-    els.forEach(function(e){io.observe(e);});
-  })();
-</script>
-
-<script>
-  // Same pattern as the live workshop page: post to Kit in the background, then
-  // redirect to the thank-you page. During the holding period /workshop-thankyou is
-  // the "you're on the list" page.
+  // Post to Kit in the background, then redirect to the thank-you page.
+  // Same pattern as every other capture form on the site.
   document.querySelectorAll("form.register-form").forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button[type=submit]");
-      if (btn) { btn.disabled = true; btn.textContent = "Adding you…"; }
+      if (btn) { btn.disabled = true; btn.textContent = "Adding you..."; }
       fetch(form.action, {
         method: "POST",
         body: new URLSearchParams(new FormData(form)),
@@ -256,6 +381,16 @@
     });
   });
 </script>
-
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'–'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
 </body>
 </html>
