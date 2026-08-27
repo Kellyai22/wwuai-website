@@ -54,5 +54,8 @@
   "_replayUrl_comment": "The Descript share link for THIS month's replay. Leave empty until the cut exists. Follow-up email 1 carries it, and kit-workshop.mjs REFUSES to schedule that email while this is empty, so the replay promise can never go out unbacked. Clear it again at rollover.",
   "replayUrl": "",
   "_membershipPrice_comment": "The Unfair Advantage monthly price at the time the follow-up emails send. The rate steps up ON the workshop date, never the 1st of the month, so this is the post-workshop price.",
-  "membershipPrice": "$69"
+  "membershipPrice": "$69",
+  "_invitePitch_comment": "Topic-specific pitch for the two WHOLE-LIST run-up invites. Rewrite every month, same as reminderPrep. It lives here and not in the template because until 27 Aug 2026 it WAS hardcoded in the template, and September's invites would have gone to every subscriber describing August's content workshop. Leave it out and the generator falls back to a bare one-liner built from the topic.",
+  "invitePitch": "<p>It's about the part of your business that still runs through you.</p>\n\n  <p>You've done the work. You've tried Claude or ChatGPT, you've got a couple of automations running, and individual tasks are faster than they were. And your week looks much the same. That isn't a discipline problem and it isn't a tools problem. Automating a task doesn't take you out of it, it moves you from doing the work to supervising the work, which is still your time and still your head.</p>\n\n  <p>So in one hour we find the thing your business actually waits on, get your recurring week onto one page, and you decide what changes in the next thirty days.</p>",
+  "inviteShort": "<p>It's about the part of your business that relies on you too heavily. In one hour we find it, get your recurring week onto one page, and you leave having decided what to change.</p>"
 }
