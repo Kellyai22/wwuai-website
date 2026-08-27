@@ -1052,9 +1052,13 @@
 
 <body>
 
-  <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener" class="announce-bar">
-    <span>Ready for a business that depends on you less?</span>
-    <span class="announce-cta">Start free <span class="arrow">&#8594;</span></span>
+  <!-- Announcement bar. The first span MUST keep the shape
+       "Free live workshop · <date>" with no class on it: that is the anchor
+       generate-workshop.mjs matches to roll the date forward every month. Change
+       the wording and the date silently goes stale, because nothing else updates it. -->
+  <a href="/workshop" class="announce-bar">
+    <span>Free live workshop · 16 September</span>
+    <span class="announce-cta">Save my seat <span class="arrow">&#8594;</span></span>
   </a>
 
   <nav>
