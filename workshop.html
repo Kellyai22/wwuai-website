@@ -213,6 +213,10 @@
     .cell:hover{transform:none;}
     html{scroll-behavior:auto;}
   }
+  .register-form .formkit-alert:empty { display: none; }
+  .register-form .formkit-alert { list-style: none; padding: 1rem; border: 1px solid currentColor; margin: 1rem 0; }
+  .register-form .formkit-alert:not(:empty)::before { content: "Registration has not been confirmed. Please try again."; display: block; margin-bottom: .5rem; }
+  .register-form button:disabled { opacity: .65; cursor: wait; }
 </style>
 </head>
 <body>
@@ -333,13 +337,14 @@
           data-uid="4a313d4988"
           data-format="inline"
           data-version="5"
-          data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/workshop-thankyou"}}}'>
+          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Registration received. Opening your workshop details."}}}'>
       <input type="hidden" name="fields[source]" value="workshop-sep">
-      <div class="fields">
+      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" role="alert" aria-live="polite"></ul>
+      <div class="fields" data-element="fields">
         <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
         <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
       </div>
-      <button type="submit" class="btn btn--filled">Save my seat</button>
+      <button type="submit" data-element="submit" class="btn btn--filled">Save my seat</button>
     </form>
     <p class="micro">Free. Replay sent to everyone who registers.</p>
   </div>
@@ -364,23 +369,14 @@
 </footer>
 
 <script>
-  // Post to Kit in the background, then redirect to the thank-you page.
-  // Same pattern as every other capture form on the site.
+  // Kit emits this only after successful registration and any required checks.
   document.querySelectorAll("form.register-form").forEach(function (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var btn = form.querySelector("button[type=submit]");
-      if (btn) { btn.disabled = true; btn.textContent = "Adding you..."; }
-      fetch(form.action, {
-        method: "POST",
-        body: new URLSearchParams(new FormData(form)),
-        mode: "no-cors"
-      }).finally(function () {
-        window.location.href = "https://www.wisewomenuseai.com/workshop-thankyou";
-      });
+    form.addEventListener("ckjs:submission:complete", function () {
+      window.location.assign("https://www.wisewomenuseai.com/workshop-thankyou");
     });
   });
 </script>
+<script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
 <script>
   (function(){
     var els=document.querySelectorAll('.reveal');
