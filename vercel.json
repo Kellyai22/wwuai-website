@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "src": "/Astra",
+      "dest": "/Astra.html"
+    },
+    {
+      "src": "/astra",
+      "dest": "/Astra.html"
+    },
+    {
       "src": "/vault",
       "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/vault"
     },
