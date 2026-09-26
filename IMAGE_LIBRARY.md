@@ -76,3 +76,7 @@ Assets for the branded Kit email template (header + social icons). Referenced by
 | kelly-signature.png | "Kelly" sign-off in Allison script, Bordeaux, transparent | email, kit, signature, sign-off |
 
 > Public URL pattern: https://wisewomenuseai.com/assets/email/{filename}
+
+## September 2026 website refresh
+- `assets/photos/kelly-reaching-current-v1.png` — reviewed reaching-hand hero portrait; homepage; original retained.
+- `assets/photos/kelly-about-selected.png` — Kelly-selected current professional headshot; About; original retained.

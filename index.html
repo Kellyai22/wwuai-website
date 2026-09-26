@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/">
-  <link rel="preload" as="image" href="/assets/photos/kelly-hero.webp" type="image/webp">
+  <link rel="preload" as="image" href="/assets/photos/kelly-reaching-current-v1.png" type="image/png">
   <title>Wise Women Use AI | AI for Women in Business</title>
   <meta name="description" content="A community for women in business who want to use AI to get their time, confidence, and business back. No hype, no pressure. Just things that actually work.">
   <meta name="keywords" content="AI for women in business, Claude AI community, AI tools for female entrepreneurs, women and AI, AI Australia, Kelly Wise Women">
@@ -33,6 +33,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 88px; }
 
     body {
       background: var(--bg);
@@ -293,11 +294,13 @@
     }
 
     .hero-photo-frame {
-      aspect-ratio: 4/5;
+      aspect-ratio: 3/4;
       background: var(--cream-mid);
       border-radius: 4px;
       overflow: hidden;
     }
+
+    .hero-photo-frame picture { display: block; width: 100%; height: 100%; }
 
     .hero-photo-frame img {
       width: 100%;
@@ -940,7 +943,7 @@
 
       .hero { grid-template-columns: 1fr; padding: 48px 24px 64px; gap: 48px; min-height: auto; }
       .hero-right { order: -1; }
-      .hero-photo-frame { aspect-ratio: 3/2; max-height: 320px; }
+      .hero-photo-frame { aspect-ratio: 3/4; max-height: none; }
       .hero-quote { display: none; }
 
       .pain-list { grid-template-columns: 1fr; }
@@ -959,7 +962,53 @@
 
       footer { padding: 32px 24px; flex-direction: column; align-items: center; }
     }
-  </style>
+  
+    /* Compact band spacing: keep backgrounds adjoining and content readable. */
+    .hero { min-height: auto; padding-block: 40px; }
+    .proof-section, .pain-section, .loops-section, .for-section,
+    .paths-section, .kelly-section, .capture-section { padding-block: 40px; margin-block: 0; }
+    .proof-section { padding-bottom: 0; }
+    @media (max-width: 768px) {
+      .hero, .proof-section, .pain-section, .loops-section, .for-section,
+      .paths-section, .kelly-section, .capture-section { padding-block: 28px; }
+      .proof-section { padding-bottom: 0; }
+      .hero, .kelly-section { gap: 28px; }
+      #faq { padding: 28px 24px !important; }
+
+    }
+  
+    /* Kelly's 21 September review: reduce internal gaps and balance mixed type. */
+    .loops-header, .paths-header { margin-bottom: 28px; }
+    .loops-cta { margin-top: 28px; }
+    .loop-card { padding: 26px 30px; }
+    .loop-num { margin-bottom: 12px; }
+    .pain-list { margin-top: 28px; }
+    .pain-body { margin-bottom:28px; }
+    .for-section h2 { margin-bottom: 28px; }
+    #faq .faq-heading { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; margin-bottom:28px; color:var(--ink); white-space:nowrap; }
+    .faq-common { font-size:clamp(16px,2.5vw,28px); }
+    .faq-honest { font-family:'Allison',cursive; font-size:clamp(32px,5vw,56px); color:#E2B592; }
+    @media(max-width:768px) {
+      .loops-header, .paths-header { margin-bottom:20px; }
+      .loops-cta { margin-top:20px; }
+      .loop-card { padding:22px 24px; }
+      #faq .faq-heading { margin-bottom:24px; }
+      .faq-common { font-size:clamp(14px,4vw,24px); }
+      .faq-honest { font-size:clamp(28px,8vw,48px); }
+    }
+
+    /* One shared footer across the main website pages. */
+    .site-footer { padding:32px 24px; border-top:1px solid #E1DAD7; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; font-family:'Plus Jakarta Sans',Arial,sans-serif; background:#FAF8F6; }
+    .site-footer .footer-brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:#3A131B; }
+    .site-footer .footer-brand img { width:36px; height:36px; object-fit:contain; }
+    .site-footer .footer-wordmark { font-family:'Playfair Display',Georgia,serif; font-size:14px; }
+    .site-footer .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 24px; max-width:1000px; }
+    .site-footer .footer-link { font-size:12px; font-weight:400; line-height:1.75; color:#908486; text-decoration:none; letter-spacing:.05em; }
+    .site-footer .footer-link:hover, .site-footer .social-link:hover { color:#3A131B; }
+    .site-footer .social-links { display:flex; gap:20px; align-items:center; }
+    .site-footer .social-link { color:#908486; display:flex; }
+    .site-footer .footer-legal { margin:0; font-size:11px; line-height:1.75; color:#908486; opacity:.75; }
+</style>
 
   <script type="application/ld+json">
   {
@@ -1052,14 +1101,7 @@
 
 <body>
 
-  <!-- Announcement bar. The first span MUST keep the shape
-       "Free live workshop · <date>" with no class on it: that is the anchor
-       generate-workshop.mjs matches to roll the date forward every month. Change
-       the wording and the date silently goes stale, because nothing else updates it. -->
-  <a href="/workshop" class="announce-bar">
-    <span>Free live workshop · 16 September</span>
-    <span class="announce-cta">Save my seat <span class="arrow">&#8594;</span></span>
-  </a>
+  <!-- September event promotion removed; future workshop model remains under review. -->
 
   <nav>
     <a href="/" class="nav-logo">
@@ -1077,7 +1119,7 @@
 
   <section class="hero">
     <div class="hero-left">
-      <p class="eyebrow hero-eyebrow">AI, systems and automation for women in midlife</p>
+
 
       <h1><span class="line-1">Your business</span><span class="line-2"><span class="script-accent">shouldn't need you</span></span><span class="line-3">for everything.</span></h1>
 
@@ -1102,9 +1144,9 @@
     <div class="hero-right">
       <div class="hero-photo-frame">
         <picture>
-          <source srcset="/assets/photos/kelly-hero.webp" type="image/webp">
+          <source srcset="/assets/photos/kelly-reaching-current-v1.png" type="image/png">
           <img
-            src="/assets/photos/kelly-hero.jpg"
+            src="/assets/photos/kelly-reaching-current-v1.png"
             alt="Kelly, founder of Wise Women Use AI"
             width="600" height="750"
             onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';"
@@ -1123,29 +1165,12 @@
   </section>
 
 
-  <div class="cred-strip">
-    <div class="cred-item">
-      <span class="cred-number">3</span>
-      <span class="cred-label">Businesses run with AI</span>
-    </div>
-    <div class="cred-item">
-      <span class="cred-number">2+</span>
-      <span class="cred-label">Years using AI in business</span>
-    </div>
-    <div class="cred-item">
-      <span class="cred-number">36</span>
-      <span class="cred-label">AI agents running</span>
-    </div>
-    <div class="cred-item">
-      <span class="cred-number">100%</span>
-      <span class="cred-label">Practical. No theory.</span>
-    </div>
-  </div>
+
 
 
   <section class="proof-section reveal">
     <span class="eyebrow">Why listen to me</span>
-    <p>I run three businesses, and not by working every hour. They run on systems I built, tested and fixed until they held. The systems do the running now, so I get the slow mornings, the walk with the dog before the laptop, the time with the people I love. I'm not teaching you this from the top of a mountain. I'm the proof that a business can run on good systems, <em>instead of running on you.</em></p>
+    <p>I use AI and systems in my own businesses, and I keep checking where the work still comes back to me. That is what I bring to Wise Women: practical examples, honest limits and useful changes you can test in your own business.</p>
   </section>
 
 
@@ -1177,7 +1202,7 @@
   </section>
 
 
-  <section class="loops-section">
+  <section id="inside" class="loops-section">
     <div class="loops-inner">
       <div class="loops-header reveal">
         <p class="eyebrow">What's actually inside the community</p>
@@ -1202,7 +1227,7 @@
 
         <div class="loop-card reveal">
           <div class="loop-num">04</div>
-          <p>New content, tools, and conversations go in every week. Real questions from women running real businesses, with real answers. <strong>You're not seeing any of it yet</strong>, but you could be inside this week. Joining is free.</p>
+          <p>Explore the existing tools, lessons and conversations. Real questions from women running real businesses, with real answers. <strong>You're not seeing any of it yet</strong>, but you could be inside this week. Joining is free.</p>
         </div>
       </div>
 
@@ -1275,7 +1300,7 @@
             <li>The Claude Starter Kit to set yourself up properly from day one</li>
             <li>A starter set of copy-and-paste prompts to use today</li>
             <li>An active community of women using AI in real businesses</li>
-            <li>New conversations and resources added every week</li>
+            <li>Practical conversations and resources to use at your own pace</li>
             <li>Kelly in the room, answering real questions</li>
           </ul>
           <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-path btn-path-dark">Join the community, free</a>
@@ -1289,7 +1314,7 @@
             <li>Choose the part of your business that depends on you too much</li>
             <li>Build one useful system at a time with a clear implementation path</li>
             <li>Use practical prompts, workflows and tools you can adapt to your business</li>
-            <li>Get the monthly build, live support and full member library</li>
+            <li>Get one monthly implementation call with replay, help in Skool and the member library</li>
           </ul>
           <a href="/architect" class="btn-path btn-path-dark">See Architect Advantage</a>
         </div>
@@ -1302,9 +1327,9 @@
   <section id="about" class="kelly-section">
     <div class="kelly-photo reveal">
       <picture>
-        <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
+        <source srcset="/assets/photos/kelly-about-selected.png" type="image/png">
         <img
-          src="/assets/photos/kelly-about.jpg"
+          src="/assets/photos/kelly-about-selected.png"
           alt="Kelly, founder of Wise Women Use AI, Melbourne"
           width="400" height="500"
           loading="lazy"
@@ -1321,7 +1346,7 @@
       <span class="eyebrow">About Kelly</span>
       <h2>Hey. I'm Kelly.<br><em>I built this for us.</em></h2>
 
-      <p>I'm British, based in Melbourne, and I run three businesses. I use AI, primarily Claude, as the actual operating system my businesses run on. Not as a demo. Not as an experiment. As the thing that makes it possible to keep going on the days when everything feels like too much.</p>
+      <p>I'm British, based in Melbourne, and I run three businesses. I use AI, primarily Claude, to help with the recurring work in my businesses. I’m also checking which processes still depend on me, and what would make them more reliable.</p>
 
       <p>I started Wise Women Use AI because I couldn't find a space that was <strong>honestly useful</strong> for women like me. The AI education world is full of people who discovered these tools 18 months ago and started teaching them. Most of it isn't built for women running real businesses, with real energy constraints, in real life.</p>
 
@@ -1364,9 +1389,9 @@
     </div>
   </section>
 
-  <section id="faq" style="max-width:800px;margin:0 auto;padding:80px 48px;">
-    <p class="eyebrow" style="margin-bottom:20px;">Questions</p>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;margin-bottom:48px;color:var(--ink);">Common questions,<br><em>honest answers.</em></h2>
+  <section id="faq" style="max-width:800px;margin:0 auto;padding:40px 48px;">
+
+    <h2 class="faq-heading"><span class="faq-common">Common questions,</span> <span class="faq-honest">honest answers.</span></h2>
     <div style="display:flex;flex-direction:column;gap:0;">
       <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
         <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is Wise Women Use AI?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
@@ -1391,16 +1416,14 @@
     </div>
   </section>
 
-  <footer>
-    <a href="/" class="nav-logo">
+  <footer class="site-footer">
+    <a href="/" class="footer-brand">
       <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-      <span class="nav-wordmark">Wise Women Use AI</span>
+      <span class="footer-wordmark">Wise Women Use AI</span>
     </a>
 
     <div class="footer-links">
-      <a href="/workshop" class="footer-link">Workshop</a>
-      <a href="/guide" class="footer-link">Free guide</a>
-      <a href="/starter" class="footer-link">Starter kit</a>
+      <a href="https://www.wisewomenuseai.com/vault" class="footer-link">Free resources</a>
       <a href="/blog" class="footer-link">Blog</a>
       <a href="/architect" class="footer-link">Architect Advantage</a>
       <a href="/work" class="footer-link">Work with me</a>

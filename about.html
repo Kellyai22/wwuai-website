@@ -278,7 +278,19 @@
       .kelly-photo { aspect-ratio: 4/3; max-height: 280px; position: static; }
       footer { padding: 32px 24px; flex-direction: column; align-items: center; }
     }
-  </style>
+  
+    /* One shared footer across the main website pages. */
+    .site-footer { padding:32px 24px; border-top:1px solid #E1DAD7; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; font-family:'Plus Jakarta Sans',Arial,sans-serif; background:#FAF8F6; }
+    .site-footer .footer-brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:#3A131B; }
+    .site-footer .footer-brand img { width:36px; height:36px; object-fit:contain; }
+    .site-footer .footer-wordmark { font-family:'Playfair Display',Georgia,serif; font-size:14px; }
+    .site-footer .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 24px; max-width:1000px; }
+    .site-footer .footer-link { font-size:12px; font-weight:400; line-height:1.75; color:#908486; text-decoration:none; letter-spacing:.05em; }
+    .site-footer .footer-link:hover, .site-footer .social-link:hover { color:#3A131B; }
+    .site-footer .social-links { display:flex; gap:20px; align-items:center; }
+    .site-footer .social-link { color:#908486; display:flex; }
+    .site-footer .footer-legal { margin:0; font-size:11px; line-height:1.75; color:#908486; opacity:.75; }
+</style>
 
   <script type="application/ld+json">
   {
@@ -340,9 +352,9 @@
 
     <div class="kelly-photo reveal">
       <picture>
-        <source srcset="/assets/photos/kelly-about.webp" type="image/webp">
+        <source srcset="/assets/photos/kelly-about-selected.png" type="image/png">
         <img
-          src="/assets/photos/kelly-about.jpg"
+          src="/assets/photos/kelly-about-selected.png"
           alt="Kelly Hartley, founder of Wise Women Use AI"
           width="400" height="500"
           onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
@@ -383,16 +395,19 @@
   </section>
 
 
-  <footer>
-    <a href="/" class="nav-logo">
+  <footer class="site-footer">
+    <a href="/" class="footer-brand">
       <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-      <span class="nav-wordmark">Wise Women Use AI</span>
+      <span class="footer-wordmark">Wise Women Use AI</span>
     </a>
 
     <div class="footer-links">
+      <a href="https://www.wisewomenuseai.com/vault" class="footer-link">Free resources</a>
       <a href="/blog" class="footer-link">Blog</a>
+      <a href="/architect" class="footer-link">Architect Advantage</a>
       <a href="/work" class="footer-link">Work with me</a>
       <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
+      <a href="/about" class="footer-link">About</a>
       <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
       <a href="/privacy" class="footer-link">Privacy</a>
       <a href="/ai-disclosure" class="footer-link">How I use AI</a>
