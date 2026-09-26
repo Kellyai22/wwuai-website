@@ -1097,7 +1097,26 @@
     ]
   }
   </script>
-</head>
+<style id="scrolling-panels">
+.motion-control{display:block;margin:18px auto 0;border:1px solid #3A131B55;background:transparent;color:#3A131B;border-radius:4px;padding:6px 12px;font:12px/1.5 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+@media(max-width:899px),(max-height:699px),(prefers-reduced-motion:reduce){.motion-control{display:none}}
+@media(min-width:900px) and (min-height:700px) and (prefers-reduced-motion:no-preference){
+body:not(.motion-paused) .paths-inner{max-width:1100px}
+body:not(.motion-paused) .paths-grid{display:block;padding-bottom:5vh;isolation:isolate}
+body:not(.motion-paused) .path-card{position:sticky;top:100px;min-height:530px;margin-bottom:100px;padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;align-content:center;opacity:1;transform-origin:center top;box-shadow:0 -15px 45px #3A131B12;will-change:transform;border-radius:14px;transition:none;background:#FAF8F6;}
+body:not(.motion-paused) .path-card>*{grid-column:1}
+body:not(.motion-paused) .path-card p,body:not(.motion-paused) .path-card li{color:#3A131B;font-size:16px;line-height:1.65}
+body:not(.motion-paused) .path-card .path-badge{width:auto;left:auto;padding:6px 14px}
+body:not(.motion-paused) .path-card .path-list{grid-column:2;grid-row:2/5;font-size:17px}
+body:not(.motion-paused) .path-card .btn-path{justify-self:start}
+body:not(.motion-paused) .path-card:nth-child(2){background:#E2B592;color:#3A131B}
+body:not(.motion-paused) .path-card:nth-child(3){background:#3A131B;color:#FAF8F6;margin-bottom:0}
+body:not(.motion-paused) .path-card:nth-child(3) h3,body:not(.motion-paused) .path-card:nth-child(3) p,body:not(.motion-paused) .path-card:nth-child(3) li{color:#FAF8F6}
+body:not(.motion-paused) .path-card:nth-child(3) .btn-path{background:#E2B592;color:#3A131B}
+body:not(.motion-paused) .path-card .path-badge{grid-column:auto;right:28px;top:18px}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto!important}}
+@media(max-width:899px){</style></head>
 
 <body>
 
@@ -1268,11 +1287,12 @@
   </section>
 
 
-  <section class="paths-section">
+  <section class="paths-section" id="ways-to-start">
     <div class="paths-inner">
       <div class="paths-header reveal">
         <p class="eyebrow">Where would you like to start?</p>
         <h2>Three ways to get<br><em>your time back.</em></h2>
+<button class="motion-control" type="button" id="motion-toggle" aria-pressed="false">Pause motion</button>
       </div>
 
       <div class="paths-grid">
@@ -1468,5 +1488,10 @@
   </script>
 
   <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
-</body>
+
+<script>
+(()=>{const cards=[...document.querySelectorAll('.path-card')],toggle=document.querySelector('#motion-toggle'),media=matchMedia('(min-width:900px) and (min-height:700px) and (prefers-reduced-motion:no-preference)');let queued=false;
+function draw(){queued=false;const enabled=media.matches&&!document.body.classList.contains('motion-paused');cards.forEach((c,i)=>{let p=0;if(enabled&&cards[i+1])p=Math.max(0,Math.min(1,(480-cards[i+1].getBoundingClientRect().top)/380));c.style.transform=enabled?'translateY('+(-28*p)+'px) scale('+(1-.035*p)+') rotate('+(-1.6*p)+'deg)':'';c.style.zIndex=enabled?String(i+1):''})}
+function request(){if(!queued){queued=true;requestAnimationFrame(draw)}}window.addEventListener('scroll',request,{passive:true});window.addEventListener('resize',request);media.addEventListener('change',request);toggle.addEventListener('click',()=>{const paused=document.body.classList.toggle('motion-paused');toggle.setAttribute('aria-pressed',String(paused));toggle.textContent=paused?'Resume motion':'Pause motion';draw()});draw()})();
+</script></body>
 </html>
