@@ -140,6 +140,7 @@
       top: 88px;
     }
 
+    .kelly-photo picture { display: block; width: 100%; height: 100%; }
     .kelly-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
     .kelly-photo-placeholder {
@@ -275,7 +276,7 @@
       .cta-short { display: inline; }
       .cta-full  { display: none; }
       .kelly-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
-      .kelly-photo { aspect-ratio: 4/3; max-height: 280px; position: static; }
+      .kelly-photo { aspect-ratio: 4/5; max-height: 480px; position: static; }
       footer { padding: 32px 24px; flex-direction: column; align-items: center; }
     }
   
@@ -352,11 +353,11 @@
 
     <div class="kelly-photo reveal">
       <picture>
-        <source srcset="/assets/photos/kelly-about-selected.png" type="image/png">
+        <source srcset="/assets/photos/kelly-notebook-20260928.webp" type="image/webp">
         <img
-          src="/assets/photos/kelly-about-selected.png"
-          alt="Kelly Hartley, founder of Wise Women Use AI"
-          width="400" height="500"
+          src="/assets/photos/kelly-notebook-20260928.webp"
+          alt="Kelly Hartley writing in her notebook at her desk"
+          width="1145" height="1374"
           onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
         />
       </picture>
