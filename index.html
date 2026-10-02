@@ -1,1442 +1,267 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://www.wisewomenuseai.com/">
-  <link rel="preload" as="image" href="/assets/photos/kelly-smiling-20260928.webp" type="image/webp">
-  <title>Wise Women Use AI | AI for Women in Business</title>
-  <meta name="description" content="A community for women in business who want to use AI to get their time, confidence, and business back. No hype, no pressure. Just things that actually work.">
-  <meta name="keywords" content="AI for women in business, Claude AI community, AI tools for female entrepreneurs, women and AI, AI Australia, Kelly Wise Women">
-  <meta property="og:title" content="Wise Women Use AI | AI for Women in Business">
-  <meta property="og:description" content="Practical AI and business systems for women in midlife who want a business that depends on them less.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_AU">
-  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
-  <meta property="og:url" content="https://www.wisewomenuseai.com/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap"></noscript>
-
-  <style>
-    :root {
-      --bg:          #FAF8F6;
-      --ink:         #3A131B;
-      --bordeaux:    #3A131B;
-      --driftwood:   #908486;
-      --cream-dark:  #E1DAD7;
-      --cream-mid:   #EDEBE9;
-      --cream-light: #F2F0EE;
-      --white:       #FFFFFF;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    section[id] { scroll-margin-top: 88px; }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--bordeaux);
-    }
-
-    .announce-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      background: var(--cream-dark);
-      color: var(--ink);
-      text-decoration: none;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12.5px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      padding: 9px 20px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-    .announce-bar:hover { background: #D8CFCB; }
-    .announce-bar .announce-cta {
-      color: var(--bordeaux);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .announce-bar .announce-cta .arrow { transition: transform 0.2s; }
-    .announce-bar:hover .announce-cta .arrow { transform: translateX(3px); }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #FAF8F6;
-      border-bottom: 1px solid var(--cream-dark);
-      padding: 0 48px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      flex: 0 0 auto;
-      max-width: fit-content;
-    }
-    .nav-logo img { height: 32px; width: 32px; object-fit: contain; }
-
-    .nav-ai {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: 0.04em;
-      line-height: 1;
-    }
-
-    .nav-ai .dot { color: var(--bordeaux); }
-
-    .nav-wordmark {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--driftwood);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      position: relative;
-      z-index: 2;
-      align-self: stretch;
-    }
-
-    .nav-link {
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--driftwood);
-      text-decoration: none;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      align-self: stretch;
-    }
-    .nav-link:hover { color: var(--bordeaux); }
-
-    .btn-solid {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--ink);
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.1s;
-      display: inline-block;
-    }
-    .btn-solid:hover { background: var(--bordeaux); transform: translateY(-1px); }
-
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 48px;
-      gap: 80px;
-    }
-
-    .hero-left { animation: fadeUp 0.9s ease both; }
-    .hero-eyebrow { margin-bottom: 28px; }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(44px, 5.5vw, 68px);
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-
-    .hero h1 .line-1 { display: block; padding-left: 0; }
-    .hero h1 .line-2 { display: block; padding-left: 0.3em; }
-    .hero h1 .line-3 { display: block; padding-left: 0; }
-
-    .script-accent {
-      font-family: 'Allison', cursive;
-      font-weight: normal;
-      font-style: normal;
-      color: var(--bordeaux);
-      font-size: 1.05em;
-      letter-spacing: 0.02em;
-      line-height: 0.9;
-    }
-
-    .hero-tagline {
-      font-family: 'Allison', cursive;
-      font-size: 34px;
-      font-weight: normal;
-      font-style: normal;
-      color: var(--bordeaux);
-      margin-bottom: 28px;
-      margin-top: -8px;
-      letter-spacing: 0.02em;
-      padding-left: 0.3em;
-    }
-
-    .hero-body {
-      font-size: 16px;
-      line-height: 1.85;
-      color: var(--driftwood);
-      margin-bottom: 40px;
-      max-width: 480px;
-    }
-
-    .hero-body strong { color: var(--ink); font-weight: 400; }
-
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary-lg {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 14px 32px;
-      background: var(--ink);
-      color: var(--bg);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.15s;
-      line-height: 1.4;
-    }
-    .btn-primary-lg:hover { background: var(--bordeaux); transform: translateY(-2px); }
-
-    .btn-price-line {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      margin-top: 6px;
-      letter-spacing: 0.04em;
-      font-weight: 400;
-    }
-
-    .price-was { text-decoration: line-through; opacity: 0.45; }
-    .price-now { color: #e5aaaa; font-weight: 600; }
-
-    .btn-founding {
-      display: block;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(250,248,246,0.45);
-      margin-top: 4px;
-    }
-
-    .btn-secondary-lg {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--cream-dark);
-      padding-bottom: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-secondary-lg:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
-
-    .arrow { font-size: 16px; transition: transform 0.2s; }
-    .btn-secondary-lg:hover .arrow { transform: translateX(4px); }
-
-    .hero-right {
-      animation: fadeUp 1s ease 0.15s both;
-      position: relative;
-    }
-
-    .hero-photo-frame {
-      aspect-ratio: 3/4;
-      background: var(--cream-mid);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .hero-photo-frame picture { display: block; width: 100%; height: 100%; }
-
-    .hero-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--driftwood);
-      font-size: 13px;
-      text-align: center;
-      padding: 32px;
-    }
-
-    .hero-quote {
-      position: absolute;
-      bottom: -24px;
-      left: -32px;
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: 3px;
-      padding: 20px 24px;
-      max-width: 260px;
-      box-shadow: 0 8px 32px rgba(58,19,27,0.08);
-    }
-
-    .hero-quote p {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.5;
-    }
-
-    .hero-quote cite {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--bordeaux);
-      margin-top: 10px;
-      font-style: normal;
-    }
-
-    .cred-strip {
-      background: var(--ink);
-      padding: 28px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cred-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 48px;
-      border-right: 1px solid rgba(250,248,246,0.12);
-    }
-
-    .cred-item:last-child { border-right: none; }
-
-    .cred-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 400;
-      color: var(--bg);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .cred-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(250,248,246,0.45);
-    }
-
-    .proof-section {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 88px 48px 8px;
-      text-align: center;
-    }
-    .proof-section .eyebrow { display: block; margin-bottom: 26px; }
-    .proof-section p {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(19px, 2.2vw, 24px);
-      font-weight: 400;
-      line-height: 1.55;
-      color: var(--ink);
-    }
-    .proof-section p em { font-style: italic; color: #DDA983; }
-
-    .pain-section {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 96px 48px;
-      text-align: center;
-    }
-
-    .pain-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 54px);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 32px;
-    }
-
-    .pain-section h2 em { font-style: italic; font-weight: 400; color: #DDA983; }
-
-    .pain-body {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--driftwood);
-      max-width: 640px;
-      margin: 0 auto 48px;
-    }
-
-    .pain-body strong { color: var(--ink); font-weight: 400; }
-
-    .pain-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 56px;
-    }
-
-    .pain-card { background: var(--cream-mid); padding: 40px 32px; text-align: left; }
-
-    .pain-card-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--cream-dark);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .pain-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .pain-card p { font-size: 14px; color: var(--driftwood); line-height: 1.75; }
-
-    .loops-section { background: var(--ink); padding: 96px 48px; }
-    .loops-inner { max-width: 1100px; margin: 0 auto; }
-    .loops-header { text-align: center; margin-bottom: 56px; }
-    .loops-header .eyebrow { color: rgba(250,248,246,0.4); }
-
-    .loops-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 4vw, 50px);
-      font-weight: 400;
-      color: var(--bg);
-      line-height: 1.15;
-      margin-top: 16px;
-    }
-
-    .loops-header h2 em { font-style: italic; font-weight: 400; color: #E2B592; }
-
-    .loops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
-    .loop-card {
-      background: rgba(250,248,246,0.04);
-      border: 1px solid rgba(250,248,246,0.07);
-      padding: 44px 40px;
-      transition: background 0.3s;
-    }
-
-    .loop-card:hover { background: rgba(250,248,246,0.07); }
-
-    .loop-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--bordeaux);
-      margin-bottom: 20px;
-    }
-
-    .loop-card p { font-size: 15px; line-height: 1.85; color: rgba(250,248,246,0.7); }
-    .loop-card p strong { color: var(--bg); font-weight: 400; }
-
-    .redacted {
-      display: inline-block;
-      background: rgba(250,248,246,0.15);
-      color: transparent;
-      border-radius: 2px;
-      padding: 0 8px;
-      user-select: none;
-      cursor: default;
-      position: relative;
-      font-size: 13px;
-    }
-
-    .redacted::after {
-      content: 'Members only';
-      position: absolute;
-      bottom: calc(100% + 6px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--bordeaux);
-      color: var(--bg);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      padding: 5px 10px;
-      border-radius: 2px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-
-    .redacted:hover::after { opacity: 1; }
-
-    .loops-cta { text-align: center; margin-top: 56px; }
-
-    .btn-outline-light {
-      display: inline-block;
-      padding: 15px 36px;
-      border: 1px solid rgba(250,248,246,0.25);
-      border-radius: 2px;
-      color: var(--bg);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-outline-light:hover { border-color: var(--bordeaux); background: rgba(58,19,27,0.15); }
-
-    .for-section { max-width: 860px; margin: 0 auto; padding: 96px 48px; }
-    .for-section .eyebrow { margin-bottom: 24px; display: block; }
-
-    .for-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 4.5vw, 52px);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 48px;
-    }
-
-    .for-section h2 em { font-style: italic; font-weight: 400; }
-    .for-list { list-style: none; }
-
-    .for-item {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      font-size: 15px;
-      color: var(--driftwood);
-      line-height: 1.75;
-    }
-
-    .for-item:first-child { border-top: 1px solid var(--cream-dark); }
-    .for-check { color: var(--bordeaux); flex-shrink: 0; font-size: 14px; margin-top: 3px; }
-    .for-item strong { color: var(--ink); font-weight: 400; }
-
-    .paths-section { background: var(--cream-light); padding: 96px 48px; }
-    .paths-inner { max-width: 1000px; margin: 0 auto; }
-    .paths-header { text-align: center; margin-bottom: 56px; }
-
-    .paths-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 4.5vw, 52px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-top: 16px;
-    }
-
-    .paths-header h2 em { font-style: italic; font-weight: 400; }
-
-    .paths-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .path-card {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: 3px;
-      padding: 48px 40px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .path-card.featured { border-color: var(--ink); position: relative; }
-
-    .path-card.membership {
-      grid-column: 1 / -1;
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--bg);
-    }
-
-    .path-card.membership .path-label,
-    .path-card.membership > p,
-    .path-card.membership .path-list li { color: rgba(250,248,246,0.72); }
-    .path-card.membership h3 { color: var(--bg); }
-    .path-card.membership .path-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 32px;
-    }
-    .path-card.membership .path-list li { border-color: rgba(250,248,246,0.14); }
-    .path-card.membership .path-list li::before { color: #E2B592; }
-    .path-card.membership .btn-path-dark {
-      background: var(--bg);
-      border-color: var(--bg);
-      color: var(--ink);
-    }
-    .path-card.membership .btn-path-dark:hover {
-      background: #E2B592;
-      border-color: #E2B592;
-      color: var(--ink);
-    }
-
-    .path-badge {
-      position: absolute;
-      top: -12px;
-      left: 40px;
-      background: var(--bordeaux);
-      color: var(--bg);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-    }
-
-    .path-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--driftwood);
-      margin-bottom: 16px;
-    }
-
-    .path-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .path-card > p {
-      font-size: 14px;
-      color: var(--driftwood);
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-
-    .path-list { list-style: none; margin-bottom: 32px; flex: 1; }
-
-    .path-list li {
-      font-size: 13px;
-      color: var(--driftwood);
-      padding: 9px 0;
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex;
-      gap: 12px;
-    }
-
-    .path-list li:last-child { border-bottom: none; }
-    .path-list li::before { content: '\2192'; color: var(--bordeaux); flex-shrink: 0; font-size: 14px; }
-
-    .path-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      color: var(--driftwood);
-      margin-bottom: 20px;
-    }
-
-    .path-price strong { font-size: 24px; font-weight: 500; color: var(--bordeaux); }
-    .path-price s { opacity: 0.4; text-decoration: line-through; }
-
-    .btn-path {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 16px 24px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.1s, color 0.2s, border-color 0.2s;
-      margin-top: auto;
-    }
-
-    .btn-path-dark { background: var(--ink); color: var(--bg); border: 1px solid var(--ink); }
-    .btn-path-dark:hover { background: var(--bordeaux); border-color: var(--bordeaux); transform: translateY(-1px); }
-
-    .btn-path-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-    .btn-path-outline:hover { background: var(--ink); color: var(--bg); }
-
-    .kelly-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 96px 48px;
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .kelly-photo {
-      aspect-ratio: 3/4;
-      background: var(--cream-mid);
-      border-radius: 3px;
-      overflow: hidden;
-      position: sticky;
-      top: 88px;
-    }
-
-    .kelly-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-
-    .kelly-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--driftwood);
-      font-size: 13px;
-      text-align: center;
-      padding: 32px;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .kelly-content .eyebrow { margin-bottom: 20px; display: block; }
-
-    .kelly-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 4vw, 52px);
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 28px;
-    }
-
-    .kelly-content h2 em { font-style: italic; font-weight: 400; }
-
-    .kelly-content p {
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--driftwood);
-      margin-bottom: 20px;
-    }
-
-    .kelly-content p strong { color: var(--ink); font-weight: 400; }
-
-    .kelly-belief {
-      margin: 32px 0;
-      padding: 28px 32px;
-      border-left: 2px solid var(--bordeaux);
-      background: var(--cream-light);
-    }
-
-    .kelly-belief p {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    .work-with-me {
-      margin-top: 40px;
-      padding: 36px;
-      background: var(--cream-mid);
-      border-radius: 3px;
-    }
-
-    .work-with-me h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .work-with-me p { font-size: 14px; color: var(--driftwood); margin-bottom: 24px; }
-
-    .btn-work {
-      display: inline-block;
-      padding: 14px 28px;
-      border: 1px solid var(--ink);
-      border-radius: 2px;
-      color: var(--ink);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-work:hover { background: var(--ink); color: var(--bg); }
-
-    .capture-section { background: var(--ink); padding: 80px 48px; text-align: center; }
-    .capture-inner { max-width: 540px; margin: 0 auto; }
-    .capture-section .eyebrow { color: rgba(250,248,246,0.4); margin-bottom: 20px; display: block; }
-
-    .capture-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 4vw, 46px);
-      font-weight: 400;
-      color: var(--bg);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .capture-section h2 em { font-style: italic; font-weight: 400; color: #E2B592; }
-
-    .capture-sub { font-size: 15px; color: rgba(250,248,246,0.55); line-height: 1.75; margin-bottom: 40px; }
-
-    .kit-form {
-      background: rgba(250,248,246,0.06);
-      border: 1px solid rgba(250,248,246,0.1);
-      border-radius: 3px;
-      padding: 36px 32px;
-    }
-
-    .form-row { display: flex; flex-direction: column; gap: 10px; }
-
-    .form-input {
-      width: 100%;
-      padding: 14px 18px;
-      background: rgba(250,248,246,0.08);
-      border: 1px solid rgba(250,248,246,0.15);
-      border-radius: 2px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
-      font-weight: 300;
-      color: var(--bg);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-input::placeholder { color: rgba(250,248,246,0.3); }
-    .form-input:focus { border-color: var(--bordeaux); }
-
-    .btn-form {
-      width: 100%;
-      padding: 16px 24px;
-      background: var(--bordeaux);
-      color: var(--bg);
-      border: none;
-      border-radius: 2px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      cursor: pointer;
-      margin-top: 4px;
-      transition: opacity 0.2s, transform 0.1s;
-    }
-    .btn-form:hover { opacity: 0.9; transform: translateY(-1px); }
-
-    .form-note { font-size: 11px; color: rgba(250,248,246,0.3); margin-top: 14px; }
-
-    footer {
-      padding: 40px 48px;
-      border-top: 1px solid var(--cream-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 24px;
-    }
-
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-
-    .footer-link { font-size: 12px; color: var(--driftwood); text-decoration: none; letter-spacing: 0.05em; }
-    .footer-link:hover { color: var(--bordeaux); }
-
-    .social-links { display: flex; gap: 20px; align-items: center; }
-    .social-link { color: var(--driftwood); transition: color 0.2s; display: flex; }
-    .social-link:hover { color: var(--bordeaux); }
-
-    .footer-legal { font-size: 11px; color: var(--driftwood); opacity: 0.5; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      /* Mobile nav. This line used to read
-         `.nav-wordmark, .nav-link + .nav-link { display: none; }`. Because `+` is
-         an adjacent-sibling selector it deleted every nav link AFTER the first,
-         so on a phone only Workshop survived and Blog and Work with me were
-         unreachable with no menu to open them. Fixed 12 Aug 2026. The wordmark
-         still hides (the logo carries the brand); the links compact instead of
-         disappearing, and nav wraps to a second row rather than overflowing on
-         very narrow screens. Do not reintroduce a `display: none` on nav links. */
-      .nav-wordmark { display: none; }
-      nav { height: auto; min-height: 64px; padding: 8px 20px; flex-wrap: wrap; row-gap: 2px; }
-      .nav-actions { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-      .nav-link { font-size: 11px; letter-spacing: 0.04em; }
-      .btn-solid { font-size: 10px; padding: 8px 12px; letter-spacing: 0.08em; }
-
-      .hero { grid-template-columns: 1fr; padding: 48px 24px 64px; gap: 48px; min-height: auto; }
-      .hero-right { order: -1; }
-      .hero-photo-frame { aspect-ratio: 3/4; max-height: none; }
-      .hero-quote { display: none; }
-
-      .pain-list { grid-template-columns: 1fr; }
-      .cred-strip { padding: 24px; }
-      .cred-item { padding: 16px 24px; }
-      .loops-grid { grid-template-columns: 1fr; }
-      .paths-grid { grid-template-columns: 1fr; }
-      .path-card.membership { grid-column: auto; }
-      .path-card.membership .path-list { grid-template-columns: 1fr; }
-
-      .kelly-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
-      .kelly-photo { aspect-ratio: 4/3; max-height: 280px; position: static; }
-
-      .pain-section, .for-section, .paths-section,
-      .loops-section, .capture-section { padding-left: 24px; padding-right: 24px; }
-
-      footer { padding: 32px 24px; flex-direction: column; align-items: center; }
-    }
-  
-    /* Compact band spacing: keep backgrounds adjoining and content readable. */
-    .hero { min-height: auto; padding-block: 40px; }
-    .proof-section, .pain-section, .loops-section, .for-section,
-    .paths-section, .kelly-section, .capture-section { padding-block: 40px; margin-block: 0; }
-    .proof-section { padding-bottom: 0; }
-    @media (max-width: 768px) {
-      .hero, .proof-section, .pain-section, .loops-section, .for-section,
-      .paths-section, .kelly-section, .capture-section { padding-block: 28px; }
-      .proof-section { padding-bottom: 0; }
-      .hero, .kelly-section { gap: 28px; }
-      #faq { padding: 28px 24px !important; }
-
-    }
-  
-    /* Kelly's 21 September review: reduce internal gaps and balance mixed type. */
-    .loops-header, .paths-header { margin-bottom: 28px; }
-    .loops-cta { margin-top: 28px; }
-    .loop-card { padding: 26px 30px; }
-    .loop-num { margin-bottom: 12px; }
-    .pain-list { margin-top: 28px; }
-    .pain-body { margin-bottom:28px; }
-    .for-section h2 { margin-bottom: 28px; }
-    #faq .faq-heading { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; margin-bottom:28px; color:var(--ink); white-space:nowrap; }
-    .faq-common { font-size:clamp(16px,2.5vw,28px); }
-    .faq-honest { font-family:'Allison',cursive; font-size:clamp(32px,5vw,56px); color:#E2B592; }
-    @media(max-width:768px) {
-      .loops-header, .paths-header { margin-bottom:20px; }
-      .loops-cta { margin-top:20px; }
-      .loop-card { padding:22px 24px; }
-      #faq .faq-heading { margin-bottom:24px; }
-      .faq-common { font-size:clamp(14px,4vw,24px); }
-      .faq-honest { font-size:clamp(28px,8vw,48px); }
-    }
-
-    /* One shared footer across the main website pages. */
-    .site-footer { padding:32px 24px; border-top:1px solid #E1DAD7; display:flex; flex-direction:column; align-items:center; text-align:center; gap:20px; font-family:'Plus Jakarta Sans',Arial,sans-serif; background:#FAF8F6; }
-    .site-footer .footer-brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:#3A131B; }
-    .site-footer .footer-brand img { width:36px; height:36px; object-fit:contain; }
-    .site-footer .footer-wordmark { font-family:'Playfair Display',Georgia,serif; font-size:14px; }
-    .site-footer .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 24px; max-width:1000px; }
-    .site-footer .footer-link { font-size:12px; font-weight:400; line-height:1.75; color:#908486; text-decoration:none; letter-spacing:.05em; }
-    .site-footer .footer-link:hover, .site-footer .social-link:hover { color:#3A131B; }
-    .site-footer .social-links { display:flex; gap:20px; align-items:center; }
-    .site-footer .social-link { color:#908486; display:flex; }
-    .site-footer .footer-legal { margin:0; font-size:11px; line-height:1.75; color:#908486; opacity:.75; }
+<!doctype html><html lang="en-AU"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>AI &amp; Business Systems for Women | Wise Women Use AI</title>
+<meta name="description" content="Practical AI and business systems for Gen X women. Find your starting point in the free community, or build with support in Architect Advantage.">
+<link rel="canonical" href="https://www.wisewomenuseai.com/">
+<meta property="og:title" content="AI &amp; Business Systems for Women | Wise Women Use AI">
+<meta property="og:description" content="Practical AI and business systems for Gen X women. Find your starting point in the free community, or build with support in Architect Advantage.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<meta property="og:url" content="https://www.wisewomenuseai.com/">
+<meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allison&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>:root{--bordeaux:#3A131B;--pearl:#FAF8F6;--clay:#DDA983;--blush:#E2B592;--driftwood:#908486;--creamDark:#E1DAD7;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pearl);color:var(--bordeaux);font:400 16px/1.75 'Plus Jakarta Sans',Arial,sans-serif}
+a{color:inherit;text-underline-offset:4px}
+img{max-width:100%;height:auto}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 22px}
+h1{font-size:clamp(44px,5.6vw,76px);letter-spacing:-.025em}
+h2{font-size:clamp(32px,3.8vw,48px)}
+h3{font-size:26px}
+p{margin:0 0 20px}
+li{margin-bottom:9px}
+em{font-weight:400}
+.script{font-family:'Allison',cursive;font-size:1.22em;font-style:normal}
+.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+.section{padding:64px 0}
+.eyebrow{font-size:12px;letter-spacing:.12em;font-weight:600;margin-bottom:16px}
+.lead{font-size:19px;max-width:730px}
+.muted{opacity:.8}
+.small{font-size:14px}
+.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:26px 0 16px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1.5px solid currentColor;border-radius:2px;text-decoration:none;font-weight:500;font-size:14px}
+.button:hover{background:var(--bordeaux);color:var(--pearl)}
+.dark .button:hover{background:var(--pearl);color:var(--bordeaux)}
+.text-link{padding:10px 0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px}
+.hero-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;border-radius:3px}
+.hero-caption{font-size:13px;margin-top:10px}
+.hero-copy .lead{max-width:590px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:28px}
+.card{padding:28px;border:1px solid var(--creamDark);background:var(--pearl)}
+.card p:last-child{margin-bottom:0}
+.card dl{margin:0}
+.card dt{font-size:13px;font-weight:600;margin-top:18px}
+.card dd{margin:4px 0 0;font-size:15px}
+.dark{background:var(--bordeaux);color:var(--pearl)}
+.dark h2 em{color:var(--blush)}
+.dark .card{background:transparent;border-color:var(--driftwood)}
+.soft{background:var(--creamDark)}
+.narrow{max-width:760px}
+.proof{border-top:1px solid var(--creamDark);border-bottom:1px solid var(--creamDark);padding:20px 0}
+.proof p{margin:0;font-size:14px}
+.step-label{display:block;font-size:12px;font-weight:600;margin-bottom:12px}
+.walkthrough{margin-top:30px}
+.walkthrough .card{border-top:3px solid var(--clay)}
+blockquote{margin:20px 0;padding-left:20px;border-left:3px solid var(--clay)}
+.offer{display:flex;flex-direction:column}
+.offer .actions{margin-top:auto;padding-top:18px}
+.offer ul{padding-left:20px}
+.price{font-family:'Playfair Display',serif;font-size:36px;margin:8px 0 22px}
+.price small{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px}
+.portrait{aspect-ratio:4/5;object-fit:cover;width:100%;max-height:520px}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.faq details{padding:20px 0;border-bottom:1px solid var(--creamDark)}
+summary{cursor:pointer;font-weight:500;min-height:28px}
+.faq details p{margin:16px 0 0}
+.signup{max-width:680px}
+.signup label{display:block;font-size:14px;margin:14px 0 5px}
+.signup input{width:100%;font:inherit;font-size:16px;padding:14px;background:var(--pearl);border:1px solid var(--driftwood);color:var(--bordeaux);border-radius:2px}
+.signup button{font-family:inherit;background:transparent;color:inherit;cursor:pointer;margin-top:18px}
+.signup [role=alert]{margin-top:16px}
+.signup button:disabled{opacity:.6;cursor:wait}
+.resource-link{display:block;padding:22px;border:1px solid var(--creamDark);text-decoration:none}
+.resource-link strong{display:block;font-family:'Playfair Display',serif;font-size:23px;margin-bottom:8px}
+.resource-link:hover{background:var(--creamDark)}
+.site-footer{padding:32px 24px;border-top:1px solid var(--creamDark);text-align:center}
+.footer-brand{display:flex;gap:12px;justify-content:center;align-items:center;text-decoration:none}
+.footer-brand img{width:36px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin:24px auto;max-width:950px}
+.footer-link,.footer-legal{font-size:13px}
+.social-links{display:flex;justify-content:center;gap:20px;margin-bottom:22px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;padding:24px;background:var(--creamDark)}
+:focus-visible{outline:3px solid var(--bordeaux);outline-offset:5px}
+.dark :focus-visible{outline-color:var(--blush)}
+section[id]{scroll-margin-top:110px}
+.skip{position:absolute;left:-10000px;top:0}
+.skip:focus{left:12px;z-index:1000;background:var(--pearl);padding:12px}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}
+.section{padding:40px 0}
+.hero-grid,.split,.grid2,.grid3{grid-template-columns:1fr;gap:22px}
+.hero-grid{gap:28px}
+.hero-photo{max-height:340px;aspect-ratio:4/3}
+.hero-copy{order:0}
+.hero-visual{order:1}
+.lead{font-size:17px}
+.card{padding:24px}
+.actions{align-items:stretch}
+.hero-copy .actions{flex-direction:column;align-items:flex-start}
+h1{font-size:46px}
+.portrait{max-height:360px;aspect-ratio:4/3}
+.price{font-size:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.ww-nav{position:sticky!important;top:0;z-index:100;display:flex!important;align-items:center;justify-content:space-between;gap:20px;padding:12px max(24px,calc((100vw - 1120px)/2))!important;height:auto!important;min-height:68px;background:var(--pearl,#FAF8F6);color:var(--bordeaux,#3A131B);border-bottom:1px solid var(--creamDark,#E1DAD7);font:400 13px/1.4 'Plus Jakarta Sans',Arial,sans-serif}
+.ww-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ww-brand img{width:36px;height:36px;object-fit:contain}
+.ww-brand span{font-size:11px;letter-spacing:.08em}
+.ww-nav-links{display:flex;align-items:center;gap:24px}
+.ww-nav-links a{display:inline-flex!important;align-items:center;min-height:44px;color:inherit;text-decoration:none}
+.ww-nav-links a:hover{text-decoration:underline}
+.ww-start{border:1px solid currentColor;padding:8px 14px;border-radius:2px}
+.ww-nav a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.skip{position:absolute;left:-10000px;top:0}
+.skip:focus{left:12px;z-index:1000;background:var(--pearl,#FAF8F6);padding:12px}
+.section-nav{position:static!important}
+@media(max-width:760px){.ww-nav{padding:10px 16px!important;gap:12px;flex-wrap:wrap}
+.ww-brand span{display:none}
+.ww-nav-links{gap:13px;flex:1;justify-content:flex-end;font-size:12px}
+.ww-start{padding:8px 10px}}
+@media(max-width:360px){.ww-nav-links{gap:8px;font-size:11px}
+.ww-brand img{width:28px;height:28px}}
+form input[type="email"],form input[type="text"]{font-size:16px}
 </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.wisewomenuseai.com/#organization",
-        "name": "Wise Women Use AI",
-        "url": "https://www.wisewomenuseai.com",
-        "logo": "https://www.wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png",
-        "description": "Practical AI, systems and automation for women in midlife who want to become the architect of their business, not its busiest employee. Start free in the Wise Women Use AI community.",
-        "founder": {
-          "@type": "Person",
-          "name": "Kelly Hartley",
-          "url": "https://www.wisewomenuseai.com/about",
-          "jobTitle": "AI Consultant and Educator"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Melbourne",
-          "addressRegion": "VIC",
-          "addressCountry": "AU"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/wisewomenuseai",
-          "https://www.tiktok.com/@kellyh.ai",
-          "https://www.instagram.com/kellyh.ai",
-          "https://www.facebook.com/wisewomenuseai",
-          "https://www.threads.net/@wisewomenuseai",
-          "https://substack.com/@wisewomenuseai"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.wisewomenuseai.com/#website",
-        "url": "https://www.wisewomenuseai.com",
-        "name": "Wise Women Use AI",
-        "publisher": {"@id": "https://www.wisewomenuseai.com/#organization"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is Wise Women Use AI?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Wise Women Use AI helps women in midlife become the architect of their business, not its busiest employee. Founded by Kelly Hartley in Melbourne, it combines practical AI education with the systems and automation women need to build a business that depends on them less. The free Skool community is the place to begin."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Who is Wise Women Use AI for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Wise Women Use AI is designed for women in midlife who run real businesses and want to use AI, systems and automation practically. No technical background is needed. It is especially for women whose business relies on them too heavily and who want a calm, practical route to changing that."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need to be technical to use AI for my business?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Wise Women Use AI is built specifically for non-technical business owners. The training focuses on practical, real-world applications using tools like Claude and ChatGPT, not coding or technical theory."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which AI tools does Wise Women Use AI teach?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The primary focus is on Claude (Anthropic's AI assistant) and ChatGPT (OpenAI). The community teaches how to use these tools for real business tasks including content creation, email drafting, workflow automation, and client communication."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How much does it cost to join the Wise Women Use AI community?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Wise Women Use AI Skool community is free to join. Architect Advantage is the optional $69 USD monthly implementation membership for women ready to build the systems their business runs on. Visit wisewomenuseai.com/architect for details."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-<style id="scrolling-panels">
-.motion-control{display:block;margin:18px auto 0;border:1px solid #3A131B55;background:transparent;color:#3A131B;border-radius:4px;padding:6px 12px;font:12px/1.5 "Plus Jakarta Sans",sans-serif;cursor:pointer}
-@media(max-width:899px),(max-height:699px),(prefers-reduced-motion:reduce){.motion-control{display:none}}
-@media(min-width:900px) and (min-height:700px) and (prefers-reduced-motion:no-preference){
-body:not(.motion-paused) .paths-inner{max-width:1100px}
-body:not(.motion-paused) .paths-grid{display:block;padding-bottom:5vh;isolation:isolate}
-body:not(.motion-paused) .path-card{position:sticky;top:100px;min-height:530px;margin-bottom:100px;padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;align-content:center;opacity:1;transform-origin:center top;box-shadow:0 -15px 45px #3A131B12;will-change:transform;border-radius:14px;transition:none;background:#FAF8F6;}
-body:not(.motion-paused) .path-card>*{grid-column:1}
-body:not(.motion-paused) .path-card p,body:not(.motion-paused) .path-card li{color:#3A131B;font-size:16px;line-height:1.65}
-body:not(.motion-paused) .path-card .path-badge{width:auto;left:auto;padding:6px 14px}
-body:not(.motion-paused) .path-card .path-list{grid-column:2;grid-row:2/5;font-size:17px}
-body:not(.motion-paused) .path-card .btn-path{justify-self:start}
-body:not(.motion-paused) .path-card:nth-child(2){background:#E2B592;color:#3A131B}
-body:not(.motion-paused) .path-card:nth-child(3){background:#3A131B;color:#FAF8F6;margin-bottom:0}
-body:not(.motion-paused) .path-card:nth-child(3) h3,body:not(.motion-paused) .path-card:nth-child(3) p,body:not(.motion-paused) .path-card:nth-child(3) li{color:#FAF8F6}
-body:not(.motion-paused) .path-card:nth-child(3) .btn-path{background:#E2B592;color:#3A131B}
-body:not(.motion-paused) .path-card .path-badge{grid-column:auto;right:28px;top:18px}
-}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto!important}}
-</style></head>
-
-<body>
-
-  <!-- September event promotion removed; future workshop model remains under review. -->
-
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-      <span class="nav-wordmark">Wise Women Use AI</span>
-    </a>
-    <div class="nav-actions">
-      <a href="/blog" class="nav-link">Blog</a>
-      <a href="/architect" class="nav-link">Membership</a>
-      <a href="/work" class="nav-link">Work with me</a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-solid">Join free</a>
-    </div>
-  </nav>
-
-
-  <section class="hero">
-    <div class="hero-left">
-
-
-      <h1><span class="line-1">Your business</span><span class="line-2"><span class="script-accent">shouldn't need you</span></span><span class="line-3">for everything.</span></h1>
-
-      <p class="hero-tagline">become the architect, not its busiest employee</p>
-
-      <p class="hero-body">
-        When every decision, repeated task and unfinished job comes back to you, you don't have a flexible business. You've built yourself a demanding job.<br><br>
-        Wise Women Use AI helps you identify what genuinely needs you and redesign what doesn't, using practical AI, clearer systems, automation and delegation.<br><br>
-        <strong>Start with one part of your business, not 36 new tools.</strong>
-      </p>
-
-      <div class="hero-ctas">
-        <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-primary-lg">
-          Find your first bottleneck
-          <span class="btn-price-line">
-            <span class="price-now">Start free · no technical background needed</span>
-          </span>
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="hero-photo-frame">
-        <picture>
-          <source srcset="/assets/photos/kelly-smiling-20260928.webp" type="image/webp">
-          <img
-            src="/assets/photos/kelly-smiling-20260928.webp"
-            alt="Kelly, founder of Wise Women Use AI"
-            width="1254" height="1254"
-            onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';"
-          />
-        </picture>
-        <div class="hero-photo-placeholder" style="display:none;">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--driftwood);">K</div>
-          <span>kelly-hero.jpg</span>
-        </div>
-      </div>
-      <div class="hero-quote">
-        <p>"If it doesn't need your face, your voice, or your presence, it shouldn't need your day."</p>
-        <cite>Callan Faulkner</cite>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <section class="proof-section reveal">
-    <span class="eyebrow">Why listen to me</span>
-    <p>I use AI and systems in my own businesses, and I keep checking where the work still comes back to me. That is what I bring to Wise Women: practical examples, honest limits and useful changes you can test in your own business.</p>
-  </section>
-
-
-  <section class="pain-section reveal">
-    <p class="eyebrow">You're not behind. You're just missing the right system.</p>
-    <h2>AI should make your life<br><em>easier.</em> Why doesn't it?</h2>
-    <p class="pain-body">
-      You've tried it. You've Googled it. You've watched the reels and bought the course and still ended up back where you started, doing everything manually while your brain is running at half capacity and your to-do list is longer than ever.<br><br>
-      The bit generic advice skips: <strong>making one task faster does not fix a business that still depends on you for every decision.</strong> And most of it is not built around the realities of running a business and a life in midlife.
-    </p>
-
-    <div class="pain-list">
-      <div class="pain-card">
-        <div class="pain-card-num">01</div>
-        <h3>You tried AI and felt like you were doing it wrong</h3>
-        <p>You weren't. Most AI education lumps every tool together and skips the practical bit. Here, you learn what actually works in a real business, not a demo.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-card-num">02</div>
-        <h3>The exhaustion is real and nobody's talking about it</h3>
-        <p>Brain fog, energy crashes, the mental load of running everything. AI doesn't care if you're having a rough day. Build your thinking on a good day and let your systems carry you through a hard one.</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-card-num">03</div>
-        <h3>Everyone else seems to be automating while you're still doing it manually</h3>
-        <p>They're not smarter. They just found the right starting point. Inside the community, you get tools and workflows already built so you can run them today, not after a 47-module course.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="inside" class="loops-section">
-    <div class="loops-inner">
-      <div class="loops-header reveal">
-        <p class="eyebrow">What's actually inside the community</p>
-        <h2>Things you're not<br>seeing <em>yet.</em></h2>
-      </div>
-
-      <div class="loops-grid">
-        <div class="loop-card reveal">
-          <div class="loop-num">01</div>
-          <p>There's a resource inside the community called <span class="redacted">the Claude Starter Kit</span>. Most members say it's the thing they wish they'd found on day one. It's not a download or a video course. It's something you use every single time you sit down to work, and once you have it, things start to click.</p>
-        </div>
-
-        <div class="loop-card reveal">
-          <div class="loop-num">02</div>
-          <p>There are <strong>ready-to-run workflows and tools</strong> covering the tasks every business owner repeats every week. Things like writing emails, repurposing content, client communications, and planning. Copy them, run them, and adapt them to your business. No starting from scratch.</p>
-        </div>
-
-        <div class="loop-card reveal">
-          <div class="loop-num">03</div>
-          <p>There are <strong>mini courses built around how Claude actually works</strong> for real business tasks. Short, practical, and structured so you can use what you've learned the same day. Not theory. Not hype. Things you can actually do, in a business like yours.</p>
-        </div>
-
-        <div class="loop-card reveal">
-          <div class="loop-num">04</div>
-          <p>Explore the existing tools, lessons and conversations. Real questions from women running real businesses, with real answers. <strong>You're not seeing any of it yet</strong>, but you could be inside this week. Joining is free.</p>
-        </div>
-      </div>
-
-      <div class="loops-cta reveal">
-        <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-outline-light">
-          Come and see what's inside
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="for-section reveal">
-    <span class="eyebrow">Is this for you?</span>
-    <h2>This is for women who are<br>done figuring it out <em>alone.</em></h2>
-    <ul class="for-list">
-      <li class="for-item">
-        <span class="for-check">&#8594;</span>
-        You're running a business and you want AI to do <strong>real work</strong>, not just answer questions.
-      </li>
-      <li class="for-item">
-        <span class="for-check">&#8594;</span>
-        You've tried AI and felt like you were doing it wrong, or like everyone else has figured something out that you haven't.
-      </li>
-      <li class="for-item">
-        <span class="for-check">&#8594;</span>
-        You want practical, <strong>already-built systems</strong> you can run today, not a course with 47 modules you'll never finish.
-      </li>
-      <li class="for-item">
-        <span class="for-check">&#8594;</span>
-        You're tired of watching others automate their businesses while you're still doing the same things manually.
-      </li>
-      <li class="for-item">
-        <span class="for-check">&#8594;</span>
-        You want <strong>honest guidance</strong> about what's realistic at each skill level, not someone telling you anyone can do this and leaving you feeling like a failure when it takes longer than a reel made it look.
-      </li>
-    </ul>
-  </section>
-
-
-  <section class="paths-section" id="ways-to-start">
-    <div class="paths-inner">
-      <div class="paths-header reveal">
-        <p class="eyebrow">Where would you like to start?</p>
-        <h2>Three ways to get<br><em>your time back.</em></h2>
-<button class="motion-control" type="button" id="motion-toggle" aria-pressed="false">Pause motion</button>
-      </div>
-
-      <div class="paths-grid">
-
-        <div class="path-card reveal">
-          <div class="path-label">Want a taste first</div>
-          <h3>Start with a free tool</h3>
-          <p>Grab a free resource and get a proper look inside the community before you decide. I'll send you a free AI tool to try today, plus a no-pressure introduction to how it all works.</p>
-          <ul class="path-list">
-            <li>The 15-Minute Email System, 7 copy-paste AI prompts for the emails you write every week</li>
-            <li>Switch to Claude, a practical guide if you're moving from ChatGPT</li>
-            <li>A free email sequence with real tips, no filler</li>
-            <li>A proper look inside the community so you can decide with all the information</li>
-            <li>No pressure, unsubscribe any time</li>
-          </ul>
-          <a href="/links" class="btn-path btn-path-outline">Get started free</a>
-        </div>
-
-        <div class="path-card featured reveal">
-          <span class="path-badge">Free to join</span>
-          <div class="path-label">Ready to dive in</div>
-          <h3>Join the community</h3>
-          <p>It's free, and it's a real place to start, not a locked demo. Get set up, meet the other women, and use the starter tools at your own pace.</p>
-          <ul class="path-list">
-            <li>The Claude Starter Kit to set yourself up properly from day one</li>
-            <li>A starter set of copy-and-paste prompts to use today</li>
-            <li>An active community of women using AI in real businesses</li>
-            <li>Practical conversations and resources to use at your own pace</li>
-            <li>Kelly in the room, answering real questions</li>
-          </ul>
-          <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-path btn-path-dark">Join the community, free</a>
-        </div>
-
-        <div class="path-card membership reveal">
-          <div class="path-label">Ready to build the systems</div>
-          <h3>Join Architect Advantage</h3>
-          <p>The $69 USD monthly implementation membership for women who are ready to move beyond learning and build the systems their business actually runs on.</p>
-          <ul class="path-list">
-            <li>Choose the part of your business that depends on you too much</li>
-            <li>Build one useful system at a time with a clear implementation path</li>
-            <li>Use practical prompts, workflows and tools you can adapt to your business</li>
-            <li>Get one monthly implementation call with replay, help in Skool and the member library</li>
-          </ul>
-          <a href="/architect" class="btn-path btn-path-dark">See Architect Advantage</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section id="about" class="kelly-section">
-    <div class="kelly-photo reveal">
-      <picture>
-        <source srcset="/assets/photos/kelly-desk-20260928.webp" type="image/webp">
-        <img
-          src="/assets/photos/kelly-desk-20260928.webp"
-          alt="Kelly, founder of Wise Women Use AI, Melbourne"
-          width="1374" height="1145"
-          loading="lazy"
-          onerror="this.style.display='none'; this.parentElement.parentElement.querySelector('.kelly-photo-placeholder').style.display='flex';"
-        />
-      </picture>
-      <div class="kelly-photo-placeholder" style="display:none;">
-        <div style="width:72px;height:72px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;color:var(--driftwood);">K</div>
-        <span style="color:var(--driftwood);font-size:13px;">kelly-about.jpg</span>
-      </div>
-    </div>
-
-    <div class="kelly-content reveal">
-      <span class="eyebrow">About Kelly</span>
-      <h2>Hey. I'm Kelly.<br><em>I built this for us.</em></h2>
-
-      <p>I'm British, based in Melbourne, and I run three businesses. I use AI, primarily Claude, to help with the recurring work in my businesses. I’m also checking which processes still depend on me, and what would make them more reliable.</p>
-
-      <p>I started Wise Women Use AI because I couldn't find a space that was <strong>honestly useful</strong> for women like me. The AI education world is full of people who discovered these tools 18 months ago and started teaching them. Most of it isn't built for women running real businesses, with real energy constraints, in real life.</p>
-
-      <p>My focus is Claude, because I know it deeply and I think it's the best tool for most of the work women in business need to do. But I'm not closed off from anything else. I'll always point you toward what's actually going to help, whether that's Claude, another AI tool, or something different entirely. What I won't do is teach you things I haven't tested in my own business first.</p>
-
-      <p>I believe women in business deserve to be taken seriously. By the world, by the tools they use, and by themselves. <strong>I want every woman who spends time with me to walk away feeling capable, inspired, and genuinely excited about what's possible for her.</strong></p>
-
-      <div class="kelly-belief">
-        <p>"If you've ever felt like everyone else has figured this out and you're still trying to catch up, you're not behind. You just haven't found the right room yet. This is it."</p>
-      </div>
-
-      <div class="work-with-me">
-        <h3>Bring me into your organisation</h3>
-        <p>I run practical, hands-on AI workshops for small business teams, councils and business communities. People bring one recurring piece of work and start turning it into a useful system during the session.</p>
-        <a href="/work" class="btn-work">See the workshop</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="capture-section">
-    <div class="capture-inner">
-      <span class="eyebrow">Not ready to join yet?</span>
-      <h2>Get your first look<br><em>inside.</em></h2>
-      <p class="capture-sub">I'll send you a free AI tool, a proper introduction to the community, and the honest version of what's inside so you can decide with all the information.</p>
-
-      <!-- ================================================
-           SWAP THIS BLOCK WITH YOUR KIT EMBED CODE
-           Replace from <div class="kit-form"> to </div>
-           with your actual Kit embed snippet
-           ================================================ -->
-      <div class="kit-form">
-        <div class="form-row">
-          <input class="form-input" type="text" placeholder="Your first name" />
-          <input class="form-input" type="email" placeholder="Your email address" />
-          <button class="btn-form">Yes, show me what's inside</button>
-        </div>
-        <p class="form-note">You can unsubscribe any time. Australian privacy law applies.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" style="max-width:800px;margin:0 auto;padding:40px 48px;">
-
-    <h2 class="faq-heading"><span class="faq-common">Common questions,</span> <span class="faq-honest">honest answers.</span></h2>
-    <div style="display:flex;flex-direction:column;gap:0;">
-      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
-        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is Wise Women Use AI?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
-        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Practical AI, systems and automation for women in midlife who want to become the architect of their business, not its busiest employee. Founded by Kelly Hartley in Melbourne. Start free in the community, then step into The Architect Advantage when you're ready to implement.</p>
-      </details>
-      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
-        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Who is it for?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
-        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Women in midlife who run real businesses and are tired of being the person every task, decision and unfinished job depends on. It is practical, jargon-free and designed for non-technical business owners.</p>
-      </details>
-      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
-        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Do I need to be technical?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
-        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">No. The entire approach is built for non-technical business owners. Kelly teaches from the perspective of someone who uses AI as a business tool, not as a developer. If you can write an email, you can learn this.</p>
-      </details>
-      <details style="border-top:1px solid var(--cream-dark);padding:24px 0;">
-        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Which AI tools do you teach?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
-        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Primarily Claude (by Anthropic), with content on ChatGPT as well. The focus is on practical business use: content creation, emails, client communication, workflow automation, and building reusable AI systems inside your business.</p>
-      </details>
-      <details style="border-top:1px solid var(--cream-dark);border-bottom:1px solid var(--cream-dark);padding:24px 0;">
-        <summary style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Where do I start if I'm not ready to join?<span style="font-size:20px;color:var(--bordeaux);">+</span></summary>
-        <p style="margin-top:16px;color:var(--driftwood);line-height:1.7;">Start with one of the free resources: <a href="/guide" style="color:var(--bordeaux);">Claude, Clearly</a> is a practical guide to getting set up in ten minutes, or grab the <a href="/starter" style="color:var(--bordeaux);">AI Starter Kit</a> which includes a Claude comparison tool, five real business prompts, and your first workflow. Both are free, no strings.</p>
-      </details>
-    </div>
-  </section>
-
-  <footer class="site-footer">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.wisewomenuseai.com/#organization", "name": "Wise Women Use AI", "url": "https://www.wisewomenuseai.com", "logo": "https://www.wisewomenuseai.com/assets/logos/WWUAI Logo OGTP.png", "description": "Practical AI and business systems for Gen X women running their own businesses. Keep the work that needs your judgement and redesign the rest.", "founder": {"@type": "Person", "name": "Kelly Hartley", "url": "https://www.wisewomenuseai.com/about", "jobTitle": "AI Consultant and Educator"}, "address": {"@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU"}, "sameAs": ["https://www.linkedin.com/in/wisewomenuseai", "https://www.tiktok.com/@kellyh.ai", "https://www.instagram.com/kellyh.ai", "https://www.facebook.com/wisewomenuseai", "https://www.threads.net/@wisewomenuseai", "https://substack.com/@wisewomenuseai"]}, {"@type": "WebSite", "@id": "https://www.wisewomenuseai.com/#website", "url": "https://www.wisewomenuseai.com", "name": "Wise Women Use AI", "publisher": {"@id": "https://www.wisewomenuseai.com/#organization"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Wise Women Use AI?", "acceptedAnswer": {"@type": "Answer", "text": "Practical AI and business systems for women running their own businesses, with Gen X women at its heart. Founded by Kelly Hartley in Melbourne, it helps you keep the work that needs your judgement and redesign the rest."}}, {"@type": "Question", "name": "Do I need to be technical?", "acceptedAnswer": {"@type": "Answer", "text": "No coding is needed to start. Begin with a job you understand and a tool you are comfortable using. More involved systems take practice, testing and time to set up."}}, {"@type": "Question", "name": "Where do I find the Business Dependency Diagnostic?", "acceptedAnswer": {"@type": "Answer", "text": "Join the free Wise Women Use AI community on Skool, then open Classroom and choose Business Dependency Diagnostic. If AI is new to you, Start Here and the Claude or ChatGPT foundations are there first. You do not need to complete every lesson before choosing your first improvement."}}, {"@type": "Question", "name": "What is free, and what is paid?", "acceptedAnswer": {"@type": "Answer", "text": "The free community includes AI foundations, the Business Dependency Diagnostic, Clear the Decks, First Wins and community conversations. Architect Advantage adds the implementation library, walkthroughs, one monthly member implementation call with a replay, and help in Skool. It is $69 USD per month, billed through Skool. Cancel any time."}}, {"@type": "Question", "name": "Which AI tools do you use?", "acceptedAnswer": {"@type": "Answer", "text": "Primarily Claude, with ChatGPT foundations too. The job comes first. Sometimes a checklist or clearer process is more useful than another AI tool."}}, {"@type": "Question", "name": "Will you build the system for me?", "acceptedAnswer": {"@type": "Answer", "text": "Architect Advantage is supported DIY implementation. You bring your work, build your version and check its results. Kelly provides the resources, examples and implementation support. Bespoke setup is not included."}}]}]}</script></head><body><a class="skip" href="#main">Skip to content</a>
+<nav class="ww-nav" aria-label="Main navigation"><a class="ww-brand" href="/"><img src="/assets/logos/WWUAI%20Logo%20OGTP.png" width="36" height="36" alt="Wise Women Use AI"><span>Wise Women Use AI</span></a>
+<div class="ww-nav-links"><a href="/blog">Articles</a><a href="/architect">Membership</a><a href="/work">Workshops</a><a href="/community" class="ww-start">Start free</a></div></nav>
+<main id="main">
+<section class="section">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Practical AI &amp; business systems for Gen X women</p>
+<h1>Your business<br><span class="script">shouldn't need you</span><br>for everything.</h1>
+<p class="lead">Keep the work that needs your judgement. Build better ways to handle the jobs that keep coming back to you.</p>
+<p>Start with one recurring job and turn it into a repeatable system you can check, use and improve.</p>
+<div class="actions"><a class="button" href="/community">Find your starting point</a><a class="text-link" href="/architect">Explore Architect Advantage →</a></div>
+<p class="small">Start free in the Skool community. The Business Dependency Diagnostic is inside. No card needed.</p></div>
+<div class="hero-visual"><img class="hero-photo" src="/assets/photos/kelly-smiling-20260928.webp" alt="Kelly Hartley, founder of Wise Women Use AI" width="1254" height="1254" fetchpriority="high">
+<p class="hero-caption">Kelly Hartley · Business operations experience, practical AI and a human final check.</p></div></div></section>
+<div class="proof">
+<div class="wrap">
+<p>Built from experience in buying, operations and running businesses. Tested on real work, with honest limits.</p></div></div>
+<section class="section">
+<div class="wrap">
+<p class="eyebrow">The work around the work</p>
+<h2>You're capable.<br>Too much still waits for you.</h2>
+<div class="grid3">
+<div>
+<h3>The answer lives in your head</h3>
+<p>You know what to do, but every question comes back to you before anyone can move.</p></div>
+<div>
+<h3>You keep starting again</h3>
+<p>The same email, content brief or weekly admin job gets rebuilt instead of reused.</p></div>
+<div>
+<h3>A faster task isn't enough</h3>
+<p>AI helps with a draft, but you still carry the reminders, decisions and checking around it.</p></div></div></div></section>
+<section class="section dark" id="philosophy">
+<div class="wrap narrow">
+<p class="eyebrow">Work That Needs You</p>
+<h2>Build a business that leaves <em>room for your life.</em></h2>
+<p class="lead">Your judgement, experience, relationships and ideas matter. They don't need to be buried under work you could handle another way.</p>
+<p>Start by deciding what needs your attention. Then choose whether the rest needs AI assistance, a checklist, automation, delegation or simply to stop. You don't have to build a huge team or become a tech expert.</p>
+<p>Keep the work that needs you. Redesign the rest.</p></div></section>
+<section class="section" id="examples">
+<div class="wrap">
+<p class="eyebrow">A useful place to begin</p>
+<h2>What could this look like<br>in your business?</h2>
+<p class="lead">These are possible starting projects. The right one depends on your work, your tools and the checks it needs.</p>
+<div class="grid3">
+<article class="card">
+<h3>Content you can build on</h3><dl><dt>You start with</dt><dd>One idea, a voice-note transcript or an answer you give customers.</dd><dt>The system prepares</dt><dd>Drafts for different places, using the same source material.</dd><dt>You still decide</dt><dd>What is true, what sounds like you and what is worth publishing.</dd></dl></article>
+<article class="card">
+<h3>Client enquiries</h3><dl><dt>You start with</dt><dd>An enquiry, your current offer details and your reply guidelines.</dd><dt>The system prepares</dt><dd>A reply draft and a follow-up checklist.</dd><dt>You still decide</dt><dd>Fit, pricing, promises and the final message before it is sent.</dd></dl></article>
+<article class="card">
+<h3>Recurring admin</h3><dl><dt>You start with</dt><dd>Notes and updates that arrive in different places each week.</dd><dt>The system prepares</dt><dd>A consistent task list, with missing information flagged.</dd><dt>You still decide</dt><dd>What matters this week, who owns each action and what needs checking.</dd></dl></article></div>
+<p class="small" style="margin-top:24px">The content workflow is listed in the Architect Advantage Systems Library. The enquiry and admin examples show ways to apply the approach, rather than promises of ready-made membership tools.</p>
+<div style="margin-top:48px">
+<p class="eyebrow">An example from Wise Women</p>
+<h2>One idea into three useful drafts.</h2>
+<p>A written walkthrough of the content approach used in Wise Women, with sample text so you can see the decisions involved.</p>
+<div class="grid3 walkthrough">
+<div class="card"><span class="step-label">01 · The input</span>
+<h3>Your thinking comes first</h3>
+<p>A real idea, the person it helps and the facts you can stand behind. Leave private customer details out.</p></div>
+<div class="card"><span class="step-label">02 · The output</span>
+<h3>Three useful drafts</h3>
+<p>A short post, an email opening and a practical tip. Each has a different job and uses the same source.</p></div>
+<div class="card"><span class="step-label">03 · The human check</span>
+<h3>You choose what goes out</h3>
+<p>Check the facts and tone, remove unsupported claims, and save the instructions with the approved version.</p></div></div>
+<p style="margin-top:24px"><strong>Before:</strong> rebuild the brief for every draft. <strong>After:</strong> reuse one source, a clear instruction and a review checklist. Setup and checking still count as work.</p><a class="button" href="/examples/one-idea-three-drafts">See the complete example</a></div></div></section>
+<section class="section soft" id="ways-to-start">
+<div class="wrap">
+<p class="eyebrow">Choose your next step</p>
+<h2>Start free. Build with support<br>when you're ready.</h2>
+<div class="grid2">
+<article class="card offer">
+<h3>Free community</h3>
+<p class="price">Free</p>
+<p>Find your starting point, try the foundations and make a useful first improvement.</p><ol><li>Open Start Here, or go to the diagnostic if you already use AI.</li><li>Identify the work that keeps landing on you.</li><li>Choose a manageable first change and a relevant resource.</li><li>Ask in the community when you get stuck.</li></ol>
+<p class="small">Includes Claude and ChatGPT foundations, Business Dependency Diagnostic, Clear the Decks and First Wins.</p>
+<div class="actions"><a class="button" href="/community">See your first steps</a></div></article>
+<article class="card offer">
+<h3>Architect Advantage</h3>
+<p class="price">$69 <small>USD / month</small></p>
+<p>Build, test and improve useful systems with practical implementation support.</p><ul><li>Adaptable workflows, prompts and the Systems Library</li><li>Walkthroughs to help you build your own version</li><li>One monthly member implementation call and replay</li><li>Help in Skool when you get stuck</li></ul>
+<p class="small">Supported DIY. Billed monthly through Skool. Cancel any time. AI software subscriptions are separate.</p>
+<div class="actions"><a class="button" href="/architect">Explore Architect Advantage</a></div></article></div></div></section>
+<section class="section" id="resources">
+<div class="wrap">
+<p class="eyebrow">Your first steps inside Wise Women Use AI</p>
+<h2>Choose the resource<br>for the job in front of you.</h2>
+<div class="grid3"><a class="resource-link" href="/guide"><strong>Claude, Clearly</strong>Get familiar with Claude and give it a useful first job.</a><a class="resource-link" href="/starter"><strong>AI Starter Kit</strong>Choose a Claude option, try five business prompts and build a first workflow.</a><a class="resource-link" href="/switch"><strong>Switch to Claude</strong>Review the context worth carrying across from ChatGPT, then set up your next conversation.</a></div>
+<p class="small" style="margin-top:22px">Free resources are starting points. You can explore before deciding whether the community or paid membership is right for you.</p></div></section>
+<section class="section" id="about">
+<div class="wrap split"><img class="portrait" src="/assets/photos/kelly-desk-20260928.webp" alt="Kelly working at her desk" width="1254" height="1254" loading="lazy">
+<div>
+<p class="eyebrow">About Kelly</p>
+<h2>I know what it takes<br>to keep the work moving.</h2>
+<p>My background includes buying, operations and running businesses. I've worked with purchasing, stock, suppliers, people and the recurring jobs that need to happen whether you're there or not.</p>
+<p>I'm British, based in Melbourne, and building Wise Women for women who want their experience to count. I use AI in my own businesses and keep checking where it helps, where it adds work and what still needs me.</p>
+<p>One example is content: capture the thinking first, use it to prepare drafts, then check the facts and voice before anything is published. That review is part of the system.</p><a class="text-link" href="/about">More about me and how I work →</a></div></div></section>
+<section class="section dark">
+<div class="wrap">
+<p class="eyebrow">For organisations, councils &amp; business communities</p>
+<h2>Help your people use AI<br><em>for work they actually do.</em></h2>
+<p class="lead">A practical workshop where participants start a useful way of working, with prompts to repeat it and a clear next step.</p>
+<p>90-minute core workshop. Online across Australia or in person in Melbourne. The format and examples are agreed with the organiser.</p><a class="button" href="/work">Explore organisational workshops</a></div></section>
+<section class="section" id="faq">
+<div class="wrap narrow faq">
+<h2>Common questions,<br>honest answers.</h2>
+<details><summary>What is Wise Women Use AI?</summary>
+<p>Practical AI and business systems for women running their own businesses, with Gen X women at its heart. Founded by Kelly Hartley in Melbourne, it helps you keep the work that needs your judgement and redesign the rest.</p></details>
+<details><summary>Do I need to be technical?</summary>
+<p>No coding is needed to start. Begin with a job you understand and a tool you are comfortable using. More involved systems take practice, testing and time to set up.</p></details>
+<details><summary>Where do I find the Business Dependency Diagnostic?</summary>
+<p>Join the free Wise Women Use AI community on Skool, then open Classroom and choose Business Dependency Diagnostic. If AI is new to you, Start Here and the Claude or ChatGPT foundations are there first. You do not need to complete every lesson before choosing your first improvement.</p></details>
+<details><summary>What is free, and what is paid?</summary>
+<p>The free community includes AI foundations, the Business Dependency Diagnostic, Clear the Decks, First Wins and community conversations. Architect Advantage adds the implementation library, walkthroughs, one monthly member implementation call with a replay, and help in Skool. It is $69 USD per month, billed through Skool. Cancel any time.</p></details>
+<details><summary>Which AI tools do you use?</summary>
+<p>Primarily Claude, with ChatGPT foundations too. The job comes first. Sometimes a checklist or clearer process is more useful than another AI tool.</p></details>
+<details><summary>Will you build the system for me?</summary>
+<p>Architect Advantage is supported DIY implementation. You bring your work, build your version and check its results. Kelly provides the resources, examples and implementation support. Bespoke setup is not included.</p></details></div></section>
+<section class="section soft" id="starter-signup">
+<div class="wrap signup">
+<p class="eyebrow">Prefer a resource first?</p>
+<h2>Start with the free AI Starter Kit.</h2>
+<p>Choose a Claude option, try five business prompts and follow a first-workflow guide. After a successful signup, you'll have a direct link to open the kit.</p>
+<form action="https://app.kit.com/forms/9316857/subscriptions" method="post" data-wwuai-signup data-success-url="/thank-you?source=starter-kit" data-uid="cd35a37ea2">
+<input type="hidden" name="fields[source]" value="starter-kit">
+<label for="starter-name">First name</label>
+<input id="starter-name" name="fields[first_name]" autocomplete="given-name" aria-label="First name">
+<label for="starter-email">Email address</label>
+<input id="starter-email" type="email" name="email_address" autocomplete="email" required aria-label="Email address">
+<button class="button" type="submit">Get the free Starter Kit</button>
+<p class="small" style="margin-top:16px">The free kit and follow-up emails from Kelly. Unsubscribe any time. <a href="/privacy">Privacy</a>.</p>
+<p role="alert" data-signup-error hidden></p></form>
+<p class="small">Or <a href="/community">start in the free community</a>.</p></div></section></main>
+<footer class="site-footer">
     <a href="/" class="footer-brand">
       <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
       <span class="footer-wordmark">Wise Women Use AI</span>
@@ -1471,27 +296,5 @@ body:not(.motion-paused) .path-card .path-badge{grid-column:auto;right:28px;top:
 
     <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
   </footer>
-
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  </script>
-
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
-
-<script>
-(()=>{const cards=[...document.querySelectorAll('.path-card')],toggle=document.querySelector('#motion-toggle'),media=matchMedia('(min-width:900px) and (min-height:700px) and (prefers-reduced-motion:no-preference)');let queued=false;
-function draw(){queued=false;const enabled=media.matches&&!document.body.classList.contains('motion-paused');cards.forEach((c,i)=>{let p=0;if(enabled&&cards[i+1])p=Math.max(0,Math.min(1,(480-cards[i+1].getBoundingClientRect().top)/380));c.style.transform=enabled?'translateY('+(-28*p)+'px) scale('+(1-.035*p)+') rotate('+(-1.6*p)+'deg)':'';c.style.zIndex=enabled?String(i+1):''})}
-function request(){if(!queued){queued=true;requestAnimationFrame(draw)}}window.addEventListener('scroll',request,{passive:true});window.addEventListener('resize',request);media.addEventListener('change',request);toggle.addEventListener('click',()=>{const paused=document.body.classList.toggle('motion-paused');toggle.setAttribute('aria-pressed',String(paused));toggle.textContent=paused?'Resume motion':'Pause motion';draw()});draw()})();
-</script></body>
-</html>
+<script>document.querySelectorAll(".yr").forEach(function(e){var y=new Date().getFullYear();e.textContent=y>2026?"2026–"+y:"2026";});</script>
+<script src="/assets/js/signup.js"></script></body></html>

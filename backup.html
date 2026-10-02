@@ -325,7 +325,8 @@
       body.unlocked #guide { animation: none; }
       * { transition: none !important; }
     }
-  </style>
+  form input[type="email"],form input[type="text"]{font-size:16px}
+</style>
 </head>
 <body>
 
@@ -372,9 +373,9 @@
         <form class="gate-form register-form" action="https://app.kit.com/forms/9685607/subscriptions" method="post" data-sv-form="9685607" data-uid="797300ea59" data-format="inline" data-version="5">
           <input type="hidden" name="fields[source]" value="headquarters">
           <label class="field-label" for="fn">First name</label>
-          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" aria-label="First name">
           <label class="field-label" for="em">Email</label>
-          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
           <button type="submit">Unlock the setup</button>
         </form>
         <p class="gate-note">Free. Unsubscribe any time.</p>
@@ -501,6 +502,7 @@ Then show me the HQ page and ask if I would like to add or change anything.</div
     </div>
   </footer>
 
+  <script src="/assets/js/signup.js"></script>
   <script>
     function copyPrompt(id, btn) {
       var text = document.getElementById(id).textContent;
@@ -543,24 +545,11 @@ Then show me the HQ page and ask if I would like to add or change anything.</div
     })();
 
     document.querySelectorAll('form.register-form').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = form.querySelector('button[type=submit]');
-        var label = btn ? btn.textContent : '';
-        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
-        fetch(form.action, {
-          method: 'POST',
-          body: new URLSearchParams(new FormData(form)),
-          mode: 'no-cors'
-        }).finally(function () {
-          try {
-            var url = new URL(window.location.href);
-            url.searchParams.set('unlocked', '1');
-            window.history.replaceState({}, '', url);
-          } catch (e) {}
-          if (btn) { btn.disabled = false; btn.textContent = label; }
-          unlockGuide(true);
-        });
+      WWUAIForms.bind(form, function () {
+        var url = new URL(window.location.href);
+        url.searchParams.set('unlocked', '1');
+        window.history.replaceState({}, '', url);
+        unlockGuide(true);
       });
     });
 

@@ -1111,7 +1111,8 @@
 
       footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
     }
-  </style>
+  form input[type="email"],form input[type="text"]{font-size:16px}
+</style>
 </head>
 <body>
 
@@ -1157,10 +1158,10 @@
       <div class="form-card">
         <h3 class="form-card-title">Get the free skill file</h3>
         <p class="form-card-sub">Drop your email and I'll send you the skill file and setup instructions. You'll need Claude Code to run it.</p>
-        <form action="https://app.kit.com/forms/9346256/subscriptions" method="post" data-sv-form="9346256" data-uid="125c49195e" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/carousel-guide"}}}'>
+        <form data-wwuai-signup data-success-url="/carousel-guide" action="https://app.kit.com/forms/9346256/subscriptions" method="post" data-sv-form="9346256" data-uid="125c49195e" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/carousel-guide"}}}'>
           <input type="hidden" name="fields[source]" value="carousel-maker">
-          <input type="text" name="fields[first_name]" placeholder="First name">
-          <input type="email" name="email_address" placeholder="Email address" required>
+          <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+          <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
           <button type="submit">Send me the skill file</button>
         </form>
         <p class="form-note">Free. The file lands in your inbox in a minute or two.</p>
@@ -1663,10 +1664,10 @@
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px;">Still here? The skill file is still free.</h2>
       <p style="color:var(--driftwood);margin-bottom:32px;">Drop your email and I'll send it straight to your inbox.</p>
       <div class="form-card" style="margin:0 auto;">
-        <form action="https://app.kit.com/forms/9346256/subscriptions" method="post" data-sv-form="9346256" data-uid="125c49195e" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/carousel-guide"}}}'>
+        <form data-wwuai-signup data-success-url="/carousel-guide" action="https://app.kit.com/forms/9346256/subscriptions" method="post" data-sv-form="9346256" data-uid="125c49195e" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/carousel-guide"}}}'>
           <input type="hidden" name="fields[source]" value="carousel-maker">
-          <input type="text" name="fields[first_name]" placeholder="First name">
-          <input type="email" name="email_address" placeholder="Email address" required>
+          <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+          <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
           <button type="submit">Send me the skill file</button>
         </form>
         <p class="form-note">Free. The file lands in your inbox in a minute or two.</p>
@@ -1687,5 +1688,6 @@
     </ul>
   </footer>
 
+<script src="/assets/js/signup.js"></script>
 </body>
 </html>

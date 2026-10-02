@@ -964,7 +964,8 @@
         padding: 24px 20px;
       }
     }
-  </style>
+  form input[type="email"],form input[type="text"]{font-size:16px}
+</style>
 </head>
 <body>
 
@@ -1006,10 +1007,10 @@
     <div class="email-gate-card">
       <h3>Get immediate access</h3>
       <p>Enter your email and I'll open the guide for you. Four steps. About five minutes.</p>
-      <form action="https://app.kit.com/forms/9316854/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9316854" data-uid="d60115c70b" data-format="inline" data-version="5" onsubmit="unlockGuide(event)">
+      <form action="https://app.kit.com/forms/9316854/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9316854" data-uid="d60115c70b" data-format="inline" data-version="5">
         <input type="hidden" name="fields[source]" value="switch-to-claude">
-        <input type="text" name="fields[first_name]" placeholder="First name">
-        <input type="email" name="email_address" placeholder="Email address" required>
+        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
+        <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
         <button type="submit">Show me the guide</button>
       </form>
       <p class="email-gate-note">Free, and you can unsubscribe any time.</p>
@@ -1332,6 +1333,7 @@ Again, format this as a clean profile with headings and bullet points.</div>
     </ul>
   </footer>
 
+  <script src="/assets/js/signup.js"></script>
   <script>
     // ── State ──────────────────────────────────
     let currentStep = 0;
@@ -1484,14 +1486,13 @@ Again, format this as a clean profile with headings and bullet points.</div>
     }
 
     // ── Email Gate ─────────────────────────────
-    function unlockGuide(e) {
-      // Save unlock flag so returning visitors see the guide directly
-      try {
-        localStorage.setItem('wwuai-switch-unlocked', 'true');
-      } catch (ex) {}
-      // Redirect to thank-you page (Kit form submits via its own mechanism)
-      window.location.href = '/thank-you?source=switch-to-claude';
-    }
+    document.querySelectorAll('form.formkit-form').forEach(function (form) {
+      WWUAIForms.bind(form, function () {
+        try { localStorage.setItem('wwuai-switch-unlocked', 'true'); } catch (err) {}
+        showGuideContent();
+        document.querySelector('.gated-content').scrollIntoView({block:'start'});
+      });
+    });
 
     function showGuideContent() {
       var gate = document.getElementById('emailGate');

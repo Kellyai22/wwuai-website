@@ -113,28 +113,20 @@
       .nav-link { display: none; }
       .article-header, .article-body, .back-link, .article-attribution { padding-left: 20px; padding-right: 20px; }
     }
-  </style>
+
+.ww-nav{position:sticky!important;top:0;z-index:100;display:flex!important;align-items:center;justify-content:space-between;gap:20px;padding:12px max(24px,calc((100vw - 1120px)/2))!important;height:auto!important;min-height:68px;background:var(--pearl,#FAF8F6);color:var(--bordeaux,#3A131B);border-bottom:1px solid var(--creamDark,#E1DAD7);font:400 13px/1.4 'Plus Jakarta Sans',Arial,sans-serif}.ww-brand{display:flex;align-items:center;gap:10px;text-decoration:none}.ww-brand img{width:36px;height:36px;object-fit:contain}.ww-brand span{font-size:11px;letter-spacing:.08em}.ww-nav-links{display:flex;align-items:center;gap:24px}.ww-nav-links a{display:inline-flex!important;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ww-nav-links a:hover{text-decoration:underline}.ww-start{border:1px solid currentColor;padding:8px 14px;border-radius:2px}.ww-nav a:focus-visible{outline:2px solid currentColor;outline-offset:4px}.skip{position:absolute;left:-10000px;top:0}.skip:focus{left:12px;z-index:1000;background:var(--pearl,#FAF8F6);padding:12px}.section-nav{position:static!important}@media(max-width:760px){.ww-nav{padding:10px 16px!important;gap:12px;flex-wrap:wrap}.ww-brand span{display:none}.ww-nav-links{gap:13px;flex:1;justify-content:flex-end;font-size:12px}.ww-start{padding:8px 10px}}@media(max-width:360px){.ww-nav-links{gap:8px;font-size:11px}.ww-brand img{width:28px;height:28px}}
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI" width="28" height="28">
-      <span class="nav-wordmark">Wise Women Use AI</span>
-    </a>
-    <div class="nav-actions">
-      <a href="/blog" class="nav-link">Blog</a>
-      <a href="/work" class="nav-link">Work with me</a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="btn-nav">Join the community</a>
-    </div>
-  </nav>
+  <a class="skip" href="#main">Skip to content</a><nav class="ww-nav" aria-label="Main navigation"><a class="ww-brand" href="/"><img src="/assets/logos/WWUAI%20Logo%20OGTP.png" width="36" height="36" alt="Wise Women Use AI"><span>Wise Women Use AI</span></a><div class="ww-nav-links"><a href="/blog">Articles</a><a href="/architect">Membership</a><a href="/work">Workshops</a><a href="/community" class="ww-start">Start free</a></div></nav>
 
   <div class="back-link">
     <a href="/blog">&larr; All posts</a>
   </div>
 
   <article>
-    <header class="article-header reveal">
+    <header id="main" tabindex="-1" class="article-header reveal">
       <span class="article-eyebrow">Real talk</span>
       <h1 class="article-title">The lie AI influencers keep telling you</h1>
       <div class="article-meta">

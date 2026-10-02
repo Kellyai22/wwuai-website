@@ -1,6 +1,17 @@
 {
   "routes": [
     {
+      "src": "/masterclass.html",
+      "headers": {
+        "Location": "/workshop"
+      },
+      "status": 301
+    },
+    {
+      "src": "/examples/one-idea-three-drafts",
+      "dest": "/example-content.html"
+    },
+    {
       "src": "/Astra",
       "dest": "/Astra.html"
     },
