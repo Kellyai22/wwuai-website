@@ -802,7 +802,8 @@
       .wizard-step.active, body.unlocked #guide { animation: none; }
       * { transition: none !important; }
     }
-  </style>
+  form input[type="email"],form input[type="text"]{font-size:16px}
+</style>
 </head>
 <body>
 
@@ -997,15 +998,15 @@
       <div class="gate-card">
         <h2>Your bottleneck result is ready</h2>
         <p class="gate-line">Pop your email in to see what is keeping the business dependent on you, then get your jobs sorted biggest first and a practical place to start.</p>
-        <form class="gate-form register-form" action="https://app.kit.com/forms/9658821/subscriptions" method="post" novalidate data-sv-form="9658821" data-uid="c140f63fe5" data-format="inline" data-version="5">
+        <form class="gate-form register-form" action="https://app.kit.com/forms/9658821/subscriptions" method="post" data-sv-form="9658821" data-uid="c140f63fe5" data-format="inline" data-version="5">
           <input type="hidden" name="fields[source]" value="hours">
           <input type="hidden" name="fields[bottleneck_type]" id="hidBottleneck" value="">
           <input type="hidden" name="fields[biggest_time_drain]" id="hidDrain" value="">
           <input type="hidden" name="fields[hours_a_week]" id="hidHours" value="">
           <label class="field-label" for="fn">First name</label>
-          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" aria-label="First name">
           <label class="field-label" for="em">Email</label>
-          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
           <p class="field-error" id="emError">Pop in a real email address and it'll open right up.</p>
           <button type="submit">Show me my result</button>
         </form>
@@ -1323,6 +1324,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
     </div>
   </footer>
 
+  <script src="/assets/js/signup.js"></script>
   <script>
     // ══ The numbers. One place, named, so nothing drifts. ══
     var WORKING_WEEK = 38;   // hours in a full working week
@@ -1773,42 +1775,14 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
 
     // ══ Gate submit: post to Kit in the background, then open the plan ══
     document.querySelectorAll('form.register-form').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = form.querySelector('input[type=email]');
-        var err = document.getElementById('emError');
-        var val = (email.value || '').trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
-          err.classList.add('show');
-          email.setAttribute('aria-invalid', 'true');
-          email.focus();
-          return;
-        }
-        err.classList.remove('show');
-        email.removeAttribute('aria-invalid');
-
-        var btn = form.querySelector('button[type=submit]');
-        var label = btn ? btn.textContent : '';
-        if (btn) { btn.disabled = true; btn.textContent = 'Opening...'; }
-        fetch(form.action, {
-          method: 'POST',
-          body: new URLSearchParams(new FormData(form)),
-          mode: 'no-cors'
-        }).catch(function () {
-          // Ad blockers and privacy extensions block this endpoint. She still gets her plan.
-        }).finally(function () {
-          try {
-            var url = new URL(window.location.href);
-            url.searchParams.set('unlocked', '1');
-            window.history.replaceState({}, '', url);
-          } catch (e) {}
-          if (btn) { btn.disabled = false; btn.textContent = label; }
-          unlockGuide(true);
-        });
+      WWUAIForms.bind(form, function () {
+        var url = new URL(window.location.href);
+        url.searchParams.set('unlocked', '1');
+        window.history.replaceState({}, '', url);
+        unlockGuide(true);
       });
     });
 
-    // ══ Sticky nav: highlight the section in view ══
     (function () {
       var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
       if (!links.length || !('IntersectionObserver' in window)) return;

@@ -101,3 +101,13 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - `/privacy` → `privacy.html` (added 1 August 2026)
 - `/ai-disclosure` → `ai-disclosure.html` (added 1 August 2026)
 - `/posts/the-thing-holding-your-ai-back-isnt-your-prompts` → 301 redirect to `/blog` (post retired 1 July 2026)
+
+## Current site and signup flow (2 October 2026)
+
+- Main positioning: practical AI and business systems for Gen X women. The free community and Architect Advantage are the two main routes. Organisational workshops remain separate. Do not add an unscoped individual service.
+- Architect Advantage remains $69 USD monthly via Skool, cancel any time, with one monthly member implementation call and replay. Do not promise two Build/Fix sessions without a confirmed offer change.
+- `/examples/one-idea-three-drafts` is a clearly labelled worked example, not a member result or a measured time-saving claim.
+- All active Kit forms use `/assets/js/signup.js`. Preserve each existing Kit form ID and source field. A successful HTTP response alone is insufficient: Kit must return JSON with `status: success`. Errors must never unlock content or redirect to a success page. Keep resource access distinct from confirmed email delivery or double opt-in.
+- Run `node --test tests/signup.test.cjs` after changing signup behaviour.
+- Main navigation and article navigation use `.ww-nav`, with no hidden mobile links. Blog publisher template updated alongside it.
+- `/masterclass.html` also redirects to the closed-workshop page; do not expose old event registration forms.

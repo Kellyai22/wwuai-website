@@ -474,7 +474,8 @@
       body.unlocked #guide { animation: none; }
       * { transition: none !important; }
     }
-  </style>
+  form input[type="email"],form input[type="text"]{font-size:16px}
+</style>
 </head>
 <body>
 
@@ -520,9 +521,9 @@
         <form class="gate-form register-form" action="https://app.kit.com/forms/9739659/subscriptions" method="post" data-sv-form="9739659" data-uid="727012c5c4" data-format="inline" data-version="5">
           <input type="hidden" name="fields[source]" value="slop">
           <label class="field-label" for="fn">First name</label>
-          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+          <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" aria-label="First name">
           <label class="field-label" for="em">Email</label>
-          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+          <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
           <button type="submit">Unlock the guide</button>
         </form>
         <p class="gate-note">Free. One email and it all opens on this page.</p>
@@ -727,6 +728,7 @@ Quote each one, tell me what's wrong with it in a few words, and give me a versi
     </div>
   </footer>
 
+  <script src="/assets/js/signup.js"></script>
   <script>
     // ── Copy to clipboard ─────────────────────
     function copyPrompt(id, btn) {
@@ -773,28 +775,14 @@ Quote each one, tell me what's wrong with it in a few words, and give me a versi
 
     // Submit intercept: post to Kit in the background, then open the guide
     document.querySelectorAll('form.register-form').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = form.querySelector('button[type=submit]');
-        var label = btn ? btn.textContent : '';
-        if (btn) { btn.disabled = true; btn.textContent = 'Unlocking...'; }
-        fetch(form.action, {
-          method: 'POST',
-          body: new URLSearchParams(new FormData(form)),
-          mode: 'no-cors'
-        }).finally(function () {
-          try {
-            var url = new URL(window.location.href);
-            url.searchParams.set('unlocked', '1');
-            window.history.replaceState({}, '', url);
-          } catch (e) {}
-          if (btn) { btn.disabled = false; btn.textContent = label; }
-          unlockGuide(true);
-        });
+      WWUAIForms.bind(form, function () {
+        var url = new URL(window.location.href);
+        url.searchParams.set('unlocked', '1');
+        window.history.replaceState({}, '', url);
+        unlockGuide(true);
       });
     });
 
-    // ── Sticky nav: highlight the section in view ──
     (function () {
       var links = Array.prototype.slice.call(document.querySelectorAll('.section-links a'));
       if (!links.length || !('IntersectionObserver' in window)) return;
