@@ -80,3 +80,7 @@ Assets for the branded Kit email template (header + social icons). Referenced by
 ## September 2026 website refresh
 - `assets/photos/kelly-reaching-current-v1.png` — reviewed reaching-hand hero portrait; homepage; original retained.
 - `assets/photos/kelly-about-selected.png` — Kelly-selected current professional headshot; About; original retained.
+
+## October 2026 workshop registration
+- `downloads/content-system-kit-october-2026.pdf`: approved standard Content System Kit; October workshop, repurposing, waterfall. Full live-only Visual Style Pack is not published here.
+- `assets/kelly-selected-headshot.png`: Kelly-selected workshop portrait with fringe; host, October workshop.

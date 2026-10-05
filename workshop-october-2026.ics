@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wise Women Use AI//Workshop//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:WWUAI-2026-10-14-CONTENT@wisewomenuseai.com
+DTSTAMP:20260928T000000Z
+DTSTART:20261014T080000Z
+DTEND:20261014T090000Z
+SUMMARY:Build Your Content System - Wise Women Use AI
+DESCRIPTION:Free 60-minute online workshop. No preparation required.\n7–
+ 8 pm AEDT Melbourne.\nJoining details: https://us06web.zoom.us/j/30179515
+ 56?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1
+LOCATION:Online via Zoom
+URL:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsK
+ a.1
+END:VEVENT
+END:VCALENDAR
