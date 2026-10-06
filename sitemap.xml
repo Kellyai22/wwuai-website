@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://www.wisewomenuseai.com/blog</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -58,6 +58,11 @@
   <url>
     <loc>https://www.wisewomenuseai.com/posts/it-was-never-a-discipline-problem</loc>
     <lastmod>2026-10-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wisewomenuseai.com/posts/repurpose-newsletter-with-ai</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -230,5 +235,4 @@
     <lastmod>2026-08-13</lastmod>
     <priority>0.3</priority>
   </url>
-<url><loc>https://www.wisewomenuseai.com/posts/repurpose-newsletter-with-ai</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
 </urlset>
