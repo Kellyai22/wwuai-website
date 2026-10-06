@@ -1,6 +1,30 @@
 {
   "routes": [
     {
+      "src": "/tools/client-welcome",
+      "dest": "/tools-client-welcome.html"
+    },
+    {
+      "src": "/tools/follow-up-tracker",
+      "dest": "/tools-follow-up-tracker.html"
+    },
+    {
+      "src": "/tools/client-call",
+      "dest": "/tools-client-call.html"
+    },
+    {
+      "src": "/tools/repeat-job",
+      "dest": "/tools-repeat-job.html"
+    },
+    {
+      "src": "/tools/email-plan",
+      "dest": "/tools-email-plan.html"
+    },
+    {
+      "src": "/tools/everyday-jobs",
+      "dest": "/tools-everyday-jobs.html"
+    },
+    {
       "src": "/masterclass.html",
       "headers": {
         "Location": "/workshop"

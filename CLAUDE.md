@@ -111,3 +111,10 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - Run `node --test tests/signup.test.cjs` after changing signup behaviour.
 - Main navigation and article navigation use `.ww-nav`, with no hidden mobile links. Blog publisher template updated alongside it.
 - `/masterclass.html` also redirects to the closed-workshop page; do not expose old event registration forms.
+
+## Vault resources (7 October 2026)
+- The catalogue at `/vault` is still hosted by the existing Sites project and proxied here. Its source is separate from this repository.
+- `/tools/everyday-jobs` exposes the eight existing audit prompts without requiring the audit. `hours.html` remains the source for their wording. Run `node scripts/sync-everyday-prompts.mjs` after editing those prompts, or use `--check` to detect drift.
+- `/tools/email-plan` teaches list-email planning and drafting. It does not read inboxes, send emails or install skills. The other new guides are `/tools/repeat-job`, `/tools/client-call`, `/tools/follow-up-tracker` and `/tools/client-welcome`.
+- The business review at `/review` is evergreen. All four prompts use the same chat and the reader chooses the review and planning periods.
+- `/vault-starter` is the four-step beginner path; Claude, Clearly is its first step. Preserve the existing paid content lesson boundary and classroom URLs.
