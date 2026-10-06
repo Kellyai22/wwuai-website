@@ -122,3 +122,5 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 Free Vault access: /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.
 
 Free/paid boundary: public guides are standalone resources, not a mirror of the paid Systems Library. Do not copy paid lesson text, examples, templates or recordings into public guides without Kelly explicitly approving that asset for public release. Link public guides to /architect with a clear paid-membership invitation. Topic overlap alone does not authorise republishing the member asset.
+
+Paid migration approved 7 October 2026: the five complete workflows (email-plan, repeat-job, client-call, follow-up-tracker, client-welcome) now live in the Premium-restricted Skool Systems Library. Their website URLs contain previews only, except email-plan which also contains a separate one-email free starter. Do not restore the full prompts from repository history or old build scripts. Member lesson links are in the public previews.
