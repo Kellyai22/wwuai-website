@@ -118,3 +118,5 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - `/tools/email-plan` teaches list-email planning and drafting. It does not read inboxes, send emails or install skills. The other new guides are `/tools/repeat-job`, `/tools/client-call`, `/tools/follow-up-tracker` and `/tools/client-welcome`.
 - The business review at `/review` is evergreen. All four prompts use the same chat and the reader chooses the review and planning periods.
 - `/vault-starter` is the four-step beginner path; Claude, Clearly is its first step. Preserve the existing paid content lesson boundary and classroom URLs.
+
+Free Vault access: /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.

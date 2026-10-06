@@ -805,7 +805,7 @@
   form input[type="email"],form input[type="text"]{font-size:16px}
 </style>
 </head>
-<body>
+<body class="unlocked">
 
   <!-- Brand bar -->
   <div class="topbar">
@@ -1764,8 +1764,7 @@ Then tell me which single thing on this list, if I sorted it on Sunday, would ta
 
     // /audit?unlocked=1 skips the gate. Her saved answers fill the plan back in.
     (function () {
-      var unlocked = false;
-      try { unlocked = new URLSearchParams(window.location.search).get('unlocked') === '1'; } catch (e) {}
+      var unlocked = true; // The free audit is available without signup.
       var had = restore();
       if (unlocked) {
         document.body.classList.add('unlocked');
