@@ -120,3 +120,5 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - `/vault-starter` is the four-step beginner path; Claude, Clearly is its first step. Preserve the existing paid content lesson boundary and classroom URLs.
 
 Free Vault access: /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.
+
+Free/paid boundary: public guides are standalone resources, not a mirror of the paid Systems Library. Do not copy paid lesson text, examples, templates or recordings into public guides without Kelly explicitly approving that asset for public release. Link public guides to /architect with a clear paid-membership invitation. Topic overlap alone does not authorise republishing the member asset.
