@@ -170,7 +170,7 @@ h1{font-size:46px}
     <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
   </footer><script>
 (function(){
-  var resources={"starter-kit":["/vault-starter","Open your Claude Starter Kit"],"claude-clearly":["/vault-claude-clearly","Open Claude, Clearly"],"switch-to-claude":["/switch","Return to Switch to Claude"]};
+  var resources={"starter-kit":["/vault-starter","Open your Claude Starter Kit"],"claude-clearly":["/vault-claude-clearly","Open Claude, Clearly"],"switch-to-claude":["/switch","Return to Switch to Claude"],"reel":["/downloads/wwuai-reel-starter.zip","Download the Reel Starter"]};
   var selected=resources[new URLSearchParams(location.search).get("source")];
   if(selected){var link=document.getElementById("resource-link");link.href=selected[0];link.textContent=selected[1];document.getElementById("requested-resource").hidden=false;}
   document.querySelectorAll('.yr').forEach(function(e){var y=new Date().getFullYear();e.textContent=y>2026?'2026–'+y:'2026';});

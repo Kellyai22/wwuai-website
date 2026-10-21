@@ -39,7 +39,9 @@
 
 ## Content (`assets/content/`)
 
-*No images yet.*
+| Filename | Description | Tags |
+|----------|-------------|------|
+| reel-starter-options.jpg | Options sheet for the free Reel Starter: Kelly's own clip shown with the 3 hooks (big word behind head, tablet, typewriter), 3 caption styles (tablet, bold, editorial) and 3 filters (cinematic, camcorder, warm film). Used on /reel. 956x1793. | reel, video, lead magnet, captions, filters |
 
 ## Social (`assets/social/`)
 

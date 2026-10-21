@@ -160,6 +160,10 @@
       "dest": "/guide.html"
     },
     {
+      "src": "/reel",
+      "dest": "/reel.html"
+    },
+    {
       "src": "/switch",
       "dest": "/switch.html"
     },
