@@ -466,6 +466,15 @@
     }
 
     /* ── Reel page additions ───────────────── */
+    .faq { padding: 64px 48px; }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 36px); font-weight: 400; margin-bottom: 24px; }
+    .faq h2 em { font-style: italic; color: #DDA983; }
+    .faq h3 { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); margin: 22px 0 6px; }
+    .faq p { font-size: 14px; font-weight: 300; color: var(--brown-light); line-height: 1.75; }
+    .options img { max-width: 420px; margin: 0 auto; }
+    @media (max-width: 768px) { .faq { padding: 48px 24px; } .options img { max-width: 88%; } }
+
     .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     .options { padding: 72px 48px; max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .options img { border-radius: 8px; border: 1px solid var(--cream-dark); }
@@ -507,10 +516,10 @@
       <h1>Edit your reels<br><em>with Claude.</em></h1>
       <p style="font-size:12px;color:#908486;margin-bottom:12px;letter-spacing:0.04em;">By <strong style="color:#3A131B;">Kelly Hartley</strong> &middot; Wise Women Use AI &middot; October 2026</p>
       <p class="hero-sub">
-        Film yourself talking, type <em>edit my latest video</em>, and get back a finished reel. Your pauses and ums are cut, your captions build word by word in your brand colours, and the look is yours.
+        You've got the ideas. You've even filmed them. Then the editing takes an hour, the captions never look right, and the video sits in your camera roll instead of on your feed.
       </p>
       <p class="hero-sub">
-        No CapCut. No extra subscriptions. Just the Claude plan you already pay for.
+        The Reel Starter is a free Claude skill that does the editing for you. Film yourself talking, type <em>edit my latest video</em>, and get back a finished reel: pauses and ums cut, captions building word by word in your brand colours, and a look that's yours. No CapCut, no extra subscriptions.
       </p>
     </div>
 
@@ -533,7 +542,7 @@
     <div class="inside-inner">
       <p class="section-eyebrow">What you get, free</p>
       <h2>Nine looks. Your <em>colours.</em></h2>
-      <p class="inside-sub">Everything a talking-head reel needs to stop the scroll, done for you by Claude on your own computer.</p>
+      <p class="inside-sub">Everything a talking-head reel needs to stop the scroll, done for you by Claude on your own computer. Here is what the free version does.</p>
 
       <div class="steps-grid">
         <div class="step-item">
@@ -593,10 +602,41 @@
     </div>
   </section>
 
+  <!-- Who It's For -->
+  <section class="for-who">
+    <h2>This is for you if...</h2>
+    <div class="for-grid">
+      <div class="for-item"><span class="for-dash">&middot;</span> You film reels, then leave them sitting in your camera roll</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> Editing in CapCut eats an hour you don't have</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You read from a teleprompter, so your phone's cinematic mode is off the table</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You want your brand colours, not someone else's template</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You already pay for Claude and want it doing more of the work</div>
+      <div class="for-item"><span class="for-dash">&middot;</span> You'd rather be the face of your business than its video editor</div>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="faq">
+    <div class="faq-inner">
+      <p class="section-eyebrow">Questions</p>
+      <h2>Before you <em>download</em></h2>
+      <h3>Do I need to know how to code?</h3>
+      <p>No. You paste one message into Claude and it sets everything up. After that, you edit a reel by typing <em>edit my latest video</em>.</p>
+      <h3>What does it cost?</h3>
+      <p>The Reel Starter is free. You need a paid Claude plan with Claude Code (Pro is enough) or ChatGPT Plus with Codex. There are no other subscriptions or paid add-ons.</p>
+      <h3>Does it work on Windows?</h3>
+      <p>It's built and tested for Mac. Windows isn't supported yet.</p>
+      <h3>Where does my video go?</h3>
+      <p>Nowhere. Claude edits it on your own computer, and the finished reel lands in a folder on your Mac. Nothing is uploaded to an editing service.</p>
+      <h3>What's the difference between the free version and the full Reel Studio?</h3>
+      <p>The free version cuts pauses and filler sounds and gives you nine looks in your colours. The full Reel Studio, inside The Architect Advantage, also removes retakes, shows you a storyboard before it edits, and adds checklists, zooms and more looks.</p>
+    </div>
+  </section>
+
   <!-- Callout -->
   <section class="callout-section">
     <div class="callout-inner">
-      <blockquote>"Film it. Say edit my latest video. Post it."</blockquote>
+      <blockquote>Film it. Say "edit my latest video". Post it.</blockquote>
       <cite>The Reel Starter</cite>
     </div>
   </section>
