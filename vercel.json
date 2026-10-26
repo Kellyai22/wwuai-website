@@ -49,7 +49,10 @@
     },
     {
       "src": "/vault-starter",
-      "dest": "/vault-starter.html"
+      "headers": {
+        "Location": "/starter?unlocked=1"
+      },
+      "status": 307
     },
     {
       "src": "/vault-claude-clearly",

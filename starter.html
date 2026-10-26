@@ -1,547 +1,709 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/starter">
-  <title>Free AI Starter Kit | Wise Women Use AI</title>
-  <meta name="description" content="Your calm, practical entry point into using AI in your business. Get the Claude comparison tool, 5 real business prompts, and your first AI workflow.">
+  <title>How to Set Up a Claude Project for Your Business · Wise Women Use AI</title>
+  <meta name="description" content="Set up one Claude Project that already knows your business, in about 20 minutes. Claude interviews you and writes the instructions, so every chat starts from a proper brief. Free step-by-step guide with copy-and-paste prompts.">
 
-  <meta property="og:title" content="Free AI Starter Kit | Wise Women Use AI">
-  <meta property="og:description" content="Your calm, practical entry point into using AI in your business. Get the Claude comparison tool, 5 real business prompts, and your first AI workflow.">
+  <meta property="og:title" content="Stop using a fresh chat for your business work">
+  <meta property="og:description" content="Set up one Claude Project that already knows your business, in about 20 minutes. Free step-by-step guide with the prompts to copy and paste.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/starter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stop using a fresh chat for your business work">
+  <meta name="twitter:description" content="Set up one Claude Project that already knows your business, in about 20 minutes. Free step-by-step guide.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Allison&family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allison&family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
 
   <style>
+    /* October 2026 palette (Claude Design system "Wise Women Use AI"), rounded corners */
     :root {
-      --ink:        #3A131B;
-      --brown-mid:    #908486;
-      --brown-light:  #8C7E74;
-      --bordeaux:        #3A131B;
-      --terra-deep:   #a85c3c;
-      --cream:        #FAF8F6;
-      --cream-dark:   #E1DAD7;
-      --cream-mid:    #F0EBE5;
-      --white:        #FFFFFF;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:         'Plus Jakarta Sans', system-ui, sans-serif;
+      --paper:      #ECE6E0;
+      --bone:       #F7F3EE;
+      --stone:      #C9C4BA;
+      --line:       #D4CCC4;
+      --ink:        #2A1C1F;
+      --ink-soft:   #6B5E60;
+      --bordeaux:   #5E1B25;
+      --oxblood:    #3A131B;
+      --blush:      #E2B592;
+      --on-dark:    #F7F3EE;
+      --on-dark-dim: rgba(247, 243, 238, 0.8);
+      --on-dark-line: rgba(247, 243, 238, 0.24);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --hand: 'Cedarville Cursive', 'Segoe Script', cursive;
+      --script: 'Allison', 'Brush Script MT', cursive;
+      --r-btn: 2px; --r-sm: 4px; --r-md: 8px; --r-lg: 16px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --gutter: clamp(20px, 4vw, 40px);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
     body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      background: var(--paper); color: var(--ink);
+      font-family: var(--body); font-size: 17px; line-height: 1.6; font-weight: 400;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
     }
-
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
+    a { color: var(--bordeaux); text-decoration: none; }
+    b, strong { font-weight: 600; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.015em; text-wrap: balance; }
+    h1 em, h2 em { font-style: italic; color: var(--bordeaux); }
+    .on-dark h2 em, .on-dark h1 em { color: var(--blush); }
 
-    /* ── Nav ──────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--cream);
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 64px;
+    .shell { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+    .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+    .on-dark .eyebrow { color: var(--blush); }
+    .title { font-size: clamp(34px, 4vw, 46px); line-height: 1.06; }
+    .lede { line-height: 1.75; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--body); font-size: 15px; font-weight: 500; cursor: pointer;
+      border-radius: var(--r-btn); padding: 15px 26px; min-height: 48px;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.1s var(--ease);
     }
+    .btn svg { width: 16px; height: 16px; transition: transform 0.25s var(--ease); }
+    .btn:active { transform: translateY(1px); }
+    .btn-outline { color: var(--bordeaux); background: transparent; border: 1.5px solid var(--bordeaux); }
+    .btn-outline:hover { background: var(--bordeaux); color: var(--on-dark); }
+    .btn-blush { color: var(--oxblood); background: var(--blush); border: 1.5px solid var(--blush); }
+    .btn-blush:hover { background: var(--on-dark); border-color: var(--on-dark); }
+    .btn-blush:hover svg { transform: translateX(3px); }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
+    /* Top bar */
+    .topbar { max-width: 1180px; margin: 0 auto; padding: 24px var(--gutter); display: flex; justify-content: space-between; align-items: center; }
+    .wordmark { font-family: var(--display); font-size: 14px; letter-spacing: 0.22em; color: var(--ink); }
+    .topbar-note { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: var(--ink-soft); }
+
+    /* Hero */
+    .hero { padding: clamp(24px, 5vw, 56px) 0 clamp(64px, 8vw, 104px); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(40px, 6vw, 72px); align-items: start; }
+    h1 { font-size: clamp(42px, 5.6vw, 72px); line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 28px; }
+    .hero-sub { font-size: clamp(19px, 1.8vw, 21px); line-height: 1.5; max-width: 34ch; margin-bottom: 36px; }
+    .gets { list-style: none; border-top: 1px solid var(--line); max-width: 50ch; }
+    .gets li { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.55; }
+    .gets .n { font-family: var(--display); font-size: 20px; color: var(--bordeaux); min-width: 22px; line-height: 1.3; }
+    .time-note { margin-top: 24px; font-size: 14px; color: var(--ink-soft); max-width: 50ch; }
+    .jump { display: none; }
+
+    /* Gate */
+    .gate-card { background: var(--oxblood); color: var(--on-dark); border-radius: var(--r-lg); padding: clamp(32px, 3.4vw, 44px) clamp(24px, 3vw, 40px) 36px; }
+    .gate-card .eyebrow { color: var(--blush); margin-bottom: 14px; }
+    .gate-card h2 { font-size: clamp(28px, 2.6vw, 34px); line-height: 1.1; color: var(--on-dark); margin-bottom: 14px; }
+    .gate-card h2 em { color: var(--blush); }
+    .gate-line { font-size: 15px; line-height: 1.6; color: var(--on-dark-dim); margin-bottom: 26px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .field label, .choice legend { font-size: 13px; font-weight: 500; color: var(--on-dark); }
+    .choice legend span { font-weight: 300; color: var(--on-dark-dim); }
+    .field input {
+      font-family: var(--body); font-size: 16px; color: var(--on-dark); background: transparent;
+      border: 0; border-bottom: 1px solid rgba(247, 243, 238, 0.38); border-radius: 0; padding: 10px 0; outline: none; width: 100%;
+      transition: border-color 0.2s var(--ease);
     }
-
-    .nav-logo img { height: 28px; width: auto; }
-
-    .nav-wordmark {
-      font-family: var(--serif);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--ink);
+    .field input::placeholder { color: rgba(247, 243, 238, 0.45); }
+    .field input:focus { border-bottom-color: var(--blush); }
+    .field input[aria-invalid="true"] { border-bottom-color: #F0A4A4; }
+    .field-error { display: none; font-size: 13px; color: #F6C3C3; }
+    .field-error.show { display: block; }
+    .choice { border: 0; margin: 4px 0 24px; }
+    .choice legend { margin-bottom: 10px; }
+    .choice-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .choice-row label {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px;
+      font-size: 14px; color: var(--on-dark); cursor: pointer;
+      border: 1px solid rgba(247, 243, 238, 0.35); border-radius: var(--r-sm);
+      transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
     }
+    .choice-row input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice-row label:hover { border-color: var(--blush); }
+    .choice-row label:has(input:checked) { border-color: var(--blush); background: rgba(226, 181, 146, 0.18); }
+    .choice-row label:has(input:focus-visible) { outline: 2px solid var(--blush); outline-offset: 2px; }
+    .gate-card .btn-blush { width: 100%; }
+    .gate-note { margin-top: 16px; font-size: 13px; color: rgba(247, 243, 238, 0.72); text-align: center; }
 
-    .nav-cta {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--bordeaux) !important;
-      border: 1.5px solid var(--bordeaux);
-      padding: 8px 18px;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
+    .unlocked-card { display: none; background: var(--bone); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(28px, 3vw, 40px); }
+    .unlocked-card h2 { font-size: 30px; margin-bottom: 10px; }
+    .unlocked-card p { font-size: 15px; color: var(--ink-soft); margin-bottom: 22px; }
+    body.unlocked .gate-card { display: none; }
+    body.unlocked .unlocked-card { display: block; }
+
+    /* Recognition */
+    .recognise { background: var(--bone); padding: clamp(64px, 8vw, 104px) 0; }
+    .recognise .title { max-width: 22ch; margin-bottom: 44px; }
+    .pains { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; margin-bottom: 64px; }
+    .pains li { padding: 28px 28px 30px; }
+    .pains li + li { border-left: 1px solid var(--line); }
+    .pains b { display: block; font-weight: 500; margin-bottom: 8px; }
+    .pains span { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+    .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 6vw, 72px); align-items: start; }
+    .two p + p { margin-top: 20px; }
+    .turn { font-family: var(--display); font-size: clamp(22px, 2.2vw, 26px); line-height: 1.4; }
+
+    /* Side by side */
+    .compare { padding: clamp(64px, 8vw, 104px) 0; }
+    .compare-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 48px; margin-bottom: 40px; }
+    .compare-head .title { max-width: 18ch; }
+    .compare-head p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 44ch; text-align: right; margin-left: auto; }
+    .mails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+    .mail { background: var(--bone); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+    .mail-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 24px; border-bottom: 1px solid var(--line); }
+    .mail-top .eyebrow { margin: 0; }
+    .mail-top span:last-child { font-size: 13px; color: var(--ink-soft); }
+    .mail-body { padding: 24px 24px 30px; font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
+    .mail-body p + p { margin-top: 12px; }
+    .mail-body .subj { font-weight: 600; color: var(--ink); margin-bottom: 14px; }
+    .mail.good { border-color: var(--bordeaux); }
+    .mail.good .mail-top { border-bottom-color: var(--bordeaux); }
+    .mail.good .eyebrow, .mail.good .mail-top span:last-child { color: var(--bordeaux); }
+    .mail.good .mail-body { color: var(--ink); }
+    .compare-foot { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
+
+    /* Proof band */
+    .proof { background: var(--oxblood); color: var(--on-dark); padding: clamp(64px, 8vw, 96px) 0; }
+    .proof-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 72px); align-items: center; }
+    .portrait { position: relative; width: 100%; max-width: 440px; aspect-ratio: 4 / 5; }
+    .portrait::before { content: ""; position: absolute; left: 6%; bottom: 0; width: 88%; aspect-ratio: 1 / 1; border-radius: 50%; background: var(--bordeaux); }
+    .portrait img { position: absolute; left: 14%; bottom: 0; width: 72%; height: 92%; object-fit: cover; object-position: 70% 30%; filter: grayscale(1) contrast(1.06); border-radius: var(--r-lg); }
+    .proof blockquote { font-family: var(--display); font-size: clamp(26px, 3vw, 40px); line-height: 1.28; margin-bottom: 28px; }
+    .proof blockquote em { color: var(--blush); }
+    .sig { font-family: var(--script); font-size: 56px; line-height: 1; color: var(--blush); }
+    .proof cite { display: block; margin-top: 6px; font-style: normal; font-size: 14px; color: rgba(247, 243, 238, 0.75); }
+    .proof .btn { margin-top: 28px; color: var(--on-dark); border-color: var(--on-dark); }
+    .proof .btn:hover { background: var(--on-dark); color: var(--oxblood); }
+    body.unlocked .proof .btn { display: none; }
+
+    /* Guide */
+    #guide { display: none; }
+    body.unlocked #guide { display: block; animation: rise 0.5s var(--ease) both; }
+    .guide { background: var(--bone); padding: clamp(64px, 8vw, 104px) 0 clamp(24px, 4vw, 40px); }
+    .guide .title { margin-bottom: 20px; }
+    .progress { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; font-size: 14px; color: var(--ink-soft); }
+    .progress-track { width: 180px; height: 4px; border-radius: 9999px; background: var(--line); overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: var(--bordeaux); transition: width 0.5s var(--ease); }
+    .steps { list-style: none; border-bottom: 1px solid var(--line); }
+    .step { display: flex; gap: clamp(20px, 3vw, 36px); padding: 40px 0; border-top: 1px solid var(--line); }
+    .step-num { font-family: var(--display); font-size: clamp(44px, 5vw, 64px); line-height: 0.9; color: var(--bordeaux); min-width: 56px; transition: opacity 0.3s var(--ease); }
+    .step-body { flex: 1; min-width: 0; }
+    .step h3 { font-size: clamp(25px, 2.6vw, 30px); line-height: 1.15; margin-bottom: 14px; }
+    .step p { line-height: 1.75; margin-bottom: 14px; max-width: 70ch; }
+    .step ul { margin: 0 0 18px 20px; line-height: 1.75; }
+    .prompt { border: 1px solid var(--line); background: var(--paper); border-radius: var(--r-md); overflow: hidden; margin: 4px 0 18px; max-width: 860px; }
+    .prompt-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--line); }
+    .prompt-top .eyebrow { margin: 0; }
+    .btn-copy {
+      display: inline-flex; align-items: center; gap: 7px; cursor: pointer; min-height: 38px;
+      font-family: var(--body); font-size: 13px; font-weight: 500; color: var(--bordeaux);
+      background: transparent; border: 1.5px solid var(--bordeaux); border-radius: var(--r-sm); padding: 8px 16px;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease);
     }
-
-    .nav-cta:hover {
-      background: var(--bordeaux);
-      color: var(--white) !important;
+    .btn-copy svg { width: 14px; height: 14px; }
+    .btn-copy:hover, .btn-copy.copied { background: var(--bordeaux); color: var(--on-dark); }
+    .prompt-body { padding: 18px 20px 20px; font-size: 16px; line-height: 1.7; white-space: pre-wrap; }
+    .tick {
+      display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; min-height: 44px;
+      font-size: 14px; font-weight: 500; color: var(--ink-soft);
+      border: 1px solid var(--line); border-radius: var(--r-sm); padding: 10px 16px;
+      transition: border-color 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease);
     }
+    .tick input { width: 16px; height: 16px; margin: 0; accent-color: var(--bordeaux); }
+    .tick:hover { border-color: var(--bordeaux); }
+    .step.done .tick { border-color: var(--bordeaux); color: var(--bordeaux); background: rgba(94, 27, 37, 0.06); }
 
-    /* ── Hero ─────────────────────────────────── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 64px 48px 48px;
-      align-items: center;
+    .keep { background: var(--bone); padding: 40px 0 clamp(64px, 8vw, 104px); }
+    .keep .two { align-items: start; }
+    .keep .title { margin-bottom: 22px; }
+    .note { background: var(--stone); border-radius: var(--r-lg); padding: clamp(32px, 4vw, 44px); }
+    .note p { font-family: var(--hand); font-size: clamp(24px, 2.4vw, 30px); line-height: 1.55; color: var(--bordeaux); }
+
+    /* FAQ */
+    .faq { padding: clamp(64px, 8vw, 104px) 0; }
+    .faq-wrap { display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start; }
+    .faq-wrap > div:first-child { flex: 0 1 320px; }
+    .faq-list { flex: 1 1 480px; border-top: 1px solid var(--line); }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 17px; font-weight: 600; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary span { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; transition: transform 0.3s var(--ease), border-color 0.2s; }
+    .faq summary svg { width: 12px; height: 12px; }
+    .faq details[open] summary span { transform: rotate(45deg); border-color: var(--bordeaux); }
+    .faq details p { padding: 0 0 24px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); max-width: 68ch; }
+
+    /* Membership */
+    .next { background: var(--oxblood); color: var(--on-dark); padding: clamp(72px, 9vw, 112px) 0; }
+    .next .two { align-items: center; }
+    .next h2 { font-size: clamp(40px, 4.6vw, 56px); line-height: 1.04; margin-bottom: 24px; color: var(--on-dark); }
+    .next .lede { font-size: 18px; color: rgba(247, 243, 238, 0.82); margin-bottom: 40px; }
+    .next-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; }
+    .text-link { font-size: 15px; color: var(--on-dark); border-bottom: 1px solid rgba(247, 243, 238, 0.4); padding-bottom: 2px; transition: border-color 0.2s; }
+    .text-link:hover { border-color: var(--blush); }
+    .inside-label { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: rgba(247, 243, 238, 0.7); margin-bottom: 8px; }
+    .inside { list-style: none; border-top: 1px solid var(--on-dark-line); }
+    .inside li { padding: 24px 0; border-bottom: 1px solid var(--on-dark-line); }
+    .inside li:last-child { border-bottom: 0; }
+    .inside b { display: block; font-family: var(--display); font-weight: 400; font-size: 22px; margin-bottom: 4px; }
+    .inside span { font-size: 15px; line-height: 1.6; color: rgba(247, 243, 238, 0.75); }
+
+    footer { padding: 44px var(--gutter) 52px; text-align: center; }
+    .foot-brand { font-family: var(--display); font-size: 13px; letter-spacing: 0.22em; color: var(--ink-soft); margin-bottom: 12px; }
+    .foot-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; }
+    .foot-links a { color: var(--ink-soft); }
+    .foot-links a:hover { color: var(--bordeaux); }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .hero-copy > * { animation: rise 0.7s var(--ease) both; }
+    .hero-copy > *:nth-child(2) { animation-delay: 0.06s; }
+    .hero-copy > *:nth-child(3) { animation-delay: 0.12s; }
+    .hero-copy > *:nth-child(n+4) { animation-delay: 0.18s; }
+    .hero-aside { animation: rise 0.8s var(--ease) 0.2s both; }
+
+    @media (max-width: 1000px) {
+      .pains { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pains li:nth-child(3) { border-left: 0; }
+      .pains li:nth-child(n+3) { border-top: 1px solid var(--line); }
     }
-
-    .hero-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: var(--bordeaux);
-      text-transform: uppercase;
-      margin-bottom: 16px;
+    @media (max-width: 900px) {
+      .hero-grid, .two, .proof-grid { grid-template-columns: minmax(0, 1fr); }
+      .hero-sub { max-width: none; margin-bottom: 22px; }
+      .jump { display: inline-flex; margin-bottom: 32px; }
+      body.unlocked .jump { display: none; }
+      .portrait { max-width: 320px; }
+      .compare-head p { text-align: left; margin-left: 0; }
     }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(36px, 5vw, 52px);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 20px;
+    @media (max-width: 680px) {
+      .topbar-note { display: none; }
+      .pains, .mails { grid-template-columns: minmax(0, 1fr); }
+      .pains li + li { border-left: 0; border-top: 1px solid var(--line); }
+      .step-num { min-width: 36px; }
     }
-
-    .hero h1 em {
-      font-style: italic;
-      color: #DDA983;
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
-
-    .hero-sub {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      max-width: 460px;
-    }
-
-    /* ── Form Card (dark) ─────────────────────── */
-    .form-card {
-      background: var(--ink);
-      border: 1px solid rgba(250,248,246,0.12);
-      padding: 36px 32px;
-      max-width: 420px;
-      border-radius: 8px;
-    }
-
-    .form-card-title {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 8px;
-    }
-
-    .form-card-sub {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(250,248,246,0.6);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .form-card form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .form-card input[type="text"],
-    .form-card input[type="email"] {
-      font-family: var(--sans);
-      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
-      padding: 12px 14px;
-      border: 1px solid rgba(250,248,246,0.18);
-      background: rgba(250,248,246,0.06);
-      color: var(--cream);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-card input::placeholder { color: rgba(250,248,246,0.4); }
-    .form-card input:focus { border-color: #E2B592; }
-
-    .form-card button {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: #E2B592;
-      border: 1.5px solid #E2B592;
-      padding: 14px 20px;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .form-card button:hover {
-      background: #D2A078;
-      border-color: #D2A078;
-    }
-
-    .form-note {
-      font-size: 11px;
-      color: rgba(250,248,246,0.5);
-      margin-top: 10px;
-    }
-
-    /* ── What's Inside ────────────────────────── */
-    .inside {
-      background: var(--cream-mid);
-      padding: 72px 48px;
-    }
-
-    .inside-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: var(--bordeaux);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .inside h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .inside h2 em {
-      font-style: italic;
-      color: #DDA983;
-    }
-
-    .inside-sub {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.8;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
-    .modules {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .module {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .module-num {
-      font-family: var(--serif);
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--cream-dark);
-      line-height: 1;
-      min-width: 36px;
-    }
-
-    .module-text h3 {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .module-text p {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.7;
-    }
-
-    /* ── For Who ──────────────────────────────── */
-    .for-who {
-      padding: 72px 48px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .for-who h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 32px;
-    }
-
-    .for-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
-      margin-bottom: 40px;
-    }
-
-    .for-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    .for-dash {
-      color: var(--bordeaux);
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-
-    /* ── Bottom CTA ───────────────────────────── */
-    .bottom-cta {
-      padding: 72px 48px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .bottom-cta h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .bottom-cta h2 em {
-      font-style: italic;
-      color: #DDA983;
-    }
-
-    .bottom-cta p {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .bottom-cta .form-card {
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    /* ── Footer ───────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--cream-dark);
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-brand {
-      font-family: var(--serif);
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--brown-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--ink); }
-
-    @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 40px 24px;
-        gap: 32px;
-      }
-
-      .form-card { max-width: 100%; }
-
-      .inside { padding: 48px 24px; }
-
-      .for-who { padding: 48px 24px; }
-      .for-grid { grid-template-columns: 1fr; }
-
-      .bottom-cta { padding: 48px 24px; }
-
-      footer {
-        flex-direction: column;
-        gap: 12px;
-        padding: 24px;
-        text-align: center;
-      }
-    }
-  form input[type="email"],form input[type="text"]{font-size:16px}
-</style>
+  </style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="WWUAI">
-      <span class="nav-wordmark">Wise Women Use AI</span>
-    </a>
-    <a href="/" class="nav-cta">Back to site</a>
-  </nav>
+  <div class="topbar">
+    <a href="/" class="wordmark">WISE WOMEN USE AI</a>
+    <span class="topbar-note">FREE GUIDE</span>
+  </div>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Free download</p>
-      <h1>The Wise Woman's<br>AI <em>Starter Kit</em></h1>
-      <p style="font-size:12px;color:#908486;margin-bottom:12px;letter-spacing:0.04em;">By <strong style="color:#3A131B;">Kelly Hartley</strong> &middot; Wise Women Use AI &middot; Updated May 2026</p>
-      <p class="hero-sub">
-        Your calm, practical entry point into using AI in your business. No jargon, no hype, no starting over. Just three tools you can use today.
-      </p>
-      <p class="hero-sub">
-        I run my whole business on small systems like these, and they're what give me my time back. This kit is where it starts for you.
-      </p>
-    </div>
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">How to set up a Claude Project for your business</p>
+        <h1>Stop using a fresh chat for your <em>business</em> work</h1>
+        <p class="hero-sub">Set up one Claude Project that already knows your business, in about 20 minutes.</p>
+        <a class="btn btn-outline jump" href="#gate">
+          Get the five steps
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+        <ul class="gets">
+          <li><span class="n">1</span><span><b>Claude interviews you</b> and writes your Project instructions, in your voice. No blank box to fill in.</span></li>
+          <li><span class="n">2</span><span><b>A short list of what to upload</b>, so it has a real picture of your business without you gathering everything.</span></li>
+          <li><span class="n">3</span><span><b>A before and after test</b> that shows you the difference with your own business, not someone else's example.</span></li>
+        </ul>
+        <p class="time-note">Works on any Claude plan, including the free one. If you can copy, paste and answer questions, you can do this.</p>
+      </div>
 
-    <div class="form-card">
-      <h3 class="form-card-title">Send me the free kit</h3>
-      <p class="form-card-sub">The Claude comparison tool, 5 real business prompts, and your first AI workflow. Delivered straight to your inbox.</p>
-      <form data-wwuai-signup data-success-url="/thank-you?source=starter-kit" action="https://app.kit.com/forms/9316857/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9316857" data-uid="cd35a37ea2" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/thank-you?source=starter-kit"}}}'>
-        <input type="hidden" name="fields[source]" value="starter-kit">
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
-        <button type="submit">Yes, send me the kit</button>
-      </form>
-      <p class="form-note">Free, and you can unsubscribe any time.</p>
-    </div>
-  </section>
-
-  <!-- What's Inside -->
-  <section class="inside">
-    <div class="inside-inner">
-      <p class="section-eyebrow">What's inside</p>
-      <h2>Three tools. <em>That's all this is.</em></h2>
-      <p class="inside-sub">Each one is practical, copy-paste ready, and designed to give you a real result, not just information.</p>
-
-      <div class="modules">
-        <div class="module">
-          <div class="module-num">01</div>
-          <div class="module-text">
-            <h3>Your AI assistant setup</h3>
-            <p>A step-by-step guide to setting up a Claude Project that already knows your business, your tone, and what you sell. Do it once. Use it forever. No more starting from scratch.</p>
-          </div>
+      <aside class="hero-aside" id="gate">
+        <div class="gate-card">
+          <p class="eyebrow">Free step-by-step guide</p>
+          <h2>Get the five steps and the <em>prompts</em></h2>
+          <p class="gate-line">Pop your email in and the whole walkthrough opens right here on the page, with every prompt ready to copy and paste.</p>
+          <form class="register-form" action="https://app.kit.com/forms/10101593/subscriptions" method="post" data-sv-form="10101593" data-uid="8f8720a63c" data-format="inline" data-version="5" novalidate>
+            <input type="hidden" name="fields[source]" value="starter">
+            <div class="field">
+              <label for="fn">First name</label>
+              <input type="text" id="fn" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="em">Email</label>
+              <input type="email" id="em" name="email_address" placeholder="you@example.com" autocomplete="email" inputmode="email" required aria-describedby="em-error">
+              <p class="field-error" id="em-error" role="alert">That email doesn't look quite right. Could you check it?</p>
+            </div>
+            <fieldset class="choice">
+              <legend>Do you already use Claude Projects? <span>(optional)</span></legend>
+              <div class="choice-row">
+                <label><input type="radio" name="fields[uses_projects]" value="yes">Yes</label>
+                <label><input type="radio" name="fields[uses_projects]" value="no">No</label>
+                <label><input type="radio" name="fields[uses_projects]" value="not sure">Not sure</label>
+              </div>
+            </fieldset>
+            <button type="submit" class="btn btn-blush">
+              <span class="btn-label">Show me the steps</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <p class="gate-note">Free, and yours to keep. It all opens on this page.</p>
         </div>
 
-        <div class="module">
-          <div class="module-num">02</div>
-          <div class="module-text">
-            <h3>Your weekly workflow</h3>
-            <p>One 30 to 60 minute session per week. Four things in order. A copy-paste prompt to guide you through the whole session. Consistent results without reactive, random AI use.</p>
-          </div>
+        <div class="unlocked-card">
+          <h2>You're <em>in</em></h2>
+          <p>Everything is below. Open Claude in another tab and work through the five steps in order. Tick each one off as you go.</p>
+          <a class="btn btn-outline" href="#guide">
+            Start at Step 1
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
         </div>
+      </aside>
+    </div>
+  </header>
 
-        <div class="module">
-          <div class="module-num">03</div>
-          <div class="module-text">
-            <h3>Your content template</h3>
-            <p>A four-part structure you reuse every week. Social posts, captions, emails, all from one prompt. No blank page. No second-guessing. Just clear, consistent content.</p>
-          </div>
+  <!-- Recognition -->
+  <section class="recognise" aria-labelledby="why-title">
+    <div class="shell">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2 class="title" id="why-title">Why Claude keeps <em>guessing</em> about your business</h2>
+      <ul class="pains">
+        <li><b>You paste your bio in. Again.</b><span>And your offer, and who it's for, every time you start a new chat.</span></li>
+        <li><b>The email sounds like someone else.</b><span>It's polite enough, but it's nothing like the way you'd actually say it.</span></li>
+        <li><b>Last month's price turns up.</b><span>It's working from an old chat where things were different.</span></li>
+        <li><b>Fixing the draft takes longer than writing it.</b><span>So you start wondering if it's worth it at all.</span></li>
+      </ul>
+      <div class="two">
+        <div class="lede">
+          <p>Ordinary chats are fine for one-off questions. A quick lookup, a bit of brainstorming, what to cook tonight. And if you have memory switched on, Claude may already know a few things about you.</p>
+          <p>Your recurring business work is different. Your emails, your offers, your content, your customer replies. When that work is spread across dozens of scattered chats, Claude is piecing your business together from fragments, and some of those fragments are out of date. So it fills the gaps with guesses, and you end up explaining yourself again.</p>
+        </div>
+        <div class="lede">
+          <p class="turn">A Project fixes that. It gives Claude a deliberate, current brief on your business: who you are, who you serve, what you sell and how you sound, written down on purpose and kept up to date. Every chat you start inside it begins from that brief.</p>
+          <p>This page walks you through setting one up properly.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Who It's For -->
-  <section class="for-who">
-    <h2>This kit is for you if...</h2>
-    <div class="for-grid">
-      <div class="for-item"><span class="for-dash">&middot;</span> You're a solo or small business owner who does everything yourself</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You've tried AI before and it didn't stick</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You want practical tools, not another course to finish</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> Content planning feels like a weekly reset you dread</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You're done with AI hype and ready for AI that's actually useful</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You want to save time without learning something new every week</div>
+  <!-- Side by side -->
+  <section class="compare" aria-labelledby="compare-title">
+    <div class="shell">
+      <p class="eyebrow">The difference</p>
+      <div class="compare-head">
+        <h2 class="title" id="compare-title">Same request. <em>Different</em> starting point.</h2>
+        <p>Both drafts answer "write me a short email to my list inviting them to my next offer". One comes from a fresh chat, one from inside a Project.</p>
+      </div>
+      <div class="mails">
+        <article class="mail">
+          <div class="mail-top"><span class="eyebrow">A fresh chat</span><span>Guessing</span></div>
+          <div class="mail-body">
+            <p class="subj">Subject: Exciting news inside!</p>
+            <p>Hi there,</p>
+            <p>I'm thrilled to share something special with you. My new offer is designed to help you reach your goals and take your business further than ever before.</p>
+            <p>Spaces are limited, so don't miss out. Click below to learn more!</p>
+          </div>
+        </article>
+        <article class="mail good">
+          <div class="mail-top"><span class="eyebrow">Inside your Project</span><span>Working from your brief</span></div>
+          <div class="mail-body">
+            <p class="subj">Subject: The shoebox of receipts can go</p>
+            <p>Hi Margot,</p>
+            <p>Quick one. My Quarter-End Tidy-Up opens on Monday. It's the same three-week clean-up a few of you did with me in June, for anyone whose receipts are still living in the car.</p>
+            <p>Five places, $480, and you'll walk into your accountant's office with everything in one folder. Reply "tidy" and I'll send the details.</p>
+          </div>
+        </article>
+      </div>
+      <p class="compare-foot">An example written for a made-up bookkeeping business. Yours will sound like you.</p>
     </div>
   </section>
 
-  <!-- Bottom CTA -->
-  <section class="bottom-cta">
-    <h2>Ready to <em>start?</em></h2>
-    <p>Three tools. One inbox delivery. Your first real win with AI in under an hour.</p>
-    <div class="form-card">
-      <h3 class="form-card-title">Get the free kit</h3>
-      <p class="form-card-sub">Your AI Starter Kit. Straight to your inbox.</p>
-      <form data-wwuai-signup data-success-url="/thank-you?source=starter-kit" action="https://app.kit.com/forms/9316857/subscriptions" method="post" class="seva-form formkit-form" data-sv-form="9316857" data-uid="cd35a37ea2" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://wisewomenuseai.com/thank-you?source=starter-kit"}}}'>
-        <input type="hidden" name="fields[source]" value="starter-kit">
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
-        <button type="submit">Yes, send me the kit</button>
-      </form>
-      <p class="form-note">Free, and you can unsubscribe any time.</p>
+  <!-- Proof band -->
+  <section class="proof on-dark" aria-label="About Kelly">
+    <div class="shell proof-grid">
+      <div class="portrait"><img src="/assets/photos/kelly-desk.jpg" alt="Kelly Hartley at her desk, headphones on, working" width="700" height="933" loading="lazy"></div>
+      <div>
+        <blockquote>I run Wise Women Use AI on systems that keep moving whether I'm at the laptop or not. Every one of them starts the same way: <em>Claude knowing the business properly.</em></blockquote>
+        <p class="sig">Kelly</p>
+        <cite>Kelly Hartley, founder of Wise Women Use AI, Melbourne</cite>
+        <a class="btn btn-outline" href="#gate">
+          Get the five steps
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- The guide (hidden until unlocked) -->
+  <div id="guide">
+    <section class="guide" aria-labelledby="steps-title">
+      <div class="shell">
+        <p class="eyebrow">Your step-by-step</p>
+        <h2 class="title" id="steps-title">Set up your Project in <em>five steps</em></h2>
+        <div class="progress" aria-live="polite">
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          <span id="progress-text">0 of 5 done</span>
+        </div>
+
+        <ol class="steps">
+          <li class="step" data-step="1">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <h3>See the difference first</h3>
+              <p>Before you set anything up, open a normal chat and paste this in:</p>
+              <div class="prompt">
+                <div class="prompt-top"><span class="eyebrow">The test</span>
+                  <button class="btn-copy" type="button" data-copy="p1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span></button>
+                </div>
+                <div class="prompt-body" id="p1">Write me a short email to my list inviting them to my next offer.</div>
+              </div>
+              <p>Save the answer somewhere. You'll come back to it at the end.</p>
+              <label class="tick"><input type="checkbox"> Done</label>
+            </div>
+          </li>
+
+          <li class="step" data-step="2">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <h3>Create your Project</h3>
+              <p>In Claude, go to Projects and create a new one. Give it your business name. That's it for now. Don't worry about the instructions box yet, because Claude is going to write those for you.</p>
+              <label class="tick"><input type="checkbox"> Done</label>
+            </div>
+          </li>
+
+          <li class="step" data-step="3">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <h3>Let Claude interview you</h3>
+              <p>Open a chat inside your new Project and paste this prompt:</p>
+              <div class="prompt">
+                <div class="prompt-top"><span class="eyebrow">The interview prompt</span>
+                  <button class="btn-copy" type="button" data-copy="p3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span></button>
+                </div>
+                <div class="prompt-body" id="p3">I want you to help me set up this Project so you understand my business properly. Interview me one question at a time. Cover who I am, what my business does, who my customers are and what they struggle with, what I sell and what it costs, how I like to sound when I write, and anything you should never do or say on my behalf.
+
+Keep your questions short. If one of my answers is vague, ask a follow-up before moving on. When you have enough, write me a set of Project instructions I can paste straight into the instructions box. Write them in plain language, in my voice, and keep them under 500 words.</div>
+              </div>
+              <p>Answer as if you were talking to a new assistant on their first day. Messy answers are fine. Claude will tidy them up.</p>
+              <p>When it gives you the instructions, copy them into your Project's instructions box and save.</p>
+              <label class="tick"><input type="checkbox"> Done</label>
+            </div>
+          </li>
+
+          <li class="step" data-step="4">
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-body">
+              <h3>Add your documents</h3>
+              <p>Upload a few things Claude can refer back to. You don't need everything, just enough to give it a real picture:</p>
+              <ul>
+                <li>Your offers or price list</li>
+                <li>Your about page or bio</li>
+                <li>Two or three emails or posts you've written that sound like you</li>
+                <li>Your most common customer questions, even as a rough list</li>
+                <li>Anything you find yourself explaining over and over</li>
+              </ul>
+              <p>If it lives in your head, a quick voice note turned into text is enough.</p>
+              <label class="tick"><input type="checkbox"> Done</label>
+            </div>
+          </li>
+
+          <li class="step" data-step="5">
+            <span class="step-num" aria-hidden="true">5</span>
+            <div class="step-body">
+              <h3>Run the same test again</h3>
+              <p>Start a new chat inside your Project and paste the exact same request from Step 1:</p>
+              <div class="prompt">
+                <div class="prompt-top"><span class="eyebrow">The test</span>
+                  <button class="btn-copy" type="button" data-copy="p5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span></button>
+                </div>
+                <div class="prompt-body" id="p5">Write me a short email to my list inviting them to my next offer.</div>
+              </div>
+              <p>Put the two answers side by side. The first one is working from whatever Claude happens to know. The second one is working from your brief, and it should sound like your business.</p>
+              <p>That's the difference context makes.</p>
+              <label class="tick"><input type="checkbox"> Done</label>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="keep" aria-labelledby="keep-title">
+      <div class="shell two">
+        <div>
+          <h2 class="title" id="keep-title">Keep it <em>working</em></h2>
+          <p class="lede">A Project is only as good as what's in it. When something changes, like a new offer, a new price or a new kind of customer, update the documents. If Claude gets something wrong, tell it, then add the correction to the instructions so it stays fixed.</p>
+        </div>
+        <div class="note"><p>One rule worth keeping: one-off questions can go anywhere, but recurring business work belongs inside the Project.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ -->
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="shell faq-wrap">
+      <div>
+        <p class="eyebrow">Questions</p>
+        <h2 class="title" id="faq-title">Before you <em>start</em></h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What is a Claude Project?<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p>A Project is a workspace inside Claude with its own instructions and its own uploaded files. Every chat you start inside it begins from that brief, so Claude already knows who you are, who you serve, what you sell and how you sound before you type a word.</p>
+        </details>
+        <details>
+          <summary>Do I need a paid Claude plan?<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p>No. Projects are available on every Claude plan, including the free one, which lets you create up to five. That's plenty for this.</p>
+        </details>
+        <details>
+          <summary>I already have memory switched on. Do I still need this?<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p>Memory picks things up from your chats as you go, which is handy. A Project is different because you decide what goes in it, on purpose, and you keep it current. For recurring business work, that deliberate brief is what stops the guessing.</p>
+        </details>
+        <details>
+          <summary>I'm not techy. Will I manage?<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p>Yes. You copy a prompt, answer Claude's questions the way you'd talk to a new assistant, and paste what it writes back into one box. Messy answers are fine.</p>
+        </details>
+        <details>
+          <summary>My Projects screen looks different. What now?<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p>Claude updates its screens from time to time, and some accounts see a newer version of Projects. The idea stays the same: look for where your Project keeps its instructions and its files, and put the interview answers and your documents there.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership invitation -->
+  <section class="next on-dark" id="next" aria-labelledby="next-title">
+    <div class="shell two">
+      <div>
+        <p class="eyebrow">The Architect Advantage</p>
+        <h2 id="next-title">What's <em>next</em></h2>
+        <p class="lede">One Project that knows your business is the starting point. The next step is setting up your whole business to work like this, so AI is doing real jobs rather than answering one-off questions. That's what we work on inside The Architect Advantage.</p>
+        <div class="next-ctas">
+          <a class="btn btn-blush" href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" rel="noopener">
+            Join The Architect Advantage
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="text-link" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">Not ready? Start in the free community</a>
+        </div>
+      </div>
+      <div>
+        <p class="inside-label">WHAT'S INSIDE</p>
+        <ul class="inside">
+          <li><b>A guided monthly build</b><span>One useful business system, broken into a path you can follow.</span></li>
+          <li><b>The WWUAI Systems Library</b><span>Real workflows and tools I use, organised around business jobs.</span></li>
+          <li><b>Fresh prompts and templates</b><span>Starting points you adapt to your business instead of rebuilding from nothing.</span></li>
+          <li><b>Practical support</b><span>Somewhere to ask when something breaks, doesn't fit or sounds nothing like you.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <span class="footer-brand">Wise Women Use AI</span>
-    <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
-      <li><a href="/privacy">Privacy</a></li>
-      <li><a href="/ai-disclosure">How I use AI</a></li>
-    </ul>
+    <div class="foot-brand">WISE WOMEN USE AI</div>
+    <div class="foot-links">
+      <a href="/">wisewomenuseai.com</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/ai-disclosure">How I use AI</a>
+    </div>
   </footer>
 
-<script src="/assets/js/signup.js"></script>
+  <script>
+    (function () {
+      var store = {
+        get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+        set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+      };
+
+      // Copy buttons
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      document.querySelectorAll('.btn-copy').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var text = document.getElementById(btn.getAttribute('data-copy')).textContent;
+          var label = btn.querySelector('span');
+          function done() {
+            btn.classList.add('copied'); label.textContent = 'Copied';
+            setTimeout(function () { btn.classList.remove('copied'); label.textContent = 'Copy'; }, 2000);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+          } else { fallbackCopy(text); done(); }
+        });
+      });
+
+      // Unlock
+      function unlock(scroll) {
+        document.body.classList.add('unlocked');
+        if (scroll) {
+          setTimeout(function () {
+            var el = document.getElementById('guide');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 80);
+        }
+      }
+      try {
+        if (new URLSearchParams(window.location.search).get('unlocked') === '1') unlock(false);
+      } catch (e) {}
+
+      // Form: validate, post to Kit in the background, then open the guide
+      var form = document.querySelector('form.register-form');
+      var email = document.getElementById('em');
+      var err = document.getElementById('em-error');
+      function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); }
+      email.addEventListener('input', function () {
+        if (email.getAttribute('aria-invalid') === 'true' && validEmail(email.value)) {
+          email.removeAttribute('aria-invalid'); err.classList.remove('show');
+        }
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validEmail(email.value)) {
+          email.setAttribute('aria-invalid', 'true'); err.classList.add('show'); email.focus();
+          return;
+        }
+        var btn = form.querySelector('button[type=submit]');
+        var label = btn.querySelector('.btn-label');
+        btn.disabled = true; label.textContent = 'Opening your guide...';
+        fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)), mode: 'no-cors' })
+          .catch(function () {})
+          .finally(function () {
+            try {
+              var url = new URL(window.location.href);
+              url.searchParams.set('unlocked', '1');
+              window.history.replaceState({}, '', url);
+            } catch (e) {}
+            btn.disabled = false; label.textContent = 'Show me the steps';
+            unlock(true);
+          });
+      });
+
+      // Step ticks and progress (remembered on this device only)
+      var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+      var fill = document.getElementById('progress-fill');
+      var text = document.getElementById('progress-text');
+      function render() {
+        var n = steps.filter(function (s) { return s.classList.contains('done'); }).length;
+        fill.style.width = (n / steps.length * 100) + '%';
+        text.textContent = n === steps.length ? 'All five done. Nice work.' : n + ' of ' + steps.length + ' done';
+      }
+      steps.forEach(function (s) {
+        var key = 'starter-step-' + s.getAttribute('data-step');
+        var box = s.querySelector('.tick input');
+        if (store.get(key) === '1') { box.checked = true; s.classList.add('done'); }
+        box.addEventListener('change', function () {
+          s.classList.toggle('done', box.checked);
+          store.set(key, box.checked ? '1' : '0');
+          render();
+        });
+      });
+      render();
+    })();
+  </script>
+
 </body>
 </html>

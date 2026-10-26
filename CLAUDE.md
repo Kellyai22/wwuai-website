@@ -117,9 +117,11 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - `/tools/everyday-jobs` exposes the eight existing audit prompts without requiring the audit. `hours.html` remains the source for their wording. Run `node scripts/sync-everyday-prompts.mjs` after editing those prompts, or use `--check` to detect drift.
 - `/tools/email-plan` teaches list-email planning and drafting. It does not read inboxes, send emails or install skills. The other new guides are `/tools/repeat-job`, `/tools/client-call`, `/tools/follow-up-tracker` and `/tools/client-welcome`.
 - The business review at `/review` is evergreen. All four prompts use the same chat and the reader chooses the review and planning periods.
-- `/vault-starter` is the four-step beginner path; Claude, Clearly is its first step. Preserve the existing paid content lesson boundary and classroom URLs.
+- `/vault-starter` was the four-step beginner path (retired 27 Oct 2026, now redirects to `/starter?unlocked=1`); Claude, Clearly was its first step. Preserve the existing paid content lesson boundary and classroom URLs.
 
 Free Vault access: /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.
+
+`/starter` (27 Oct 2026) is the exception: "Set up your Claude Project", a gated lead magnet by Kelly's explicit choice ("that's how I collect emails"). Kit form 10101593 (uid 8f8720a63c), source `starter`, custom field `uses_projects`, Kit rules 5669501 (tag `starter`) and 5669503 (warm path sequence 2839625). `/vault-starter` now 307-redirects to `/starter?unlocked=1`, so Vault visitors skip the gate. The page uses the October 2026 palette with rounded corners (the rest of the site is still July). Kelly was surprised the other free guides had been opened up on 7 Oct; whether to re-gate CALM, BACKUP, DREAM, HOURS, REVIEW and Astra is her open decision.
 
 Free/paid boundary: public guides are standalone resources, not a mirror of the paid Systems Library. Do not copy paid lesson text, examples, templates or recordings into public guides without Kelly explicitly approving that asset for public release. Link public guides to /architect with a clear paid-membership invitation. Topic overlap alone does not authorise republishing the member asset.
 
