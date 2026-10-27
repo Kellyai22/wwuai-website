@@ -276,6 +276,10 @@
       "dest": "/about.html"
     },
     {
+      "src": "/style",
+      "dest": "/style.html"
+    },
+    {
       "src": "/work",
       "dest": "/work.html"
     },

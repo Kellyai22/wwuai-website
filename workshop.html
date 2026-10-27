@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://www.wisewomenuseai.com/workshop">
   <meta name="robots" content="index,follow">
   <title>Free Business Systems Workshop, 11 November · Wise Women Use AI</title>
@@ -40,344 +40,193 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* October 2026 brand: four colours only. Blush appears once, on Bordeaux. */
-    :root {
-      --pearl: #FAF8F6;
-      --greige: #ECE6E0;
-      --bordeaux: #3A131B;
-      --blush: #E2B592;
-      --muted: rgba(58, 19, 27, 0.65);
-      --line: rgba(58, 19, 27, 0.12);
-      --field: rgba(58, 19, 27, 0.4);
-      --on-dark: #FAF8F6;
-      --on-dark-muted: rgba(250, 248, 246, 0.74);
-      --on-dark-line: rgba(250, 248, 246, 0.2);
-      --display: 'Playfair Display', Georgia, serif;
-      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --gutter: clamp(16px, 4vw, 48px);
-      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-    body { background: var(--pearl); color: var(--bordeaux); font-family: var(--body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; }
-    h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.015em; text-wrap: balance; }
-    em { font-style: italic; }
-    .shell { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
-    .label { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-    .dark { background: var(--bordeaux); color: var(--on-dark); }
-    .greige { background: var(--greige); }
-
-    /* Buttons: outlined, 2px radius, fill on hover, small press */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      font: 500 15px/1 var(--body); text-decoration: none; cursor: pointer;
-      border-radius: 2px; padding: 17px 30px; min-height: 54px;
-      color: var(--bordeaux); background: transparent; border: 1.5px solid var(--bordeaux);
-      transition: background-color 200ms ease, color 200ms ease, transform 160ms var(--ease-out);
-    }
-    .btn:active { transform: scale(0.97); }
-    .btn:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-    @media (hover: hover) and (pointer: fine) { .btn:hover { background: var(--bordeaux); color: var(--pearl); } }
-    .btn-solid { background: var(--bordeaux); color: var(--pearl); }
-    @media (hover: hover) and (pointer: fine) { .btn-solid:hover { background: transparent; color: var(--bordeaux); } }
-    .dark .btn { color: var(--on-dark); border-color: var(--on-dark); }
-    @media (hover: hover) and (pointer: fine) { .dark .btn:hover { background: var(--on-dark); color: var(--bordeaux); } }
-    .btn:disabled { opacity: 0.6; cursor: progress; }
-    .btn svg { width: 16px; height: 16px; transition: transform 200ms var(--ease-out); }
-    @media (hover: hover) and (pointer: fine) { .btn:hover svg { transform: translateX(3px); } }
-
-    /* ---------- Hero (Bordeaux) ---------- */
-    .topbar { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; padding-bottom: 26px; }
-    .wordmark { font-family: var(--display); font-size: 14px; letter-spacing: 0.22em; text-decoration: none; }
-    .topbar .label { color: var(--on-dark-muted); }
-    .hero { padding-bottom: clamp(64px, 8vw, 112px); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(40px, 6vw, 96px); align-items: center; padding-top: clamp(16px, 4vw, 48px); }
-    .event { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-bottom: 32px; }
-    .event span { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; padding: 7px 12px; border: 1px solid var(--on-dark-line); border-radius: 4px; color: var(--on-dark); }
-    .event span:first-child { background: var(--on-dark); color: var(--bordeaux); border-color: var(--on-dark); }
-    h1 { font-size: clamp(44px, 6vw, 84px); line-height: 0.98; letter-spacing: -0.025em; margin-bottom: 30px; }
-    h1 em { color: var(--blush); }
-    .hero-sub { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.5; color: var(--on-dark-muted); max-width: 34ch; }
-
-    /* Form card (Pearl on Bordeaux) */
-    .register { background: var(--pearl); color: var(--bordeaux); border-radius: 16px; padding: clamp(26px, 3vw, 40px); }
-    .register h2 { font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; margin-bottom: 6px; }
-    .register .when { font-size: 14px; color: var(--muted); margin-bottom: 26px; }
-    .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
-    .field label { font-size: 14px; font-weight: 500; line-height: 1.4; }
-    .field label span { font-weight: 400; color: var(--muted); }
-    .field input, .field textarea {
-      font: 400 16px/1.5 var(--body); color: var(--bordeaux);
-      background: var(--pearl); border: 1px solid var(--field); border-radius: 8px;
-      padding: 13px 14px; width: 100%; outline: none;
-      transition: border-color 150ms ease, background-color 150ms ease;
-    }
-    .field textarea { min-height: 92px; resize: vertical; }
-    .field input:focus, .field textarea:focus { border-color: var(--bordeaux); outline: 1px solid var(--bordeaux); outline-offset: 0; }
-    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-    .register .btn { width: 100%; margin-top: 6px; }
-    .fine { font-size: 14px; color: var(--muted); margin-top: 14px; line-height: 1.55; }
-    [data-signup-error] { font-size: 14px; margin-top: 14px; padding: 12px 14px; border: 1px solid var(--bordeaux); border-radius: 8px; }
-
-    /* ---------- Problem (Pearl) ---------- */
-    .section { padding: clamp(72px, 10vw, 136px) 0; }
-    .problem-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(40px, 7vw, 104px); align-items: center; }
-    .problem-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; }
-    .problem-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-    .eyebrow { display: block; margin-bottom: 20px; color: var(--muted); }
-    .dark .eyebrow { color: var(--on-dark-muted); }
-    .problem h2 { font-size: clamp(34px, 4vw, 54px); line-height: 1.05; margin-bottom: 28px; }
-    .problem p { font-size: 18px; line-height: 1.75; max-width: 52ch; }
-    .problem p + p { margin-top: 18px; }
-
-    /* ---------- For you if (Greige) ---------- */
-    .for-you { padding: clamp(64px, 9vw, 120px) 0; }
-    .for-you p { font-family: var(--display); font-size: clamp(28px, 3.6vw, 48px); line-height: 1.2; letter-spacing: -0.015em; max-width: 26ch; }
-
-    /* ---------- What we'll cover (Pearl) ---------- */
-    .cover-grid { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
-    .cover h2 { font-size: clamp(34px, 4vw, 54px); line-height: 1.05; position: sticky; top: 40px; }
-    .points { list-style: none; counter-reset: point; border-top: 1px solid var(--line); }
-    .points li { counter-increment: point; display: grid; grid-template-columns: clamp(64px, 7vw, 96px) 1fr; align-items: baseline; padding: clamp(24px, 3vw, 34px) 0; border-bottom: 1px solid var(--line); font-size: clamp(18px, 1.7vw, 21px); line-height: 1.45; }
-    .points li::before { content: counter(point, decimal-leading-zero); font-family: var(--display); font-size: clamp(36px, 4vw, 52px); line-height: 1; letter-spacing: -0.02em; }
-
-    /* ---------- Leave with (Bordeaux) ---------- */
-    .leave { padding: clamp(80px, 11vw, 148px) 0; }
-    .leave p { font-family: var(--display); font-size: clamp(32px, 4.6vw, 62px); line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch; }
-
-    /* ---------- Questions (Greige) ---------- */
-    .qa-grid { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
-    .qa h2 { font-size: clamp(32px, 3.6vw, 46px); line-height: 1.08; margin-bottom: 20px; }
-    .qa .easy { font-size: 18px; line-height: 1.7; max-width: 36ch; }
-    details { border-bottom: 1px solid var(--line); }
-    details:first-of-type { border-top: 1px solid var(--line); }
-    summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0; font-family: var(--display); font-size: clamp(20px, 2vw, 24px); line-height: 1.3; }
-    summary::-webkit-details-marker { display: none; }
-    summary:focus-visible { outline: 2px solid var(--bordeaux); outline-offset: 4px; }
-    summary .plus { flex: 0 0 auto; width: 14px; height: 14px; position: relative; transition: transform 250ms var(--ease-out); }
-    summary .plus::before, summary .plus::after { content: ""; position: absolute; background: var(--bordeaux); }
-    summary .plus::before { left: 0; right: 0; top: 6px; height: 2px; }
-    summary .plus::after { top: 0; bottom: 0; left: 6px; width: 2px; }
-    details[open] summary .plus { transform: rotate(45deg); }
-    details p { padding: 0 0 26px; font-size: 17px; line-height: 1.7; max-width: 58ch; }
-
-    /* ---------- Host (Pearl) ---------- */
-    .host-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(40px, 7vw, 104px); align-items: center; }
-    .host img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px; }
-    .host h2 { font-size: clamp(34px, 4vw, 54px); line-height: 1.05; margin-bottom: 24px; }
-    .host p { font-size: 18px; line-height: 1.75; max-width: 52ch; }
-    .host p + p { margin-top: 18px; }
-
-    /* ---------- Closing (Bordeaux) ---------- */
-    .closing { padding: clamp(72px, 10vw, 128px) 0; }
-    .closing-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px 48px; align-items: end; }
-    .closing h2 { font-size: clamp(36px, 5vw, 68px); line-height: 1.02; letter-spacing: -0.02em; max-width: 16ch; }
-    .closing .meta { margin-top: 20px; color: var(--on-dark-muted); font-size: 17px; }
-
-    footer { padding: 32px 0 44px; font-size: 13px; color: var(--muted); }
-    footer .shell { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
-    footer nav a { margin-left: 20px; }
-    footer nav a:first-child { margin-left: 0; }
-
-    /* ---------- Scroll reveal (only when JS runs, never hides content otherwise) ---------- */
-    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out); }
-    .js .reveal.in { opacity: 1; transform: none; }
-    .js .hero .rise { opacity: 0; transform: translateY(14px); animation: rise 800ms var(--ease-out) forwards; }
-    .js .hero .rise:nth-child(2) { animation-delay: 60ms; }
-    .js .hero .rise:nth-child(3) { animation-delay: 120ms; }
-    .js .hero .register.rise { animation-delay: 200ms; }
-    @keyframes rise { to { opacity: 1; transform: none; } }
-
-    @media (max-width: 900px) {
-      .hero-grid, .problem-grid, .cover-grid, .qa-grid, .host-grid, .closing-grid { grid-template-columns: 1fr; }
-      .cover h2 { position: static; }
-      .problem-photo { aspect-ratio: 4 / 3; order: 2; }
-      .host img { max-width: 360px; }
-      .closing-grid { align-items: start; }
-    }
-    @media (max-width: 480px) {
-      .closing .btn { width: 100%; }
-      footer nav a { margin-left: 14px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .js .reveal, .js .hero .rise { transform: none; transition: opacity 200ms ease; animation: none; opacity: 1; }
-    }
-  </style>
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
+  <link rel="stylesheet" href="/assets/system/tokens.css">
+  <link rel="stylesheet" href="/assets/system/wwuai.css">
+  <script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="/assets/system/wwuai.js"></script>
+  <script defer src="/assets/js/signup.js"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="news" data-news hidden></div>
 
-  <section class="dark hero">
-    <header class="shell topbar">
-      <a href="/" class="wordmark">WISE WOMEN USE AI</a>
-      <span class="label">Free workshop</span>
-    </header>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-head__logo serif-i" href="/" style="text-decoration:none;font-size:1.25rem">Wise Women Use AI</a>
+    <a class="site-head__cta" href="#register" data-focus="first-name">Save my seat</a>
+  </div>
+</header>
 
-    <div class="shell hero-grid">
-      <div>
-        <p class="event rise" aria-label="Free workshop, Wednesday 11 November, 7pm AEDT, online">
-          <span>Free workshop</span><span>Wednesday 11 November</span><span>7pm AEDT</span><span>Online</span>
-        </p>
-        <h1 class="rise">Find the work your business still can’t do <em>without</em> you</h1>
-        <p class="hero-sub rise">In one hour, you’ll see where your business is losing time and money, and leave knowing which process to fix first.</p>
+<main id="main">
+
+<section class="hero tone-pearl">
+  <div class="wrap">
+    <h1 class="display" data-lines>
+      <span class="line"><span>Your business still needs</span></span>
+      <span class="line"><span>you for <span class="em">everything</span>.</span></span>
+      <span class="line hero__then"><span>Let’s find the first thing it doesn’t.</span></span>
+    </h1>
+    <div class="hero__foot">
+      <p class="lead" data-after>A free one-hour workshop with me. You’ll leave with your bottleneck named, your recurring week mapped, and the one system worth building first.</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">Wednesday 11 November, 7pm AEDT, online. Can’t make it live? Register and the replay comes to you.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="register rise" id="register">
-        <h2>Business Systems</h2>
-        <p class="when">Wednesday 11 November · 7pm AEDT · Online</p>
-        <form data-wwuai-signup data-success-url="/workshop-november-2026-details" action="/api/workshop-signup" method="post"
-              data-error-message="Your seat hasn’t been saved yet. Please try again. If it still doesn’t work, email hello@wisewomenuseai.com and I’ll add you.">
-          <input type="hidden" name="fields[source]" value="workshop-2026-11">
-          <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <div class="field">
-            <label for="first-name">First name</label>
-            <input id="first-name" type="text" name="fields[first_name]" autocomplete="given-name" required>
+<section class="s tone-greige">
+  <div class="wrap">
+    <h2 class="title">Picture a week that doesn’t fall apart when you step <span class="em">away</span>.</h2>
+    <div class="split" style="margin-top:var(--s4)">
+      <p class="lead" data-reveal>The client questions get answered. The follow-ups go out. The content’s already scheduled.</p>
+      <p class="lead soft" data-reveal>You take the Friday off, and on Monday there’s nothing waiting that only you could have done. It starts with finding the one job that keeps pulling you back in.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s s--deck tone-dark">
+  <div class="wrap">
+    <h2 class="title">Right now, it all still comes back to <span class="em">you</span>.</h2>
+    <div class="deck" style="margin-top:var(--s5)">
+      <div class="deck__photo"><img src="/assets/photos/kelly-reaching-current-v1.jpg" width="788" height="1400" loading="lazy" decoding="async" alt="Kelly smiling and reaching towards the camera"></div>
+      <div>
+        <div class="deck__stack">
+          <article class="deck__card"><span class="deck__num">01 / 03</span><h3>Every question lands on your desk.</h3><p>Clients, suppliers, whoever helps you. If it needs a decision, it waits for you.</p></article>
+          <article class="deck__card"><span class="deck__num">02 / 03</span><h3>The work stops when you stop.</h3><p>Take a sick day or a long weekend and it all sits there, so you catch up late at night.</p></article>
+          <article class="deck__card"><span class="deck__num">03 / 03</span><h3>Ai sped up a few jobs. Your week looks the same.</h3><p>You’ve tried ChatGPT or Claude and the writing’s quicker. You’re still the one holding every thread.</p></article>
+        </div>
+        <p class="deck__hint" aria-hidden="true">Keep scrolling</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s tone-pearl">
+  <div class="wrap">
+    <h2 class="title">Here’s what you’ll leave <span class="em">with</span>.</h2>
+    <div class="outcomes">
+      <div class="outcome" data-reveal><span class="outcome__num">01</span><h3 class="sub">Your bottleneck, named</h3><p>Whether the business waits on what you remember, on work that starts from scratch every time, or on you having the energy to push it. You’ll know which one is yours.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">02</span><h3 class="sub">A map of your recurring week</h3><p>Everything that comes round again, out of your head and onto one page you can actually look at. Most people have never seen it written down.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">03</span><h3 class="sub">Every job sorted</h3><p>Keep it, let ai help, systemise it, automate it, hand it over or drop it. We go through your list together and you decide, one item at a time.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">04</span><h3 class="sub">One system to build first</h3><p>The single thing worth building, and what you’ll change in the next thirty days. A real start, not a finished business.</p></div>
+    </div>
+    <div class="btn-row" data-reveal style="margin-top:var(--s5)"><a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="veil">
+  <div class="veil__img"><img src="/assets/photos/kelly-desk-20260928.webp" width="1374" height="1145" loading="lazy" decoding="async" alt=""></div>
+  <div class="wrap">
+    <h2 class="title">I run my business on systems that keep <span class="em">moving</span> without me.</h2>
+    <ul class="proof" data-reveal>
+        <li>My inbox gets sorted three times a day without me.</li>
+        <li>My community posts go out three times a week on their own.</li>
+        <li>My carousels are made and scheduled for me.</li>
+    </ul>
+    <p class="lead" data-reveal>In this hour, I’ll show you how to find your first one.</p>
+  </div>
+</section>
+
+<section class="s tone-greige">
+  <div class="wrap">
+    <h2 class="title">Built for the woman still holding it all <span class="em">together</span>.</h2>
+    <div class="who">
+      <div data-reveal>
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You run an established service business.</li>
+          <li>You’ve tried ai, and it helped a bit.</li>
+          <li>You’re still the one holding everything together.</li>
+        </ul>
+      </div>
+      <div class="who__no" data-reveal>
+        <h3>It’s not for you yet if</h3>
+        <ul>
+          <li>You’re still working out what you sell.</li>
+          <li>You want someone to build it all for you.</li>
+          <li>You’re after one magic prompt.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div data-tone-run>
+  <section class="s about" data-tone="pearl">
+    <div class="wrap">
+      <div class="split">
+        <div class="about__photo" data-wipe><img src="/assets/photos/kelly-smiling-20260928.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Kelly Hartley smiling, in a cream jumper"></div>
+        <div>
+          <h2 class="title">Hosted by <span class="em">Kelly</span></h2>
+          <div data-reveal>
+            <p class="lead">I’m Kelly, founder of Wise Women Use AI.</p>
+            <p class="soft">My background is in operations, buying and design, so I look at a business the way an operations person would: find what’s leaking, fix the process, then bring in the right tools.</p>
+            <p class="soft">No tech skills needed. I’ll show you the tools and walk you through each step in plain language.</p>
           </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email_address" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="bottleneck">What’s the one thing in your business that always comes back to you? <span>(optional)</span></label>
-            <textarea id="bottleneck" name="fields[workshop_bottleneck]" maxlength="500"></textarea>
-          </div>
-          <button type="submit" class="btn btn-solid">Save my seat</button>
-        </form>
-        <p class="fine">Free. Can’t make it live? Register anyway and you’ll get the replay.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <main>
-    <section class="section problem">
-      <div class="shell problem-grid">
-        <div class="problem-photo reveal">
-          <img src="/assets/photos/kelly-notebook-20260928.webp" alt="Kelly at her desk, writing in a notebook" width="1145" height="1374" loading="lazy">
-        </div>
-        <div class="reveal">
-          <span class="label eyebrow">Sound familiar?</span>
-          <h2>You’ve tried AI. Your week still looks the same.</h2>
-          <p>You’ve used ChatGPT or Claude, and a few jobs are quicker than they were. The questions, the decisions and the work only you know how to do still land on your desk, because a faster task is a long way from a business that runs without you holding every thread.</p>
-          <p>So this hour starts with the work itself: what comes round every week, where it waits on you, and which piece is worth fixing first. The tools come after that.</p>
-        </div>
+  <section class="s faq" data-tone="greige">
+    <div class="wrap split">
+      <div>
+        <h2 class="title">Your <span class="em">questions</span></h2>
+        <p class="soft" data-reveal style="margin-top:var(--s3)">No breakout rooms and no putting you on the spot. Just bring your business as it actually is.</p>
       </div>
-    </section>
-
-    <section class="greige for-you">
-      <div class="shell">
-        <p class="reveal">This is for you if you run an established service business, you’ve tried AI, and you’re still the one holding everything together.</p>
+      <div class="faq__list" data-reveal>
+        <details><summary>Is it really free? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Yes. It’s free to register and free to attend, and you don’t need to buy anything to take part.</div></details>
+        <details><summary>What if I can’t make it live? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Register anyway. The replay comes to your inbox after the workshop, so you can watch it when it suits you.</div></details>
+        <details><summary>Do I need to be technical? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">No. I’ll show you the tools and walk you through each step in plain language. If you can use email, you can do this.</div></details>
+        <details><summary>Will you try to sell me something? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">At the end I’ll briefly tell you about Architect Advantage, my membership for building these systems with support. Everything you learn in the hour is yours to use either way.</div></details>
       </div>
-    </section>
-
-    <section class="section cover">
-      <div class="shell cover-grid">
-        <h2 class="reveal">What we’ll cover</h2>
-        <ol class="points reveal">
-          <li>Why AI hasn’t saved you the time it promised, and what needs to come first</li>
-          <li>How to look across your whole business and spot where it still depends on you</li>
-          <li>One process taken from problem to working system, step by step</li>
-          <li>A simple test to find which work in your business is ready to hand over</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="dark leave">
-      <div class="shell">
-        <span class="label eyebrow reveal">What you leave with</span>
-        <p class="reveal">You’ll leave with your biggest time leak named and one process chosen to fix first.</p>
-      </div>
-    </section>
-
-    <section class="greige section qa">
-      <div class="shell qa-grid">
-        <div class="reveal">
-          <h2>Good to know</h2>
-          <p class="easy">No tech skills needed. No breakout rooms and no putting you on the spot. Just bring your business as it actually is.</p>
-        </div>
-        <div class="reveal">
-          <details>
-            <summary>Is it really free?<span class="plus" aria-hidden="true"></span></summary>
-            <p>Yes. It’s free to register and free to attend, and you don’t need to buy anything to take part.</p>
-          </details>
-          <details>
-            <summary>What if I can’t make it live?<span class="plus" aria-hidden="true"></span></summary>
-            <p>Register anyway. The replay comes to your inbox after the workshop, so you can watch it when it suits you.</p>
-          </details>
-          <details>
-            <summary>Do I need to be technical?<span class="plus" aria-hidden="true"></span></summary>
-            <p>No. I’ll show you the tools and walk you through each step in plain language. If you can use email, you can do this.</p>
-          </details>
-          <details>
-            <summary>Will you try to sell me something?<span class="plus" aria-hidden="true"></span></summary>
-            <p>At the end I’ll briefly tell you about Architect Advantage, my membership for building these systems with support. Everything you learn in the hour is yours to use either way.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section host">
-      <div class="shell host-grid">
-        <img class="reveal" src="/assets/photos/kelly-smiling-20260928.webp" alt="Kelly Hartley, founder of Wise Women Use AI" width="1254" height="1254" loading="lazy">
-        <div class="reveal">
-          <span class="label eyebrow">Your host</span>
-          <h2>Hosted by Kelly</h2>
-          <p>I’m Kelly, founder of Wise Women Use AI. My background is in operations, buying and design, so I look at a business the way an operations person would: find what’s leaking, fix the process, then bring in the right tools.</p>
-          <p>It’s how I run my own business too. Wise Women Use AI runs on systems that keep moving without me, so my time goes on the work that actually needs me.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark closing">
-      <div class="shell closing-grid">
-        <div class="reveal">
-          <h2>One hour to find what to fix first.</h2>
-          <p class="meta">Wednesday 11 November · 7pm AEDT · Online · Free</p>
-        </div>
-        <a href="#register" class="btn reveal">Save my seat
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell">
-      <span>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</span>
-      <nav aria-label="Footer"><a href="/">wisewomenuseai.com</a><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use AI</a></nav>
     </div>
-  </footer>
+  </section>
 
-  <script src="/assets/js/signup.js"></script>
-  <script>
-    (function () {
-      var y = new Date().getFullYear();
-      document.querySelectorAll('.yr').forEach(function (el) { if (y > 2026) el.textContent = '2026–' + y; });
+  <section class="s band" data-tone="dark">
+    <div class="wrap">
+      <h2 class="title">Find the job that keeps pulling you <span class="em">back</span> in.</h2>
+      <p class="band__meta" data-reveal>Free · Wednesday 11 November · 7pm AEDT · Online</p>
+      <div class="btn-row" data-reveal><a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+</div>
 
-      // Reveal sections as they scroll into view (once each)
-      var items = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-        }, { rootMargin: '0px 0px -10% 0px' });
-        items.forEach(function (el) { io.observe(el); });
-      } else {
-        items.forEach(function (el) { el.classList.add('in'); });
-      }
+<section class="s tone-pearl" id="register">
+  <div class="wrap split">
+    <div>
+      <h2 class="title">Save your <span class="em">seat</span>.</h2>
+      <p class="lead" data-reveal style="margin-top:var(--s3)">Free, online, and one hour. Wednesday 11 November, 7pm AEDT. Can’t make it live? Register anyway and the replay comes to your inbox.</p>
+    </div>
+    <div class="form-panel" data-reveal>
+      <form data-wwuai-signup data-success-url="/workshop-november-2026-details" action="/api/workshop-signup" method="post"
+            data-error-message="Your seat hasn’t been saved yet. Please try again. If it still doesn’t work, email hello@wisewomenuseai.com and I’ll add you.">
+        <input type="hidden" name="fields[source]" value="workshop-2026-11">
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field"><label for="first-name">First name</label><input id="first-name" type="text" name="fields[first_name]" autocomplete="given-name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" name="email_address" autocomplete="email" required></div>
+        <div class="field"><label for="bottleneck">What’s the one thing in your business that always comes back to you? <span class="opt">(optional)</span></label><textarea id="bottleneck" name="fields[workshop_bottleneck]" maxlength="500" rows="3"></textarea></div>
+        <button class="btn btn--fill" type="submit">Save my seat</button>
+        <p class="btn-note">Free. You’ll get the replay either way.</p>
+      </form>
+    </div>
+  </div>
+</section>
 
-      // "Save my seat" in the closing band jumps to the form and puts the cursor in it
-      document.querySelectorAll('a[href="#register"]').forEach(function (a) {
-        a.addEventListener('click', function () {
-          setTimeout(function () { var f = document.getElementById('first-name'); if (f) f.focus({ preventScroll: true }); }, 500);
-        });
-      });
-    })();
-  </script>
+</main>
+
+<footer class="site-foot tone-pearl">
+  <div class="wrap">
+    <span>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</span>
+    <span class="site-foot__links"><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use ai</a></span>
+  </div>
+</footer>
 </body>
 </html>

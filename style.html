@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page system · Wise Women Use AI</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Internal: every approved page section and animation for wisewomenuseai.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
+<link rel="stylesheet" href="/assets/system/tokens.css">
+<link rel="stylesheet" href="/assets/system/wwuai.css">
+<script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="/assets/system/wwuai.js"></script>
+<style>
+  /* Style-page only: the labels between specimens. Not part of the system. */
+  .spec { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; padding: 18px var(--gutter); background: var(--pearl); color: var(--muted); font: 500 0.8125rem/1.5 var(--sans); border-top: 1px dashed rgb(var(--bordeaux-rgb) / .3); border-bottom: 1px dashed rgb(var(--bordeaux-rgb) / .3); }
+  .spec b { color: var(--bordeaux); font-weight: 600; }
+  .spec code { font: inherit; color: var(--bordeaux); }
+  main > .spec:first-child { margin-top: 92px; }
+  .news + .site-head + main > .spec:first-child { margin-top: 92px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="news" data-news hidden></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-head__logo serif-i" href="/" style="text-decoration:none;font-size:1.25rem">Wise Women Use AI</a>
+    <a class="site-head__cta" href="#register" data-focus="first-name">Save my seat</a>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="spec"><b>00 News banner</b> <code>[data-news]</code> <span>The scrolling bar above. Items come from <code>assets/system/news.json</code> and hide after their end date. It slides back in, pinned to the top, once you scroll a long way down.</span></div>
+<div class="spec"><b>01 Hero</b> line-by-line headline <code>.hero [data-lines]</code> <span>One emphasis word. Main call to action #1.</span></div>
+<section class="hero tone-pearl">
+  <div class="wrap">
+    <h1 class="display" data-lines>
+      <span class="line"><span>Find the work</span></span>
+      <span class="line"><span>your business still</span></span>
+      <span class="line"><span>can’t do <span class="em">without</span> you</span></span>
+    </h1>
+    <div class="hero__foot">
+      <p class="lead" data-after>In one hour, you’ll see where your business is losing time and money, and leave knowing which process to fix first.</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">Free. Can’t make it live? Register anyway and you’ll get the replay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>02 Problem</b> three beats on cards over a veiled photo <code>.deck</code> <span>Bordeaux section. Photo on the left, its sides faded into the Bordeaux under a veil; cards on the right. The page holds still while each card flicks off as you scroll.</span></div>
+<section class="s s--deck tone-dark">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Sound familiar?</p>
+    <h2 class="title">You’ve tried ai. Your week still looks the <span class="em">same</span>.</h2>
+    <div class="deck" style="margin-top:var(--s5)">
+      <div class="deck__photo"><img src="/assets/photos/kelly-notebook-20260928.webp" width="1145" height="1374" loading="lazy" decoding="async" alt="Kelly at her desk, writing in a notebook beside her laptop"></div>
+      <div>
+      <div class="deck__stack">
+        <article class="deck__card"><span class="deck__num">01 / 03</span><h3>A few jobs got quicker.</h3><p>You’ve used ChatGPT or Claude, and some of the writing and admin is faster than it was.</p></article>
+        <article class="deck__card"><span class="deck__num">02 / 03</span><h3>The rest still lands on your desk.</h3><p>The questions, the decisions and the work only you know how to do still come back to you, every week.</p></article>
+        <article class="deck__card"><span class="deck__num">03 / 03</span><h3>A faster task isn’t a business that runs without you.</h3><p>So this hour starts with the work itself: what comes round every week, where it waits on you, and which piece is worth fixing first. The tools come after that.</p></article>
+      </div>
+      <p class="deck__hint" aria-hidden="true">Keep scrolling</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>03 Embossed ai</b> tone on tone <code>.emboss</code> <span>Your logo font, Giza Stencil. A pause between busy sections: the light turns as you scroll. Use it full screen to open /links, or once on a long page before the call to action. Never more than once.</span></div>
+<section class="s emboss tone-greige">
+  <div class="wrap">
+    <p class="emboss__mark" aria-hidden="true">ai</p>
+    <p class="emboss__line">Keep the work that needs you. Redesign the rest.</p>
+  </div>
+</section>
+
+<div class="spec"><b>04 to 06 Background shift</b> Pearl → Greige → Bordeaux <code>[data-tone-run]</code> <span>Outcomes, who it’s for and the Bordeaux band, wrapped in one run so the whole page changes colour as you read.</span></div>
+<div data-tone-run>
+  <section class="s" data-tone="pearl">
+    <div class="wrap">
+      <p class="kicker" data-reveal>What we’ll cover</p>
+      <h2 class="title">One hour, four things you can <span class="em">use</span>.</h2>
+      <div class="outcomes">
+        <div class="outcome" data-reveal><span class="outcome__num">01</span><h3 class="sub">Why ai hasn’t given you the time back</h3><p>And what needs to come first, before you add another tool.</p></div>
+        <div class="outcome" data-reveal><span class="outcome__num">02</span><h3 class="sub">Where your business still depends on you</h3><p>We look across the whole business and spot the work that waits for you.</p></div>
+        <div class="outcome" data-reveal><span class="outcome__num">03</span><h3 class="sub">One process, from problem to working system</h3><p>Step by step, so you can see exactly how it’s done.</p></div>
+        <div class="outcome" data-reveal><span class="outcome__num">04</span><h3 class="sub">A simple test for what’s ready to hand over</h3><p>So you know which work can leave your desk now, and which can wait.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" data-tone="greige">
+    <div class="wrap">
+      <p class="kicker" data-reveal>Who it’s for</p>
+      <h2 class="title">Built for the woman still holding it all <span class="em">together</span>.</h2>
+      <div class="who">
+        <div data-reveal>
+          <h3>This is for you if</h3>
+          <ul>
+            <li>You run an established service business.</li>
+            <li>You’ve tried ai, and it helped a bit.</li>
+            <li>You’re still the one holding everything together.</li>
+          </ul>
+        </div>
+        <div class="who__no" data-reveal>
+          <h3>It’s not for you yet if</h3>
+          <ul>
+            <li>You’re still working out what you sell.</li>
+            <li>You want someone to build it all for you.</li>
+            <li>You’re after one magic prompt.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s band" data-tone="dark">
+    <div class="wrap">
+      <h2 class="title">One hour to find what to <span class="em">fix</span> first.</h2>
+      <p class="band__meta" data-reveal>Wednesday 11 November · 7pm AEDT · Online · Free</p>
+      <div class="btn-row" data-reveal><a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+</div>
+
+<div class="spec"><b>07 About Kelly</b> <code>.about</code> <span>Facts only, from the founder story. No invented numbers.</span></div>
+<section class="s about tone-pearl">
+  <div class="wrap">
+    <div class="split">
+      <div class="about__photo" data-wipe><img src="/assets/photos/kelly-smiling-20260928.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Kelly Hartley smiling, in a cream jumper"></div>
+      <div>
+        <p class="kicker" data-reveal>Your host</p>
+        <h2 class="title">Hosted by <span class="em">Kelly</span></h2>
+        <div data-reveal>
+          <p class="lead">I’m Kelly, founder of Wise Women Use AI.</p>
+          <p class="soft">My background is in operations, buying and design, so I look at a business the way an operations person would: find what’s leaking, fix the process, then bring in the right tools.</p>
+          <p class="soft">It’s how I run my own business too, so my time goes on the work that actually needs me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>08 Full-bleed photo</b> Bordeaux veil <code>.veil</code> <span>Photo eases back as it passes. Text stays left and high, never pinned to the bottom.</span></div>
+<section class="veil">
+  <div class="veil__img"><img src="/assets/photos/kelly-desk-20260928.webp" width="1374" height="1145" loading="lazy" decoding="async" alt=""></div>
+  <div class="wrap">
+    <p class="kicker" data-reveal>How I run my own business</p>
+    <h2 class="title">Systems that keep <span class="em">moving</span> without me.</h2>
+    <p class="lead" data-reveal>Wise Women Use AI runs on systems that keep going while I’m away from the desk, so my time goes on the work that needs me.</p>
+  </div>
+</section>
+
+<div class="spec"><b>09 Card glide</b> horizontal <code>.glide</code> <span>Drag or use the arrows on desktop, swipe on a phone. The page scrolls normally; the row never takes over the scroll.</span></div>
+<section class="s glide tone-pearl">
+  <div class="wrap glide__head">
+    <div>
+      <p class="kicker" data-reveal>Free tools</p>
+      <h2 class="title">Start with one <span class="em">job</span>.</h2>
+    </div>
+    <p class="soft" data-reveal style="max-width:36ch">Prompt cards and guides from the community, free to use today.</p>
+  </div>
+  <div class="glide__track">
+    <a class="glide__card" href="/starter"><div class="glide__img"><img src="/assets/photos/kelly-desk-20260928.webp" width="1374" height="1145" loading="lazy" decoding="async" alt="" draggable="false"></div><h3>Set up your Claude Project</h3><p>One Claude Project that already knows your business, in about 20 minutes.</p><span class="glide__more">Open the guide</span></a>
+    <a class="glide__card" href="/tools/clear-the-decks"><div class="glide__img"><img src="/assets/photos/tools-clear-the-decks.jpg" width="720" height="900" loading="lazy" decoding="async" alt="" draggable="false"></div><h3>Clear the Decks</h3><p>Prompt cards from the Clear the Decks course.</p><span class="glide__more">Open the cards</span></a>
+    <a class="glide__card" href="/tools/first-wins"><div class="glide__img"><img src="/assets/photos/tools-first-wins.jpg" width="895" height="900" loading="lazy" decoding="async" alt="" draggable="false"></div><h3>First Wins</h3><p>Prompt cards from the First Wins course.</p><span class="glide__more">Open the cards</span></a>
+    <a class="glide__card" href="/tools/out-of-your-head"><div class="glide__img"><img src="/assets/photos/tools-out-of-your-head.jpg" width="757" height="900" loading="lazy" decoding="async" alt="" draggable="false"></div><h3>Out of Your Head</h3><p>Prompt cards from the Out of Your Head course.</p><span class="glide__more">Open the cards</span></a>
+    <a class="glide__card" href="/tools/claude-connectors"><div class="glide__img"><img src="/assets/photos/tools-claude-connectors.jpg" width="873" height="900" loading="lazy" decoding="async" alt="" draggable="false"></div><h3>Claude, connected</h3><p>Prompt cards from the Claude, connected course.</p><span class="glide__more">Open the cards</span></a>
+  </div>
+  <div class="wrap glide__nav">
+    <button class="glide__btn" type="button" data-glide="prev" aria-label="Previous">←</button>
+    <span class="glide__progress" aria-hidden="true"><i></i></span>
+    <button class="glide__btn" type="button" data-glide="next" aria-label="Next">→</button>
+  </div>
+</section>
+
+<div class="spec"><b>10 FAQ</b> <code>.faq</code> <span>Answer the real objections. Opens smoothly where the browser allows.</span></div>
+<section class="s faq tone-greige">
+  <div class="wrap split">
+    <div>
+      <p class="kicker" data-reveal>Good to know</p>
+      <h2 class="title">Your <span class="em">questions</span></h2>
+      <p class="soft" data-reveal style="margin-top:var(--s3)">No tech skills needed. No breakout rooms and no putting you on the spot.</p>
+    </div>
+    <div class="faq__list" data-reveal>
+      <details><summary>Is it really free? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Yes. It’s free to register and free to attend, and you don’t need to buy anything to take part.</div></details>
+      <details><summary>What if I can’t make it live? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Register anyway. The replay comes to your inbox after the workshop, so you can watch it when it suits you.</div></details>
+      <details><summary>Do I need to be technical? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">No. I’ll show you the tools and walk you through each step in plain language. If you can use email, you can do this.</div></details>
+      <details><summary>Will you try to sell me something? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">At the end I’ll briefly tell you about Architect Advantage, my membership for building these systems with support. Everything you learn in the hour is yours to use either way.</div></details>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>11 Form</b> <code>.form-panel</code> <span>Label above every field, inputs 17px so phones don’t zoom. This one is a demo and sends nothing.</span></div>
+<section class="s tone-pearl" id="register">
+  <div class="wrap split">
+    <div>
+      <p class="kicker" data-reveal>Save your seat</p>
+      <h2 class="title">Free, online, and one <span class="em">hour</span>.</h2>
+      <p class="lead" data-reveal style="margin-top:var(--s3)">Wednesday 11 November, 7pm AEDT. Can’t make it live? Register anyway and the replay comes to your inbox.</p>
+    </div>
+    <div class="form-panel" data-form data-reveal>
+      <form class="form__body" data-demo action="#" method="post" novalidate>
+        <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="field"><label for="first-name">First name</label><input id="first-name" name="first_name" autocomplete="given-name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email_address" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="one-thing">What’s the one thing in your business that always comes back to you? <span class="opt">(optional)</span></label><textarea id="one-thing" name="one_thing" rows="3"></textarea></div>
+        <button class="btn btn--fill" type="submit">Save my seat</button>
+        <p class="btn-note">Free. You’ll get the replay either way.</p>
+      </form>
+      <div class="form__done" role="status">
+        <h3 class="sub">You’re in.</h3>
+        <p class="soft" style="margin-top:var(--s2)">On a live page this goes straight to the thank-you page below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>12 Thank-you</b> with a next step <code>.steps</code> + <code>.next</code> <span>Every thank-you page ends on one next step.</span></div>
+<section class="s tone-greige">
+  <div class="wrap">
+    <p class="kicker" data-reveal>You’re in</p>
+    <h2 class="display">Your seat is <span class="em">saved</span>.</h2>
+    <p class="lead" data-reveal style="margin-top:var(--s3)">Three small things between now and Wednesday 11 November.</p>
+    <ol class="steps">
+      <li data-reveal><div><h3>Put it in your calendar</h3><p>7pm AEDT, online. The link below adds it in one tap.</p><a class="btn" href="/workshop-november-2026.ics">Add to calendar</a></div></li>
+      <li data-reveal><div><h3>Watch your inbox</h3><p>Your joining link comes by email before we start. If it isn’t there, check your promotions folder.</p></div></li>
+      <li data-reveal><div><h3>Bring one thing</h3><p>Think of the job that always comes back to you. That’s where we’ll start.</p></div></li>
+    </ol>
+    <div class="next tone-dark" data-reveal style="margin-top:var(--s6)">
+      <p class="kicker">When you’re ready for more</p>
+      <h2 class="title">Build it with <span class="em">support</span>.</h2>
+      <p class="soft">Architect Advantage is my membership for building these systems with support. Everything you learn in the workshop is yours either way.</p>
+      <div class="btn-row" style="margin-top:var(--s4)"><a class="btn btn--fill" href="/architect">See Architect Advantage <span class="arrow" aria-hidden="true">→</span></a></div>
+      <p class="next__price">USD 69 a month, cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>13 Editorial link list</b> <code>.index</code> <span>For /links and any page that points somewhere else. Numbered, big type, no icons.</span></div>
+<section class="s tone-pearl">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Everything in one place</p>
+    <h2 class="title">Where to <span class="em">next</span>.</h2>
+    <ol class="index">
+      <li data-reveal><a href="/workshop"><span class="index__title">Free workshop <span class="index__tag">11 Nov</span></span><span class="index__go">Save my seat</span><span class="index__desc">One hour to find the work your business still can’t do without you.</span></a></li>
+      <li data-reveal><a href="/architect"><span class="index__title">Architect Advantage</span><span class="index__go">See the membership</span><span class="index__desc">Build these systems with support. USD 69 a month, cancel anytime.</span></a></li>
+      <li data-reveal><a href="/starter"><span class="index__title">Set up your Claude Project</span><span class="index__go">Free guide</span><span class="index__desc">One Claude Project that already knows your business, in about 20 minutes.</span></a></li>
+      <li data-reveal><a href="https://wisewomenuseai.substack.com"><span class="index__title">The newsletter</span><span class="index__go">Read it</span><span class="index__desc">One business problem a week, and what I’d do about it.</span></a></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot tone-pearl">
+  <div class="wrap">
+    <span>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</span>
+    <span class="site-foot__links"><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use ai</a></span>
+  </div>
+</footer>
+</body>
+</html>

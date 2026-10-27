@@ -82,6 +82,7 @@ Assets for the branded Kit email template (header + social icons). Referenced by
 
 ## September 2026 website refresh
 - `assets/photos/kelly-reaching-current-v1.png` — reviewed reaching-hand hero portrait; homepage; original retained.
+- `assets/photos/kelly-reaching-current-v1.jpg` — 788x1400 JPEG copy of the reaching-hand portrait (~240KB) for page-system pages; /workshop problem section.
 - `assets/photos/kelly-about-selected.png` — Kelly-selected current professional headshot; About; original retained.
 
 ## October 2026 workshop registration

@@ -33,8 +33,8 @@ Three things were inconsistent across the site before this date. Keep them consi
 - Static HTML (no framework)
 - Deployed on Vercel
 - WWUAI brand colours, fonts, and button styles (see global CLAUDE.md)
-- All CSS is inline `<style>` blocks — no external stylesheets. Each page is self-contained.
-- All pages load Google Fonts (Playfair Display, Plus Jakarta Sans, Allison) independently in their own `<head>`
+- **Page system (27 Oct 2026):** new and rebuilt pages use the shared files in `assets/system/` (`tokens.css` generated from brand-tokens.json by `scripts/build-tokens.mjs`, `wwuai.css`, `wwuai.js`) and are built only from the approved sections on `/style` (`style.html`, noindex). Before creating or editing any page, load the global `wwuai-page-standard` skill. `node scripts/check-system.mjs <page>.html` must pass.
+- Older pages still carry their own inline `<style>` blocks and load Google Fonts in their own `<head>`. Leave them until each is rebuilt on the system; don't copy their inline pattern into new pages.
 
 ## Key pages
 - `hub-install.html` — **REMOVED 1 July 2026** (deleted from the repo). Kelly took the Hub Install page off the site ("that page shouldn't be there"). `/hub`, `/hub-install` and `/ai-business-hub-install` now 301-redirect to the homepage. The $1,500 done-with-you Hub Install offer is delisted from the public site. Historical copy source: Notion doc `352f53df20e4817fa9eecf88d9222d62`.

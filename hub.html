@@ -1,167 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Here | Wise Women Use AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start Here · Wise Women Use AI</title>
   <meta name="description" content="Practical AI and business systems for Gen X women who want a business that depends on them less.">
-  <meta property="og:title" content="Start Here | Wise Women Use AI">
+  <meta property="og:title" content="Start Here · Wise Women Use AI">
   <meta property="og:description" content="Become the architect of your business, not its busiest employee.">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/links">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://www.wisewomenuseai.com/links">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    /* October 2026 brand: four colours only. Blush appears once, on Bordeaux. */
-    :root{
-      --pearl:#FAF8F6;--greige:#ECE6E0;--bordeaux:#3A131B;--blush:#E2B592;
-      --muted:rgba(58,19,27,.65);--line:rgba(58,19,27,.12);
-      --on-dark:#FAF8F6;--on-dark-muted:rgba(250,248,246,.74);--on-dark-line:rgba(250,248,246,.22);
-      --display:'Playfair Display',Georgia,serif;--body:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
-      --ease-out:cubic-bezier(.23,1,.32,1);
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--pearl);color:var(--bordeaux);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    .col{max-width:520px;margin:0 auto;padding:0 16px}
-
-    /* Header band */
-    .band{background:var(--bordeaux);color:var(--on-dark);padding:40px 0 88px}
-    .who{display:flex;align-items:center;gap:16px;margin-bottom:30px}
-    .who img{width:72px;height:72px;object-fit:cover;border-radius:14px;flex:0 0 auto}
-    .who .name{font-family:var(--display);font-size:22px;line-height:1.15}
-    .who .brand{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-muted);margin-top:4px}
-    h1{font-family:var(--display);font-weight:400;font-size:clamp(36px,9.5vw,46px);line-height:1.02;letter-spacing:-.022em;margin-bottom:18px;text-wrap:balance}
-    h1 em{color:var(--blush)}
-    .tagline{font-size:16px;line-height:1.6;color:var(--on-dark-muted);max-width:40ch}
-    .tagline strong{color:var(--on-dark);font-weight:500}
-
-    /* Cards */
-    .stack{display:flex;flex-direction:column;gap:12px}
-    .lead{margin-top:-56px}
-    .card{display:flex;align-items:center;gap:16px;padding:18px;border-radius:16px;background:var(--greige);transition:transform 160ms var(--ease-out),background-color 200ms ease}
-    .card:active{transform:scale(.98)}
-    .card:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
-    .card .body{flex:1;min-width:0}
-    .card .title{display:block;font-size:16px;font-weight:600;line-height:1.3}
-    .card .sub{display:block;font-size:14px;line-height:1.5;color:var(--muted);margin-top:4px}
-    .card .arrow{flex:0 0 auto;width:18px;height:18px;opacity:.7;transition:transform 200ms var(--ease-out)}
-
-    .card.workshop{background:var(--pearl);border:1.5px solid var(--bordeaux);padding:16px 18px 16px 16px}
-    .date{flex:0 0 auto;width:68px;height:76px;border-radius:12px;background:var(--bordeaux);color:var(--on-dark);display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .date .d{font-family:var(--display);font-size:32px;line-height:1}
-    .date .m{font-size:11px;font-weight:600;letter-spacing:.18em;margin-top:5px}
-    .soon{display:inline-block;margin-top:9px;font-size:12px;font-weight:600;letter-spacing:.04em;padding:4px 9px;border-radius:4px;background:var(--greige)}
-    .soon[hidden]{display:none}
-
-    .card.member{background:var(--bordeaux);color:var(--on-dark);padding:22px 18px}
-    .card.member .sub{color:var(--on-dark-muted)}
-    .card.member .kicker{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:6px}
-    .card.member .title{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15}
-
-    .divider{display:flex;align-items:center;gap:12px;margin:34px 0 14px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-    .divider::after{content:"";height:1px;background:var(--line);flex:1}
-
-    @media (hover:hover) and (pointer:fine){
-      .card:hover .arrow{transform:translateX(3px)}
-      .card:not(.member):not(.workshop):hover{background:color-mix(in srgb,var(--greige) 92%,var(--bordeaux))}
-    }
-
-    .socials{display:flex;gap:10px;margin-top:36px}
-    .social{width:44px;height:44px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out)}
-    .social:active{transform:scale(.95)}
-    @media (hover:hover) and (pointer:fine){.social:hover{background:var(--bordeaux);color:var(--pearl);border-color:var(--bordeaux)}}
-
-    footer{margin-top:36px;padding:22px 0 40px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:2}
-
-    /* Staggered entrance on load */
-    .js .in{opacity:0;transform:translateY(12px);animation:rise 520ms var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 60ms)}
-    @keyframes rise{to{opacity:1;transform:none}}
-    @media (prefers-reduced-motion:reduce){.js .in{animation:none;opacity:1;transform:none}}
-  </style>
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
+  <link rel="preload" href="/assets/fonts/GizaStencil.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/assets/system/tokens.css">
+  <link rel="stylesheet" href="/assets/system/wwuai.css">
+  <script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="/assets/system/wwuai.js"></script>
 </head>
 <body>
-  <header class="band">
-    <div class="col">
-      <div class="who in" style="--i:0">
-        <img src="/assets/photos/kelly-smiling-20260928.webp" alt="Kelly Hartley" width="1254" height="1254">
-        <div><p class="name">Kelly Hartley</p><p class="brand">Wise Women Use AI</p></div>
-      </div>
-      <h1 class="in" style="--i:1">Become the <em>architect</em> of your business. Not its busiest employee.</h1>
-      <p class="tagline in" style="--i:2">Practical AI and systems for Gen X women. <strong>Keep the work that needs you. Redesign the rest.</strong></p>
-    </div>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
+<div class="news" data-news hidden></div>
 
-  <main class="col">
-    <div class="stack lead">
-      <a href="/workshop" class="card workshop in" style="--i:3" aria-label="Free workshop, Business Systems, Wednesday 11 November, 7pm AEDT">
-        <span class="date" aria-hidden="true"><span class="d">11</span><span class="m">NOV</span></span>
-        <span class="body">
-          <span class="title">Free workshop · 11 Nov</span>
-          <span class="sub">Business Systems. Wednesday, 7pm AEDT, online. Replay included.</span>
-          <span class="soon" id="soon" hidden></span>
-        </span>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener" class="card member in" style="--i:4" aria-label="Join The Architect Advantage membership">
-        <span class="body">
-          <span class="kicker">The membership</span>
-          <span class="title">The Architect Advantage</span>
-          <span class="sub">Guided implementation, practical assets and support · $69 USD/month.</span>
-        </span>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-    </div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-head__logo serif-i" href="/" style="text-decoration:none;font-size:1.25rem">Wise Women Use AI</a>
+    <a class="site-head__cta" href="/workshop">Free workshop · 11 Nov</a>
+  </div>
+</header>
 
-    <p class="divider in" style="--i:5">More from me</p>
-    <div class="stack">
-      <a href="/vault" class="card in" style="--i:6">
-        <span class="body"><span class="title">Free resources</span><span class="sub">Open the free resource vault.</span></span>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <a href="https://wisewomenuseai.substack.com" target="_blank" rel="noopener" class="card in" style="--i:7">
-        <span class="body"><span class="title">Read the newsletter</span><span class="sub">One useful lesson about AI, systems and running a lighter business.</span></span>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <a href="/" class="card in" style="--i:8">
-        <span class="body"><span class="title">Visit Wise Women Use AI</span><span class="sub">See the method and ways to work together.</span></span>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-    </div>
+<main id="main">
 
-    <nav class="socials in" style="--i:9" aria-label="Social profiles">
-      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-2.09-2.78V9.01a6.34 6.34 0 1 0 6.54 6.29V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78c-.36 0-.72-.03-1.07-.09z"/></svg></a>
-      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="17" height="17"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2a5 5 0 0 1 2-3zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-      <a href="mailto:hello@wisewomenuseai.com" class="social" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></a>
-    </nav>
+<section class="emboss emboss--full tone-greige">
+  <div class="wrap">
+    <h1 class="visually-hidden">Wise Women Use AI: start here</h1>
+    <p class="emboss__mark" aria-hidden="true">ai</p>
+    <p class="emboss__line">Keep the work that needs you. Redesign the rest.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:var(--s4)"><a class="btn btn--fill" href="/workshop">Join the free workshop <span class="arrow" aria-hidden="true">→</span></a></div>
+    <p class="emboss__cue">Wednesday 11 November · 7pm AEDT · Online</p>
+  </div>
+</section>
 
-    <footer>
-      <p>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
-      <p><a href="/privacy">Privacy</a> · <a href="/ai-disclosure">How I use AI</a></p>
-    </footer>
-  </main>
+<section class="s tone-pearl">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Kelly Hartley · Wise Women Use AI</p>
+    <h2 class="title">Become the architect of your business. Not its busiest <span class="em">employee</span>.</h2>
+    <p class="lead" data-reveal style="margin-top:var(--s3)">Practical ai and systems for Gen X women.</p>
+    <ol class="index">
+      <li data-reveal><a href="/workshop"><span class="index__title">Free workshop: Business Systems <span class="index__tag" id="soon" hidden></span></span><span class="index__go">Save my seat</span><span class="index__desc">Wednesday 11 November, 7pm AEDT, online. One hour to find the work your business still can’t do without you. Replay included.</span></a></li>
+      <li data-reveal><a href="https://www.skool.com/wise-women-use-ai-1109/plans"><span class="index__title">Architect Advantage</span><span class="index__go">See the membership</span><span class="index__desc">Guided implementation, practical assets and support. $69 USD a month.</span></a></li>
+      <li data-reveal><a href="/vault"><span class="index__title">Free resources</span><span class="index__go">Open the vault</span><span class="index__desc">Guides, prompts and tools you can use today.</span></a></li>
+      <li data-reveal><a href="https://wisewomenuseai.substack.com"><span class="index__title">The newsletter</span><span class="index__go">Read it</span><span class="index__desc">One useful lesson about ai, systems and running a lighter business.</span></a></li>
+      <li data-reveal><a href="/"><span class="index__title">Wise Women Use AI</span><span class="index__go">Visit the site</span><span class="index__desc">The method, and ways to work together.</span></a></li>
+    </ol>
+  </div>
+</section>
 
-  <script>
-    (function () {
-      var y = new Date().getFullYear();
-      document.querySelectorAll('.yr').forEach(function (el) { if (y > 2026) el.textContent = '2026\u2013' + y; });
+<section class="s band tone-dark">
+  <div class="wrap">
+    <h2 class="title">One hour to find what to <span class="em">fix</span> first.</h2>
+    <p class="band__meta" data-reveal>Wednesday 11 November · 7pm AEDT · Online · Free</p>
+    <div class="btn-row" data-reveal><a class="btn btn--fill" href="/workshop">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
 
-      // Workshop countdown. Hides itself once the workshop has finished.
-      var start = new Date('2026-11-11T19:00:00+11:00'), end = new Date('2026-11-11T20:00:00+11:00');
-      var now = new Date(), el = document.getElementById('soon');
-      if (el && now < end) {
-        var mel = function (d) { return d.toLocaleDateString('en-CA', { timeZone: 'Australia/Melbourne' }); };
-        var days = Math.round((new Date(mel(start)) - new Date(mel(now))) / 86400000);
-        el.textContent = now >= start ? 'Happening now' : days === 0 ? 'Today, 7pm AEDT' : days === 1 ? 'Tomorrow, 7pm AEDT' : 'In ' + days + ' days';
-        el.hidden = false;
-      }
-    })();
-  </script>
+</main>
+
+<footer class="site-foot tone-pearl">
+  <div class="wrap">
+    <span>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</span>
+    <span class="site-foot__links"><a href="https://www.tiktok.com/@kellyh.ai">TikTok</a><a href="https://www.instagram.com/kellyh.ai">Instagram</a><a href="https://www.linkedin.com/in/wisewomenuseai">LinkedIn</a><a href="mailto:hello@wisewomenuseai.com">Email</a><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use ai</a></span>
+  </div>
+</footer>
+<script>
+  // Workshop countdown. Hides itself once the workshop has finished.
+  (function () {
+    var start = new Date('2026-11-11T19:00:00+11:00'), end = new Date('2026-11-11T20:00:00+11:00');
+    var now = new Date(), el = document.getElementById('soon');
+    if (!el || now >= end) return;
+    var mel = function (d) { return d.toLocaleDateString('en-CA', { timeZone: 'Australia/Melbourne' }); };
+    var days = Math.round((new Date(mel(start)) - new Date(mel(now))) / 86400000);
+    el.textContent = now >= start ? 'Happening now' : days === 0 ? 'Today, 7pm' : days === 1 ? 'Tomorrow, 7pm' : 'In ' + days + ' days';
+    el.hidden = false;
+  })();
+</script>
 </body>
 </html>
