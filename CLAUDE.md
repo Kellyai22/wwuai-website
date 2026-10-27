@@ -119,7 +119,7 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - The business review at `/review` is evergreen. All four prompts use the same chat and the reader chooses the review and planning periods.
 - `/vault-starter` was the four-step beginner path (retired 27 Oct 2026, now redirects to `/starter?unlocked=1`); Claude, Clearly was its first step. Preserve the existing paid content lesson boundary and classroom URLs.
 
-Free Vault access: /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.
+Free Vault access (27 Oct 2026: /vault is now `vault.html` in this repo, no longer proxied from the ChatGPT-hosted site): /vault and its free website guides are public without a passcode or required email signup. Paid lessons remain in the Skool classroom. Do not restore gating on these free resources.
 
 `/starter` (27 Oct 2026) is the exception: "Set up your Claude Project", a gated lead magnet by Kelly's explicit choice ("that's how I collect emails"). Kit form 10101593 (uid 8f8720a63c), source `starter`, custom field `uses_projects`, Kit rules 5669501 (tag `starter`) and 5669503 (warm path sequence 2839625). `/vault-starter` now 307-redirects to `/starter?unlocked=1`, so Vault visitors skip the gate. The page uses the October 2026 palette with rounded corners (the rest of the site is still July). Kelly was surprised the other free guides had been opened up on 7 Oct; whether to re-gate CALM, BACKUP, DREAM, HOURS, REVIEW and Astra is her open decision.
 

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.wisewomenuseai.com/vault">
+  <title>The Library & AI Tools · Wise Women Use AI</title>
+  <meta name="description" content="Free AI guides and prompts for women running their own business. Choose the job you need help with. No passcode or sign-up needed.">
+  <meta property="og:title" content="What can come off your plate? Free AI guides and prompts">
+  <meta property="og:description" content="Free AI guides and prompts for women running their own business. Choose the job you need help with.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
+  <meta property="og:url" content="https://www.wisewomenuseai.com/vault">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    /* October 2026 palette (Claude Design system "Wise Women Use AI"), rounded corners, centred and symmetrical */
+    :root {
+      --paper: #ECE6E0; --bone: #F7F3EE; --line: #D4CCC4;
+      --ink: #2A1C1F; --ink-soft: #6B5E60; --bordeaux: #5E1B25; --oxblood: #3A131B; --blush: #E2B592;
+      --on-dark: #F7F3EE; --on-dark-dim: rgba(247, 243, 238, 0.8); --on-dark-line: rgba(247, 243, 238, 0.22);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --r-btn: 2px; --r-sm: 4px; --r-md: 12px; --r-lg: 20px;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --gutter: clamp(20px, 4vw, 40px);
+      --shadow: 0 1px 2px rgba(58, 19, 27, 0.06), 0 12px 32px -12px rgba(58, 19, 27, 0.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.015em; }
+    h1 em, h2 em { font-style: italic; color: var(--bordeaux); }
+    .on-dark h2 em { color: var(--blush); }
+    .shell { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+    .centre { text-align: center; }
+    .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+    .on-dark .eyebrow { color: var(--blush); }
+    .title { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.06; text-wrap: balance; }
+    .sub { max-width: 58ch; margin: 18px auto 0; color: var(--ink-soft); text-wrap: pretty; }
+    .head { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+
+    .btn { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; border-radius: var(--r-btn); padding: 15px 28px; min-height: 50px; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 160ms var(--ease-out); }
+    .btn:active { transform: scale(0.97); }
+    .btn-blush { color: var(--oxblood); background: var(--blush); border: 1.5px solid var(--blush); }
+    .btn-blush:hover { background: var(--on-dark); border-color: var(--on-dark); }
+
+    /* Top bar */
+    .topbar { position: relative; z-index: 3; max-width: 1120px; margin: 0 auto; padding: 22px var(--gutter); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+    .topbar .left { justify-self: start; font-size: 14px; color: var(--ink-soft); }
+    .wordmark { justify-self: center; font-family: var(--display); font-size: 14px; letter-spacing: 0.24em; }
+    .topbar .right { justify-self: end; font-size: 14px; font-weight: 500; color: var(--bordeaux); }
+    .topbar a:hover { opacity: 0.7; }
+
+    /* Hero: the plate */
+    .hero { position: relative; text-align: center; padding: clamp(36px, 6vw, 72px) 0 0; overflow: hidden; }
+    .hero .eyebrow { animation: rise 700ms var(--ease-out) both; }
+    h1 { font-size: clamp(40px, 5.5vw, 78px); line-height: 1.02; letter-spacing: -0.025em; white-space: nowrap; animation: rise 800ms var(--ease-out) 60ms both; }
+    .hero .lede { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--ink-soft); max-width: 50ch; margin: 22px auto 34px; text-wrap: pretty; animation: rise 800ms var(--ease-out) 120ms both; }
+    .search { position: relative; display: block; max-width: 600px; margin: 0 auto; animation: rise 800ms var(--ease-out) 180ms both; }
+    .search svg { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--ink-soft); pointer-events: none; }
+    .search input { width: 100%; font-family: var(--body); font-size: 17px; color: var(--ink); background: var(--bone); border: 1px solid transparent; border-radius: 9999px; padding: 19px 24px 19px 58px; outline: none; box-shadow: var(--shadow); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+    .search input:focus { border-color: var(--bordeaux); box-shadow: 0 0 0 4px rgba(94, 27, 37, 0.1), var(--shadow); }
+    .paths { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px auto 0; animation: rise 800ms var(--ease-out) 240ms both; }
+    .paths a { font-size: 14px; font-weight: 500; padding: 10px 18px; border-radius: 9999px; border: 1px solid var(--line); background: rgba(247, 243, 238, 0.6); transition: border-color 0.2s ease, background 0.2s ease, transform 160ms var(--ease-out); }
+    .paths a span { color: var(--ink-soft); font-weight: 400; }
+    .paths a:active { transform: scale(0.97); }
+    @media (hover: hover) and (pointer: fine) { .paths a:hover { border-color: var(--bordeaux); background: var(--bone); } }
+
+    .stage { position: relative; height: clamp(260px, 30vw, 380px); margin-top: clamp(24px, 4vw, 48px); }
+    .plate { position: absolute; left: 50%; bottom: 0; width: min(1100px, 150vw); aspect-ratio: 1; transform: translate(-50%, 72%); border-radius: 50%;
+      background: radial-gradient(circle at 50% 8%, #7A2733 0%, var(--bordeaux) 22%, var(--oxblood) 60%);
+      box-shadow: 0 -24px 80px -20px rgba(94, 27, 37, 0.45); animation: plate 1200ms var(--ease-out) 200ms both; }
+    .plate::after { content: ""; position: absolute; inset: 3.5%; border-radius: 50%; border: 1px solid rgba(226, 181, 146, 0.28); }
+    .lift { position: absolute; left: 50%; bottom: 18%; font-size: clamp(13px, 1.2vw, 15px); font-weight: 500; color: var(--ink); white-space: nowrap;
+      background: var(--bone); border-radius: 9999px; padding: 10px 18px; box-shadow: var(--shadow);
+      opacity: 0; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), 30px) rotate(var(--r)) scale(0.96);
+      animation: liftoff 6.4s var(--ease-out) var(--d) infinite; will-change: transform, opacity; }
+    .lift::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--bordeaux); margin-right: 8px; vertical-align: 1px; }
+    @keyframes liftoff {
+      0% { opacity: 0; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), 30px) rotate(var(--r)) scale(0.96); }
+      12% { opacity: 1; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), 0) rotate(var(--r)) scale(1); }
+      55% { opacity: 1; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), -120px) rotate(calc(var(--r) * -1)) scale(1); }
+      80%, 100% { opacity: 0; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), -210px) rotate(calc(var(--r) * -1.5)) scale(0.94); }
+    }
+    @keyframes plate { from { opacity: 0; transform: translate(-50%, 86%); } to { opacity: 1; transform: translate(-50%, 72%); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    /* Oxblood band continuing from the plate */
+    .band { background: var(--oxblood); color: var(--on-dark); padding: clamp(48px, 6vw, 72px) 0 clamp(64px, 8vw, 96px); }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .pair > div { border: 1px solid var(--on-dark-line); border-radius: var(--r-lg); padding: clamp(28px, 3.4vw, 44px); text-align: center; }
+    .pair h2 { font-size: clamp(26px, 2.6vw, 32px); margin-bottom: 12px; color: var(--on-dark); }
+    .pair p { font-size: 15px; line-height: 1.7; color: var(--on-dark-dim); max-width: 40ch; margin: 0 auto; }
+    .pair a { display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 500; color: var(--blush); }
+
+    /* Library */
+    .library { padding: clamp(72px, 9vw, 120px) 0; }
+    .chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .chip { font-family: var(--body); font-size: 14px; font-weight: 500; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 9999px; padding: 9px 18px; min-height: 42px; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 160ms var(--ease-out); }
+    .chip:active { transform: scale(0.97); }
+    @media (hover: hover) and (pointer: fine) { .chip:hover { border-color: var(--bordeaux); } }
+    .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--on-dark); }
+    .count { text-align: center; font-size: 14px; color: var(--ink-soft); margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card { display: flex; flex-direction: column; background: var(--bone); border: 1px solid transparent; border-radius: var(--r-md); padding: 30px 30px 24px; box-shadow: 0 1px 2px rgba(58, 19, 27, 0.04);
+      transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.25s var(--ease-out); }
+    @media (hover: hover) and (pointer: fine) { .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); } .card:hover .go { transform: translateX(3px); } }
+    .card .kind { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 12px; }
+    .card h3 { font-size: 25px; line-height: 1.18; margin-bottom: 10px; text-wrap: balance; }
+    .card p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 22px; }
+    .card .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 12px; font-weight: 500; padding: 4px 11px; border-radius: 9999px; background: var(--paper); color: var(--ink-soft); }
+    .card .go { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--bordeaux); color: var(--on-dark); display: grid; place-items: center; transition: transform 0.25s var(--ease-out); }
+    .card .go svg { width: 16px; height: 16px; }
+    .card.new { border-color: var(--bordeaux); }
+    .badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; color: var(--on-dark); background: var(--bordeaux); border-radius: 9999px; padding: 3px 9px; margin-left: 8px; vertical-align: 1px; }
+    .empty { display: none; max-width: 520px; margin: 0 auto; padding: 32px; text-align: center; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--r-md); }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Paid previews */
+    .paid { background: var(--bone); padding: clamp(72px, 9vw, 120px) 0; }
+    .paid .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pcard { display: block; background: var(--paper); border-radius: var(--r-md); padding: 30px; transition: box-shadow 0.25s ease, transform 0.25s var(--ease-out); }
+    @media (hover: hover) and (pointer: fine) { .pcard:hover { transform: translateY(-3px); box-shadow: var(--shadow); } }
+    .pcard.feature { grid-column: 1 / -1; text-align: center; background: var(--oxblood); color: var(--on-dark); padding: clamp(36px, 4vw, 52px); }
+    .pcard.feature .kind { color: var(--blush); }
+    .pcard.feature h3 { font-size: clamp(28px, 3vw, 36px); color: var(--on-dark); }
+    .pcard.feature p { color: var(--on-dark-dim); max-width: 52ch; margin-left: auto; margin-right: auto; }
+    .pcard.feature span { color: var(--blush); }
+    .pcard .kind { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 12px; }
+    .pcard h3 { font-size: 23px; line-height: 1.2; margin-bottom: 8px; }
+    .pcard p { font-size: 15px; color: var(--ink-soft); margin-bottom: 16px; }
+    .pcard span { font-size: 14px; font-weight: 500; color: var(--bordeaux); }
+    .members { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
+    .members > div { border: 1px solid var(--line); border-radius: var(--r-md); padding: 28px 30px; text-align: center; }
+    .members h3 { font-size: 22px; margin-bottom: 8px; }
+    .members p { font-size: 15px; color: var(--ink-soft); max-width: 44ch; margin: 0 auto; }
+    .members a { color: var(--bordeaux); font-weight: 500; border-bottom: 1px solid rgba(94, 27, 37, 0.35); }
+
+    /* Toolkit */
+    .toolkit { padding: clamp(72px, 9vw, 120px) 0; }
+    .tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .tool { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; background: var(--bone); border-radius: var(--r-md); padding: 26px 20px; transition: box-shadow 0.25s ease, transform 0.25s var(--ease-out); }
+    @media (hover: hover) and (pointer: fine) { .tool:hover { transform: translateY(-3px); box-shadow: var(--shadow); } }
+    .tool b { font-family: var(--display); font-weight: 400; font-size: 22px; }
+    .tool b span { color: var(--bordeaux); font-family: var(--body); font-size: 14px; margin-left: 4px; }
+    .tool p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+    .small { text-align: center; font-size: 13px; color: var(--ink-soft); }
+
+    /* Membership */
+    .next { background: var(--oxblood); color: var(--on-dark); text-align: center; padding: clamp(80px, 10vw, 128px) 0; position: relative; overflow: hidden; }
+    .next::before { content: ""; position: absolute; left: 50%; top: 0; width: min(900px, 140vw); aspect-ratio: 1; transform: translate(-50%, -78%); border-radius: 50%; border: 1px solid rgba(226, 181, 146, 0.2); }
+    .next .title { color: var(--on-dark); max-width: 20ch; margin: 0 auto 20px; }
+    .next p { max-width: 58ch; margin: 0 auto 16px; color: var(--on-dark-dim); }
+    .next .price { font-size: 15px; }
+    .next .ctas { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 32px; }
+    .next .ctas a.text { color: var(--on-dark); border-bottom: 1px solid rgba(247, 243, 238, 0.4); padding-bottom: 2px; font-size: 15px; }
+
+    footer { text-align: center; padding: 40px var(--gutter) 48px; font-size: 13px; color: var(--ink-soft); }
+    footer nav { display: flex; justify-content: center; gap: 22px; margin-top: 10px; }
+    footer a:hover { color: var(--bordeaux); }
+
+    @media (max-width: 900px) { .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      h1 { white-space: normal; text-wrap: balance; }
+      .pair, .grid, .paid .grid, .members { grid-template-columns: minmax(0, 1fr); }
+      .topbar .left { display: none; }
+      .topbar { grid-template-columns: auto 1fr; }
+      .wordmark { justify-self: start; }
+      .stage { --spread: 0.42; }
+      .lift:nth-child(n+6) { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: opacity 0.2s ease !important; }
+      .reveal { opacity: 1; transform: none; }
+      .lift { opacity: 1; transform: translate(calc(-50% + var(--x) * var(--spread, 1)), calc(-40px * var(--i, 1))) rotate(var(--r)); }
+      .plate { opacity: 1; transform: translate(-50%, 72%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="left" href="/">Home</a>
+    <a href="/" class="wordmark">WISE WOMEN USE AI</a>
+    <a class="right" href="/architect">Architect Advantage</a>
+  </div>
+
+  <header class="hero">
+    <div class="shell">
+      <p class="eyebrow">Free guides for your business</p>
+      <h1>What can come off your <em>plate?</em></h1>
+      <p class="lede">Choose the job you need help with. The free guides and prompts below are open to everyone. Full member workflows are listed separately. No passcode or sign-up needed.</p>
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Try emails, follow-ups or customer questions" aria-label="Search the resource vault" autocomplete="off">
+      </label>
+      <nav class="paths" aria-label="Quick starts">
+        <a href="/starter?unlocked=1">I'm getting started <span>· set up Claude</span></a>
+        <a href="/hours">I'm carrying too much <span>· find the first job</span></a>
+        <a href="/tools/email-plan">I need help with emails <span>· draft one</span></a>
+      </nav>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="plate"></div>
+        <span class="lift" style="--x:-300px;--d:0.0s;--r:-4deg">Emails</span>
+        <span class="lift" style="--x:-120px;--d:1.6s;--r:3deg">Follow-ups</span>
+        <span class="lift" style="--x:70px;--d:3.2s;--r:-2deg">Admin</span>
+        <span class="lift" style="--x:250px;--d:0.8s;--r:4deg">Content</span>
+        <span class="lift" style="--x:-210px;--d:4.0s;--r:2deg">Customer questions</span>
+        <span class="lift" style="--x:170px;--d:2.4s;--r:-3deg">Planning</span>
+    </div>
+  </header>
+
+  <section class="band on-dark" aria-label="How the vault works">
+    <div class="shell pair">
+      <div>
+        <p class="eyebrow">Free on this website</p>
+        <h2>Get a useful first result.</h2>
+        <p>Use the standalone guides and prompts below on a job in front of you. They are open to everyone.</p>
+        <a href="#library">Browse the guides ↓</a>
+      </div>
+      <div>
+        <p class="eyebrow">Inside Architect Advantage</p>
+        <h2>Build it into your business.</h2>
+        <p>The paid membership includes member lessons, the WWUAI Systems Library, adaptable templates, two monthly live sessions, Build and Fix, and help in Skool. Member lessons and recordings stay in the classroom.</p>
+        <a href="/architect">See what membership includes →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="library" id="library" aria-labelledby="lib-title">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow">Free guides and prompts</p>
+        <h2 class="title" id="lib-title">Choose a guide for the job in front of <em>you.</em></h2>
+      </div>
+      <div class="chips" role="group" aria-label="Filter guides by topic">
+        <button class="chip" type="button" data-cat="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-cat="start" aria-pressed="false">Start here</button>
+        <button class="chip" type="button" data-cat="email" aria-pressed="false">Email</button>
+        <button class="chip" type="button" data-cat="content" aria-pressed="false">Content</button>
+        <button class="chip" type="button" data-cat="clients" aria-pressed="false">Clients</button>
+        <button class="chip" type="button" data-cat="systems" aria-pressed="false">Systems</button>
+        <button class="chip" type="button" data-cat="planning" aria-pressed="false">Planning</button>
+      </div>
+      <p class="count" id="count" aria-live="polite">20 ways to start</p>
+      <div class="grid" id="grid">
+        <a class="card new" href="/starter?unlocked=1" data-cats="start systems">
+          <p class="kind">Setup guide <span class="badge">New</span></p>
+          <h3>Set up your Claude Project</h3>
+          <p>Stop using a fresh chat for your business work. Claude interviews you and writes the instructions, so every chat starts from a proper brief.</p>
+          <div class="foot"><div class="tags"><span class="tag">Start here</span><span class="tag">About 20 min</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/hours" data-cats="start planning">
+          <p class="kind">Quick audit</p>
+          <h3>Find the first job to take off your plate</h3>
+          <p>Where Your Week Actually Goes. Identify the work taking up your week and choose one useful place to start.</p>
+          <div class="foot"><div class="tags"><span class="tag">Start here</span><span class="tag">About 5 min</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/email-plan" data-cats="email content">
+          <p class="kind">Free starter</p>
+          <h3>Draft one useful email in your own voice</h3>
+          <p>Use one real idea and a short prompt to draft and check an email. The full monthly workflow is inside Architect Advantage.</p>
+          <div class="foot"><div class="tags"><span class="tag">Email</span><span class="tag">One email</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/Astra" data-cats="systems">
+          <p class="kind">Job briefs</p>
+          <h3>5 jobs to give AI in your business</h3>
+          <p>Choose a proper piece of work. Each brief includes the context to give AI, the finished result and what to check.</p>
+          <div class="foot"><div class="tags"><span class="tag">Systems</span><span class="tag">Start with one job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/calm" data-cats="planning">
+          <p class="kind">Prompt set</p>
+          <h3>The Sunday Reset</h3>
+          <p>Get the week out of your head and into a realistic plan, with room for a real life.</p>
+          <div class="foot"><div class="tags"><span class="tag">Planning</span><span class="tag">About 15 min</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/backup" data-cats="systems">
+          <p class="kind">Setup guide</p>
+          <h3>Put your business essentials in one place</h3>
+          <p>Your Headquarters. Create a business overview, ideal-client notes, offers and a brain-dump inbox in Notion.</p>
+          <div class="foot"><div class="tags"><span class="tag">Systems</span><span class="tag">Allow 15 to 30 min</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/review" data-cats="planning">
+          <p class="kind">Prompt set</p>
+          <h3>Decide what to keep, drop and focus on next</h3>
+          <p>Four prompts and a one-page business review. Choose the period you want to look back on and plan ahead.</p>
+          <div class="foot"><div class="tags"><span class="tag">Planning</span><span class="tag">One sitting</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/dream" data-cats="planning">
+          <p class="kind">Interview</p>
+          <h3>The Dream Life Interview</h3>
+          <p>Turn your ideal day into a practical starting plan. Use this when you need direction before another to-do list.</p>
+          <div class="foot"><div class="tags"><span class="tag">Planning</span><span class="tag">30 to 45 min</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#same" data-cats="clients systems">
+          <p class="kind">Practical prompt</p>
+          <h3>Write your customer answers once</h3>
+          <p>Build a reusable answers document in your own words.</p>
+          <div class="foot"><div class="tags"><span class="tag">Clients</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#chasing" data-cats="email clients">
+          <p class="kind">Practical prompt</p>
+          <h3>Write the follow-up you've been putting off</h3>
+          <p>Prepare three short follow-ups, then check the status before each send.</p>
+          <div class="foot"><div class="tags"><span class="tag">Email</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#email" data-cats="email">
+          <p class="kind">Practical prompt</p>
+          <h3>Find the emails that actually need you</h3>
+          <p>Use a list of your emails to identify decisions, draft replies and commitments to follow up.</p>
+          <div class="foot"><div class="tags"><span class="tag">Email</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#content" data-cats="content">
+          <p class="kind">Practical prompt</p>
+          <h3>Turn a ramble into a post that sounds like you</h3>
+          <p>Use your own spoken thoughts to draft a caption and alternative openings.</p>
+          <div class="foot"><div class="tags"><span class="tag">Content</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#finding" data-cats="systems">
+          <p class="kind">Practical prompt</p>
+          <h3>Find what you've already written</h3>
+          <p>Choose one home for reusable work and a naming rule you can stick to.</p>
+          <div class="foot"><div class="tags"><span class="tag">Systems</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#admin" data-cats="systems email">
+          <p class="kind">Practical prompt</p>
+          <h3>Get your recurring admin into one checklist</h3>
+          <p>Prepare a short weekly admin pass and wording for the messages you repeat.</p>
+          <div class="foot"><div class="tags"><span class="tag">Systems</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#deciding" data-cats="planning">
+          <p class="kind">Practical prompt</p>
+          <h3>Choose the three things that matter this week</h3>
+          <p>Sort the pile by what happens if it waits, then choose your first action.</p>
+          <div class="foot"><div class="tags"><span class="tag">Planning</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/tools/everyday-jobs#home" data-cats="planning">
+          <p class="kind">Practical prompt</p>
+          <h3>Get the home week out of your head</h3>
+          <p>Lay out the household week, meal ideas and jobs someone else could take.</p>
+          <div class="foot"><div class="tags"><span class="tag">Planning</span><span class="tag">One job</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/Astra#job-02" data-cats="content clients">
+          <p class="kind">Job brief</p>
+          <h3>Find what your customers actually want</h3>
+          <p>Use real customer language to identify repeated questions, objections and useful opportunities.</p>
+          <div class="foot"><div class="tags"><span class="tag">Content</span><span class="tag">One piece of work</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/Astra#job-03" data-cats="systems">
+          <p class="kind">Job brief</p>
+          <h3>Turn what you know into something you can sell</h3>
+          <p>Find a testable offer inside the material you already have.</p>
+          <div class="foot"><div class="tags"><span class="tag">Systems</span><span class="tag">One piece of work</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/Astra#job-04" data-cats="clients systems">
+          <p class="kind">Job brief</p>
+          <h3>Build the system behind the sale</h3>
+          <p>Map the steps from enquiry through delivery and identify the drafts and handoffs needed.</p>
+          <div class="foot"><div class="tags"><span class="tag">Clients</span><span class="tag">One piece of work</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card" href="/Astra#job-05" data-cats="clients systems">
+          <p class="kind">Job brief</p>
+          <h3>Go through your business like a customer</h3>
+          <p>Check the customer path and get a prioritised repair list, with limits clearly stated.</p>
+          <div class="foot"><div class="tags"><span class="tag">Clients</span><span class="tag">One piece of work</span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+      </div>
+      <p class="empty" id="empty">Nothing matches that yet. Try a different word, or <button type="button" id="reset" style="font:inherit;color:var(--bordeaux);background:none;border:0;border-bottom:1px solid currentColor;cursor:pointer">show all guides</button>.</p>
+    </div>
+  </section>
+
+  <section class="paid" aria-labelledby="paid-title">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow">Architect Advantage · Paid workflows</p>
+        <h2 class="title" id="paid-title">Build the complete process inside the <em>membership.</em></h2>
+        <p class="sub">These are previews of lessons in the paid Systems Library. The full prompts, examples and repeatable processes are available to Architect Advantage members.</p>
+      </div>
+      <div class="grid">
+        <a class="pcard feature" href="/tools/email-plan"><p class="kind">Paid member workflow · Preview</p><h3>Plan and draft your next month of emails</h3><p>Use your own writing and real ideas to prepare a useful email plan and checked drafts for your list.</p><span>View preview and membership details →</span></a>
+        <a class="pcard" href="/tools/repeat-job"><p class="kind">Paid member workflow · Preview</p><h3>Explain a repeat job once</h3><p>Turn your explanation into a checklist another person can follow. Test it on a real job.</p><span>View preview and membership details →</span></a>
+        <a class="pcard" href="/tools/client-call"><p class="kind">Paid member workflow · Preview</p><h3>Turn a client call into actions and a follow-up</h3><p>Pull confirmed decisions, responsibilities and open questions from your notes, then draft the email.</p><span>View preview and membership details →</span></a>
+        <a class="pcard" href="/tools/follow-up-tracker"><p class="kind">Paid member workflow · Preview</p><h3>Know who needs a follow-up this week</h3><p>Keep open enquiries, next actions and dates in your existing spreadsheet or customer tracker.</p><span>View preview and membership details →</span></a>
+        <a class="pcard" href="/tools/client-welcome"><p class="kind">Paid member workflow · Preview</p><h3>Welcome a new client without starting from scratch</h3><p>Prepare a welcome email, intake questions and an internal checklist for one offer.</p><span>View preview and membership details →</span></a>
+      </div>
+      <div class="members">
+        <div>
+          <h3>Already an Architect Advantage member?</h3>
+          <p>Open <a href="https://www.skool.com/wise-women-use-ai-1109/classroom/4c3da818?md=8ae5e01d6ed24b3997263bef6e7040f5">One idea into three useful drafts</a> in the paid Systems Library. An Architect Advantage subscription is required.</p>
+        </div>
+        <div>
+          <h3>Free community classroom</h3>
+          <p>The <a href="https://www.skool.com/wise-women-use-ai-1109/classroom/806413b8?md=1ddb4e354e504e86b602ef7032ae9ce5">Business Dependency Diagnostic</a> is in the free community classroom and requires a community login.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="toolkit" aria-labelledby="tools-title">
+    <div class="shell">
+      <div class="head">
+        <p class="eyebrow">What I use every day</p>
+        <h2 class="title" id="tools-title">My working <em>toolkit</em></h2>
+      </div>
+      <div class="tools">
+        <a class="tool" href="https://claude.ai/" target="_blank" rel="noopener"><b>Claude <span>↗</span></b><p>My everyday thinking and writing partner.</p></a>
+        <a class="tool" href="https://chatgpt.com/" target="_blank" rel="noopener"><b>ChatGPT <span>↗</span></b><p>For research, ideas and practical everyday help.</p></a>
+        <a class="tool" href="https://www.notion.so/" target="_blank" rel="noopener"><b>Notion <span>↗</span></b><p>Where the business systems and knowledge live.</p></a>
+        <a class="tool" href="https://www.canva.com/" target="_blank" rel="noopener"><b>Canva <span>↗</span></b><p>For quick, on-brand visual content.</p></a>
+        <a class="tool" href="https://kit.com/" target="_blank" rel="noopener"><b>Kit <span>↗</span></b><p>For email, forms and subscriber journeys.</p></a>
+        <a class="tool" href="https://www.skool.com/" target="_blank" rel="noopener"><b>Skool <span>↗</span></b><p>Where the community and membership live.</p></a>
+        <a class="tool" href="https://wisprflow.ai/r?KELLY819" target="_blank" rel="noopener sponsored"><b>Wispr Flow <span>↗</span></b><p>For speaking rough thoughts instead of typing them.</p></a>
+        <a class="tool" href="https://blotato.com/?ref=kellyuv" target="_blank" rel="noopener sponsored"><b>Blotato <span>↗</span></b><p>For scheduling and repurposing social content.</p></a>
+      </div>
+      <p class="small">Some links are affiliate links, which means I may earn a small commission if you sign up, at no extra cost to you.</p>
+    </div>
+  </section>
+
+  <section class="next on-dark" aria-labelledby="next-title">
+    <div class="shell">
+      <p class="eyebrow">Architect Advantage · Paid membership</p>
+      <h2 class="title" id="next-title">Turn a useful first step into a system you can keep <em>using.</em></h2>
+      <p>A guide can help you get started. Inside Architect Advantage, choose a recurring job, use the member lessons and templates, and get practical help as you build, test and improve your own system.</p>
+      <p class="price">$69 USD per month. Billed through Skool. Cancel any time. Software costs are separate.</p>
+      <div class="ctas">
+        <a class="btn btn-blush" href="/architect">Explore Architect Advantage →</a>
+        <a class="text" href="https://www.skool.com/wise-women-use-ai-1109">Still finding your feet? Join the free community</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Free resources for women who mean business.</div>
+    <nav><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use AI</a></nav>
+  </footer>
+
+  <script>
+    (function () {
+      var cards = Array.prototype.slice.call(document.querySelectorAll('#grid .card'));
+      var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+      var q = document.getElementById('q');
+      var count = document.getElementById('count');
+      var empty = document.getElementById('empty');
+      var cat = 'all';
+      if (window.matchMedia && window.matchMedia('(max-width: 480px)').matches) { q.placeholder = 'Try emails or follow-ups'; }
+      function apply() {
+        var term = q.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (c) {
+          var inCat = cat === 'all' || (' ' + c.getAttribute('data-cats') + ' ').indexOf(' ' + cat + ' ') > -1;
+          var inText = !term || c.textContent.toLowerCase().indexOf(term) > -1;
+          var on = inCat && inText;
+          c.style.display = on ? '' : 'none';
+          if (on) { shown++; c.classList.add('in'); }
+        });
+        count.textContent = shown === 1 ? '1 guide' : shown + (cat === 'all' && !term ? ' ways to start' : ' guides');
+        empty.style.display = shown ? 'none' : 'block';
+      }
+      chips.forEach(function (b) {
+        b.addEventListener('click', function () {
+          cat = b.getAttribute('data-cat');
+          chips.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+          apply();
+        });
+      });
+      q.addEventListener('input', apply);
+      q.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); document.getElementById('library').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      document.getElementById('reset').addEventListener('click', function () {
+        q.value = ''; cat = 'all';
+        chips.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-cat') === 'all' ? 'true' : 'false'); });
+        apply();
+      });
+
+      // Gentle staggered reveal as cards scroll into view (shown at once if the browser can't do it)
+      var items = Array.prototype.slice.call(document.querySelectorAll('.card, .pcard, .tool'));
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || still) return;
+      items.forEach(function (el) { el.classList.add('reveal'); });
+      var io = new IntersectionObserver(function (entries) {
+        var batch = entries.filter(function (e) { return e.isIntersecting; });
+        batch.forEach(function (e, i) {
+          setTimeout(function () { e.target.classList.add('in'); }, i * 60);
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -60px 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

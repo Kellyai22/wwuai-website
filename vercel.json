@@ -45,7 +45,7 @@
     },
     {
       "src": "/vault",
-      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/vault"
+      "dest": "/vault.html"
     },
     {
       "src": "/vault-starter",
@@ -57,18 +57,6 @@
     {
       "src": "/vault-claude-clearly",
       "dest": "/vault-claude-clearly.html"
-    },
-    {
-      "src": "/_next/(.*)",
-      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/_next/$1"
-    },
-    {
-      "src": "/wwuai-logo.png",
-      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/wwuai-logo.png"
-    },
-    {
-      "src": "/Giza-Stencil.otf",
-      "dest": "https://wise-women-use-ai-vault.wisewomenuseai.chatgpt.site/Giza-Stencil.otf"
     },
     {
       "src": "/masterclass.ics",
