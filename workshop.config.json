@@ -1,16 +1,16 @@
 {
   "_comment": "Single source of truth for the current monthly workshop. Edited each month by the workshop skill, then used to regenerate the funnel. Date is Melbourne local; the skill works out the timezone (AEST/AEDT) automatically.",
-  "date": "2026-09-16",
-  "startTimeLocal": "09:30",
+  "date": "2026-11-11",
+  "startTimeLocal": "19:00",
   "durationMinutes": 60,
   "_title_comment": "DESCRIBES the workshop, never a product name. It surfaces on the thank-you page tab and (via calendarSummary) in the calendar event people add. It said 'The Unfair Advantage' until 5 Aug 2026, which is the MEMBERSHIP's name, so registrants were adding a calendar event named after the paid offer. Never reuse a Pack name here either ('The Content Advantage' is August's paid Pack and owns that name exclusively). Keep it in step with the live page <title>.",
-  "title": "Find Your Bottleneck",
+  "title": "Business Systems",
   "joinUrl": "https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1",
-  "cohortTagId": 19959089,
+  "cohortTagId": 25057382,
   "communityUrl": "https://www.skool.com/wise-women-use-ai-1109",
   "siteBase": "https://www.wisewomenuseai.com",
-  "calendarSummary": "Free Workshop: Find Your Bottleneck",
-  "calendarDescription": "A free hands-along hour with Kelly at Wise Women Use AI. Find the part of your business that still relies on you too heavily, and decide what to do about it.",
+  "calendarSummary": "Free Workshop: Business Systems",
+  "calendarDescription": "A free one-hour online workshop with Kelly at Wise Women Use AI. See where your business is losing time and money, and leave knowing which process to fix first.",
   "thankYou": {
     "whatWeDoingSub": "One hour. We find the part of your business that still runs through you, and you leave having decided what to do about it.",
     "cards": [

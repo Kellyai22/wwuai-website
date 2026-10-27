@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wise Women Use AI//Workshop//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:WWUAI-2026-11-11-SYSTEMS@wisewomenuseai.com
+DTSTAMP:20261027T000000Z
+DTSTART:20261111T080000Z
+DTEND:20261111T090000Z
+SUMMARY:Business Systems - Wise Women Use AI
+DESCRIPTION:Free one-hour online workshop with Kelly. 7pm AEDT Melbourne.
+ \nJoin on Zoom: https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsu
+ bLE2fhdR2ajsKa.1
+LOCATION:Online via Zoom
+URL:https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsK
+ a.1
+END:VEVENT
+END:VCALENDAR

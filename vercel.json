@@ -88,6 +88,10 @@
       "dest": "/workshop.html"
     },
     {
+      "src": "/workshop-november-2026-details",
+      "dest": "/workshop-november-2026-details.html"
+    },
+    {
       "src": "/workshop-thankyou",
       "dest": "/workshop-thankyou.html"
     },

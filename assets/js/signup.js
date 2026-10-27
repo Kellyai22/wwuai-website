@@ -39,7 +39,7 @@
         if (onSuccess) onSuccess(form);
         else if (form.dataset.successUrl) root.location.assign(form.dataset.successUrl);
       } catch (err) {
-        error.textContent = 'Your signup has not been confirmed. Please try again. If it still does not work, email hello@wisewomenuseai.com and tell me which resource you wanted.';
+        error.textContent = form.dataset.errorMessage || 'Your signup has not been confirmed. Please try again. If it still does not work, email hello@wisewomenuseai.com and tell me which resource you wanted.';
         error.hidden = false;
       } finally {
         delete form.dataset.submitting; form.removeAttribute('aria-busy');
