@@ -44,11 +44,11 @@
 /* ---------- 2. Tones (every section picks one) ---------- */
 :root, .tone-pearl {
   --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux);
-  --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
+  --soft: var(--muted); --rule: var(--line); --em: var(--clay);
 }
 .tone-greige {
   --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux);
-  --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
+  --soft: var(--muted); --rule: var(--line); --em: var(--clay);
 }
 .tone-dark {
   --bg: var(--bordeaux); --paper: rgb(var(--pearl-rgb) / .06); --ink: var(--pearl);
@@ -57,8 +57,8 @@
 .tone-pearl, .tone-greige, .tone-dark, [data-tone-run] { background-color: var(--bg); color: var(--ink); }
 
 /* Fallback (no JS or reduced motion): each child of a tone run shows its own tone. */
-[data-tone-run]:not(.is-running) > [data-tone="pearl"]  { --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux); }
-[data-tone-run]:not(.is-running) > [data-tone="greige"] { --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux); }
+[data-tone-run]:not(.is-running) > [data-tone="pearl"]  { --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay); }
+[data-tone-run]:not(.is-running) > [data-tone="greige"] { --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay); }
 [data-tone-run]:not(.is-running) > [data-tone="dark"]   { --bg: var(--bordeaux); --paper: rgb(var(--pearl-rgb) / .06); --ink: var(--pearl); --soft: var(--muted-on-dark); --rule: var(--line-on-dark); --em: var(--blush); }
 [data-tone-run]:not(.is-running) > [data-tone] { background-color: var(--bg); color: var(--ink); }
 /* Sections inside a colour run sit closer together */
@@ -101,7 +101,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
   font-size: var(--t-small); font-weight: 500; letter-spacing: 0.02em; color: var(--soft);
 }
 .kicker::before { content: ""; width: 32px; height: 1px; background: currentColor; }
-/* The one emphasis word. Allison, never capitals. Bordeaux on light, Blush on dark (via --em). */
+/* The one emphasis word. Allison, never capitals. Clay on light, Blush on dark (via --em). */
 .em {
   font-family: var(--script); font-weight: 400; font-style: normal; text-transform: none !important;
   font-size: var(--em-scale); line-height: 0; letter-spacing: 0; color: var(--em);
@@ -199,7 +199,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
 .deck__photo::after { content: ""; position: absolute; inset: 0; background: rgb(var(--bordeaux-rgb) / .5); }
 .deck__stack { display: grid; gap: var(--s2); }
 .deck__card {
-  --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
+  --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay);
   background: var(--greige); color: var(--ink); border-radius: var(--r-panel); padding: clamp(var(--s3), 4vw, var(--s5));
 }
 .deck__num { display: block; font-size: var(--t-small); color: var(--soft); font-variant-numeric: tabular-nums; margin-bottom: var(--s3); }
