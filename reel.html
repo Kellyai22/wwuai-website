@@ -1,692 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://www.wisewomenuseai.com/reel">
-  <title>Reel Starter · Free Claude Skill · Wise Women Use AI</title>
-  <meta name="description" content="A free Claude skill that edits your talking-head reels. Pauses and ums cut, captions in your brand colours, and a cinematic, camcorder or warm film look. No CapCut, no extra subscriptions.">
+  <meta name="robots" content="index,follow">
+  <title>Free Reel Kit for Claude · Wise Women Use AI</title>
+  <meta name="description" content="A free kit for the Claude desktop app that edits your talking-head reels on your own computer. Long pauses tidied, your hook and captions added in your brand colours and fonts, five hook styles and five caption styles.">
 
-  <meta property="og:title" content="Reel Starter · Free Claude Skill | Wise Women Use AI">
-  <meta property="og:description" content="A free Claude skill that edits your talking-head reels for you. Film, say edit my latest video, done.">
+  <meta property="og:title" content="Film your reel. Claude does the edit, in your own colours.">
+  <meta property="og:description" content="A free reel kit for the Claude desktop app. Your hook, your captions, your brand, on your own computer.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
   <meta property="og:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
   <meta property="og:url" content="https://www.wisewomenuseai.com/reel">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Film your reel. Claude does the edit, in your own colours.">
+  <meta name="twitter:description" content="A free reel kit for the Claude desktop app.">
+  <meta name="twitter:image" content="https://www.wisewomenuseai.com/assets/social/og-card.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
-
-  <style>
-    /* ── Variables ──────────────────────────────── */
-    :root {
-      --ink:        #3A131B;
-      --brown-mid:    #908486;
-      --brown-light:  #8C7E74;
-      --bordeaux:        #3A131B;
-      --terra-deep:   #a85c3c;
-      --cream:        #FAF8F6;
-      --cream-dark:   #E1DAD7;
-      --cream-mid:    #F0EBE5;
-      --white:        #FFFFFF;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans:         'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Nav ──────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--cream);
-      border-bottom: 1px solid var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 64px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .nav-logo img { height: 28px; width: auto; }
-
-    .nav-wordmark {
-      font-family: var(--serif);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--bordeaux) !important;
-      border: 1.5px solid var(--bordeaux);
-      padding: 8px 18px;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .nav-cta:hover {
-      background: var(--bordeaux);
-      color: var(--white) !important;
-    }
-
-    /* ── Hero ─────────────────────────────────── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 64px 48px 48px;
-      align-items: center;
-    }
-
-    .hero-left {}
-
-    .hero-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: var(--bordeaux);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 5vw, 60px);
-      font-weight: 300;
-      line-height: 1.05;
-      color: var(--ink);
-      margin-bottom: 20px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: #DDA983;
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      max-width: 460px;
-    }
-
-    /* ── Form Card ────────────────────────────── */
-    .form-card {
-      background: var(--ink);
-      border: 1px solid rgba(250,248,246,0.12);
-      padding: 36px 32px;
-      max-width: 420px;
-      border-radius: 8px;
-    }
-
-    .form-card-title {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 8px;
-    }
-
-    .form-card-sub {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(250,248,246,0.6);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .form-card form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .form-card input[type="text"],
-    .form-card input[type="email"] {
-      font-family: var(--sans);
-      font-size: 16px; /* 16px min: iOS Safari zooms the page when a focused input is smaller. Fixed 12 Aug 2026. */
-      padding: 12px 14px;
-      border: 1px solid rgba(250,248,246,0.18);
-      background: rgba(250,248,246,0.06);
-      color: var(--cream);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-card input::placeholder { color: rgba(250,248,246,0.4); }
-    .form-card input:focus {
-      border-color: #E2B592;
-    }
-
-    .form-card button {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: #E2B592;
-      border: 1.5px solid #E2B592;
-      padding: 14px 20px;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .form-card button:hover {
-      background: #D2A078;
-      border-color: #D2A078;
-    }
-
-    .form-note {
-      font-size: 11px;
-      color: rgba(250,248,246,0.5);
-      margin-top: 10px;
-    }
-
-    /* ── What's Inside ────────────────────────── */
-    .inside {
-      background: var(--cream-mid);
-      padding: 72px 48px;
-    }
-
-    .inside-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: var(--bordeaux);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .inside h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .inside h2 em {
-      font-style: italic;
-      color: #DDA983;
-    }
-
-    .inside-sub {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.8;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .step-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .step-num {
-      font-family: var(--serif);
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--cream-dark);
-      line-height: 1;
-      min-width: 32px;
-    }
-
-    .step-text h3 {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .step-text p {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.7;
-    }
-
-    /* ── Who It's For ─────────────────────────── */
-    .for-who {
-      padding: 72px 48px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .for-who h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 32px;
-    }
-
-    .for-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
-      margin-bottom: 40px;
-    }
-
-    .for-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    .for-dash {
-      color: var(--bordeaux);
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-
-    /* ── Callout / Quote ──────────────────────── */
-    .callout-section {
-      background: var(--ink);
-      padding: 56px 48px;
-      text-align: center;
-    }
-
-    .callout-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .callout-section blockquote {
-      font-family: var(--serif);
-      font-size: clamp(22px, 3vw, 30px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .callout-section cite {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--bordeaux);
-      font-style: normal;
-    }
-
-    /* ── Bottom CTA ───────────────────────────── */
-    .bottom-cta {
-      padding: 72px 48px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .bottom-cta h2 {
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .bottom-cta h2 em {
-      font-style: italic;
-      color: #DDA983;
-    }
-
-    .bottom-cta p {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--brown-light);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .bottom-cta .form-card {
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    /* ── Footer ───────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--cream-dark);
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-brand {
-      font-family: var(--serif);
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--brown-mid);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--brown-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--ink); }
-
-    /* ── Mobile ───────────────────────────────── */
-    @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 40px 24px;
-        gap: 32px;
-      }
-
-      .form-card { max-width: 100%; }
-
-      .inside { padding: 48px 24px; }
-      .steps-grid { grid-template-columns: 1fr; }
-
-      .for-who { padding: 48px 24px; }
-      .for-grid { grid-template-columns: 1fr; }
-
-      .callout-section { padding: 40px 24px; }
-      .bottom-cta { padding: 48px 24px; }
-
-      footer {
-        flex-direction: column;
-        gap: 12px;
-        padding: 24px;
-        text-align: center;
-      }
-    }
-
-    /* ── Reel page additions ───────────────── */
-    .faq { padding: 64px 48px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 36px); font-weight: 400; margin-bottom: 24px; }
-    .faq h2 em { font-style: italic; color: #DDA983; }
-    .faq h3 { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); margin: 22px 0 6px; }
-    .faq p { font-size: 14px; font-weight: 300; color: var(--brown-light); line-height: 1.75; }
-    .options img { max-width: 420px; margin: 0 auto; }
-    @media (max-width: 768px) { .faq { padding: 48px 24px; } .options img { max-width: 88%; } }
-
-    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-    .options { padding: 72px 48px; max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .options img { border-radius: 8px; border: 1px solid var(--cream-dark); }
-    .options h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 38px); font-weight: 400; margin-bottom: 12px; }
-    .options h2 em { font-style: italic; color: #DDA983; }
-    .options p { font-size: 15px; font-weight: 300; color: var(--brown-light); line-height: 1.8; margin-bottom: 14px; }
-    .more { background: var(--cream-mid); padding: 64px 48px; }
-    .more-inner { max-width: 760px; margin: 0 auto; }
-    .more h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 36px); font-weight: 400; margin-bottom: 12px; }
-    .more h2 em { font-style: italic; color: #DDA983; }
-    .more p { font-size: 15px; font-weight: 300; color: var(--brown-light); line-height: 1.8; margin-bottom: 14px; }
-    .more ul { list-style: none; margin: 8px 0 24px; }
-    .more li { font-size: 14px; font-weight: 300; color: var(--ink); line-height: 1.7; padding-left: 18px; position: relative; margin-bottom: 6px; }
-    .more li::before { content: "\00B7"; position: absolute; left: 4px; color: var(--bordeaux); font-weight: 600; }
-    .more .more-link { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bordeaux); border: 1.5px solid var(--bordeaux); padding: 12px 20px; border-radius: 6px; }
-    .more .more-link:hover { background: var(--bordeaux); color: var(--white); }
-    @media (max-width: 768px) {
-      .options { grid-template-columns: 1fr; padding: 48px 24px; gap: 28px; }
-      .more { padding: 48px 24px; }
-    }
-  form input[type="email"],form input[type="text"]{font-size:16px}
-</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
+  <link rel="stylesheet" href="/assets/system/tokens.css">
+  <link rel="stylesheet" href="/assets/system/wwuai.css">
+  <script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="/assets/system/wwuai.js"></script>
+  <script defer src="/assets/js/signup.js"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="news" data-news hidden></div>
 
-  <!-- Nav -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="WWUAI">
-      <span class="nav-wordmark">Wise Women Use AI</span>
-    </a>
-    <a href="/" class="nav-cta">Back to site</a>
-  </nav>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-head__logo serif-i" href="/" style="text-decoration:none;font-size:1.25rem">Wise Women Use AI</a>
+    <a class="site-head__cta" href="#get-it" data-focus="first-name">Get the free kit</a>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Free Claude skill</p>
-      <h1>Edit your reels<br><em>with Claude.</em></h1>
-      <p style="font-size:12px;color:#908486;margin-bottom:12px;letter-spacing:0.04em;">By <strong style="color:#3A131B;">Kelly Hartley</strong> &middot; Wise Women Use AI &middot; October 2026</p>
-      <p class="hero-sub">
-        You've got the ideas. You've even filmed them. Then the editing takes an hour, the captions never look right, and the video sits in your camera roll instead of on your feed.
-      </p>
-      <p class="hero-sub">
-        The Reel Starter is a free Claude skill that does the editing for you. Film yourself talking, type <em>edit my latest video</em>, and get back a finished reel: pauses and ums cut, captions building word by word in your brand colours, and a look that's yours. No CapCut, no extra subscriptions.
-      </p>
+<main id="main">
+
+<section class="hero tone-pearl">
+  <div class="wrap">
+    <h1 class="display" data-lines>
+      <span class="line"><span>Film your reel.</span></span>
+      <span class="line"><span>Claude does the edit, in your own <span class="em">colours</span>.</span></span>
+      <span class="line hero__then"><span>Free, on your own computer.</span></span>
+    </h1>
+    <div class="hero__foot">
+      <p class="lead" data-after>A free reel kit for the Claude desktop app. It tidies your long pauses, writes your hook from what you said, and adds your captions in your brand colours and fonts.</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href="#get-it" data-focus="first-name">Get the free kit <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">Mac or Windows. Set up once in about 15 minutes, then every reel starts with one sentence.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="form-card">
-      <h3 class="form-card-title">Send me the Reel Starter</h3>
-      <p class="form-card-sub">Drop your email and the download lands in your inbox, with the one message that sets it up.</p>
-      <form data-wwuai-signup data-success-url="/thank-you?source=reel" action="/api/reel-signup" method="post">
-        <input type="hidden" name="fields[source]" value="reel">
-        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
-        <button type="submit">Send me the Reel Starter</button>
-      </form>
-      <p class="form-note">Free, and you can unsubscribe any time.</p>
+<section class="s tone-greige">
+  <div class="wrap">
+    <h2 class="title">Picture filming a reel and having it ready before your tea goes <span class="em">cold</span>.</h2>
+    <div class="split" style="margin-top:var(--s4)">
+      <p class="lead" data-reveal>You talk to your phone for a minute, type “edit my latest video”, and put the kettle on.</p>
+      <p class="lead soft" data-reveal>When you come back there’s a captioned reel in your colours, with a hook taken from what you actually said. The next one looks like it came from the same place, because it did.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- What you get -->
-  <section class="inside">
-    <div class="inside-inner">
-      <p class="section-eyebrow">What you get, free</p>
-      <h2>Nine looks. Your <em>colours.</em></h2>
-      <p class="inside-sub">Everything a talking-head reel needs to stop the scroll, done for you by Claude on your own computer. Here is what the free version does.</p>
+<section class="s s--deck tone-dark">
+  <div class="wrap">
+    <h2 class="title">Right now the editing takes longer than the <span class="em">filming</span>.</h2>
+    <div class="deck" style="margin-top:var(--s5)">
+      <div class="deck__photo"><img src="/assets/photos/reel-kit-hook-frame.webp" width="788" height="1400" loading="lazy" decoding="async" alt="A frame from one of Kelly's reels, with a typed hook card and captions in her fonts"></div>
+      <div>
+        <div class="deck__stack">
+          <article class="deck__card"><span class="deck__num">01 / 03</span><h3>One reel, a whole evening.</h3><p>Trimming pauses, typing captions, nudging text off your face, then starting again for the next one.</p></article>
+          <article class="deck__card"><span class="deck__num">02 / 03</span><h3>It looks like everyone else’s.</h3><p>The same template, the same fonts and the same bouncing captions as every other account in your feed.</p></article>
+          <article class="deck__card"><span class="deck__num">03 / 03</span><h3>Ai helped with the script, not the edit.</h3><p>You’ve used Claude to write the words. You’re still the one sitting in the editing app afterwards.</p></article>
+        </div>
+        <p class="deck__hint" aria-hidden="true">Keep scrolling</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <h3>Pauses and ums, gone</h3>
-            <p>It cuts the dead air and the filler sounds, so your reel moves at the pace people actually watch.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <h3>Three hook styles</h3>
-            <p>A big word behind your head, a clean tablet, or a line that types itself out.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <h3>Three caption styles</h3>
-            <p>Clean tablets, big and bold, or elegant and editorial. Words appear as you say them.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-text">
-            <h3>Your brand colours</h3>
-            <p>Give it two or three colours and everything matches: hooks, captions and highlights.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">5</div>
-          <div class="step-text">
-            <h3>Three filters</h3>
-            <p>Cinematic background blur (even on the front camera with a teleprompter), vintage camcorder, or warm film.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">6</div>
-          <div class="step-text">
-            <h3>Looks that stay saved</h3>
-            <p>Save the look you love by name, and every reel after that starts from it.</p>
+<section class="s tone-pearl">
+  <div class="wrap">
+    <h2 class="title">What’s in the free <span class="em">kit</span>.</h2>
+    <div class="outcomes">
+      <div class="outcome" data-reveal><span class="outcome__num">01</span><h3 class="sub">Your pauses, tidied</h3><p>It cuts the dead air and keeps your natural pauses, and every cut lets the word finish, so you still sound like you.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">02</span><h3 class="sub">Five hook styles</h3><p>A hand-drawn circle round the word that matters, a typed prompt, a slam, a punch-in, or paper that rips away to show you.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">03</span><h3 class="sub">Five caption styles</h3><p>One big word at a time, word highlight, emoji pop, a karaoke pill, or soft and editorial. All in your own fonts.</p></div>
+      <div class="outcome" data-reveal><span class="outcome__num">04</span><h3 class="sub">Your brand, remembered</h3><p>Your colours, fonts and picks are saved once, with an end card for your call to action. Say “remember this” and it’s there next time.</p></div>
+    </div>
+    <div class="btn-row" data-reveal style="margin-top:var(--s5)"><a class="btn btn--fill" href="#get-it" data-focus="first-name">Get the free kit <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="veil">
+  <div class="veil__img"><img src="/assets/photos/kelly-desk-20260928.webp" width="1374" height="1145" loading="lazy" decoding="async" alt=""></div>
+  <div class="wrap">
+    <h2 class="title">I don’t sit in an editing app <span class="em">anymore</span>.</h2>
+    <ul class="proof" data-reveal>
+        <li>Claude cuts my retakes and tidies my pauses.</li>
+        <li>My hooks and captions come out in my own fonts.</li>
+        <li>I leave notes on a review page, the way you would with a human editor.</li>
+    </ul>
+    <p class="lead" data-reveal>The free kit gives you the first part of that, for your own reels.</p>
+  </div>
+</section>
+
+<section class="s tone-greige">
+  <div class="wrap">
+    <h2 class="title">Made for the woman who’d rather film than <span class="em">fiddle</span>.</h2>
+    <div class="who">
+      <div data-reveal>
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You film talking-head reels, or you want to start.</li>
+          <li>You have a paid Claude plan, or you’re happy to get one.</li>
+          <li>You’d rather give a note than drag clips around.</li>
+        </ul>
+      </div>
+      <div class="who__no" data-reveal>
+        <h3>It’s not for you yet if</h3>
+        <ul>
+          <li>You only edit on your phone.</li>
+          <li>You want long YouTube videos edited.</li>
+          <li>You’re after a course on filming.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div data-tone-run>
+  <section class="s about" data-tone="pearl">
+    <div class="wrap">
+      <div class="split">
+        <div class="about__photo" data-wipe><img src="/assets/photos/kelly-smiling-20260928.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Kelly Hartley smiling, in a cream jumper"></div>
+        <div>
+          <h2 class="title">Made by <span class="em">Kelly</span></h2>
+          <div data-reveal>
+            <p class="lead">I’m Kelly, founder of Wise Women Use AI.</p>
+            <p class="soft">I set Claude up to edit my own reels, then turned the simple version into this kit so you can do the same with yours.</p>
+            <p class="soft">No tech skills needed. You unzip it, open it in Claude and type one sentence, and Claude does the setting up.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Options on a real clip -->
-  <section class="options">
-    <img src="/assets/content/reel-starter-options.jpg" alt="The same talking-head clip shown nine ways: three hook styles, three caption styles and three filters" width="956" height="1793" loading="lazy">
+  <section class="s faq" data-tone="greige">
+    <div class="wrap split">
+      <div>
+        <h2 class="title">Your <span class="em">questions</span></h2>
+        <p class="soft" data-reveal style="margin-top:var(--s3)">If something trips you up, type “explain what happened in plain English and help me fix it one step at a time”. Claude will walk you through it.</p>
+      </div>
+      <div class="faq__list" data-reveal>
+        <details><summary>Is it really free? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Yes, the kit is free. It runs inside the Claude desktop app, which needs a paid Claude plan. Claude Pro is the cheapest one.</div></details>
+        <details><summary>Mac or Windows? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Both. I’ve set it up on a Mac, and it’s built for Windows too. Windows is newer, so if anything looks odd, ask Claude what happened and it’ll help you fix it.</div></details>
+        <details><summary>Do I need to be technical? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">No. You unzip the kit, open the folder in the Code tab and type “Install this skill”. Setup takes 10 to 20 minutes and needs no password.</div></details>
+        <details><summary>Where do my videos go? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">Nowhere. Everything runs on your own computer, and your finished reels are saved in a Reels folder in your home folder.</div></details>
+        <details><summary>Will you try to sell me something? <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">After your first reel, Claude mentions my full editor once. It’s inside my membership, The Architect Advantage, and it cuts your retakes, finds real screenshots and gives you a review page for notes. The free kit is yours to keep either way.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="s band" data-tone="dark">
+    <div class="wrap">
+      <h2 class="title">Your next reel, in your own <span class="em">colours</span>.</h2>
+      <p class="band__meta" data-reveal>Free · Mac or Windows · The Claude desktop app</p>
+      <div class="btn-row" data-reveal><a class="btn btn--fill" href="#get-it" data-focus="first-name">Get the free kit <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+</div>
+
+<section class="s tone-pearl" id="get-it">
+  <div class="wrap split">
     <div>
-      <p class="section-eyebrow">See it on your own face</p>
-      <h2>Choose by looking, <em>not guessing.</em></h2>
-      <p>Say <em>show me my options</em> and Claude draws every hook, caption style and filter on your own clip, like this one of mine. Pick what feels like you.</p>
-      <p><strong style="color:#3A131B;font-weight:500;">What you need:</strong> a Mac, and Claude Pro (Claude Code) or ChatGPT Plus (Codex). Setup is one message you paste in, and it takes about ten minutes the first time.</p>
+      <h2 class="title">It’s <span class="em">free</span>.</h2>
+      <p class="lead" data-reveal style="margin-top:var(--s3)">Pop your name and email in and the download opens straight away. I’ll also email it to you, with a few tips for your first reel.</p>
     </div>
-  </section>
-
-  <!-- Who It's For -->
-  <section class="for-who">
-    <h2>This is for you if...</h2>
-    <div class="for-grid">
-      <div class="for-item"><span class="for-dash">&middot;</span> You film reels, then leave them sitting in your camera roll</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> Editing in CapCut eats an hour you don't have</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You read from a teleprompter, so your phone's cinematic mode is off the table</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You want your brand colours, not someone else's template</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You already pay for Claude and want it doing more of the work</div>
-      <div class="for-item"><span class="for-dash">&middot;</span> You'd rather be the face of your business than its video editor</div>
-    </div>
-  </section>
-
-  <!-- Questions -->
-  <section class="faq">
-    <div class="faq-inner">
-      <p class="section-eyebrow">Questions</p>
-      <h2>Before you <em>download</em></h2>
-      <h3>Do I need to know how to code?</h3>
-      <p>No. You paste one message into Claude and it sets everything up. After that, you edit a reel by typing <em>edit my latest video</em>.</p>
-      <h3>What does it cost?</h3>
-      <p>The Reel Starter is free. You need a paid Claude plan with Claude Code (Pro is enough) or ChatGPT Plus with Codex. There are no other subscriptions or paid add-ons.</p>
-      <h3>Does it work on Windows?</h3>
-      <p>It's built and tested for Mac. Windows isn't supported yet.</p>
-      <h3>Where does my video go?</h3>
-      <p>Nowhere. Claude edits it on your own computer, and the finished reel lands in a folder on your Mac. Nothing is uploaded to an editing service.</p>
-      <h3>What's the difference between the free version and the full Reel Studio?</h3>
-      <p>The free version cuts pauses and filler sounds and gives you nine looks in your colours. The full Reel Studio, inside The Architect Advantage, also removes retakes, shows you a storyboard before it edits, and adds checklists, zooms and more looks.</p>
-    </div>
-  </section>
-
-  <!-- Callout -->
-  <section class="callout-section">
-    <div class="callout-inner">
-      <blockquote>Film it. Say "edit my latest video". Post it.</blockquote>
-      <cite>The Reel Starter</cite>
-    </div>
-  </section>
-
-  <!-- Want more -->
-  <section class="more">
-    <div class="more-inner">
-      <p class="section-eyebrow">Want more?</p>
-      <h2>The full <em>Reel Studio</em></h2>
-      <p>The free starter handles the basics beautifully. The full WWUAI Reel Studio goes further, and it is being built inside my membership, The Architect Advantage:</p>
-      <ul>
-        <li>Retakes removed, with your best take kept, so you can film in one go</li>
-        <li>A storyboard of real frames to approve before it edits</li>
-        <li>Checklists that tick as you speak, gentle zooms and a bigger library of looks</li>
-        <li>Help from me on the monthly implementation call</li>
-      </ul>
-      <a class="more-link" href="/architect">See The Architect Advantage</a>
-    </div>
-  </section>
-
-  <!-- Bottom CTA -->
-  <section class="bottom-cta">
-    <h2>Ready for your <em>first reel?</em></h2>
-    <p>The Reel Starter is free. Set it up once, then every reel is one sentence.</p>
-    <div class="form-card">
-      <h3 class="form-card-title">Send me the Reel Starter</h3>
-      <p class="form-card-sub">Your free Claude skill, straight to your inbox.</p>
-      <form data-wwuai-signup data-success-url="/thank-you?source=reel" action="/api/reel-signup" method="post">
-        <input type="hidden" name="fields[source]" value="reel">
+    <div class="form-panel" data-reveal>
+      <form data-wwuai-signup data-success-url="/reel-thank-you" action="/api/reel-signup" method="post"
+            data-error-message="That didn’t go through yet. Please try again. If it still doesn’t work, email hello@wisewomenuseai.com and I’ll send you the kit.">
+        <input type="hidden" name="fields[source]" value="reel-kit">
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" autocomplete="given-name">
-        <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" autocomplete="email">
-        <button type="submit">Send me the Reel Starter</button>
+        <div class="field"><label for="first-name">First name</label><input id="first-name" type="text" name="fields[first_name]" autocomplete="given-name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" name="email_address" autocomplete="email" required></div>
+        <button class="btn btn--fill" type="submit">Send me the kit</button>
+        <p class="btn-note">Free. Unsubscribe any time.</p>
       </form>
-      <p class="form-note">Free, and you can unsubscribe any time.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <span class="footer-brand">Wise Women Use AI</span>
-    <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="mailto:kelly@wisewomenuseai.com">Contact</a></li>
-      <li><a href="/privacy">Privacy</a></li>
-      <li><a href="/ai-disclosure">How I use AI</a></li>
-    </ul>
-  </footer>
+</main>
 
-<script src="/assets/js/signup.js"></script>
+<footer class="site-foot tone-pearl">
+  <div class="wrap">
+    <span>&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</span>
+    <span class="site-foot__links"><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use ai</a></span>
+  </div>
+</footer>
 </body>
 </html>

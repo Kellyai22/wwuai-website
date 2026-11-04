@@ -159,6 +159,10 @@
       "dest": "/reel.html"
     },
     {
+      "src": "/reel-thank-you",
+      "dest": "/reel-thank-you.html"
+    },
+    {
       "src": "/switch",
       "dest": "/switch.html"
     },

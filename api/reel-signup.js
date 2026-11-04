@@ -1,5 +1,6 @@
-// REEL lead magnet signup → Kit.
-// The /reel page posts here (via /assets/js/signup.js). We upsert the subscriber,
+// REEL lead magnet signup → Kit (the free reel kit).
+// The /reel page posts here (via /assets/js/signup.js), and so does the Blotato
+// EDIT DM automation (its webhook sends JSON {email, isFollower}). We upsert the subscriber,
 // tag them LM-REEL and add them to the "REEL · Free Reel Starter" sequence, which
 // delivers the download and the nurture. Same Kit pattern as api/stripe-webhook.js,
 // so no Kit form or Kit automation rule is needed.
@@ -60,7 +61,7 @@ module.exports = async function handler(req, res) {
     res.status(200).json({ status: 'success' });
     return;
   }
-  const email = String(fields.email_address || '').trim().toLowerCase();
+  const email = String(fields.email_address || fields.email || '').trim().toLowerCase();
   const firstName = String(fields['fields[first_name]'] || fields.first_name || '').trim().slice(0, 60);
   if (!EMAIL_RE.test(email)) {
     res.status(400).json({ status: 'error', error: 'invalid email' });
