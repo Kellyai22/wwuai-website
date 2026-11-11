@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
 <link rel="stylesheet" href="/assets/system/tokens.css">
 <link rel="stylesheet" href="/assets/system/wwuai.css">
-<script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
+<script>(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m','hl');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)</script>
 <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
@@ -260,6 +260,92 @@
       <li data-reveal><a href="https://wisewomenuseai.substack.com"><span class="index__title">The newsletter</span><span class="index__go">Read it</span><span class="index__desc">One business problem a week, and what I’d do about it.</span></a></li>
     </ol>
   </div>
+</section>
+
+<div class="spec"><b>14 Layered hero</b> <code>.hero--layered</code> + <b>15 Growing box</b> <code>.grow</code> + <b>16 Dealt cards</b> <code>.dealt</code> <span>Approved 11 Nov 2026 for the home page. Hero: text left; on the right a Greige panel (22px) behind, the photo (22px, 5:6, cover) in the middle and a small Pearl note card (18px, 1px rule, no shadow) over the photo’s lower left. As you scroll the layers drift up at different speeds (panel 18px, photo 54px, card 120px across the hero; never on phones). On load the headline rises line by line, the photo wipes open from the bottom, the card fades in last. The hero headline may take three lines; every other headline runs full width in two lines at most.</span><span>The growing box always comes straight after the layered hero: a Bordeaux panel pulled up 64px, inset by the page gutter with 22px top corners, widening to full bleed as its top crosses the lower half of the screen. Only as tall as its content. Never pinned, sticky or 100vh. Kicker and headline sit at the very top.</span><span>Dealt cards live inside the growing box: three Pearl cards (18px) that start as one pile and deal out into a row as the row scrolls in. Below 900px they stack and slide down from behind the first card. Use this, not the pinned deck, on the home page.</span></div>
+<section class="hero hero--layered tone-pearl">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="kicker hero__later">Practical ai &amp; business systems for <span class="nb">Gen X women</span></p>
+      <h1 class="hero__title">
+        <span class="line"><span>Your business</span></span>
+        <span class="line"><span>shouldn't need you</span></span>
+        <span class="line"><span>for <span class="em">everything</span></span></span>
+      </h1>
+      <p class="lead hero__later">Keep the work that needs your judgement. Build better ways to handle the jobs that keep coming back to you.</p>
+      <div class="btn-row hero__actions hero__later"><a class="btn btn--fill" href="#register" data-focus="first-name">Main call to action <span class="arrow" aria-hidden="true">→</span></a><a class="textlink" href="#register">Quiet second link</a></div>
+    </div>
+    <div class="hero__stack">
+      <div class="hero__panel" aria-hidden="true"></div>
+      <img class="hero__photo" src="/assets/photos/kelly-desk-20260928.webp" width="1374" height="1145" loading="lazy" decoding="async" alt="Kelly working at her desk">
+      <p class="hero__note"><span class="hero__note-line">Keep the work that needs you. Redesign the rest.</span><span class="hero__note-name">Kelly Hartley</span></p>
+    </div>
+  </div>
+</section>
+<section class="grow" aria-labelledby="grow-demo">
+  <div class="grow__panel tone-dark">
+    <div class="wrap">
+      <p class="kicker" data-reveal>The work around the work</p>
+      <h2 class="title" id="grow-demo">You're capable. Too much still <span class="em">waits</span> <span class="nb">for you.</span></h2>
+      <div class="dealt">
+        <article class="dealt__card"><span class="dealt__num">01 / 03</span><h3>The answer lives in your head</h3><p>You know what to do, but every question comes back to you before anyone can move.</p></article>
+        <article class="dealt__card"><span class="dealt__num">02 / 03</span><h3>You keep starting again</h3><p>The same email, content brief or weekly admin job gets rebuilt instead of reused.</p></article>
+        <article class="dealt__card"><span class="dealt__num">03 / 03</span><h3>A faster task isn't enough</h3><p>ai helps with a draft, but you still carry the reminders, decisions and checking around it.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>17 Following button</b> <code>.follow</code> <span>A slim Pearl bar fixed to the top with the wordmark and the page’s one main button. Hidden until the growing box has scrolled past, then it slides in (480ms, ease-out). Scroll past the Bordeaux box above to see it. One per page, placed straight after the header.</span></div>
+<div class="follow">
+  <div class="wrap">
+    <a class="follow__brand" href="/"><img src="/assets/logos/WWUAI%20Logo%20OGTP.png" width="32" height="32" alt="Wise Women Use AI"><span aria-hidden="true">Wise Women Use AI</span></a>
+    <a class="btn btn--fill" href="#register" data-focus="first-name">Save my seat</a>
+  </div>
+</div>
+
+<div class="spec"><b>18 Statement</b> <code>.pair</code> + <code>.statement</code> <span>Two paragraphs side by side under a full-width headline, closed by one serif line.</span></div>
+<section class="s tone-greige">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Work That Needs You</p>
+    <h2 class="title">Build a business that leaves room for your <span class="em">life</span></h2>
+    <div class="pair" data-reveal><p>Your judgement, experience, relationships and ideas matter.</p><p>Start by deciding what needs your attention, then choose how the rest gets done.</p></div>
+    <p class="statement" data-reveal>Keep the work that needs you. Redesign the rest.</p>
+  </div>
+</section>
+
+<div class="spec"><b>19 Ruled columns</b> <code>.ruled</code> <span>Three columns on desktop, each under a rule. Labels in small type (<code>dt</code> or <code>.ruled__label</code>).</span></div>
+<section class="s tone-pearl">
+  <div class="wrap">
+    <h2 class="title">What could this look like in <span class="nb">your business?</span></h2>
+    <div class="ruled">
+      <article data-reveal><h3>Content you can build on</h3><dl><dt>You start with</dt><dd>One idea or a voice-note transcript.</dd><dt>You still decide</dt><dd>What is true and what sounds like you.</dd></dl></article>
+      <article data-reveal><h3>Client enquiries</h3><dl><dt>You start with</dt><dd>An enquiry and your reply guidelines.</dd><dt>You still decide</dt><dd>Fit, pricing and the final message.</dd></dl></article>
+      <article data-reveal><h3>Recurring admin</h3><dl><dt>You start with</dt><dd>Notes that arrive in different places.</dd><dt>You still decide</dt><dd>What matters this week.</dd></dl></article>
+    </div>
+  </div>
+</section>
+
+<div class="spec"><b>20 Offer</b> <code>.offer</code> full-width Bordeaux <span>One panel, never two columns. Price, what’s included in a two-by-two ruled list, the billing note and one Blush button.</span></div>
+<section class="s offer tone-dark">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Your next step</p>
+    <h2 class="title">Build it with support, in Architect Advantage</h2>
+    <p class="offer__price" data-reveal>$69 <small>USD / month</small></p>
+    <ul class="offer__list" data-reveal><li>Adaptable workflows, prompts and the Systems Library</li><li>Walkthroughs to help you build your own version</li><li>One monthly member implementation call and replay</li><li>Help in Skool when you get stuck</li></ul>
+    <p class="offer__note" data-reveal>Billed monthly through Skool. Cancel any time.</p>
+    <div class="btn-row" data-reveal><a class="btn btn--blush" href="/architect">Explore Architect Advantage <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<div class="spec"><b>21 Closing band with the mark</b> <code>.band.band--mark</code> + <code>.emboss__mark.band__mark</code> <span>The last band on the page. The embossed ai sits large in the bottom-right corner, running off the edge, its light turning as you scroll. Counts as the page’s one embossed ai.</span><span>Scroll-gated pages (<code>html data-motion="scroll"</code>, the home page): nothing moves until the first scroll, so the page is complete at rest. Their head snippet adds only <code>hl</code> (the hero load); <code>wwuai.js</code> adds <code>m</code> on the first scroll, and whatever was on screen at rest stays put.</span></div>
+<section class="s band band--mark tone-dark">
+  <div class="wrap">
+    <h2 class="title">Keep the work that needs you. Redesign the <span class="em">rest</span></h2>
+    <p class="band__meta lead" data-reveal>Start with one recurring job and turn it into a repeatable system.</p>
+    <div class="btn-row" data-reveal><a class="btn btn--blush" href="/architect">Explore Architect Advantage <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+  <p class="emboss__mark band__mark" aria-hidden="true">ai</p>
 </section>
 
 </main>

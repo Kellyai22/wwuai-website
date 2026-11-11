@@ -115,8 +115,62 @@
   var marks = d.querySelectorAll('.emboss__mark');
   marks.forEach(function (el) { setEmboss(el, 0.35); });
 
+  // Layered hero, growing box, dealt cards and following bar. Values are written on scroll
+  // (transform and clip-path only) and need no GSAP. With reduced motion only the bar runs.
+  var gated = html.getAttribute('data-motion') === 'scroll';
+  var heroL = d.querySelector('.hero--layered'), grow = d.querySelector('.grow');
+  var dealt = d.querySelector('.dealt'), follow = d.querySelector('.follow');
+  var wide = window.matchMedia('(min-width: 900px)');
+  var clamp01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var dealing = !gated, dealtArrived = false;
+  function frame() {
+    var vh = window.innerHeight;
+    if (follow && grow) follow.classList.toggle('is-shown', grow.getBoundingClientRect().bottom < 0);
+    if (reduce) return;
+    if (heroL) {
+      var hr = heroL.getBoundingClientRect();
+      heroL.style.setProperty('--hp', wide.matches ? clamp01(-hr.top / hr.height).toFixed(4) : '0');
+    }
+    if (grow) grow.style.setProperty('--g', (1 - clamp01((vh - grow.getBoundingClientRect().top) / (vh * 0.5))).toFixed(4));
+    if (dealt && dealing && !dealtArrived) {
+      var sp = clamp01((vh * 0.92 - dealt.getBoundingClientRect().top) / (vh * 0.42));
+      dealt.style.setProperty('--sp', (1 - Math.pow(1 - sp, 3)).toFixed(4));
+    }
+  }
+  if (heroL || grow || dealt || follow) {
+    var framing = false;
+    var onScroll = function () { if (framing) return; framing = true; requestAnimationFrame(function () { framing = false; frame(); }); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    frame();
+  }
+
   if (reduce || !window.gsap || !window.ScrollTrigger) { html.classList.remove('m'); return; }
+
+  // Scroll-gated pages: the page is complete at rest. Motion switches on at the first scroll,
+  // and anything already on screen counts as arrived so nothing on screen hides or jumps.
+  if (gated) {
+    // What's on screen is measured at rest, before the first scroll moves anything
+    var restVh = window.innerHeight, atRest = [];
+    d.querySelectorAll('[data-reveal], [data-wipe], .title, .display:not([data-lines]), .outcome').forEach(function (el) {
+      if (el.getBoundingClientRect().top < restVh) atRest.push(el);
+    });
+    if (dealt && dealt.getBoundingClientRect().top < restVh) dealtArrived = true;
+    var go = function () {
+      window.removeEventListener('scroll', go);
+      atRest.forEach(function (el) { el.classList.add('is-arrived'); });
+      dealing = true;
+      html.classList.add('m');
+      startMotion();
+      frame();
+    };
+    window.addEventListener('scroll', go, { passive: true });
+    return;
+  }
   html.classList.add('m');
+  startMotion();
+
+  function startMotion() {
   var gsap = window.gsap, ST = window.ScrollTrigger;
   gsap.registerPlugin(ST);
   if (window.SplitText) gsap.registerPlugin(window.SplitText);
@@ -147,7 +201,7 @@
 
   // Every other heading arrives line by line as it scrolls in
   function splitHeadings() {
-    d.querySelectorAll('.title, .display:not([data-lines])').forEach(function (el) {
+    d.querySelectorAll('.title:not(.is-arrived), .display:not([data-lines]):not(.is-arrived)').forEach(function (el) {
       if (!window.SplitText) { el.classList.add('is-split'); return; }
       window.SplitText.create(el, {
         type: 'lines', linesClass: 'split-line', autoSplit: true,
@@ -167,7 +221,7 @@
   setTimeout(function () { d.querySelectorAll('.title, .display').forEach(function (el) { el.classList.add('is-split'); }); }, 4000);
 
   // Scroll reveals, once each
-  ST.batch('[data-reveal]', {
+  ST.batch('[data-reveal]:not(.is-arrived)', {
     start: 'top 88%', once: true,
     onEnter: function (els) {
       els.forEach(function (el) { el.classList.add('is-in'); });
@@ -176,7 +230,7 @@
   });
 
   // Photos wipe open from the bottom
-  d.querySelectorAll('[data-wipe]').forEach(function (el) {
+  d.querySelectorAll('[data-wipe]:not(.is-arrived)').forEach(function (el) {
     gsap.to(el, { clipPath: 'inset(0% 0 0 0)', duration: 1.4, ease: 'expo.inOut', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
   });
 
@@ -255,4 +309,5 @@
   marks.forEach(function (el) {
     ST.create({ trigger: el, start: 'top bottom', end: 'bottom top', onUpdate: function (s) { setEmboss(el, s.progress); } });
   });
+  }
 })();

@@ -44,11 +44,11 @@
 /* ---------- 2. Tones (every section picks one) ---------- */
 :root, .tone-pearl {
   --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux);
-  --soft: var(--muted); --rule: var(--line); --em: var(--clay);
+  --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
 }
 .tone-greige {
   --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux);
-  --soft: var(--muted); --rule: var(--line); --em: var(--clay);
+  --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
 }
 .tone-dark {
   --bg: var(--bordeaux); --paper: rgb(var(--pearl-rgb) / .06); --ink: var(--pearl);
@@ -57,8 +57,8 @@
 .tone-pearl, .tone-greige, .tone-dark, [data-tone-run] { background-color: var(--bg); color: var(--ink); }
 
 /* Fallback (no JS or reduced motion): each child of a tone run shows its own tone. */
-[data-tone-run]:not(.is-running) > [data-tone="pearl"]  { --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay); }
-[data-tone-run]:not(.is-running) > [data-tone="greige"] { --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay); }
+[data-tone-run]:not(.is-running) > [data-tone="pearl"]  { --bg: var(--pearl); --paper: var(--greige); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux); }
+[data-tone-run]:not(.is-running) > [data-tone="greige"] { --bg: var(--greige); --paper: var(--pearl); --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux); }
 [data-tone-run]:not(.is-running) > [data-tone="dark"]   { --bg: var(--bordeaux); --paper: rgb(var(--pearl-rgb) / .06); --ink: var(--pearl); --soft: var(--muted-on-dark); --rule: var(--line-on-dark); --em: var(--blush); }
 [data-tone-run]:not(.is-running) > [data-tone] { background-color: var(--bg); color: var(--ink); }
 /* Sections inside a colour run sit closer together */
@@ -101,13 +101,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
   font-size: var(--t-small); font-weight: 500; letter-spacing: 0.02em; color: var(--soft);
 }
 .kicker::before { content: ""; width: 32px; height: 1px; background: currentColor; }
-/* The one emphasis word. Allison, never capitals. Clay on light, Blush on dark (via --em). */
+/* The one emphasis word. Allison, never capitals. Bordeaux on light (11 Nov 2026), Blush on dark (via --em). */
 .em {
   font-family: var(--script); font-weight: 400; font-style: normal; text-transform: none !important;
   font-size: var(--em-scale); line-height: 0; letter-spacing: 0; color: var(--em);
   margin-left: -0.03em; padding-right: 0.06em; white-space: nowrap;
 }
 .serif-i { font-family: var(--serif); font-style: italic; }
+.title + .lead { margin-top: var(--s3); }
+/* Keeps the last two words of a headline together (survives the line split) */
+.nb { white-space: nowrap; }
 
 /* ---------- 5. Layout ---------- */
 .wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
@@ -199,7 +202,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
 .deck__photo::after { content: ""; position: absolute; inset: 0; background: rgb(var(--bordeaux-rgb) / .5); }
 .deck__stack { display: grid; gap: var(--s2); }
 .deck__card {
-  --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--clay);
+  --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
   background: var(--greige); color: var(--ink); border-radius: var(--r-panel); padding: clamp(var(--s3), 4vw, var(--s5));
 }
 .deck__num { display: block; font-size: var(--t-small); color: var(--soft); font-variant-numeric: tabular-nums; margin-bottom: var(--s3); }
@@ -384,12 +387,156 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
 /* Photos wipe open as they arrive */
 .m [data-wipe] { clip-path: inset(100% 0 0 0); }
 
+/* ---------- 20b. Header with links (home page) ---------- */
+.site-head__brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.site-head__brand img { height: 40px; width: auto; }
+.site-head__brand span { font-family: var(--serif); font-style: italic; font-size: 1.25rem; }
+.site-head__nav { display: flex; flex-wrap: wrap; gap: 0 var(--s3); font-size: var(--t-small); font-weight: 500; }
+.site-head__nav a { text-decoration: none; padding-block: 10px; text-underline-offset: 0.3em; }
+@media (hover: hover) { .site-head__nav a:hover { text-decoration: underline; text-decoration-thickness: 1px; } }
+@media (max-width: 639px) {
+  .site-head .wrap { flex-wrap: wrap; gap: 0 var(--s2); }
+  .site-head__brand span { display: none; }
+  .site-head__brand img { height: 34px; }
+  .site-head__nav { gap: 0 14px; font-size: 0.8125rem; }
+}
+
+/* ---------- 22. Layered hero (approved 11 Nov 2026) ----------
+   Text left; three layers right: Greige panel behind, photo, Pearl note card.
+   --hp runs 0 → 1 across the hero; each layer drifts up at its own speed (desktop only).
+   On load: headline rises line by line, photo wipes open from the bottom, card fades in last.
+   The load sequence is CSS only and runs under html.hl, which the head snippet adds unless
+   the visitor prefers reduced motion. Without JS everything simply shows. */
+.hero--layered { display: block; min-height: 0; padding-top: calc(var(--s6) + var(--s3)); padding-bottom: calc(64px + var(--s5)); }
+.hero__grid { display: grid; gap: var(--s5); align-items: center; }
+.hero__title { font-size: clamp(2.25rem, 0.75rem + 4.4vw, 5.25rem); line-height: 1.02; letter-spacing: -0.026em; margin-top: var(--s1); padding-bottom: 0.18em; text-wrap: pretty; }
+.hero--layered .lead { margin-top: var(--s4); }
+.hero__actions { margin-top: var(--s4); }
+.hero__proof { margin-top: var(--s3); font-size: var(--t-small); color: var(--soft); }
+.hero__stack { position: relative; padding-bottom: 10%; }
+.hero__panel { position: absolute; top: 12%; right: 0; bottom: 0; left: 26%; background: var(--greige); border-radius: var(--r-photo); }
+.hero__photo { position: relative; width: 80%; margin-left: 8%; aspect-ratio: 5 / 6; object-fit: cover; border-radius: var(--r-photo); }
+.hero__note {
+  position: absolute; left: 0; bottom: 4%; width: min(64%, 320px); margin: 0; max-width: none;
+  background: var(--pearl); color: var(--bordeaux); border: 1px solid var(--line); border-radius: var(--r-panel);
+  padding: var(--s3);
+}
+.hero__note-line { display: block; font-family: var(--script); font-size: clamp(1.75rem, 1.2rem + 1.2vw, 2.4rem); line-height: 1.05; }
+.hero__note-name { display: block; margin-top: var(--s1); font-size: 0.8125rem; color: var(--muted); }
+@media (min-width: 900px) {
+  .hero--layered { padding-bottom: calc(64px + var(--s6)); }
+  .hero__grid { grid-template-columns: 7fr 5fr; gap: clamp(var(--s4), 5vw, var(--s6)); }
+  .hero__panel { transform: translate3d(0, calc(var(--hp, 0) * -18px), 0); }
+  .hero__photo { transform: translate3d(0, calc(var(--hp, 0) * -54px), 0); }
+  .hero__note  { transform: translate3d(0, calc(var(--hp, 0) * -120px), 0); }
+}
+@media (max-width: 899px) { .hero__stack { max-width: 460px; } }
+@keyframes ww-rise { from { opacity: 0; transform: translate3d(0, 40%, 0); } }
+@keyframes ww-wipe { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes ww-fade { from { opacity: 0; } }
+.hl .hero--layered .line > span { animation: ww-rise 800ms var(--ease-out) both; animation-delay: 150ms; }
+.hl .hero--layered .line:nth-child(2) > span { animation-delay: 240ms; }
+.hl .hero--layered .line:nth-child(3) > span { animation-delay: 330ms; }
+.hl .hero__later { animation: ww-fade 700ms var(--ease-out) 520ms both; }
+.hl .hero__photo { animation: ww-wipe 1100ms var(--ease-out) 300ms both; }
+.hl .hero__note  { animation: ww-fade 700ms var(--ease-out) 1150ms both; }
+
+/* ---------- 23. Growing box (approved 11 Nov 2026) ----------
+   The section after the hero: a Bordeaux panel pulled up 64px over the hero's bottom padding.
+   It starts inset by the page gutter with 22px top corners and widens to full bleed as it
+   scrolls in. --g goes 1 → 0 while its top travels the lower half of the screen.
+   Only as tall as its content. No pinning, no 100vh, no sticky. --g defaults to 0 (full bleed). */
+.grow { position: relative; z-index: 1; margin-top: -64px; }
+.grow__panel {
+  padding-top: var(--s5); padding-bottom: var(--section);
+  clip-path: inset(0 calc(var(--g, 0) * var(--gutter)) 0 calc(var(--g, 0) * var(--gutter)) round calc(var(--g, 0) * 22px) calc(var(--g, 0) * 22px) 0 0);
+}
+
+/* ---------- 24. Dealt cards (approved 11 Nov 2026) ----------
+   Three Pearl cards that start as one pile on the first card and deal out into a row as the
+   row scrolls in, driven by --sp 0 → 1 (eased). --sp defaults to 1, so without motion it is a
+   plain row. Below 900px they stack and slide down from behind the first card. */
+.dealt { --gap: clamp(var(--s2), 2vw, var(--s3)); display: grid; gap: var(--gap); margin-top: var(--s5); }
+.dealt__card {
+  --ink: var(--bordeaux); --soft: var(--muted); --rule: var(--line); --em: var(--bordeaux);
+  position: relative; background: var(--pearl); color: var(--ink); border-radius: var(--r-panel);
+  padding: clamp(var(--s3), 3vw, var(--s4));
+}
+.dealt__card:nth-child(1) { z-index: 3; }
+.dealt__card:nth-child(2) { z-index: 2; transform: translate3d(0, calc((1 - var(--sp, 1)) * (-100% - var(--gap) + 12px)), 0); }
+.dealt__card:nth-child(3) { z-index: 1; transform: translate3d(0, calc((1 - var(--sp, 1)) * (-200% - 2 * var(--gap) + 24px)), 0); }
+.dealt__num { display: block; font-size: var(--t-small); color: var(--soft); font-variant-numeric: tabular-nums; margin-bottom: var(--s3); }
+.dealt__card h3 { font-size: var(--t-sub); line-height: 1.2; margin-bottom: var(--s2); }
+.dealt__card p { color: var(--soft); }
+@media (min-width: 900px) {
+  .dealt { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dealt__card:nth-child(2) { transform: translate3d(calc((1 - var(--sp, 1)) * (-100% - var(--gap) + 14px)), calc((1 - var(--sp, 1)) * 12px), 0) rotate(calc((1 - var(--sp, 1)) * 2deg)); }
+  .dealt__card:nth-child(3) { transform: translate3d(calc((1 - var(--sp, 1)) * (-200% - 2 * var(--gap) + 28px)), calc((1 - var(--sp, 1)) * 24px), 0) rotate(calc((1 - var(--sp, 1)) * 4deg)); }
+}
+
+/* ---------- 25. Following button (approved 11 Nov 2026) ----------
+   A slim Pearl bar fixed to the top with the wordmark and the page's one main button.
+   Hidden until the growing box has scrolled past, then slides in. */
+.follow {
+  position: fixed; inset: 0 0 auto; z-index: 32; background: var(--pearl); color: var(--bordeaux);
+  border-bottom: 1px solid var(--line); transform: translate3d(0, -100%, 0); visibility: hidden;
+  transition: transform 480ms var(--ease-out), visibility 0s linear 480ms;
+}
+.follow.is-shown { transform: none; visibility: visible; transition: transform 480ms var(--ease-out), visibility 0s; }
+body:has(.news--float.is-shown) .follow { top: 40px; }
+.follow .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); min-height: 64px; }
+.follow__brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--serif); font-style: italic; font-size: 1.125rem; }
+.follow__brand img { height: 32px; width: auto; }
+.follow .btn { min-height: 44px; padding: 0 20px; font-size: 0.9375rem; }
+@media (max-width: 639px) { .follow__brand span { display: none; } .follow .btn { padding: 0 14px; font-size: 0.875rem; } }
+
+/* ---------- 26. Small parts for the home page (11 Nov 2026) ---------- */
+/* Two paragraphs side by side */
+.pair { display: grid; gap: var(--s3) var(--s5); margin-top: var(--s4); }
+.pair > p { font-size: var(--t-lead); line-height: 1.5; max-width: none; margin: 0; }
+@media (min-width: 900px) { .pair { grid-template-columns: 1fr 1fr; } }
+/* One serif line to close a section */
+.statement { font-family: var(--serif); font-size: var(--t-sub); line-height: 1.3; margin: var(--s5) 0 0; padding-top: var(--s3); border-top: 1px solid var(--rule); max-width: none; }
+/* Ruled columns: three across on desktop, each with a rule on top */
+.ruled { display: grid; gap: var(--s4) clamp(var(--s4), 4vw, var(--s5)); margin-top: var(--s5); }
+.ruled > * { border-top: 1px solid var(--ink); padding-top: var(--s3); }
+.ruled h3 { font-size: var(--t-sub); line-height: 1.2; margin-bottom: var(--s2); }
+.ruled dl { margin: 0; }
+.ruled dt, .ruled__label { display: block; font-size: var(--t-small); font-weight: 500; color: var(--soft); margin-top: var(--s3); }
+.ruled__label { margin: 0 0 var(--s2); }
+.ruled dd { margin: 4px 0 0; }
+.ruled p { color: var(--soft); }
+@media (min-width: 900px) { .ruled { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.part { margin-top: var(--s6); }
+.note { margin-top: var(--s4); font-size: var(--t-small); color: var(--soft); }
+/* Full-width Bordeaux offer: price, what's included, one button */
+.offer__price { font-family: var(--serif); font-size: clamp(2.5rem, 1.6rem + 2.4vw, 4rem); line-height: 1; margin: var(--s4) 0 var(--s3); max-width: none; }
+.offer__price small { font-family: var(--sans); font-size: var(--t-small); color: var(--soft); margin-left: 8px; }
+.offer__list { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; column-gap: var(--s5); border-bottom: 1px solid var(--rule); }
+.offer__list li { padding-block: var(--s2); border-top: 1px solid var(--rule); }
+@media (min-width: 760px) { .offer__list { grid-template-columns: 1fr 1fr; } .offer__list li:nth-last-child(2):nth-child(odd) { border-bottom: 0; } }
+.offer .btn-row { margin-top: var(--s4); }
+.offer__note { margin-top: var(--s3); font-size: var(--t-small); color: var(--soft); }
+/* Closing band with the embossed ai in the corner, running off the edge */
+.band--mark { overflow: hidden; padding-bottom: calc(var(--section) + var(--s5)); }
+.band--mark .wrap { position: relative; z-index: 1; }
+.band__mark { position: absolute; right: -0.06em; bottom: -0.24em; z-index: 0; font-size: clamp(9rem, 26vw, 24rem); pointer-events: none; }
+/* Footer with the full link set and social links */
+.site-foot__social { display: flex; gap: var(--s2); }
+.site-foot__social a { display: inline-flex; padding: 6px; }
+.site-foot__social svg { width: 18px; height: 18px; }
+
 /* ---------- 21. Motion states (only when .m is on <html>) ---------- */
 .m [data-reveal] { opacity: 0; transform: translateY(24px); }
 .m [data-lines] .line > span { opacity: 0; transform: translateY(40%); }
 .m .title, .m .display:not([data-lines]) { visibility: hidden; }
 .m .title.is-split, .m .display.is-split { visibility: visible; }
 .m [data-after] { opacity: 0; }
+/* Scroll-gated pages (html[data-motion="scroll"]): whatever was on screen when motion switched on stays put */
+.m [data-reveal].is-arrived { opacity: 1; transform: none; }
+.m [data-wipe].is-arrived { clip-path: none; }
+.m .title.is-arrived, .m .display.is-arrived { visibility: visible; }
+.m .outcome.is-arrived::before { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
