@@ -1,0 +1,9 @@
+---
+// /style 16. Dealt cards: one pile that deals into a row. Lives inside <Grow>.
+interface Props { cards: { title: string; body: string }[] }
+const { cards } = Astro.props;
+const n = (i: number) => String(i).padStart(2, '0');
+---
+<div class="dealt">
+  {cards.map((c, i) => <article class="dealt__card"><span class="dealt__num">{n(i + 1)} / {n(cards.length)}</span><h3>{c.title}</h3><p>{c.body}</p></article>)}
+</div>

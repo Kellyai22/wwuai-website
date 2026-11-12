@@ -1,0 +1,9 @@
+---
+import { nav, site } from '../config/site';
+---
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-head__brand" href="/"><img src={site.logo} width="40" height="40" alt={site.name}><span aria-hidden="true">{site.name}</span></a>
+    <nav class="site-head__nav" aria-label="Main navigation">{nav.map((l) => <a href={l.href}>{l.label}</a>)}</nav>
+  </div>
+</header>

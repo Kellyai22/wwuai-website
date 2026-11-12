@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+import Legacy from '../layouts/Legacy.astro';
+---
+<Legacy lang="en">
+<Fragment slot="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
@@ -10,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
+  <style is:inline>
     :root {
       --bg:          #FAF8F6;
       --ink:         #3A131B;
@@ -125,8 +127,8 @@
       nav { padding: 0 24px; }
     }
   </style>
-</head>
-<body>
+</Fragment>
+
 
   <nav>
     <a href="/" class="nav-logo">
@@ -156,6 +158,5 @@
     <p style="font-size:11px;color:#908486;opacity:0.6;margin:10px 0 0;">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
   </footer>
 
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
-</body>
-</html>
+  <script is:inline>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+</Legacy>

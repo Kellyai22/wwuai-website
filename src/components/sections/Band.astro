@@ -1,0 +1,10 @@
+---
+// /style 06. Bordeaux call-to-action band (mid-page). The closing band is NextStep, not this.
+interface Props { run?: boolean }
+const { run = false } = Astro.props;
+---
+<section class={run ? 's band' : 's band tone-dark'} data-tone={run ? 'dark' : undefined}>
+  <div class="wrap">
+<slot />
+  </div>
+</section>

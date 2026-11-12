@@ -1,0 +1,77 @@
+---
+// The one base layout for page-system pages. It loads the shared styling and
+// motion (public/assets/system) once, then the header and footer.
+// Do not use this directly for a page: use Sales, Guide or ThankYou, which add
+// the closing next step.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path only, e.g. "/about". The home page is "/". */
+  path: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogType?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  /** "scroll" = nothing moves until the first scroll (home page). */
+  motion?: 'load' | 'scroll';
+  /** Thank-you pages do not show the news banner. */
+  news?: boolean;
+  header?: boolean;
+}
+const {
+  title, description, path, ogTitle = title, ogDescription = description, ogType = 'website',
+  ogImage = site.ogImage, noindex = false, motion = 'load', news = true, header = true,
+} = Astro.props;
+const canonical = site.url + path;
+const headSnippet = motion === 'scroll'
+  ? "(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('hl')})(document.documentElement)"
+  : "(function(h){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){h.classList.add('m','hl');setTimeout(function(){if(!window.gsap)h.classList.remove('m')},3000)}})(document.documentElement)";
+---
+<!doctype html>
+<html lang="en-AU" data-motion={motion === 'scroll' ? 'scroll' : undefined}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+{noindex && <meta name="robots" content="noindex, nofollow">}
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta property="og:title" content={ogTitle}>
+<meta property="og:description" content={ogDescription}>
+<meta property="og:type" content={ogType}>
+<meta property="og:locale" content={site.locale}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Allison&display=swap">
+<link rel="stylesheet" href="/assets/system/tokens.css">
+<link rel="stylesheet" href="/assets/system/wwuai.css">
+<script is:inline set:html={headSnippet}></script>
+<script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script is:inline defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script is:inline defer src="/assets/system/wwuai.js"></script>
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{news && <div class="news" data-news hidden></div>}
+
+{header && <Header />}
+<slot name="after-header" />
+
+<main id="main">
+<slot />
+</main>
+
+<Footer />
+</body>
+</html>

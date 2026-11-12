@@ -1,0 +1,28 @@
+---
+// /style 20. The offer: one full-width Bordeaux panel. The button comes from site.ts.
+interface Props {
+  id?: string;
+  kicker?: string;
+  title: string;
+  price: string;
+  per: string;
+  lead?: string;
+  items: string[];
+  note: string;
+}
+import { nextStep } from '../../config/site';
+const { id, kicker, title, price, per, lead, items, note } = Astro.props;
+---
+<section class="s offer tone-dark" id={id}>
+  <div class="wrap">
+    {kicker && <p class="kicker" data-reveal>{kicker}</p>}
+    <h2 class="title">{title}</h2>
+    <p class="offer__price" data-reveal>{price} <small>{per}</small></p>
+    {lead && <p class="lead" data-reveal>{lead}</p>}
+    <ul class="offer__list" data-reveal>
+      {items.map((i) => <li>{i}</li>)}
+    </ul>
+    <p class="offer__note" data-reveal>{note}</p>
+    <div class="btn-row" data-reveal><a class="btn btn--blush" href={nextStep.href}>{nextStep.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</section>

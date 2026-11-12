@@ -1,0 +1,36 @@
+---
+// /style 14. Layered hero: text left; Greige panel, photo and Pearl note card right.
+// Always followed straight away by <Grow>. The headline may take three lines.
+interface Props {
+  kicker?: string;
+  lines: string[];
+  lead: string;
+  proof?: string;
+  photo: { src: string; width: number; height: number; alt: string; eager?: boolean };
+  noteLine: string;
+  noteName: string;
+}
+const { kicker, lines, lead, proof, photo, noteLine, noteName } = Astro.props;
+---
+<section class="hero hero--layered tone-pearl">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      {kicker && <p class="kicker hero__later" set:html={kicker} />}
+      <h1 class="hero__title">
+        {lines.map((l) => <span class="line"><span set:html={l} /></span>)}
+      </h1>
+      <p class="lead hero__later">{lead}</p>
+      <div class="btn-row hero__actions hero__later">
+<slot name="actions" />
+      </div>
+      {proof && <p class="hero__proof hero__later">{proof}</p>}
+    </div>
+    <div class="hero__stack">
+      <div class="hero__panel" aria-hidden="true"></div>
+      {photo.eager
+        ? <img class="hero__photo" src={photo.src} width={photo.width} height={photo.height} fetchpriority="high" decoding="async" alt={photo.alt}>
+        : <img class="hero__photo" src={photo.src} width={photo.width} height={photo.height} loading="lazy" decoding="async" alt={photo.alt}>}
+      <p class="hero__note"><span class="hero__note-line">{noteLine}</span><span class="hero__note-name">{noteName}</span></p>
+    </div>
+  </div>
+</section>

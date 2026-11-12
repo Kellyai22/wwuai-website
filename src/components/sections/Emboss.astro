@@ -1,0 +1,14 @@
+---
+// /style 03. Embossed ai (Giza Stencil). A pause before the call to action.
+// At most once per page, and not on a page that ends with NextStep's own mark
+// unless Kelly asks. full = the full-screen opener used on /links.
+interface Props { line?: string; tone?: 'pearl' | 'greige' | 'dark'; full?: boolean }
+const { line, tone = 'greige', full = false } = Astro.props;
+---
+<section class={['s', 'emboss', full ? 'emboss--full' : null, `tone-${tone}`].filter(Boolean).join(' ')}>
+  <div class="wrap">
+    <p class="emboss__mark" aria-hidden="true">ai</p>
+    {line && <p class="emboss__line">{line}</p>}
+<slot />
+  </div>
+</section>

@@ -1,10 +1,17 @@
-<!doctype html><html lang="en-AU"><head>
+---
+import Legacy from '../layouts/Legacy.astro';
+import LegacyNav from '../components/legacy/LegacyNav.astro';
+import LegacyFooter from '../components/legacy/LegacyFooter.astro';
+import { nextStep } from '../config/site';
+---
+<Legacy lang="en-AU">
+<Fragment slot="head">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Your free resource | Wise Women Use AI</title>
 <meta name="description" content="Open your free Wise Women Use AI resource and choose your next step.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://www.wisewomenuseai.com/thank-you">
-<link href="https://fonts.googleapis.com/css2?family=Allison&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>:root{--bordeaux:#3A131B;--pearl:#FAF8F6;--clay:#DDA983;--blush:#E2B592;--driftwood:#908486;--creamDark:#E1DAD7;}
+<link href="https://fonts.googleapis.com/css2?family=Allison&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"><style is:inline>:root{--bordeaux:#3A131B;--pearl:#FAF8F6;--clay:#DDA983;--blush:#E2B592;--driftwood:#908486;--creamDark:#E1DAD7;}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -117,9 +124,9 @@ h1{font-size:46px}
 .ww-start{padding:8px 10px}}
 @media(max-width:360px){.ww-nav-links{gap:8px;font-size:11px}
 .ww-brand img{width:28px;height:28px}}
-</style></head><body><a class="skip" href="#main">Skip to content</a>
-<nav class="ww-nav" aria-label="Main navigation"><a class="ww-brand" href="/"><img src="/assets/logos/WWUAI%20Logo%20OGTP.png" width="36" height="36" alt="Wise Women Use AI"><span>Wise Women Use AI</span></a>
-<div class="ww-nav-links"><a href="/blog">Articles</a><a href="/architect">Membership</a><a href="/work">Workshops</a><a href="/community" class="ww-start">Start free</a></div></nav>
+</style></Fragment>
+<a class="skip" href="#main">Skip to content</a>
+<LegacyNav variant="ww" />
 <main id="main">
 <section class="section">
 <div class="wrap narrow">
@@ -132,47 +139,13 @@ h1{font-size:46px}
 <section class="section soft">
 <div class="wrap narrow">
 <h2>Choose what to improve first.</h2>
-<p>Join the free Wise Women Use AI community on Skool. Open Classroom and choose Business Dependency Diagnostic, or start with the Claude and ChatGPT foundations if AI is new to you.</p><a class="button" href="/community">Explore the free community</a>
+<a class="button" href={nextStep.href}>{nextStep.label}</a>
 <p class="small" style="margin-top:20px">Architect Advantage is the optional paid implementation membership. Live member implementation calls are part of that paid offer.</p></div></section></main>
-<footer class="site-footer">
-    <a href="/" class="footer-brand">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-      <span class="footer-wordmark">Wise Women Use AI</span>
-    </a>
-
-    <div class="footer-links">
-      <a href="https://www.wisewomenuseai.com/vault" class="footer-link">Free resources</a>
-      <a href="/blog" class="footer-link">Blog</a>
-      <a href="/architect" class="footer-link">Architect Advantage</a>
-      <a href="/work" class="footer-link">Work with me</a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
-      <a href="/about" class="footer-link">About</a>
-      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
-      <a href="/privacy" class="footer-link">Privacy</a>
-      <a href="/ai-disclosure" class="footer-link">How I use AI</a>
-    </div>
-
-    <div class="social-links">
-      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-    </div>
-
-    <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
-  </footer><script>
+<LegacyFooter /><script is:inline>
 (function(){
   var resources={"starter-kit":["/vault-starter","Open your Claude Starter Kit"],"claude-clearly":["/vault-claude-clearly","Open Claude, Clearly"],"switch-to-claude":["/switch","Return to Switch to Claude"],"reel":["/downloads/wwuai-reel-kit.zip","Download the reel kit"]};
   var selected=resources[new URLSearchParams(location.search).get("source")];
   if(selected){var link=document.getElementById("resource-link");link.href=selected[0];link.textContent=selected[1];document.getElementById("requested-resource").hidden=false;}
   document.querySelectorAll('.yr').forEach(function(e){var y=new Date().getFullYear();e.textContent=y>2026?'2026–'+y:'2026';});
 })();
-</script></body></html>
+</script></Legacy>

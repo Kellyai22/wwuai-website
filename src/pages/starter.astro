@@ -1,6 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-<head>
+---
+import Legacy from '../layouts/Legacy.astro';
+import { nextStep } from '../config/site';
+---
+<Legacy lang="en-AU">
+<Fragment slot="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/starter">
@@ -23,7 +26,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Allison&family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allison&family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"></noscript>
 
-  <style>
+  <style is:inline>
     /* October 2026 palette (Claude Design system "Wise Women Use AI"), rounded corners */
     :root {
       --paper:      #ECE6E0;
@@ -292,8 +295,8 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
-</head>
-<body>
+</Fragment>
+
 
   <div class="topbar">
     <a href="/" class="wordmark">WISE WOMEN USE AI</a>
@@ -579,11 +582,10 @@ Keep your questions short. If one of my answers is vague, ask a follow-up before
         <h2 id="next-title">What's <em>next</em></h2>
         <p class="lede">One Project that knows your business is the starting point. The next step is setting up your whole business to work like this, so AI is doing real jobs rather than answering one-off questions. That's what we work on inside The Architect Advantage.</p>
         <div class="next-ctas">
-          <a class="btn btn-blush" href="https://www.skool.com/wise-women-use-ai-1109/about" target="_blank" rel="noopener">
+          <a class="btn btn-blush" href={nextStep.href}>
             Join The Architect Advantage
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="text-link" href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">Not ready? Start in the free community</a>
         </div>
       </div>
       <div>
@@ -607,7 +609,7 @@ Keep your questions short. If one of my answers is vague, ask a follow-up before
     </div>
   </footer>
 
-  <script>
+  <script is:inline>
     (function () {
       var store = {
         get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
@@ -705,5 +707,4 @@ Keep your questions short. If one of my answers is vague, ask a follow-up before
     })();
   </script>
 
-</body>
-</html>
+</Legacy>

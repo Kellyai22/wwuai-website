@@ -1,0 +1,16 @@
+---
+// The closing Bordeaux band with the embossed ai in the corner (/style 21).
+// Every layout ends with this. The button always comes from site.ts; a page
+// may supply its own headline and line through the "title" and "lead" slots.
+import { nextStep } from '../config/site';
+const hasTitle = Astro.slots.has('title') && (await Astro.slots.render('title')).trim() !== '';
+const hasLead = Astro.slots.has('lead') && (await Astro.slots.render('lead')).trim() !== '';
+---
+<section class="s band band--mark tone-dark">
+  <div class="wrap">
+    <h2 class="title">{hasTitle ? <slot name="title" /> : <Fragment set:html={nextStep.title} />}</h2>
+    <p class="band__meta lead" data-reveal>{hasLead ? <slot name="lead" /> : nextStep.lead}</p>
+    <div class="btn-row" data-reveal><a class="btn btn--blush" href={nextStep.href}>{nextStep.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+  <p class="emboss__mark band__mark" aria-hidden="true">ai</p>
+</section>

@@ -16,3 +16,8 @@ ehthumbs.db
 # Logs
 *.log
 .vercel
+
+# Astro
+node_modules
+dist
+.astro

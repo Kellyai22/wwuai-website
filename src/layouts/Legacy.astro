@@ -1,0 +1,17 @@
+---
+// For core pages that have not been restyled on the page system yet (Nov 2026:
+// about, architect, starter, thank-you, privacy, ai-disclosure, 404).
+// It adds nothing visible: each page keeps its own styles and look until it is
+// rebuilt on Sales, Guide or ThankYou. Do not use this for a new page.
+interface Props { lang?: string }
+const { lang = 'en' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<slot name="head" />
+</head>
+<body>
+<slot />
+</body>
+</html>

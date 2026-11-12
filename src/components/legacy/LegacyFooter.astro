@@ -1,0 +1,30 @@
+---
+// Footer for the older core pages that have not been restyled yet. Each page
+// still styles it itself; the links come from src/config/site.ts.
+// "short" is the privacy / ai-disclosure shape (fewer links).
+// New pages use Footer.astro through a layout, never this.
+import { footerLinks, social, site } from '../../config/site';
+import SocialIcon from '../SocialIcon.astro';
+interface Props { variant?: 'full' | 'short' }
+const { variant = 'full' } = Astro.props;
+const short = variant === 'short';
+const links = short ? footerLinks.filter((l) => !['vault', 'architect', 'about'].includes(l.id)) : footerLinks;
+---
+<footer class={short ? undefined : 'site-footer'}>
+    <a href="/" class={short ? 'nav-logo' : 'footer-brand'}>
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt={site.name}>
+      <span class={short ? 'nav-wordmark' : 'footer-wordmark'}>{site.name}</span>
+    </a>
+
+    <div class="footer-links">
+      {links.map((l) => <a href={l.href} class="footer-link">{l.legacyLabel ?? l.label}</a>)}
+    </div>
+
+    <div class="social-links">
+      {social.map((s) => <a href={s.href} target="_blank" rel="noopener" class="social-link" aria-label={s.label}>
+        <SocialIcon id={s.id} />
+      </a>)}
+    </div>
+
+    <p class="footer-legal">&copy; <span class="yr">2026</span> {site.name} &middot; Melbourne, Australia</p>
+  </footer>

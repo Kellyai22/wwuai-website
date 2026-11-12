@@ -1,0 +1,19 @@
+---
+// The plain section shell every other section sits in: spacing, tone and the page-width wrap.
+// tone: pearl | greige | dark. Inside a ToneRun, pass run so the colour fades with the scroll.
+interface Props {
+  tone?: 'pearl' | 'greige' | 'dark';
+  class?: string;
+  id?: string;
+  wrap?: string;
+  run?: boolean;
+  labelledby?: string;
+}
+const { tone = 'pearl', class: extra, id, wrap, run = false, labelledby } = Astro.props;
+const cls = ['s', extra, run ? null : `tone-${tone}`].filter(Boolean).join(' ');
+---
+<section class={cls} id={id} data-tone={run ? tone : undefined} aria-labelledby={labelledby}>
+  <div class={['wrap', wrap].filter(Boolean).join(' ')}>
+<slot />
+  </div>
+</section>

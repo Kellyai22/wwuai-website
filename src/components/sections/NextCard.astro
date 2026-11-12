@@ -1,0 +1,14 @@
+---
+// /style 12. The Bordeaux next-step card that closes a thank-you section.
+// The button comes from site.ts. Default slot = the one line about the membership.
+import { nextStep } from '../../config/site';
+interface Props { kicker?: string; price?: string; label?: string }
+const { kicker, price, label = nextStep.label } = Astro.props;
+---
+<div class="next tone-dark" data-reveal style="margin-top:var(--s6)">
+  {kicker && <p class="kicker">{kicker}</p>}
+  <h2 class="title"><slot name="title" /></h2>
+  <p class="soft"><slot /></p>
+  <div class="btn-row" style="margin-top:var(--s4)"><a class="btn btn--fill" href={nextStep.href}>{label} <span class="arrow" aria-hidden="true">→</span></a></div>
+  {price && <p class="next__price">{price}</p>}
+</div>

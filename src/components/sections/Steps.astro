@@ -1,0 +1,8 @@
+---
+// /style 12. Thank-you steps. body may contain a link; cta is an optional button.
+interface Props { items: { title: string; body: string; cta?: { label: string; href: string } }[] }
+const { items } = Astro.props;
+---
+<ol class="steps">
+  {items.map((s) => <li data-reveal><div><h3>{s.title}</h3><p set:html={s.body} />{s.cta && <a class="btn" href={s.cta.href}>{s.cta.label}</a>}</div></li>)}
+</ol>

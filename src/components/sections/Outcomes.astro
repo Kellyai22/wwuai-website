@@ -1,0 +1,9 @@
+---
+// /style 04. Outcomes with big italic numbers. Goes inside a <Section>.
+interface Props { items: { title: string; body: string }[] }
+const { items } = Astro.props;
+const n = (i: number) => String(i).padStart(2, '0');
+---
+<div class="outcomes">
+  {items.map((o, i) => <div class="outcome" data-reveal><span class="outcome__num">{n(i + 1)}</span><h3 class="sub">{o.title}</h3><p>{o.body}</p></div>)}
+</div>

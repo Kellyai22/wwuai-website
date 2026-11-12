@@ -1,0 +1,15 @@
+---
+// /style 15. Growing box: a Bordeaux panel that widens to full bleed. Never pinned.
+// Comes straight after <HeroLayered>. Put <Dealt> in the default slot.
+interface Props { id: string; kicker?: string }
+const { id, kicker } = Astro.props;
+---
+<section class="grow" aria-labelledby={id}>
+  <div class="grow__panel tone-dark">
+    <div class="wrap">
+      {kicker && <p class="kicker" data-reveal>{kicker}</p>}
+      <h2 class="title" id={id}><slot name="title" /></h2>
+<slot />
+    </div>
+  </div>
+</section>

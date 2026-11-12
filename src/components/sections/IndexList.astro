@@ -1,0 +1,8 @@
+---
+// /style 13. Editorial link list: numbered, big type, no icons. Goes inside a <Section>.
+interface Props { items: { href: string; title: string; tag?: string; go?: string; desc: string }[] }
+const { items } = Astro.props;
+---
+<ol class="index">
+  {items.map((i) => <li data-reveal><a href={i.href}><span class="index__title">{i.title}{i.tag && <Fragment>{' '}<span class="index__tag">{i.tag}</span></Fragment>}</span>{i.go && <span class="index__go">{i.go}</span>}<span class="index__desc">{i.desc}</span></a></li>)}
+</ol>

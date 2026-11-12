@@ -1,0 +1,27 @@
+---
+// /style 02. Problem in three beats: photo left under a Bordeaux veil, cards right that flick off.
+// The page holds still while the cards go, so use it once.
+interface Props {
+  kicker?: string;
+  photo: { src: string; width: number; height: number; alt: string };
+  cards: { title: string; body: string }[];
+  hint?: string;
+}
+const { kicker, photo, cards, hint = 'Keep scrolling' } = Astro.props;
+const n = (i: number) => String(i).padStart(2, '0');
+---
+<section class="s s--deck tone-dark">
+  <div class="wrap">
+    {kicker && <p class="kicker" data-reveal>{kicker}</p>}
+    <h2 class="title"><slot name="title" /></h2>
+    <div class="deck" style="margin-top:var(--s5)">
+      <div class="deck__photo"><img src={photo.src} width={photo.width} height={photo.height} loading="lazy" decoding="async" alt={photo.alt}></div>
+      <div>
+      <div class="deck__stack">
+        {cards.map((c, i) => <article class="deck__card"><span class="deck__num">{n(i + 1)} / {n(cards.length)}</span><h3>{c.title}</h3><p>{c.body}</p></article>)}
+      </div>
+      <p class="deck__hint" aria-hidden="true">{hint}</p>
+      </div>
+    </div>
+  </div>
+</section>

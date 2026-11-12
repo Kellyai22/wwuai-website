@@ -1,0 +1,21 @@
+---
+// /style 09. Card glide: a straight row with arrows, drag and swipe. Never pinned, never staggered.
+interface Props {
+  tone?: 'pearl' | 'greige';
+  cards: { href: string; title: string; body: string; more: string; img: { src: string; width: number; height: number } }[];
+}
+const { tone = 'pearl', cards } = Astro.props;
+---
+<section class={`s glide tone-${tone}`}>
+  <div class="wrap glide__head">
+<slot name="head" />
+  </div>
+  <div class="glide__track">
+    {cards.map((c) => <a class="glide__card" href={c.href}><div class="glide__img"><img src={c.img.src} width={c.img.width} height={c.img.height} loading="lazy" decoding="async" alt="" draggable="false"></div><h3>{c.title}</h3><p>{c.body}</p><span class="glide__more">{c.more}</span></a>)}
+  </div>
+  <div class="wrap glide__nav">
+    <button class="glide__btn" type="button" data-glide="prev" aria-label="Previous">←</button>
+    <span class="glide__progress" aria-hidden="true"><i></i></span>
+    <button class="glide__btn" type="button" data-glide="next" aria-label="Next">→</button>
+  </div>
+</section>

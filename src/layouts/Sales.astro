@@ -1,0 +1,22 @@
+---
+// Sign-up and sales pages. One job per page; the main button appears at least three times.
+// Ends with NextStep, so a page cannot be built without a next step.
+import Base from './Base.astro';
+import NextStep from '../components/NextStep.astro';
+import Follow from '../components/sections/Follow.astro';
+
+type Props = Parameters<typeof Base>[0] & {
+  /** Show the following button (only on pages that open with the growing box). */
+  follow?: boolean;
+};
+const { follow = false, ...base } = Astro.props;
+---
+<Base {...base}>
+  <Fragment slot="head"><slot name="head" /></Fragment>
+  <Fragment slot="after-header">{follow && <Follow />}</Fragment>
+<slot />
+<NextStep>
+  <Fragment slot="title"><slot name="next-title" /></Fragment>
+  <Fragment slot="lead"><slot name="next-lead" /></Fragment>
+</NextStep>
+</Base>

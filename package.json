@@ -1,0 +1,19 @@
+{
+  "name": "wwuai-website",
+  "private": true,
+  "version": "2.0.0",
+  "description": "wisewomenuseai.com. Astro builds the shared frame; older pages are served as-is from public/.",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/postbuild.mjs",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "test": "node --test tests/",
+    "check": "node scripts/postbuild.mjs",
+    "sitemap": "node scripts/build-sitemap.mjs",
+    "link-report": "node scripts/check-links.mjs --report"
+  },
+  "dependencies": {
+    "astro": "7.4.11"
+  }
+}

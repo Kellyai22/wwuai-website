@@ -1,0 +1,15 @@
+---
+// /style 05. Who it's for: "for you if" beside "not for you yet if". Goes inside a <Section>.
+interface Props { yesTitle?: string; yes: string[]; noTitle?: string; no: string[] }
+const { yesTitle = 'This is for you if', yes, noTitle = 'It’s not for you yet if', no } = Astro.props;
+---
+<div class="who">
+  <div data-reveal>
+    <h3>{yesTitle}</h3>
+    <ul>{yes.map((t) => <li>{t}</li>)}</ul>
+  </div>
+  <div class="who__no" data-reveal>
+    <h3>{noTitle}</h3>
+    <ul>{no.map((t) => <li>{t}</li>)}</ul>
+  </div>
+</div>

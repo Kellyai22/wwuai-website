@@ -1,0 +1,19 @@
+---
+// Header for the older core pages that have not been restyled yet. Each page
+// still styles it itself; only the links are shared, from src/config/site.ts.
+// New pages use Header.astro through a layout, never this.
+import { legacyNav, nextStep, site } from '../../config/site';
+interface Props { variant: 'ww' | 'classic' }
+const { variant } = Astro.props;
+---
+{variant === 'ww' && <nav class="ww-nav" aria-label="Main navigation"><a class="ww-brand" href="/"><img src={site.logo} width="36" height="36" alt={site.name}><span>{site.name}</span></a><div class="ww-nav-links">{legacyNav.ww.map((l) => <a href={l.href}>{l.label}</a>)}</div></nav>}
+{variant === 'classic' && <nav>
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/WWUAI Logo OGTP.png" alt={site.name}>
+      <span class="nav-wordmark">{site.name}</span>
+    </a>
+    <div class="nav-actions">
+      {legacyNav.classic.map((l) => <a href={l.href} class="nav-link">{l.label}</a>)}
+      <a href={nextStep.href} class="btn-solid"><span class="cta-full">Join the community</span><span class="cta-short">Join</span></a>
+    </div>
+  </nav>}

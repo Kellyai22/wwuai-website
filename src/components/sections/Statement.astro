@@ -1,0 +1,9 @@
+---
+// /style 18. Two paragraphs side by side (default slot: two <p>), closed by one serif line.
+interface Props { line: string }
+const { line } = Astro.props;
+---
+<div class="pair" data-reveal>
+<slot />
+</div>
+<p class="statement" data-reveal>{line}</p>

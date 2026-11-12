@@ -1,0 +1,35 @@
+---
+// A Kit sign-up form in the approved form panel (/style 11).
+// It posts with /assets/js/signup.js, which only moves on after Kit confirms
+// the sign-up. Keep each page's existing Kit form ID and source.
+interface Props {
+  /** Kit form ID, e.g. "9316857". */
+  formId: string;
+  /** Saved on the subscriber as fields[source]. */
+  source: string;
+  /** Where to send her after a confirmed sign-up, e.g. "/thank-you?source=starter-kit". */
+  successUrl: string;
+  /** Kit's data-uid for the form, where the page already carries one. */
+  uid?: string;
+  /** Prefix for the input ids, so two forms can share a page. */
+  idPrefix?: string;
+  button: string;
+  /** Post somewhere other than Kit (e.g. "/api/workshop-signup"). */
+  action?: string;
+  emailLabel?: string;
+}
+const { formId, source, successUrl, uid, idPrefix = 'signup', button, action, emailLabel = 'Email address' } = Astro.props;
+const target = action ?? `https://app.kit.com/forms/${formId}/subscriptions`;
+---
+<div class="form-panel" data-reveal>
+        <form action={target} method="post" data-wwuai-signup data-success-url={successUrl} data-uid={uid}>
+          <input type="hidden" name="fields[source]" value={source}>
+          <div class="field"><label for={`${idPrefix}-name`}>First name</label><input id={`${idPrefix}-name`} name="fields[first_name]" autocomplete="given-name" aria-label="First name"></div>
+          <div class="field"><label for={`${idPrefix}-email`}>{emailLabel}</label><input id={`${idPrefix}-email`} type="email" name="email_address" autocomplete="email" required aria-label={emailLabel}></div>
+          <slot name="fields" />
+          <button class="btn btn--fill" type="submit">{button}</button>
+          <p class="btn-note"><slot name="note" /></p>
+          <p role="alert" data-signup-error hidden></p>
+        </form>
+      </div>
+<script is:inline src="/assets/js/signup.js"></script>

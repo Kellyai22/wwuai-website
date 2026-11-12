@@ -1,0 +1,9 @@
+---
+// /style 10. FAQ. Answer the real objections. Goes inside a <Section class="faq">.
+// stacked = the list sits under a full-width headline (home page shape).
+interface Props { items: { q: string; a: string }[]; stacked?: boolean }
+const { items, stacked = false } = Astro.props;
+---
+<div class="faq__list" data-reveal style={stacked ? 'margin-top:var(--s5)' : undefined}>
+  {items.map((f) => <details><summary>{f.q} <span class="faq__mark" aria-hidden="true"></span></summary><div class="faq__a">{f.a}</div></details>)}
+</div>

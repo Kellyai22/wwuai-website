@@ -1,6 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+import Legacy from '../layouts/Legacy.astro';
+import LegacyNav from '../components/legacy/LegacyNav.astro';
+import LegacyFooter from '../components/legacy/LegacyFooter.astro';
+---
+<Legacy lang="en">
+<Fragment slot="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://www.wisewomenuseai.com/about">
@@ -16,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Allison&display=swap" rel="stylesheet">
 
-  <style>
+  <style is:inline>
     :root {
       --bg:          #FAF8F6;
       --ink:         #3A131B;
@@ -295,7 +299,7 @@
 .ww-nav{position:sticky!important;top:0;z-index:100;display:flex!important;align-items:center;justify-content:space-between;gap:20px;padding:12px max(24px,calc((100vw - 1120px)/2))!important;height:auto!important;min-height:68px;background:var(--pearl,#FAF8F6);color:var(--bordeaux,#3A131B);border-bottom:1px solid var(--creamDark,#E1DAD7);font:400 13px/1.4 'Plus Jakarta Sans',Arial,sans-serif}.ww-brand{display:flex;align-items:center;gap:10px;text-decoration:none}.ww-brand img{width:36px;height:36px;object-fit:contain}.ww-brand span{font-size:11px;letter-spacing:.08em}.ww-nav-links{display:flex;align-items:center;gap:24px}.ww-nav-links a{display:inline-flex!important;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ww-nav-links a:hover{text-decoration:underline}.ww-start{border:1px solid currentColor;padding:8px 14px;border-radius:2px}.ww-nav a:focus-visible{outline:2px solid currentColor;outline-offset:4px}.skip{position:absolute;left:-10000px;top:0}.skip:focus{left:12px;z-index:1000;background:var(--pearl,#FAF8F6);padding:12px}.section-nav{position:static!important}@media(max-width:760px){.ww-nav{padding:10px 16px!important;gap:12px;flex-wrap:wrap}.ww-brand span{display:none}.ww-nav-links{gap:13px;flex:1;justify-content:flex-end;font-size:12px}.ww-start{padding:8px 10px}}@media(max-width:360px){.ww-nav-links{gap:8px;font-size:11px}.ww-brand img{width:28px;height:28px}}
 </style>
 
-  <script type="application/ld+json">
+  <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -333,11 +337,10 @@
     ]
   }
   </script>
-</head>
+</Fragment>
 
-<body>
 
-  <a class="skip" href="#main">Skip to content</a><nav class="ww-nav" aria-label="Main navigation"><a class="ww-brand" href="/"><img src="/assets/logos/WWUAI%20Logo%20OGTP.png" width="36" height="36" alt="Wise Women Use AI"><span>Wise Women Use AI</span></a><div class="ww-nav-links"><a href="/blog">Articles</a><a href="/architect">Membership</a><a href="/work">Workshops</a><a href="/community" class="ww-start">Start free</a></div></nav>
+  <a class="skip" href="#main">Skip to content</a><LegacyNav variant="ww" />
 
 
   <section id="main" tabindex="-1" class="kelly-section">
@@ -374,52 +377,18 @@
 
       <div class="work-with-me">
         <h3>Find the right way to work together</h3>
-        <p>Start in the free community, build useful systems with Architect Advantage, or bring a practical AI workshop to your organisation.</p>
-        <div class="btn-group"><a href="/community" class="btn-work">Start free</a><a href="/architect" class="btn-work">Explore the membership</a><a href="/work" class="btn-work">Organisational workshops</a></div>
+        <p>Build useful systems with Architect Advantage, or bring a practical AI workshop to your organisation.</p>
+        <div class="btn-group"><a href="/architect" class="btn-work">Explore the membership</a><a href="/work" class="btn-work">Organisational workshops</a></div>
       </div>
     </div>
 
   </section>
 
 
-  <footer class="site-footer">
-    <a href="/" class="footer-brand">
-      <img src="/assets/logos/WWUAI Logo OGTP.png" alt="Wise Women Use AI">
-      <span class="footer-wordmark">Wise Women Use AI</span>
-    </a>
-
-    <div class="footer-links">
-      <a href="https://www.wisewomenuseai.com/vault" class="footer-link">Free resources</a>
-      <a href="/blog" class="footer-link">Blog</a>
-      <a href="/architect" class="footer-link">Architect Advantage</a>
-      <a href="/work" class="footer-link">Work with me</a>
-      <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" class="footer-link">Join the community</a>
-      <a href="/about" class="footer-link">About</a>
-      <a href="mailto:hello@wisewomenuseai.com" class="footer-link">Contact</a>
-      <a href="/privacy" class="footer-link">Privacy</a>
-      <a href="/ai-disclosure" class="footer-link">How I use AI</a>
-    </div>
-
-    <div class="social-links">
-      <a href="https://www.facebook.com/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.54V6.78a4.85 4.85 0 0 1-1.07-.09z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/kellyh.ai" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/wisewomenuseai" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-    </div>
-
-    <p class="footer-legal">&copy; <span class="yr">2026</span> Wise Women Use AI &middot; Melbourne, Australia</p>
-  </footer>
+  <LegacyFooter />
 
 
-  <script>
+  <script is:inline>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
@@ -427,6 +396,5 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
-  <script>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
-</body>
-</html>
+  <script is:inline>(function(){var s=2026,n=new Date().getFullYear(),t=n>s?s+'\u2013'+n:''+s;var e=document.getElementsByClassName('yr');for(var i=0;i<e.length;i++){e[i].textContent=t;}})();</script>
+</Legacy>

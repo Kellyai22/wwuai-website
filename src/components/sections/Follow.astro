@@ -1,0 +1,13 @@
+---
+// /style 17. Following button: a slim Pearl bar with the page's one main button.
+// One per page, straight after the header (the layouts place it: <Sales follow>).
+import { nextStep, site } from '../../config/site';
+interface Props { label?: string; href?: string; focus?: string }
+const { label = nextStep.label, href = nextStep.href, focus } = Astro.props;
+---
+<div class="follow">
+  <div class="wrap">
+    <a class="follow__brand" href="/"><img src={site.logo} width="32" height="32" alt={site.name}><span aria-hidden="true">{site.name}</span></a>
+    <a class="btn btn--fill" href={href} data-focus={focus}>{label}</a>
+  </div>
+</div>
