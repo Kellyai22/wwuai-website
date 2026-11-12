@@ -1,9 +1,52 @@
 # CLAUDE.md -- WWUAI Website
 
 ## What This Is
-The primary website for Wise Women Use AI. Static HTML site deployed via Vercel.
+The primary website for Wise Women Use AI. A static site built with Astro and deployed on Vercel.
 - Repo: Kellyai22/wwuai-website
 - URL: wisewomenuseai.com
+
+## How the site is built (Astro rebuild, shipped 12 November 2026)
+
+The site was 64 hand-written HTML files, each with its own copy of the header, footer and next step. Now the header, footer and next step are written once. The rebuild is staged: phase 1 moved the frame and eight core pages; everything else is served exactly as it was.
+
+**Where things live**
+
+| Folder | What it is |
+|---|---|
+| `src/config/site.ts` | **The one place** for the navigation, the footer links, the Skool join link and the site's next step (label and address). Change the offer here. |
+| `src/layouts/` | `Sales` (sign-up and sales pages), `Guide` (lead magnets, guides, articles), `ThankYou`. Each ends with `NextStep`, so a page cannot be built without one. `Base` loads the shared styling and motion. `Legacy` is only for core pages not yet restyled. |
+| `src/components/` | `Header`, `Footer`, `NextStep` (closing Bordeaux band with the embossed ai), `SignupForm` (Kit form + `/assets/js/signup.js`; takes `formId`, `source`, `successUrl`). `sections/` has one component per approved /style section. `legacy/` holds the header and footer for the not-yet-restyled core pages. |
+| `src/pages/` | Astro pages: `index`, `about`, `architect`, `starter`, `thank-you`, `privacy`, `ai-disclosure`, `404`. |
+| `public/` | **Legacy pages and every static file, served exactly as written:** all other `.html` pages, `posts/`, `assets/`, `downloads/`, `robots.txt`, `llms.txt`, `sitemap.xml`, the `.ics` files. A file here keeps the address it always had (`public/calm.html` is still routed to `/calm` by `vercel.json`). |
+| `api/` | The three serverless functions (`workshop-signup`, `reel-signup`, `stripe-webhook`). Root folder, CommonJS, unchanged. Do not add `"type": "module"` to `package.json`; it would break them. |
+| `scripts/`, `tests/` | The checks below. |
+| `dist/` | Build output. Never edit, never commit. |
+
+Only the home page is on the page system so far. The other seven core pages use the `Legacy` layout: they keep their old inline styles and look, with their header and footer links read from `site.ts`. Restyling each onto `Sales` / `Guide` / `ThankYou` is a redesign of that page and needs Kelly's approval through the `wwuai-page-standard` skill.
+
+**Addresses must never change.** `astro.config.mjs` sets `build.format: 'file'` (so `about.astro` builds `about.html`, the file `vercel.json` already routes `/about` to), `trailingSlash: 'never'` and `compressHTML: false` (Astro 7 otherwise strips whitespace the way React does). `vercel.json` keeps its original `routes` list; every redirect is still there. Do not switch to the Vercel adapter, `cleanUrls` or `redirects`/`rewrites` without re-testing every address.
+
+**Commands**
+
+- `npm run dev` to work on a page locally.
+- `npm run build` builds the site and then runs every check (`scripts/postbuild.mjs`). Vercel runs the same command, so a deploy that finishes has passed them:
+  1. `check-system.mjs`: the page system rules, on the system files, `/style` and every Astro page on the system (which must also end with the next step).
+  2. `check-links.mjs`: a broken internal link, or a link to the closed free Skool community, on an **Astro** page fails the build. Legacy pages never fail; they are written up in `LINK-REPORT.md` (old Skool links, Kit form IDs, whether each page has a next step).
+  3. `build-sitemap.mjs --dist`: the sitemap's addresses must match the site.
+  4. `sync-everyday-prompts.mjs --check`, the tests in `tests/`, and (on Kelly's Mac only) `build-tokens.mjs --check`.
+- `npm run check` runs the checks again without rebuilding. `npm run sitemap` rewrites `public/sitemap.xml`. `npm test` runs the tests.
+
+**How to add a page**
+
+1. Load the `wwuai-page-standard` skill. Build only from the approved /style sections.
+2. Create `src/pages/<name>.astro`. Import the layout that fits (`Sales`, `Guide` or `ThankYou`) and pass `title`, `description` and `path="/<name>"`. Build the body from the components in `src/components/sections/`. Put JSON-LD in `<script type="application/ld+json" is:inline slot="head">`. Use `src/pages/index.astro` as the worked example.
+3. Add the route to `vercel.json`, **above** the `{"handle": "filesystem"}` entry: `{ "src": "/<name>", "dest": "/<name>.html" }`.
+4. Never write the header, footer or closing band into the page, and never hardcode the next step or a Skool link: they come from `site.ts`.
+5. `npm run build`, then `npm run sitemap` if the page is indexable, then build again. Screenshot with the skill's `shoot.mjs` against `npx astro preview`.
+
+**Moving a legacy page onto Astro:** `git mv public/<name>.html src/pages/<name>.astro`, rebuild it on a layout, keep its `vercel.json` route, Kit form ID and source. Any `<script>` or `<style>` kept in an Astro page needs `is:inline`. A page must not exist in both `public/` and `src/pages/`.
+
+**Tools outside this repo that write into it** work with both the old and new layout: the workshop builder and rollover (`~/.claude/skills/workshop/scripts/`), the blog publisher (`~/.claude/wwuai-os/skills/marketing/blog-publisher.md`, writes `public/posts/`, `public/blog.html`, `public/sitemap.xml`) and `wire-emphasis.mjs`.
 
 ## Asset Library
 There is a public asset library in `assets/`. The `IMAGE_LIBRARY.md` file in the repo root is the manifest. Read it to browse and select assets (images and PDFs).
@@ -30,13 +73,13 @@ Three things were inconsistent across the site before this date. Keep them consi
 - Both pages use a shared visual pattern: drenched Bordeaux hero, Blush italic emphasis on dark, Clay italic on light, full-bleed dark bands alternating with light reading sections. They are twins; a change to one usually belongs in the other.
 
 ## Tech
-- Static HTML (no framework)
-- Deployed on Vercel
+- Astro 7 (static output) for the frame and core pages; legacy pages are plain HTML in `public/`. See "How the site is built" above.
+- Deployed on Vercel (framework preset `astro`, set in `vercel.json`)
 - WWUAI brand colours, fonts, and button styles (see global CLAUDE.md)
-- **Page system (27 Oct 2026):** new and rebuilt pages use the shared files in `assets/system/` (`tokens.css` generated from brand-tokens.json by `scripts/build-tokens.mjs`, `wwuai.css`, `wwuai.js`) and are built only from the approved sections on `/style` (`style.html`, noindex). Before creating or editing any page, load the global `wwuai-page-standard` skill. `node scripts/check-system.mjs <page>.html` must pass.
-- **Home page (`index.html`, rebuilt on the page system 11 Nov 2026, design approved by Kelly 11 Nov).** One job: Architect Advantage (`/architect`), with the free Starter Kit form (Kit form 9316857, `fields[source]=starter-kit`, `/assets/js/signup.js`) as the quiet second route. Order: layered hero (smiling portrait), growing Bordeaux box with dealt cards, Greige statement, starting projects in ruled columns, full-width Bordeaux offer ($69 USD/month), free guides, About (desk photo), organisations band, FAQ, Starter Kit form, closing band with the embossed ai. Kelly kept the hero and About photos from the old page; don't swap them without asking. No free-community copy anywhere (Skool is paid-only from 11 Nov 2026). Visible copy writes "ai" lowercase. The page is **scroll-gated** (`<html data-motion="scroll">`): its head snippet adds only `hl` (the CSS hero load), and `wwuai.js` adds `m` on the first scroll, leaving whatever was on screen at rest as it was. Other pages are not scroll-gated.
+- **Page system (27 Oct 2026):** new and rebuilt pages use the shared files in `public/assets/system/` (`tokens.css` generated from brand-tokens.json by `scripts/build-tokens.mjs`, `wwuai.css`, `wwuai.js`) and are built only from the approved sections on `/style` (`public/style.html`, noindex). Before creating or editing any page, load the global `wwuai-page-standard` skill. `node scripts/check-system.mjs <page>.html` must pass (it looks in `public/`, then the built site).
+- **Home page (`src/pages/index.astro`, rebuilt on the page system 11 Nov 2026, design approved by Kelly 11 Nov).** One job: Architect Advantage (`/architect`), with the free Starter Kit form (Kit form 9316857, `fields[source]=starter-kit`, `/assets/js/signup.js`) as the quiet second route. Order: layered hero (smiling portrait), growing Bordeaux box with dealt cards, Greige statement, starting projects in ruled columns, full-width Bordeaux offer ($69 USD/month), free guides, About (desk photo), organisations band, FAQ, Starter Kit form, closing band with the embossed ai. Kelly kept the hero and About photos from the old page; don't swap them without asking. No free-community copy anywhere (Skool is paid-only from 11 Nov 2026). Visible copy writes "ai" lowercase. The page is **scroll-gated** (`<html data-motion="scroll">`): its head snippet adds only `hl` (the CSS hero load), and `wwuai.js` adds `m` on the first scroll, leaving whatever was on screen at rest as it was. Other pages are not scroll-gated.
 - **Four sections added to `/style` on 11 Nov 2026:** layered hero (`.hero--layered`), growing box (`.grow`), dealt cards (`.dealt`, the home page's replacement for the pinned deck; `/workshop` keeps its deck) and following button (`.follow`), plus small parts `.pair`, `.statement`, `.ruled`, `.offer`, `.band--mark` and `.nb` (keeps the last two headline words together). Emphasis words on light tones are Bordeaux from 11 Nov 2026 (Blush stays on dark); that changed /workshop and /links too.
-- Older pages still carry their own inline `<style>` blocks and load Google Fonts in their own `<head>`. Leave them until each is rebuilt on the system; don't copy their inline pattern into new pages.
+- Older pages (everything in `public/`, and the seven `Legacy`-layout core pages) still carry their own inline `<style>` blocks and load Google Fonts in their own `<head>`. Leave them until each is rebuilt on the system; don't copy their inline pattern into new pages.
 
 ## Key pages
 - `hub-install.html` — **REMOVED 1 July 2026** (deleted from the repo). Kelly took the Hub Install page off the site ("that page shouldn't be there"). `/hub`, `/hub-install` and `/ai-business-hub-install` now 301-redirect to the homepage. The $1,500 done-with-you Hub Install offer is delisted from the public site. Historical copy source: Notion doc `352f53df20e4817fa9eecf88d9222d62`.
@@ -46,7 +89,7 @@ Three things were inconsistent across the site before this date. Keep them consi
 - `hub-welcome.html` — Post-purchase thank-you page for $47 Notion template buyers. Live at `/hub/welcome`.
 - `ai-business-hub-install.html` — **REMOVED 1 July 2026** (deleted). Was an earlier version of the Hub Install page. `/ai-business-hub-install` now 301-redirects to the homepage.
 - `community.html` — The community landing page, live at `/community`. **Verified 20 August 2026: Skool is freemium. Standard is free and Architect Advantage is the optional Premium membership at $69 USD/month, billed through Skool.** The paid plan includes a monthly live implementation call, fresh prompts and templates, the full library and practical support. Paid CTAs point directly to `https://www.skool.com/wise-women-use-ai-1109/plans`; free CTAs point to the community root. The old Growth Membership, $49 price and $99/$197 one-off model are retired.
-- `architect.html` — The owned sales page for Architect Advantage, live at `/architect`. Replaced the parked $495 founding-cohort page on 20 August 2026. Its one job is to help women in midlife decide whether to join the $69 USD/month DIY implementation membership. The primary CTA goes to the Skool plans page and the free community is the secondary route. Do not reintroduce cohort dates, seat limits, waitlist forms or Unfair Advantage naming.
+- `architect.html` — The owned sales page for Architect Advantage, live at `/architect`. Replaced the parked $495 founding-cohort page on 20 August 2026. Its one job is to help women in midlife decide whether to join the $69 USD/month DIY implementation membership. The primary CTA goes to the Skool plans page (`skool.join` in `site.ts`). The free-community route was removed on 12 Nov 2026. Do not reintroduce cohort dates, seat limits, waitlist forms or Unfair Advantage naming.
 - `content-system.html` + `programme-welcome.html` — **REMOVED 1 July 2026** (deleted). The Content System offer was taken off the site. `/content-system` and `/programme-welcome` now 301-redirect to the homepage.
 - `about.html` — **Restored 1 July 2026.** The page existed but had no route (so `/about` 404'd). Added the `/about` route; now live at `/about`.
 - `posts/the-thing-holding-your-ai-back-isnt-your-prompts.html` — **RETIRED 1 July 2026** (deleted; it was a Hub Install sales piece). URL 301-redirects to `/blog`; removed from the blog listing and sitemap.
@@ -86,9 +129,9 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 - `work.html` is the "AI consultant Melbourne" target page: title, hero copy, FAQ section, and ProfessionalService + FAQPage schema all carry it. Don't retitle it away from that phrase without checking with Kelly.
 - Person schema (about/index) says "AI Consultant and Educator" and includes the full sameAs set (LinkedIn: linkedin.com/in/wisewomenuseai). Keep the social list in sync across index/about/work.
 - All main pages carry `og:locale` `en_AU`. New pages should too.
-- **`sitemap.xml` is GENERATED, not hand-edited (12 August 2026).** Run `node scripts/build-sitemap.mjs`. It reads the routes from `vercel.json`, skips anything noindexed, 3xx-redirected, missing, or not yet committed, dedupes pages served at more than one URL using each page's own canonical tag, and takes `lastmod` from git. `--check` exits 1 if the committed sitemap has drifted, `--dry-run` prints without writing. It was hand-maintained until now and drifted twice: the July audit found 6 of 10 blog posts missing, and by 12 August it was 15 pages out of date while also listing `/workshop`, which carried a noindex tag at the time. Run it after adding, retiring or noindexing any page. `blog-publisher.md` Step 6.5 appends new posts directly via the GitHub API, because the nightly pipeline has no local clone to run the script in.
+- **`public/sitemap.xml` is GENERATED, not hand-edited (12 August 2026).** Run `npm run build` then `npm run sitemap` (Astro pages are read from the built site). It reads the routes from `vercel.json`, skips anything noindexed, 3xx-redirected, missing, or not yet committed, dedupes pages served at more than one URL using each page's own canonical tag, and takes `lastmod` from git. `--check` exits 1 if the committed list of addresses has drifted, `--dry-run` prints without writing. Every build also writes a corrected `dist/sitemap.xml`, so a new blog post can never be blocked by its own sitemap line. It was hand-maintained until now and drifted twice: the July audit found 6 of 10 blog posts missing, and by 12 August it was 15 pages out of date while also listing `/workshop`, which carried a noindex tag at the time. Run it after adding, retiring or noindexing any page. `blog-publisher.md` Step 6.5 appends new posts directly via the GitHub API, because the nightly pipeline has no local clone to run the script in.
 - `llms.txt` describes the current offer structure. Update it when offers change (it went stale for a full rebrand cycle once).
-- `404.html` is the custom not-found page, wired in vercel.json via `{"handle": "filesystem"}` + a catch-all 404 route. Those two entries must stay LAST in the routes array; anything added after them never runs.
+- `src/pages/404.astro` (built to `404.html`) is the custom not-found page, wired in vercel.json via `{"handle": "filesystem"}` + a catch-all 404 route. Those two entries must stay LAST in the routes array; anything added after them never runs.
 
 ## Routing notes (vercel.json)
 - `/hub` → 301 redirect to homepage (Hub Install removed 1 July 2026)
@@ -106,17 +149,17 @@ llms.txt). Existing markup stays, because unused markup is harmless.
 
 ## Current site and signup flow (2 October 2026)
 
-- Main positioning: practical AI and business systems for Gen X women. **The free Skool community closed on 11 Nov 2026**; Architect Advantage is the main route (the home page no longer mentions the free community). `/community` and `/architect` still carry free-community wording until they're updated. Organisational workshops remain separate. Do not add an unscoped individual service.
+- Main positioning: practical AI and business systems for Gen X women. **The free Skool community closed on 11 Nov 2026**; Architect Advantage is the main route (the home page no longer mentions the free community). `/architect` and the other core pages had their free-community links and wording removed on 12 Nov 2026; `/community` and other legacy pages still carry it (see `LINK-REPORT.md`). Organisational workshops remain separate. Do not add an unscoped individual service.
 - Architect Advantage remains $69 USD monthly via Skool, cancel any time, with one monthly member implementation call and replay. Do not promise two Build/Fix sessions without a confirmed offer change.
 - `/examples/one-idea-three-drafts` is a clearly labelled worked example, not a member result or a measured time-saving claim.
 - All active Kit forms use `/assets/js/signup.js`. Preserve each existing Kit form ID and source field. A successful HTTP response alone is insufficient: Kit must return JSON with `status: success`. Errors must never unlock content or redirect to a success page. Keep resource access distinct from confirmed email delivery or double opt-in.
-- Run `node --test tests/signup.test.cjs` after changing signup behaviour.
+- Run `npm test` after changing signup behaviour (it also runs on every build).
 - Main navigation and article navigation use `.ww-nav`, with no hidden mobile links. Blog publisher template updated alongside it.
 - `/masterclass.html` also redirects to the closed-workshop page; do not expose old event registration forms.
 
 ## Vault resources (7 October 2026)
 - The catalogue at `/vault` is still hosted by the existing Sites project and proxied here. Its source is separate from this repository.
-- `/tools/everyday-jobs` exposes the eight existing audit prompts without requiring the audit. `hours.html` remains the source for their wording. Run `node scripts/sync-everyday-prompts.mjs` after editing those prompts, or use `--check` to detect drift.
+- `/tools/everyday-jobs` exposes the eight existing audit prompts without requiring the audit. `public/hours.html` remains the source for their wording. Run `node scripts/sync-everyday-prompts.mjs` after editing those prompts, or use `--check` to detect drift.
 - `/tools/email-plan` teaches list-email planning and drafting. It does not read inboxes, send emails or install skills. The other new guides are `/tools/repeat-job`, `/tools/client-call`, `/tools/follow-up-tracker` and `/tools/client-welcome`.
 - The business review at `/review` is evergreen. All four prompts use the same chat and the reader chooses the review and planning periods.
 - `/vault-starter` was the four-step beginner path (retired 27 Oct 2026, now redirects to `/starter?unlocked=1`); Claude, Clearly was its first step. Preserve the existing paid content lesson boundary and classroom URLs.
