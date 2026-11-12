@@ -117,7 +117,7 @@ for (const file of legacyPages()) {
 function report() {
   const withSkool = rows.filter((r) => r.skoolLinks.length);
   const noNext = rows.filter((r) => !r.hasArchitect && !r.hasPaidJoin);
-  const withForms = rows.filter((r) => r.forms.length);
+  const withForms = rows.filter((r) => r.forms.some((f) => !f.startsWith("demo form")));
   const withBroken = rows.filter((r) => r.broken.length);
   const kitIds = new Set(rows.flatMap((r) => r.forms.map((f) => /Kit form (\d+)/.exec(f)?.[1]).filter(Boolean)));
   const L = [];

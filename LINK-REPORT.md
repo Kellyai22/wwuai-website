@@ -8,7 +8,7 @@ These are the older pages served as-is from `public/`. Nothing here fails the bu
 
 - 69 legacy pages.
 - 37 still link to the closed free Skool community, the Skool "about" page or a classroom lesson (49 links in all).
-- 15 carry a sign-up form, across 11 different Kit forms.
+- 14 carry a sign-up form, across 11 different Kit forms.
 - 32 have no next step (no link to /architect and no paid join link).
 - 2 have a broken internal link.
 
