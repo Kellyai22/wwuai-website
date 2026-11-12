@@ -1,7 +1,8 @@
 // The audit owns these eight prompt texts. Keep its direct-access resource in sync.
-// Run after editing a prompt in hours.html; --check detects drift without writing.
+// Run after editing a prompt in public/hours.html; --check detects drift without writing.
 import {readFileSync,writeFileSync} from 'node:fs';
-const root=new URL('../',import.meta.url);
+// Both pages are legacy files in public/ since the Astro rebuild (Nov 2026).
+const root=new URL('../public/',import.meta.url);
 const source=readFileSync(new URL('hours.html',root),'utf8');
 const target=new URL('tools-everyday-jobs.html',root);
 const original=readFileSync(target,'utf8');

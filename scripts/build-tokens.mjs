@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Writes assets/system/tokens.css from the brand's single colour source,
+// Writes public/assets/system/tokens.css from the brand's single colour source,
 // ~/.claude/wwuai-os/config/brand-tokens.json. Never edit tokens.css by hand.
 //   node scripts/build-tokens.mjs           write the file
 //   node scripts/build-tokens.mjs --check   exit 1 if the committed file has drifted
@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const src = process.env.BRAND_TOKENS || path.join(os.homedir(), ".claude/wwuai-os/config/brand-tokens.json");
-const out = path.join(root, "assets/system/tokens.css");
+const out = path.join(root, "public/assets/system/tokens.css");
 
 const tokens = JSON.parse(fs.readFileSync(src, "utf8"));
 const p = tokens.palette;
