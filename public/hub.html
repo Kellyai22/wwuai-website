@@ -33,7 +33,7 @@
 <header class="site-head">
   <div class="wrap">
     <a class="site-head__logo serif-i" href="/" style="text-decoration:none;font-size:1.25rem">Wise Women Use AI</a>
-    <a class="site-head__cta" href="/workshop">Free workshop · 11 Nov</a>
+    <a class="site-head__cta" href="/workshop">Free workshop<span data-next-workshop data-prefix=" · " data-format="short" hidden></span></a>
   </div>
 </header>
 
@@ -44,8 +44,8 @@
     <h1 class="visually-hidden">Wise Women Use AI: start here</h1>
     <p class="emboss__mark" aria-hidden="true">ai</p>
     <p class="emboss__line">Keep the work that needs you. Redesign the rest.</p>
-    <div class="btn-row" style="justify-content:center;margin-top:var(--s4)"><a class="btn btn--fill" href="/workshop">Join the free workshop <span class="arrow" aria-hidden="true">→</span></a></div>
-    <p class="emboss__cue">Wednesday 11 November · 7pm AEDT · Online</p>
+    <div class="btn-row" style="justify-content:center;margin-top:var(--s4)"><a class="btn btn--fill" href="/check">Take the free Check <span class="arrow" aria-hidden="true">→</span></a></div>
+    <p class="emboss__cue">Free · eight questions · about two minutes</p>
   </div>
 </section>
 
@@ -55,10 +55,11 @@
     <h2 class="title">Become the architect of your business. Not its busiest <span class="em">employee</span>.</h2>
     <p class="lead" data-reveal style="margin-top:var(--s3)">Practical ai and systems for Gen X women.</p>
     <ol class="index">
-      <li data-reveal><a href="/workshop"><span class="index__title">Free workshop: Business Systems <span class="index__tag" id="soon" hidden></span></span><span class="index__go">Save my seat</span><span class="index__desc">Wednesday 11 November, 7pm AEDT, online. One hour to find the work your business still can’t do without you. Replay included.</span></a></li>
+      <li data-reveal><a href="/check"><span class="index__title">The Business Dependency Check</span><span class="index__go">Take the Check</span><span class="index__desc">Free. Eight questions, about two minutes. See where your business depends on you most, and the one thing to fix first.</span></a></li>
+      <li data-reveal><a href="/workshop"><span class="index__title">The free workshop <span class="index__tag" data-next-workshop data-prefix="" data-format="short" hidden></span></span><span class="index__go">Save my seat</span><span class="index__desc">One hour, once a month, online. We take one process that depends on you and build a better way of doing it, live.</span></a></li>
       <li data-reveal><a href="/reel"><span class="index__title">Free reel kit</span><span class="index__go">Get it free</span><span class="index__desc">Film your reel and let Claude do the edit, with your hook and captions in your own colours and fonts.</span></a></li>
-      <li data-reveal><a href="https://www.skool.com/wise-women-use-ai-1109/plans"><span class="index__title">Architect Advantage</span><span class="index__go">See the membership</span><span class="index__desc">Guided implementation, practical assets and support. $69 USD a month.</span></a></li>
-      <li data-reveal><a href="/vault"><span class="index__title">Free resources</span><span class="index__go">Open the vault</span><span class="index__desc">Guides, prompts and tools you can use today.</span></a></li>
+      <li data-reveal><a href="/architect"><span class="index__title">The Architect Advantage</span><span class="index__go">See the membership</span><span class="index__desc">Every system so far in Your AI Team, Your Business HQ, and the replays of every call. $69 USD a month.</span></a></li>
+      <li data-reveal><a href="/vault"><span class="index__title">Free resources</span><span class="index__go">Browse them</span><span class="index__desc">Guides, prompts and tools you can use today.</span></a></li>
       <li data-reveal><a href="https://wisewomenuseai.substack.com"><span class="index__title">The newsletter</span><span class="index__go">Read it</span><span class="index__desc">One useful lesson about ai, systems and running a lighter business.</span></a></li>
       <li data-reveal><a href="/"><span class="index__title">Wise Women Use AI</span><span class="index__go">Visit the site</span><span class="index__desc">The method, and ways to work together.</span></a></li>
     </ol>
@@ -67,9 +68,10 @@
 
 <section class="s band tone-dark">
   <div class="wrap">
-    <h2 class="title">One hour to find what to <span class="em">fix</span> first.</h2>
-    <p class="band__meta" data-reveal>Wednesday 11 November · 7pm AEDT · Online · Free</p>
-    <div class="btn-row" data-reveal><a class="btn btn--fill" href="/workshop">Save my seat <span class="arrow" aria-hidden="true">→</span></a></div>
+    <h2 class="title">Ready to fix the next <span class="em">thing</span>?</h2>
+    <p class="band__meta lead" data-reveal>Once a month I run a free one-hour workshop for women running established service businesses. We take one process that depends on you and build a better way of doing it, live.</p>
+    <div class="btn-row" data-reveal><a class="btn btn--fill" href="/workshop">Join the next free workshop <span class="arrow" aria-hidden="true">→</span></a></div>
+    <p class="band__meta small" data-next-workshop hidden></p>
   </div>
 </section>
 
@@ -81,17 +83,6 @@
     <span class="site-foot__links"><a href="https://www.tiktok.com/@kellyh.ai">TikTok</a><a href="https://www.instagram.com/kellyh.ai">Instagram</a><a href="https://www.linkedin.com/in/wisewomenuseai">LinkedIn</a><a href="mailto:hello@wisewomenuseai.com">Email</a><a href="/privacy">Privacy</a><a href="/ai-disclosure">How I use ai</a></span>
   </div>
 </footer>
-<script>
-  // Workshop countdown. Hides itself once the workshop has finished.
-  (function () {
-    var start = new Date('2026-11-11T19:00:00+11:00'), end = new Date('2026-11-11T20:00:00+11:00');
-    var now = new Date(), el = document.getElementById('soon');
-    if (!el || now >= end) return;
-    var mel = function (d) { return d.toLocaleDateString('en-CA', { timeZone: 'Australia/Melbourne' }); };
-    var days = Math.round((new Date(mel(start)) - new Date(mel(now))) / 86400000);
-    el.textContent = now >= start ? 'Happening now' : days === 0 ? 'Today, 7pm' : days === 1 ? 'Tomorrow, 7pm' : 'In ' + days + ' days';
-    el.hidden = false;
-  })();
-</script>
+<script defer src="/assets/js/workshop-next.js"></script>
 </body>
 </html>

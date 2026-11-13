@@ -31,6 +31,20 @@ export const nextStep = {
   lead: 'Start with one recurring job and turn it into a repeatable system you can check, use and improve.',
 };
 
+// The three closing steps a page can end on. A layout takes next="architect"
+// (the default), next="workshop" or next="check"; the closing band and the
+// following button read the one it names. The workshop wording is the shared
+// closing block for every free resource page (src/config/closing.json, also
+// written into the older pages by scripts/apply-closing.mjs).
+import closing from './closing.json';
+export type StepName = 'architect' | 'workshop' | 'check';
+export type Step = { label: string; href: string; title: string; lead: string; dated?: boolean };
+export const steps: Record<StepName, Step> = {
+  architect: nextStep,
+  workshop: { label: closing.button, href: closing.href, title: closing.heading.replace('thing?', '<span class="em">thing</span>?'), lead: closing.line, dated: true },
+  check: { label: 'Take the free Check', href: '/check', title: nextStep.title, lead: nextStep.lead },
+};
+
 export type NavLink = { label: string; href: string };
 
 // Header navigation on page-system pages.
@@ -54,7 +68,7 @@ export const footerLinks: FooterLink[] = [
   { id: 'blog', label: 'Blog', href: '/blog' },
   { id: 'architect', label: 'Architect Advantage', href: '/architect' },
   { id: 'work', label: 'Work with me', href: '/work' },
-  { id: 'community', label: 'Join the community', href: nextStep.href },
+  { id: 'community', label: 'Free Check', href: '/check' },
   { id: 'about', label: 'About', href: '/about' },
   { id: 'contact', label: 'Contact', href: 'mailto:hello@wisewomenuseai.com' },
   { id: 'privacy', label: 'Privacy', href: '/privacy' },

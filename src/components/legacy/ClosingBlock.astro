@@ -1,0 +1,11 @@
+---
+// The shared workshop closing block, for older Astro pages that are not on
+// the page system yet (e.g. /starter). Same block the older pages in public/
+// carry; words from src/config/closing.json. Page-system pages do not use
+// this: their layout ends with the closing band (next="workshop").
+import { closingHtml } from '../../../scripts/lib-closing.mjs';
+import closing from '../../config/closing.json';
+interface Props { variant?: 'band' | 'panel' }
+const { variant = 'band' } = Astro.props;
+---
+<Fragment set:html={closingHtml(closing, variant)} />

@@ -1,0 +1,107 @@
+---
+// /vault: "Free resources". The address stays /vault; the page is never called
+// the Vault. The Check comes first, then every free guide with no email gate
+// (the ?unlocked=1 links skip each page's sign-up form), then the tools.
+// Ends with the shared workshop closing block. No free community anywhere.
+import Guide from '../layouts/Guide.astro';
+import Section from '../components/sections/Section.astro';
+import Hero from '../components/sections/Hero.astro';
+import Band from '../components/sections/Band.astro';
+import IndexList from '../components/sections/IndexList.astro';
+import { steps } from '../config/site';
+
+const go = 'Open';
+const guides = [
+  { href: '/reel', title: 'The free reel kit', go: 'Get the kit', desc: 'Film your reel and let Claude do the edit on your own computer, with your hook and captions in your own colours and fonts.' },
+  { href: '/starter?unlocked=1', title: 'Set up your Claude Project', go, desc: 'One Claude Project that already knows your business. Claude interviews you and writes the instructions. About 20 minutes.' },
+  { href: '/calm?unlocked=1', title: 'The Sunday Reset', go, desc: 'Get the week out of your head and into a realistic plan, with room for a real life. About 15 minutes.' },
+  { href: '/backup?unlocked=1', title: 'Your Headquarters', go, desc: 'Put your business essentials in one place: a business overview, ideal-client notes, offers and a brain-dump inbox in Notion.' },
+  { href: '/review?unlocked=1', title: 'The Mid-Year Business Review', go, desc: 'Four prompts and a one-page review. Decide what to keep, what to drop and what to focus on next.' },
+  { href: '/dream?unlocked=1', title: 'The Dream Life Interview', go, desc: 'Turn your ideal day into a practical starting plan. For when you need direction before another to-do list.' },
+  { href: '/slop?unlocked=1', title: 'The seven tells of ai writing', go, desc: 'What makes writing sound machine-made, and how to take each tell out so it sounds like you again.' },
+  { href: '/Astra?unlocked=1', title: '5 Jobs to Give ai', go, desc: 'Five proper pieces of work to hand over. Each brief has the context to give, the finished result and what to check.' },
+  { href: '/vault-claude-clearly', title: 'Claude, Clearly', tag: 'Beginner guide', go, desc: 'Get familiar with Claude and give it a useful first job.' },
+  { href: '/switch-wwuai', title: 'Switch to Claude', tag: 'Beginner guide', go, desc: 'Carry your memory and preferences across from ChatGPT, then set up your next conversation. About five minutes.' },
+  { href: '/carousel-maker', title: 'The Carousel Maker', go, desc: 'A free skill file for Claude Code that turns your brand photos into finished Instagram carousels.' },
+];
+const tools = [
+  { href: '/tools/everyday-jobs', title: 'Take one job off your plate', go, desc: 'Eight practical starting points for the work you keep remembering, rewriting or putting off.' },
+  { href: '/tools/email-plan', title: 'Draft one useful email in your own voice', go, desc: 'Use one real idea and a short prompt to draft and check an email.' },
+  { href: '/tools/which-claude', title: 'Which Claude is right for you?', go, desc: 'A plain-English guide to the different ways you can use Claude.' },
+  { href: '/tools/claude-projects', title: 'Claude Projects', go, desc: 'What Projects are, how to set one up, and six ready-made Project ideas for your business.' },
+  { href: '/tools/five-ai-prompts', title: 'Five prompts for women in business', go, desc: 'Copy-ready Claude prompts for captions, emails, brainstorming, document summaries and decisions.' },
+  { href: '/tools/first-ai-workflow', title: 'Your first ai workflow', go, desc: 'A simple, repeatable guide to building your first workflow with Claude, in under 30 minutes.' },
+  { href: '/tools/quick-wins', title: 'The Quick Wins starter kit', go, desc: 'Eight quick wins you can do today, with ready-to-copy prompts and a checklist.' },
+  { href: '/tools/business-team', title: 'ai as your business team', go, desc: 'Think of it as a team of specialists you brief, not a search engine you question.' },
+  { href: '/tools/micro-sophistications', title: 'The Micro Sophistications prompt pack', go, desc: 'Twelve considered prompts for communication, decisions, thinking and confidence.' },
+  { href: '/tools/first-wins', title: 'First Wins', tag: 'Prompt cards', go, desc: 'Prompt cards for handing over your first pieces of real work.' },
+  { href: '/tools/clear-the-decks', title: 'Clear the Decks', tag: 'Prompt cards', go, desc: 'Prompt cards for clearing the backlog that sits on your mind.' },
+  { href: '/tools/out-of-your-head', title: 'Out of Your Head', tag: 'Prompt cards', go, desc: 'Prompt cards for getting what you know written down.' },
+  { href: '/tools/claude-connectors', title: 'Claude, connected', tag: 'Prompt cards', go, desc: 'Prompt cards for using Claude with the tools you already work in.' },
+];
+const previews = [
+  { href: '/tools/repeat-job', title: 'Explain a repeat job once', go: 'See the preview', desc: 'Turn your explanation into a checklist another person can follow.' },
+  { href: '/tools/client-call', title: 'Turn a client call into actions and a follow-up', go: 'See the preview', desc: 'Pull decisions, responsibilities and open questions from your notes, then draft the email.' },
+  { href: '/tools/follow-up-tracker', title: 'Know who needs a follow-up this week', go: 'See the preview', desc: 'Keep open enquiries, next actions and dates in the tracker you already use.' },
+  { href: '/tools/client-welcome', title: 'Welcome a new client without starting from scratch', go: 'See the preview', desc: 'Prepare a welcome email, intake questions and an internal checklist for one offer.' },
+];
+const kit = [
+  { href: 'https://claude.ai/', name: 'Claude', what: 'My everyday thinking and writing partner.' },
+  { href: 'https://chatgpt.com/', name: 'ChatGPT', what: 'For research, ideas and practical everyday help.' },
+  { href: 'https://www.notion.so/', name: 'Notion', what: 'Where the business systems and knowledge live.' },
+  { href: 'https://www.canva.com/', name: 'Canva', what: 'For quick, on-brand visual content.' },
+  { href: 'https://kit.com/', name: 'Kit', what: 'For email, forms and subscriber journeys.' },
+  { href: 'https://wisprflow.ai/r?KELLY819', name: 'Wispr Flow', what: 'For speaking rough thoughts instead of typing them.', sponsored: true },
+  { href: 'https://blotato.com/?ref=kellyuv', name: 'Blotato', what: 'For scheduling and repurposing social content.', sponsored: true },
+];
+---
+<Guide
+  title="Free resources · Wise Women Use AI"
+  description="Free guides, prompts and tools for women running established service businesses. Start with the Business Dependency Check. No passcode and no sign-up."
+  path="/vault"
+  next="workshop"
+>
+<Hero lines={['Free', '<span class="em">resources</span>']}>
+      <p class="lead" data-after>Guides, prompts and tools you can use on real work today. No passcode and no sign-up. Not sure where to begin? Start with the Check.</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href={steps.check.href}>{steps.check.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">Eight questions, about two minutes. Your result appears on screen.</p>
+      </div>
+</Hero>
+
+<Band>
+    <p class="kicker" data-reveal>Start here · The Business Dependency Check</p>
+    <h2 class="title">How much does your business <span class="em">depend</span> <span class="nb">on you?</span></h2>
+    <p class="band__meta lead" data-reveal>Answer eight questions and see where it leans on you most, and the one thing to fix first.</p>
+    <div class="btn-row" data-reveal><a class="btn btn--fill" href={steps.check.href}>{steps.check.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+</Band>
+
+<Section tone="pearl" id="guides">
+    <p class="kicker" data-reveal>Guides &amp; kits</p>
+    <h2 class="title">Choose the one for the job in <span class="em">front</span> <span class="nb">of you</span></h2>
+    <IndexList items={guides} />
+</Section>
+
+<Section tone="greige" id="tools">
+    <p class="kicker" data-reveal>Tools &amp; prompts</p>
+    <h2 class="title">Small tools for one job at <span class="nb">a <span class="em">time</span></span></h2>
+    <IndexList items={tools} />
+</Section>
+
+<Section tone="pearl" id="previews">
+    <p class="kicker" data-reveal>From the membership</p>
+    <h2 class="title">A look inside four member <span class="em">systems</span></h2>
+    <p class="lead" data-reveal>These pages are previews. The full prompts, examples and repeatable processes are for members of The Architect Advantage.</p>
+    <IndexList items={previews} />
+    <p class="note" data-reveal><a class="textlink" href="/architect">See what The Architect Advantage includes →</a></p>
+</Section>
+
+<Section tone="greige" id="toolkit">
+    <p class="kicker" data-reveal>What I use</p>
+    <h2 class="title">My working <span class="em">toolkit</span></h2>
+    <ul class="offer__list" data-reveal>
+      {kit.map((k) => <li><a class="textlink" href={k.href} target="_blank" rel={k.sponsored ? 'noopener sponsored' : 'noopener'}>{k.name}</a>. {k.what}</li>)}
+    </ul>
+    <p class="note" data-reveal>Two of these are referral links (Wispr Flow and Blotato). I only list tools I use myself.</p>
+</Section>
+</Guide>

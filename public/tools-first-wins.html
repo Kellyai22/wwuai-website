@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>First Wins · Recipe Cards · Wise Women Use AI</title>
-  <meta name="description" content="Interactive prompt cards from the First Wins course inside the Wise Women Use AI community.">
+  <meta name="description" content="Interactive prompt cards from the First Wins course from Wise Women Use AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -349,18 +349,34 @@
       </article>
       <div class="finished" id="finished">
         <h4>Every card used. Look at you.</h4>
-        <p>That's real work handed over, not just read about. Head back to the community and tell the room what shifted. Someone two weeks behind you needs to see it.</p>
+        <p>That's real work handed over, not just read about.</p>
       </div>
-      <section class="outro">
-        <h4>Made something with these? <em>Show the room.</em></h4>
-        <p>These cards are the floor, not the ceiling. Change any of them until they sound like you, then post what you made in the community. We love a show and tell.</p>
-        <a class="btn" href="https://www.skool.com/wise-women-use-ai-1109/classroom">Back to the classroom</a>
-      </section>
+      <!-- closing:start panel -->
+<link rel="stylesheet" href="/assets/system/tokens.css">
+<style>.wwc{margin:0;padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px);background:var(--bordeaux);color:var(--pearl);text-align:center;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wwc--panel{border-radius:18px;margin:clamp(40px,5vw,64px) 0}
+.wwc__in{max-width:760px;margin:0 auto}
+.wwc .wwc__h{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-style:normal;font-size:clamp(2rem,1.4rem + 2.6vw,3.5rem);line-height:1.08;letter-spacing:-.015em;color:var(--pearl);margin:0 0 20px;max-width:none}
+.wwc .wwc__p{font-size:1.125rem;line-height:1.6;color:rgb(var(--pearl-rgb) / .82);margin:0 auto 28px;max-width:56ch}
+.wwc .wwc__btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;background:var(--blush);border:1.5px solid var(--blush);border-radius:2px;color:var(--bordeaux);font-weight:500;font-size:1rem;line-height:1.2;letter-spacing:.01em;text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.wwc .wwc__btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){.wwc .wwc__btn:hover{background:transparent;color:var(--blush)}}
+.wwc .wwc__date{font-size:.9375rem;line-height:1.5;color:rgb(var(--pearl-rgb) / .74);margin:16px 0 0;max-width:none}</style>
+<section class="wwc wwc--panel" aria-labelledby="wwc-h">
+  <div class="wwc__in">
+    <h2 class="wwc__h" id="wwc-h">Ready to fix the next thing?</h2>
+    <p class="wwc__p">Once a month I run a free one-hour workshop for women running established service businesses. We take one process that depends on you and build a better way of doing it, live.</p>
+    <a class="wwc__btn" href="/workshop">Join the next free workshop <span aria-hidden="true">→</span></a>
+    <p class="wwc__date" data-next-workshop hidden></p>
+  </div>
+</section>
+<script defer src="/assets/js/workshop-next.js"></script>
+<!-- closing:end -->
       <!-- AUDIO SLOT: when Kelly records a welcome, add below the hero:
            <audio controls preload="none" src="/assets/audio/tools-first-wins.mp3"></audio> -->
     </main>
   </div>
-  <div class="foot">Made for the Wise Women Use AI community · wisewomenuseai.com</div>
+  <div class="foot">Wise Women Use AI · wisewomenuseai.com</div>
   <script>
   (function () {
     var PROFILE_KEY = 'wwuai-tools-profile';

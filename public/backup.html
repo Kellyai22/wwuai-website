@@ -476,20 +476,27 @@ Then show me the HQ page and ask if I would like to add or change anything.</div
     </section>
 
     <!-- Skool CTA -->
-    <section class="block">
-      <div class="wrap wrap-narrow">
-        <div class="skool">
-          <p class="kicker">Want the whole thing?</p>
-          <h2>Your HQ is just the beginning</h2>
-          <p>You've built the front page of your business. Inside Architect Advantage, the Business HQ classroom walks you through building the whole thing out, and every month we build the next piece together, so more of your business runs from one calm home.</p>
-          <a class="btn-skool" href="https://www.skool.com/wise-women-use-ai-1109/plans" target="_blank" rel="noopener">
-            See Architect Advantage
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <p class="skool-alt">Not ready for that yet? Come into the <a href="https://www.skool.com/wise-women-use-ai-1109" target="_blank" rel="noopener">free community</a> first, no commitment.</p>
-        </div>
-      </div>
-    </section>
+    <!-- closing:start -->
+<link rel="stylesheet" href="/assets/system/tokens.css">
+<style>.wwc{margin:0;padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px);background:var(--bordeaux);color:var(--pearl);text-align:center;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wwc--panel{border-radius:18px;margin:clamp(40px,5vw,64px) 0}
+.wwc__in{max-width:760px;margin:0 auto}
+.wwc .wwc__h{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-style:normal;font-size:clamp(2rem,1.4rem + 2.6vw,3.5rem);line-height:1.08;letter-spacing:-.015em;color:var(--pearl);margin:0 0 20px;max-width:none}
+.wwc .wwc__p{font-size:1.125rem;line-height:1.6;color:rgb(var(--pearl-rgb) / .82);margin:0 auto 28px;max-width:56ch}
+.wwc .wwc__btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;background:var(--blush);border:1.5px solid var(--blush);border-radius:2px;color:var(--bordeaux);font-weight:500;font-size:1rem;line-height:1.2;letter-spacing:.01em;text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.wwc .wwc__btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){.wwc .wwc__btn:hover{background:transparent;color:var(--blush)}}
+.wwc .wwc__date{font-size:.9375rem;line-height:1.5;color:rgb(var(--pearl-rgb) / .74);margin:16px 0 0;max-width:none}</style>
+<section class="wwc" aria-labelledby="wwc-h">
+  <div class="wwc__in">
+    <h2 class="wwc__h" id="wwc-h">Ready to fix the next thing?</h2>
+    <p class="wwc__p">Once a month I run a free one-hour workshop for women running established service businesses. We take one process that depends on you and build a better way of doing it, live.</p>
+    <a class="wwc__btn" href="/workshop">Join the next free workshop <span aria-hidden="true">→</span></a>
+    <p class="wwc__date" data-next-workshop hidden></p>
+  </div>
+</section>
+<script defer src="/assets/js/workshop-next.js"></script>
+<!-- closing:end -->
   </div>
 
   <!-- Footer -->

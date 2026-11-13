@@ -11,6 +11,7 @@ const steps = [
   ["Page system", ["scripts/check-system.mjs"]],
   ["Links and routes", ["scripts/check-links.mjs"]],
   ["Sitemap", ["scripts/build-sitemap.mjs", "--dist"]],
+  ["Closing block on every free page", ["scripts/apply-closing.mjs", "--check"]],
   ["Everyday prompts in step with the audit", ["scripts/sync-everyday-prompts.mjs", "--check"]],
   ["Tests", ["--test", ...fs.readdirSync(path.join(ROOT, "tests")).filter((f) => /\.test\.[cm]?js$/.test(f)).map((f) => path.join("tests", f))]],
 ];

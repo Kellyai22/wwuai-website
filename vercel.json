@@ -119,21 +119,21 @@
     {
       "src": "/content-system",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/content-system.html",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/programme-welcome",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
@@ -231,24 +231,41 @@
     {
       "src": "/fable",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/fable.html",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/audit",
-      "dest": "/hours.html"
+      "headers": {
+        "Location": "/check"
+      },
+      "status": 301
+    },
+    {
+      "src": "/check",
+      "dest": "/check.html"
     },
     {
       "src": "/hours",
-      "dest": "/hours.html"
+      "headers": {
+        "Location": "/check"
+      },
+      "status": 301
+    },
+    {
+      "src": "/hours.html",
+      "headers": {
+        "Location": "/check"
+      },
+      "status": 301
     },
     {
       "src": "/slop",
@@ -321,21 +338,21 @@
     {
       "src": "/hub-install",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/hub-install.html",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/hub",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
@@ -346,14 +363,14 @@
     {
       "src": "/ai-business-hub-install",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },
     {
       "src": "/ai-business-hub-install.html",
       "headers": {
-        "Location": "/"
+        "Location": "/check"
       },
       "status": 301
     },

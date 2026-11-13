@@ -1,0 +1,7 @@
+{
+  "_comment": "The one closing block for every free resource page. Change the words here, then run: node scripts/apply-closing.mjs (the older pages in public/ carry a written copy; the build fails if it drifts). No date is ever written here: the date line comes from workshop.config.json through /workshop-next.json.",
+  "heading": "Ready to fix the next thing?",
+  "line": "Once a month I run a free one-hour workshop for women running established service businesses. We take one process that depends on you and build a better way of doing it, live.",
+  "button": "Join the next free workshop",
+  "href": "/workshop"
+}

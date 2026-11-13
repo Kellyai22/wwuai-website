@@ -1,0 +1,330 @@
+---
+// /check: the free Business Dependency Check. One job: finish the Check
+// (eight taps, then first name and email) and go on to the free workshop.
+// Landing copy: Margot. Questions, scoring and results: Pen (Nov 2026).
+// The questions and scoring live in src/lib/check-scoring.mjs (tested).
+// The email step posts to /api/check-signup, which saves the result in Kit
+// (field dependency_result, tag LM-CHECK, no sequence). The result is shown
+// only after that call succeeds.
+import Sales from '../layouts/Sales.astro';
+import Section from '../components/sections/Section.astro';
+import Hero from '../components/sections/Hero.astro';
+import Ruled from '../components/sections/Ruled.astro';
+import Statement from '../components/sections/Statement.astro';
+import About from '../components/sections/About.astro';
+import { QUESTIONS } from '../lib/check-scoring.mjs';
+import { steps } from '../config/site';
+
+const description = 'If the enquiries, the follow-up and the answers all live in your head, the business only works when you do. Answer eight questions and see where it leans on you most, and the one thing to fix first.';
+
+const feeling = [
+  'An enquiry sat for three days because you were busy delivering.',
+  'Every new client gets a slightly different welcome, because the process is in your head.',
+  'You took a day off and came back to everything waiting for you.',
+  'You have tried ai. Some jobs got faster. Nothing about the business changed.',
+];
+const shows = [
+  { title: 'Where your business depends on you most.', body: 'Enquiries, onboarding, delivery, follow-up or admin.' },
+  { title: 'What it is costing you.', body: 'The work that restarts from scratch every time.' },
+  { title: 'What to fix first.', body: 'One process, not a list of twenty.' },
+];
+const how = [
+  'Answer eight quick questions about how your business runs today.',
+  'See your result straight away.',
+  'Get your first step, and a seat at the next free workshop where we work through it together.',
+];
+
+// Pen's results. name may carry one emphasis word.
+const results = [
+  { code: 'enquiries', name: 'The enquiry that <span class="em">waits</span> for you',
+    means: 'A new enquiry gets answered when you have a clear moment, and in a full week that moment doesn’t come. By the time you reply, some people have already gone elsewhere. This isn’t a sales problem. The follow-up lives in your memory, so it stops when you’re busy.',
+    step: 'Write down every way an enquiry can reach you: email, your website, messages, phone. Then choose one place where every enquiry gets recorded from now on, and add the ones that are open today with the date each arrived.' },
+  { code: 'onboarding', name: 'The welcome you <span class="em">rebuild</span> every time',
+    means: 'Every new client gets a good start because you remember what comes next. So each welcome is put together again from memory, and the steps change a little each time. When two clients start in the same week, something gets missed.',
+    step: 'Think of the last client you started with. Write down everything you did between their yes and the first piece of real work, in order. That list is the first draft of your onboarding.' },
+  { code: 'delivery', name: 'The client work that starts from a <span class="em">blank</span> page',
+    means: 'The work clients pay for is good because you do it. But too much of it begins from nothing, including the parts that are the same every time. Your judgement is being spent on work that doesn’t need it.',
+    step: 'Take one piece of client work you do again and again. Split it into two lists: the parts that need your judgement, and the parts that are the same every time. The second list is what to turn into a template or checklist first.' },
+  { code: 'admin', name: 'The admin that waits until <span class="em">last</span>',
+    means: 'Invoices, reminders and the small jobs behind the business get done after everything else, which means late or in your own time. None of it is hard. It waits for you because nothing else is set up to start it.',
+    step: 'Choose one day and time for invoicing and put it in your calendar as a repeat. Then list every unpaid invoice with the date it was sent, so you can see exactly what needs chasing.' },
+  { code: 'knowledge', name: 'The business that lives in your <span class="em">head</span>',
+    means: 'How your business runs is kept in one place: you. So every question, decision and small job comes back to you. Nothing can be handed to a person, or to ai, until you have explained it all over again.',
+    step: 'For the next five working days, each time someone asks you something only you can answer, write the question down. At the end of the week, choose the one that came up most and write the answer out once, properly, so you never explain it from scratch again.' },
+];
+const total = QUESTIONS.length;
+---
+<Sales
+  title="Business Dependency Check · Wise Women Use AI"
+  description={description}
+  path="/check"
+  next="check"
+  nextLabel="Start the Check"
+  nextHref="#check"
+>
+<style is:inline slot="head">
+  .check[hidden], .check [hidden], [data-check-running] [data-landing], [data-check-running] [data-closing] { display: none; }
+  .check { min-height: 88svh; padding-block: calc(var(--s6) + var(--s4)) var(--section); }
+  .check__wrap { max-width: 860px; margin-inline: auto; }
+  .check__top { display: flex; justify-content: space-between; align-items: center; gap: var(--s2); font-size: var(--t-small); font-weight: 500; color: var(--soft); }
+  .check__bar { height: 3px; margin: var(--s2) 0 var(--s5); background: var(--rule); border-radius: 2px; overflow: hidden; }
+  .check__bar i { display: block; height: 100%; width: 0; background: var(--ink); transition: width 420ms var(--ease-out); }
+  .check__q { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 1.15rem + 2.4vw, 3rem); line-height: 1.14; letter-spacing: -0.015em; margin: 0 0 var(--s4); max-width: none; text-wrap: balance; }
+  .check__opts { display: grid; gap: var(--s2); }
+  .check__opt { display: block; width: 100%; min-height: 64px; padding: 18px 22px; text-align: left; cursor: pointer; font: 400 1.0625rem/1.45 var(--sans); color: var(--ink); background: transparent; border: 1.5px solid rgb(var(--bordeaux-rgb) / .24); border-radius: var(--r-field); transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 120ms ease; }
+  .check__opt:active { transform: scale(0.99); }
+  .check__opt[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  @media (hover: hover) and (pointer: fine) { .check__opt:hover { border-color: var(--ink); } }
+  .check__back { min-height: 44px; margin-top: var(--s3); padding: 0; cursor: pointer; font: 500 var(--t-small)/1 var(--sans); color: var(--soft); background: none; border: 0; text-decoration: underline; text-underline-offset: 0.22em; }
+  .check__screen { animation: check-in 380ms var(--ease-out) both; }
+  @keyframes check-in { from { opacity: 0; transform: translateY(12px); } }
+  @media (prefers-reduced-motion: reduce) { .check__screen { animation: none; } .check__bar i { transition: none; } }
+  .check__gate { display: grid; gap: var(--s4); }
+  @media (min-width: 900px) { .check__gate { grid-template-columns: 1fr 1fr; gap: var(--s5); align-items: start; } .check__wrap--wide { max-width: var(--max); } }
+  .check__gate .form-panel .btn[disabled] { opacity: 0.6; cursor: default; }
+  .check__label { font-size: var(--t-small); font-weight: 500; color: var(--soft); margin: 0 0 var(--s2); }
+  .check__name { font-family: var(--serif); font-weight: 400; font-size: var(--t-title); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 var(--s5); max-width: none; text-wrap: balance; }
+  .check__cols { display: grid; gap: var(--s4); }
+  @media (min-width: 900px) { .check__cols { grid-template-columns: 1fr 1fr; gap: var(--s5); } }
+  .check__cols h3 { font-family: var(--serif); font-weight: 400; font-size: var(--t-sub); line-height: 1.2; margin: 0 0 var(--s2); }
+  .check__cols p { max-width: none; margin: 0; }
+  .check__step { background: var(--paper); border-radius: var(--r-panel); padding: clamp(var(--s3), 3.4vw, var(--s4)); }
+  .check__next { margin-top: var(--s5); }
+  .check__next h2 { font-family: var(--serif); font-weight: 400; font-size: var(--t-title); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 var(--s3); }
+  .check__next .lead { max-width: 46ch; }
+  .check__quiet { margin-top: var(--s3); font-size: var(--t-small); }
+  .check__feel .outcome p { font-size: var(--t-lead); line-height: 1.45; max-width: 30ch; margin: 0; }
+  .check__how p { color: var(--ink); font-size: var(--t-lead); line-height: 1.45; max-width: 44ch; }
+</style>
+
+<div data-landing>
+<Hero meta={['Free', 'eight questions', 'about two minutes']} lines={['How much does', 'your business', '<span class="em">depend</span> on you?']}>
+      <p class="lead" data-after>{description}</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href="#check" data-check-start>Start the Check <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">No sign-up to start. Your result appears on screen.</p>
+      </div>
+</Hero>
+
+<Section tone="dark" class="check__feel">
+    <h2 class="title">You already know the <span class="em">feeling</span></h2>
+    <div class="outcomes">
+      {feeling.map((f, i) => <div class="outcome" data-reveal><span class="outcome__num">{String(i + 1).padStart(2, '0')}</span><p>{f}</p></div>)}
+    </div>
+</Section>
+
+<Section tone="pearl">
+    <h2 class="title">What the Check <span class="em">shows</span> you</h2>
+    <Ruled>
+      {shows.map((s, i) => <div data-reveal><span class="ruled__label">{String(i + 1).padStart(2, '0')}</span><h3>{s.title}</h3><p>{s.body}</p></div>)}
+    </Ruled>
+</Section>
+
+<Section tone="greige" class="check__how">
+    <h2 class="title">How it <span class="em">works</span></h2>
+    <ol class="steps">
+      {how.map((h) => <li data-reveal><div><p>{h}</p></div></li>)}
+    </ol>
+    <div class="btn-row" data-reveal style="margin-top:var(--s4)"><a class="btn btn--fill" href="#check" data-check-start>Start the Check <span class="arrow" aria-hidden="true">→</span></a></div>
+</Section>
+
+<Section tone="pearl">
+    <h2 class="title">Who this is <span class="em">for</span></h2>
+    <Statement line="This is not for beginners looking for their first ai prompt.">
+      <p>Women in midlife running an established service business, on your own or with a very small team.</p>
+      <p>You have clients. You are good at what you do. The business works because you are holding all of it.</p>
+    </Statement>
+</Section>
+
+<About tone="greige" photo={{ src: '/assets/photos/kelly-smiling-20260928.webp', width: 1254, height: 1254, alt: 'Kelly Hartley, founder of Wise Women Use AI' }}>
+  <Fragment slot="head">
+    <h2 class="title">From <span class="em">Kelly</span></h2>
+  </Fragment>
+        <p class="lead">I'm Kelly. I spent years running the operations of someone else's business before I started my own, and I know what it looks like when everything routes through one person.</p>
+        <p class="lead">I built this Check so you can see it clearly in two minutes, without a sales call.</p>
+</About>
+</div>
+
+<section class="s check tone-pearl" id="check" aria-label="The Business Dependency Check" hidden>
+  <div class="wrap">
+    <noscript><p class="lead">The Check needs JavaScript switched on in your browser. Or email hello@wisewomenuseai.com and I'll send you the questions.</p></noscript>
+
+    <div class="check__wrap" data-check-quiz hidden>
+      <div class="check__top"><span data-check-count>Question 1 of {total}</span><span>Business Dependency Check</span></div>
+      <div class="check__bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax={total} aria-valuenow="0"><i></i></div>
+      {QUESTIONS.map((q, qi) => (
+        <div class="check__screen" data-check-q={qi} hidden>
+          <h2 class="check__q" tabindex="-1">{q.q}</h2>
+          <div class="check__opts">
+            {q.answers.map((ans, ai) => <button class="check__opt" type="button" data-pick={ai} aria-pressed="false">{ans.text}</button>)}
+          </div>
+        </div>
+      ))}
+      <button class="check__back" type="button" data-check-back>← Back</button>
+    </div>
+
+    <div class="check__wrap check__wrap--wide" data-check-gate hidden>
+      <div class="check__screen check__gate">
+        <div>
+          <h2 class="check__q" tabindex="-1">Your result is ready</h2>
+          <p class="lead">Tell me where to send a copy, and I'll show it to you now.</p>
+          <button class="check__back" type="button" data-check-back>← Back to the questions</button>
+        </div>
+        <div class="form-panel">
+          <form data-check-form novalidate>
+            <div class="hp" aria-hidden="true"><label for="check-website">Leave this empty</label><input id="check-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="field"><label for="check-name">First name</label><input id="check-name" name="first_name" autocomplete="given-name" maxlength="60"></div>
+            <div class="field"><label for="check-email">Email</label><input id="check-email" name="email_address" type="email" autocomplete="email" inputmode="email" required></div>
+            <button class="btn btn--fill" type="submit">Show me my result</button>
+            <p class="btn-note">You'll also get my weekly email on building a business that needs you less. Unsubscribe any time.</p>
+            <p role="alert" data-signup-error hidden></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="check__wrap check__wrap--wide" data-check-result hidden>
+      <div class="check__screen">
+        <h1 class="check__label" tabindex="-1">Here is where your business depends on you most</h1>
+        {results.map((r) => (
+          <div data-result={r.code} hidden>
+            <h2 class="check__name" set:html={r.name} />
+            <div class="check__cols">
+              <div><h3>What it means</h3><p>{r.means}</p></div>
+              <div class="check__step"><h3>Your first step this week</h3><p>{r.step}</p></div>
+            </div>
+          </div>
+        ))}
+        <div class="next tone-dark check__next">
+          <h2>Your next <span class="em">step</span></h2>
+          <p class="lead">The fastest way to fix this is to pick one process and build it properly. That is exactly what we do in the free monthly workshop.</p>
+          <div class="btn-row" style="margin-top:var(--s4)"><a class="btn btn--fill" href={steps.workshop.href}>Save my seat at the next free workshop <span class="arrow" aria-hidden="true">→</span></a></div>
+          <p class="next__price" data-next-workshop hidden></p>
+          <p class="check__quiet"><a class="textlink" href="/architect">Want to build it with me every month? See The Architect Advantage</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script is:inline defer src="/assets/js/workshop-next.js"></script>
+
+<script>
+  import { QUESTIONS, score } from '../lib/check-scoring.mjs';
+
+  const root = document.documentElement;
+  const tool = document.getElementById('check') as HTMLElement;
+  const quiz = tool.querySelector('[data-check-quiz]') as HTMLElement;
+  const gate = tool.querySelector('[data-check-gate]') as HTMLElement;
+  const resultBox = tool.querySelector('[data-check-result]') as HTMLElement;
+  const screens = Array.from(tool.querySelectorAll<HTMLElement>('[data-check-q]'));
+  const count = tool.querySelector('[data-check-count]') as HTMLElement;
+  const bar = tool.querySelector('.check__bar') as HTMLElement;
+  const fill = bar.querySelector('i') as HTMLElement;
+  const form = tool.querySelector('[data-check-form]') as HTMLFormElement;
+  const error = form.querySelector('[data-signup-error]') as HTMLElement;
+  const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const total = QUESTIONS.length;
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const picks: (number | undefined)[] = new Array(total).fill(undefined);
+  let at = 0;          // question on screen
+  let sending = false;
+
+  const top = (focus?: HTMLElement | null) => {
+    window.scrollTo(0, 0);
+    (window as any).ScrollTrigger?.refresh?.();
+    focus?.focus({ preventScroll: true });
+  };
+  const only = (el: HTMLElement) => { for (const p of [quiz, gate, resultBox]) p.hidden = p !== el; };
+
+  function showQuestion(i: number) {
+    at = i;
+    only(quiz);
+    screens.forEach((s, n) => { s.hidden = n !== i; });
+    count.textContent = `Question ${i + 1} of ${total}`;
+    bar.setAttribute('aria-valuenow', String(i));
+    fill.style.width = `${(i / total) * 100}%`;
+    screens[i].querySelectorAll<HTMLElement>('[data-pick]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.pick) === picks[i])));
+    top(screens[i].querySelector<HTMLElement>('.check__q'));
+  }
+  function showGate() {
+    only(gate);
+    fill.style.width = '100%';
+    top(gate.querySelector<HTMLElement>('.check__q'));
+  }
+  function start() {
+    root.setAttribute('data-check-running', '');
+    tool.hidden = false;
+    const firstOpen = picks.findIndex((p) => p === undefined);
+    if (firstOpen === -1) showGate(); else showQuestion(firstOpen);
+  }
+  function leave() {
+    root.removeAttribute('data-check-running');
+    tool.hidden = true;
+    top();
+  }
+
+  document.querySelectorAll<HTMLAnchorElement>('[data-check-start], [data-closing] a[href="#check"], .follow a[href="#check"]').forEach((a) => {
+    a.addEventListener('click', (e) => { e.preventDefault(); e.stopImmediatePropagation(); start(); }, true);
+  });
+
+  screens.forEach((screen, i) => {
+    screen.querySelectorAll<HTMLButtonElement>('[data-pick]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        picks[i] = Number(btn.dataset.pick);
+        screen.querySelectorAll('[data-pick]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        setTimeout(() => { if (i + 1 < total) showQuestion(i + 1); else showGate(); }, 220);
+      });
+    });
+  });
+
+  tool.querySelectorAll<HTMLButtonElement>('[data-check-back]').forEach((b) => b.addEventListener('click', () => {
+    if (!gate.hidden) showQuestion(total - 1);
+    else if (at > 0) showQuestion(at - 1);
+    else leave();
+  }));
+
+  const fail = (msg: string) => { error.textContent = msg; error.hidden = false; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (sending) return;
+    error.hidden = true;
+    // Every question must be answered before the email step counts.
+    const open = picks.findIndex((p) => p === undefined);
+    if (open !== -1) { showQuestion(open); return; }
+    const data = new FormData(form);
+    const email = String(data.get('email_address') || '').trim();
+    if (!EMAIL_RE.test(email)) {
+      fail('That email address doesn’t look right. Check it and try again.');
+      (form.querySelector('#check-email') as HTMLElement).focus();
+      return;
+    }
+    const { result } = score(picks as number[]);
+    const label = submit.textContent;
+    sending = true; submit.disabled = true; submit.textContent = 'One moment…'; form.setAttribute('aria-busy', 'true');
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 20000);
+      const res = await fetch('/api/check-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ first_name: String(data.get('first_name') || '').trim(), email_address: email, result, website: String(data.get('website') || '') }),
+        signal: controller.signal,
+      });
+      clearTimeout(timer);
+      const body = await res.json();
+      if (!res.ok || !body || body.status !== 'success') throw new Error('not confirmed');
+      resultBox.querySelectorAll<HTMLElement>('[data-result]').forEach((r) => { r.hidden = r.dataset.result !== result; });
+      only(resultBox);
+      top(resultBox.querySelector<HTMLElement>('.check__label'));
+    } catch (err) {
+      fail('That didn’t go through, and your answers are still here. Please try again. If it still doesn’t work, email hello@wisewomenuseai.com and I’ll send your result.');
+    } finally {
+      sending = false; submit.disabled = false; submit.textContent = label; form.removeAttribute('aria-busy');
+    }
+  });
+</script>
+  <Fragment slot="next-title">How much does your business <span class="em">depend</span> <span class="nb">on you?</span></Fragment>
+  <Fragment slot="next-lead">Free · eight questions · about two minutes</Fragment>
+</Sales>

@@ -1,11 +1,13 @@
 ---
 // /style 01. Hero with a line-by-line headline. One emphasis word, written as
 // <span class="em">word</span> inside a line. The default slot is the foot: lead and main button.
-interface Props { lines: string[]; tone?: 'pearl' | 'greige' | 'dark' }
-const { lines, tone = 'pearl' } = Astro.props;
+// meta = the small facts line above the headline (e.g. Free, eight questions, about two minutes).
+interface Props { lines: string[]; tone?: 'pearl' | 'greige' | 'dark'; meta?: string[] }
+const { lines, tone = 'pearl', meta } = Astro.props;
 ---
 <section class={`hero tone-${tone}`}>
   <div class="wrap">
+    {meta && <p class="hero__meta">{meta.map((m) => <span>{m}</span>)}</p>}
     <h1 class="display" data-lines>
       {lines.map((l) => <span class="line"><span set:html={l} /></span>)}
     </h1>

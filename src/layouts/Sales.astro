@@ -4,18 +4,25 @@
 import Base from './Base.astro';
 import NextStep from '../components/NextStep.astro';
 import Follow from '../components/sections/Follow.astro';
+import { steps, type StepName } from '../config/site';
 
 type Props = Parameters<typeof Base>[0] & {
   /** Show the following button (only on pages that open with the growing box). */
   follow?: boolean;
+  /** Which closing step the page ends on. Default: the membership. */
+  next?: StepName;
+  /** Own wording or target for the closing button (and the following button). */
+  nextLabel?: string;
+  nextHref?: string;
 };
-const { follow = false, ...base } = Astro.props;
+const { follow = false, next = 'architect', nextLabel, nextHref, ...base } = Astro.props;
+const step = steps[next];
 ---
 <Base {...base}>
   <Fragment slot="head"><slot name="head" /></Fragment>
-  <Fragment slot="after-header">{follow && <Follow />}</Fragment>
+  <Fragment slot="after-header">{follow && <Follow label={nextLabel ?? step.label} href={nextHref ?? step.href} />}</Fragment>
 <slot />
-<NextStep>
+<NextStep next={next} label={nextLabel} href={nextHref}>
   <Fragment slot="title"><slot name="next-title" /></Fragment>
   <Fragment slot="lead"><slot name="next-lead" /></Fragment>
 </NextStep>

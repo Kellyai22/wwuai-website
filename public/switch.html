@@ -1300,8 +1300,8 @@ Again, format this as a clean profile with headings and bullet points.</div>
         <p>Right now Claude knows about you. What it doesn't have is one place to look when it's helping you run things. Your offers, your clients, your content, your numbers, all of it scattered across chats and your own head.</p>
         <p>So give it a home. A simple HQ in Notion holds the important parts of your business in one spot. You can even use ChatGPT to help you build the first version, then point Claude at it. Now when you sit down, Claude isn't starting from scratch every time. It's working from your real business.</p>
         <div class="hq-cta">
-          <p>Building one is exactly what we do together inside my free community. Come in and set yours up, step by step, alongside women doing the same thing.</p>
-          <a href="/community" class="btn-hq">Join the free community</a>
+          <p>Building one is part of The Architect Advantage, my membership. Your Business HQ is one home for how your business runs, so it stops living in your head.</p>
+          <a href="/architect" class="btn-hq">See The Architect Advantage</a>
         </div>
       </div>
 
@@ -1322,7 +1322,28 @@ Again, format this as a clean profile with headings and bullet points.</div>
   </div>
 
   <!-- Footer -->
-  <footer>
+  <!-- closing:start -->
+<link rel="stylesheet" href="/assets/system/tokens.css">
+<style>.wwc{margin:0;padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px);background:var(--bordeaux);color:var(--pearl);text-align:center;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wwc--panel{border-radius:18px;margin:clamp(40px,5vw,64px) 0}
+.wwc__in{max-width:760px;margin:0 auto}
+.wwc .wwc__h{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-style:normal;font-size:clamp(2rem,1.4rem + 2.6vw,3.5rem);line-height:1.08;letter-spacing:-.015em;color:var(--pearl);margin:0 0 20px;max-width:none}
+.wwc .wwc__p{font-size:1.125rem;line-height:1.6;color:rgb(var(--pearl-rgb) / .82);margin:0 auto 28px;max-width:56ch}
+.wwc .wwc__btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;background:var(--blush);border:1.5px solid var(--blush);border-radius:2px;color:var(--bordeaux);font-weight:500;font-size:1rem;line-height:1.2;letter-spacing:.01em;text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.wwc .wwc__btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){.wwc .wwc__btn:hover{background:transparent;color:var(--blush)}}
+.wwc .wwc__date{font-size:.9375rem;line-height:1.5;color:rgb(var(--pearl-rgb) / .74);margin:16px 0 0;max-width:none}</style>
+<section class="wwc" aria-labelledby="wwc-h">
+  <div class="wwc__in">
+    <h2 class="wwc__h" id="wwc-h">Ready to fix the next thing?</h2>
+    <p class="wwc__p">Once a month I run a free one-hour workshop for women running established service businesses. We take one process that depends on you and build a better way of doing it, live.</p>
+    <a class="wwc__btn" href="/workshop">Join the next free workshop <span aria-hidden="true">→</span></a>
+    <p class="wwc__date" data-next-workshop hidden></p>
+  </div>
+</section>
+<script defer src="/assets/js/workshop-next.js"></script>
+<!-- closing:end -->
+<footer>
     <span class="footer-brand">Wise Women Use AI</span>
     <ul class="footer-links">
       <li><a href="/">Home</a></li>
@@ -1503,7 +1524,7 @@ Again, format this as a clean profile with headings and bullet points.</div>
 
     function checkUnlocked() {
       try {
-        // Skool members reach the gate-free route (/switch-wwuai or ?members) and skip the email form.
+        // Members and Free resources visitors reach the gate-free route (/switch-wwuai or ?members) and skip the email form.
         var params = new URLSearchParams(location.search);
         var isMember = location.pathname.replace(/\/+$/, '').endsWith('switch-wwuai') || params.has('members');
         if (isMember) {

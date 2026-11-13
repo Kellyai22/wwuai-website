@@ -9,8 +9,8 @@ const hasDist = fs.existsSync(path.join(root, 'dist', 'index.html'));
 const opts = { skip: hasDist ? false : 'no dist/ (run npm run build)' };
 const lib = () => import('../scripts/lib-site.mjs');
 
-test('the eight core pages build to the same file names', opts, () => {
-  for (const f of ['index', 'about', 'architect', 'starter', 'thank-you', 'privacy', 'ai-disclosure', '404'])
+test('the core pages build to the same file names', opts, () => {
+  for (const f of ['check', 'index', 'about', 'architect', 'starter', 'thank-you', 'privacy', 'ai-disclosure', '404'])
     assert.ok(fs.existsSync(path.join(root, 'dist', f + '.html')), f + '.html');
 });
 test('no page was built as a folder (that would add a trailing slash)', opts, () => {
@@ -24,7 +24,7 @@ test('clean addresses resolve the way they did before', opts, async () => {
 });
 test('old redirects are still redirects', opts, async () => {
   const { resolveUrl } = await lib();
-  const expect = { '/masterclass': '/workshop', '/hub': '/', '/fable': '/', '/content-system': '/', '/switch-to-claude': '/switch', '/vault-starter': '/starter?unlocked=1', '/masterclass.ics': '/workshop.ics' };
+  const expect = { '/masterclass': '/workshop', '/hub': '/check', '/fable': '/check', '/content-system': '/check', '/programme-welcome': '/check', '/hub-install': '/check', '/ai-business-hub-install': '/check', '/hours': '/check', '/hours.html': '/check', '/audit': '/check', '/switch-to-claude': '/switch', '/vault-starter': '/starter?unlocked=1', '/masterclass.ics': '/workshop.ics' };
   for (const [from, to] of Object.entries(expect)) {
     const r = resolveUrl(from);
     assert.equal(r.kind, 'redirect', from); assert.equal(r.detail, to, from);
@@ -35,8 +35,8 @@ test('a made-up address is reported as missing (the link check can fail)', opts,
   assert.equal(resolveUrl('/this-page-does-not-exist').ok, false);
   assert.equal(resolveUrl('/assets/system/nope.css').ok, false);
 });
-test('the three functions are still at /api with the same names', () => {
-  for (const f of ['workshop-signup', 'reel-signup', 'stripe-webhook']) {
+test('the functions are still at /api with the same names', () => {
+  for (const f of ['workshop-signup', 'reel-signup', 'stripe-webhook', 'check-signup']) {
     const src = fs.readFileSync(path.join(root, 'api', f + '.js'), 'utf8');
     assert.match(src, /module\.exports\s*=/, f);
   }
@@ -53,4 +53,13 @@ test('no analytics or tracking scripts in any Astro page', opts, () => {
     const html = fs.readFileSync(path.join(root, 'dist', f), 'utf8');
     assert.doesNotMatch(html, /googletagmanager|google-analytics|gtag\(|fbq\(|connect\.facebook\.net|plausible|hotjar|clarity\.ms|segment\.com|va\.vercel-scripts/i, f);
   }
+});
+test('no retired page redirects to the home page (retired pages go to /check)', () => {
+  const { routes } = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+  for (const r of routes) if (r.status >= 300 && r.status < 400) assert.notEqual(r.headers.Location, '/', r.src);
+});
+test('the workshop date file gives away the date and nothing else', opts, () => {
+  const w = JSON.parse(fs.readFileSync(path.join(root, 'dist', 'workshop-next.json'), 'utf8'));
+  assert.deepEqual(Object.keys(w).sort(), ['date', 'startTimeLocal', 'timeZone']);
+  assert.match(w.date, /^\d{4}-\d{2}-\d{2}$/);
 });

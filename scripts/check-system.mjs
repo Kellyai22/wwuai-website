@@ -70,7 +70,8 @@ for (const rel of [...new Set(files)]) {
   if (rel.endsWith(".html")) {
     visibleText(text).split("\n").forEach((line) => {
       // Brand name is allowed to say AI.
-      const l = line.replace(/Wise Women Use AI/g, "");
+      // So is "Your AI Team", the name of a member benefit (wording approved 12 Nov 2026).
+      const l = line.replace(/Wise Women Use AI|Your AI Team/g, "");
       for (const [re, why] of htmlRules) if (re.test(l)) { console.error(`FAIL  ${name}: ${why}\n      ${line.trim().slice(0, 140)}`); fails++; }
     });
     if (/(font-?awesome|material-icons|lucide|phosphor|heroicons|bootstrap-icons)/i.test(text)) { console.error(`FAIL  ${name}: stock icon set`); fails++; }

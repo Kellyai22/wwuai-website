@@ -1,16 +1,23 @@
 ---
 // The closing Bordeaux band with the embossed ai in the corner (/style 21).
-// Every layout ends with this. The button always comes from site.ts; a page
-// may supply its own headline and line through the "title" and "lead" slots.
-import { nextStep } from '../config/site';
+// Every layout ends with this. The button comes from site.ts: next="architect"
+// (default), "workshop" or "check". A page may supply its own headline and line
+// through the "title" and "lead" slots, and its own button wording or target
+// with label / href (the Check page's "Start the Check").
+import { steps, type StepName } from '../config/site';
+interface Props { next?: StepName; label?: string; href?: string }
+const { next = 'architect', label, href } = Astro.props;
+const step = steps[next];
 const hasTitle = Astro.slots.has('title') && (await Astro.slots.render('title')).trim() !== '';
 const hasLead = Astro.slots.has('lead') && (await Astro.slots.render('lead')).trim() !== '';
 ---
-<section class="s band band--mark tone-dark">
+<section class="s band band--mark tone-dark" data-closing={next}>
   <div class="wrap">
-    <h2 class="title">{hasTitle ? <slot name="title" /> : <Fragment set:html={nextStep.title} />}</h2>
-    <p class="band__meta lead" data-reveal>{hasLead ? <slot name="lead" /> : nextStep.lead}</p>
-    <div class="btn-row" data-reveal><a class="btn btn--blush" href={nextStep.href}>{nextStep.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+    <h2 class="title">{hasTitle ? <slot name="title" /> : <Fragment set:html={step.title} />}</h2>
+    <p class="band__meta lead" data-reveal>{hasLead ? <slot name="lead" /> : step.lead}</p>
+    <div class="btn-row" data-reveal><a class="btn btn--blush" href={href ?? step.href}>{label ?? step.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+    {step.dated && <p class="band__meta small" data-next-workshop hidden></p>}
   </div>
   <p class="emboss__mark band__mark" aria-hidden="true">ai</p>
 </section>
+{step.dated && <script is:inline defer src="/assets/js/workshop-next.js"></script>}

@@ -1,0 +1,33 @@
+---
+// /community. The free Skool community closed on 11 Nov 2026. This address is
+// still linked from older posts and emails, so it now points people to the
+// free Check first and the free workshop second. Membership links go to /architect.
+import Guide from '../layouts/Guide.astro';
+import Section from '../components/sections/Section.astro';
+import Hero from '../components/sections/Hero.astro';
+import Steps from '../components/sections/Steps.astro';
+import { steps } from '../config/site';
+---
+<Guide
+  title="Where to start · Wise Women Use AI"
+  description="The free community has closed. Start with the free Business Dependency Check: eight questions, about two minutes, and the one thing to fix first. Then join the free monthly workshop."
+  path="/community"
+  next="workshop"
+>
+<Hero lines={['Find where your', 'business depends on', 'you too <span class="em">much</span>']}>
+      <p class="lead" data-after>The free community closed in November 2026. The best free place to start now is the Business Dependency Check. Answer eight questions and see where your business leans on you most, and the one thing to fix first.</p>
+      <div data-after>
+        <div class="btn-row"><a class="btn btn--fill" href={steps.check.href}>{steps.check.label} <span class="arrow" aria-hidden="true">→</span></a></div>
+        <p class="btn-note" style="margin-top:14px">Free. About two minutes. No sign-up to start.</p>
+      </div>
+</Hero>
+
+<Section tone="greige">
+    <h2 class="title">Three ways in, in this <span class="em">order</span></h2>
+    <Steps items={[
+      { title: 'Take the free Check', body: 'Eight quick questions about how your business runs today. You see your result straight away, with your first step for this week.', cta: { label: steps.check.label, href: steps.check.href } },
+      { title: 'Come to the free monthly workshop', body: 'One hour, once a month. We take one process that depends on you and build a better way of doing it, live.', cta: { label: steps.workshop.label, href: steps.workshop.href } },
+      { title: 'Build it with me every month', body: 'The Architect Advantage is the membership: a new business system with everything needed to set it up, a live build call to set it up together, and a live Q&amp;A call, both recorded.', cta: { label: 'See The Architect Advantage', href: '/architect' } },
+    ]} />
+</Section>
+</Guide>

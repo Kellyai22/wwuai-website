@@ -16,9 +16,9 @@ The site was 64 hand-written HTML files, each with its own copy of the header, f
 | `src/config/site.ts` | **The one place** for the navigation, the footer links, the Skool join link and the site's next step (label and address). Change the offer here. |
 | `src/layouts/` | `Sales` (sign-up and sales pages), `Guide` (lead magnets, guides, articles), `ThankYou`. Each ends with `NextStep`, so a page cannot be built without one. `Base` loads the shared styling and motion. `Legacy` is only for core pages not yet restyled. |
 | `src/components/` | `Header`, `Footer`, `NextStep` (closing Bordeaux band with the embossed ai), `SignupForm` (Kit form + `/assets/js/signup.js`; takes `formId`, `source`, `successUrl`). `sections/` has one component per approved /style section. `legacy/` holds the header and footer for the not-yet-restyled core pages. |
-| `src/pages/` | Astro pages: `index`, `about`, `architect`, `starter`, `thank-you`, `privacy`, `ai-disclosure`, `404`. |
+| `src/pages/` | Astro pages: `index`, `check`, `vault`, `community`, `about`, `architect`, `starter`, `thank-you`, `privacy`, `ai-disclosure`, `404`. |
 | `public/` | **Legacy pages and every static file, served exactly as written:** all other `.html` pages, `posts/`, `assets/`, `downloads/`, `robots.txt`, `llms.txt`, `sitemap.xml`, the `.ics` files. A file here keeps the address it always had (`public/calm.html` is still routed to `/calm` by `vercel.json`). |
-| `api/` | The three serverless functions (`workshop-signup`, `reel-signup`, `stripe-webhook`). Root folder, CommonJS, unchanged. Do not add `"type": "module"` to `package.json`; it would break them. |
+| `api/` | The serverless functions (`workshop-signup`, `reel-signup`, `stripe-webhook`, `check-signup`). Root folder, CommonJS, unchanged. Do not add `"type": "module"` to `package.json`; it would break them. |
 | `scripts/`, `tests/` | The checks below. |
 | `dist/` | Build output. Never edit, never commit. |
 
@@ -47,6 +47,17 @@ Only the home page is on the page system so far. The other seven core pages use 
 **Moving a legacy page onto Astro:** `git mv public/<name>.html src/pages/<name>.astro`, rebuild it on a layout, keep its `vercel.json` route, Kit form ID and source. Any `<script>` or `<style>` kept in an Astro page needs `is:inline`. A page must not exist in both `public/` and `src/pages/`.
 
 **Tools outside this repo that write into it** work with both the old and new layout: the workshop builder and rollover (`~/.claude/skills/workshop/scripts/`), the blog publisher (`~/.claude/wwuai-os/skills/marketing/blog-publisher.md`, writes `public/posts/`, `public/blog.html`, `public/sitemap.xml`) and `wire-emphasis.mjs`.
+
+## The Check, Free resources and the closing block (13 November 2026)
+
+- **`/check` (`src/pages/check.astro`) is the free Business Dependency Check** and the site's main free front door. Landing copy is Margot's, the eight questions, scoring and five results are Pen's: change wording only with Kelly's say. Questions and scoring live in `src/lib/check-scoring.mjs` (tests in `tests/check-scoring.test.cjs`, which run every combination). The email step posts to `api/check-signup.js`: subscriber active with no confirmation email, custom field `dependency_result` (1428748) saved and read back first, then tag LM-CHECK (25749475). **No sequence:** `ADD_TO_SEQUENCE = false` until Kelly switches on the follow-up (2968008). It must never touch Kit form 9658821 or sequence 2839625 (a test checks). The result shows only after the function returns success.
+- **`/hours`, `/hours.html` and `/audit` 301 to `/check`.** `public/hours.html` stays in the repo because `sync-everyday-prompts.mjs` reads its prompts. **A retired page redirects to `/check`, never the home page** (a test fails if any redirect points at `/`).
+- **`/vault` (`src/pages/vault.astro`) is called "Free resources" everywhere.** Never "the Vault", and never as a member benefit. The Check is its featured card; guides link to their ungated versions (`?unlocked=1`, `/switch-wwuai`, `/vault-claude-clearly`).
+- **`/community` (`src/pages/community.astro`)** is a short pointer page: Check first, workshop second, membership to `/architect`.
+- **Three closing steps** in `src/config/site.ts` (`steps`): a layout takes `next="architect"` (default), `"workshop"` or `"check"`. Free resource pages end on the workshop.
+- **The shared workshop closing block.** Words in `src/config/closing.json`. Page-system pages get it from the layout (`next="workshop"`). Older pages in `public/` carry a written copy between `<!-- closing:start -->` (or `closing:start panel` inside a page wrapper) and `<!-- closing:end -->`; run `node scripts/apply-closing.mjs` after changing the words. The build fails if a copy drifts or a free page loses its block. Older Astro pages use `src/components/legacy/ClosingBlock.astro` (`/starter`). A free page ends with this block and nothing else after it.
+- **"Next one: [date]"** under workshop buttons comes from `/workshop-next.json` (built from `workshop.config.json`, date and time only, never the Zoom link) through `/assets/js/workshop-next.js`. It hides itself once the date has passed. Never hard-code a workshop date on a page outside the workshop skill's own pages.
+- **Membership wording (approved 12 Nov 2026):** a new business system; a live build call and a live Q&A call, both recorded; a before and after check; the Business Dependency Diagnostic; Your AI Team; Your Business HQ; the replays. "Build and Fix" and "The Vault" are retired names. "Your AI Team" is allowed capitals by `check-system.mjs`, like the brand name.
 
 ## Asset Library
 There is a public asset library in `assets/`. The `IMAGE_LIBRARY.md` file in the repo root is the manifest. Read it to browse and select assets (images and PDFs).

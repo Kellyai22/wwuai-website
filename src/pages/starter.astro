@@ -1,5 +1,6 @@
 ---
 import Legacy from '../layouts/Legacy.astro';
+import ClosingBlock from '../components/legacy/ClosingBlock.astro';
 import { nextStep } from '../config/site';
 ---
 <Legacy lang="en-AU">
@@ -574,31 +575,7 @@ Keep your questions short. If one of my answers is vague, ask a follow-up before
     </div>
   </section>
 
-  <!-- Membership invitation -->
-  <section class="next on-dark" id="next" aria-labelledby="next-title">
-    <div class="shell two">
-      <div>
-        <p class="eyebrow">The Architect Advantage</p>
-        <h2 id="next-title">What's <em>next</em></h2>
-        <p class="lede">One Project that knows your business is the starting point. The next step is setting up your whole business to work like this, so AI is doing real jobs rather than answering one-off questions. That's what we work on inside The Architect Advantage.</p>
-        <div class="next-ctas">
-          <a class="btn btn-blush" href={nextStep.href}>
-            Join The Architect Advantage
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-      <div>
-        <p class="inside-label">WHAT'S INSIDE</p>
-        <ul class="inside">
-          <li><b>A guided monthly build</b><span>One useful business system, broken into a path you can follow.</span></li>
-          <li><b>The WWUAI Systems Library</b><span>Real workflows and tools I use, organised around business jobs.</span></li>
-          <li><b>Fresh prompts and templates</b><span>Starting points you adapt to your business instead of rebuilding from nothing.</span></li>
-          <li><b>Practical support</b><span>Somewhere to ask when something breaks, doesn't fit or sounds nothing like you.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <ClosingBlock />
 
   <footer>
     <div class="foot-brand">WISE WOMEN USE AI</div>

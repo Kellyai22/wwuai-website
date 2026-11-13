@@ -2,8 +2,10 @@
 
 Practical AI and business systems for women running their own businesses, with Gen X women at its heart. Founded by Kelly Hartley in Melbourne, Australia.
 
-- [Start free](https://www.wisewomenuseai.com/community): AI foundations, Business Dependency Diagnostic, Clear the Decks and First Wins inside the free Skool community.
-- [Architect Advantage](https://www.wisewomenuseai.com/architect): Supported DIY implementation, Systems Library, walkthroughs, one monthly member implementation call with replay, and help in Skool. $69 USD per month, billed through Skool. Cancel any time. Software subscriptions are separate.
+- [Business Dependency Check](https://www.wisewomenuseai.com/check): Free. Eight questions, about two minutes. Shows where a service business depends on its owner most, and the first thing to fix.
+- [Free monthly workshop](https://www.wisewomenuseai.com/workshop): One hour, online. One process that depends on you, rebuilt live.
+- [Free resources](https://www.wisewomenuseai.com/vault): Guides, prompts and tools, open without sign-up.
+- [Architect Advantage](https://www.wisewomenuseai.com/architect): The membership. A new business system with everything needed to set it up, a live build call and a live Q&A call (both recorded), a before and after check, the Business Dependency Diagnostic, Your AI Team, Your Business HQ and the replays. $69 USD per month, billed through Skool. Cancel any time. Software subscriptions are separate.
 - [Organisational workshops](https://www.wisewomenuseai.com/work): Practical sessions in Melbourne or online, shaped around a recurring task. Enquire about format and availability.
 - [About Kelly](https://www.wisewomenuseai.com/about): Operations experience and the Work That Needs You approach.
 - [Worked content example](https://www.wisewomenuseai.com/examples/one-idea-three-drafts): Input, reusable instructions, sample drafts and human checks. No measured time-saving claim.
