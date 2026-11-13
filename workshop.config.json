@@ -6,7 +6,7 @@
   "_title_comment": "DESCRIBES the workshop, never a product name. It surfaces on the thank-you page tab and (via calendarSummary) in the calendar event people add. It said 'The Unfair Advantage' until 5 Aug 2026, which is the MEMBERSHIP's name, so registrants were adding a calendar event named after the paid offer. Never reuse a Pack name here either ('The Content Advantage' is August's paid Pack and owns that name exclusively). Keep it in step with the live page <title>.",
   "title": "Build Your Content System",
   "joinUrl": "https://us06web.zoom.us/j/3017951556?pwd=eGOuXtpYomgnbHsubLE2fhdR2ajsKa.1",
-  "cohortTagId": null,
+  "cohortTagId": 25801831,
   "communityUrl": "https://www.wisewomenuseai.com/architect",
   "siteBase": "https://www.wisewomenuseai.com",
   "calendarSummary": "Free Workshop: Build Your Content System",
@@ -47,5 +47,5 @@
   "_membershipPrice_comment": "The Unfair Advantage monthly price at the time the follow-up emails send. The rate steps up ON the workshop date, never the 1st of the month, so this is the post-workshop price.",
   "membershipPrice": "$69",
   "_invitePitch_comment": "Topic-specific pitch for the two WHOLE-LIST run-up invites (invitePitch and inviteShort). Write them for each month. Left out for December 2026 (November's were removed): write December's before generating the invite emails, or the generator falls back to a bare one-liner built from the topic.",
-  "_cohortTagId_comment": "The Kit tag for THIS month's sign-ups (workshop-2026-12). The sign-up function finds the tag by name and creates it on the first sign-up, so this id is only for the workshop skill's emails. Null until that tag exists; never put an earlier month's tag here."
+  "_cohortTagId_comment": "The Kit tag for THIS month's sign-ups: workshop-2026-12 (25801831, created 13 Nov 2026). The sign-up function finds the tag by name; this id is for the workshop skill's emails. Never leave an earlier month's tag here."
 }
