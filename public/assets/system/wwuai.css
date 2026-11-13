@@ -116,6 +116,14 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; text-wr
 .wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
 .s { padding-block: var(--section); position: relative; }
 .s--tight { padding-block: clamp(var(--s5), 8vw, var(--s6)); }
+/* Tighter page: <main class="tight"> (layouts: tight). Less space above and below every
+   section, and between a section's headline and its content. The hero keeps its own
+   spacing. Kelly, 13 Nov 2026, for /check and /workshop. */
+main.tight { --section: clamp(40px, 4.2vw, 60px); }
+main.tight .ruled, main.tight .steps { margin-top: var(--s4); }
+main.tight .about .split { margin-top: var(--s4) !important; }
+main.tight .band--mark { padding-bottom: calc(var(--section) + var(--s4)); }
+main.tight .veil { min-height: min(72svh, 700px); }
 .stack > * + * { margin-top: var(--s3); }
 .split { display: grid; gap: var(--s5); }
 @media (min-width: 900px) {

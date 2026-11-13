@@ -22,10 +22,12 @@ interface Props {
   /** Thank-you pages do not show the news banner. */
   news?: boolean;
   header?: boolean;
+  /** Tighter spacing between sections (wwuai.css: main.tight). */
+  tight?: boolean;
 }
 const {
   title, description, path, ogTitle = title, ogDescription = description, ogType = 'website',
-  ogImage = site.ogImage, noindex = false, motion = 'load', news = true, header = true,
+  ogImage = site.ogImage, noindex = false, motion = 'load', news = true, header = true, tight = false,
 } = Astro.props;
 const canonical = site.url + path;
 const headSnippet = motion === 'scroll'
@@ -68,7 +70,7 @@ const headSnippet = motion === 'scroll'
 {header && <Header />}
 <slot name="after-header" />
 
-<main id="main">
+<main id="main" class={tight ? 'tight' : undefined}>
 <slot />
 </main>
 
