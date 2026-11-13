@@ -1,4 +1,11 @@
 {
   "_comment": "The scrolling news banner on every page-system page. Add an item for anything worth highlighting. Each item hides itself after 'until' (Melbourne time with offset). No items = no banner.",
-  "items": []
+  "items": [
+    {
+      "text": "Free workshop: build a content system that doesn’t depend on your spare hour · Wednesday 9 December · 7pm Melbourne time",
+      "cta": "Save my seat",
+      "link": "/workshop",
+      "until": "2026-12-09T20:00:00+11:00"
+    }
+  ]
 }

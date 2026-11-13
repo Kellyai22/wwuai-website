@@ -93,12 +93,15 @@ const total = QUESTIONS.length;
   .check__next h2 { font-family: var(--serif); font-weight: 400; font-size: var(--t-title); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 var(--s4); }
   .check__next .lead { max-width: 46ch; }
   .check__quiet { margin-top: var(--s3); font-size: var(--t-small); }
+  /* The headline runs the full width on two lines on desktop (Kelly, 13 Nov 2026). */
+  .hero--wide .display { font-size: clamp(2.25rem, 0.4rem + 5.9vw, 5.6rem); }
+  .hero--wide .display .line { text-wrap: balance; }
   .check__feel .outcome p { font-size: var(--t-lead); line-height: 1.45; max-width: 30ch; margin: 0; }
   .check__how p { color: var(--ink); font-size: var(--t-lead); line-height: 1.45; max-width: 44ch; }
 </style>
 
-<div data-landing>
-<Hero meta={['Free', 'eight questions', 'about two minutes']} lines={['How much does', 'your business', '<span class="em">depend</span> on you?']}>
+<div data-landing class="hero--wide">
+<Hero meta={['Free', 'eight questions', 'about two minutes']} lines={['How much does your business', '<span class="em">depend</span> on you?']}>
       <p class="lead" data-after>{description}</p>
       <div data-after>
         <div class="btn-row"><a class="btn btn--fill" href="#check" data-check-start>Start the Check <span class="arrow" aria-hidden="true">→</span></a></div>
@@ -131,7 +134,7 @@ const total = QUESTIONS.length;
 <Section tone="pearl">
     <h2 class="title">Who this is <span class="em">for</span></h2>
     <Statement line="This is not for beginners looking for their first ai prompt.">
-      <p>Women in midlife running an established service business, on your own or with a very small team.</p>
+      <p>Gen X women running an established service business, on your own or with a very small team.</p>
       <p>You have clients. You are good at what you do. The business works because you are holding all of it.</p>
     </Statement>
 </Section>

@@ -1,0 +1,24 @@
+---
+// Thank-you page for the free workshop on Wednesday 9 December 2026.
+// /workshop lands here after a confirmed sign-up. Hidden from search.
+// The Zoom link goes out by email, so it is not on this page.
+import ThankYou from '../layouts/ThankYou.astro';
+---
+<ThankYou
+  title="You’re in · Wise Women Use AI"
+  description="Your seat at the free workshop is saved."
+  path="/workshop-december-2026-details"
+  noindex
+>
+<section class="hero tone-greige" style="min-height:0">
+  <div class="wrap">
+    <h1 class="display" data-lines>
+      <span class="line"><span>You’re <span class="em">in</span>.</span></span>
+    </h1>
+    <p class="lead" data-after style="margin-top:var(--s4)">I’ll email you the Zoom link before the workshop.</p>
+    <p class="soft" data-after style="margin-top:var(--s2)">Wednesday 9th December, 7pm Melbourne time. Online, one hour.</p>
+  </div>
+</section>
+  <Fragment slot="next-title">When you’re ready to build it with <span class="em">support</span></Fragment>
+  <Fragment slot="next-lead">Architect Advantage is my membership for building these systems with me. Everything you learn in the workshop is yours either way.</Fragment>
+</ThankYou>

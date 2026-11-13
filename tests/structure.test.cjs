@@ -63,3 +63,14 @@ test('the workshop date file gives away the date and nothing else', opts, () => 
   assert.deepEqual(Object.keys(w).sort(), ['date', 'startTimeLocal', 'timeZone']);
   assert.match(w.date, /^\d{4}-\d{2}-\d{2}$/);
 });
+test('workshop sign-up uses the December tag by name, with no sequence and nothing from November', () => {
+  const src = fs.readFileSync(path.join(root, 'api', 'workshop-signup.js'), 'utf8');
+  assert.match(src, /WORKSHOP_TAG_NAME\s*=\s*'workshop-2026-12'/);
+  assert.match(src, /ADD_TO_SEQUENCE\s*=\s*false/);
+  assert.doesNotMatch(src, /25057382|2945578|workshop-2026-11/);
+});
+test('the workshop page carries no November details', () => {
+  const html = fs.readFileSync(path.join(root, 'public', 'workshop.html'), 'utf8');
+  assert.doesNotMatch(html, /November|2026-11|11 Nov/);
+  assert.match(html, /data-success-url="\/workshop-december-2026-details"/);
+});

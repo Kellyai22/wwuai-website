@@ -83,7 +83,7 @@ How to read it: **Next step** is yes when the page links to `/architect` (or str
 | `workshop-november-2026-details.html` | /workshop-november-2026-details (hidden from search) | none | none | yes | none | none |
 | `workshop-october-2026-details.html` | /workshop-october-2026-details.html (hidden from search) | none | none | yes | none | none |
 | `workshop-thankyou.html` | /workshop-thankyou (hidden from search) | none | none | yes | none | none |
-| `workshop.html` | /workshop | none | posts to /api/workshop-signup, then /workshop-november-2026-details | **none** | none | none |
+| `workshop.html` | /workshop | none | posts to /api/workshop-signup, then /workshop-december-2026-details | **none** | none | none |
 | `wwuai-pitch-deck.html` | /wwuai-pitch-deck.html (hidden from search) | none | none | **none** | none | none |
 
 ## Old Skool links, page by page

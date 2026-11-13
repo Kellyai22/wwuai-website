@@ -1,16 +1,18 @@
 // Free workshop registration → Kit.
-// /workshop posts here (via /assets/js/signup.js). We upsert the subscriber,
-// save the optional question answer to the workshop_bottleneck field, tag them
-// with this month's workshop tag, and add them to the workshop information
-// sequence, which emails the Zoom link. Same Kit pattern as api/reel-signup.js.
+// /workshop posts here (via /assets/js/signup.js). We upsert the subscriber
+// (active, no confirmation email) and tag them with this month's workshop tag.
+// The tag is found by NAME and created if Kit does not have it yet, so there is
+// no tag id to get wrong. Same Kit pattern as api/reel-signup.js.
 // Env var (already set in Vercel): KIT_API_KEY.
-// Each month: change the tag and sequence constants below.
+// Each month: change WORKSHOP_TAG_NAME below.
 
 const KIT_BASE = 'https://api.kit.com/v4';
-const WORKSHOP_TAG_ID = 25057382;      // workshop-2026-11
-const WORKSHOP_SEQUENCE_ID = 2945578;  // November 2026 · Workshop information
-const ANSWER_FIELD = 'workshop_bottleneck';
-const ANSWER_MAX = 500;
+const WORKSHOP_TAG_NAME = 'workshop-2026-12';   // Wednesday 9 December 2026
+// No sequence is attached yet (Kelly, 13 Nov 2026). When the December
+// "Workshop information" sequence exists, put its id here and set
+// ADD_TO_SEQUENCE to true. Never reuse an earlier month's tag or sequence.
+const WORKSHOP_SEQUENCE_ID = null;
+const ADD_TO_SEQUENCE = false;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 module.exports.config = { api: { bodyParser: false } };
@@ -32,17 +34,37 @@ async function readFields(req) {
   return Object.fromEntries(form.entries());
 }
 
-async function kit(path, body) {
+async function kit(method, path, body) {
   const res = await fetch(`${KIT_BASE}${path}`, {
-    method: 'POST',
+    method,
     headers: { 'X-Kit-Api-Key': process.env.KIT_API_KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
+    body: body ? JSON.stringify(body) : undefined,
   });
+  let data = null;
+  try { data = await res.json(); } catch (err) { /* empty body */ }
   if (!res.ok && res.status !== 409) {
-    const text = await res.text();
-    throw new Error(`Kit ${path} failed: ${res.status} ${text}`);
+    throw new Error(`Kit ${method} ${path.split('?')[0]} failed: ${res.status} ${JSON.stringify(data).slice(0, 300)}`);
   }
-  return res;
+  return data || {};
+}
+
+// Find this month's tag by name; create it only if it does not exist.
+// Remembered while the function stays warm, so most sign-ups skip the lookup.
+let tagId = null;
+async function workshopTagId() {
+  if (tagId) return tagId;
+  let after = null;
+  do {
+    const page = await kit('GET', `/tags?per_page=500${after ? `&after=${encodeURIComponent(after)}` : ''}`);
+    const hit = (page.tags || []).find((t) => t.name === WORKSHOP_TAG_NAME);
+    if (hit) { tagId = hit.id; return tagId; }
+    const p = page.pagination || {};
+    after = p.has_next_page ? p.end_cursor : null;
+  } while (after);
+  const made = await kit('POST', '/tags', { name: WORKSHOP_TAG_NAME });
+  if (!made.tag || !made.tag.id) throw new Error('Kit did not return the new tag');
+  tagId = made.tag.id;
+  return tagId;
 }
 
 module.exports = async function handler(req, res) {
@@ -64,8 +86,6 @@ module.exports = async function handler(req, res) {
   }
   const email = String(fields.email_address || '').trim().toLowerCase();
   const firstName = String(fields['fields[first_name]'] || fields.first_name || '').trim().slice(0, 60);
-  const answer = String(fields[`fields[${ANSWER_FIELD}]`] || fields[ANSWER_FIELD] || '')
-    .replace(/\s+/g, ' ').trim().slice(0, ANSWER_MAX);
   if (!EMAIL_RE.test(email)) {
     res.status(400).json({ status: 'error', error: 'invalid email' });
     return;
@@ -73,10 +93,11 @@ module.exports = async function handler(req, res) {
   try {
     const subscriber = { email_address: email, state: 'active' };
     if (firstName) subscriber.first_name = firstName;
-    if (answer) subscriber.fields = { [ANSWER_FIELD]: answer };
-    await kit('/subscribers', subscriber);
-    await kit(`/tags/${WORKSHOP_TAG_ID}/subscribers`, { email_address: email });
-    await kit(`/sequences/${WORKSHOP_SEQUENCE_ID}/subscribers`, { email_address: email });
+    await kit('POST', '/subscribers', subscriber);
+    await kit('POST', `/tags/${await workshopTagId()}/subscribers`, { email_address: email });
+    if (ADD_TO_SEQUENCE && WORKSHOP_SEQUENCE_ID) {
+      await kit('POST', `/sequences/${WORKSHOP_SEQUENCE_ID}/subscribers`, { email_address: email });
+    }
     res.status(200).json({ status: 'success' });
   } catch (err) {
     console.error('workshop-signup', err.message);
