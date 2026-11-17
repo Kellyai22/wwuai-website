@@ -34,8 +34,9 @@ async function kit(path, body) {
     headers: { 'X-Kit-Api-Key': process.env.KIT_API_KEY, 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
+  const text = await res.text();
+  console.log(`skool-dm-signup kit${path} status=${res.status} key_set=${!!process.env.KIT_API_KEY} body=${text.slice(0, 200)}`);
   if (!res.ok && res.status !== 409) {
-    const text = await res.text();
     throw new Error(`Kit ${path} failed: ${res.status} ${text}`);
   }
   return res;
